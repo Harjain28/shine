@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PagesComponent } from './pages/pages.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AppRoutingModule } from './app-routing.module';
     RouterModule,
     AppRoutingModule,
     HeaderComponent,
-    BrowserModule.withServerTransition({ appId: 'serverApp' })
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    PagesComponent
   ],
   providers: [],
   exports: [
