@@ -271,11 +271,16 @@ export class ReportsComponent {
       },{
         data: [45, 25, 100],
         backgroundColor: ['#91a622', '#2c8e7c', '#682ebe'],
-        borderColor:['#91a622', '#2c8e7c', '#682ebe']
+        borderColor:['#91a622', '#2c8e7c', '#682ebe'],
+        hoverBackgroundColor:['#91a622', '#2c8e7c', '#682ebe'],
+        hoverBorderWidth:0
       },{
         data: [45, 25, 100],
         backgroundColor: ['#91a622', '#2c8e7c', '#682ebe'],
-        borderColor:['#91a622', '#2c8e7c', '#682ebe']
+        borderColor:['#91a622', '#2c8e7c', '#682ebe'],   
+        hoverBackgroundColor:['#91a622', '#2c8e7c', '#682ebe'],
+        hoverBorderWidth:0
+
       }]
     };
 
