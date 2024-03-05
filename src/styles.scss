@@ -1,1 +1,851 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+:root {
+  --main1: #6a2fc2;
+  --main2: #12ba9b;
+  --main3: #211261;
+  --main4: #452574;
+  --main5: #C3E128;
+  --main6:#EB7F14;
+}
+
+html {
+  height: 100vh;
+}
+
+
+.sidebar-open {
+  overflow: hidden;
+}
+
+.blur {
+    
+}
+.error {
+  color: #FF9797;
+  font-size: 12px;
+  font-family: Poppins !important;
+}
+
+
+body {
+  font-size: 15px !important;
+  background: #fff !important;
+  height: 100%;
+
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Be Vietnam Pro' !important;
+}
+
+h1 {
+  font-weight: 800 !important;
+}
+
+p {
+  font-family: 'Poppins' !important;
+}
+
+.section_padding {
+  padding: 70px 0px;
+}
+
+.section_padding_bottom {
+  padding-bottom: 70px;
+}
+
+.section_padding_top {
+  padding-top: 70px;
+}
+
+.textLimit1 {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.textLimit2 {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.textLimit3 {
+  overflow: hidden;
+  text-overflow: inherit;
+  white-space: normal;
+  display: -webkit-inline-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.ButtonNow {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+
+  a {
+    border-radius: 100px;
+    background-color: var(--main2);
+    color: #fff !important;
+    padding: 12px 28px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    max-width: 226px;
+    justify-content: center;
+    font-size: 16px !important;
+    font-weight: 500;
+    font-family: 'Poppins' !important;
+    height: 45px;
+    min-width: 226px;
+    position: relative;
+    cursor: pointer;
+
+    mat-icon {
+      position: absolute;
+      right: 23px;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 10px #0000003D;
+    }
+  }
+
+}
+
+.ButtonNow {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+
+  button {
+    border-radius: 100px;
+    background-color: var(--main2);
+    color: #fff !important;
+    padding: 12px 18px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    min-width: 220px;
+    justify-content: center;
+    font-weight: 500;
+    border: none !important;
+    font-size: 16px !important;
+    font-family: 'Poppins' !important;
+    height: 45px;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2392156863);
+    }
+
+    mat-icon {
+      position: absolute;
+      right: 23px;
+    }
+  }
+
+}
+
+.ApplyButton {
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 100px;
+    padding: 6px 26px;
+    border: 2px solid var(--main1);
+    color: var(--main1) !important;
+    max-width: 156px;
+    justify-content: flex-start;
+    font-size: 16px;
+    font-weight: 400;
+    height: 45px;
+    text-decoration: none;
+    background-color: #fff;
+    position: relative;
+    font-family: "Poppins" !important;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0px 0px 10px #0000003D;
+    }
+
+    mat-icon {
+      position: absolute;
+      right: 18px;
+    }
+  }
+}
+
+.ApplyButtonSmall {
+
+  a {
+    color: #fff !important;
+    font-weight: 500;
+    background-color: var(--main2);
+    border-radius: 100px;
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    text-decoration: none;
+    max-width: 140px;
+    height: 28px;
+    font-size: 14px;
+    margin: 0 auto;
+    font-family: "Poppins" !important;
+    position: relative;
+    cursor: pointer;
+
+    mat-icon {
+      position: absolute;
+      right: 6px;
+    }
+  }
+}
+
+.marginTOp {
+  margin-top: 66px !important;
+}
+
+
+
+
+
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+
+  &.row {
+    margin: 0 -15px;
+
+    &.small {
+      margin: 0 -5px;
+
+      .column {
+        padding: 0 5px;
+      }
+    }
+
+    .column {
+      padding: 0 15px;
+    }
+  }
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.end {
+    justify-content: flex-end;
+  }
+
+  &.justify {
+    justify-content: space-between;
+  }
+
+  &.bottom {
+    align-items: flex-end;
+  }
+
+  &.start {
+    justify-content: flex-start;
+  }
+
+  &.middle {
+    align-items: center;
+  }
+
+  &.top {
+    align-items: flex-start;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.rating-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+
+  li {
+    color: #ddd;
+    margin-right: 3.5px;
+
+    img {
+      width: 17px !important;
+      height: 17px !important;
+    }
+
+  }
+
+  li.selected {
+    color: var(--main2);
+  }
+
+
+}
+
+.dhidden {
+  display: none !important;
+}
+
+.mhidden {
+  display: block !important;
+}
+
+
+
+
+
+// Accodion CSS Start
+.TwoOptions {
+
+  .accodionMobileSHow {
+
+    .accodionStart {
+      border: 1px solid #E8E8E8;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #fff;
+
+      .accodionHeadding {
+        background-color: var(--main1);
+        padding: 28px 28px;
+        text-align: center;
+
+        h3 {
+          font-size: 22px;
+          font-weight: 600;
+          margin-bottom: 0px;
+          color: #fff;
+          text-align: center;
+          font-family: "Be Vietnam Pro" !important;
+
+        }
+
+        p {
+          font-size: 16px;
+          color: #fff;
+          margin-bottom: 0px;
+          margin-top: 6px;
+        }
+      }
+
+      .accodionBox {
+        padding: 20px 20px;
+
+        .KnowMoreButton{
+          border-radius: 0;
+          background-color: transparent;
+          color: var(--main1);
+          padding: 0px;
+          font-size: 14px;
+          font-weight: 500;      
+        }
+
+
+        a {
+          border-radius: 100px;
+          background-color: var(--main2);
+          color: #fff;
+          padding: 11px 28px;
+          font-size: 16px;
+          text-decoration: none;
+          display: inline-flex;
+          margin-top: 0px;
+          font-family: "Poppins", sans-serif !important;
+          font-weight: 400;
+
+
+        }
+
+        mat-expansion-panel {
+          box-shadow: none !important;
+          border-bottom: 2px solid #E6E6E6 !important;
+          border-top-right-radius: 0px !important;
+          border-top-left-radius: 0px !important;
+          margin: 0px;
+
+          ::ng-deep {
+
+            .mat-expansion-panel-content {
+
+              .mat-expansion-panel-body {
+                padding: 0 7px 4px !important;
+              }
+            }
+          }
+        }
+
+        mat-expansion-panel:last-child {
+          border: none !important;
+        }
+
+        .mat-expansion-panel-header {
+          padding: 8px 6px !important;
+          font-weight: 600;
+          font-size: 14px;
+          color: #3F3F3F;
+          font-family: 'Poppins' !important;
+
+          ::ng-deep {
+
+            .mat-expansion-panel-content {
+
+              .mat-expansion-panel-body {
+                padding: 0 7px 4px !important;
+              }
+            }
+          }
+
+
+        }
+
+        ::ng-deep {
+          .mat-expansion-panel-body {
+            padding: 0 6px 8px !important;
+            font-family: 'Poppins' !important;
+          }
+        }
+
+
+        span:last-child {
+          background-color: #D1D1D1;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &::after {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    ::ng-deep {
+
+      mat-accordion {
+        
+        .mat-expansion-panel-spacing {
+
+          .mat-expansion-panel-header {
+
+            &[aria-expanded="true"] {
+              .mat-expansion-indicator {
+                background-color: var(--main2) !important;
+              }
+            }
+
+          }
+
+
+        }
+      }
+    }
+
+
+  }
+}
+
+// YourEstimatedEMI CSS Start
+.YourEstimatedEMI {
+  background-color: #F3F3F3;
+  padding-top: 30px;
+
+  h5 {
+    color: #3F3F3F;
+    font-size: 14px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    span {
+      margin-top: 1px;
+    }
+  }
+
+  .EstimatedEMI {
+
+    h2 {
+      color: #3F3F3F;
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .AmountShow {
+      border: 1px solid #707070;
+      background: #55269b;
+      max-width: 250px;
+      border-radius: 10px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 4px;
+
+      h2 {
+        color: #fff;
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+
+      p {
+        color: #fff;
+        margin-bottom: 0px;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+    .amountPoint {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      margin-top: 30px;
+
+      .amountGrp {
+
+        img {
+          width: 140px;
+        }
+      }
+
+      .InterestAmountShow {
+        min-width: 300px;
+        max-width: 280px;
+
+        ul {
+          list-style: none;
+          padding-left: 0px;
+          margin-bottom: 0px;
+          border-bottom: 1px solid #AEAEAE;
+
+          li {
+            margin-bottom: 14px;
+            color: #3F3F3F;
+            position: relative;
+            padding-left: 24px;
+
+            span {
+              width: 14px;
+              height: 14px;
+              border-radius: 50%;
+              display: block;
+              background: #C3E128;
+              position: absolute;
+              top: 2px;
+              left: 0px;
+            }
+
+            .rountcicral {
+              background-color: var(--main2);
+            }
+
+            .interestAmount {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              &.amountColor {
+                p {
+                  color: var(--main2);
+                }
+              }
+
+              h5 {
+                margin-bottom: 0px;
+                color: #3F3F3F;
+                font-size: 16px;
+                font-weight: 500;
+
+              }
+
+              p {
+                margin-bottom: 0px;
+                color: #3F3F3F;
+                font-size: 16px;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+
+        .totalPayableAmount {
+          color: #3F3F3F;
+          margin-top: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 16px;
+          font-weight: 500;
+
+        }
+      }
+    }
+  }
+
+  .helpfulTips {
+    background: #fff;
+    border-radius: 10px;
+    padding: 32px;
+    max-width: 400px;
+    margin: 0 auto;
+
+    .helpfulHeading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+
+      img {
+        width: 35px;
+      }
+
+      h3 {
+        color: #3F3F3F;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 0px;
+        font-family: 'Poppins' !important;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0px;
+      margin-top: 4px;
+      margin-bottom: 0px;
+
+      li {
+        color: #3F3F3F;
+        font-size: 14px;
+        padding-bottom: 10px;
+        font-weight: 400;
+        position: relative;
+        font-family: "Poppins" !important;
+        padding-left: 28px;
+
+        span {
+          width: 14px;
+          height: 14px;
+          position: absolute;
+          background: #3F3F3F;
+          opacity: 0.28;
+          border-radius: 50%;
+          top: 3px;
+          left: 0px;
+
+        }
+      }
+    }
+
+    .BoxDesign {
+      width: 100%;
+      height: 110px;
+      background: #6A2FC2;
+      opacity: 0.13;
+      border-radius: 10px;
+      margin-top: 14px;
+    }
+  }
+}
+
+.paddingZero {
+  padding: 0px 0px;
+}
+
+
+
+
+
+
+// Responsive CSS Start
+
+@media screen and (max-width: 767px) {
+
+  .mobilePd {
+    padding: 0px 30px !important;
+  }
+
+  .mobile0 {
+    padding: 0px 0px !important;
+  }
+
+  .dhidden {
+    display: block !important;
+  }
+
+  .paddingZero {
+    padding: 0px 15px;
+  }
+
+  .mhidden {
+    display: none !important;
+  }
+
+  .orderCS {
+    order: 2;
+  }
+
+  .ApplyButtonSmall {
+
+    a {
+      font-size: 12px !important;
+      // padding: 4px 6px !important;
+    }
+  }
+
+  .section_padding {
+    padding: 40px 0px;
+  }
+
+  .section_padding_bottom {
+    padding-bottom: 40px;
+  }
+
+  .section_padding_top {
+    padding-top: 40px;
+  }
+
+  .rating-list {
+    justify-content: center;
+  }
+
+  .YourEstimatedEMI {
+
+    h5 {
+      margin-bottom: 20px;
+
+    }
+
+    .EstimatedEMI {
+
+      h2 {
+        font-size: 22px;
+        margin-bottom: 8px;
+      }
+
+      .AmountShow {
+        max-width: 240px;
+
+        h2 {
+          font-size: 22px;
+        }
+      }
+
+      .amountPoint {
+        display: block;
+        text-align: center;
+
+        .amountGrp {
+          margin-bottom: 12px;
+          display: flex;
+          justify-content: center;
+
+        }
+
+        .InterestAmountShow {
+          margin: 0 auto;
+
+          ul {
+
+            li {
+              font-size: 14px;
+
+            }
+          }
+        }
+      }
+    }
+
+    .helpfulTips {
+      margin-top: 20px;
+
+      .helpfulHeading {
+
+        h3 {
+          font-size: 15px;
+        }
+      }
+
+      ul {
+
+        li {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .ButtonNow {
+
+    a {
+      padding: 12px 22px;
+    }
+
+  }
+
+}
+
+
+.mat-form-field-label-wrapper {
+
+  .mat-form-field-label {
+
+    .mat-placeholder-required {
+      display: none;
+    }
+  }
+}
+
+
+@media (min-width: 1200px) {
+
+  body .container,
+  body .container-lg,
+  body .container-md,
+  body .container-sm,
+  body .container-xl {
+    max-width: 1000px;
+  }
+}
+
+
+// input.ng-invalid.ng-touched,
+// textarea.ng-invalid.ng-touched,
+// select.ng-invalid.ng-touched {
+
+// }

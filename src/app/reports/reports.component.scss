@@ -1,0 +1,11 @@
+.container-wrapper {
+    display: flex; /* Use flexbox to arrange containers */
+    flex-wrap: wrap; /* Allow containers to wrap to the next line */
+    width: 1000px;
+  }
+  
+  .container {
+    width: calc(50% - 10px); /* Adjust width to fit two containers in one row with spacing */
+    margin: 0 5px; /* Add some margin between containers */
+  }
+  
