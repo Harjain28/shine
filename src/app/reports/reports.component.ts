@@ -58,18 +58,16 @@ export class ReportsComponent {
     const chartData1: ChartData = {
       labels: ['Jan', 'Feb', 'Mar', 'Apr'],
       datasets: [ {
-        label: 'Horizontal Line Dataset',
+        // label: 'Horizontal Line Dataset',
         type: 'line',
         data: [{ x: 0, y: 1500000 }, { x: 8, y: 1500000 },{ x: 0, y: 1500000 }, { x: 8, y: 1500000 },{ x: 0, y: 1500000 }, { x: 8, y: 1500000 }],
         borderColor: 'green',
         borderWidth: 1,
         fill: false,
         pointStyle:"line"
-
-        
       },
       {
-        label: 'Horizontal Line Dataset',
+        // label: 'Horizontal Line Dataset',
         type: 'line',
         data: [{ x: 0, y: 600000 }, { x: 8, y: 600000 },{ x: 0, y: 600000 }, { x: 8, y: 600000 },{ x: 0, y: 600000 }, { x: 8, y: 600000 }], 
         borderColor: 'yellow',
@@ -78,7 +76,7 @@ export class ReportsComponent {
         pointStyle:"line"
         
       },{
-        label: 'Horizontal Line Dataset',
+        // label: 'Horizontal Line Dataset',
         type: 'line',
         data: [{ x: 0, y: 800000 }, { x: 8, y: 800000 },{ x: 0, y: 800000 }, { x: 8, y: 800000 },{ x: 0, y: 800000 }, { x: 8, y: 800000 }], 
         borderColor: 'red',
@@ -89,7 +87,7 @@ export class ReportsComponent {
         
         
       },{
-        label: 'Bar Dataset',
+        // label: 'Bar Dataset',
         type: 'bar',
         data: dataValues,
         backgroundColor: backgroundColors,
@@ -121,39 +119,32 @@ export class ReportsComponent {
     const chartData: ChartData = {
       labels: ['Jan', 'Feb', 'Mar', 'Apr'],
       datasets: [ {
-        label: 'Horizontal Line Dataset',
+        // label: 'Horizontal Line Dataset',
         type: 'line',
         data: [{ x: 0, y: 1500000 }, { x: 8, y: 1500000 },{ x: 0, y: 1500000 }, { x: 8, y: 1500000 },{ x: 0, y: 1500000 }, { x: 8, y: 1500000 }],
         borderColor: 'green',
         borderWidth: 1,
         fill: false,
         pointStyle:"line"
-
-        
       },
       {
-        label: 'Horizontal Line Dataset',
+        // label: 'Horizontal Line Dataset',
         type: 'line',
         data: [{ x: 0, y: 600000 }, { x: 8, y: 600000 },{ x: 0, y: 600000 }, { x: 8, y: 600000 },{ x: 0, y: 600000 }, { x: 8, y: 600000 }], 
         borderColor: 'yellow',
         borderWidth: 1,
         fill: false,
-        pointStyle:"line"
-
-        
+        pointStyle:"line"    
       },{
-        label: 'Horizontal Line Dataset',
+        // label: 'Horizontal Line Dataset',
         type: 'line',
         data: [{ x: 0, y: 800000 }, { x: 8, y: 800000 },{ x: 0, y: 800000 }, { x: 8, y: 800000 },{ x: 0, y: 800000 }, { x: 8, y: 800000 }], 
         borderColor: 'red',
         borderWidth: 1,
         fill: false,
         pointStyle:"line"
-
-        
-        
       },{
-        label: 'Bar Dataset',
+        // label: 'Bar Dataset',
         type: 'bar',
         data: dataValues,
         backgroundColor: backgroundColors,
@@ -206,12 +197,12 @@ export class ReportsComponent {
 
   private createDonutChart():void{
     const donutDataValues = [300000, 500000, 800000,800000]; 
-    const donutLabels = ['A', 'B', 'C', 'D']; 
+    // const donutLabels = ['A', 'B', 'C', 'D']; 
     const donutColors = ['#452574', '#12BA9B', '#C3E128', '#9E77D6']; 
 
    
     const donutChartData: ChartData = {
-      labels: donutLabels,
+      // labels: donutLabels,
       datasets: [{
         data: donutDataValues,
         backgroundColor: donutColors
@@ -258,11 +249,11 @@ export class ReportsComponent {
   
   private createPieChart(): void {
     const pieDataValues = [45, 25, 100]; 
-    const pieLabels = ['Category A', 'Category B', 'Category C']; 
+    // const pieLabels = ['Category A', 'Category B', 'Category C']; 
     const pieColors = ['#C3E128', '#12BA9B', '#A070E8']; 
 
     const pieChartData: ChartData = {
-      labels: pieLabels,
+      // labels: pieLabels,
       datasets: [{
         data: pieDataValues,
         backgroundColor: pieColors,

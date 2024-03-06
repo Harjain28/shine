@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,5 +9,12 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./form2.component.scss']
 })
 export class Form2Component {
+  constructor() {
 
+  }
+
+
+  ngOnInit(): void {
+
+  }
 }
