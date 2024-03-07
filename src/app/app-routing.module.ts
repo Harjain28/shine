@@ -5,13 +5,14 @@ import { HeaderComponent } from './shared/header/header.component';
 import { ReportsComponent } from './reports/reports.component';
 
 const routes: Routes = [
+  
+  {
+    path:'' , component: ReportsComponent,
+    
+  },
   {
     path:'' , component: PagesComponent,
     loadChildren:() =>import('./pages/pages.routes')
-  },
-  {
-    path:'reports' , component: ReportsComponent,
-    
   }
  
 ];

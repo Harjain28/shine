@@ -29,7 +29,7 @@ yarn-error.log
 .history/*
 
 
-src/assets
+# src/assets
 src/enviroments
 # Miscellaneous
 /.angular/cache

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="173.999" height="154.786" viewBox="0 0 173.999 154.786">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_5593" data-name="Path 5593" d="M-11412.5,888v142.666h91V888Z" transform="translate(11412.5 -888)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="Path_5594" data-name="Path 5594" d="M-11450.971,999.5H-11534v71.6l79.075,5.939Z" transform="translate(11463.883 -1598.753) rotate(-3)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <path id="Path_5656" data-name="Path 5656" d="M-11412.5,888v68.767h91V888Z" transform="translate(11412.5 -814.1)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_2687" data-name="Group 2687" transform="translate(1.999 0)">
+    <path id="Exclusion_6" data-name="Exclusion 6" d="M58.821,117.642A58.836,58.836,0,0,1,35.925,4.622a58.836,58.836,0,0,1,45.792,108.4A58.453,58.453,0,0,1,58.821,117.642Zm0-90.556A31.736,31.736,0,1,0,90.556,58.821,31.771,31.771,0,0,0,58.821,27.086Z" transform="translate(21.905 15.079)" fill="#211261"/>
+    <g id="Mask_Group_26" data-name="Mask Group 26" transform="translate(81)" clip-path="url(#clip-path)">
+      <path id="Exclusion_7" data-name="Exclusion 7" d="M58.821,117.642A58.836,58.836,0,0,1,35.925,4.622a58.836,58.836,0,0,1,45.792,108.4A58.453,58.453,0,0,1,58.821,117.642Zm-.405-90.556a31.33,31.33,0,1,0,31.329,31.33A31.366,31.366,0,0,0,58.416,27.086Z" transform="translate(-59.095 15.079)" fill="#12ba9b"/>
+    </g>
+    <g id="Mask_Group_27" data-name="Mask Group 27" transform="translate(0 74.333)" clip-path="url(#clip-path-2)">
+      <path id="Exclusion_8" data-name="Exclusion 8" d="M58.821,117.642A58.836,58.836,0,0,1,35.925,4.622a58.836,58.836,0,0,1,45.792,108.4A58.453,58.453,0,0,1,58.821,117.642Zm-.405-90.556a31.33,31.33,0,1,0,31.329,31.33A31.366,31.366,0,0,0,58.416,27.086Z" transform="translate(21.905 -59.254)" fill="#6a2fc2"/>
+    </g>
+    <g id="Mask_Group_28" data-name="Mask Group 28" transform="translate(81)" clip-path="url(#clip-path-3)">
+      <path id="Exclusion_9" data-name="Exclusion 9" d="M58.821,117.642A58.836,58.836,0,0,1,35.925,4.622a58.836,58.836,0,0,1,45.792,108.4A58.453,58.453,0,0,1,58.821,117.642Zm-.405-90.556a31.33,31.33,0,1,0,31.329,31.33A31.366,31.366,0,0,0,58.416,27.086Z" transform="translate(-59.095 15.079)" fill="#c3e128"/>
+    </g>
+  </g>
+</svg>

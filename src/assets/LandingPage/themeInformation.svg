@@ -1,0 +1,10 @@
+<svg id="themeInformation" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="invisible_box" data-name="invisible box">
+    <rect id="Rectangle_32" data-name="Rectangle 32" width="48" height="48" fill="none"/>
+  </g>
+  <g id="icons_Q2" data-name="icons Q2">
+    <path id="Path_25" data-name="Path 25" d="M24,2A21.9,21.9,0,1,0,39.586,8.414,22,22,0,0,0,24,2Zm0,40A18,18,0,1,1,42,24,18,18,0,0,1,24,42Z" fill="#6a2fc2"/>
+    <path id="Path_26" data-name="Path 26" d="M24,20a2,2,0,0,0-2,2V34a2,2,0,0,0,4,0V22A2,2,0,0,0,24,20Z" fill="#6a2fc2"/>
+    <circle id="Ellipse_5" data-name="Ellipse 5" cx="2" cy="2" r="2" transform="translate(22 12)" fill="#6a2fc2"/>
+  </g>
+</svg>
