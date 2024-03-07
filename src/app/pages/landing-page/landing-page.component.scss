@@ -1,0 +1,1840 @@
+.Process {
+    background: #F3F3F3;
+    padding: 30px 0px;
+
+    .numberCount {
+
+        h3 {
+            font-size: 28px;
+            line-height: 30px;
+            color: var(--main2);
+            text-align: center;
+            font-weight: 800;
+            margin-bottom: 20px;    
+            font-family: "Be Vietnam Pro" !important;
+        }
+
+        p {
+            color: #3F3F3F;
+            font-size: 16px;
+            margin-bottom: 0px;
+            text-align: center;
+            font-weight: 600;    
+            font-family: "Poppins" !important;
+        }
+
+        h5{
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 16px 0px;
+            color: #3f3f3f;
+            font-family: "Be Vietnam Pro" !important;
+        }
+    }
+
+}
+
+.SecuredBusinessLoan{
+
+    .homeSlider{
+
+        .silderSlide{
+            height: 574px !important;
+
+            .silderText{
+
+                .title{
+                    margin-top: 60px;
+
+                    .mainHeading{
+                        font-size: 30px !important;
+                        text-transform: uppercase;
+                    }
+
+                     p{
+                        font-size: 18px !important;
+                        line-height: 28px !important;
+                        text-align: left;
+                        margin-bottom: 12px !important;
+
+                        span{
+                            color: var(--main1) !important;
+                            display: block;
+                        }
+                     }
+                }
+
+                .getStartButtonBanner{
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-right: 40px;
+
+                    .btn{
+                        background-color: var(--main2);
+                        color: #fff;
+                        padding: 10px 50px;
+                        font-weight: 500;
+                        border: 1px solid #fff;
+                        font-size: 18px;
+                        display: flex;
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.Key_Stats_Section{
+
+    .boxBanking{
+        background-color: #fff;    
+        box-shadow: 5px 3px 10px rgb(206 206 206 / 16%);
+        border: 1px solid #E8E8E8;
+        padding: 12px 16px;
+        border-radius: 10px;
+        overflow: hidden;
+        height: 100%;
+
+        &:hover{
+            background-color: #f3f3f3;
+        }
+
+        .conutHappy{
+            align-items: center;
+            margin-bottom: 12px;
+
+            .happy{
+
+                h3{
+                    margin-bottom: 0px !important;
+                }
+            }
+        }
+
+        p{
+            text-align: center;
+        }
+    }
+}
+
+.noteSilders{
+    padding: 50px 0px;
+
+    .noteSilderBox{
+        
+        .box{
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+.FeaturesSection{
+
+    .headingTop{
+        text-align: center;
+
+        h2{
+            font-size: 40px;
+            color: var(--main1);
+            line-height: 44px;
+            font-weight: 700;
+            font-family: "Be Vietnam Pro" !important;
+            margin-bottom: 9px;
+        }
+
+        p{
+            color: #3f3f3f;
+            font-size: 16px;
+            margin-bottom: 4px;
+            line-height: 24px;
+            font-weight: 500;
+            font-family: Poppins !important;
+        }
+    }
+}
+
+.HelpSection {
+
+    overflow: hidden;
+    padding: 80px 0px;
+    // background-image: url(../../../assets/images/homeImage/HelpYouBackground.svg);
+    // background-repeat: no-repeat;
+    height: 100%;
+    // background-position: revert;
+
+    .howhelptext {
+        position: relative;
+        z-index: 1;
+
+        .designImg{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transform: translate(-36%, -13%);
+            z-index: -1;
+        }
+
+        h2 {
+            text-align: left;
+            color: var(--main1);
+            font-size: 28px;
+            line-height: 30px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            padding-left: 39px;
+        }
+
+        .HelpBox {
+            background-color: #fff;
+            box-shadow: 5px 3px 10px rgb(206 206 206 / 16%);
+            border: 1px solid #E8E8E8;
+            padding: 35px 38px;
+            border-radius: 18px;
+            overflow: hidden;
+            height: 100%;
+            position: relative;
+            z-index: 11;
+            max-height: 340px !important;
+            min-height: 340px !important;
+
+            h3 {
+                color: #3F3F3F;
+                font-size: 17px;
+                font-weight: 600;
+                line-height: 24px;
+                margin-bottom: 18px;
+                font-family: 'Poppins', sans-serif !important;
+                // min-height: 40px;
+                // max-height: 1px;
+            }
+
+            p {
+                color: #3F3F3F;
+                font-size: 17px;
+                line-height: 28px;
+                font-weight: 500;
+                margin-bottom: 0px;
+                text-align: center;
+                font-family: 'Poppins', sans-serif !important;
+                // overflow: hidden;
+                // -o-text-overflow: ellipsis;
+                // text-overflow: ellipsis;
+                // display: -webkit-box;
+                // -webkit-line-clamp: 4;
+                // -webkit-box-orient: vertical;
+            }
+        }
+
+        ::ng-deep {
+
+            .owl-nav {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                margin: 0px;
+                bottom: 0px;
+                transform: translate(0%, 50%);
+
+                .owl-prev {
+                    width: 47px;
+                    height: 47px;
+                    background: var(--main1);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0px;
+                    border-radius: 0px;
+                }
+
+                .owl-next {
+                    width: 47px;
+                    height: 47px;
+                    background: var(--main1);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0px;
+                    border-radius: 0px;
+                }
+
+                .disabled {
+                    background-color: #EBEBEB;
+                    opacity: 1;
+
+                    img{
+                        filter: invert(82%) sepia(2%) saturate(4%) hue-rotate(343deg) brightness(90%) contrast(83%);
+                        opacity: .5;
+                    }
+                }
+
+
+            }
+
+            .owl-dots {
+                display: none;
+            }
+        }
+
+        .ButtonNow {
+            margin-top: 80px;
+
+            a{
+
+                mat-icon{
+                    position: absolute;
+                    right: 23px;
+                }
+            }
+        }
+    }
+}
+
+.BusinessLoanOption{
+
+    .businessText{
+
+        .iconBox{
+            min-height: 127px;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 24px !important;
+
+            h3{
+                line-height: 22px !important;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+
+@media (max-width:767px) {
+
+    .FeaturesSection{
+
+        .headingTop{
+            text-align: center;
+    
+            h2{
+                font-size: 24px;
+                line-height: 30px;
+            }
+        }
+    }
+
+    .Process {
+        padding: 20px 0px;
+    
+        .numberCount {
+    
+            h3 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+    
+            p {
+                line-height: 28px;
+                font-size: 18px;
+            }
+    
+            h5{
+                text-align: center;
+                font-size: 24px;
+                font-weight: 600;
+                margin: 16px 0px;
+                color: #3f3f3f;
+            }
+        }
+    
+    }
+
+    .HelpSection {
+        padding: 70px 0px !important;
+        background-image: none !important;
+        padding-top: 58px !important;
+
+        h3 {
+            text-align: center;
+            color: var(--main1);
+            font-size: 22px;
+            line-height: 30px;
+            font-weight: 800;
+            margin-bottom: 0px;
+            text-align: center;
+        }
+
+        .howhelptext {
+            padding-top: 0px !important;
+
+            h2 {
+                font-size: 22px !important;
+                text-align: center;
+                padding-left: 0px;
+            }
+
+            .HelpBox {
+                padding: 15px 15px !important;
+                text-align: center;
+                margin-bottom: 12px !important;
+                margin-top: 0px;
+                padding-bottom: 50px !important;
+                height: 100%;
+                min-height: auto !important;
+                margin: 0px 30px;
+
+                &.boxHeight{
+                    min-height: auto !important;
+                }
+
+                h3 {
+                    font-size: 16px !important;
+                }
+
+                p {
+                    font-size: 12px !important;
+                }
+            }
+
+            ::ng-deep {
+
+                .owl-nav {
+                    bottom: 12px !important;
+                    display: none;
+
+                }
+
+                .owl-dots {
+                    position: absolute;
+                    bottom: 14px;
+                    left: 50%;
+                    transform: translate(-50%, -100%);
+                    display: flex;
+                    margin-top: 0px;
+
+                    .owl-dot {
+
+                        &.active {
+                            span {
+                                background-color: var(--main1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .ButtonNow {
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, 0%);
+                bottom: -20px;
+                z-index: 1;
+            }
+        }
+
+        .helpVideoSection{
+
+            img{
+                margin-bottom: 50px !important;
+            }
+        }
+    }
+
+    .SecuredBusinessLoan{
+
+        .homeSlider{
+    
+            .silderSlide{
+    
+                .silderText{
+
+                    .title{
+                        margin-top: 60px;
+                        margin-bottom: 30px;
+
+                        &.shineTitle{
+    
+                        .mainHeading{
+                            font-size: 26px !important;
+                            text-transform: uppercase;
+                        }
+    
+                         p{
+                            font-size: 15px !important;
+                            line-height: 22px !important;
+                            text-align: left;
+                            margin-bottom: 8px !important;
+                         }
+                        }
+                    }
+
+                    &.mobileResponsive{
+                        transform: translate(0%, 0%) !important;
+                    }
+    
+                    .getStartButtonBanner{
+                        justify-content: center !important;
+                        margin-right: 0px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.forSMEComponent {
+
+    .SecuredBusinessLoan {
+        position: relative;
+
+        .homeSlider {
+            // position: relative;
+    
+            .silderSlide{
+                position: relative;
+                height: 604px;
+                overflow: hidden;
+            
+                .image{
+                    display: block;
+                    width: 100%;
+                }
+    
+                .silderText{
+                    position: absolute;
+                    top: 50%;
+                    left: 0px;
+                    transform: translate(0%, -50%);
+                    z-index: 9;
+                    display: block;
+                    width: 100%;
+    
+                    h1{
+                        color: var(--main1);
+                        font-size: 38px;
+                        font-weight: 800;
+                        line-height: 44px;
+                        margin-bottom: 12px;
+    
+                        span{
+                            color: var(--main2);
+                        }
+                    }
+                    
+                    .title {
+                        p {
+                            color: var(--main1);
+                            font-size: 38px;
+                            font-weight: 800;
+                            line-height: 44px;
+                            margin-bottom: 12px;
+        
+                            span{
+                                color: var(--main2);
+                            }
+                        }
+                    }
+                    h2{
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 26px;
+                        margin-bottom: 2px;
+                        color: #3F3F3F;
+                        padding-right: 60px;
+                    }
+                    p {
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 26px;
+                        margin-bottom: 2px;
+                        color: #3F3F3F;
+                        padding-right: 60px;  
+                    }
+                }
+            }
+    
+           
+            ::ng-deep{
+    
+                .owl-dots {
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    bottom: 16%;
+                    width: 100%;
+                    display: flex;
+                    padding: 0px 8px;
+                    gap: 8px;
+
+                    .owl-dot{
+
+                        span{
+                            margin: 0px !important;
+                            background-color: #FFFFFF;
+                            box-shadow: 0px 0px 4px #00000033;
+                        }
+                    }
+                }
+                .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+                    background-color: var(--main2);
+                }
+            }
+
+
+            .boxSizeRight{
+                position: absolute;
+                right: 0px;
+                bottom: 50%;
+                transform: translate(0%, -80%);
+                // width: 100%;
+                z-index: 9;
+            }
+        }
+    }
+
+    .checkBusiness {
+        position: absolute;
+        right: 80px;
+        top: 50%;
+        transform: translate(0%, -50%);
+        z-index: 9;
+        background-color: var(--main1);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 320px;
+
+        h3 {
+            color: #fff;
+            font-size: 24px;
+            line-height: 36px;
+            margin-bottom: 30px;
+        }
+
+        .numberChoise {
+            display: inline-grid;
+
+            .formCmg {
+                margin-bottom: 12px;
+
+                .form-control {
+                    background-color: transparent;
+                    border: 1px solid #fff;
+                    border-radius: 100px;
+                    padding: 8px 22px;
+                    text-align: center;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+            }
+
+            button {
+                border-radius: 100px;
+                background-color: var(--main2);
+                padding: 8px 50px;
+                color: #fff;
+                font-size: 18px;
+                font-weight: 500;
+                border: none;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+            }
+        }
+    }
+
+    .SecuredBusinessLoanTerms{
+        padding-top: 80px;
+
+        &.paddingBottomSection{
+            padding-bottom: 80px;
+        }
+
+        .BoxTerms{
+            box-shadow: 10px 10px 10px #0000001A;
+            border: 1px solid #EFEFEF;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .keyFeatures{
+                background-color: var(--main1);
+                padding: 40px;
+                height: 100%;
+
+                .topHeading{
+                    padding-bottom: 16px;
+                    border-bottom: 4px solid #B1A9CF;
+                    margin-bottom: 50px;
+
+                    h5{
+                        color: #FFFFFF;
+                        font-size: 16px;
+                        margin-bottom: 2px;
+                        font-family: 'Poppins', sans-serif !important;
+                    }
+                    h3{
+                        color: #fff;
+                        font-size: 28px;
+                        font-weight: 700;
+                        margin-bottom: 0px;
+                    }
+                }
+
+                .AmountValue{
+
+                    .amountNumber{
+                        padding: 18px 0px;
+                        border-bottom: 1px solid #8C79D4;
+
+                        p{
+                            color: #FFFFFF;
+                            font-size: 16px;
+                            margin-bottom: 5px;
+                        }
+                        h4{
+                            color: #FFFFFF;
+                            font-size: 20px;
+                            font-weight: 600;
+                            margin-bottom: 0px;
+                            font-family: "Poppins", sans-serif !important;
+                            line-height: 30px;
+                        }
+
+                        .securedUnsecured{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-top: 20px;
+                            position: relative;
+
+                            &:before{
+                                position: absolute;
+                                content: "";
+                                width: 2px;
+                                height: 100%;
+                                background-color: #8C79D4;
+                                left: 50%;
+                                transform: translate(-50%, 0%);
+                                top: 0;
+                            }
+                        }
+                    }
+                    .amountNumber:last-child{
+                        border-bottom: none;
+                    }
+                }
+            }
+
+            .LoanTemsBox{
+                padding: 40px 40px;
+
+                h2{
+                    color: #6A2FC2;
+                    font-size: 28px;
+                    font-weight: 700;
+                    margin-bottom: 12px;
+                }
+
+                p{
+                    font-size: 14px;
+                    color: #666666;
+                    font-family: "Poppins", sans-serif !important;
+                }
+
+                ul{
+                    list-style: none;
+                    padding-left: 0px;
+                    margin-bottom: 0px;
+
+                    li{
+                        display: flex;
+                        gap: 14px;
+                        margin-top: 30px;
+
+                        img{
+                            width: 26px;
+                            height: 26px;
+                        }
+
+                        mat-icon{
+                            color: var(--main1);
+                        }
+
+                        .ListContent{
+
+                            h3{
+                                margin-bottom: 9px;
+                                color: #3F3F3F;
+                                font-size: 18px;
+                                font-weight: 600;
+                                font-family: "Poppins", sans-serif !important;
+                            }
+                    
+                                a{
+                                    color: var(--main1);
+                                    margin-left: 6px;
+                                    font-weight: 600;
+                                    text-decoration: none;
+                                    position: relative;
+                                    cursor: pointer;
+
+                                    mat-icon{
+                                            position: absolute;
+                                            right: 0px;
+                                            font-size: 21px;
+                                            transform: translate(100%, 0%);
+                                    }
+                                }
+
+                        }
+                    }
+                }
+            }
+
+            .ArrowIcon{
+                text-align: center;
+                margin-bottom: 16px;
+
+                &.arrowTopBlur{
+                    position: relative;
+
+                    &:before{
+                        position: absolute;
+                        content: "";
+                        display: block;
+                        width: 100%;
+                        top: -50px;
+                        transform: translate(0%, -50%);
+                        height: 50px;
+                        background: transparent linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--unnamed-color-ffffff) 100%) 0% 0% no-repeat padding-box;
+                        background: transparent linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+
+                    }
+                }
+
+                .ArrowIconBG{
+                    width: 24px;
+                    height: 24px;
+                    background: var(--main1);
+                    border-radius: 50%;
+                    margin: 0 auto;
+
+                    mat-icon{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .TwoOptions{
+        background-image: url(../../../assets/images/homeImage/SecuredLoanBG.svg);
+        background-repeat: no-repeat;
+        background-position: right;
+        // background-size: cover;
+
+        .SecuredLoanProductOptions{
+
+            .tabsSection{
+                border: 1px solid #EFEFEF;
+                background-color: #fff;
+                border-radius: 10px;
+                overflow: hidden;
+                position: relative;
+
+                .tabHeading{
+                    position: absolute;
+
+                    h2{
+                        color: var(--main1);
+                        font-size: 25px;
+                        font-weight: 700;
+                        padding: 30px 14px;
+                        width: 300px;
+                        line-height: 28px;
+                    }
+                }
+
+                ::ng-deep .mat-tab-group {
+                    flex-direction: row;
+                }
+                ::ng-deep .mat-tab-header {
+                    border-bottom: none;
+                    width: 300px;
+                    margin-top: 120px;
+                }
+                ::ng-deep .mat-tab-header-pagination {
+                    display: none !important;
+                    
+                }
+                ::ng-deep .mat-tab-labels {
+                    flex-direction: column;
+
+                    .mat-tab-label{
+                        padding: 0px 0px;
+                        opacity: 1;
+                        border-bottom: 1px solid #EFEFEF;
+                        margin: 1px 0px;
+                        color: #3F3F3F;
+                        font-size: 16px;
+                        font-weight: 600;
+                        height: 60px;
+                        font-family: "Poppins", sans-serif !important;
+                        padding: 0px 30px;
+                        display: flex;
+                        justify-content: flex-start;
+
+                        &.mat-tab-label-active{
+                            clip-path: polygon(0% 0%, 92% 0, 100% 50%, 92% 100%, 0% 100%);
+                            background: var(--main2);
+                            color: #fff;
+                        }
+                        
+                    }
+                    .mat-tab-label:last-child{
+                        border: none !important;
+                    }
+                }
+                ::ng-deep .mat-ink-bar {
+                    height: 100%;
+                    background: none;
+                    left: 98% !important;
+                }
+                ::ng-deep .mat-tab-body-wrapper {
+                    flex: 1 1 auto;
+                }
+
+                .tabsChange{
+                    padding: 0px 0px 0px 50px;
+
+                    img{
+                        width: 100%;
+                    }
+
+                    .tabsContent{
+                        padding: 37px 20px 20px 0px;
+
+                        h5{
+                            color: #3F3F3F;
+                            font-size: 16px;
+                            font-weight: 600;
+                            margin-bottom: 7px;
+                            font-family: "Poppins", sans-serif !important;
+                        }
+
+                        p{
+                            color: #666666;
+                            font-size: 14px;
+                            margin-bottom: 22px;
+                            font-family: "Poppins", sans-serif !important;
+                        }
+
+                        a{
+                            border-radius: 100px;
+                            background-color: var(--main2);
+                            color: #fff;
+                            padding: 11px 28px;
+                            font-size: 16px;
+                            text-decoration: none;
+                            display: inline-flex;
+                            margin-top: 0px;
+                            font-family: 'Poppins', sans-serif !important;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+
+        .accodionMobileSHow{
+
+            .accodionStart{
+
+                .accodionBox{
+
+                    mat-accordion{
+
+                        mat-expansion-panel{
+                            ::ng-deep{
+
+                                .mat-expansion-panel-spacing{
+                          
+                                    &[aria-expanded="true"]{
+                                        .mat-expansion-indicator{
+                                            background-color: var(--main2) !important;
+                                        }
+                                    }
+                          
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .Eligibility_Collateral{
+            padding-top: 80px;
+
+            .BoxCanApply{
+                border-radius: 10px;
+                background-color: #F3F3F3;
+                padding: 20px 32px;
+
+                .canApplyList{
+                    height: 100%;
+
+                    &.border-right{
+                        border-right: 1px solid #D8D8D8;
+                    }
+
+                    &.padding-Left{
+                        padding-left: 40px;
+                    }
+
+                    h5{
+                        color: #3F3F3F;
+                        margin-bottom: 16px;
+                        font-size: 22px;
+                        font-weight: 700;
+                        text-align: center;
+                    }
+                    ul{
+                        padding-left: 14px;
+                        margin-bottom: 0px;
+                        
+                        li{
+                            color: #666666;
+                            font-size: 14px;
+                            padding-bottom: 10px;
+                            font-family: "Poppins", sans-serif !important;
+
+                            b{
+                                display: inline-flex;
+                                width: 160px;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .Documents{
+        position: relative;
+        overflow: hidden;
+        margin: 40px 0px;
+
+        .DocumentsImg{
+
+            img{
+                width: 100%;
+                height: 512px;
+                object-fit: cover;
+            }
+
+        }
+
+        .DocumentsText{
+            background-color: var(--main5);
+            background-image: url(../../../assets/images/homeImage/dark_color.png);
+            padding: 40px 60px;
+            position: absolute;
+            width: 50%;
+            right: 0px;
+            top: 50%;
+            // height: 630px;
+            transform: translate(0%, -50%);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: right;
+
+            h3{
+                color: #222222;
+                font-size: 28px;
+                font-weight: 800;
+                line-height: 28px;
+                margin-bottom: 46px;
+                text-align: center;
+                max-width: 370px;
+                min-width: 260px;
+            }
+
+            .DocumentsList{
+                background: #fff;
+                box-shadow: 0px 4px 10px #00000029;
+                border-radius: 10px;
+                padding: 34px;
+                max-width: 370px;
+                min-width: 260px;
+                position: relative;
+
+                ul{
+                    list-style: none;
+                    padding-left: 0px;
+                    margin-bottom: 0px;
+
+                    li{
+                        padding: 10px 0px;
+                        border-bottom: 1px solid #EFEFEF;
+                        font-size: 15px;
+                        color: #3F3F3F;
+                        font-weight: 500;
+                        font-family: "Poppins", sans-serif !important;
+                    }
+                }
+
+                img{
+                    position: absolute;
+                    top: -20px;
+                    left: 50%;
+                    opacity: .9;
+                    transform: translate(-50%, 0%);
+                }
+            }
+        }
+    }
+
+    .twoSection{
+        background-image: url(../../../assets/images/homeImage/smeProductFaqsBG.svg);
+        background-repeat: no-repeat;
+        background-position: left;
+        overflow: hidden;
+    }
+
+    .SyndicatiomBackgroundweb{
+        background-image: url(../../../assets/images/homeImage/Syndicate_Desktop.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        
+
+        .SyndicatiomBackgroundmobile{
+            padding: 50px 0px;
+        }
+    }
+
+    .HelpSection {
+    
+        .howhelptext {
+    
+            .HelpBox {
+                max-height: 290px;
+                min-height: 300px
+            }
+        }
+    }
+    
+    
+}
+
+
+.Key_Stats_Section{
+    padding: 70px 0px;
+    
+    .borderStyle{
+
+        .rightBorderNone:last-child{
+            
+            .border-right{
+                border: none !important;
+            }
+
+        }
+        .rightBorderNone:first-child{
+            
+            .border-right{
+                
+                justify-content: flex-start;
+                padding-left: 0px;
+            }
+
+        }
+        .rightBorderNone:last-child{
+            
+            .border-right{
+                
+                padding-left: 20px;
+            }
+
+        }
+
+        .rightBorderNone{
+
+            .conutHappy{
+                gap: 26px;
+                display: flex;
+                // align-items: center;
+                justify-content: center;
+                padding: 0px 0px;
+            
+                &.border-right{
+                    border-right: 1px solid #E1E1E1;
+    
+                }
+                
+                span{
+                    width: 60px;
+                    text-align: center;
+
+                    img{
+                        // max-width: 100%;
+                        max-height: 50px;
+                    }
+                }
+                
+            
+                .happy{
+            
+                    h3{
+                        letter-spacing: -0.64px;
+                        color: #6A2FC2;
+                        margin-bottom: 3px;
+                        font-size: 28px;
+                        line-height: 28px;
+                        font-weight: 800;
+                    }
+                    p{
+                        letter-spacing: 0.28px;
+                        color: #666666;
+                        margin-bottom: 0px;
+                        font-size: 14px;
+                        line-height: 18px;
+                        font-weight: 400;
+                        font-family: 'Poppins', sans-serif !important;
+                        // padding-right: 50px;
+                    }
+                }
+            
+            }
+            
+        }
+        
+
+        
+    }
+    
+
+    
+}
+
+
+.arrowColorChange{
+
+    ::ng-deep{
+
+        .mat-expansion-panel-body{
+            padding: 0px 0px 12px 6px !important;
+        }
+
+        .mat-expansion-panel-spacing{
+
+            .mat-expansion-indicator:last-child{
+                background-color: var(--main2) !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .mobileFormMargin{
+        margin-bottom: 220px;
+    }
+    .TwoOptions{
+        background-image: none !important;
+
+        .Eligibility_Collateral{
+            padding-top: 66px !important;
+
+            .container{
+                padding: 0px;
+            }
+
+            .BoxCanApply{
+                border-radius: 0px !important;
+
+                .canApplyList{
+                    padding: 20px 0px;
+
+                    &.border-right{
+                        border-right: none !important;
+                        border-bottom: 1px solid #D8D8D8;
+                    }
+
+                    &.padding-Left{
+                        padding-left: 0px !important;
+                    }
+
+                    h5{
+                        text-align: left !important;
+                        font-weight: 800 !important;
+                    }
+
+                    ul{
+                        
+                        li{
+                            font-size: 13px !important;
+
+                            b{
+                                width: 150px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .Documents{
+        margin: 35px 0px !important;
+        padding-top: 0px !important;
+
+        .DocumentsImg{
+
+            img{
+                height: auto !important;
+            }
+
+        }
+
+        .DocumentsText{
+            position: relative !important;
+            width: 100% !important;
+            padding: 40px 40px !important;
+
+            h3{
+                font-size: 22px !important;
+                text-align: center;
+            }
+
+            .DocumentsList{
+                padding: 20px !important;
+
+                ul{
+
+                    li{
+                        font-size: 14px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .SecuredBusinessLoan {
+
+        .homeSlider {
+
+        min-height: calc(100vh - 180px);
+                .silderSlide{
+                        height: 100% !important;
+
+                        img{
+                            height: 100%;
+                        }
+        
+                    .silderText{
+                        transform: translate(0%, -60%) !important;
+                        text-align: center !important;
+                        padding: 0px 20px;
+                        width: 100% !important;
+                        bottom: auto !important;
+        
+                        h1{
+                            font-size: 25px !important;
+                            line-height: 30px !important;
+                        }
+
+                        p{
+                            padding-right: 0px !important;
+                        }
+
+                        .title {
+                            p {
+                                font-size: 25px !important;
+                                line-height: 30px !important;
+                                padding-right: 0px;
+                            }
+                        }
+                        h2{
+                            font-size: 14px !important;
+                            margin-bottom: 0px !important;
+                            line-height: 18px !important;
+                            padding-right: 0px !important;
+                        }
+                    }
+                }
+            }
+
+            .boxSizeRight{
+                top: auto !important;
+                transform: translate(-50%, -6%) !important;
+                bottom: 16px;
+                left: 50% !important;
+                width: 100%;
+            }
+    }
+
+    .HelpSection {
+    
+        .howhelptext {
+    
+            .HelpBox {
+                min-height: 350px !important;
+            }
+        }
+    }
+
+    .SecuredBusinessLoanTerms{
+        padding-top: 41px !important;
+
+        &.paddingBottomSection{
+            padding-bottom: 53px;
+            padding-top: 0px !important;
+        }
+
+        .BoxTerms{
+
+            .keyFeatures{
+                background-color: var(--main1);
+                padding: 20px !important;
+                height: 100%;
+
+                .topHeading{
+                    text-align: left;
+                    margin-bottom: 12px !important;
+
+                    h5{
+                        font-size: 14px !important;
+                    }
+                    h3{
+                        font-size: 22px !important;
+                    }
+                }
+
+                .AmountValue{
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .amountNumber{
+                        width: 100%;
+                        border-right: 1px solid #8C79D4;
+                        position: relative;
+
+                        p{
+                            font-size: 14px !important;
+                            // padding-left: 10px;
+                            padding-right: 23px;
+                        }
+                        h4{
+                            font-size: 22px !important;
+                            // padding-left: 10px;
+                        }
+
+                        .mobileBorderShow{
+                            margin: 10px 0px;
+                        }
+                    }
+                   
+                    .amountNumber:nth-child(2){
+                        border-right: none !important;
+                    }
+                    .amountNumber:nth-child(4){
+                        border-right: none !important;
+                    }
+                }
+
+                .AmountValue{
+
+                    .amountNumber:nth-child(even){
+                        
+                        .mobileBorderShow{
+                            padding-left: 0px;
+                        }
+                    }
+                }
+
+                .AmountValue{
+
+                    // .amountNumber:nth-child(odd):before{
+                    //     content: "";
+                    //     position: absolute;
+                    //     width: 1px;
+                    //     background: #8C79D4;
+                    //     height: 70%;
+                    //     right: 0px;
+
+                    // }
+
+                    .amountNumber:nth-child(odd){
+                        border-right: none;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .LoanTemsBox{
+                padding: 20px 20px !important;
+
+                h2{
+                    font-size: 22px !important;
+                }
+
+                ul{
+                    position: relative;
+
+                    li{
+
+                        mat-icon{
+                            display: none !important;
+                        }
+
+                        .ListContent{
+
+                            h3{
+                                font-size: 16px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .twoSection{
+        background-image: none !important;
+
+        .accodionMobileSHow{
+            padding-top: 0px !important;
+
+            ::ng-deep{
+
+                .mat-expansion-panel-body {
+                    padding: 0 0px 16px !important;
+                }
+            }
+        }
+    }
+
+    .SyndicatiomBackgroundweb{
+        background-image: none;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+
+        .SyndicatiomBackgroundmobile{
+            padding: 30px 0px;
+            padding-bottom: 100px !important;
+            background-image: url(../../../assets/images/homeImage/Syndicate_Mobile.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    .Key_Stats_Section{
+        padding: 25px 0px !important;
+        
+        .conutHappy{
+        
+            &.border-right{
+                border-right: none !important;
+                justify-content: center !important;
+                padding: 20px 0px !important;
+            }
+
+            span{
+
+                img{
+                    max-height: initial !important;
+                }
+            }
+        
+        }
+    }
+}
+
+@media (max-width: 420px) {
+
+    .SecuredBusinessLoan {
+        .homeSlider {
+
+            ::ng-deep {
+
+                .owl-dots {
+                    bottom: 33% !important;
+                    justify-content: center;
+                    margin-top: 0px;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 360px) {
+
+    .SecuredBusinessLoan {
+
+        .homeSlider {
+        
+                .silderSlide{
+        
+                    .silderText{
+                        transform: translate(0%, -60%) !important;
+        
+                    }
+                }
+
+                ::ng-deep {
+
+                    .owl-dots {
+                        bottom: 35% !important;
+                    }
+                }
+            }
+    }
+}
+
+@media (min-width: 576px) {
+
+    .forSMEComponent {
+
+        .SecuredBusinessLoan {
+    
+            .homeSlider {
+    
+                ::ng-deep{
+        
+                    .owl-dots {
+                        width: 540px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+
+    .forSMEComponent {
+
+        .SecuredBusinessLoan {
+    
+            .homeSlider {
+    
+                ::ng-deep{
+        
+                    .owl-dots {
+                        width: 960px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .forSMEComponent {
+
+        .SecuredBusinessLoan {
+    
+            .homeSlider {
+    
+                ::ng-deep{
+        
+                    .owl-dots {
+                        width: 996px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .forSMEComponent {
+
+        .SecuredBusinessLoan {
+    
+            .homeSlider {
+    
+                ::ng-deep{
+        
+                    .owl-dots {
+                        width: 996px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.BusinessLoanOption{
+    padding-top: 50px;
+    padding-bottom: 80px;
+
+    .businessText{
+
+        .content{
+            margin-bottom: 36px;
+            padding-right: 30px;
+
+            h2{
+                font-size: 40px;
+                color: var(--main1);
+                line-height: 44px;
+                font-weight: 700;
+                font-family: 'Be Vietnam Pro' !important;
+                margin-bottom: 9px;
+            }
+    
+            p{
+                color: #3F3F3F;
+                margin-bottom: 5px;
+                font-size: 18px;
+                font-weight: 500;
+                font-family: Poppins !important;
+            }
+        }
+
+        .iconBox{
+            text-decoration: none;
+            display: block;
+            border: 1px solid #E8E8E8;
+            border-radius: 10px;
+            background-color: #fff;
+            text-align: center;
+            padding: 18px 38px;
+            margin-bottom: 10px;
+
+            &:hover{
+                background-color: #C3E128;
+                box-shadow: 15px 15px 15px #0000001A;
+                transition: .5s;
+            }
+
+            span{
+                width: 50px;
+                height: 50px;
+                display: block;
+                margin: 0 auto;
+                margin-bottom: 17px;
+
+                img{
+                    width: 50px;
+                    height: 50px;
+                    object-fit: initial;
+                }
+            }
+
+            h3{
+                font-size: 14px;
+                color: #3F3F3F;
+                font-family: Poppins !important;
+                line-height: 16px;
+                margin-bottom: 0px;
+            }
+
+            .btnArrow{
+                margin-top: 12px !important;
+                width: 28px;
+                height: 28px;
+                border: 2px solid var(--main1);
+                display: flex;
+                border-radius: 50%;
+                text-decoration: none;
+                margin: 0 auto;
+                align-items: center;
+                justify-content: center;
+                color: var(--main1);
+            }
+        }
+
+        .ButtonNow{
+            justify-content: start;
+            margin-top: 30px;
+
+            a{
+                background-color: var(--main1);
+            }
+        }
+    }
+
+    .businessImg{
+        height: 100%;
+        padding-left: 30px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+}
+
+.paddingSpace{
+    padding: 0px 5px;
+}
+
+
+@media (max-width: 767px){
+
+    .BusinessLoanOption{
+        padding-bottom: 70px;
+    
+        .businessText{
+    
+            .content{
+                margin-bottom: 20px;
+                padding-right: 0px;
+    
+                h2{
+                    font-size: 24px;
+                    line-height: 30px;;
+                }
+        
+                p{
+                    font-size: 14px;
+                }
+            }
+    
+            .iconBox{
+                padding: 10px 20px;
+    
+                h3{
+                    font-weight: 500;
+                    min-height: 30px;
+                }
+            }
+    
+            .ButtonNow{
+                justify-content: center;
+            }
+        }
+    
+        .businessImg{
+            padding-left: 0px;
+            margin-bottom: 30px;
+        }
+    
+    }
+
+    .paddingSpace{
+        padding: 0px 5px;
+    }
+}

@@ -10,13 +10,13 @@ import { StorageService } from '../services/storage.service';
 })
 export class AuthGuard implements CanActivate {
   private readonly pageUrls: string[] = [
-    "/plans",
-    "/payment",
-    "/otp",
-    "/form2",
-    "/form1",
-    "/selection",
-    "/pricing",
+    "/pages/plans",
+    "/pages/payment",
+    "/pages/otp",
+    "/pages/form2",
+    "/pages/form1",
+    "/pages/selection",
+    "/pages/pricing",
   ];
 
   constructor(private router: Router) {}

@@ -1,1 +1,403 @@
-<p>landing-page works!</p>
+<div class="forSMEComponent" *ngIf="isBrowser">
+    <!--  SecuredBusinessLoan section  -->
+    <div class="SecuredBusinessLoan" *ngIf="SecuredProductBannerData && SecuredProductBannerData.length > 0">
+      <div class="container-fluid p-0">
+        <div class="homeSlider">
+          <div class="silderSlide">
+            <img *ngIf="showDesktop" class="image mhidden" [lazyLoad]="SecuredProductBannerData[1]?.Background?.Desktop"
+              [alt]="SecuredProductBannerData[1]?.Background?.imageText" />
+            <img *ngIf="!showDesktop" class="image dhidden" [lazyLoad]="SecuredProductBannerData[1]?.Background?.Mobile"
+              [alt]="SecuredProductBannerData[1]?.Background?.imageText" />
+            <div class="silderText mobileResponsive">
+              <div class="container">
+                <div class="row align-items-center">
+                  <div class="col-md-6">
+                    <div class="title shineTitle">
+                      <p class="mainHeading">
+                        Welcome to Shine
+                      </p>
+                      <p style="color: var(--main2);">
+                        Elevate your credit profile with SHINE!
+                      </p>
+                      <p>
+                        We analyse your credit profile
+                        <span>
+                          Custom-make portfolio strategies
+                        </span>
+                        <span>
+                          Offer actionable steps to improve
+                        </span>
+                      </p>
+                      <p>Trust us to guide you effortlessly towards your dream business loan.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="getStartButtonBanner">
+                      <button class="btn">Get Started!</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!--  Process section  -->
+    <div class="Process">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="numberCount">
+              <h3>How we assist in enhancing your credit portfolio
+              </h3>
+              <p> We analyze your profile the way a lender would, identifying areas to
+                strengthen it</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!--  Key_Stats section  -->
+    <div class="Key_Stats_Section mhidden" *ngIf="showDesktop">
+      <div class="container">
+        <div class="row">
+          <div class="borderStyle">
+            <div class="row mobilePd">
+              <div class="col-md-4 rightBorderNone">
+                <div class="boxBanking">
+                  <div class="conutHappy">
+                    <span>
+                      <img class="logoImg" src="./assets//images/shine/Bureau.png" />
+                    </span>
+                    <div class="happy">
+                      <h3>Bureau</h3>
+                    </div>
+                  </div>
+                  <p class="mb-2"> Your bureau score is a sign of your creditworthiness. It is determined by RBI
+                    authorized bureaus like Experian, reflecting your credit history. A higher score enhances
+                    loan approval chances at competitive rates.</p>
+                  <p> Gain insights and steps to strengthen your score for your aspirational funding</p>
+                </div>
+              </div>
+              <div class="col-md-4 rightBorderNone">
+                <div class="boxBanking">
+                  <div class="conutHappy">
+                    <span>
+                      <img class="logoImg" src="./assets//images/shine/Banking.png" />
+                    </span>
+                    <div class="happy">
+                      <h3>Banking</h3>
+                    </div>
+                  </div>
+                  <p class="mb-2">Your banking history reflects how you manage money, crucial for loans. Timely
+                    payments and financial stability improve loan chances and terms, while issues like late
+                    payments make borrowing harder.</p>
+                  <p>Dive into your banking history with us for insights and guidance on improving your
+                    standing as a reliable borrower.</p>
+                </div>
+              </div>
+              <div class="col-md-4 rightBorderNone">
+                <div class="boxBanking">
+                  <div class="conutHappy">
+                    <span>
+                      <img class="logoImg" src="./assets//images/shine/GST.png" />
+                    </span>
+                    <div class="happy">
+                      <h3>GST</h3>
+                    </div>
+                  </div>
+                  <p class="mb-2">Your GST filing history is your business&#39;s tax report card; consistency and accuracy
+                    demonstrate financial responsibility. Keep filings clean to maintain reliability, impacting
+                    lenders&#39; risk assessment..</p>
+                  <p> We review statutory compliance to offer insights and improve financial health for better
+                    loan opportunities.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="Key_Stats_Section dhidden" *ngIf="!showDesktop">
+      <div class="container">
+        <div class="row">
+          <div class="borderStyle">
+            <div class="row mobilePd">
+              <owl-carousel-o [options]="customOptionKeys">
+                <ng-container>
+                  <ng-template carouselSlide>
+                    <div class="rightBorderNone">
+                      <div class="boxBanking">
+                        <div class="conutHappy">
+                          <span>
+                            <img class="logoImg" src="./assets//images/shine/Bureau.png" />
+                          </span>
+                          <div class="happy">
+                            <h3>Bureau</h3>
+                          </div>
+                        </div>
+                        <p class="mb-2"> Your bureau score is a sign of your creditworthiness. It is determined by RBI
+                          authorized bureaus like Experian, reflecting your credit history. A higher score enhances
+                          loan approval chances at competitive rates.</p>
+                        <p> Gain insights and steps to strengthen your score for your aspirational funding</p>
+                      </div>
+                    </div>
+                  </ng-template>
+                  <ng-template carouselSlide>
+                    <div class="rightBorderNone">
+                      <div class="boxBanking">
+                        <div class="conutHappy">
+                          <span>
+                            <img class="logoImg" src="./assets//images/shine/Banking.png" />
+                          </span>
+                          <div class="happy">
+                            <h3>Banking</h3>
+                          </div>
+                        </div>
+                        <p class="mb-2">Your banking history reflects how you manage money, crucial for loans. Timely
+                          payments and financial stability improve loan chances and terms, while issues like late
+                          payments make borrowing harder.</p>
+                        <p>Dive into your banking history with us for insights and guidance on improving your
+                          standing as a reliable borrower.</p>
+                      </div>
+                    </div>
+                  </ng-template>
+                  <ng-template carouselSlide>
+                    <div class="rightBorderNone">
+                      <div class="boxBanking">
+                        <div class="conutHappy">
+                          <span>
+                            <img class="logoImg" src="./assets//images/shine/GST.png" />
+                          </span>
+                          <div class="happy">
+                            <h3>GST</h3>
+                          </div>
+                        </div>
+                        <p class="mb-2">Your GST filing history is your business&#39;s tax report card; consistency and
+                          accuracy
+                          demonstrate financial responsibility. Keep filings clean to maintain reliability, impacting
+                          lenders&#39; risk assessment..</p>
+                        <p> We review statutory compliance to offer insights and improve financial health for better
+                          loan opportunities.</p>
+                      </div>
+                    </div>
+                  </ng-template>
+                </ng-container>
+              </owl-carousel-o>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+    <!--  Process section  -->
+    <div class="Process">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="numberCount">
+              <h3>Let SHINE be your guiding light to take your business to new heights.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="HelpSection position-relative">
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-12 orderCS mobile0">
+            <div class="howhelptext">
+              <!-- <h2 class="mhidden"> How We'll Help You</h2> -->
+  
+              <owl-carousel-o [options]="customOptions4">
+                <ng-container>
+                  <ng-template carouselSlide>
+                    <div class="row align-items-center">
+                      <div class="col-lg-5">
+                        <div class="HelpBox boxHeight">
+                          <p>Receive personalized tips to elevate your overall credit profile, paving the
+                            path to your ultimate loan requirements.</p>
+                        </div>
+                      </div>
+                      <div class="col-lg-7">
+                        <div class="helpVideoSection">
+                          <img src="./assets/images/shine/Group_2702.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+                  <ng-template carouselSlide>
+                    <div class="row align-items-center">
+                      <div class="col-lg-5">
+                        <div class="HelpBox boxHeight">
+                          <p>Receive personalized tips to elevate your overall credit profile, paving the
+                            path to your ultimate loan requirements.</p>
+                        </div>
+                      </div>
+                      <div class="col-lg-7">
+                        <div class="helpVideoSection">
+                          <img src="./assets/images/shine/Group_3013.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+                </ng-container>
+              </owl-carousel-o>
+              <div class="ButtonNow" *ngIf="router.url !== '/global'">
+                <a>Get Started!</a>
+              </div>
+              <img class="designImg mhidden" lazyLoad="./assets/images/homeImage/HelpYouBackground.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="FeaturesSection">
+      <div class="container">
+        <div class="row mobilePd">
+          <div class="col-lg-12">
+            <div class="headingTop">
+              <h2>Features</h2>
+              <p>Delve into the features, tailored for you</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+    <div class="BusinessLoanOption">
+      <div class="container">
+        <div class="row mobilePd">
+          <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 mb-3">
+            <div class="businessText">
+              <div class="businessImg dhidden">
+                <img src="./assets/images/shine/loan_options_mobile.webp" alt="">
+              </div>
+              <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                  <a class="iconBox">
+                    <h3>Bureau Score</h3>
+                  </a>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                  <a class="iconBox">
+                    <h3>Loan Repayment History</h3>
+                  </a>
+                </div>
+  
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                  <a class="iconBox">
+                    <h3>GST Filings History</h3>
+                  </a>
+                </div>
+  
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                  <a class="iconBox">
+                    <h3>Current Debt Analysis</h3>
+                  </a>
+                </div>
+  
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                  <a class="iconBox">
+                    <h3>Business Credit Amount</h3>
+                  </a>
+                </div>
+  
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                  <a class="iconBox">
+                    <h3>Business Credit Count</h3>
+                  </a>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                  <a class="iconBox">
+                    <h3>Average Monthly Balance</h3>
+                  </a>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                  <a class="iconBox">
+                    <h3>Debt-To-Turnover Ratio</h3>
+                  </a>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                  <a class="iconBox">
+                    <h3>Cheque Bounces</h3>
+                  </a>
+                </div>
+  
+  
+                <!-- <div class="ButtonNow">
+                  <a>Check Eligibility <mat-icon>keyboard_arrow_right</mat-icon></a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 mb-3 mhidden">
+            <div class="businessImg">
+              <img src="./assets/images/shine/loan_options_desktop.webp" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!--  Process section  -->
+    <div class="Process">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="numberCount">
+              <h3>Ready to Excel?
+              </h3>
+              <p>Let our analysis unveil the actionable steps to elevate your credit
+                performance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!--  Process section  -->
+  
+  
+    <div class="noteSilders">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-12 col-sm-12 m-auto">
+            <div class="noteSilderBox">
+              <owl-carousel-o [options]="customOptions">
+                <ng-container>
+                  <ng-template carouselSlide>
+                    <div class="box">
+                      <img src="./assets/images/shine/Fold5Screenshot1.png" alt="">
+                    </div>
+                  </ng-template>
+                  <ng-template carouselSlide>
+                    <div class="box">
+                      <img src="./assets/images/shine/Fold5Screenshot2.png" alt="">
+                    </div>
+                  </ng-template>
+                  <ng-template carouselSlide>
+                    <div class="box">
+                      <img src="./assets/images/shine/Fold5Screenshot3.png" alt="">
+                    </div>
+                  </ng-template>
+                </ng-container>
+              </owl-carousel-o>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- <app-testimonial [testimonialData]="Sme_Testimonial"></app-testimonial> -->
+  
+  
+  </div>

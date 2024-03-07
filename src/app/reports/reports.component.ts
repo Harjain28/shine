@@ -30,6 +30,7 @@ export class ReportsComponent {
   private histogramChart!: Chart; 
   private donutChart!: Chart;
   private mcc!: Chart;
+ private semiDoughnutChart!: Chart;
 
 
 
@@ -49,6 +50,42 @@ export class ReportsComponent {
     this.mixedColorBarChart();
 
   }
+
+  private createSemiDoughnutChart(): void {
+    const dataValues = [50,40]; // Example data values
+    const labels = ['A']; // Example labels
+    const backgroundColors = [ '#12BA9B','#FFD700']
+    // Example background colors
+  
+    const chartData: ChartData = {
+      labels: labels,
+      datasets: [{
+        data: dataValues,
+        backgroundColor: backgroundColors,
+      }]
+    };
+  
+    this.semiDoughnutChart = new Chart(this.semiDoughnutCanvas.nativeElement, {
+      type: 'doughnut',
+      data: chartData,
+      options: {
+        cutout: '80%',
+        rotation: 85 * Math.PI,
+        circumference: 59 * Math.PI,
+        plugins: {
+          legend: {
+            display: false
+          },
+          title: {
+            display: true,
+            text: 'Semi-Doughnut Chart'
+          }
+        }
+      }as any
+    });
+   
+  }
+  
 
   private mixedChart(): void{
     const dataValues = [200000, 450000, 670000, 820000, 1100000]; // Example data values
@@ -168,30 +205,7 @@ export class ReportsComponent {
     });
   }
 
-  private createSemiDoughnutChart(): void {
-    const value = 50; // Example value for the semi-doughnut
-    const chartData = {
-      datasets: [{
-        data: [value, 100 - value], // Two values for the semi-doughnut
-        backgroundColor: ['blue', 'red'] // Color for the semi-doughnut and empty space
-      }]
-    };
-  
-    new Chart(this.semiDoughnutCanvas.nativeElement, {
-      type: 'doughnut',
-      data: chartData,
-      options: {
-        cutout: '80%', // Adjust the size of the semi-doughnut hole
-        rotation: 1 * Math.PI, // Rotate the semi-doughnut to start from the top
-        circumference: 1 * Math.PI, // Limit the semi-doughnut to a semi-circle
-        plugins: {
-          legend: {
-            display: true // Hide the legend
-          }
-        }
-      }
-    });
-  }
+
   
   
   
@@ -239,7 +253,7 @@ export class ReportsComponent {
         scales: {
           y: {
             beginAtZero: true, 
-            reverse: true 
+             
           }
         }
       }
