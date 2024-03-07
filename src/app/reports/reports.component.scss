@@ -808,4 +808,112 @@
         }
     }
 
+    .businessTurnover{
+      box-shadow: 0px 3px 10px #272D3B24;
+      border-radius: 20px;
+      padding: 30px 24px 24px;
+
+      h3{
+        font-size: 18px;
+        color: #3F3F3F;
+        margin-bottom: 8px;
+        font-weight: 600;
+        line-height: 22px;
+        font-family: Poppins !important;
+        text-align: center;
+      }
+
+      p{
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 12px;
+        font-family: Poppins !important;
+        color: #3F3F3F;
+        line-height: 25px;
+        text-align: center;
+        padding: 0px 40px;
+      }
+
+      .chart{
+        margin-bottom: 12px;
+
+        canvas{
+          width: 50% !important;
+          height: 296px !important;
+        }
+      }
+
+      .chequeBounces{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        margin-top: -20px;
+
+          span {
+            font-size: 50px;
+            font-weight: 500;
+            line-height: 26px;
+            color: #FF7B24;
+            font-family: Poppins !important;
+            
+            small{
+              font-size: 12px;
+            }
+        }
+
+        img{
+          width: 110px;
+          height: auto;
+        }
+      }
+
+      .downwardBox{
+        border: 1px solid #6A2FC2;
+        border-radius: 10px;
+        padding: 12px 22px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+
+        img{
+          width: 16px;
+          height: 16px;
+        }
+
+        .downwardContent{
+
+          h4{
+            font-size: 14px;
+            color: var(--main1);
+            margin-bottom: 2px;
+            font-weight: 600;
+            line-height: 18px;
+            font-family: Poppins !important;
+          }
+
+          p{
+            font-size: 13px;
+            font-weight: normal;
+            margin-bottom: 4px;
+            font-family: Poppins !important;
+            color: #3F3F3F;
+            line-height: 16px;
+            text-align: left;
+            padding: 0px 0px;
+          }
+
+          span{
+            display: flex;
+            align-items: flex-start;
+            gap: 3px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: Poppins !important;
+            color: var(--main2);
+          }
+        }
+      }
+    }
+
 }
