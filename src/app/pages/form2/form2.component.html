@@ -1,1 +1,114 @@
-<p>form2 works!</p>
+
+<div class="priceSection section_padding">
+    <div class="container">
+
+        <div class="features">
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 m-auto">
+                <p class="pb-3">Update your details so we can start our customized assessment of your profile!</p>
+                <div class = "personalDetailBox">
+
+                    <p class="text-center mb-3 text-white">Almost there!</p>
+
+
+                    <div class = "formMainBox">
+                        <form (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1>
+                                        Business Details
+                                    </h1>
+                                    <p>Enter your information to update your business details</p>
+                                </div>
+                               
+        
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="PersonalPan"><strong>Personal PAN</strong></label>
+                                        <input type="text" id="PersonalPan" name="PersonalPan" placeholder="Enter your PAN number" class="form-control" [(ngModel)]="user.PersonalPan" required>
+                                      </div>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="BusinessPan"><strong>Busines PAN</strong></label>
+                                        <input type="text" id="BusinessPan" name="mobilBusinessPaneNumber" placeholder="Enter your PAN number" class="form-control" [(ngModel)]="user.BusinessPan" required>
+                                      </div>
+                                </div>
+
+                               
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="BusinessConstitution"><strong>Business Constitution</strong></label>
+                                        <select class="form-select">
+                                            <option value="1">
+                                                Select
+                                            </option>
+                                            <option value="2">
+                                                Selec2
+                                            </option>
+
+                                            <option value="3">
+                                                Select3
+                                            </option>
+                                        </select>
+                                      </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="upload">
+                                        <label ><strong>12 months Bank Statement</strong></label>
+
+                                        <a class= "btn" href="" >     
+                                            
+                                            <mat-icon >link</mat-icon> Open External Wbsite</a>
+                                        <a class= "btn" href=""><strong>Upload from Protean</strong></a>
+
+                                        <a class= "btn" href=""><strong>Upload from Device</strong></a>
+
+                                        
+                                    </div>
+                                </div>
+        
+                            </div>
+                           
+                            
+                          </form>
+                          
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <div class="next_backButton">
+                            <button class="btn btn-success" type="submit">Register</button>
+
+                          </div>
+                    </div>
+
+                   
+
+                    <div class="Note" >By logging in, you agree to the following<br>
+                        <a href="https://ce-static-media.s3.ap-south-1.amazonaws.com/files/CreditEnable_TnC_15112023.pdf" target="_blank" class="text-white">Term of
+                          Use</a>
+                          and <a href="https://ce-static-media.s3.ap-south-1.amazonaws.com/files/CreditEnable_Experian_Consent__15112023.pdf"
+                          target="_blank" class="text-white">Experian</a> T&C.</div>
+
+                          <div class="col-md-5 m-auto text-white">
+                            <hr>
+                          </div>
+
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+</div>
+</div>
+

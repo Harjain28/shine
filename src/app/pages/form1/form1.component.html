@@ -1,1 +1,75 @@
-<p>form1 works!</p>
+
+<div class="priceSection section_padding">
+    <div class="container">
+
+        <div class="features">
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 m-auto">
+                <p class="pb-3">Update your details so we can start our customized assessment of your profile!</p>
+                <div class = "personalDetailBox">
+
+                    <p class="text-center mb-4 pb-2 text-white">Please fill in the details below to complete your registration.</p>
+
+
+                    <div class = "formMainBox">
+                        <form (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1>
+                                        Personal Details
+                                    </h1>
+                                    <p>Enter your information to create an account</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="firstName"><strong>First name</strong></label>
+                                        <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" class="form-control" [(ngModel)]="user.firstName" required>
+                                      </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="lastName"><strong>Last name</strong></label>
+                                        <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" class="form-control" [(ngModel)]="user.lastName" required>
+                                      </div>
+                                </div>
+        
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="email"><strong>Email</strong></label>
+                                        <input type="email" id="email" name="email" placeholder="Enter your email" class="form-control" [(ngModel)]="user.email" required>
+                                      </div>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="mobileNumber"><strong>Mobile number</strong></label>
+                                        <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number" class="form-control" [(ngModel)]="user.mobileNumber" required>
+                                      </div>
+                                </div>
+        
+                                <div class="col-md-12">
+                                    <div class="next_backButton">
+                                        <a class="btn btn-secondary" routerLink="/previousStep">Back</a>
+                                        <button class="btn btn-primary" type="submit">Next</button>
+    
+                                      </div>
+                                </div>
+                            </div>
+                           
+                            
+                          </form>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+</div>
+</div>

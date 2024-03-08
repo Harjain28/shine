@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PagesComponent } from './pages/pages.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import { PagesComponent } from './pages/pages.component';
     AppRoutingModule,
     HeaderComponent,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    PagesComponent
+    PagesComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   providers: [],
   exports: [

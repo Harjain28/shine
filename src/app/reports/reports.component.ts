@@ -8,7 +8,7 @@ import { HeaderComponent } from '../shared/header/header.component';
 @Component({
   selector: 'app-reports',
   standalone: true,
-  imports: [CommonModule,HeaderComponent],
+  imports: [CommonModule],
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.scss']
 })

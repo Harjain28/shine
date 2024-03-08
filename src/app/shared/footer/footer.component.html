@@ -1,1 +1,183 @@
-<p>footer works!</p>
+
+
+<!-- for india -->
+<div class="FooterStart" *ngIf="isLoading && isBrowser &&  !urlService.isGlobal">
+    <div class="container">
+        <div class="footerTop">
+            <div class="row mobilePd">
+                <div class="col-xl-4 col-xl-4 col-md-6 col-sm-12 mb-4">
+                    <div class="footerMenu">
+                        <ul>
+          
+                            <li><a [routerLink]="['/in/business-loan-lenders-in-india']"    queryParamsHandling="preserve" >Lenders<mat-icon>keyboard_arrow_right</mat-icon></a></li>
+                            <li><a  [routerLink]="['/in/partners']"    queryParamsHandling="preserve" >Partnership<mat-icon>keyboard_arrow_right</mat-icon></a></li>
+                            <li><a  href="https://careers.creditenable.com/"    queryParamsHandling="preserve" >Careers<mat-icon>keyboard_arrow_right</mat-icon></a></li>
+                            <li><a href="assets/images/pdf/CreditEnable_Privacy_Policy_2023.pdf" target="_blank">Privacy Policy<mat-icon>keyboard_arrow_right</mat-icon></a></li>
+                            <li *ngIf = "router.url !== '/'"><a [routerLink]="['in/contact-us']"  queryParamsHandling="preserve" >Contact Us<mat-icon>keyboard_arrow_right</mat-icon></a></li>
+                            <li><a href="assets/images/pdf/CreditEnable_Terms_of_Use_2023.pdf" target="_blank">Terms and Conditions<mat-icon>keyboard_arrow_right</mat-icon></a></li>
+                            <li *ngIf = "router.url !== '/'"><a [routerLink]="['/']"    queryParamsHandling="preserve">CreditEnable Global<mat-icon>keyboard_arrow_right</mat-icon></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-xl-4 col-md-6 col-sm-12 mb-4">
+                    <div class="Address">
+                        <ul>
+                            <li><a href="tel:+91 84509 67207">+91 84509 67207</a></li>
+                            <li class="email"><a href="mailto:info@creditenable.com">info@creditenable.com</a></li>
+                            <li class="email"><a href="mailto:partner@creditenable.com">partner@creditenable.com</a></li>
+                        </ul>
+                        <p>C Wing, Office No. 3, HDIL Kaledonia, Level 1, Sahar Road, Andheri (E), Mumbai 400 069, India</p>
+                        <p class="mhidden">CIN: U74999MH2018FTC316688</p>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-xl-4 col-md-6 col-sm-12 mb-4 mhidden">
+                    <div class="AboutUs">
+                        <h3>About Us</h3>
+                        <p>CreditEnable is an award winning credit insights and technology company that applies proprietary data analytics, AI and technology to build solutions to the world’s biggest financial challenges.</p>
+                        <p>We are headquartered in the UK. Our India HQ is in Mumbai and we operate pan-India.</p>
+
+                        <img src="./assets/images/homeImage/footerstar.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footerlogo">    
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="logo_footer">
+                        <img src="./assets/images/homeIcon/forbes-logo.png" alt="">
+                        <img src="./assets/images/homeIcon/businessLine_logo.png" alt="">
+                        <img src="./assets/images/homeIcon/fintechInsiderLogo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyrightSection">  
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                    <div class="copyrightText">
+                        <p>© 2023 CreditEnable</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                    <div class="copyrightsocial">
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/CreditEnableIndia/" target="_blank">
+                                    <img src="./assets/images/homeIcon/facebookIcon.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="footerSocialBorder">
+                                <a href="https://www.linkedin.com/company/creditenable/" target="_blank">
+                                    <img src="./assets/images/homeIcon/LinkdinIcon.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="footerSocialBorder">
+                                <a href="https://twitter.com/CreditEnable/" target="_blank">
+                                    <img src="./assets/images/homeIcon/twitterIcon.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- For global  -->
+<div class="FooterStart" *ngIf="isLoading && isBrowser && urlService.isGlobal">
+    <div class="container">
+        <div class="footerTop">
+            <div class="row mobilePd">
+                <div class="col-xl-4 col-xl-4 col-md-6 col-sm-12 mb-4">
+                    <div class="footerMenu">
+                        <ul>
+                            <li><a [routerLink]="['/about-us']"  queryParamsHandling="preserve"  >About<mat-icon>keyboard_arrow_right</mat-icon></a></li>
+                            <li><a href="assets/images/pdf/CreditEnable_Privacy_Policy_2023.pdf" target="_blank">Privacy Policy<mat-icon>keyboard_arrow_right</mat-icon></a></li>
+                            <li><a [routerLink]="['/contact']"  queryParamsHandling="preserve" >Contact Us<mat-icon>keyboard_arrow_right</mat-icon></a></li>
+                            <li><a href="assets/images/pdf/CreditEnable_Terms_of_Use_2023.pdf" target="_blank">Terms and Conditions<mat-icon>keyboard_arrow_right</mat-icon></a></li>
+                            <li><a [routerLink]="['/in']"    queryParamsHandling="preserve">CreditEnable India<mat-icon>keyboard_arrow_right</mat-icon></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-xl-4 col-md-6 col-sm-12 mb-4">
+                    <div class="Address">
+                        <ul>
+                            <li><a href="tel:+44 (0)203 745 3371
+                                ">+44 (0)203 745 3371
+                            </a></li>
+                            <li class="email"><a href="mailto:info@creditenable.com">info@creditenable.com</a></li>
+                        </ul>
+                        <p>85 Great Portland Street, 1st Floor, London, W1W 7LT</p>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-xl-4 col-md-6 col-sm-12 mb-4 mhidden">
+                    <div class="AboutUs">
+                        <h3>About Us</h3>
+                        <p>CreditEnable is an award winning credit insights and technology company that applies proprietary data analytics, AI and technology to build solutions to the world’s biggest financial challenges.</p>
+                        <p>We are headquartered in the UK. Our India HQ is in Mumbai and we operate pan-India.</p>
+
+                        <img src="./assets/images/homeImage/footerstar.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footerlogo">    
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="logo_footer">
+                        <img src="./assets/images/homeIcon/forbes-logo.png" alt="">
+                        <img src="./assets/images/homeIcon/businessLine_logo.png" alt="">
+                        <img src="./assets/images/homeIcon/fintechInsiderLogo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyrightSection">  
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                    <div class="copyrightText">
+                        <p>© 2023 CreditEnable</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                    <div class="copyrightsocial">
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/CreditEnableIndia/" target="_blank">
+                                    <img src="./assets/images/homeIcon/facebookIcon.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="footerSocialBorder">
+                                <a href="https://www.linkedin.com/company/creditenable/" target="_blank">
+                                    <img src="./assets/images/homeIcon/LinkdinIcon.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="footerSocialBorder">
+                                <a href="https://twitter.com/CreditEnable/" target="_blank">
+                                    <img src="./assets/images/homeIcon/twitterIcon.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

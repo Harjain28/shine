@@ -7,7 +7,7 @@ import { HeaderComponent } from 'src/app/shared/header/header.component';
 @Component({
   selector: 'app-subscribtion-plan',
   standalone: true,
-  imports: [CommonModule,MatButtonModule, MatCardModule,HeaderComponent],
+  imports: [CommonModule,MatButtonModule, MatCardModule],
   templateUrl: './subscribtion-plan.component.html',
   styleUrls: ['./subscribtion-plan.component.scss']
 })

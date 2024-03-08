@@ -106,6 +106,33 @@ mat-card-content {
     padding: 0;
 }
 
+.toggleBtn li button {
+    border: 1px solid #dedede;
+    background: transparent;
+    font-size: 14px;
+    padding: 8px 30px;
+    font-weight: 600;
+
+    &.active{
+        background-color: #d4d4d4;
+
+    }
+}
+.toggleBtn{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.toggleBtn li{
+    list-style: none;
+    padding: 0px;
+}
+
+
 ul {
     list-style-type: none;
     padding-left: 12px;

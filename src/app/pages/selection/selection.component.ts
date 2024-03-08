@@ -5,7 +5,7 @@ import { HeaderComponent } from 'src/app/shared/header/header.component';
 @Component({
   selector: 'app-selection',
   standalone: true,
-  imports: [CommonModule,HeaderComponent],
+  imports: [CommonModule],
   templateUrl: './selection.component.html',
   styleUrls: ['./selection.component.scss']
 })
