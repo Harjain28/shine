@@ -2,9 +2,9 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Chart, { ChartData } from 'chart.js/auto';
 import { HeaderComponent } from '../shared/header/header.component';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 
@@ -17,9 +17,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 })
 export class ReportsComponent {
   @ViewChild('chartCanvas') chartCanvas!: ElementRef;
+  @ViewChild('chartCanvas2') chartCanvas2!: ElementRef;
+  @ViewChild('chartCanvas3') chartCanvas3!: ElementRef;
+
   @ViewChild('pieChartCanvas') pieChartCanvas!: ElementRef; 
   @ViewChild('histogramCanvas') histogramCanvas!: ElementRef; 
-  @ViewChild('donutChartCanvas') donutChartCanvas!: ElementRef;
+  @ViewChild('donut') donut!: ElementRef;
   @ViewChild('gaugeCanvas') gaugeCanvas!: ElementRef;
   @ViewChild('semiDoughnutCanvas') semiDoughnutCanvas!: ElementRef;
   @ViewChild('mccCanvas') mccCanvas!: ElementRef;
@@ -29,6 +32,9 @@ export class ReportsComponent {
 
 
   private chart!: Chart;
+  private chart2!:Chart;
+  private chart3!:Chart;
+
   private pieChart!: Chart;
   private histogramChart!: Chart; 
   private donutChart!: Chart;
@@ -50,7 +56,6 @@ export class ReportsComponent {
     this.createHistogramChart();
     this.createDonutChart();
     this.createSemiDoughnutChart();
-    this.mixedColorBarChart();
 
   }
 
@@ -61,7 +66,7 @@ export class ReportsComponent {
     // Example background colors
   
     const chartData: ChartData = {
-      labels: labels,
+    //  labels: labels,
       datasets: [{
         data: dataValues,
         backgroundColor: backgroundColors,
@@ -91,8 +96,14 @@ export class ReportsComponent {
   
 
   private mixedChart(): void{
-    const dataValues = [200000, 450000, 670000, 820000, 1100000]; // Example data values
+    const dataValues = [ 200000, 1100000, 670000, 300000, 200000 ]; 
+    const dataValues2 = [ 1100000, 820000, 670000, 450000, 200000 ]; 
+
     const backgroundColors = dataValues.map(value => this.getColor(value));
+    const backgroundColors2 = dataValues2.map(value => this.getColor(value));
+
+    const backgroundColorsMixed = dataValues2.map(value => this.getMixedColor(value));
+
   
     // Increase line length by extending the x-axis values
   
@@ -136,28 +147,8 @@ export class ReportsComponent {
         
       }]
     };
-  
-    this.chart = new Chart(this.chartCanvas.nativeElement, {
-      type: 'bar',
-      data: chartData1,
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        },
-       
-      }
-    });
-  }
 
-  private mixedColorBarChart(): void{
-    const dataValues = [200000, 400000, 600000, 800000, 1100000]; // Example data values
-    const backgroundColors = dataValues.map(value => this.getMixedColor(value));
-  
-    // Increase line length by extending the x-axis values
-  
-    const chartData: ChartData = {
+    const chartData2: ChartData = {
       labels: ['Jan', 'Feb', 'Mar', 'Apr'],
       datasets: [ {
         // label: 'Horizontal Line Dataset',
@@ -175,7 +166,8 @@ export class ReportsComponent {
         borderColor: 'yellow',
         borderWidth: 1,
         fill: false,
-        pointStyle:"line"    
+        pointStyle:"line"
+        
       },{
         // label: 'Horizontal Line Dataset',
         type: 'line',
@@ -184,19 +176,90 @@ export class ReportsComponent {
         borderWidth: 1,
         fill: false,
         pointStyle:"line"
+
+        
+        
       },{
         // label: 'Bar Dataset',
         type: 'bar',
-        data: dataValues,
-        backgroundColor: backgroundColors,
+        data: dataValues2,
+        backgroundColor: backgroundColorsMixed,
         borderWidth: 1,
         
       }]
     };
+
+    const chartData3: ChartData = {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr'],
+      datasets: [ {
+        // label: 'Horizontal Line Dataset',
+        type: 'line',
+        data: [{ x: 0, y: 1500000 }, { x: 8, y: 1500000 },{ x: 0, y: 1500000 }, { x: 8, y: 1500000 },{ x: 0, y: 1500000 }, { x: 8, y: 1500000 }],
+        borderColor: 'green',
+        borderWidth: 1,
+        fill: false,
+        pointStyle:"line"
+      },
+      {
+        // label: 'Horizontal Line Dataset',
+        type: 'line',
+        data: [{ x: 0, y: 600000 }, { x: 8, y: 600000 },{ x: 0, y: 600000 }, { x: 8, y: 600000 },{ x: 0, y: 600000 }, { x: 8, y: 600000 }], 
+        borderColor: 'yellow',
+        borderWidth: 1,
+        fill: false,
+        pointStyle:"line"
+        
+      },{
+        // label: 'Horizontal Line Dataset',
+        type: 'line',
+        data: [{ x: 0, y: 800000 }, { x: 8, y: 800000 },{ x: 0, y: 800000 }, { x: 8, y: 800000 },{ x: 0, y: 800000 }, { x: 8, y: 800000 }], 
+        borderColor: 'red',
+        borderWidth: 1,
+        fill: false,
+        pointStyle:"line"
+
+        
+        
+      },{
+        // label: 'Bar Dataset',
+        type: 'bar',
+        data: dataValues2,
+        backgroundColor: backgroundColors2,
+        borderWidth: 1,
+        
+      }]
+    };
+   
   
-    this.mcc = new Chart(this.mccCanvas.nativeElement, {
+    this.chart = new Chart(this.chartCanvas.nativeElement, {
       type: 'bar',
-      data: chartData,
+      data: chartData1,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+       
+      }
+    });
+
+    this.chart2 = new Chart(this.chartCanvas2.nativeElement, {
+      type: 'bar',
+      data: chartData2,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+       
+      }
+    });
+
+    this.chart3 = new Chart(this.chartCanvas3.nativeElement, {
+      type: 'bar',
+      data: chartData3,
       options: {
         scales: {
           y: {
@@ -207,6 +270,8 @@ export class ReportsComponent {
       }
     });
   }
+
+
 
 
   
@@ -220,14 +285,14 @@ export class ReportsComponent {
 
    
     const donutChartData: ChartData = {
-      // labels: donutLabels,
+      // labels: labels,
       datasets: [{
         data: donutDataValues,
         backgroundColor: donutColors
       }]
     };
 
-    this.donutChart = new Chart(this.donutChartCanvas.nativeElement, {
+    this.donutChart = new Chart(this.donut.nativeElement, {
       type: 'doughnut',
       data: donutChartData
     });
@@ -303,9 +368,9 @@ export class ReportsComponent {
 
   private getColor(value: number): string {
     if(value > 1000000){
-      return '#12BA9B'
+      return '#400993'
     }
-    else if (value >= 800000 && value <= 1000000) {
+    else if (value >= 800000 && value < 1000000) {
       return '#6A2FC2'; 
     } else if (value >= 600000 && value < 800000) {
       return '#A070E8'; 

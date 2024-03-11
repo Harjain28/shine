@@ -52,7 +52,8 @@
         <div class="scoreBox">
           <h3>Your Bureau Score</h3>
           <div class="scoreChart text-center">
-            <img src="./assets/LandingPage/scoreChart.png" alt="">
+            <canvas #semiDoughnutCanvas></canvas>
+
           </div>
           <div class="buttonJob">
             <button class="btn">Your Bureau Score</button>
@@ -128,7 +129,9 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="creditContent">
                 <div class="currentChart">
-                  <img src="./assets/LandingPage/currentChart.svg" alt="">
+
+                  <canvas #donut></canvas>
+
 
                   <ul>
                     <li>
@@ -316,6 +319,8 @@
 
           <div class="chart">
             <canvas #chartCanvas></canvas>
+
+            <canvas #chartCanvas3></canvas>
             <!-- <canvas #chartCanvas ></canvas> -->
           </div>
           <p>Lorem Ipsum is simply dummy text of the printin Lorem Ipsum is simply dummy text of the printin</p>
@@ -339,7 +344,7 @@
           <p>Lorem Ipsum is simply dummy text of the printin</p>
 
           <div class="chart">
-            <canvas #chartCanvas></canvas>
+            <canvas #chartCanvas2></canvas>
           </div>
 
           <div class="downwardBox">
@@ -373,7 +378,7 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="chart">
-                <img src="./assets/LandingPage/chartRound.svg" alt="">
+                <canvas #pieChartCanvas></canvas>
 
                 <ul>
                   <li>
@@ -458,7 +463,7 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="chart">
-                <img src="./assets/LandingPage/colorchart.svg" alt="">
+                                  <canvas #histogramCanvas></canvas>
 
                 <ul class="d-flex gap-5 mt-4 justify-content-center">
                   <li>
