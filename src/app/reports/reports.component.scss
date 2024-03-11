@@ -109,6 +109,16 @@
             text-align: center;
         }
 
+        .scoreChart{
+            display: flex;
+            justify-content: center;
+
+            canvas{
+                width: 190px !important;
+                height: 190px !important;
+            }
+        }
+
         .buttonJob{
             margin-top: 20px;
             margin-bottom: 18px;
@@ -174,10 +184,16 @@
                 .currentChart{
                     display: flex;
                     align-items: center;
+                    margin-bottom: 20px;
 
                     img{
                         width: 130px;
                         height: 130px;
+                    }
+
+                    canvas{
+                        width: 130px !important;
+                        height: 130px !important;
                     }
 
                     ul{
@@ -837,10 +853,32 @@
 
       .chart{
         margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
 
         canvas{
-          width: 50% !important;
+          width: 44% !important;
           height: 296px !important;
+        }
+
+        &.chart1{
+            gap: 10px;
+
+            canvas{
+                width: 100% !important;
+            }
+        }
+
+        &.chart2{
+            display: flex;
+            justify-content: center;
+
+            canvas{
+                width: 220px !important;
+                height: 220px !important;
+            }
         }
 
         img{
