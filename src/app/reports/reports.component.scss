@@ -1228,6 +1228,134 @@
     }
 }
 
+.probabilityLoan{
+
+    .title{
+        text-align: center;
+        position: relative;
+        margin-bottom: 40px;
+
+        &:before{
+            left: 0px;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            content: "";
+            background-color: #efefef;
+            top: 20px;
+            z-index: -1;
+        }
+
+        h2{
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #3F3F3F;
+
+            span{
+                background-color: #fff;
+                padding: 0px 30px;
+            }
+        }
+
+        p{
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 0px;
+            font-family: Poppins !important;
+            color: #3F3F3F;
+            line-height: 25px;
+        }
+    }
+
+    .tableLoan{
+
+        table{
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            width: 100%;
+            padding: 0px 20px;
+
+            thead{
+                box-shadow: 0px 3px 10px #272D3B24;
+                border-radius: 10px;
+                background-color: #3f3f3f;
+                color: #fff;
+                font-size: 14px;
+                font-weight: 600;
+                font-family: Poppins !important;
+                
+                tr{
+
+                    th{
+                        height: 50px;
+                        padding: 0px 20px;
+                        min-width: 230px;
+                        text-align: center;
+                    }
+                }
+            }
+
+            tbody{
+
+                tr{
+                    box-shadow: 0px 3px 10px #00000024;
+                    border-radius: 20px;
+                    background-color: #fff;
+
+                    td{
+                        padding: 15px 30px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        font-family: Poppins !important;
+                        color: #3F3F3F;
+                        position: relative;
+
+                        .chartImg{
+                            position: absolute;
+                            top: 50%;
+                            transform: translate(0%, -50%);
+                            right: -10px;
+
+                            img{
+                                width: 60px;
+                            }
+                        }
+
+                        .logo{
+                            width: 130px;
+                            height: auto;
+                        }
+
+                        span{
+                            display: flex;
+                            font-weight: 400;
+                            gap: 12px;
+                            padding: 2px 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .moreAffers{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        button{
+            border: 2px solid var(--main1);
+            padding: 6px 28px;
+            border-radius: 50px;
+            color: var(--main1);
+            font-weight: 600;
+            font-size: 14px;
+            font-family: Poppins !important;
+        }
+    }
+}
+
 .faqsection{
     background-color: #fafafa;
 
@@ -1240,6 +1368,90 @@
             margin-bottom: 0px;
             color: #3F3F3F;
             text-align: center;       
+        }
+    }
+
+    .faqaccordion{
+
+        mat-accordion{
+
+            mat-expansion-panel{
+                box-shadow: none;
+                border-bottom: 1px solid #D1D1D1;
+                margin: 0px;
+                border-radius: 0px;
+                background-color: transparent;
+
+                mat-expansion-panel-header{
+                    padding: 12px 6px;
+                    height: auto;
+
+                    &:hover{
+                        background-color: transparent;
+                    }
+
+                    ::ng-deep{
+
+                        .mat-expansion-panel-header-title{
+
+                            h3{
+                                color: #666666;
+                                font-weight: 600;
+                                letter-spacing: 0.28px;
+                                font-size: 16px;
+                                font-family: 'Be Vietnam Pro' !important;
+                                margin-bottom: 0px;
+                            }
+                        }
+
+                        .mat-expansion-indicator{
+                            border-radius: 50px;
+                            background-color: #D1D1D1;
+                            width: 24px;
+                            height: 24px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            &:after{
+                                color: #fff;
+                                position: absolute;
+                                top: 6px;
+                            }
+                        }
+                    }
+
+                }
+
+                ::ng-deep{
+
+                    .mat-expansion-panel-body{
+                        padding: 0 6px 6px;
+
+                        p{
+                            color: #666666;
+                            font-size: 14px;
+                            margin-bottom: 0px;
+                            line-height: 22px;
+                            padding-bottom: 10px;
+                        }
+                    }
+                }
+            }
+
+            ::ng-deep{
+
+                .mat-expansion-panel-spacing{
+
+                    mat-expansion-panel-header{
+                        .mat-expansion-indicator{
+                            background-color: var(--main2) !important;
+                        }
+                    }
+
+                    
+                }
+            }
         }
     }
 }
