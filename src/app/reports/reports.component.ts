@@ -309,7 +309,8 @@ export class ReportsComponent {
         data: histogramDataValues,
         backgroundColor: backgroundColors, 
         borderColor: 'rgba(75, 192, 192, 1)', 
-        borderWidth: 1
+        borderWidth: 1,
+        
       }]
     };
   
@@ -318,11 +319,16 @@ export class ReportsComponent {
       data: histogramChartData,
       options: {
         indexAxis: 'x', 
+        
+        
         scales: {
           y: {
-            beginAtZero: true, 
-             
-          }
+            beginAtZero: true,
+            display: false
+          },
+          x: {
+            display: false
+          },  
         }
       }
     });
