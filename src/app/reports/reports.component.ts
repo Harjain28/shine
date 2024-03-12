@@ -5,13 +5,14 @@ import { HeaderComponent } from '../shared/header/header.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 
 @Component({
   selector: 'app-reports',
   standalone: true,
-  imports: [CommonModule,HeaderComponent,MatProgressBarModule,MatExpansionModule,MatFormFieldModule],
+  imports: [CommonModule,HeaderComponent,MatProgressBarModule,MatExpansionModule,MatFormFieldModule,MatCheckboxModule],
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.scss']
 })
