@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import Chart, { ChartData } from 'chart.js/auto';
+import Chart, { ChartData, ChartOptions } from 'chart.js/auto';
 import { HeaderComponent } from '../shared/header/header.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -235,19 +235,32 @@ export class ReportsComponent {
       type: 'bar',
       data: chartData1,
       options: {
+        plugins: {
+          legend: {
+            display: false // Set to false to hide the legend
+          }
+        },
         scales: {
           y: {
             beginAtZero: true
           }
         },
-       
-      }
+        legend: {
+          display: false // Hide the legend
+      },
+      // Other chart options
+  } as ChartOptions
     });
 
     this.chart2 = new Chart(this.chartCanvas2.nativeElement, {
       type: 'bar',
       data: chartData2,
       options: {
+        plugins: {
+          legend: {
+            display: false // Set to false to hide the legend
+          }
+        },
         scales: {
           y: {
             beginAtZero: true
@@ -261,6 +274,11 @@ export class ReportsComponent {
       type: 'bar',
       data: chartData3,
       options: {
+        plugins: {
+          legend: {
+            display: false // Set to false to hide the legend
+          }
+        },
         scales: {
           y: {
             beginAtZero: true
@@ -320,7 +338,12 @@ export class ReportsComponent {
       options: {
         indexAxis: 'x', 
         
-        
+        plugins: {
+          legend: {
+            display: false // Set to false to hide the legend
+          }
+        },
+
         scales: {
           y: {
             beginAtZero: true,
