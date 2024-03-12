@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import Chart, { ChartData, ChartOptions } from 'chart.js/auto';
+import Chart, { ChartData } from 'chart.js/auto';
 import { HeaderComponent } from '../shared/header/header.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -40,6 +40,7 @@ export class ReportsComponent {
   private donutChart!: Chart;
   private mcc!: Chart;
  private semiDoughnutChart!: Chart;
+  visibleOffers!: boolean;
 
 
 
@@ -245,11 +246,9 @@ export class ReportsComponent {
             beginAtZero: true
           }
         },
-        legend: {
-          display: false // Hide the legend
-      },
+        
       // Other chart options
-  } as ChartOptions
+  } 
     });
 
     this.chart2 = new Chart(this.chartCanvas2.nativeElement, {
@@ -426,6 +425,10 @@ export class ReportsComponent {
       // Default color if value does not fall into any range
       return '#EC1111'; // Black color (you can change it to any default color)
     }
+  }
+
+  moreOffers(){
+    this.visibleOffers = true;
   }
 
   
