@@ -44,6 +44,8 @@ export class ReportsComponent {
  private semiDoughnutChart!: Chart;
   visibleOffers!: boolean;
   expandSection!: boolean;
+  expandCurrentCreditSection!: boolean;
+  expandBlocks!: boolean;
 
 
 
@@ -64,11 +66,44 @@ export class ReportsComponent {
   }
 
   expand(){
-    this.expandSection = true;
+
+    if(this.expandCurrentCreditSection == true){
+      this.expandSection = true;
+    this.expandBlocks = true   
+       this.expandCurrentCreditSection = false;
+    }
+    else{
+      this.expandSection = true;
+    this.expandBlocks = true   
+    }
+
   }
 
   minimize(){
     this.expandSection = false;
+    this.expandBlocks = false;
+
+  }
+
+  expandCurrentCredit(){
+
+    if(this.expandSection == true){
+      this.expandSection = false;
+      this.expandCurrentCreditSection = true;
+    }
+    else{
+      this.expandCurrentCreditSection = true;
+      this.expandBlocks = true;
+
+    }
+  }
+
+
+  minimizeCurrentCredit(){
+
+    this.expandCurrentCreditSection = false;
+    this.expandBlocks = false;
+
 
   }
 
@@ -229,7 +264,11 @@ export class ReportsComponent {
         scales: {
           y: {
             beginAtZero: true,
-
+            ticks: {
+              callback: function(value: any, index: any, values: any) {
+                return value + ' L';
+              }
+            } as RadialTickOptions
            
           }
         },
@@ -249,7 +288,12 @@ export class ReportsComponent {
         },
         scales: {
           y: {
-            beginAtZero: true
+            beginAtZero: true,
+            ticks: {
+              callback: function(value: any, index: any, values: any) {
+                return value + ' L';
+              }
+            } as RadialTickOptions
           }
         },
        
@@ -268,7 +312,11 @@ export class ReportsComponent {
         scales: {
           y: {
             beginAtZero: true,
-
+            ticks: {
+              callback: function(value: any, index: any, values: any) {
+                return value + ' L';
+              }
+            } as RadialTickOptions
             
           }
         },

@@ -339,9 +339,9 @@
         </div>
       </div>
 
-      <div class="col-lg-8 col-md-8 col-sm-12 mb-4">
+      <div class="col-lg-8 col-md-8 col-sm-12 mb-4" *ngIf = "!expandCurrentCreditSection">
         <div class="loanHistory currentCredit">
-          <div class="plus">
+          <div class="plus" (click) = "expandCurrentCredit()">
             <span>+</span>
           </div>
           <h3 class="title">Current Credit/Debt Analysis</h3>
@@ -400,7 +400,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 mb-4" *ngIf = "!expandSection">
+      <div class="col-lg-4 col-md-4 col-sm-12 mb-4" *ngIf = "!expandBlocks">
         <div class="heightBox">
           <div class="row">
             <div class="col-lg-12 mb-4">
@@ -468,12 +468,12 @@
 
 
 <!-- Two-plus-Section Start -->
-<div class="creditReportSection section_padding">
+<div class="creditReportSection section_padding" >
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 mb-4">
+      <div class="col-lg-12 mb-4" *ngIf ="expandCurrentCreditSection">
         <div class="loanHistory">
-          <div class="minus">
+          <div class="minus" (click) = minimizeCurrentCredit()>
             <span>-</span>
           </div>
           <h3 class="title mb-2">Current Credit/Debt Analysis</h3>
@@ -654,84 +654,7 @@
       </div>
 
       <div class="row mt-4">
-        <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
-          <div class="scoreBox">
-            <h3>Your Bureau Score</h3>
-            <div class="scoreChart text-center">
-              <canvas #semiDoughnutCanvas></canvas>
-  
-            </div>
-            <div class="buttonJob">
-              <button class="btn">Your Bureau Score</button>
-            </div>
-            <p>Your bureau score plays a critical role in the assessments and it would be an important criteria
-              for your eligibility. A score above 700 is considered.</p>
-            <div class="box">
-              <img src="./assets/LandingPage/whiteInformation.svg" alt="">
-              <span>Have you thoroughly read your Experian Bureau report yet?</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-8 col-md-8 col-sm-12 mb-4">
-          <div class="loanHistory currentCredit">
-            <div class="plus">
-              <span>+</span>
-            </div>
-            <h3 class="title">Current Credit/Debt Analysis</h3>
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="creditContent">
-                  <div class="currentChart">
-  
-                    <canvas #donut></canvas>
-  
-  
-                    <ul>
-                      <li>
-                        <span style="border: 1px solid #12BA9B;"><span style="background-color: #12BA9B;"></span></span>
-                        Credit Card
-                      </li>
-                      <li>
-                        <span style="border: 1px solid #C3E128;"><span style="background-color: #C3E128;"></span></span>
-                        Gold Loan
-                      </li>
-                      <li>
-                        <span style="border: 1px solid #6A2FC2;"><span style="background-color: #6A2FC2;"></span></span>
-                        Housing Loan
-                      </li>
-                      <li>
-                        <span style="border: 1px solid #211261;"><span style="background-color: #211261;"></span></span>
-                        Personal Loan
-                      </li>
-                    </ul>
-                  </div>
-                  <p>Timely payments on existing EMIs tells the lender about your repayments discipline
-                    and is
-                    an important factor deciding your risk.</p>
-                </div>
-              </div>
-  
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="multiBox">
-                  <img src="./assets/LandingPage/whiteInformation.svg" alt="">
-                  <div class="textContent">
-                    <h3>Too Many Credit Cards!</h3>
-                    <p>Over-reliance on one type of credit (e.g., multiple high-balance credit cards),
-                      which could indicate potential financial stress. You seem to have no secured
-                      loan in the mix.
-                    </p>
-                    <p>
-                      <span style="color:#EC1111;">
-                        <mat-icon>warning</mat-icon>
-                        Needs Attention
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    
 
         <div class="col-lg-12 col-md-12 col-sm-12 mb-4">
           <div class="heightBox">
@@ -875,8 +798,8 @@
           <h3>Business Turnover & Credit Count</h3>
           <p>Lorem Ipsum is simply dummy text of the printin</p>
 
-          <div class="chart">
-            <canvas #chartCanvas></canvas>
+          <div class="chart chartLine">
+            <canvas #chartCanvas  ></canvas>
 
             <canvas #chartCanvas3></canvas>
           </div>
@@ -903,7 +826,7 @@
           <h3>Banking Balance</h3>
           <p>Lorem Ipsum is simply dummy text of the printin</p>
 
-          <div class="chart chart1">
+          <div class="chart chart1 chartLine">
             <canvas #chartCanvas2></canvas>
           </div>
 
