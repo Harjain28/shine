@@ -310,7 +310,7 @@
                 }
             }
 
-            ul{
+            .monthView{
                 padding-left: 0px;
                 list-style: none;
                 margin-bottom: 30px;
@@ -379,7 +379,7 @@
             }
 
             .defaultHistory{
-                padding: 24px;
+                padding: 18px 16px;
                 border: 1px solid #E8E8E8;
                 border-radius: 10px;
                 background-color: #fff;
@@ -414,8 +414,7 @@
                                 background: #fff;
                                 border-radius: 50px;
                                 position: absolute;
-                                top: 50%;
-                                transform: translate(0%, -50%);
+                                top: 10px;
                                 left: 0px;
                             }
                         }
@@ -457,6 +456,8 @@
                         justify-content: space-between;
                         padding: 4px 0px;
                         background: transparent;
+                        display: flex;
+                        align-items: center;
 
                         .NoColor{
                             border-radius: 5px;
@@ -669,6 +670,8 @@
                         list-style: none;
                         margin-bottom: 0px;
                         justify-content: flex-start;
+                        display: flex;
+                        flex-wrap: wrap;
 
                         li{
                             width: auto;
@@ -698,6 +701,55 @@
                     p{
                         text-align: left;
                         font-size: 13px;
+                    }
+                }
+            }
+
+            .summaryBox{
+                border: 1px solid #6A2FC2;
+                border-radius: 10px;
+                background: #FBF8FF;
+                padding: 18px 24px;
+
+                h4{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #3F3F3F;
+                    font-family: Poppins !important;
+                    margin-bottom: 8px;
+                }
+
+                .summaryContent {
+                    display: flex;
+                    align-items: center;
+                    gap: 30px;
+
+                    ul{
+                        padding-left: 0px;
+                        margin-bottom: 15px;
+                        list-style: none;
+
+                        li{
+                            position: relative;
+                            padding-left: 20px;
+                            font-size: 14px;
+                            font-weight: normal;
+                            margin-bottom: 0px;
+                            font-family: Poppins !important;
+                            color: #3F3F3F;
+                            line-height: 22px;
+
+                            span{
+                                display: block;
+                                position: absolute;
+                                width: 8px;
+                                height: 8px;
+                                background-color: #3F3F3F;
+                                top: 8px;
+                                border-radius: 50px;
+                                left: 0px;
+                            }
+                        }
                     }
                 }
             }
@@ -803,6 +855,7 @@
             border-radius: 10px;
             padding: 20px 25px;
             min-width: 100px;
+            min-height: 140px;
 
             p{
                 color: #FF7B24;
