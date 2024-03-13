@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import Chart, { ChartData } from 'chart.js/auto';
+import Chart, { ChartData, RadialTickOptions } from 'chart.js/auto';
 import { HeaderComponent } from '../shared/header/header.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -43,6 +43,7 @@ export class ReportsComponent {
   private mcc!: Chart;
  private semiDoughnutChart!: Chart;
   visibleOffers!: boolean;
+  expandSection!: boolean;
 
 
 
@@ -59,6 +60,15 @@ export class ReportsComponent {
     this.createHistogramChart();
     this.createDonutChart();
     this.createSemiDoughnutChart();
+
+  }
+
+  expand(){
+    this.expandSection = true;
+  }
+
+  minimize(){
+    this.expandSection = false;
 
   }
 
@@ -99,11 +109,13 @@ export class ReportsComponent {
   
 
   private mixedChart(): void{
-    const dataValues = [ 200000, 1100000, 670000, 300000, 200000 ]; 
-    const dataValues2 = [ 1100000, 820000, 670000, 450000, 200000 ]; 
+    const dataValues = [ 20, 110, 67, 30, 20, 35 , 10]; 
+    const dataValues1 = [ 20, 110, 67, 30, 20, 35 , 10]; 
 
-    const backgroundColors = dataValues.map(value => this.getColor(value));
-    const backgroundColors2 = dataValues2.map(value => this.getColor(value));
+    const dataValues2 = [ 110, 82, 67, 45]; 
+
+    const backgroundColors = dataValues1.map(value => this.getColor(value));
+    const backgroundColors2 = dataValues2.map(value => this.getColor2(value));
 
     const backgroundColorsMixed = dataValues2.map(value => this.getMixedColor(value));
 
@@ -111,11 +123,11 @@ export class ReportsComponent {
     // Increase line length by extending the x-axis values
   
     const chartData1: ChartData = {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr'],
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June'],
       datasets: [ {
         // label: 'Horizontal Line Dataset',
         type: 'line',
-        data: [{ x: 0, y: 1500000 }, { x: 8, y: 1500000 },{ x: 0, y: 1500000 }, { x: 8, y: 1500000 },{ x: 0, y: 1500000 }, { x: 8, y: 1500000 }],
+        data: [{ x: 0, y: 150 }, { x: 8, y: 150 },{ x: 0, y: 150 }, { x: 8, y: 150 },{ x: 0, y: 150 }, { x: 8, y: 150 }],
         borderColor: 'green',
         borderWidth: 1,
         fill: false,
@@ -124,7 +136,7 @@ export class ReportsComponent {
       {
         // label: 'Horizontal Line Dataset',
         type: 'line',
-        data: [{ x: 0, y: 600000 }, { x: 8, y: 600000 },{ x: 0, y: 600000 }, { x: 8, y: 600000 },{ x: 0, y: 600000 }, { x: 8, y: 600000 }], 
+        data: [{ x: 0, y: 60 }, { x: 8, y: 60 },{ x: 0, y: 60 }, { x: 8, y: 60 },{ x: 0, y: 60 }, { x: 8, y: 60 }], 
         borderColor: 'yellow',
         borderWidth: 1,
         fill: false,
@@ -133,7 +145,7 @@ export class ReportsComponent {
       },{
         // label: 'Horizontal Line Dataset',
         type: 'line',
-        data: [{ x: 0, y: 800000 }, { x: 8, y: 800000 },{ x: 0, y: 800000 }, { x: 8, y: 800000 },{ x: 0, y: 800000 }, { x: 8, y: 800000 }], 
+        data: [{ x: 0, y: 80 }, { x: 8, y: 80 },{ x: 0, y: 80 }, { x: 8, y: 80 },{ x: 0, y: 80 }, { x: 8, y: 80 }], 
         borderColor: 'red',
         borderWidth: 1,
         fill: false,
@@ -144,7 +156,7 @@ export class ReportsComponent {
       },{
         // label: 'Bar Dataset',
         type: 'bar',
-        data: dataValues,
+        data: dataValues1,
         backgroundColor: backgroundColors,
         borderWidth: 1,
         
@@ -152,11 +164,11 @@ export class ReportsComponent {
     };
 
     const chartData2: ChartData = {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr'],
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June'],
       datasets: [ {
         // label: 'Horizontal Line Dataset',
         type: 'line',
-        data: [{ x: 0, y: 1500000 }, { x: 8, y: 1500000 },{ x: 0, y: 1500000 }, { x: 8, y: 1500000 },{ x: 0, y: 1500000 }, { x: 8, y: 1500000 }],
+        data: [{ x: 0, y: 150 }, { x: 8, y: 150 },{ x: 0, y: 150 }, { x: 8, y: 150 },{ x: 0, y: 150 }, { x: 8, y: 150 }],
         borderColor: 'green',
         borderWidth: 1,
         fill: false,
@@ -165,7 +177,7 @@ export class ReportsComponent {
       {
         // label: 'Horizontal Line Dataset',
         type: 'line',
-        data: [{ x: 0, y: 600000 }, { x: 8, y: 600000 },{ x: 0, y: 600000 }, { x: 8, y: 600000 },{ x: 0, y: 600000 }, { x: 8, y: 600000 }], 
+        data: [{ x: 0, y: 60 }, { x: 8, y: 60 },{ x: 0, y: 60 }, { x: 8, y: 60 },{ x: 0, y: 60 }, { x: 8, y: 60 }], 
         borderColor: 'yellow',
         borderWidth: 1,
         fill: false,
@@ -174,7 +186,7 @@ export class ReportsComponent {
       },{
         // label: 'Horizontal Line Dataset',
         type: 'line',
-        data: [{ x: 0, y: 800000 }, { x: 8, y: 800000 },{ x: 0, y: 800000 }, { x: 8, y: 800000 },{ x: 0, y: 800000 }, { x: 8, y: 800000 }], 
+        data: [{ x: 0, y: 80 }, { x: 8, y: 80 },{ x: 0, y: 80 }, { x: 8, y: 80 },{ x: 0, y: 80 }, { x: 8, y: 80 }], 
         borderColor: 'red',
         borderWidth: 1,
         fill: false,
@@ -185,7 +197,7 @@ export class ReportsComponent {
       },{
         // label: 'Bar Dataset',
         type: 'bar',
-        data: dataValues2,
+        data: dataValues ,
         backgroundColor: backgroundColorsMixed,
         borderWidth: 1,
         
@@ -194,36 +206,7 @@ export class ReportsComponent {
 
     const chartData3: ChartData = {
       labels: ['Jan', 'Feb', 'Mar', 'Apr'],
-      datasets: [ {
-        // label: 'Horizontal Line Dataset',
-        type: 'line',
-        data: [{ x: 0, y: 1500000 }, { x: 8, y: 1500000 },{ x: 0, y: 1500000 }, { x: 8, y: 1500000 },{ x: 0, y: 1500000 }, { x: 8, y: 1500000 }],
-        borderColor: 'green',
-        borderWidth: 1,
-        fill: false,
-        pointStyle:"line"
-      },
-      {
-        // label: 'Horizontal Line Dataset',
-        type: 'line',
-        data: [{ x: 0, y: 600000 }, { x: 8, y: 600000 },{ x: 0, y: 600000 }, { x: 8, y: 600000 },{ x: 0, y: 600000 }, { x: 8, y: 600000 }], 
-        borderColor: 'yellow',
-        borderWidth: 1,
-        fill: false,
-        pointStyle:"line"
-        
-      },{
-        // label: 'Horizontal Line Dataset',
-        type: 'line',
-        data: [{ x: 0, y: 800000 }, { x: 8, y: 800000 },{ x: 0, y: 800000 }, { x: 8, y: 800000 },{ x: 0, y: 800000 }, { x: 8, y: 800000 }], 
-        borderColor: 'red',
-        borderWidth: 1,
-        fill: false,
-        pointStyle:"line"
-
-        
-        
-      },{
+      datasets: [{
         // label: 'Bar Dataset',
         type: 'bar',
         data: dataValues2,
@@ -245,7 +228,9 @@ export class ReportsComponent {
         },
         scales: {
           y: {
-            beginAtZero: true
+            beginAtZero: true,
+
+           
           }
         },
         
@@ -282,7 +267,9 @@ export class ReportsComponent {
         },
         scales: {
           y: {
-            beginAtZero: true
+            beginAtZero: true,
+
+            
           }
         },
        
@@ -395,33 +382,47 @@ export class ReportsComponent {
   }
   
   
-
+  
   private getColor(value: number): string {
-    if(value > 1000000){
+    if(value > 100){
       return '#400993'
     }
-    else if (value >= 800000 && value < 1000000) {
+    else if (value >= 80 && value < 100) {
       return '#6A2FC2'; 
-    } else if (value >= 600000 && value < 800000) {
+    } else if (value >= 60 && value < 80) {
       return '#A070E8'; 
-    } else if (value >= 400000 && value < 600000) {
+    } else if (value >= 40 && value < 60) {
       return '#9E77D6'; 
     } else {
-      // Default color if value does not fall into any range
-      return '#A070E2'; // Black color (you can change it to any default color)
+      return '#A070E2'; 
     }
   }
   
+  private getColor2(value: number): string {
+    if(value > 100){
+      return '#400993'
+    }
+    else if (value >= 80 && value < 100) {
+      return '#6A2FC2'; 
+    } else if (value >= 60 && value < 80) {
+      return '#A070E8'; 
+    } else if (value >= 40 && value < 60) {
+      return '#9E77D6'; 
+    } else {
+      
+      return '#A070E2'; 
+    }
+  }
 
    private getMixedColor(value: number): string {
-    if(value > 1000000){
+    if(value > 100){
       return '#12BA9B'
     }
-    else if (value >= 800000 && value <= 1000000) {
+    else if (value >= 80 && value <= 100) {
       return '#6A2FC2'; 
-    } else if (value >= 600000 && value < 800000) {
+    } else if (value >= 60 && value < 80) {
       return '#C3E128'; 
-    } else if (value >= 400000 && value < 600000) {
+    } else if (value >= 40 && value < 60) {
       return '#FF7B24'; 
     } else {
       // Default color if value does not fall into any range

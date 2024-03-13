@@ -48,6 +48,192 @@
           <p>What Matters Most and How to Improve</p>
         </div>
       </div>
+      <div class="container" *ngIf = "expandSection">
+        <div class="row">
+         
+    
+          <div class="col-lg-12 mb-4">
+            <div class="loanHistory">
+              <div class="minus" (click) = minimize()>
+                <span>-</span>
+              </div>
+              <h3 class="title">Loan Repayment History</h3>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="calendarBox">
+                    <div class="col-lg-4 col-md-6 col-sm-12 m-auto">
+                      <div class="year">
+                        <span class="active">2023</span>
+                        <span>2024</span>
+                        <span>2025</span>
+                      </div>
+                    </div>
+                    <ul>
+                      <li>JAN</li>
+                      <li>FEB</li>
+                      <li>MAR</li>
+                      <li>APR</li>
+                      <li>MAY</li>
+                      <li>JUN</li>
+                      <li>JUL</li>
+                      <li>AUG</li>
+                      <li>SEP</li>
+                      <li>OCT</li>
+                      <li class="active">NOV</li>
+                      <li class="active">DEC</li>
+                    </ul>
+                    <div class="missingPayment">
+                      2 Missing Payments
+                    </div>
+    
+                    <div class="defaultContent">
+                      <h3>Default Analysis</h3>
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                        <div class="defaultHistory">
+                          <h3>Default History
+                            <img src="./assets/LandingPage/themeInformation.svg" alt="">
+                          </h3>
+                          <ul class="historyList">
+                            <li>
+                              Recent Default
+                              <span class="NoColor">No</span>
+                            </li>
+                            <li>
+                              Default Ever
+                              <span class="YesColor">YES</span>
+                            </li>
+                            <li>
+                              30 days delayed
+                              <span class="YesColor">YES</span>
+                            </li>
+                            <li>
+                              Recent Default
+                              <span class="NoColor">No</span>
+                            </li>
+                            <li>
+                              Delayed saverity of payment (90-180 days)
+                              <span class="NoColor">No</span>
+                            </li>
+                          </ul>
+    
+                          <div class="box">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
+                              dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                        <div class="defaultHistory solutions">
+                          <h3>Solutions
+                          </h3>
+                          <ul class="historyList">
+                            <li><span></span>
+                              Lorem ipsum dolor sit amet
+                            </li>
+                            <li><span></span>
+                              Consectetur adipiscing elit
+                            </li>
+                            <li><span></span>Sed Lorem ipsum do. </li>
+                            <li><span></span>Lorem ipsum dolor sit amet</li>
+                          </ul>
+    
+                          <div class="box">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
+                              dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet,
+                              consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet, consectetur
+                              adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                        <div class="defaultHistory">
+                          <h3>Impact</h3>
+                          <ul class="numberBox">
+                            <li>
+                              <span>20+</span>
+                              Points are less to get a loan
+                            </li>
+                            <li>
+                              <span>30+</span>
+                              Points score Increase
+                            </li>
+                          </ul>
+    
+                          <div class="box boxBorder">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
+                              dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet,
+                              consectetur adipiscing elit, sed Lorem ipsum do.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+    
+                    <div class="defaultContent">
+                      <h3>Other Analysis</h3>
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-8 col-lg-8 col-sm-12 mb-3">
+                        <div class="otherAnalysis">
+                          <h3>By Top Banks</h3>
+                          <div class="checkBox">
+                            <mat-checkbox>Yes</mat-checkbox>
+                            <mat-checkbox>No</mat-checkbox>
+                          </div>
+                          <div class="banksBox">
+                            <ul>
+                              <li>
+                                <span></span>
+                                Lorem ipsum dolor sit amet
+                              </li>
+                              <li>
+                                <span></span>
+                                Lorem ipsum dolor sit amet
+                              </li>
+                              <li>
+                                <span></span>
+                                Lorem ipsum dolor sit amet
+                              </li>
+                            </ul>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                        <div class="otherAnalysis">
+                          <h3>Suit Filed</h3>
+                          <div class="checkBox">
+                            <h5>Suit Filed Ever</h5>
+                            <button>No</button>
+                          </div>
+                          <div class="banksBox flex-wrap">
+                            <ul>
+                              <li>
+                                <span></span>
+                                Lorem ipsum dolor sit amet
+                              </li>
+                              <li>
+                                <span></span>
+                                Lorem ipsum dolor sit amet
+                              </li>
+                            </ul>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
       <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
         <div class="scoreBox">
           <h3>Your Bureau Score</h3>
@@ -67,9 +253,9 @@
         </div>
       </div>
 
-      <div class="col-lg-8 col-md-8 col-sm-12 mb-4">
+      <div class="col-lg-8 col-md-8 col-sm-12 mb-4" *ngIf = "!expandSection">
         <div class="loanHistory">
-          <div class="plus">
+          <div class="plus" (click) = expand()>
             <span>+</span>
           </div>
           <h3 class="title">Loan Repayment History</h3>
@@ -222,198 +408,8 @@
 <!-- Credit-Report-Section End -->
 
 <!-- one-plus-Section Start -->
-<div class="creditReportSection section_padding">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="title">
-          <h2><span>Your Credit Report</span></h2>
-          <p>What Matters Most and How to Improve</p>
-        </div>
-      </div>
+<div class="creditReportSection section_padding" >
 
-      <div class="col-lg-12 mb-4">
-        <div class="loanHistory">
-          <div class="minus">
-            <span>-</span>
-          </div>
-          <h3 class="title">Loan Repayment History</h3>
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-              <div class="calendarBox">
-                <div class="col-lg-4 col-md-6 col-sm-12 m-auto">
-                  <div class="year">
-                    <span class="active">2023</span>
-                    <span>2024</span>
-                    <span>2025</span>
-                  </div>
-                </div>
-                <ul>
-                  <li>JAN</li>
-                  <li>FEB</li>
-                  <li>MAR</li>
-                  <li>APR</li>
-                  <li>MAY</li>
-                  <li>JUN</li>
-                  <li>JUL</li>
-                  <li>AUG</li>
-                  <li>SEP</li>
-                  <li>OCT</li>
-                  <li class="active">NOV</li>
-                  <li class="active">DEC</li>
-                </ul>
-                <div class="missingPayment">
-                  2 Missing Payments
-                </div>
-
-                <div class="defaultContent">
-                  <h3>Default Analysis</h3>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                    <div class="defaultHistory">
-                      <h3>Default History
-                        <img src="./assets/LandingPage/themeInformation.svg" alt="">
-                      </h3>
-                      <ul class="historyList">
-                        <li>
-                          Recent Default
-                          <span class="NoColor">No</span>
-                        </li>
-                        <li>
-                          Default Ever
-                          <span class="YesColor">YES</span>
-                        </li>
-                        <li>
-                          30 days delayed
-                          <span class="YesColor">YES</span>
-                        </li>
-                        <li>
-                          Recent Default
-                          <span class="NoColor">No</span>
-                        </li>
-                        <li>
-                          Delayed saverity of payment (90-180 days)
-                          <span class="NoColor">No</span>
-                        </li>
-                      </ul>
-
-                      <div class="box">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
-                          dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                    <div class="defaultHistory solutions">
-                      <h3>Solutions
-                      </h3>
-                      <ul class="historyList">
-                        <li><span></span>
-                          Lorem ipsum dolor sit amet
-                        </li>
-                        <li><span></span>
-                          Consectetur adipiscing elit
-                        </li>
-                        <li><span></span>Sed Lorem ipsum do. </li>
-                        <li><span></span>Lorem ipsum dolor sit amet</li>
-                      </ul>
-
-                      <div class="box">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
-                          dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet,
-                          consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet, consectetur
-                          adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                    <div class="defaultHistory">
-                      <h3>Impact</h3>
-                      <ul class="numberBox">
-                        <li>
-                          <span>20+</span>
-                          Points are less to get a loan
-                        </li>
-                        <li>
-                          <span>30+</span>
-                          Points score Increase
-                        </li>
-                      </ul>
-
-                      <div class="box boxBorder">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
-                          dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet,
-                          consectetur adipiscing elit, sed Lorem ipsum do.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="defaultContent">
-                  <h3>Other Analysis</h3>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-8 col-lg-8 col-sm-12 mb-3">
-                    <div class="otherAnalysis">
-                      <h3>By Top Banks</h3>
-                      <div class="checkBox">
-                        <mat-checkbox>Yes</mat-checkbox>
-                        <mat-checkbox>No</mat-checkbox>
-                      </div>
-                      <div class="banksBox">
-                        <ul>
-                          <li>
-                            <span></span>
-                            Lorem ipsum dolor sit amet
-                          </li>
-                          <li>
-                            <span></span>
-                            Lorem ipsum dolor sit amet
-                          </li>
-                          <li>
-                            <span></span>
-                            Lorem ipsum dolor sit amet
-                          </li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                    <div class="otherAnalysis">
-                      <h3>Suit Filed</h3>
-                      <div class="checkBox">
-                        <h5>Suit Filed Ever</h5>
-                        <button>No</button>
-                      </div>
-                      <div class="banksBox flex-wrap">
-                        <ul>
-                          <li>
-                            <span></span>
-                            Lorem ipsum dolor sit amet
-                          </li>
-                          <li>
-                            <span></span>
-                            Lorem ipsum dolor sit amet
-                          </li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <!-- one-plus-Section End -->
 
 
