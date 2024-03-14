@@ -39,7 +39,7 @@
 
 
 <!-- Credit-Report-Section Start -->
-<div class="creditReportSection section_padding">
+<div class="creditReportSection section_padding_top">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
@@ -48,13 +48,13 @@
           <p>What Matters Most and How to Improve</p>
         </div>
       </div>
-      <div class="container" *ngIf = "expandSection">
+      <div class="container" *ngIf="expandSection">
         <div class="row">
-         
-    
+
+
           <div class="col-lg-12 mb-4">
             <div class="loanHistory">
-              <div class="minus" (click) = minimize()>
+              <div class="minus" (click)=minimize()>
                 <span>-</span>
               </div>
               <h3 class="title">Loan Repayment History</h3>
@@ -85,11 +85,11 @@
                     <div class="missingPayment">
                       2 Missing Payments
                     </div>
-    
+
                     <div class="defaultContent">
                       <h3>Default Analysis</h3>
                     </div>
-    
+
                     <div class="row">
                       <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
                         <div class="defaultHistory">
@@ -118,7 +118,7 @@
                               <span class="NoColor">No</span>
                             </li>
                           </ul>
-    
+
                           <div class="box">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
                               dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
@@ -139,12 +139,14 @@
                             <li><span></span>Sed Lorem ipsum do. </li>
                             <li><span></span>Lorem ipsum dolor sit amet</li>
                           </ul>
-    
+
                           <div class="box">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
-                              dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet,
+                              dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit
+                              amet,
                               consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet, consectetur
-                              adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                              adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit.
                             </p>
                           </div>
                         </div>
@@ -162,21 +164,22 @@
                               Points score Increase
                             </li>
                           </ul>
-    
+
                           <div class="box boxBorder">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
-                              dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet,
+                              dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit
+                              amet,
                               consectetur adipiscing elit, sed Lorem ipsum do.
                             </p>
                           </div>
                         </div>
                       </div>
                     </div>
-    
+
                     <div class="defaultContent">
                       <h3>Other Analysis</h3>
                     </div>
-    
+
                     <div class="row">
                       <div class="col-md-8 col-lg-8 col-sm-12 mb-3">
                         <div class="otherAnalysis">
@@ -200,7 +203,8 @@
                                 Lorem ipsum dolor sit amet
                               </li>
                             </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
+                              dolor sit amet.</p>
                           </div>
                         </div>
                       </div>
@@ -237,7 +241,8 @@
                               </li>
                               <li>
                                 <span></span>
-                                Combining efforts to address these areas is crucial. Focus on creating a solid plan to catch up on overdue payments and engage with creditors about possible solutions.
+                                Combining efforts to address these areas is crucial. Focus on creating a solid plan to
+                                catch up on overdue payments and engage with creditors about possible solutions.
                               </li>
                               <li>
                                 <span></span>
@@ -254,6 +259,7 @@
                           </div>
                         </div>
                       </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -261,7 +267,6 @@
           </div>
         </div>
       </div>
-    </div>
       <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
         <div class="scoreBox">
           <h3>Your Bureau Score</h3>
@@ -281,9 +286,9 @@
         </div>
       </div>
 
-      <div class="col-lg-8 col-md-8 col-sm-12 mb-4" *ngIf = "!expandSection">
+      <div class="col-lg-8 col-md-8 col-sm-12 mb-4" *ngIf="!expandSection">
         <div class="loanHistory">
-          <div class="plus" (click) = expand()>
+          <div class="plus" (click)=expand()>
             <span>+</span>
           </div>
           <h3 class="title">Loan Repayment History</h3>
@@ -339,9 +344,9 @@
         </div>
       </div>
 
-      <div class="col-lg-8 col-md-8 col-sm-12 mb-4" *ngIf = "!expandCurrentCreditSection">
+      <div class="col-lg-8 col-md-8 col-sm-12 mb-4" *ngIf="!expandCurrentCreditSection">
         <div class="loanHistory currentCredit">
-          <div class="plus" (click) = "expandCurrentCredit()">
+          <div class="plus" (click)="expandCurrentCredit()">
             <span>+</span>
           </div>
           <h3 class="title">Current Credit/Debt Analysis</h3>
@@ -349,10 +354,7 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="creditContent">
                 <div class="currentChart">
-
                   <canvas #donut></canvas>
-
-
                   <ul>
                     <li>
                       <span style="border: 1px solid #12BA9B;"><span style="background-color: #12BA9B;"></span></span>
@@ -400,7 +402,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 mb-4" *ngIf = "!expandBlocks">
+      <div class="col-lg-4 col-md-4 col-sm-12 mb-4" *ngIf="!expandBlocks">
         <div class="heightBox">
           <div class="row">
             <div class="col-lg-12 mb-4">
@@ -431,7 +433,7 @@
         </div>
       </div>
 
-      <div class="col-lg-12 col-md-12 col-sm-12 mb-4" *ngIf = "expandSection">
+      <div class="col-lg-12 col-md-12 col-sm-12 mb-4" *ngIf="expandSection">
         <div class="heightBox">
           <div class="row">
             <div class="col-lg-6 col-md-12 mb-4">
@@ -468,181 +470,162 @@
 
 
 <!-- Two-plus-Section Start -->
-<div class="creditReportSection section_padding" >
+<div class="creditReportSection">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12 mb-4" *ngIf ="expandCurrentCreditSection">
-        <div class="loanHistory">
-          <div class="minus" (click) = minimizeCurrentCredit()>
-            <span>-</span>
-          </div>
-          <h3 class="title mb-2">Current Credit/Debt Analysis</h3>
-          <p class="text-center mb-3">Your credit mix refers to the variety of credit accounts you have, including both secured loans like home loans or car loans and unsecured loans like credit cards and personal loans. A diverse credit mix can show lenders that you're capable of managing different types of credit responsibly.</p>
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-              <div class="calendarBox">
-
-                <div class="defaultContent">
-                  <h3>Credit Ratio Analysis</h3>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                    <div class="defaultHistory">
-                      <h3>Default History
-                        <img src="./assets/LandingPage/themeInformation.svg" alt="">
-                      </h3>
-                      <ul class="historyList">
+    <div class="col-lg-12 mb-4" *ngIf="expandCurrentCreditSection">
+      <div class="loanHistory">
+        <div class="minus" (click)=minimizeCurrentCredit()>
+          <span>-</span>
+        </div>
+        <h3 class="title mb-2">Current Credit/Debt Analysis</h3>
+        <p class="text-center mb-3">Your credit mix refers to the variety of credit accounts you have, including both
+          secured loans like home loans or car loans and unsecured loans like credit cards and personal loans. A diverse
+          credit mix can show lenders that you're capable of managing different types of credit responsibly.</p>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="calendarBox">
+              <div class="defaultContent">
+                <h3>Credit Ratio Analysis</h3>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                  <div class="defaultHistory">
+                    <h3>Ratio Secured/Unsecured</h3>
+                    <div class="currentChart">
+                      <canvas #donut></canvas>
+                      <ul>
                         <li>
-                          Recent Default
-                          <span class="NoColor">No</span>
-                        </li>
-                        <li>
-                          Default Ever
-                          <span class="YesColor">YES</span>
-                        </li>
-                        <li>
-                          30 days delayed
-                          <span class="YesColor">YES</span>
-                        </li>
-                        <li>
-                          Recent Default
-                          <span class="NoColor">No</span>
-                        </li>
-                        <li>
-                          Delayed saverity of payment (90-180 days)
-                          <span class="NoColor">No</span>
-                        </li>
-                      </ul>
-
-                      <div class="box">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
-                          dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                    <div class="defaultHistory">
-                      <h3>Business Turnover Analysis</h3>
-                      <ul class="numberBox">
-                        <li>
-                          Unsecured
-                          <span class="mb-0 mt-3">31%</span>
-                        </li>
-                        <li>
+                          <span style="border: 1px solid #12BA9B;"><span
+                              style="background-color: #12BA9B;"></span></span>
                           Secured
-                          <span class="mb-0 mt-3">69%</span>
                         </li>
-                      </ul>
-
-                      <div class="box boxBorder">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
-                          dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet,
-                          consectetur adipiscing elit, sed Lorem ipsum do.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                    <div class="defaultHistory solutions">
-                      <h3>Solutions
-                      </h3>
-                      <ul class="historyList">
-                        <li><span></span>
-                          Lorem ipsum dolor sit amet Consectetur adipiscing elit
+                        <li>
+                          <span style="border: 1px solid #6A2FC2;"><span
+                              style="background-color: #6A2FC2;"></span></span>
+                          Unsecured
                         </li>
-                        <li><span></span>
-                          Lorem ipsum dolor sit amet Consectetur adipiscing elit
-                        </li>
-                        <li><span></span>Sed Lorem ipsum do. </li>
-                        <li><span></span>Lorem ipsum dolor sit amet</li>
-                        <li><span></span>Lorem ipsum dolor sit amet</li>
-                        <li><span></span>Lorem ipsum dolor sit amet</li>
-                        <li><span></span>Lorem ipsum dolor sit amet Consectetur adipiscing elit</li>
                       </ul>
                     </div>
                   </div>
                 </div>
+                <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                  <div class="defaultHistory">
+                    <h3>Business Turnover Analysis</h3>
+                    <ul class="numberBox">
+                      <li>
+                        Unsecured
+                        <span class="mb-0 mt-3">31%</span>
+                      </li>
+                      <li>
+                        Secured
+                        <span class="mb-0 mt-3">69%</span>
+                      </li>
+                    </ul>
 
-                <div class="defaultContent">
-                  <h3>Other Analysis</h3>
+                    <div class="stabilityBox">
+                      <p>Stability: <span>Good</span> </p>
+                    </div>
+
+                    <div class="box boxBorder mt-2">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
+                        dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed Lorem ipsum do.
+                      </p>
+                    </div>
+                  </div>
                 </div>
+                <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                  <div class="defaultHistory solutions">
+                    <h3>Solutions
+                    </h3>
+                    <ul class="historyList">
+                      <li><span></span>
+                        Lorem ipsum dolor sit amet Consectetur adipiscing elit
+                      </li>
+                      <li><span></span>
+                        Lorem ipsum dolor sit amet Consectetur adipiscing elit
+                      </li>
+                      <li><span></span>Sed Lorem ipsum do. </li>
+                      <li><span></span>Lorem ipsum dolor sit amet</li>
+                      <li><span></span>Lorem ipsum dolor sit amet</li>
+                      <li><span></span>Lorem ipsum dolor sit amet</li>
+                      <li><span></span>Lorem ipsum dolor sit amet Consectetur adipiscing elit</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
-                <div class="row">
-                  <div class="col-md-8 col-lg-8 col-sm-12 mb-3">
-                    <div class="otherAnalysis">
-                      <h3>By Top Banks</h3>
-                      <div class="checkBox">
-                        <mat-checkbox>Yes</mat-checkbox>
-                        <mat-checkbox>No</mat-checkbox>
-                      </div>
-                      <div class="banksBox">
-                        <ul>
-                          <li>
-                            <span></span>
-                            Lorem ipsum dolor sit amet
-                          </li>
-                          <li>
-                            <span></span>
-                            Lorem ipsum dolor sit amet
-                          </li>
-                          <li>
-                            <span></span>
-                            Lorem ipsum dolor sit amet
-                          </li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
-                          dolor sit amet.</p>
-                      </div>
+              <div class="defaultContent">
+                <h3>Other Analysis</h3>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-12 mb-3">
+                  <div class="otherAnalysis">
+                    <h3>Credit Card Utilization</h3>
+                    <div class="checkBox">
+                      <h5>If Credit Card > 60%</h5>
+                      <button>No</button>
+                    </div>
+                    <div class="banksBox flex-wrap">
+                      <ul>
+                        <li>
+                          <span></span>
+                          Lorem ipsum dolor sit amet
+                        </li>
+                        <li>
+                          <span></span>
+                          Lorem ipsum dolor sit amet
+                        </li>
+                      </ul>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
                     </div>
                   </div>
-                  <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                    <div class="otherAnalysis">
-                      <h3>Suit Filed</h3>
-                      <div class="checkBox">
-                        <h5>Suit Filed Ever</h5>
-                        <button>No</button>
-                      </div>
-                      <div class="banksBox flex-wrap">
-                        <ul>
-                          <li>
-                            <span></span>
-                            Lorem ipsum dolor sit amet
-                          </li>
-                          <li>
-                            <span></span>
-                            Lorem ipsum dolor sit amet
-                          </li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
-                      </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 mb-3">
+                  <div class="otherAnalysis">
+                    <h3>Credit Card Utilization</h3>
+                    <div class="checkBox">
+                      <h5>Small Loans</h5>
+                      <button style="background-color: #EC1111;">Yes</button>
+                    </div>
+                    <div class="banksBox flex-wrap">
+                      <ul>
+                        <li>
+                          <span></span>
+                          Lorem ipsum dolor sit amet
+                        </li>
+                        <li>
+                          <span></span>
+                          Lorem ipsum dolor sit amet
+                        </li>
+                      </ul>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
                     </div>
                   </div>
-                  <div class="col-md-12 col-lg-12 col-sm-12 mb-3">
-                    <div class="summaryBox">
-                      <h4>Summary</h4>
-                      <div class="summaryContent">
-                        <ul>
-                          <li>
-                            <span></span>
-                            It signals a pattern of financial instability that could deter lenders.
-                          </li>
-                          <li>
-                            <span></span>
-                            Combining efforts to address these areas is crucial. Focus on creating a solid plan to catch up on overdue payments and engage with creditors about possible solutions.
-                          </li>
-                          <li>
-                            <span></span>
-                            Consistent improvement in these areas can gradually rebuild your creditworthiness.
-                          </li>
-                          <li>
-                            <span></span>
-                            Consistent improvement in these areas can gradually rebuild your creditworthiness.
-                          </li>
-                        </ul>
-                        <div class="smileImg">
-                          <img src="./assets/LandingPage/smileImg.svg" alt="">
-                        </div>
+                </div>
+                <div class="col-md-12 col-lg-12 col-sm-12 mb-3">
+                  <div class="summaryBox">
+                    <h4>Summary</h4>
+                    <div class="summaryContent">
+                      <ul>
+                        <li>
+                          <span></span>
+                          A diversified credit portfolio showcases your adeptness at managing various financial
+                          responsibilities, a trait favored by lenders for demonstrating financial resilience.
+                        </li>
+                        <li>
+                          <span></span>
+                          Balancing secured and unsecured loans while keeping new credit inquiries minimal can further
+                          solidify your standing.
+                        </li>
+                        <li>
+                          <span></span>
+                          Consistent improvement in these areas can gradually rebuild your creditworthiness.
+                        </li>
+                      </ul>
+                      <div class="smileImg">
+                        <img src="./assets/LandingPage/smileImg.svg" alt="">
                       </div>
                     </div>
                   </div>
@@ -652,35 +635,33 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="row mt-4">
-    
-
-        <div class="col-lg-12 col-md-12 col-sm-12 mb-4" *ngIf ="expandCurrentCreditSection">
-          <div class="heightBox">
-            <div class="row">
-              <div class="col-lg-6 col-sm-12 mb-4">
-                <div class="numberBox p-4">
-                  <div class="content">
-                    <h3>How Risky You are As a Business</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
-                  </div>
-                  <div class="numberText">
-                    <p>2</p>
-                    <span>Remarks</span>
-                  </div>
+    <div class="row mt-4 section_padding_bottom">
+      <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="expandCurrentCreditSection">
+        <div class="heightBox">
+          <div class="row">
+            <div class="col-lg-6 col-sm-12 mt-4">
+              <div class="numberBox p-4">
+                <div class="content">
+                  <h3>How Risky You are As a Business</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
+                </div>
+                <div class="numberText">
+                  <p>2</p>
+                  <span>Remarks</span>
                 </div>
               </div>
-              <div class="col-lg-6 col-sm-12 mb-4">
-                <div class="numberBox colorChange p-4">
-                  <div class="content">
-                    <h3>How Hungry You are For a Loan</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
-                  </div>
-                  <div class="numberText">
-                    <p>1</p>
-                    <span>Credit Enquiry</span>
-                  </div>
+            </div>
+            <div class="col-lg-6 col-sm-12 mt-4">
+              <div class="numberBox colorChange p-4">
+                <div class="content">
+                  <h3>How Hungry You are For a Loan</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
+                </div>
+                <div class="numberText">
+                  <p>1</p>
+                  <span>Credit Enquiry</span>
                 </div>
               </div>
             </div>
@@ -790,7 +771,120 @@
           <p>Month-on-Month Cashflow</p>
         </div>
       </div>
-      <div class="col-lg-8 col-md-8 col-sm-12">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="businessTurnover mb-3">
+          <div class="minus">
+            <span>-</span>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-12 m-auto mb-5">
+            <h3>Business Turnover & Credit Count</h3>
+            <p>Lorem Ipsum is simply dummy text of the printin</p>
+            <div class="chart chart1 chartLine">
+              <canvas #chartCanvas2></canvas>
+            </div>
+            <p>Lorem Ipsum is simply dummy text of the printin Lorem Ipsum is simply dummy text of the printin Lorem
+              Ipsum
+              is simply dummy text of the printin Lorem Ipsum is simply dummy text of the printin.</p>
+          </div>
+          <div class="defaultContent">
+            <h3>Volatility Analysis</h3>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="valatilityBox backgrundColor">
+                <h3>Credit Card Utilization</h3>
+                <div class="checkBox">
+                  <h5>Volatility</h5>
+                  <button>GOOD</button>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="valatilityBox">
+                <h3>Credit Card Utilization</h3>
+                <ul>
+                  <li>
+                    <span></span>
+                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
+                  </li>
+                  <li>
+                    <span></span>
+                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
+                  </li>
+                  <li>
+                    <span></span>
+                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
+                  </li>
+                  <li>
+                    <span></span>
+                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="defaultContent">
+            <h3>Quarterly Dip</h3>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              
+            </div>
+            <div class="col-lg-6">
+              <div class="valatilityBox">
+                <h3>Credit Card Utilization</h3>
+                <ul>
+                  <li>
+                    <span></span>
+                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
+                  </li>
+                  <li>
+                    <span></span>
+                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
+                  </li>
+                  <li>
+                    <span></span>
+                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
+                  </li>
+                  <li>
+                    <span></span>
+                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="defaultContent">
+            <h3>Credit Count</h3>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="valatilityBox">
+                <div class="chart chart1 chartLine">
+                  <canvas #chartCanvas2></canvas>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="valatilityBox backgrundColor">
+                <h3>Count Observation</h3>
+                <div class="checkBox">
+                  <h5>Volatility</h5>
+                  <button>GOOD</button>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-8 col-sm-12 mt-4">
         <div class="businessTurnover">
           <div class="plus">
             <span>+</span>
@@ -799,7 +893,7 @@
           <p>Lorem Ipsum is simply dummy text of the printin</p>
 
           <div class="chart chartLine">
-            <canvas #chartCanvas  ></canvas>
+            <canvas #chartCanvas></canvas>
 
             <canvas #chartCanvas3></canvas>
           </div>
@@ -818,7 +912,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12">
+      <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
         <div class="businessTurnover">
           <div class="plus">
             <span>+</span>
