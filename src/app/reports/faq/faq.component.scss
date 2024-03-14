@@ -1,0 +1,99 @@
+.faqsection{
+    background-color: #fafafa;
+
+    .text{
+        margin-bottom: 40px;
+
+        h3{
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 0px;
+            color: #3F3F3F;
+            text-align: center;       
+        }
+    }
+
+    .faqaccordion{
+
+        mat-accordion{
+
+            mat-expansion-panel{
+                box-shadow: none;
+                border-bottom: 1px solid #D1D1D1;
+                margin: 0px;
+                border-radius: 0px;
+                background-color: transparent;
+
+                mat-expansion-panel-header{
+                    padding: 12px 6px;
+                    height: auto;
+
+                    &:hover{
+                        background-color: transparent;
+                    }
+
+                    ::ng-deep{
+
+                        .mat-expansion-panel-header-title{
+
+                            h3{
+                                color: #666666;
+                                font-weight: 600;
+                                letter-spacing: 0.28px;
+                                font-size: 16px;
+                                font-family: 'Be Vietnam Pro' !important;
+                                margin-bottom: 0px;
+                            }
+                        }
+
+                        .mat-expansion-indicator{
+                            border-radius: 50px;
+                            background-color: #D1D1D1;
+                            width: 24px;
+                            height: 24px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            &:after{
+                                color: #fff;
+                                position: absolute;
+                                top: 6px;
+                            }
+                        }
+                    }
+
+                }
+
+                ::ng-deep{
+
+                    .mat-expansion-panel-body{
+                        padding: 0 6px 6px;
+
+                        p{
+                            color: #666666;
+                            font-size: 14px;
+                            margin-bottom: 0px;
+                            line-height: 22px;
+                            padding-bottom: 10px;
+                        }
+                    }
+                }
+            }
+
+            ::ng-deep{
+
+                .mat-expansion-panel-spacing{
+
+                    mat-expansion-panel-header{
+                        .mat-expansion-indicator{
+                            background-color: var(--main2) !important;
+                        }
+                    }
+
+                    
+                }
+            }
+        }
+    }
+}

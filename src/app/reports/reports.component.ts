@@ -7,13 +7,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
+import { FaqComponent } from './faq/faq.component';
 
 
 
 @Component({
   selector: 'app-reports',
   standalone: true,
-  imports: [CommonModule,HeaderComponent,MatProgressBarModule,MatExpansionModule,MatFormFieldModule,MatCheckboxModule,MatIconModule],
+  imports: [CommonModule,HeaderComponent,FaqComponent,MatProgressBarModule,MatExpansionModule,MatFormFieldModule,MatCheckboxModule,MatIconModule],
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.scss']
 })
@@ -326,12 +327,6 @@ export class ReportsComponent {
   }
 
 
-
-
-  
-  
-  
-
   private createDonutChart():void{
     const donutDataValues = [300000, 500000, 800000,800000]; 
     // const donutLabels = ['A', 'B', 'C', 'D']; 
@@ -394,7 +389,6 @@ export class ReportsComponent {
   }
   
   
-  
   private createPieChart(): void {
     const pieDataValues = [45, 25, 100]; 
     // const pieLabels = ['Category A', 'Category B', 'Category C']; 
@@ -429,8 +423,7 @@ export class ReportsComponent {
     });
   }
   
-  
-  
+
   private getColor(value: number): string {
     if(value > 100){
       return '#400993'
