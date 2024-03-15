@@ -295,11 +295,12 @@
         }
     }
   
-    .isvaliderror{
         
         mat-form-field {
   
             ::ng-deep {
+
+                
   
                 .mat-form-field-wrapper {
   
@@ -328,7 +329,6 @@
                 }
             }
         }
-    }
   }
   
   .selectForm {
@@ -343,7 +343,7 @@
                 font-size: 16px;
                 font-weight: 500;
                 border: none;
-                margin-top: 16px;
+                margin-top: 0px;
                 font-family: 'Poppins' !important;
   
                 ::ng-deep{
