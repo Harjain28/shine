@@ -67,17 +67,13 @@ export class ReportsComponent {
   }
 
   expand(){
+    this.expandSection = true;
+    this.expandBlocks = true 
 
     if(this.expandCurrentCreditSection == true){
-      this.expandSection = true;
-    this.expandBlocks = true   
        this.expandCurrentCreditSection = false;
     }
-    else{
-      this.expandSection = true;
-    this.expandBlocks = true   
-    }
-
+  
   }
 
   minimize(){

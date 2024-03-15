@@ -1,5 +1,4 @@
-
-<div class="priceSection section_padding">
+<!-- <div class="priceSection section_padding">
     <div class="container">
 
         <div class="features">
@@ -34,8 +33,8 @@
                                 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="BusinessPan"><strong>Busines PAN</strong></label>
-                                        <input type="text" id="BusinessPan" name="mobilBusinessPaneNumber" placeholder="Enter your PAN number" class="form-control" [(ngModel)]="user.BusinessPan" required>
+                                        <label for="businessPan"><strong>Busines PAN</strong></label>
+                                        <input type="text" id="businessPan" name="mobilbusinessPaneNumber" placeholder="Enter your PAN number" class="form-control" [(ngModel)]="user['businessPan']" required>
                                       </div>
                                 </div>
 
@@ -110,5 +109,134 @@
 
 </div>
 </div>
-</div>
+</div> -->
 
+
+
+<div class=" selectForm formMinsize v2checksection">
+  <div class="blueBack"></div>
+  <div class="container mobilePd">
+
+    <div class="row">
+      <div class="col-xl-8 col-lg-8 col-md-12 m-auto">
+        <p class="pb-3 text-center">Update your details so we can start our customized assessment of your profile!</p>
+
+        <div class="v2checkBox">
+          <div class="from">
+            <h1>Personal Details</h1>
+            <h3>Enter your information to create an account</h3>
+
+            <div class="formSelect">
+              <div class="example-container">
+                <form [formGroup]="form2">
+                  <div class="row">
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"
+                      [ngClass]=" form2.controls['personalPan'].touched &&
+                                        form2.controls['personalPan'].hasError('required') ||  (form2.controls['personalPan'].dirty || form2.controls['personalPan'].touched) &&
+                                        form2.controls['personalPan'].hasError('pattern') || showValidatePANError ? 'isvaliderror' :  ''">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Personal PAN </mat-label>
+                        <input style="text-transform: uppercase;" matInput formControlName="personalPan"
+                          (input)="validatePanNumber()" placeholder="" />
+                      </mat-form-field>
+                      <div class="error mb-2" *ngIf="
+                                        form2.controls['personalPan'].touched &&
+                                        form2.controls['personalPan'].hasError('required')
+                                        ">
+                        Please complete this mandatory field.
+                      </div>
+
+                      <div class="error mb-2" *ngIf=" 
+                                        !form2.controls['personalPan'].hasError('required') && showValidatePANError
+                                      ">
+                        Please add valid information
+                      </div>
+                    </div>
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"
+                      [ngClass]=" form2.controls['businessPan'].touched &&
+                                        form2.controls['businessPan'].hasError('required') ||  (form2.controls['businessPan'].dirty || form2.controls['businessPan'].touched) &&
+                                        form2.controls['businessPan'].hasError('pattern') || showValidatePANError ? 'isvaliderror' :  ''">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Business PAN </mat-label>
+                        <input style="text-transform: uppercase;" matInput formControlName="businessPan"
+                          (input)="validatePanNumber()" placeholder="" />
+                      </mat-form-field>
+                      <div class="error mb-2" *ngIf="
+                                        form2.controls['businessPan'].touched &&
+                                        form2.controls['businessPan'].hasError('required')
+                                        ">
+                        Please complete this mandatory field.
+                      </div>
+
+                      <div class="error mb-2" *ngIf=" 
+                                        !form2.controls['businessPan'].hasError('required') && showValidatePANError
+                                      ">
+                        Please add valid information
+                      </div>
+                    </div>
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"
+                      [ngClass]=" form2.controls['businessConstitutuion'].touched &&
+                                      form2.controls['businessConstitutuion'].hasError('required') ||  (form2.controls['businessConstitutuion'].dirty || form2.controls['businessConstitutuion'].touched) &&
+                                      form2.controls['businessConstitutuion'].hasError('pattern') ? 'isvaliderror' :  ''">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Select</mat-label>
+                        <mat-select formControlName="businessConstitutuion" placeholder="">
+                          <mat-option value="Rented">Rented</mat-option>
+                          <mat-option value="Owned">Owned</mat-option>
+                          <mat-option value="Owned">Family Owned</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <div class="error mb-2" *ngIf="
+                                        form2.controls['businessConstitutuion'].touched &&
+                                        form2.controls['businessConstitutuion'].hasError('required')
+                                      ">
+                        Please complete this mandatory field.
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="upload">
+                          <label class="text-white"><strong>12 months Bank Statement</strong></label>
+
+                          <a class= "btn" href="" >     
+                              
+                              <mat-icon >link</mat-icon> Open External Wbsite</a>
+                          <a class= "btn" href=""><strong>Upload from Protean</strong></a>
+
+                          <a class= "btn" href=""><strong>Upload from Device</strong></a>
+
+                          
+                      </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="ButtonNow">
+                      <button>Next <mat-icon>keyboard_arrow_right</mat-icon></button>
+                      </div>
+                </div>
+
+                  <div class="Note" >By logging in, you agree to the following<br>
+                    <a href="https://ce-static-media.s3.ap-south-1.amazonaws.com/files/CreditEnable_TnC_15112023.pdf" target="_blank" class="text-white">Term of
+                      Use</a>
+                      and <a href="https://ce-static-media.s3.ap-south-1.amazonaws.com/files/CreditEnable_Experian_Consent__15112023.pdf"
+                      target="_blank" class="text-white">Experian</a> T&C.</div>
+
+                      <div class="col-md-5 m-auto text-white">
+                        <hr>
+                      </div>
+
+                  </div>
+                </form>
+              </div>
+            </div>
+
+        
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
