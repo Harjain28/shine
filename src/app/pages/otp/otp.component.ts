@@ -1,6 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { EventService } from 'src/app/services/event.service';
 import { Router } from '@angular/router';
@@ -16,14 +16,14 @@ import { MatSliderModule } from '@angular/material/slider';
   templateUrl: './otp.component.html',
   styleUrls: ['./otp.component.scss']
 })
-export class OtpComponent {
+export class OtpComponent implements OnInit{
   percentage: number = 0;
   percentageSubject: BehaviorSubject<number> = new BehaviorSubject<number>(
     this.percentage
   );
   circumference!: number;
   offset!: number;
-  lendersData: any;
+  lendersData: any; 
   phoneOtp: any;
   otpVerify!: FormGroup;
   formsValue: any;
@@ -69,14 +69,18 @@ export class OtpComponent {
     public eventService: EventService,
     public router: Router){}
 
+    ngOnInit(): void {
+      this.otpVerifyForm();
+    }
+   
+
   otpVerifyForm() {
     this.otpVerify = new FormGroup({
-      // otp: new FormControl("", [Validators.required, Validators.maxLength(6)]),
+       otp: new FormControl("", [Validators.required, Validators.maxLength(6)]),
       // terms: new FormControl({ value: true, disabled: false }, [
       //   Validators.required,
       //   Validators.requiredTrue,
       // ]),
-      whatsappConsent: new FormControl({ value: true, disabled: false }, []),
       // terms: new FormControl({value: true, disabled: false} , [Validators.required]),
       // whatsappConsent: new FormControl({value: true, disabled: false}, [Validators.required]),
     });
@@ -92,6 +96,9 @@ export class OtpComponent {
     // Handle slider value changes here
     // For example, you can log the new value to the console
     console.log(this.sliderValue);
+  }
+  goToPricing(){
+    this.router.navigate(['/pages/plans']);
   }
   
   // Function to determine whether to display thumbLabel
@@ -220,8 +227,6 @@ export class OtpComponent {
     //  }
    }
 
-   submitJourneyOtp(){
-    
-   }
+
 
 }

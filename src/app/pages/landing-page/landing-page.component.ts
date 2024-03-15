@@ -181,6 +181,10 @@ export class LandingPageComponent {
     this.isBrowser = isPlatformBrowser(this.platformId); 
     this.cdr.detectChanges();
  }
+
+ goToForm1(){
+  this.router.navigate(['/pages/form1'])
+ }
   showAboutClass(body: any) {
     this.moreContent = body;
     this.readMore = true;

@@ -3,6 +3,7 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PagesComponent } from './pages/pages.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { ReportsComponent } from './reports/reports.component';
+import { AuthGuard } from './guard/auth.gaurd';
 
 const routes: Routes = [
      
@@ -11,7 +12,7 @@ const routes: Routes = [
     
   },
   {
-    path:'pages' , component: PagesComponent,
+    path:'pages' , component: PagesComponent,canActivate: [AuthGuard],
     loadChildren:() =>import('./pages/pages.routes')
   }
 ];

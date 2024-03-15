@@ -8,6 +8,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { EventService } from 'src/app/services/event.service';
 import { MaterialModule } from 'src/app/material.module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form2',
@@ -21,7 +22,7 @@ export class Form2Component {
   showValidatePANError!: boolean ;
 
 
-  constructor(public eventService: EventService){}
+  constructor(public eventService: EventService,public router: Router){}
 
   ngOnInit(): void {
 
@@ -36,6 +37,10 @@ export class Form2Component {
       businessPan: new FormControl("", [Validators.required]),
       businessConstitutuion: new FormControl("", [Validators.required]),
     });
+  }
+
+  goToOtp(){
+    this.router.navigate(['/pages/otp'])
   }
 
   validatePanNumber() {

@@ -22,13 +22,11 @@ export class AuthGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    // Check if the current URL is in the list of page URLs
     if (this.pageUrls.includes(state.url) ) {
-      // Redirect to the home page
       this.router.navigateByUrl('/project-shine');
-      return false; // Return false to prevent navigation
+      return false; 
     }
 
-    return true; // Allow navigation to the requested page
+    return true; 
   }
 }

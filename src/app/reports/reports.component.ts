@@ -47,6 +47,7 @@ export class ReportsComponent {
   expandSection!: boolean;
   expandCurrentCreditSection!: boolean;
   expandBlocks!: boolean;
+  expandBusinessSection!: boolean;
 
 
 
@@ -102,6 +103,14 @@ export class ReportsComponent {
     this.expandBlocks = false;
 
 
+  }
+
+  expandBankingBusniess(){
+    this.expandBusinessSection = true;
+  }
+
+  minimizeBusinessBanking(){
+    this.expandBusinessSection = false;
   }
 
   private createSemiDoughnutChart(): void {
