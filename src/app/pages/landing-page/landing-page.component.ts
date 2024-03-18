@@ -182,8 +182,8 @@ export class LandingPageComponent {
     this.cdr.detectChanges();
  }
 
- goToForm1(){
-  this.router.navigate(['/pages/form1'])
+ goToPlans(){
+  this.router.navigate(['/pages/plans'])
  }
   showAboutClass(body: any) {
     this.moreContent = body;
