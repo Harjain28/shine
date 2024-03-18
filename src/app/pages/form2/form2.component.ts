@@ -39,9 +39,7 @@ export class Form2Component {
     });
   }
 
-  goToOtp(){
-    this.router.navigate(['/pages/otp'])
-  }
+
 
   validatePanNumber() {
     // const formValue = this.v1enquiryForm.value;

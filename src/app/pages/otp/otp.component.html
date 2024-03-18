@@ -27,7 +27,7 @@
                 </div>
   
                 <div class="ButtonNow pushable">
-                  <button  (click)="goToPricing()">Next
+                  <button [disabled]="isOtpSubmit" (click)="submitOtp()">Next
                     <mat-icon>keyboard_arrow_right</mat-icon></button>
                 </div>
                 <div class="resend">

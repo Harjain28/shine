@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ApplicationModule, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormField, MatFormFieldModule, MatLabel } from '@angular/material/form-field';
@@ -8,12 +8,16 @@ import { HeaderComponent } from 'src/app/shared/header/header.component';
 import { MatOptionModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { EventService } from 'src/app/services/event.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @Component({
   selector: 'app-form1',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, FormsModule,MatIconModule,MatOptionModule,MaterialModule,MatInputModule],
+  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, 
+    FormsModule,MatIconModule,MatOptionModule,MaterialModule,MatInputModule],
   templateUrl: './form1.component.html',
   styleUrls: ['./form1.component.scss']
 })
@@ -21,9 +25,16 @@ export class Form1Component implements OnInit {
   form1!: FormGroup;
   showValidatePANError!: boolean ;
   showValidatepinError!: boolean;
+  isSubmit: boolean  = false;
+  paramsObject: any;
+  errorVisible = false;
 
 
-  constructor(public eventService: EventService, public router: Router ){}
+  constructor(private route: ActivatedRoute, public eventService: EventService, public router: Router, private api: ApiService ){
+    this.route.queryParamMap.subscribe((params) => {
+      this.paramsObject = { ...params };
+    });
+  }
 
   ngOnInit(): void {
 
@@ -34,13 +45,11 @@ export class Form1Component implements OnInit {
    form() {
     this.form1 = new FormGroup({
 
-             title: new FormControl("", [Validators.required]),
-
+      title: new FormControl("", [Validators.required]),
       firstName: new FormControl("", [Validators.required,Validators.pattern("^[a-zA-Z ]+$"),]),
       lastName: new FormControl("", [Validators.required,Validators.pattern("^[a-zA-Z ]+$"),]),
       phoneNumber: new FormControl("", [Validators.required,Validators.pattern("^[6-9]\\d{9}$"),Validators.maxLength(10),]),
-      emailId: new FormControl("", {validators: [Validators.required,Validators.pattern("^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$"),],
-                           updateOn: "blur",}),
+      emailId: new FormControl("", {validators: [Validators.required,Validators.pattern("^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$"),],updateOn: "blur",}),
       pincode: new FormControl("", [Validators.required]),
       busninessName: new FormControl("", [Validators.required,Validators.pattern("^[a-zA-Z ]+$"),]),
       businessTurnover: new FormControl("", [Validators.required]),
@@ -50,6 +59,71 @@ export class Form1Component implements OnInit {
 
 
       });
+  }
+
+  goToOtp(){
+    this.router.navigate(['/pages/otp'])
+  }
+
+  getOtpbyPhone() {
+    this.isSubmit = true;
+    const formValue = this.form1.value;
+    const defaultparams = {
+      forceGenerate: false,
+      resend: false
+    };
+
+    const params = { ...defaultparams, ...this.paramsObject.params };
+    let requestData: any = {}; 
+    requestData["mobile"] = formValue.phoneNumber;
+    requestData["email"] = formValue.emailId;
+    requestData["firstName"] = formValue.firstName.toUpperCase();
+    requestData["lastName"] =  formValue.lastName.toUpperCase();
+    requestData["businessName"] =  formValue.busninessName;
+    requestData["pincode"] =  formValue.pincode;
+    requestData["businessPan"] =  formValue.businessPan;
+    requestData["propertyOwnership"] =  formValue.propertyOwnership;
+    requestData["turnover"] =  formValue.businessTurnover;
+
+
+ 
+      if (this.form1.valid) { 
+    this.api.post(`api/Remediation/GetOTP`, requestData, params).subscribe({ next: (res: any) => {
+          if (res) {
+            // const mobile = Buffer.from(formValue.phoneNumber).toString(
+            //   "base64"
+            // );
+            localStorage.setItem("mobile",formValue.phoneNumber)
+            console.log("Form1 Submitted");
+         
+
+            
+   
+            this.isSubmit = true;
+          } else          
+            this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
+          
+            this.isSubmit = false;
+          
+        },
+        error: error => {
+          this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
+          // Handle any errors 
+          this.isSubmit = false;
+        },
+        complete: () => {
+          ('Request complete');
+          this.isSubmit = false;
+        }
+      });
+      }
+       else {
+        this.form1.markAllAsTouched();
+        
+          this.errorVisible = true;
+        
+        this.isSubmit = false;
+      }
   }
 
   validatePanNumber() {
@@ -110,9 +184,9 @@ export class Form1Component implements OnInit {
     //     });
     // }
   }
-  goToOtp(){
-    this.router.navigate(['/pages/otp'])
-  }
+
+
+ 
 
  
  

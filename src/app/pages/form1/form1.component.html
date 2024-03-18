@@ -23,7 +23,7 @@
                                                       form1.controls['title'].hasError('required') ||  (form1.controls['title'].dirty || form1.controls['title'].touched) &&
                                                       form1.controls['title'].hasError('pattern') ? 'isvaliderror' :  ''">
                                                       <mat-form-field appearance="fill">
-                                                        <mat-label>Title</mat-label>
+                                                        <mat-label>Salutation/Title</mat-label>
                                                         <mat-select formControlName='title'  placeholder="">
                                                             <mat-option value="Mr.">Mr.</mat-option>
                                                             <mat-option value="Ms.">Ms.</mat-option>
@@ -92,7 +92,7 @@
                                         form1.controls['phoneNumber'].hasError('pattern') ? 'isvaliderror' :  ''">
                                             <mat-form-field appearance="fill">
                                                 <mat-label>Mobile number </mat-label>
-                                                <input matInput maxlength="10" (keypress)="eventService.numberOnly($event, 'mobile')" formControlName='phoneNumber' placeholder="">
+                                                <input matInput maxlength="10" (keypress)="eventService.numberOnly($event, 'phoneNumber')" formControlName='phoneNumber' placeholder="">
                                             </mat-form-field>
   
                                             <div class="error mb-2" *ngIf="
@@ -139,7 +139,7 @@
                                       form1.controls['pincode'].hasError('required')) || showValidatepinError  ? 'isvaliderror' :  ''">
                                         <mat-form-field appearance="fill">
                                           <mat-label>Pin Code</mat-label>
-                                          <input matInput (keypress)="eventService.numberOnly($event, 'mobile')" formControlName="pincode"
+                                          <input matInput maxllength="5" (keypress)="eventService.numberOnly($event, 'mobile')" formControlName="pincode"
                                             (input)="validatePincode()" placeholder="" />
                                         </mat-form-field>
                                         <div class="error mb-2" *ngIf="
@@ -254,7 +254,7 @@
   
                         <div class="ButtonNow">
                             <a class="btn btn-secondary" routerLink="/previousStep">Back</a>
-                            <button  (click)="goToOtp()">Next <mat-icon>keyboard_arrow_right</mat-icon></button>
+                            <button [disabled]="isSubmit" (click)="getOtpbyPhone()">Next <mat-icon>keyboard_arrow_right</mat-icon></button>
                           </div>
                     </div>
                 </div>

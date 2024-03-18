@@ -6,6 +6,8 @@ import { EventService } from './event.service';
 // import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from '../environments/environment';
+import Swal from 'sweetalert2';
 
 
 @Injectable({
@@ -24,7 +26,7 @@ export class ApiService {
   paramsObject: any;
 
   shared:  any = [];
-  API_URL: any;
+  API_URL: string;
 
   constructor(
     private http: HttpClient,
@@ -37,8 +39,10 @@ export class ApiService {
     });
 
    
-    this.TOKEN = localStorage.getItem('token');
+   // this.TOKEN = localStorage.getItem('token');
   
+    this.API_URL = environment.BASE_API_ENDPOINT;
+
    
   }
 
@@ -72,7 +76,6 @@ export class ApiService {
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'X-Api-Version' : '2.0'
       })
     };
     return this.http.post(`${this.API_URL}${path}`,  body, {headers: this.httpOptions.headers , params}).pipe(catchError(this.formatErrors));
@@ -98,27 +101,29 @@ export class ApiService {
     })).pipe(catchError(this.formatErrors));
   }
 
-  // alert(message: string, type: any) {
-  //   return Swal.fire({
-  //     title: message,
-  //     icon: type,
-  //     toast: true,
-  //     position: 'center',
-  //     showConfirmButton: false,
-  //     timer: 2000,
-  //     width: '500px',
-  //   });
-  // }
+  alertOk(message: string, type: any) {
+    return Swal.fire({
+      title: message,
+      icon: type,
+      position: 'center',
+      showConfirmButton: true,
+      width: '600px',
+    })
+  }
 
-  // alertOk(message: string, type: any) {
-  //   return Swal.fire({
-  //     title: message,
-  //     icon: type,
-  //     position: 'center',
-  //     showConfirmButton: true,
-  //     width: '600px',
-  //   })
-  // }
+  alert(message: string, type: any) {
+    return Swal.fire({
+      title: message,
+      icon: type,
+      toast: true,
+      position: 'center',
+      showConfirmButton: false,
+      timer: 2000,
+      width: '500px',
+    });
+  }
+
+
 
   private formatErrors(error: any) {
     return throwError(error.error);

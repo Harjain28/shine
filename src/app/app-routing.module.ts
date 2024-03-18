@@ -12,7 +12,7 @@ const routes: Routes = [
     
   },
   {
-    path:'pages' , component: PagesComponent,canActivate: [AuthGuard],
+    path:'pages' , component: PagesComponent,
     loadChildren:() =>import('./pages/pages.routes')
   }
 ];

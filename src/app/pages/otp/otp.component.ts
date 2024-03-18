@@ -8,6 +8,7 @@ import { BehaviorSubject, Subscription, take, timer } from 'rxjs';
 import { Config } from "ng-otp-input/lib/models/config";
 import { NgOtpInputModule } from 'ng-otp-input';
 import { MatSliderModule } from '@angular/material/slider';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-otp',
@@ -50,6 +51,7 @@ export class OtpComponent implements OnInit{
   ncjData: any;
   showEligible: boolean = false;
   customDialogClass!: string;
+  sliderValue: number = 0;
   config: Config = {
     allowNumbersOnly: true,
     length: 6,
@@ -67,7 +69,8 @@ export class OtpComponent implements OnInit{
   showThumbLabel: boolean = false;
   constructor(
     public eventService: EventService,
-    public router: Router){}
+    public router: Router,
+    private api: ApiService){}
 
     ngOnInit(): void {
       this.otpVerifyForm();
@@ -90,7 +93,48 @@ export class OtpComponent implements OnInit{
     // Your slider input handling logic here
   }
 
-  sliderValue: number = 0;
+  submitOtp() {
+    this.isOtpSubmit = true;
+    const formValue = this.otpVerify.value;
+    let requestData = {};
+    const defaultparams = {
+      mobile: localStorage.getItem("mobile"),
+      otp: formValue.otp,
+      
+    };
+    const params = { ...defaultparams, ...this.paramsObject.params };
+    if (!this.phoneOtp || this.phoneOtp.length < 6) {
+      this.api.alert("Please Complete otp", "error");
+    }
+
+    if (this.otpVerify.valid && this.phoneOtp && this.phoneOtp.length > 5) {
+      this.api.post(`account/loginnew`, requestData, params).subscribe({
+        next: (res: any) => {
+          if (res.success == true) {
+          //  const stateData = Buffer.from(res.token).toString("base64");
+
+            console.log("Otp Verfied")
+
+          } else {
+            this.api.alert("Please add valid information", "error");
+            this.isOtpSubmit = false;
+          }
+        },
+        error: (error) => {
+          this.api.alert(error, "error");
+          this.api.alert("try again", "error");
+          this.isOtpSubmit = false;
+        },
+        complete: () => {
+        //  ("Request complete");
+        },
+      });
+    } else {
+      this.otpVerify.markAllAsTouched();
+      this.isOtpSubmit = false;
+    }
+  }
+
 
   onInputChange(event: Event) {
     // Handle slider value changes here
