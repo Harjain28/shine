@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { EventService } from 'src/app/services/event.service';
-import { Router } from '@angular/router';
 import { BehaviorSubject, Subscription, take, timer } from 'rxjs';
 import { Config } from "ng-otp-input/lib/models/config";
 import { NgOtpInputModule } from 'ng-otp-input';
 import { MatSliderModule } from '@angular/material/slider';
 import { ApiService } from 'src/app/services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-otp',
@@ -142,7 +142,7 @@ export class OtpComponent implements OnInit{
     console.log(this.sliderValue);
   }
   goToPricing(){
-    this.router.navigate(['/pages/plans']);
+    // this.router.navigate(['/pages/plans']);
   }
   
   // Function to determine whether to display thumbLabel

@@ -22,10 +22,10 @@ export class AuthGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    if (this.pageUrls.includes(state.url) ) {
-      this.router.navigateByUrl('/project-shine');
-      return false; 
-    }
+    // if (this.pageUrls.includes(state.url) ) {
+    //   this.router.navigateByUrl('/project-shine');
+    //   return false; 
+    // }
 
     return true; 
   }
