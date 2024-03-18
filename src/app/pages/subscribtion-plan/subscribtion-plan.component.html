@@ -1,5 +1,5 @@
 <div class="priceSection section_padding">
-    <div class="container">
+    <div class="container"  #carouselHolder>
 
         <div class="features">
             <div class="row">
@@ -12,9 +12,21 @@
                         </p>
                     </div>
                 </div>
+                <ng-container>
 
-                <mat-tab-group>
-                    <mat-tab label="First">
+                    <ul class="toggleBtn">
+                        <li>
+                        
+                    <button (click)="openCarousel('month')">Month</button>
+                        </li>
+                        <li>
+                            <button (click)="openCarousel('yearly')">Yearly</button>
+                        </li>
+                    </ul>
+
+                   
+
+                      <div *ngIf="selectedTab === 'month'">
                         <owl-carousel-o [options]="customOptions">
                             <ng-container>
                                 <ng-template carouselSlide>
@@ -66,7 +78,7 @@
                                                     growth.</p>
                                                 <div class="price">
                                                     <p><span class="big-rupee">₹</span> <strong>1200 </strong> <span
-                                                            class="small-inr">INR</span></p> <!-- Updated class -->
+                                                            class="small-inr">INR</span></p> 
                                                 </div>
                                                 <p class="small-text black-bold">Per Member / Per Month</p>
 
@@ -113,7 +125,7 @@
                                                     benefits</p>
                                                 <div class="price">
                                                     <p><span class="big-rupee">₹</span> <strong>1400 </strong> <span
-                                                            class="small-inr">INR</span></p> <!-- Updated class -->
+                                                            class="small-inr">INR</span></p> 
                                                 </div>
                                                 <p class="small-text black-bold">Per Member / Per Month</p>
 
@@ -158,8 +170,8 @@
                                 </ng-template>
                             </ng-container>
                         </owl-carousel-o>
-                    </mat-tab>
-                    <mat-tab label="Second">
+                        </div>
+                        <div *ngIf="selectedTab === 'yearly'">
                         <owl-carousel-o [options]="customOptions1">
                             <ng-container>
                                 <ng-template carouselSlide>
@@ -171,7 +183,7 @@
                                                     financial
                                                     journey</p>
                                                 <div class="price">
-                                                    <p><span class="big-rupee">₹</span> <strong>1000 </strong> <span
+                                                    <p><span class="big-rupee">₹</span> <strong>2000 </strong> <span
                                                             class="small-inr">INR</span></p> <!-- Updated class -->
                                                 </div>
                                                 <p class="small-text black-bold">Per Member / Per Month</p>
@@ -210,7 +222,7 @@
                                                     and
                                                     growth.</p>
                                                 <div class="price">
-                                                    <p><span class="big-rupee">₹</span> <strong>1200 </strong> <span
+                                                    <p><span class="big-rupee">₹</span> <strong>2200 </strong> <span
                                                             class="small-inr">INR</span></p> <!-- Updated class -->
                                                 </div>
                                                 <p class="small-text black-bold">Per Member / Per Month</p>
@@ -257,7 +269,7 @@
                                                     top-tier
                                                     benefits</p>
                                                 <div class="price">
-                                                    <p><span class="big-rupee">₹</span> <strong>1400 </strong> <span
+                                                    <p><span class="big-rupee">₹</span> <strong>3400 </strong> <span
                                                             class="small-inr">INR</span></p> <!-- Updated class -->
                                                 </div>
                                                 <p class="small-text black-bold">Per Member / Per Month</p>
@@ -303,8 +315,8 @@
                                 </ng-template>
                             </ng-container>
                         </owl-carousel-o>
-                    </mat-tab>
-                </mat-tab-group>
+                        </div>
+            </ng-container>
             </div>
         </div>
     </div>

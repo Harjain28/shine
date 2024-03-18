@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewChecked, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -14,9 +14,9 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
   templateUrl: './subscribtion-plan.component.html',
   styleUrls: ['./subscribtion-plan.component.scss']
 })
-export class SubscribtionPlanComponent {
+export class SubscribtionPlanComponent implements OnInit {
   isActive = false;
-
+  selectedTab: string = 'month'; 
   customOptions: OwlOptions = {
     loop: false,
     mouseDrag: false,
@@ -46,7 +46,7 @@ export class SubscribtionPlanComponent {
       },
       940: {
         items: 3,
-        skip_validateItems: true,
+        skip_validateItems: false,
       },
     },
   };
@@ -84,7 +84,8 @@ export class SubscribtionPlanComponent {
       },
     },
   };
-  constructor(    public router: Router,
+
+  constructor(    public router: Router,private cdRef: ChangeDetectorRef
     ){
 
   }
@@ -96,8 +97,19 @@ export class SubscribtionPlanComponent {
 
 
 
+  openCarousel(tab: string) {
+    this.selectedTab = tab;
+  }
+  
+
+
   goToSelection(){
     this.router.navigate(['/pages/selection'])
 
   }
-}
+
+  ngOnInit(): void {
+ 
+  }
+
+  }

@@ -11,6 +11,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     FooterComponent,
     HeaderComponent,
     HttpClientModule,
+    CarouselModule,
     MatDialogModule
   ],
   providers: [],
