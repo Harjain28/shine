@@ -464,12 +464,13 @@
                         .mainHeading{
                             font-size: 26px !important;
                             text-transform: uppercase;
+                            text-align: center;
                         }
     
                          p{
                             font-size: 15px !important;
                             line-height: 22px !important;
-                            text-align: left;
+                            text-align: center;
                             margin-bottom: 8px !important;
                          }
                         }
@@ -1335,8 +1336,6 @@
     .SecuredBusinessLoan {
 
         .homeSlider {
-
-        min-height: calc(100vh - 180px);
                 .silderSlide{
                         height: 100% !important;
 

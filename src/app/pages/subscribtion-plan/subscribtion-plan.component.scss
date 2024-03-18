@@ -96,7 +96,7 @@
 }
 
 mat-card {
-    height: 100%;
+    height: 680px;
     padding: 20px;
     border: 2px solid #000;
     border-radius: 40px;
@@ -153,5 +153,61 @@ ul li {
     color: #6a2fc2;
     padding-left: 2px;
     font-weight: bold;
+}
+
+.features{
+
+    mat-tab-group{
+
+        ::ng-deep{
+
+            .mat-mdc-tab-header{
+                display: block;
+
+                .mat-mdc-tab-label-container{
+
+                    .mat-mdc-tab-labels{
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        justify-content: center;
+
+                        .mdc-tab{
+                            margin-bottom: 20px;
+                            display: flex;
+                            align-items: center;
+                            gap: 12px;
+                            flex-grow: initial;
+                            padding: 0px;
+
+                            &.mdc-tab-indicator--active{
+                                .mdc-tab__content{
+                                    background-color: var(--main1);
+
+                                    .mdc-tab__text-label{
+                                        color: #fff;
+                                    }
+                                }
+                            }
+
+                            .mdc-tab__content{
+                                width: 130px;
+                                background-color: #eeeeee;
+                                border: 1px solid #3f3f3f;
+                                color: #3f3f3f;
+                                border-radius: 10px;
+                                font-weight: 600;
+                                font-size: 16px;
+                            }
+
+                            .mdc-tab-indicator{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 

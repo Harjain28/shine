@@ -1,4 +1,3 @@
-
 <div class="priceSection section_padding">
     <div class="container">
 
@@ -11,141 +10,301 @@
                         </h3>
                         <p>Our Starter plan costs less than 1% of<br> your next project and can save
                         </p>
-
-                            <ul class="toggleBtn">
-                                <li>
-                                    <button>Monthly</button>
-                                </li>
-                                <li>
-                                    <button class="active">Yearly</button>
-                                </li>
-                            </ul>
-
-                    </div>
-
-                    
-                      
-                </div>
-
-                
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="feature-card">
-                        <mat-card>
-                            <div class="title">
-                                <h1 class="basic-title">Basic</h1>
-                                <p class="small-text">Essential features for a solid start to your financial journey</p>
-                                <div class="price">
-                                    <p><span class="big-rupee">₹</span> <strong>1000 </strong> <span
-                                            class="small-inr">INR</span></p> <!-- Updated class -->
-                                </div>
-                                <p class="small-text black-bold">Per Member / Per Month</p>
-
-                            </div>
-                            <div class="cta">
-                                <button mat-raised-button color="primary" class="button" (click)= "goToSelection()">Get Now</button>
-                            </div>
-                            <h3>Features</h3>
-
-                            <mat-card-content>
-
-                                <ul>
-
-
-                                    <li>Consolidated financial overview</li>
-                                    <li>Credit bureau check</li>
-                                    <li>Credit benchmarking & analysis</li>
-                                    <li>Customized recommendations for creditworthiness improvement</li>
-                                    <li>GST analysis</li>
-                                    <li>Personalized recommendations</li>
-                                </ul>
-                            </mat-card-content>
-                        </mat-card>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="feature-card active">
-                        <mat-card>
-                            <div class="title">
-                                <h1 class="basic-title">Pro</h1>
-                                <p class="small-text">Advanced tools to elevate your financial welbeing and growth.</p>
-                                <div class="price">
-                                    <p><span class="big-rupee">₹</span> <strong>1200 </strong> <span
-                                            class="small-inr">INR</span></p> <!-- Updated class -->
-                                </div>
-                                <p class="small-text black-bold">Per Member / Per Month</p>
+                <mat-tab-group>
+                    <mat-tab label="First">
+                        <owl-carousel-o [options]="customOptions">
+                            <ng-container>
+                                <ng-template carouselSlide>
+                                    <div class="feature-card">
+                                        <mat-card>
+                                            <div class="title">
+                                                <h1 class="basic-title">Basic</h1>
+                                                <p class="small-text">Essential features for a solid start to your
+                                                    financial
+                                                    journey</p>
+                                                <div class="price">
+                                                    <p><span class="big-rupee">₹</span> <strong>1000 </strong> <span
+                                                            class="small-inr">INR</span></p> <!-- Updated class -->
+                                                </div>
+                                                <p class="small-text black-bold">Per Member / Per Month</p>
 
-                            </div>
-                            <div class="cta">
-                                <button mat-raised-button color="primary" class="button" (click)= "goToSelection()">Get Now</button>
-                            </div>
-                            <h3>Features</h3>
+                                            </div>
+                                            <div class="cta">
+                                                <button mat-raised-button color="primary" class="button"
+                                                    (click)="goToSelection()">Get
+                                                    Now</button>
+                                            </div>
+                                            <h3>Features</h3>
 
-                            <mat-card-content>
+                                            <mat-card-content>
 
-                                <ul>
-
-
-                                    <li>Consolidated financial overview</li>
-                                    <li>Credit check</li>
-                                    <li>Credit benchmarking & analysis</li>
-                                    <li>GST analysis</li>
-                                    <li>Personalized recommendations</li>
-                                    <li>Comprehensive banking analysis including Volatility Index, Ratio Analysis, &
-                                        Banking Discipline</li>
-                                    <li>Detailed insights of financial health for improvement</li>
-                                    <li>Early warning indicators for potential creditworthiness issues</li>
-                                    <li>Customized recommendations for creditworthiness improvement with banking
-                                        insights</li>
-                                </ul>
-                            </mat-card-content>
-                        </mat-card>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="feature-card">
-                        <mat-card>
-                            <div class="title">
-                                <h1 class="basic-title">Premium</h1>
-                                <p class="small-text">Exclusive features for unparalleled performance and top-tier
-                                    benefits</p>
-                                <div class="price">
-                                    <p><span class="big-rupee">₹</span> <strong>1400 </strong> <span
-                                            class="small-inr">INR</span></p> <!-- Updated class -->
-                                </div>
-                                <p class="small-text black-bold">Per Member / Per Month</p>
-
-                            </div>
-                            <div class="cta">
-                                <button mat-raised-button color="primary" class="button" (click)= "goToSelection()">Get Now</button>
-                            </div>
-                            <h3>Features</h3>
-
-                            <mat-card-content>
-
-                                <ul>
+                                                <ul>
 
 
-                                    <li>Consolidated financial overview</li>
-                                    <li>Credit check</li>
-                                    <li>Credit benchmarking & analysis</li>
-                                    <li>GST analysis</li>
-                                    <li>Personalized recommendations</li>
-                                    <li>Comprehensive banking analysis including Volatility Index, Ratio Analysis, &
-                                        Banking Discipline</li>
-                                    <li>Detailed insights of financial health for improvement</li>
-                                    <li>Early warning indicators for potential creditworthiness issues</li>
-                                    <li>Personalized strategies to improve credit to receive desired loan approval</li>
-                                    <li>Exclusive access to educational content on financial health and borrowing best
-                                        practices</li>
-                                    <li>Personalized insights into 15+ lender fits and strategies to receive desired
-                                        loan approval</li>
-                                </ul>
-                            </mat-card-content>
-                        </mat-card>
-                    </div>
-                </div>
+                                                    <li>Consolidated financial overview</li>
+                                                    <li>Credit bureau check</li>
+                                                    <li>Credit benchmarking & analysis</li>
+                                                    <li>Customized recommendations for creditworthiness improvement</li>
+                                                    <li>GST analysis</li>
+                                                    <li>Personalized recommendations</li>
+                                                </ul>
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </div>
+                                </ng-template>
+
+                                <ng-template carouselSlide>
+                                    <div class="feature-card">
+                                        <mat-card>
+                                            <div class="title">
+                                                <h1 class="basic-title">Pro</h1>
+                                                <p class="small-text">Advanced tools to elevate your financial welbeing
+                                                    and
+                                                    growth.</p>
+                                                <div class="price">
+                                                    <p><span class="big-rupee">₹</span> <strong>1200 </strong> <span
+                                                            class="small-inr">INR</span></p> <!-- Updated class -->
+                                                </div>
+                                                <p class="small-text black-bold">Per Member / Per Month</p>
+
+                                            </div>
+                                            <div class="cta">
+                                                <button mat-raised-button color="primary" class="button"
+                                                    (click)="goToSelection()">Get
+                                                    Now</button>
+                                            </div>
+                                            <h3>Features</h3>
+
+                                            <mat-card-content>
+
+                                                <ul>
+
+
+                                                    <li>Consolidated financial overview</li>
+                                                    <li>Credit check</li>
+                                                    <li>Credit benchmarking & analysis</li>
+                                                    <li>GST analysis</li>
+                                                    <li>Personalized recommendations</li>
+                                                    <li>Comprehensive banking analysis including Volatility Index, Ratio
+                                                        Analysis, &
+                                                        Banking Discipline</li>
+                                                    <li>Detailed insights of financial health for improvement</li>
+                                                    <li>Early warning indicators for potential creditworthiness issues
+                                                    </li>
+                                                    <li>Customized recommendations for creditworthiness improvement with
+                                                        banking
+                                                        insights</li>
+                                                </ul>
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </div>
+                                </ng-template>
+                                <ng-template carouselSlide>
+                                    <div class="feature-card">
+                                        <mat-card>
+                                            <div class="title">
+                                                <h1 class="basic-title">Premium</h1>
+                                                <p class="small-text">Exclusive features for unparalleled performance
+                                                    and
+                                                    top-tier
+                                                    benefits</p>
+                                                <div class="price">
+                                                    <p><span class="big-rupee">₹</span> <strong>1400 </strong> <span
+                                                            class="small-inr">INR</span></p> <!-- Updated class -->
+                                                </div>
+                                                <p class="small-text black-bold">Per Member / Per Month</p>
+
+                                            </div>
+                                            <div class="cta">
+                                                <button mat-raised-button color="primary" class="button"
+                                                    (click)="goToSelection()">Get
+                                                    Now</button>
+                                            </div>
+                                            <h3>Features</h3>
+
+                                            <mat-card-content>
+
+                                                <ul>
+
+
+                                                    <li>Consolidated financial overview</li>
+                                                    <li>Credit check</li>
+                                                    <li>Credit benchmarking & analysis</li>
+                                                    <li>GST analysis</li>
+                                                    <li>Personalized recommendations</li>
+                                                    <li>Comprehensive banking analysis including Volatility Index, Ratio
+                                                        Analysis, &
+                                                        Banking Discipline</li>
+                                                    <li>Detailed insights of financial health for improvement</li>
+                                                    <li>Early warning indicators for potential creditworthiness issues
+                                                    </li>
+                                                    <li>Personalized strategies to improve credit to receive desired
+                                                        loan
+                                                        approval</li>
+                                                    <li>Exclusive access to educational content on financial health and
+                                                        borrowing best
+                                                        practices</li>
+                                                    <li>Personalized insights into 15+ lender fits and strategies to
+                                                        receive
+                                                        desired
+                                                        loan approval</li>
+                                                </ul>
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </div>
+                                </ng-template>
+                            </ng-container>
+                        </owl-carousel-o>
+                    </mat-tab>
+                    <mat-tab label="Second">
+                        <owl-carousel-o [options]="customOptions1">
+                            <ng-container>
+                                <ng-template carouselSlide>
+                                    <div class="feature-card">
+                                        <mat-card>
+                                            <div class="title">
+                                                <h1 class="basic-title">Basic</h1>
+                                                <p class="small-text">Essential features for a solid start to your
+                                                    financial
+                                                    journey</p>
+                                                <div class="price">
+                                                    <p><span class="big-rupee">₹</span> <strong>1000 </strong> <span
+                                                            class="small-inr">INR</span></p> <!-- Updated class -->
+                                                </div>
+                                                <p class="small-text black-bold">Per Member / Per Month</p>
+
+                                            </div>
+                                            <div class="cta">
+                                                <button mat-raised-button color="primary" class="button"
+                                                    (click)="goToSelection()">Get
+                                                    Now</button>
+                                            </div>
+                                            <h3>Features</h3>
+
+                                            <mat-card-content>
+
+                                                <ul>
+
+
+                                                    <li>Consolidated financial overview</li>
+                                                    <li>Credit bureau check</li>
+                                                    <li>Credit benchmarking & analysis</li>
+                                                    <li>Customized recommendations for creditworthiness improvement</li>
+                                                    <li>GST analysis</li>
+                                                    <li>Personalized recommendations</li>
+                                                </ul>
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </div>
+                                </ng-template>
+
+                                <ng-template carouselSlide>
+                                    <div class="feature-card">
+                                        <mat-card>
+                                            <div class="title">
+                                                <h1 class="basic-title">Pro</h1>
+                                                <p class="small-text">Advanced tools to elevate your financial welbeing
+                                                    and
+                                                    growth.</p>
+                                                <div class="price">
+                                                    <p><span class="big-rupee">₹</span> <strong>1200 </strong> <span
+                                                            class="small-inr">INR</span></p> <!-- Updated class -->
+                                                </div>
+                                                <p class="small-text black-bold">Per Member / Per Month</p>
+
+                                            </div>
+                                            <div class="cta">
+                                                <button mat-raised-button color="primary" class="button"
+                                                    (click)="goToSelection()">Get
+                                                    Now</button>
+                                            </div>
+                                            <h3>Features</h3>
+
+                                            <mat-card-content>
+
+                                                <ul>
+
+
+                                                    <li>Consolidated financial overview</li>
+                                                    <li>Credit check</li>
+                                                    <li>Credit benchmarking & analysis</li>
+                                                    <li>GST analysis</li>
+                                                    <li>Personalized recommendations</li>
+                                                    <li>Comprehensive banking analysis including Volatility Index, Ratio
+                                                        Analysis, &
+                                                        Banking Discipline</li>
+                                                    <li>Detailed insights of financial health for improvement</li>
+                                                    <li>Early warning indicators for potential creditworthiness issues
+                                                    </li>
+                                                    <li>Customized recommendations for creditworthiness improvement with
+                                                        banking
+                                                        insights</li>
+                                                </ul>
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </div>
+                                </ng-template>
+                                <ng-template carouselSlide>
+                                    <div class="feature-card">
+                                        <mat-card>
+                                            <div class="title">
+                                                <h1 class="basic-title">Premium</h1>
+                                                <p class="small-text">Exclusive features for unparalleled performance
+                                                    and
+                                                    top-tier
+                                                    benefits</p>
+                                                <div class="price">
+                                                    <p><span class="big-rupee">₹</span> <strong>1400 </strong> <span
+                                                            class="small-inr">INR</span></p> <!-- Updated class -->
+                                                </div>
+                                                <p class="small-text black-bold">Per Member / Per Month</p>
+
+                                            </div>
+                                            <div class="cta">
+                                                <button mat-raised-button color="primary" class="button"
+                                                    (click)="goToSelection()">Get
+                                                    Now</button>
+                                            </div>
+                                            <h3>Features</h3>
+
+                                            <mat-card-content>
+
+                                                <ul>
+
+
+                                                    <li>Consolidated financial overview</li>
+                                                    <li>Credit check</li>
+                                                    <li>Credit benchmarking & analysis</li>
+                                                    <li>GST analysis</li>
+                                                    <li>Personalized recommendations</li>
+                                                    <li>Comprehensive banking analysis including Volatility Index, Ratio
+                                                        Analysis, &
+                                                        Banking Discipline</li>
+                                                    <li>Detailed insights of financial health for improvement</li>
+                                                    <li>Early warning indicators for potential creditworthiness issues
+                                                    </li>
+                                                    <li>Personalized strategies to improve credit to receive desired
+                                                        loan
+                                                        approval</li>
+                                                    <li>Exclusive access to educational content on financial health and
+                                                        borrowing best
+                                                        practices</li>
+                                                    <li>Personalized insights into 15+ lender fits and strategies to
+                                                        receive
+                                                        desired
+                                                        loan approval</li>
+                                                </ul>
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </div>
+                                </ng-template>
+                            </ng-container>
+                        </owl-carousel-o>
+                    </mat-tab>
+                </mat-tab-group>
             </div>
         </div>
     </div>
