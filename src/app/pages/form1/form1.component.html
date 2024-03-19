@@ -139,7 +139,7 @@
                                       form1.controls['pincode'].hasError('required')) || showValidatepinError  ? 'isvaliderror' :  ''">
                                         <mat-form-field appearance="fill">
                                           <mat-label>Pin Code</mat-label>
-                                          <input matInput maxllength="5" (keypress)="eventService.numberOnly($event, 'mobile')" formControlName="pincode"
+                                          <input matInput (keypress)="eventService.numberOnly($event, 'mobile')" formControlName="pincode"
                                             (input)="validatePincode()" placeholder="" />
                                         </mat-form-field>
                                         <div class="error mb-2" *ngIf="
@@ -185,13 +185,12 @@
                                                         <mat-form-field appearance="fill">
                                                           <mat-label>Business Turnover</mat-label>
                                                           <mat-select formControlName='businessTurnover'  placeholder="">
-                                                              <mat-option value="Rs 1-5 Lakhs">₹1 - ₹5 Lacs </mat-option>
-                                                              <mat-option value="Rs 5-10 Lakhs">₹5 - ₹10 Lacs</mat-option>
-                                                              <mat-option value="Rs 10-20 Lakhs">₹10 - ₹20 Lacs </mat-option>
-                                                              <mat-option value="Rs 20-50 Lakhs">₹20 - ₹50 Lacs </mat-option>
-                                                              <mat-option value="Rs 50 Lakhs - 1 Crore">₹50 Lacs - ₹1 Crore </mat-option>
-                                                              <mat-option value="Rs 1-3 Crores">₹1 - ₹3 Crores</mat-option>
-                                                              <mat-option value="Rs 3 Crores & Above">₹3 Crores and above</mat-option>
+                                                            <mat-option value="Less than INR 12 Lakhs">Less than ₹12 Lacs</mat-option>
+                                                            <mat-option value="INR 12 Lakhs - INR 40 Lakhs">₹12 - ₹40 Lacs</mat-option>
+                                                            <mat-option value="INR 40 Lakhs - INR 1 Crore">₹40 Lacs - ₹1 Crore</mat-option>
+                                                            <mat-option value="INR 1 Crore - INR 3 Crore">₹1 - ₹3 Crores</mat-option>
+                                                            <mat-option value="INR 3 Crore - INR 5 Crore">₹3 - ₹5 Crores</mat-option>
+                                                            <mat-option value="More than INR 5 Crore">More than ₹5 Crores</mat-option>
                                                           </mat-select>
                                                           <!-- <mat-icon>keyboard_arrow_down</mat-icon> -->
                                                       </mat-form-field>

@@ -1,0 +1,151 @@
+<div class=" selectForm formMinsize v2checksection">
+    <div class="blueBack"></div>
+    <div class="container mobilePd">
+
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-12 m-auto">
+
+                <div class="v2checkBox">
+
+                    <div class="from">
+                        <!-- <p class="pb-3 text-center text-white">Almost there!</p> -->
+
+                        <h1 class=" text-center">Upload Document</h1>
+                        <!-- <h3>Enter your information to update your business details</h3> -->
+
+                        <div class="formSelect">
+                            <div class="example-container">
+                                <!-- <form [formGroup]="form2"> -->
+                                <div class="row">
+
+                                    <div class="box">
+                                        <!-- <div class="content">
+                                <h3>4. Bank Statements</h3>
+                            </div> -->
+                                        <div class="minHeight">
+                                            <div class="boxSpace">
+
+                                                <div class="upload">
+                                                    <button
+                                                        class="btn">Upload<mat-icon>keyboard_arrow_right</mat-icon></button>
+                                                    <input type="file" (change)="onFileSelected($event)">
+                                                </div>
+                                                <p class="text-white">Note: 12 months bank statements</p>
+
+                                                <div class="NextOr">
+                                                    <span>Or</span>
+                                                </div>
+
+                                                <div class="sendOtpButton">
+                                                    <button class="btn" (click)="submitBankStatement()">Net Banking
+                                                        <mat-icon>keyboard_arrow_right</mat-icon></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="checkBox" *ngIf="filteredStatemenetObject?.uploadStatus">
+                                        <span>
+                                            <mat-icon>check</mat-icon>
+                                        </span>
+                                    </div>
+                                    <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"
+                        [ngClass]=" form2.controls['personalPan'].touched &&
+                                          form2.controls['personalPan'].hasError('required') ||  (form2.controls['personalPan'].dirty || form2.controls['personalPan'].touched) &&
+                                          form2.controls['personalPan'].hasError('pattern') || showValidatePANError ? 'isvaliderror' :  ''">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Personal PAN </mat-label>
+                          <input style="text-transform: uppercase;" matInput formControlName="personalPan"
+                            (input)="validatePanNumber()" placeholder="" />
+                        </mat-form-field>
+                        <div class="error mb-2" *ngIf="
+                                          form2.controls['personalPan'].touched &&
+                                          form2.controls['personalPan'].hasError('required')
+                                          ">
+                          Please complete this mandatory field.
+                        </div>
+  
+                        <div class="error mb-2" *ngIf=" 
+                                          !form2.controls['personalPan'].hasError('required') && showValidatePANError
+                                        ">
+                          Please add valid information
+                        </div>
+                      </div>
+  
+                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"
+                        [ngClass]=" form2.controls['businessPan'].touched &&
+                                          form2.controls['businessPan'].hasError('required') ||  (form2.controls['businessPan'].dirty || form2.controls['businessPan'].touched) &&
+                                          form2.controls['businessPan'].hasError('pattern') || showValidatePANError ? 'isvaliderror' :  ''">
+                        <mat-form-field appearance="fill">
+                          <mat-label>Business PAN </mat-label>
+                          <input style="text-transform: uppercase;" matInput formControlName="businessPan"
+                            (input)="validatePanNumber()" placeholder="" />
+                        </mat-form-field>
+                        <div class="error mb-2" *ngIf="
+                                          form2.controls['businessPan'].touched &&
+                                          form2.controls['businessPan'].hasError('required')
+                                          ">
+                          Please complete this mandatory field.
+                        </div>
+  
+                        <div class="error mb-2" *ngIf=" 
+                                          !form2.controls['businessPan'].hasError('required') && showValidatePANError
+                                        ">
+                          Please add valid information
+                        </div>
+                      </div>
+  
+                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"
+                        [ngClass]=" form2.controls['businessConstitutuion'].touched &&
+                                        form2.controls['businessConstitutuion'].hasError('required') ||  (form2.controls['businessConstitutuion'].dirty || form2.controls['businessConstitutuion'].touched) &&
+                                        form2.controls['businessConstitutuion'].hasError('pattern') ? 'isvaliderror' :  ''">
+                                        <mat-form-field appearance="fill">
+                                          <mat-label>Select</mat-label>
+                                          <mat-select formControlName='loanAmount'  placeholder="">
+                                              <mat-option value="Rs 1-5 Lakhs">₹1 - ₹5 Lacs </mat-option>
+                                              <mat-option value="Rs 5-10 Lakhs">₹5 - ₹10 Lacs</mat-option>
+                                              <mat-option value="Rs 10-20 Lakhs">₹10 - ₹20 Lacs </mat-option>
+                                              <mat-option value="Rs 20-50 Lakhs">₹20 - ₹50 Lacs </mat-option>
+                                              <mat-option value="Rs 50 Lakhs - 1 Crore">₹50 Lacs - ₹1 Crore </mat-option>
+                                              <mat-option value="Rs 1-3 Crores">₹1 - ₹3 Crores</mat-option>
+                                              <mat-option value="Rs 3 Crores & Above">₹3 Crores and above</mat-option>
+                                          </mat-select>
+                                      </mat-form-field>
+                        <div class="error mb-2" *ngIf="
+                                          form2.controls['businessConstitutuion'].touched &&
+                                          form2.controls['businessConstitutuion'].hasError('required')
+                                        ">
+                          Please complete this mandatory field.
+                        </div>
+                      </div> -->
+
+                                    <!-- <div class="col-md-12">
+                        <div class="upload">
+                          <label class="text-white"><strong>12 months Bank Statement</strong></label>
+  
+                          <a class="btn" href="">
+  
+                            <mat-icon>link</mat-icon> Open External Wbsite</a>
+                          <a class="btn" href=""><strong>Upload from Protean</strong></a>
+  
+                          <a class="btn" href=""><strong>Upload from Device</strong></a>
+  
+  
+                        </div>
+                      </div> -->
+
+                                  
+
+                                </div>
+                                <!-- </form> -->
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

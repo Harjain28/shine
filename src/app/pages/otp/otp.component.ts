@@ -99,7 +99,7 @@ export class OtpComponent implements OnInit{
     let requestData = {};
     const defaultparams = {
       mobile: localStorage.getItem("mobile"),
-      otp: formValue.otp,
+      otp: localStorage.getItem("otp")
       
     };
     const params = { ...defaultparams, ...this.paramsObject.params };

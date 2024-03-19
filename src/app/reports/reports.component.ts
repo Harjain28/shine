@@ -67,6 +67,8 @@ export class ReportsComponent {
 
   }
 
+  
+
   expand(){
     this.expandSection = true;
     this.expandBlocks = true 

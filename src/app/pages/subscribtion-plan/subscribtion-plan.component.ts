@@ -50,6 +50,7 @@ export class SubscribtionPlanComponent implements OnInit {
       },
     },
   };
+  
 
   customOptions1: OwlOptions = {
     loop: false,
@@ -90,6 +91,8 @@ export class SubscribtionPlanComponent implements OnInit {
 
   }
 
+
+ 
   toggle() {
 
     this.isActive = !this.isActive;
@@ -104,7 +107,7 @@ export class SubscribtionPlanComponent implements OnInit {
 
 
   goToSelection(){
-    this.router.navigate(['/pages/selection'])
+    this.router.navigate(['/in/selection'])
 
   }
 

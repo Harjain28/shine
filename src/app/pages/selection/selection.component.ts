@@ -15,6 +15,6 @@ export class SelectionComponent {
     ){}
 
     goToForm1(){
-      this.router.navigate(['/pages/form1'])
+      this.router.navigate(['/in/register'])
     }
 }

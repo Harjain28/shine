@@ -183,7 +183,7 @@ export class LandingPageComponent {
  }
 
  goToPlans(){
-  this.router.navigate(['/pages/plans'])
+  this.router.navigate(['/in/pricing'])
  }
   showAboutClass(body: any) {
     this.moreContent = body;

@@ -27,6 +27,7 @@ export class ApiService {
 
   shared:  any = [];
   API_URL: string;
+  Base_URL: string;
 
   constructor(
     private http: HttpClient,
@@ -42,6 +43,7 @@ export class ApiService {
    // this.TOKEN = localStorage.getItem('token');
   
     this.API_URL = environment.BASE_API_ENDPOINT;
+    this.Base_URL = environment.BASE2_API_ENDPOINT;
 
    
   }
@@ -66,6 +68,18 @@ export class ApiService {
           };
   }
  }
+
+ getwithHeader(path: string, params: HttpParams = new HttpParams()) {
+  this.httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'X-Api-Version' : '2.0'
+    })
+  };
+
+  return this.http.get(`${this.Base_URL}${path}`,{headers: this.httpOptions.headers, params })
+    .pipe(catchError(this.formatErrors));
+}
   
   get(path: string, params: HttpParams = new HttpParams()) {
     return this.http.get(`${this.API_URL}${path}`, {params})

@@ -28,6 +28,8 @@ export class Form1Component implements OnInit {
   isSubmit: boolean  = false;
   paramsObject: any;
   errorVisible = false;
+  validatePin!: boolean;
+  validatePAN!: boolean;
 
 
   constructor(private route: ActivatedRoute, public eventService: EventService, public router: Router, private api: ApiService ){
@@ -94,6 +96,8 @@ export class Form1Component implements OnInit {
             //   "base64"
             // );
             localStorage.setItem("mobile",formValue.phoneNumber)
+            localStorage.setItem("otp",res.token)
+
             console.log("Form1 Submitted");
          
 
@@ -127,62 +131,63 @@ export class Form1Component implements OnInit {
   }
 
   validatePanNumber() {
-    // const formValue = this.v1enquiryForm.value;
-    // this.validatePAN = true;
-    // this.showValidatePANError = false;
+    const formValue = this.form1.value;
+    this.validatePAN = true;
+    this.showValidatePANError = false;
 
-    // const params = { ...this.paramsObject.params };
+    const params = { ...this.paramsObject.params };
 
-    // if (formValue.businesspan) {
-    //   this.api
-    //     .getwithHeader(
-    //       `api/Gst/ValidatePan?website=true&panNumber=${formValue.businesspan.toUpperCase()}`,
-    //       params
-    //     )
-    //     .subscribe(
-    //       (res: any) => {
-    //         if (typeof res === "boolean") {
-    //           this.validatePAN = res;
-    //         }
-    //         if (res && typeof res === "object" && "valid" in res) {
-    //           this.validatePAN = res.valid;
-    //         }
-    //       },
-    //       (err) => {
-    //         this.validatePAN = true;
-    //       }
-    //     );
-    // }
+    if (formValue.businesspan) {
+      this.api
+        .getwithHeader(
+          `api/Gst/ValidatePan?website=true&panNumber=${formValue.businesspan.toUpperCase()}`,
+          params
+        )
+        .subscribe(
+          (res: any) => {
+            if (typeof res === "boolean") {
+              this.validatePAN = res;
+            }
+            if (res && typeof res === "object" && "valid" in res) {
+              this.validatePAN = res.valid;
+            }
+          },
+          (err) => {
+            this.validatePAN = true;
+          }
+        );
+    }
   }
+
   validatePincode() {
-    // const formValue = this.v1enquiryForm.value;
-    // this.validatePin = false;
-    // this.showValidatepinError = false;
-    // const params = { ...this.paramsObject.params };
-    // if (formValue.pincode.length > 5) {
-    //   this.api
-    //     .getwithHeader(
-    //       `api/PincodeValidator?value=${formValue.pincode}`,
-    //       params
-    //     )
-    //     .subscribe({
-    //       next: (res: any) => {
-    //         if (res.valid == true) {
-    //           this.validatePin = true;
-    //           this.showValidatepinError = false;
-    //         } else {
-    //           this.validatePin = false;
-    //           this.showValidatepinError = true;
-    //         }
-    //       },
-    //       error: (error) => {
-    //         this.validatePin = true;
-    //       },
-    //       complete: () => {
-    //       //  ("Request complete");
-    //       },
-    //     });
-    // }
+    const formValue = this.form1.value;
+    this.validatePin = false;
+    this.showValidatepinError = false;
+    const params = { ...this.paramsObject.params };
+    if (formValue.pincode.length > 5) {
+      this.api
+        .getwithHeader(
+          `api/PincodeValidator?value=${formValue.pincode}`,
+          params
+        )
+        .subscribe({
+          next: (res: any) => {
+            if (res.valid == true) {
+              this.validatePin = true;
+              this.showValidatepinError = false;
+            } else {
+              this.validatePin = false;
+              this.showValidatepinError = true;
+            }
+          },
+          error: (error:any) => {
+            this.validatePin = true;
+          },
+          complete: () => {
+          //  ("Request complete");
+          },
+        });
+    }
   }
 
 
