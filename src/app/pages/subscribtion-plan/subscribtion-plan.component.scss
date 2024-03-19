@@ -113,14 +113,21 @@ mat-card-content {
 
 .toggleBtn li button {
     border: 1px solid #dedede;
-    background: transparent;
-    font-size: 14px;
-    padding: 8px 30px;
+    background: #e7e7e7;
+    padding: 8px 40px;
     font-weight: 600;
+    border-radius: 5px;
+    font-size: 18px;
 
     &.active{
-        background-color: #d4d4d4;
-
+        background-color: var(--main1);
+        color: #fff;
+        border-color: var(--main1);
+    }
+    &:hover{
+        background-color: var(--main1);
+        color: #fff;
+        border-color: var(--main1);
     }
 }
 .toggleBtn{
@@ -130,11 +137,13 @@ mat-card-content {
     padding-left: 0px;
     margin-bottom: 20px;
     justify-content: center;
+    gap: 10px
 }
 
 .toggleBtn li{
     list-style: none;
     padding: 0px;
+
 }
 
 
