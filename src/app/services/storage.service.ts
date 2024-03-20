@@ -11,7 +11,7 @@ import { LocalStorageService } from "./local-storage.service";
 export class StorageService {
 
   // private isAuthenticated = new BehaviorSubject<boolean>(this.isLoggednIn());
-  // private editProf = new Subject<void>();
+  private editProf = new Subject<void>();
   // isAuthenticated$ = this.isAuthenticated.asObservable();
 
 
@@ -27,9 +27,9 @@ export class StorageService {
   //   this.editProf.next();
   // }
 
-  // getEditEvent(): Observable<any> {
-  //   return this.editProf.asObservable();
-  // }
+  getEditEvent(): Observable<any> {
+    return this.editProf.asObservable();
+  }
   
   // getData(stepIndex: number): any {
   //   return this.stepData[stepIndex];

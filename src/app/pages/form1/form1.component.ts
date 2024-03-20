@@ -31,6 +31,10 @@ export class Form1Component implements OnInit {
   validatePin!: boolean;
   validatePAN!: boolean;
 
+  unformattedX: string = ''; 
+  formattedX!: string; 
+
+
 
   constructor(private route: ActivatedRoute, public eventService: EventService, public router: Router, private api: ApiService ){
     this.route.queryParamMap.subscribe((params) => {
@@ -65,6 +69,22 @@ export class Form1Component implements OnInit {
 
   goToOtp(){
     this.router.navigate(['/pages/otp'])
+  }
+
+  formatNumber(x: number): string {
+    const xStr = x.toString();
+    let lastThree = xStr.substring(xStr.length - 3);
+    const otherNumbers = xStr.substring(0, xStr.length - 3);
+    if (otherNumbers !== '') {
+      lastThree = ',' + lastThree;
+    }
+    const formattedNumber = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ',') + lastThree;
+    return formattedNumber;
+  }
+
+  onInputChange(event: any) {
+    this.unformattedX = event.target.value.replace(/,/g, '');
+    this.formattedX = this.formatNumber(+this.unformattedX);
   }
 
   getOtpbyPhone() {

@@ -4,7 +4,7 @@ import { AuthGuard } from '../guard/auth.gaurd';
 
 export default[
     {
-        path: '', component: LandingPageComponent
+        path: '' , loadComponent:() => import('./landing-page/landing-page.component').then(c=>c.LandingPageComponent)
     },
     {
         path: 'pricing', loadComponent:() => import('./subscribtion-plan/subscribtion-plan.component').then(c=>c.SubscribtionPlanComponent)

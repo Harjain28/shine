@@ -1,0 +1,42 @@
+.heraderSection{
+    // height: 80px;
+    background-color: var(--main1);
+    padding: 12px 0px;
+
+    .headerNav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo{
+
+            img{
+                height: 55px;
+                width: auto;
+            }
+        }
+
+        h5{
+            margin-bottom: 0px;
+            color: #FFFFFF;
+            text-shadow: 0px 0px 1px #0000004D;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: Poppins !important;
+        }
+
+        .logoutButton{
+
+            button{
+                color: #FFFFFF;
+                text-shadow: 0px 0px 1px #0000004D;
+                font-size: 16px;
+                font-weight: 600;
+                font-family: Poppins !important;
+                background: transparent;
+                border: none;
+                padding: 0px;
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 
-<div class=" selectForm formMinsize v2checksection" >
+<div class="v2checksection selectForm formMinsize" >
     <div class="blueBack"></div>
     <div class="container mobilePd">
 
@@ -86,8 +86,30 @@
                                       </div>
                                         </div>
                                        
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" [ngClass]=" form1.controls['emailId'].touched &&
+                                        form1.controls['emailId'].hasError('required') ||  (form1.controls['emailId'].dirty || form1.controls['emailId'].touched) &&
+                                        form1.controls['emailId'].hasError('pattern') ? 'isvaliderror' :  ''">
+                                            <mat-form-field appearance="fill">
+                                                <mat-label>Email ID </mat-label>
+                                                <input matInput  formControlName='emailId' placeholder="">
+                                            </mat-form-field>
+  
+                                            <div class="error mb-2" *ngIf="
+                                            form1.controls['emailId'].touched &&
+                                            form1.controls['emailId'].hasError('required')
+                                          ">
+                                          Please complete this mandatory field.
+                                          </div>
+                                          
+                                          <div class="error mb-2" *ngIf="
+                                          form1.controls['emailId'].dirty &&
+                                          form1.controls['emailId'].hasError('pattern')
+                                        ">
+                                        Please add valid information
+                                      </div>
+                                        </div>
                                        
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" [ngClass]=" form1.controls['phoneNumber'].touched &&
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" [ngClass]=" form1.controls['phoneNumber'].touched &&
                                         form1.controls['phoneNumber'].hasError('required') ||  (form1.controls['phoneNumber'].dirty || form1.controls['phoneNumber'].touched) &&
                                         form1.controls['phoneNumber'].hasError('pattern') ? 'isvaliderror' :  ''">
                                             <mat-form-field appearance="fill">
@@ -111,28 +133,7 @@
                                         </div>
                                        
                                         
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" [ngClass]=" form1.controls['emailId'].touched &&
-                                        form1.controls['emailId'].hasError('required') ||  (form1.controls['emailId'].dirty || form1.controls['emailId'].touched) &&
-                                        form1.controls['emailId'].hasError('pattern') ? 'isvaliderror' :  ''">
-                                            <mat-form-field appearance="fill">
-                                                <mat-label>Email ID </mat-label>
-                                                <input matInput  formControlName='emailId' placeholder="">
-                                            </mat-form-field>
-  
-                                            <div class="error mb-2" *ngIf="
-                                            form1.controls['emailId'].touched &&
-                                            form1.controls['emailId'].hasError('required')
-                                          ">
-                                          Please complete this mandatory field.
-                                          </div>
-                                          
-                                          <div class="error mb-2" *ngIf="
-                                          form1.controls['emailId'].dirty &&
-                                          form1.controls['emailId'].hasError('pattern')
-                                        ">
-                                        Please add valid information
-                                      </div>
-                                        </div>
+                                        
 
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"
                                         [ngClass]="(form1.controls['pincode'].touched &&
@@ -178,29 +179,14 @@
                                       </div>
                                         </div>
 
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"
-                                        [ngClass]=" form1.controls['businessTurnover'].touched &&
-                                                        form1.controls['businessTurnover'].hasError('required') ||  (form1.controls['businessTurnover'].dirty || form1.controls['businessTurnover'].touched) &&
-                                                        form1.controls['businessTurnover'].hasError('pattern') ? 'isvaliderror' :  ''">
-                                                        <mat-form-field appearance="fill">
-                                                          <mat-label>Business Turnover</mat-label>
-                                                          <mat-select formControlName='businessTurnover'  placeholder="">
-                                                            <mat-option value="Less than INR 12 Lakhs">Less than ₹12 Lacs</mat-option>
-                                                            <mat-option value="INR 12 Lakhs - INR 40 Lakhs">₹12 - ₹40 Lacs</mat-option>
-                                                            <mat-option value="INR 40 Lakhs - INR 1 Crore">₹40 Lacs - ₹1 Crore</mat-option>
-                                                            <mat-option value="INR 1 Crore - INR 3 Crore">₹1 - ₹3 Crores</mat-option>
-                                                            <mat-option value="INR 3 Crore - INR 5 Crore">₹3 - ₹5 Crores</mat-option>
-                                                            <mat-option value="More than INR 5 Crore">More than ₹5 Crores</mat-option>
-                                                          </mat-select>
-                                                          <!-- <mat-icon>keyboard_arrow_down</mat-icon> -->
-                                                      </mat-form-field>
-                                        <div class="error mb-2" *ngIf="
-                                                          form1.controls['businessTurnover'].touched &&
-                                                          form1.controls['businessTurnover'].hasError('required')
-                                                        ">
-                                          Please complete this mandatory field.
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"  [ngClass]=" form1.controls['businessTurnover'].touched &&
+                          form1.controls['businessTurnover'].hasError('required') ||  (form1.controls['businessTurnover'].dirty || form1.controls['businessTurnover'].touched) &&
+                          form1.controls['businessTurnover'].hasError('pattern') ? 'isvaliderror' :  ''">
+                              <mat-form-field appearance="fill">
+                                  <mat-label>Business Turnover(₹)</mat-label>
+                                  <input  matInput [(ngModel)]="formattedX" (input)="onInputChange($event)" (keypress)="eventService.numberOnly($event, 'mobile')"  formControlName='businessTurnover' placeholder="">
+                              </mat-form-field>
                                         </div>
-                                      </div>
 
                                       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" [ngClass]="form1.controls['propertyOwnership'].touched &&
                                       form1.controls['propertyOwnership'].hasError('required')  ? 'isvaliderror' :  ''">

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shine';
+
+  constructor(
+    public router: Router){}
+
+  isShineHeaderVisible(): boolean {
+    return this.router.url.includes('register') || this.router.url.includes('otp') || this.router.url.includes('selection')
+  }
+
+  isHeaderVisible(): boolean {
+    return !this.router.url.includes('selection') && !this.router.url.includes('otp') && !this.router.url.includes('register');
+  }
+
+  // isFooterVisible(): boolean {
+  //   return !this.router.url.includes('business-loan-form-completion') && !this.router.url.includes('log-in') && !this.router.url.includes('eligibility');
+  // }
 }

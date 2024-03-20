@@ -69,68 +69,7 @@
           .sendotp {
               margin-top: 10px;
 
-              .form-group {
-                  position: relative;
-                  overflow: hidden;
-                  .isvaliderror {
-                      background-color: #FFCECE !important;
-                      input {
-                          color: #3f3f3f !important;
-                      }
-                  }
-
-                  input {
-                      border: 1px solid #E7E6EF;
-                      border-radius: 6px;
-                      width: 100%;
-                      background-color: #fff;
-                      height: 54px;
-                      padding: 16px 14px;
-                      color: #3F3F3F;
-                      font-size: 16px;
-                      font-family: 'Poppins', sans-serif !important;
-
-                      &:focus {
-                          outline: none;
-                          box-shadow: none;
-                      }
-                  }
-
-                  .resend {
-                      background: #ECECEC;
-                      height: 54px;
-                      max-width: 208px;
-                      position: absolute;
-                      right: 0px;
-                      top: 0px;
-                      display: flex;
-                      padding: 12px 38px;
-                      gap: 12px;
-                      cursor: pointer;
-                      align-items: center;
-
-                      p {
-                          margin-bottom: 0px;
-                          font-size: 14px;
-                          line-height: 14px;
-                          font-weight: 500;
-                          font-family: 'Poppins', sans-serif !important;
-                          color: var(--main1);
-
-                          span {
-                              display: block;
-                              color: #3F3F3F;
-                              font-size: 12px;
-                              margin-top: 3px;
-                          }
-                      }
-
-                      img {
-                          width: 21px;
-                          height: 21px;
-                      }
-                  }
-              }
+             
           }
 
           .editNumber {
@@ -294,6 +233,8 @@
 
       .example-container {
 
+        
+
           mat-select {
               width: 100%;
               color: #3F3F3F;
@@ -438,6 +379,105 @@
   .ButtonNow {
       margin-top: 7px;
   }
+}
+
+.formMinsize {
+
+    .formSelect {
+
+        .example-container {
+
+            
+            mat-select {
+
+                ::ng-deep{
+                    .mat-select-trigger{
+
+                        .mat-select-value{
+                            
+                            .mat-select-value-text{
+                                max-width: 100% !important;
+                            }
+                        } 
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.stepAway{
+
+    .v2checkBox{
+
+        .from{
+
+            h3{
+                margin-bottom: 11px !important;
+            }
+
+            .editNumber{
+                max-width: initial;
+                margin-bottom: 9px;
+                min-width: auto;
+                display: inline-block;           
+                
+                p{
+                    display: block;
+                    font-size: 16px;
+                    font-weight: 400;
+                    font-family: 'Poppins', sans-serif !important;
+                    color: #3F3F3F;
+
+                    span{
+                        font-size: 18px;
+                        color: var(--main2);
+                    }
+                }
+            }
+        }
+    }
+}
+
+::ng-deep{
+
+    .mat-select-panel-wrap{
+
+        .mat-select-panel{
+            max-height: initial;
+            position: absolute;
+            left: 4px !important;
+            top: 54px !important;
+            width: 100%;
+            min-width: 100% !important;
+            max-width: 100% !important;
+            min-width: calc(100% + 47px) !important;
+            transform: scaleY(1) !important;
+            transform-origin: 50% 24px 0px !important;
+
+            mat-option{
+                height: 34px;
+                padding: 21px 12px;
+                border-bottom: 1px solid #E8E8E8;
+                background-color: #fff;
+
+                &:hover{
+                    background-color: var(--main1) !important;
+                    color: #fff !important;
+                }
+            }
+
+            .mat-option.mat-selected:not(.mat-option-multiple) {
+                background-color: var(--main1) !important;
+                color: #fff !important;
+            }
+            .mat-option.mat-selected:not(.mat-option-disabled){
+                background-color: var(--main1) !important;
+                color: #fff !important;
+            }
+        }
+    }
 }
 
 @media (max-width: 767px){

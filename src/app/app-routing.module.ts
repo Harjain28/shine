@@ -8,12 +8,18 @@ import { AuthGuard } from './guard/auth.gaurd';
 const routes: Routes = [
      
   {
-    path:'in/report' , component: ReportsComponent,
-    
+    path: '',
+    redirectTo: 'in',  
+    pathMatch: 'full'
   },
   {
     path:'in' , component: PagesComponent,
     loadChildren:() =>import('./pages/pages.routes')
+  },
+
+  {
+    path:'in/report', 
+    component: ReportsComponent   
   }
 ];
 

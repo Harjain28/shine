@@ -17,10 +17,10 @@
                     <ul class="toggleBtn">
                         <li>
                         
-                    <button (click)="openCarousel('month')">Month</button>
+                    <button [class.active]="activeButton === 'month'" (click)="openCarousel('month')">Month</button>
                         </li>
                         <li>
-                            <button (click)="openCarousel('yearly')">Yearly</button>
+                            <button [class.active]="activeButton === 'yearly'" (click)="openCarousel('yearly')">Yearly</button>
                         </li>
                     </ul>
 

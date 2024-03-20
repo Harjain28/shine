@@ -86,8 +86,10 @@ export class SubscribtionPlanComponent implements OnInit {
     },
   };
 
-  constructor(    public router: Router,private cdRef: ChangeDetectorRef
-    ){
+  activeButton: string = 'month';
+
+
+  constructor(    public router: Router,private cdRef: ChangeDetectorRef){
 
   }
 
@@ -102,12 +104,14 @@ export class SubscribtionPlanComponent implements OnInit {
 
   openCarousel(tab: string) {
     this.selectedTab = tab;
+    this.activeButton = tab; 
+
   }
   
 
 
   goToSelection(){
-    this.router.navigate(['/in/selection'])
+    this.router.navigate(['/in/register'])
 
   }
 
