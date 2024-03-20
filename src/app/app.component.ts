@@ -13,12 +13,14 @@ export class AppComponent {
     public router: Router){}
 
   isShineHeaderVisible(): boolean {
-    return this.router.url.includes('register') || this.router.url.includes('otp') || this.router.url.includes('selection')
+    return this.router.url.includes('report') 
   }
 
   isHeaderVisible(): boolean {
-    return !this.router.url.includes('selection') && !this.router.url.includes('otp') && !this.router.url.includes('register');
+    return !this.router.url.includes('report') 
   }
+
+
 
   // isFooterVisible(): boolean {
   //   return !this.router.url.includes('business-loan-form-completion') && !this.router.url.includes('log-in') && !this.router.url.includes('eligibility');
