@@ -1,0 +1,132 @@
+.modalbureauNumber{
+    padding: 40px 70px;
+    
+    .vectorIcon{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        img{
+            width: 146px;
+        }
+    }
+
+    .content{
+        text-align: center;
+
+        h3{
+            color: #3F3F3F;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 22px;
+            margin-bottom: 2px;
+            font-family: Poppins !important;            
+        }
+
+        p{
+            color: #3F3F3F;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            margin-bottom: 0px;
+            font-family: Poppins !important;            
+        }
+
+        .formInput{
+            margin-top: 22px;
+
+            form{
+                display: flex;
+                align-items: center;
+                gap: 6px;
+
+                .form-group{
+                    width: 100%;
+
+                    .form-control{
+                        border: 2px solid var(--main1);
+                        border-radius: 10px;
+                        background: #fff;
+                        height: 47px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        color: #3f3f3f;
+                        font-size: 14px;
+                        font-weight: 500;
+
+                        &:focus{
+                            box-shadow: none;
+                            outline: none;
+                        }
+
+                        &::placeholder{
+                            color: #A1A1A1;
+                            font-weight: 400;
+                        }
+
+                        &::-webkit-outer-spin-button,
+                        &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                        }
+                    }
+                }
+
+                button{
+                    background-color: var(--main1);
+                    color: #fff;
+                    height: 47px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 10px;
+                    font-weight: 600;
+                    font-size: 14px;
+                    padding: 14px 30px;
+                    border: 2px solid var(--main1);
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .modalbureauNumber{
+        padding: 20px 20px;
+        
+        .vectorIcon{
+            margin-bottom: 12px;
+    
+            img{
+                width: 120px;
+            }
+        }
+    
+        .content{
+            text-align: center;
+    
+            h3{
+                font-size: 14px;          
+            }
+    
+            p{
+                font-size: 12px;        
+            }
+    
+            .formInput{
+                margin-top: 15px;
+    
+                form{
+    
+                    .form-group{
+                        width: 100%;
+                    }
+                }
+    
+            }
+        }
+    }
+}

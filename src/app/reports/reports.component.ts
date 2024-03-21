@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FaqComponent } from './faq/faq.component';
 import { MatDialog } from '@angular/material/dialog';
 import { BureauLinkPopupComponent } from '../modal/bureau-link-popup/bureau-link-popup.component';
+import { BuildBureauPopupComponent } from '../modal/build-bureau-popup/build-bureau-popup.component';
 
 
 
@@ -74,9 +75,9 @@ export class ReportsComponent {
 
   openBureauDialog(){
     // this.getBorrowerInformation();
-    const dialogRef = this.dialog.open(BureauLinkPopupComponent, {
-      width: '90%',
-      height: '80%',
+    const dialogRef = this.dialog.open(BuildBureauPopupComponent, {
+      width: 'auto',
+      height: 'auto',
     });
   }
 

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49" height="45.838" viewBox="0 0 49 45.838">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_2269" data-name="Rectangle 2269" width="49" height="45.838" fill="none" stroke="#6a2fc2" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_3056" data-name="Group 3056" transform="translate(3 3)">
+    <g id="Group_3055" data-name="Group 3055" transform="translate(-3 -3)" clip-path="url(#clip-path)">
+      <path id="Path_5737" data-name="Path 5737" d="M41.5,24.615l.148-.044A3.009,3.009,0,0,0,43.636,20.8L38.185,3.176A3.009,3.009,0,0,0,34.418,1.19L3.18,10.853A3.01,3.01,0,0,0,1.191,14.62l1.589,5.14" transform="translate(2.086 2.087)" fill="none" stroke="#6a2fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <rect id="Rectangle_2266" data-name="Rectangle 2266" width="38.724" height="24.475" rx="3" transform="translate(4.866 18.222)" fill="none" stroke="#6a2fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <rect id="Rectangle_2267" data-name="Rectangle 2267" width="38.724" height="4.824" transform="translate(4.866 22.199)" fill="none" stroke="#6a2fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <rect id="Rectangle_2268" data-name="Rectangle 2268" width="9.235" height="7.344" rx="2" transform="translate(7.438 32.413)" fill="none" stroke="#6a2fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line id="Line_241" data-name="Line 241" y2="4.9" transform="translate(10.952 33.635)" fill="none" stroke="#6a2fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Path_5738" data-name="Path 5738" d="M30.763,85.257V82.033H32.74" transform="translate(-17.604 -46.722)" fill="none" stroke="#6a2fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line id="Line_242" data-name="Line 242" x2="1.978" transform="translate(13.159 36.865)" fill="none" stroke="#6a2fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line id="Line_243" data-name="Line 243" x2="1.978" transform="translate(8.975 36.862)" fill="none" stroke="#6a2fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line id="Line_244" data-name="Line 244" x2="1.978" transform="translate(8.975 35.309)" fill="none" stroke="#6a2fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line id="Line_245" data-name="Line 245" x2="7.95" transform="translate(31.77 35.175)" fill="none" stroke="#6a2fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="Line_246" data-name="Line 246" x2="3.975" transform="translate(35.745 37.538)" fill="none" stroke="#6a2fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Path_5739" data-name="Path 5739" d="M76.108,18.859a2.911,2.911,0,1,0-1.065-3.995" transform="translate(-43.002 -5.451)" fill="none" stroke="#6a2fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <circle id="Ellipse_156" data-name="Ellipse 156" cx="2.91" cy="2.91" r="2.91" transform="translate(27.69 9.031)" fill="none" stroke="#6a2fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="Line_247" data-name="Line 247" x2="4.161" transform="translate(12.056 23.955)" fill="none" stroke="#6a2fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="Line_248" data-name="Line 248" x2="0.937" transform="translate(8.919 23.955)" fill="none" stroke="#6a2fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>
