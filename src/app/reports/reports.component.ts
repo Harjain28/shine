@@ -8,6 +8,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { FaqComponent } from './faq/faq.component';
+import { MatDialog } from '@angular/material/dialog';
+import { BureauLinkPopupComponent } from '../modal/bureau-link-popup/bureau-link-popup.component';
 
 
 
@@ -48,11 +50,14 @@ export class ReportsComponent {
   expandCurrentCreditSection!: boolean;
   expandBlocks!: boolean;
   expandBusinessSection!: boolean;
+  expandBalanceSection!: boolean;
+  balanceSectionBlock: boolean = true;
+  BusinessSectionBlock: boolean = true;
 
 
 
 
-  constructor() { }
+  constructor(private dialog: MatDialog ) { }
 
   
 
@@ -67,6 +72,18 @@ export class ReportsComponent {
 
   }
 
+  openBureauDialog(){
+    // this.getBorrowerInformation();
+    const dialogRef = this.dialog.open(BureauLinkPopupComponent, {
+      width: '90%',
+      height: '80%',
+    });
+  }
+
+
+  openPopup(){
+    this.openBureauDialog();
+  }
   
 
   expand(){
@@ -109,10 +126,45 @@ export class ReportsComponent {
 
   expandBankingBusniess(){
     this.expandBusinessSection = true;
+    this.balanceSectionBlock = false;
+    this.BusinessSectionBlock = false;
   }
 
   minimizeBusinessBanking(){
     this.expandBusinessSection = false;
+    this.balanceSectionBlock = true; 
+       this.BusinessSectionBlock = true;
+
+
+  }
+
+  expandBankingBalance(){
+    this.expandBalanceSection = true;
+    this.balanceSectionBlock = false;
+    this.expandBusinessSection = false;
+    this.BusinessSectionBlock = false;
+
+    
+  }
+
+  minimizeBankingBalance(){
+    this.expandBalanceSection = false;
+    this.balanceSectionBlock = true;
+    this.BusinessSectionBlock = true;
+
+
+  }
+
+  expandBankingBlanceBlock(){
+    this.expandBusinessSection = false;
+    this.expandBalanceSection = true;
+
+  }
+
+  expandBusinessSectionBlock(){
+    this.expandBalanceSection = false;
+    this.expandBusinessSection = true;
+
   }
 
   private createSemiDoughnutChart(): void {

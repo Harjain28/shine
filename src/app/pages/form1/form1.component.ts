@@ -105,8 +105,7 @@ export class Form1Component implements OnInit {
     requestData["pincode"] =  formValue.pincode;
     requestData["businessPan"] =  formValue.businessPan;
     requestData["propertyOwnership"] =  formValue.propertyOwnership;
-
-    requestData["turnover"] =  formValue.unformattedX;
+    requestData["turnover"] =  this.unformattedX;
     if (this.validatePin) {
       this.showValidatepinError = false;
     } else {
