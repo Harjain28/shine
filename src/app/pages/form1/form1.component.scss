@@ -192,44 +192,44 @@
         }
     }
 
-   
-}
+    .isvaliderror {
 
-.isvaliderror {
-
-    mat-form-field {
-
-        ::ng-deep {
-
-            .mat-mdc-text-field-wrapper {
-
-                .mat-form-field-flex {
-                    background-color: #FFCECE !important;
-                    border: 1px solid #FFCECE !important;
-
-                    input {
-                        color: #3f3f3f !important;
+        mat-form-field {
+    
+            ::ng-deep {
+    
+                .mat-mdc-text-field-wrapper {
+    
+                    .mat-form-field-flex {
+                        background-color: #FFCECE !important;
+                        border: 1px solid #FFCECE !important;
+    
+                        input {
+                            color: #3f3f3f !important;
+                        }
+    
+                        mat-label {
+                            color: #AC1E1E !important;
+                        }
                     }
-
-                    mat-label {
-                        color: #AC1E1E !important;
-                    }
+    
+                    // .mat-form-field-infix {
+    
+                    //     .mat-form-field-label-wrapper{
+    
+                    //         .mat-form-field-label{
+                    //             top: 20px !important;
+                    //             font-size: 10px !important;
+                    //         }
+                    //     }
+                    // }
                 }
-
-                // .mat-form-field-infix {
-
-                //     .mat-form-field-label-wrapper{
-
-                //         .mat-form-field-label{
-                //             top: 20px !important;
-                //             font-size: 10px !important;
-                //         }
-                //     }
-                // }
             }
         }
     }
 }
+
+
 
 .selectForm {
 
@@ -237,7 +237,41 @@
 
         .example-container {
 
+            .isvaliderror {
 
+                mat-form-field {
+            
+                    ::ng-deep {
+            
+                        .mat-mdc-text-field-wrapper {
+            
+                            .mat-form-field-flex {
+                                background-color: #FFCECE !important;
+                                border: 1px solid #FFCECE !important;
+            
+                                input {
+                                    color: #3f3f3f !important;
+                                }
+            
+                                mat-label {
+                                    color: #AC1E1E !important;
+                                }
+                            }
+            
+                            // .mat-form-field-infix {
+            
+                            //     .mat-form-field-label-wrapper{
+            
+                            //         .mat-form-field-label{
+                            //             top: 20px !important;
+                            //             font-size: 10px !important;
+                            //         }
+                            //     }
+                            // }
+                        }
+                    }
+                }
+            }
 
             mat-select {
                 width: 100%;
@@ -394,7 +428,41 @@
     .formSelect {
 
         .example-container {
+            .isvaliderror {
 
+                mat-form-field {
+            
+                    ::ng-deep {
+            
+                        .mat-mdc-text-field-wrapper {
+            
+                            .mat-form-field-flex {
+                                background-color: #FFCECE !important;
+                                border: 1px solid #FFCECE !important;
+            
+                                input {
+                                    color: #3f3f3f !important;
+                                }
+            
+                                mat-label {
+                                    color: #AC1E1E !important;
+                                }
+                            }
+            
+                            // .mat-form-field-infix {
+            
+                            //     .mat-form-field-label-wrapper{
+            
+                            //         .mat-form-field-label{
+                            //             top: 20px !important;
+                            //             font-size: 10px !important;
+                            //         }
+                            //     }
+                            // }
+                        }
+                    }
+                }
+            }
 
             mat-select {
 

@@ -20,8 +20,7 @@
 
                                       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"
                                       [ngClass]=" form1.controls['title'].touched &&
-                                                      form1.controls['title'].hasError('required') ||  (form1.controls['title'].dirty || form1.controls['title'].touched) &&
-                                                      form1.controls['title'].hasError('pattern') ? 'isvaliderror' :  ''">
+                                                      form1.controls['title'].hasError('required') ||  (form1.controls['title'].dirty || form1.controls['title'].touched) ? 'isvaliderror' :  ''">
                                                       <mat-form-field appearance="fill">
                                                         <mat-label>Salutation/Title</mat-label>
                                                         <mat-select formControlName='title'  placeholder="">

@@ -105,24 +105,29 @@ export class Form1Component implements OnInit {
     requestData["pincode"] =  formValue.pincode;
     requestData["businessPan"] =  formValue.businessPan;
     requestData["propertyOwnership"] =  formValue.propertyOwnership;
-    requestData["turnover"] =  formValue.businessTurnover;
+
+    requestData["turnover"] =  formValue.unformattedX;
+    if (this.validatePin) {
+      this.showValidatepinError = false;
+    } else {
+      this.validatePin = false;
+      this.showValidatepinError = true;
+    }
+
+    if (this.validatePAN) {
+      this.showValidatePANError = false;
+    } else {
+      this.validatePAN = false;
+      this.showValidatePANError = true;
+    }
 
 
  
       if (this.form1.valid) { 
     this.api.post(`api/Remediation/GetOTP`, requestData, params).subscribe({ next: (res: any) => {
-          if (res) {
-            // const mobile = Buffer.from(formValue.phoneNumber).toString(
-            //   "base64"
-            // );
-            localStorage.setItem("mobile",formValue.phoneNumber)
-            localStorage.setItem("otp",res.token)
-
-            console.log("Form1 Submitted");
-         
-
-            
-   
+          if (res.success) {
+            localStorage.setItem("mobile",formValue.phoneNumber);
+            this.router.navigate(['/in/otp']);
             this.isSubmit = true;
           } else          
             this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
@@ -156,15 +161,14 @@ export class Form1Component implements OnInit {
     this.showValidatePANError = false;
 
     const params = { ...this.paramsObject.params };
-
-    if (formValue.businesspan) {
+    if (formValue.businessPan.length > 5 && formValue.businessPan) {
       this.api
-        .getwithHeader(
-          `api/Gst/ValidatePan?website=true&panNumber=${formValue.businesspan.toUpperCase()}`,
-          params
-        )
-        .subscribe(
-          (res: any) => {
+      .getwithHeader(
+        `api/Gst/ValidatePan?website=true&panNumber=${formValue.businessPan.toUpperCase()}`,
+        params
+      )
+        .subscribe({
+          next: (res: any) => {
             if (typeof res === "boolean") {
               this.validatePAN = res;
             }
@@ -172,10 +176,13 @@ export class Form1Component implements OnInit {
               this.validatePAN = res.valid;
             }
           },
-          (err) => {
+          error: (error:any) => {
             this.validatePAN = true;
-          }
-        );
+          },
+          complete: () => {
+          //  ("Request complete");
+          },
+        });
     }
   }
 
