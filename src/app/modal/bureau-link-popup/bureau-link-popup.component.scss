@@ -1,5 +1,7 @@
 .modalbureauNumber{
     padding: 40px 70px;
+    position: relative;
+    z-index: 9;
     
     .vectorIcon{
         display: flex;
@@ -91,6 +93,19 @@
 
         }
     }
+}
+
+.backgroundColor{
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    z-index: -1;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: #fff6;
+    backdrop-filter: blur(5px);
 }
 
 @media (max-width: 767px) {

@@ -1350,7 +1350,7 @@
                 text-align: center;
             }
         }
-        
+
         .valatilityBox {
             padding: 24px;
             border: 1px solid #E8E8E8;
@@ -1360,21 +1360,21 @@
             margin-top: 15px;
             height: 100%;
 
-            &.backgrundColor{
+            &.backgrundColor {
                 background-color: var(--main1);
 
-                h3{
+                h3 {
                     color: #fff;
                 }
 
-                .checkBox{
+                .checkBox {
 
-                    h5{
+                    h5 {
                         color: #fff;
                     }
                 }
 
-                p{
+                p {
                     font-size: 14px;
                     font-weight: 500;
                     margin-bottom: 0px;
@@ -1427,7 +1427,7 @@
                 }
             }
 
-            ul{
+            ul {
                 padding-left: 0px;
                 list-style: none;
                 margin-bottom: 0px;
@@ -1435,7 +1435,7 @@
                 display: flex;
                 flex-wrap: wrap;
 
-                li{
+                li {
                     color: #3f3f3f;
                     font-weight: 500;
                     position: relative;
@@ -1445,7 +1445,7 @@
                     font-size: 14px;
                     padding-bottom: 4px;
 
-                    span{
+                    span {
                         width: 8px;
                         height: 8px;
                         display: block;
@@ -1458,18 +1458,18 @@
                 }
             }
 
-            .qtrBox{
+            .qtrBox {
 
-                .qtrList{
+                .qtrList {
                     margin-bottom: 20px;
 
-                    ul{
+                    ul {
                         display: flex;
                         align-items: center;
                         gap: 5px;
                         flex-wrap: wrap;
 
-                        li{
+                        li {
                             padding: 8px;
                             border: 1px solid #CECECE;
                             min-width: 83px;
@@ -1478,7 +1478,7 @@
                             justify-content: center;
                             border-radius: 8px;
 
-                            &.active{
+                            &.active {
                                 background-color: var(--main1);
                                 color: #fff;
                             }
@@ -1487,16 +1487,16 @@
                     }
                 }
 
-                ul{
-                    li{
-                        span{
+                ul {
+                    li {
+                        span {
                             background: #EC1111;
                         }
                     }
                 }
             }
 
-            .contentQtr{
+            .contentQtr {
                 border: 1px solid #6A2FC2;
                 border-radius: 10px;
                 background: #FBF8FF;
@@ -1507,7 +1507,7 @@
                 align-items: center;
                 justify-content: center;
 
-                p{
+                p {
                     padding: 0px;
                     margin-bottom: 0px;
                     font-size: 13px;
@@ -1648,13 +1648,98 @@
                             right: 32px;
                             top: 7px;
                             width: 100px;
+                        }
+                    }
+                }
+            }
+        }
 
-                            ::ng-deep {
+        .progressBarColor {
 
-                                .mdc-linear-progress__bar {
+            .lineColor {
 
-                                    .mdc-linear-progress__bar-inner {
-                                        border-color: #EC1111;
+                .colorChnage {
+
+                    &:nth-of-type(1) {
+
+                        span {
+                            mat-progress-bar {
+
+                                ::ng-deep {
+
+                                    .mdc-linear-progress__bar {
+
+                                        .mdc-linear-progress__bar-inner {
+                                            border-color: #EC1111;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &:nth-of-type(2) {
+
+                        span {
+                            mat-progress-bar {
+
+                                ::ng-deep {
+
+                                    .mdc-linear-progress__bar {
+
+                                        .mdc-linear-progress__bar-inner {
+                                            border-color: #FF7B24;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &:nth-of-type(3) {
+
+                        span {
+                            mat-progress-bar {
+
+                                ::ng-deep {
+
+                                    .mdc-linear-progress__bar {
+
+                                        .mdc-linear-progress__bar-inner {
+                                            border-color: #C3E128;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &:nth-of-type(4) {
+
+                        span {
+                            mat-progress-bar {
+
+                                ::ng-deep {
+
+                                    .mdc-linear-progress__bar {
+
+                                        .mdc-linear-progress__bar-inner {
+                                            border-color: #12BA9B;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &:nth-of-type(5) {
+
+                        span {
+                            mat-progress-bar {
+
+                                ::ng-deep {
+
+                                    .mdc-linear-progress__bar {
+
+                                        .mdc-linear-progress__bar-inner {
+                                            border-color: #6A2FC2;
+                                        }
                                     }
                                 }
                             }
@@ -2117,6 +2202,79 @@
                             font-weight: 400;
                             gap: 12px;
                             padding: 2px 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .tableSilder {
+
+        .tableBox {
+            box-shadow: 0px 3px 10px rgba(39, 45, 59, 0.1411764706);
+            border-radius: 20px;
+            background-color: #fff;
+            padding: 22px 0px 16px;
+            height: 100%;
+            margin: 12px;
+
+            img {
+                width: auto;
+                margin: 0 auto 20px;
+                height: 60px;
+            }
+
+            ul {
+                padding-left: 0px;
+                margin-bottom: 0px;
+                list-style: none;
+                padding: 10px 40px;
+
+                &.themeColor1 {
+                    background-color: var(--main1);
+
+                    li {
+                        color: #fff;
+                    }
+                }
+
+                &.themeColor2 {
+                    background-color: var(--main2);
+
+                    li {
+                        color: #fff;
+                    }
+                }
+
+                li {
+                    display: flex;
+                    justify-content: center;
+                    padding: 2px 0px;
+                    gap: 10px;
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #3f3f3f;
+                }
+            }
+
+            .chart {
+                width: 100px;
+                height: 100px;
+                margin: 15px auto 0px;
+            }
+        }
+
+        ::ng-deep {
+
+            .owl-dots {
+
+                .owl-dot {
+
+                    &.active {
+
+                        span {
+                            background-color: var(--main1);
                         }
                     }
                 }

@@ -15,6 +15,8 @@ import { PieComponent } from '../charts/pie/pie.component';
 import { BarComponent } from '../charts/bar/bar.component';
 import { Mixed2Component } from '../charts/mixed2/mixed2.component';
 import { BuildBureauPopupComponent } from '../modal/build-bureau-popup/build-bureau-popup.component';
+import { CreditJourneyPopupComponent } from '../modal/credit-journey-popup/credit-journey-popup.component';
+import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 
 
 
@@ -23,7 +25,7 @@ import { BuildBureauPopupComponent } from '../modal/build-bureau-popup/build-bur
   standalone: true,
   imports: [CommonModule,Mixed2Component,BarComponent,PieComponent,HistogramComponent,
     MixedComponent,SemiDoughnutComponent,DoughnutComponent,FaqComponent,
-    MatProgressBarModule,MatExpansionModule,MatFormFieldModule,MatCheckboxModule,MatIconModule],
+    MatProgressBarModule,MatExpansionModule,MatFormFieldModule,MatCheckboxModule,MatIconModule,CarouselModule],
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.scss']
 })
@@ -43,11 +45,43 @@ export class ReportsComponent {
 
   openBureauDialog(){
     // this.getBorrowerInformation();
-    const dialogRef = this.dialog.open(BuildBureauPopupComponent, {
+    const dialogRef = this.dialog.open(CreditJourneyPopupComponent, {
       width: 'auto',
       height: 'auto',
     });
   }
+
+  customOptions4: OwlOptions = {
+    loop: false,
+  rewind: true,
+   dots: true,
+   autoplay: true,
+   navSpeed: 300,
+   nav: false,
+   margin:8,
+   mouseDrag: false,
+   touchDrag: true,
+
+   autoplayTimeout:8000,
+   autoplaySpeed: 1500,
+   // navText: ["", ""],
+   navText: ["<img class='navTxtImg' src='./assets/images/homeIcon/left-arrow.svg'>", "<img class='navTxtImg' src='./assets/images/homeIcon/right-arrow.svg'>"],
+   responsive: {
+     0: {
+       items: 1.2,
+       dots: true,
+     },
+     400: {
+       items: 1.3,
+     },
+     740: {
+       items: 2,
+     },
+     940: {
+       items: 3,
+     },
+   },
+ };
 
 
   openPopup(){

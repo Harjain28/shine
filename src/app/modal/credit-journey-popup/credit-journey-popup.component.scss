@@ -1,0 +1,286 @@
+.modalbureauNumber{
+    padding: 40px 70px;
+    overflow: hidden;
+    height: calc(100vh - 140px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    z-index: 9;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .vectorIcon{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        img{
+            width: 146px;
+        }
+    }
+
+    .content{
+        text-align: center;
+
+        h3{
+            color: #3F3F3F;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 22px;
+            margin-bottom: 2px;
+            font-family: Poppins !important;            
+        }
+
+        p{
+            color: #3F3F3F;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            margin-bottom: 0px;
+            font-family: Poppins !important;            
+        }
+
+        .formInput{
+            margin-top: 22px;
+
+            form{
+                display: flex;
+                align-items: center;
+                gap: 6px;
+
+                .form-group{
+                    width: 100%;
+
+                    .form-control{
+                        border: 2px solid var(--main1);
+                        border-radius: 10px;
+                        background: #fff;
+                        height: 47px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        color: #3f3f3f;
+                        font-size: 14px;
+                        font-weight: 500;
+
+                        &:focus{
+                            box-shadow: none;
+                            outline: none;
+                        }
+
+                        &::placeholder{
+                            color: #A1A1A1;
+                            font-weight: 400;
+                        }
+
+                        &::-webkit-outer-spin-button,
+                        &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                        }
+                    }
+                }
+
+                button{
+                    background-color: var(--main1);
+                    color: #fff;
+                    height: 47px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 10px;
+                    font-weight: 600;
+                    font-size: 14px;
+                    padding: 14px 30px;
+                    border: 2px solid var(--main1);
+                }
+            }
+
+        }
+    }
+
+    .FeaturesSection{
+
+        .headingTop{
+            text-align: center;
+            margin-top: 20px;
+            padding: 0px 60px;
+    
+            h2{
+                font-size: 18px;
+                color: var(--main1);
+                line-height: 18px;
+                font-weight: 600;
+                font-family: Poppins !important;    
+                margin-bottom: 5px;
+            }
+        }
+
+        .loanBoxModal{
+            border: 1px solid var(--main1);
+            background-color: var(--main1);
+            padding: 28px 22px;
+            border-radius: 20px;
+            box-shadow: 0px 3px 10px #272D3B24;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+
+            img{
+                width: auto;
+                height: auto;
+            }
+
+            .content{
+
+                h4{
+                    font-size: 18px;
+                    color: #fff;
+                    line-height: 22px;
+                    font-weight: 600;
+                    font-family: Poppins !important;    
+                    margin-bottom: 4px;
+                    text-align: left;
+                }
+
+                p{
+                    font-size: 13px;
+                    color: #fff;
+                    line-height: 19px;
+                    font-weight: 400;
+                    font-family: Poppins !important;    
+                    margin-bottom: 4px;
+                    text-align: left;
+                }
+
+                .exploreBtn{
+                    margin-top: 24px;
+
+                    .btn{
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        color: #fff;
+                        font-size: 14px;
+                        font-weight: 500;
+                        font-family: Poppins !important;
+                        padding: 0px;
+                    }
+                }
+            }
+        }
+
+        .boxColorChnage{
+
+            .changeColor{
+                &:nth-of-type(3){
+
+                    .loanBoxModal{
+                        background-color: var(--main2);
+                        border-color: var(--main2);
+                    }
+                }
+                &:nth-of-type(4){
+
+                    .loanBoxModal{
+                        background-color: #C3E128;
+                        border-color: #C3E128;
+
+                        .content{
+
+                            h4{
+                                color: #000;
+                            }
+            
+                            p{
+                                color: #000;
+                            }
+            
+                            .exploreBtn{
+            
+                                .btn{
+                                    color: #000; 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .bottomText{
+            p{
+                color: #A1A1A1;
+                font-size: 14px;
+                line-height: 18px;
+                font-weight: 400;
+                
+            }
+        }
+    }
+}
+
+.backgroundColor{
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    z-index: -1;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: #fff6;
+    backdrop-filter: blur(5px);
+}
+@media (max-width: 767px) {
+    .modalbureauNumber{
+        padding: 10px 10px;
+        overflow: hidden;
+        height: calc(100vh - 68px);
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .vectorIcon{
+            margin-bottom: 12px;
+    
+            img{
+                width: 120px;
+            }
+        }
+    
+        .content{
+            text-align: center;
+    
+            h3{
+                font-size: 14px !important;          
+            }
+    
+            p{
+                font-size: 12px !important;        
+            }
+        }
+    }
+
+    .FeaturesSection{
+
+        .headingTop{
+            text-align: center;
+            padding: 0px 0px !important;
+    
+            h2{
+                font-size: 14px !important;
+            }
+
+            p{
+                font-size: 12px !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+<svg id="Group_3044" data-name="Group 3044" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27.305" height="25" viewBox="0 0 27.305 25">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_2262" data-name="Rectangle 2262" width="27.305" height="25" fill="#fff" stroke="#fff" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_3043" data-name="Group 3043" clip-path="url(#clip-path)">
+    <rect id="Rectangle_2261" data-name="Rectangle 2261" width="26.612" height="12.601" transform="translate(0.346 12.052)" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_5718" data-name="Path 5718" d="M102.556,140.91a2.353,2.353,0,1,1-2.353-2.353A2.353,2.353,0,0,1,102.556,140.91Z" transform="translate(-86.551 -122.557)" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_5719" data-name="Path 5719" d="M53.7,133.623v-.23a2.062,2.062,0,0,1,2.035-2.062v-3.452l-.234-.006a1.85,1.85,0,0,1-1.8-1.85H39a1.85,1.85,0,0,1-1.8,1.85l-.234.006v3.452A2.062,2.062,0,0,1,39,133.393v.23Z" transform="translate(-32.695 -111.47)" fill="#6a2fc2" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_5720" data-name="Path 5720" d="M23.152,39.146l2.969-6.108,13.721,6.67" transform="translate(-20.478 -29.223)" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_5721" data-name="Path 5721" d="M93.021,6.144,96.22,3l9.332,9.495" transform="translate(-82.279 -2.654)" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>

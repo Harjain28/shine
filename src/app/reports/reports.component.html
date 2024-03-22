@@ -1120,7 +1120,7 @@
         </div>
         
         <div class="col-lg-12 col-md-12 col-sm-12 mt-4" *ngIf="expandBalanceSection">
-          <div class="businessTurnover">
+          <div class="businessTurnover h-100">
             <div class="plus" (click)="expandBusinessSectionBlock()">
               <span>+</span>
             </div>
@@ -1155,7 +1155,7 @@
       </div>
 
       <div class="col-lg-8 col-md-8 col-sm-12 mt-4" *ngIf = "BusinessSectionBlock">
-        <div class="businessTurnover">
+        <div class="businessTurnover h-100">
           <div class="plus" (click)="expandBankingBusniess()">
             <span>+</span>
           </div>
@@ -1182,7 +1182,7 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12 mt-4" *ngIf = "balanceSectionBlock">
-        <div class="businessTurnover">
+        <div class="businessTurnover h-100">
           <div class="plus" (click)="expandBankingBalance()">
             <span>+</span>
           </div>
@@ -1216,7 +1216,7 @@
         </div>
       </div>
       <div class="col-lg-8 col-md-8 col-sm-12">
-        <div class="businessTurnover">
+        <div class="businessTurnover h-100">
           <div class="plus">
             <span>+</span>
           </div>
@@ -1266,7 +1266,7 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12">
-        <div class="businessTurnover">
+        <div class="businessTurnover h-100">
           <h3>Cheque Bounces</h3>
           <p>Lorem Ipsum is simply dummy text of the printin</p>
 
@@ -1306,7 +1306,7 @@
         </div>
       </div>
       <div class="col-lg-8 col-md-8 col-sm-12">
-        <div class="businessTurnover">
+        <div class="businessTurnover h-100">
           <h3>Cashflow Stability</h3>
           <p>Lorem Ipsum is simply dummy text of the printin</p>
 
@@ -1344,42 +1344,42 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12">
-        <div class="businessTurnover">
+        <div class="businessTurnover h-100">
           <h3>Monthly Running Expenses</h3>
           <p>Lorem Ipsum is simply dummy text of the printin</p>
 
           <div class="row">
             <div class="col-lg-12">
-              <div class="scoreProgress">
-                <ul>
-                  <li>
+              <div class="scoreProgress progressBarColor">
+                <ul class="lineColor">
+                  <li class="colorChnage">
                     <span>Credit Card</span>
                     <span>
-                      <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                      <mat-progress-bar mode="determinate" value="90"></mat-progress-bar>
                       22L</span>
                   </li>
-                  <li>
+                  <li class="colorChnage">
                     <span>Loan EMI </span>
                     <span>
-                      <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                      <mat-progress-bar mode="determinate" value="70"></mat-progress-bar>
                       15L</span>
                   </li>
-                  <li>
+                  <li class="colorChnage">
                     <span>Equipment </span>
                     <span>
-                      <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                      <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
                       12L</span>
                   </li>
-                  <li>
+                  <li class="colorChnage">
                     <span>Personal Loan </span>
                     <span>
                       <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
                       10L</span>
                   </li>
-                  <li>
+                  <li class="colorChnage">
                     <span>Travels</span>
                     <span>
-                      <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                      <mat-progress-bar mode="determinate" value="20"></mat-progress-bar>
                       5L</span>
                   </li>
                 </ul>
@@ -1544,7 +1544,7 @@
       </div>
 
       <div class="col-lg-12 col-md-12">
-        <div class="tableLoan table-responsive">
+        <div class="tableLoan table-responsive mhidden">
           <table>
             <thead>
               <ng-container>
@@ -1710,6 +1710,227 @@
 
             </tbody>
           </table>
+        </div>
+
+        <div class="tableSilder dhidden">
+          <owl-carousel-o [options]="customOptions4">
+            <ng-container>
+              <ng-template carouselSlide>
+                <div class="tableBox">
+                  <img src="./assets/LandingPage/icici.png" alt="">
+                  <ul>
+                    <li>Max Offerings (INR)</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor1">
+                    <li>Current Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>45,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>23%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor2">
+                    <li>Future Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <img class="chart" src="./assets/LandingPage/tableChart.svg" alt="">
+                </div>
+              </ng-template>
+
+              <ng-template carouselSlide>
+                <div class="tableBox">
+                  <img src="./assets/LandingPage/icici.png" alt="">
+                  <ul>
+                    <li>Max Offerings (INR)</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor1">
+                    <li>Current Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>45,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>23%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor2">
+                    <li>Future Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <img class="chart" src="./assets/LandingPage/tableChart.svg" alt="">
+                </div>
+              </ng-template>
+
+              <ng-template carouselSlide>
+                <div class="tableBox">
+                  <img src="./assets/LandingPage/icici.png" alt="">
+                  <ul>
+                    <li>Max Offerings (INR)</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor1">
+                    <li>Current Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>45,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>23%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor2">
+                    <li>Future Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <img class="chart" src="./assets/LandingPage/tableChart.svg" alt="">
+                </div>
+              </ng-template>
+
+              <ng-template carouselSlide>
+                <div class="tableBox">
+                  <img src="./assets/LandingPage/icici.png" alt="">
+                  <ul>
+                    <li>Max Offerings (INR)</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor1">
+                    <li>Current Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>45,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>23%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor2">
+                    <li>Future Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <img class="chart" src="./assets/LandingPage/tableChart.svg" alt="">
+                </div>
+              </ng-template>
+
+              <ng-template carouselSlide>
+                <div class="tableBox">
+                  <img src="./assets/LandingPage/icici.png" alt="">
+                  <ul>
+                    <li>Max Offerings (INR)</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor1">
+                    <li>Current Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>45,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>23%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor2">
+                    <li>Future Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <img class="chart" src="./assets/LandingPage/tableChart.svg" alt="">
+                </div>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
         </div>
 
         <div class="moreAffers">

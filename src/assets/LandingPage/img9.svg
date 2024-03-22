@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30.888" height="35.874" viewBox="0 0 30.888 35.874">
+  <g id="baseline-view_agenda-24px" transform="translate(0 3.874)">
+    <path id="Path_557" data-name="Path 557" d="M0,0H30.888V30.888H0Z" transform="translate(0 1.112)" fill="none"/>
+    <path id="Path_558" data-name="Path 558" d="M16.6,3H4.737a.915.915,0,0,0-.912.912L2,7.561a.915.915,0,0,0,.912.912H18.42a.915.915,0,0,0,.912-.912L17.508,3.912A.915.915,0,0,0,16.6,3Z" transform="translate(4.134 3.097)" fill="#fff"/>
+    <path id="Path_5722" data-name="Path 5722" d="M22.592,3H5.861A1.291,1.291,0,0,0,4.574,4.287L2,9.435a1.291,1.291,0,0,0,1.287,1.287H25.166a1.291,1.291,0,0,0,1.287-1.287L23.879,4.287A1.291,1.291,0,0,0,22.592,3Z" transform="translate(0.574 10.982)" fill="#fff"/>
+    <path id="Path_5723" data-name="Path 5723" d="M213.759,8.005a3.738,3.738,0,0,1,2.364-2.364l1.968-.655-1.968-.654a3.744,3.744,0,0,1-2.364-2.366L213.1,0l-.656,1.965a3.744,3.744,0,0,1-2.364,2.366l-1.965.654,1.965.655a3.737,3.737,0,0,1,2.364,2.364l.656,1.965Z" transform="translate(-189.639 -3.874)" fill="#fff" fill-rule="evenodd"/>
+  </g>
+</svg>

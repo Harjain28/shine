@@ -1,5 +1,15 @@
 .modalbureauNumber{
     padding: 40px 70px;
+    overflow: hidden;
+    height: calc(100vh - 100px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    z-index: 9;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
     
     .vectorIcon{
         display: flex;
@@ -213,6 +223,19 @@
     
 }
 
+.backgroundColor{
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    z-index: -1;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: #fff6;
+    backdrop-filter: blur(5px);
+}
+
 @media (max-width: 767px) {
     .modalbureauNumber{
         padding: 10px 10px;
@@ -247,7 +270,6 @@
     }
 
     .BusinessLoanOption{
-        padding-bottom: 70px;
     
         .businessText{
     
