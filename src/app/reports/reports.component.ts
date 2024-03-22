@@ -10,13 +10,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { FaqComponent } from './faq/faq.component';
 import { MatDialog } from '@angular/material/dialog';
 import { BureauLinkPopupComponent } from '../modal/bureau-link-popup/bureau-link-popup.component';
+import { DoughnutComponent } from '../charts/doughnut/doughnut.component';
+import { SemiDoughnutComponent } from '../charts/semi-doughnut/semi-doughnut.component';
+import { MixedComponent } from '../charts/mixed/mixed.component';
+import { HistogramComponent } from '../charts/histogram/histogram.component';
+import { PieComponent } from '../charts/pie/pie.component';
+import { BarComponent } from '../charts/bar/bar.component';
+import { Mixed2Component } from '../charts/mixed2/mixed2.component';
 
 
 
 @Component({
   selector: 'app-reports',
   standalone: true,
-  imports: [CommonModule,HeaderComponent,FaqComponent,MatProgressBarModule,MatExpansionModule,MatFormFieldModule,MatCheckboxModule,MatIconModule],
+  imports: [CommonModule,Mixed2Component,BarComponent,PieComponent,HistogramComponent,MixedComponent,SemiDoughnutComponent,DoughnutComponent,HeaderComponent,FaqComponent,MatProgressBarModule,MatExpansionModule,MatFormFieldModule,MatCheckboxModule,MatIconModule],
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.scss']
 })
@@ -53,6 +60,8 @@ export class ReportsComponent {
   expandBalanceSection!: boolean;
   balanceSectionBlock: boolean = true;
   BusinessSectionBlock: boolean = true;
+
+  aa= 1;
 
 
 

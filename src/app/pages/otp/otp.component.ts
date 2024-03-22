@@ -8,7 +8,7 @@ import { Config } from "ng-otp-input/lib/models/config";
 import { NgOtpInputModule } from 'ng-otp-input';
 import { MatSliderModule } from '@angular/material/slider';
 import { ApiService } from 'src/app/services/api.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-otp',
@@ -70,7 +70,12 @@ export class OtpComponent implements OnInit{
   constructor(
     public eventService: EventService,
     public router: Router,
-    private api: ApiService){}
+    private route: ActivatedRoute,
+    private api: ApiService){
+      this.route.queryParamMap.subscribe((params) => {
+        this.paramsObject = { ...params };
+      });
+    }
 
     ngOnInit(): void {
       this.otpVerifyForm();
