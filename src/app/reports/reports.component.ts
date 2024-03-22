@@ -17,6 +17,7 @@ import { HistogramComponent } from '../charts/histogram/histogram.component';
 import { PieComponent } from '../charts/pie/pie.component';
 import { BarComponent } from '../charts/bar/bar.component';
 import { Mixed2Component } from '../charts/mixed2/mixed2.component';
+import { BuildBureauPopupComponent } from '../modal/build-bureau-popup/build-bureau-popup.component';
 
 
 
@@ -83,9 +84,9 @@ export class ReportsComponent {
 
   openBureauDialog(){
     // this.getBorrowerInformation();
-    const dialogRef = this.dialog.open(BureauLinkPopupComponent, {
-      width: '90%',
-      height: '80%',
+    const dialogRef = this.dialog.open(BuildBureauPopupComponent, {
+      width: 'auto',
+      height: 'auto',
     });
   }
 
