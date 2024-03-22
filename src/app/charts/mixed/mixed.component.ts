@@ -90,7 +90,16 @@ export class MixedComponent {
           }
         },
         scales: {
+          x:{
+            grid:{
+              display: false
+            }
+
+          },
           y: {
+            grid: {
+              display: false
+            },
             beginAtZero: true,
             ticks: {
               callback: function(value: any, index: any, values: any) {

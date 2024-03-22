@@ -58,7 +58,16 @@ export class BarComponent {
           }
         },
         scales: {
+          x:{
+            grid:{
+              display: false
+            }
+
+          },
           y: {
+            grid: {
+              display: false
+            },
             beginAtZero: true,
             ticks: {
               callback: function(value: any, index: any, values: any) {
@@ -78,21 +87,7 @@ export class BarComponent {
 
   
 
-  
-  private getColor(value: number): string {
-    if(value > 100){
-      return '#400993'
-    }
-    else if (value >= 80 && value < 100) {
-      return '#6A2FC2'; 
-    } else if (value >= 60 && value < 80) {
-      return '#A070E8'; 
-    } else if (value >= 40 && value < 60) {
-      return '#9E77D6'; 
-    } else {
-      return '#A070E2'; 
-    }
-  }
+
   
   private getColor2(value: number): string {
     if(value > 100){
@@ -110,19 +105,5 @@ export class BarComponent {
     }
   }
 
-   private getMixedColor(value: number): string {
-    if(value > 100){
-      return '#12BA9B'
-    }
-    else if (value >= 80 && value <= 100) {
-      return '#6A2FC2'; 
-    } else if (value >= 60 && value < 80) {
-      return '#C3E128'; 
-    } else if (value >= 40 && value < 60) {
-      return '#FF7B24'; 
-    } else {
-      // Default color if value does not fall into any range
-      return '#EC1111'; // Black color (you can change it to any default color)
-    }
-  }
+  
 }
