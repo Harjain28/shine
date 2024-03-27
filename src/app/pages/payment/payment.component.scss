@@ -1,0 +1,57 @@
+.order-summary {
+    .card {
+      margin-top: 2rem;
+    }
+  
+    .card-header {
+      background-color: #f8f9fa;
+      border-bottom: none;
+    }
+  
+    .card-body {
+      padding: 1.5rem;
+    }
+  
+    .product {
+      margin-bottom: 1rem;
+  
+      .row {
+        align-items: center;
+      }
+    }
+  
+    .total {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 1rem;
+  
+      .row {
+        justify-content: space-between;
+      }
+    }
+  
+    .total-label {
+      text-transform: uppercase;
+    }
+  
+    .total-amount {
+      font-size: 1.4rem;
+      color: #f00;
+    }
+  
+    .proceed-button {
+      margin-top: 1rem;
+      width: 100%;
+    }
+  }
+  .features h3 {
+    margin-top: 10px;
+    color: #6a2fc2;
+    padding-left: 2px;
+    font-weight: bold;
+}
+.proceed-button {
+    background-color: black;
+    width: 100%;
+    border-color: black;
+}

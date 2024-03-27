@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable, Subject, of } from "rxjs";
 import {  ActivatedRoute, Router } from "@angular/router";
 import { Meta, Title } from "@angular/platform-browser";
 import { CanonicalService } from "./canonical.service";
-import { environment } from "../environments/environment";
+import { environment } from "../../environments/environment";
 
 @Injectable({
   providedIn: "root",

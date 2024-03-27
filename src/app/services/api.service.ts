@@ -6,7 +6,7 @@ import { EventService } from './event.service';
 // import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 import Swal from 'sweetalert2';
 
 
@@ -27,7 +27,6 @@ export class ApiService {
 
   shared:  any = [];
   API_URL: string;
-  Base_URL: string;
 
   constructor(
     private http: HttpClient,
@@ -43,7 +42,6 @@ export class ApiService {
    // this.TOKEN = localStorage.getItem('token');
   
     this.API_URL = environment.BASE_API_ENDPOINT;
-    this.Base_URL = environment.BASE2_API_ENDPOINT;
 
    
   }
@@ -77,7 +75,7 @@ export class ApiService {
     })
   };
 
-  return this.http.get(`${this.Base_URL}${path}`,{headers: this.httpOptions.headers, params })
+  return this.http.get(`${this.API_URL}${path}`,{headers: this.httpOptions.headers, params })
     .pipe(catchError(this.formatErrors));
 }
   

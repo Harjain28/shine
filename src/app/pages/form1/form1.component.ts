@@ -120,9 +120,7 @@ export class Form1Component implements OnInit {
       this.showValidatePANError = true;
     }
 
-
- 
-      if (this.form1.valid) { 
+    if (this.form1.valid) { 
     this.api.post(`api/Remediation/GetOTP`, requestData, params).subscribe({ next: (res: any) => {
           if (res.success) {
             localStorage.setItem("mobile",formValue.phoneNumber);
@@ -162,8 +160,8 @@ export class Form1Component implements OnInit {
     const params = { ...this.paramsObject.params };
     if (formValue.businessPan.length > 5 && formValue.businessPan) {
       this.api
-      .getwithHeader(
-        `api/Gst/ValidatePan?website=true&panNumber=${formValue.businessPan.toUpperCase()}`,
+      .get(
+        `api/Validator/PAN?pan=${formValue.businessPan.toUpperCase()}&isBusiness=true`,
         params
       )
         .subscribe({
@@ -192,8 +190,8 @@ export class Form1Component implements OnInit {
     const params = { ...this.paramsObject.params };
     if (formValue.pincode.length > 5) {
       this.api
-        .getwithHeader(
-          `api/PincodeValidator?value=${formValue.pincode}`,
+        .get(
+          `api/Validator/Pincode?pincode=${formValue.pincode}`,
           params
         )
         .subscribe({

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -10,4 +11,10 @@ import { CommonModule } from '@angular/common';
 })
 export class PaymentComponent {
 
+  constructor(    public router: Router,
+    ){}
+
+    goToForm1(){
+      this.router.navigate(['/in/register'])
+    }
 }
