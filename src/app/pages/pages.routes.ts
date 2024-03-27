@@ -12,9 +12,9 @@ export default[
     {
         path: 'plan', loadComponent:() => import('./pricing/pricing.component').then(c=>c.PricingComponent, )
     },
-    {
-        path: 'selection', loadComponent:() => import('./selection/selection.component').then(c=>c.SelectionComponent)
-    },
+    // {
+    //     path: 'selection', loadComponent:() => import('./selection/selection.component').then(c=>c.SelectionComponent)
+    // },
     {
         path: 'register', loadComponent:() => import('./form1/form1.component').then(c=>c.Form1Component)
     },

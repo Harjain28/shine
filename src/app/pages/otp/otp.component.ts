@@ -84,7 +84,7 @@ export class OtpComponent implements OnInit{
 
   otpVerifyForm() {
     this.otpVerify = new FormGroup({
-       otp: new FormControl("", [Validators.required, Validators.maxLength(6)]),
+      //  otp: new FormControl("", [Validators.required, Validators.maxLength(6)]),
       // terms: new FormControl({ value: true, disabled: false }, [
       //   Validators.required,
       //   Validators.requiredTrue,
@@ -101,19 +101,19 @@ export class OtpComponent implements OnInit{
   submitOtp() {
     this.isOtpSubmit = true;
     const formValue = this.otpVerify.value;
-    let requestData = {};
+    const requestData = {};
     const defaultparams = {
       mobile: localStorage.getItem("mobile"),
-      otp: localStorage.getItem("otp")
-      
+      otp: this.phoneOtp,
     };
     const params = { ...defaultparams, ...this.paramsObject.params };
+
     if (!this.phoneOtp || this.phoneOtp.length < 6) {
       this.api.alert("Please Complete otp", "error");
     }
 
-    if (this.otpVerify.valid && this.phoneOtp && this.phoneOtp.length > 5) {
-      this.api.post(`account/loginnew`, requestData, params).subscribe({
+    if (this.phoneOtp && this.phoneOtp.length > 5) {
+      this.api.post(`api/Remediation/ValidateLogin`, requestData, params).subscribe({
         next: (res: any) => {
           if (res.success == true) {
           //  const stateData = Buffer.from(res.token).toString("base64");
@@ -135,7 +135,7 @@ export class OtpComponent implements OnInit{
         },
       });
     } else {
-      this.otpVerify.markAllAsTouched();
+      // this.otpVerify.markAllAsTouched();
       this.isOtpSubmit = false;
     }
   }

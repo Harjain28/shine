@@ -237,7 +237,7 @@
                         </div>
   
                         <div class="ButtonNow">
-                            <a class="btn btn-secondary" routerLink="/previousStep">Back</a>
+                            <a class="btn btn-secondary" (click)="eventService.back()">Back</a>
                             <button [disabled]="isSubmit" (click)="getOtpbyPhone()">Next <mat-icon>keyboard_arrow_right</mat-icon></button>
                           </div>
                     </div>
