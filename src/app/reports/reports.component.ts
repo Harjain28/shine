@@ -17,6 +17,7 @@ import { Mixed2Component } from '../charts/mixed2/mixed2.component';
 import { BuildBureauPopupComponent } from '../modal/build-bureau-popup/build-bureau-popup.component';
 import { CreditJourneyPopupComponent } from '../modal/credit-journey-popup/credit-journey-popup.component';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { ApiService } from '../services/api.service';
 
 
 
@@ -39,13 +40,34 @@ export class ReportsComponent {
   expandBalanceSection!: boolean;
   balanceSectionBlock: boolean = true;
   BusinessSectionBlock: boolean = true;
+  paramsObject: any;
 
-  constructor(private dialog: MatDialog ) { }
+  constructor(private dialog: MatDialog, private api: ApiService ) { }
+
+  postForReport(){
+      let requestData: any = {}; 
+      requestData["mobile"] = " ";
+      
+        const params = { ...this.paramsObject.params };
+          this.api.postForReport(`api/Remediation/Report`,requestData , params) .subscribe({
+              next: (res: any) => {
+                if (res) {
+                 
+                }
+              },
+              error: error => {
+              },
+              complete: () => {
+               // ('Request complete');
+              }
+            });
+      
+  }
 
 
   openBureauDialog(){
     // this.getBorrowerInformation();
-    const dialogRef = this.dialog.open(CreditJourneyPopupComponent, {
+    const dialogRef = this.dialog.open(BuildBureauPopupComponent, {
       width: 'auto',
       height: 'auto',
     });
