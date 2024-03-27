@@ -1458,6 +1458,46 @@
                 }
             }
 
+            .d-blockList{
+                display: block;
+                background-color: #fff;
+                padding: 20px 22px;
+                border: 1px solid #707070;
+                border-radius: 10px;
+                margin-bottom: 0px;
+
+                li{
+                    color: #3F3F3F;
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 19px;
+                    font-family: Poppins !important;
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    padding: 9px 0px;
+
+                    span {
+                        width: 15px;
+                        height: 15px;
+                        background-color: #fff;
+                        display: flex;
+                        border-radius: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        top: auto;
+                        left: auto;
+
+                        span {
+                            width: 8px;
+                            height: 8px;
+                        }
+                    }
+                }
+            }
+
             .qtrBox {
 
                 .qtrList {
