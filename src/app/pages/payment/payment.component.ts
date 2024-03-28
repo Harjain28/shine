@@ -15,6 +15,8 @@ export class PaymentComponent {
   payloadString: any;
   mobileNo: any;
   currentDate: any;
+  reqData: any;
+  merchantId: any;
 
   constructor(  private api: ApiService,  public router: Router, private datePipe: DatePipe   , private route: ActivatedRoute,
 
@@ -61,8 +63,9 @@ export class PaymentComponent {
           )
           .subscribe({
             next: (res: any) => {
-              this.router.navigate(['/in/register'])
-
+              this.reqData = res?.reqData;
+              this.merchantId = res?.merchantId;
+              // window.location.href = res?.url;
            
             },
             error: (error:any) => {
