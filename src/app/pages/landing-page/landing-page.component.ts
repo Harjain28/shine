@@ -9,12 +9,17 @@ import { msmeloansJson } from '../msmedata';
 import { SMEproductJSON } from '../data';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { FaqComponent } from 'src/app/reports/faq/faq.component';
+import { TestimonialComponent } from 'src/app/shared/testimonial/testimonial.component';
+import { MaterialModule } from 'src/app/material.module';
+
+
 
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule,LazyLoadImageModule,CarouselModule],
+  imports: [CommonModule,LazyLoadImageModule,CarouselModule,FaqComponent,TestimonialComponent,LazyLoadImageModule],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })

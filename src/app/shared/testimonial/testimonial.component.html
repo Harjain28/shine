@@ -1,0 +1,38 @@
+<div class="Testimonial"  *ngIf="testimonialData?.Testimonials && testimonialData?.Testimonials.length > 0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mobile0">
+          <div class="deliverignLoanHeading mobilePd">
+            <h2> {{testimonialData?.Headline}}</h2>
+          </div>
+          <div class="col-md-12 m-auto">
+            <div class="deliverignLoanSilder">
+              <owl-carousel-o [options]="customOptions3">
+                <ng-container *ngFor="let testimonials of testimonialData?.Testimonials">
+                  <ng-template carouselSlide>
+                    <div class="loanBox">
+                      <img class="logoImg mhidden" [lazyLoad]="testimonials?.Borrower_Image?.Desktop_Image" [alt]="testimonials?.Borrower_Image?.imageText" />
+                      <img class="logoImg dhidden" [lazyLoad]="testimonials?.Borrower_Image?.Mobile_Image" [alt]="testimonials?.Borrower_Image?.imageText"/>
+                      <div class="testContent">
+                        <h4>{{testimonials?.Borrower_Name}}</h4>
+                        <p> {{testimonials?.Designation}},
+                          {{testimonials?.Company_Name}},</p>
+                          <p class="states">{{testimonials?.Location}} </p>
+                        <ul class="rating-list">
+                          <li class="selected" *ngFor="let star of testimonials?.Rating" (click)="countStar(star)">
+                            <img lazyLoad="./assets/images/homeImage/starIcon.svg" alt="">
+                          </li>
+                        </ul>
+                        <h5>Loan Amount: {{testimonials?.Loan_Amount}}</h5>
+                        <p class="wordBreak">{{testimonials?.Details}}</p>
+                      </div>
+                    </div>
+                  </ng-template>
+                </ng-container>
+              </owl-carousel-o>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

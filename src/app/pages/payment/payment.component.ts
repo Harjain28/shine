@@ -65,7 +65,10 @@ export class PaymentComponent {
             next: (res: any) => {
               this.reqData = res?.reqData;
               this.merchantId = res?.merchantId;
-              // window.location.href = res?.url;
+            //  window.location.href = res?.url;
+
+              this.confirmPayment();
+
            
             },
             error: (error:any) => {
@@ -79,8 +82,8 @@ export class PaymentComponent {
   
     confirmPayment(){
       const defaultparams = {
-        payloadString: this.payloadString,
-        mobile: this.mobileNo,
+        payloadString: this.reqData,
+        mobile: "9444444444",
       };
       const params = { ...defaultparams, ...this.paramsObject.params };
           this.api
@@ -144,7 +147,7 @@ export class PaymentComponent {
       const params = { ...defaultparams, ...this.paramsObject.params };
       this.api
         .getPayment(
-          `api/Remediation/UploadDocumentLink?mobile=${this.mobileNo}&callbackEnum=0`,
+          `api/Remediation/UploadDocumentLink`,
           params
         )
         .subscribe(

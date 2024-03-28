@@ -41,6 +41,7 @@ export class ReportsComponent {
   balanceSectionBlock: boolean = true;
   BusinessSectionBlock: boolean = true;
   paramsObject: any;
+  expandDebtRatioSection!: boolean;
 
   constructor(private dialog: MatDialog, private api: ApiService ) { }
 
@@ -189,6 +190,15 @@ export class ReportsComponent {
   expandBusinessSectionBlock(){
     this.expandBalanceSection = false;
     this.expandBusinessSection = true;
+
+  }
+
+  expandDebtRatioBlock(){
+    this.expandDebtRatioSection = true;
+  }
+
+  mnimizeDebtRatioBlock(){
+    this.expandDebtRatioSection = false;
 
   }
 

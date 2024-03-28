@@ -1,0 +1,216 @@
+.Testimonial{
+    background-color: #F3F3F3;
+    padding-top: 42px;
+    padding-bottom: 70px;
+
+    .deliverignLoanHeading{
+        margin-bottom: 31px;
+
+        h2{
+            color: #12BA9B;
+            font-size: 28px;
+            line-height: 28px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 0px;
+        }
+    }
+
+    .deliverignLoanSilder{
+
+        .loanBox{
+            display: flex;
+            // align-items: center;
+            gap: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            max-height: 1px;
+            min-height: 340px;
+
+            img{
+                width: 135px;
+                height: 300px;
+                object-fit: cover;
+            }
+
+            .testContent{
+
+                h4{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #3F3F3F;
+                    line-height: 16px;
+                    margin-bottom: 4px;
+                    font-family: "Poppins", sans-serif !important;
+                }
+                p{
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: #3F3F3F;
+                    margin-bottom: 12px;
+                    font-family: "Poppins", sans-serif !important;
+                }
+                 .states {
+                    line-height: 6px !important;
+                }
+
+                h5{
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 22px;
+                    margin-bottom: 10px;
+                    margin-top: 14px;
+                    color: #666666;
+                    font-family: "Poppins", sans-serif !important;
+                }
+
+                .wordBreak{
+                    overflow: hidden;
+                    -o-text-overflow: ellipsis;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 8;
+                    -webkit-box-orient: vertical;
+                }
+            }
+            
+        }
+
+        ::ng-deep{
+
+            .owl-nav{
+                position: absolute;
+                top: 42%;
+                transform: translate(0%, 0%);
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                margin: 0px;
+            
+            }
+    
+            .owl-prev{
+                position: absolute;
+                left: -56px;
+                width: 47px;
+                height: 47px;
+                background: var(--main2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0px;
+                transform: translate(0%, 0%);
+            }
+            .owl-next{
+                position: absolute;
+                right: -56px;
+                width: 47px;
+                height: 47px;
+                background: var(--main2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: translate(0%, 0%);
+                border-radius: 0px;
+
+                // &:before{
+                //     position: absolute;
+                //     content: "";
+                //     display: block;
+                //     background: #fff;
+                //     width: 150px;
+                //     height: 340px;
+                //     right: -190px;
+                //     border-radius: 10px;
+                //     filter: blur(8px);
+                //     -webkit-filter: blur(18px);
+                //     transform: translate(0%, 0%);
+                // }
+            }
+
+            .disabled {
+                background-color: #EBEBEB;
+                opacity: 1;
+
+                img{
+                    filter: invert(82%) sepia(2%) saturate(4%) hue-rotate(343deg) brightness(90%) contrast(83%);
+                    opacity: .5;
+                }
+
+                &:before{
+                    display: none;
+                }
+            }
+        }
+    }
+} 
+
+@media (max-width:767px) {
+    .Testimonial{
+        padding-top: 34px !important;
+        padding-bottom: 41px !important;
+
+        .deliverignLoanHeading{
+            margin-bottom: 12px;
+
+            h2{
+                font-size: 22px !important;
+            }
+        }
+
+        .deliverignLoanSilder{
+
+            .loanBox{
+                display: block !important;
+                text-align: center;
+                max-height: 1px;
+                min-height: 560px;
+                height: 100%;
+                margin: 0px 30px;
+
+                img{
+                    width: 100% !important;
+                    height: auto !important;
+                    margin-bottom: 12px;
+                }
+
+                .testContent{
+
+                    h5{
+                        font-size: 14px !important;
+                    }
+                }
+                
+            }
+
+            ::ng-deep{
+    
+                .owl-nav{
+                    position: relative !important;
+                    justify-content: center !important;
+                    top: -30px !important;
+                    
+                
+                }
+        
+                .owl-prev{
+                    position: relative !important;
+                    left: 0px !important;
+                    margin: 0px;
+                }
+                .owl-next{
+                    position: relative !important;
+                    right: 0px !important;
+                    transform: translate(0%, -0%);
+                    margin: 0px;
+
+                    &:before{
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
