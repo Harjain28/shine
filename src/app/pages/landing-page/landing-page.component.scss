@@ -90,6 +90,234 @@
             }
         }
     }
+
+    .twoSectionMarge{
+        background-repeat: no-repeat;
+        background-position: right;
+
+        .betterLoanOpportunties{
+            padding-bottom: 60px;
+
+            .boxContent{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 22px;
+                box-shadow: 6px 6px 20px #0000001A;
+                border-radius: 20px;
+                background-color: var(--main2);
+                margin-bottom: 10px;
+                padding: 20px 30px;
+
+                &:nth-of-type(2) {
+                    background-color: var(--main1);
+                    transform: translate(30px, 0px);
+                }
+
+                &:nth-of-type(3) {
+                    background-color: #C3E128;
+
+                    .content{
+
+                        h3{
+                            color: #222222;
+                        }
+    
+                        p{
+                            color: #222222;
+    
+                        }
+                    }
+                }
+
+                .content{
+
+                    h3{
+                        color: #FFFFFF;
+                        font-size: 18px;
+                        line-height: 28px;
+                        font-weight: 600;
+                        font-family: Poppins !important;
+                        margin-bottom: 9px;
+                    }
+
+                    p{
+                        color: #FFFFFF;
+                        font-size: 13px;
+                        line-height: 19px;
+                        font-weight: normal;
+                        font-family: Poppins !important;
+                        margin-bottom: 2px;
+
+                    }
+                }
+                
+                .boxIcon{
+
+                    img{
+                        width: auto;
+                        height: 64px;
+                    }
+                }
+            }
+
+            .rightContent{
+                padding-left: 70px;
+
+                h3{
+                    color: #3f3f3f;
+                    font-size: 30px;
+                    line-height: 37px;
+                    font-weight: 700;
+                    font-family: 'Be Vietnam Pro' !important;
+                    margin-bottom: 14px;
+
+                    span{
+                        color: var(--main1);
+                        display: block;
+                    }
+                }
+
+                p{
+                    color: #3f3f3f;
+                    font-size: 16px;
+                    line-height: 22px;
+                    font-weight: normal;
+                    font-family: Poppins !important;
+                    margin-bottom: 2px;
+                    padding-right: 130px;
+
+                }
+            }
+        }
+
+        .transformFinance{
+            background-color: #F3F3F3;
+            padding: 65px 0px;
+            z-index: -1;
+            position: relative;
+
+            .rightContent{
+                position: relative;
+                z-index: 9;
+
+                h3{
+                    color: #3f3f3f;
+                    font-size: 30px;
+                    line-height: 37px;
+                    font-weight: 700;
+                    font-family: 'Be Vietnam Pro' !important;
+                    margin-bottom: 14px;
+
+                    span{
+                        color: var(--main1);
+                        display: block;
+                    }
+                }
+
+                p{
+                    color: #3f3f3f;
+                    font-size: 16px;
+                    line-height: 22px;
+                    font-weight: normal;
+                    font-family: Poppins !important;
+                    margin-bottom: 2px;
+
+                }
+            }
+
+            .laptopSilder{
+                position: relative;
+                overflow: hidden;
+                z-index: 9;
+
+                .textSilder{
+                    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1019607843);
+                    border: 1px solid #12BA9B;
+                    border-radius: 10px;
+                    padding: 12px 22px;
+                    text-align: center;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: fit-content;
+                    top: -250px;
+                    z-index: 99999;
+                    background: #fff;
+                    left: 30px;
+
+                    img{
+                        width: 32px;
+                        height: 32px;
+                        position: absolute;
+                        z-index: 999;
+                        left: -20px;
+                    }
+
+                    span{
+                        font-size: 16px;
+                        line-height: 22px;
+                        color: var(--main2);
+                        font-weight: 600;
+                        font-family: Poppins !important;
+                    }
+                }
+
+                .laptopView{
+                    width: 510px;
+                    display: flex;
+                    margin: 0px 0px 0px auto;
+                }
+
+                .laptopAnderImg{
+                    position: absolute;
+                    top: -35px;
+                    left: 100%;
+                    transform: translate(50%, -100%);
+
+                    img{
+                        height: 242px;
+                        width: auto;
+                        margin: auto;
+                    }
+                }
+                
+                owl-carousel-o{
+
+                    ::ng-deep{
+
+                        .owl-carousel{
+
+                            .owl-stage-outer{
+                                overflow: visible;
+                            }
+                        }
+
+                        .owl-dots{
+
+                            .owl-dot{
+
+                                &.active{
+
+                                    span{
+                                        background: var(--main2);
+                                    }
+                                }
+
+                                &:hover{
+
+                                    span{
+                                        background: var(--main2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 

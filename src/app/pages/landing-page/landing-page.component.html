@@ -1,33 +1,35 @@
 <div class="forSMEComponent" *ngIf="isBrowser">
-    <div class="SecuredBusinessLoan" *ngIf="SecuredProductBannerData && SecuredProductBannerData.length > 0">
-      <div class="container-fluid p-0">
-        <div class="homeSlider">
-          <div class="silderSlide">
-            <img *ngIf="showDesktop" class="image mhidden" src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/home_slide_01.webp"/>
-            <img *ngIf="!showDesktop" class="image dhidden" src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/home_slide_mobile_01.webp" />
-            <div class="silderText mobileResponsive">
-              <div class="container">
-                <div class="row align-items-center">
-                  <div class="col-md-6">
-                    <div class="title shineTitle">
-                      <h1 class="mainHeading">
-                        Welcome to Shine!
-                      </h1>
-                      <div class="colorBox">
-                        Identify Issues. Improve Credit. Secure Capital.
-                      </div>
-                      <p>
-                        <img src="./assets/LandingPage/checkStar.svg" alt="">
-                        Our analysis reveals the obstacles to your loan success; we offer precise steps, from a lender's eye, to enhance your loan eligibility.
-                      </p>
-                      <p>
-                        <img src="./assets/LandingPage/checkStar.svg" alt="">
-                        Become Business Loan Eligible in 3-6 months.
-                      </p>
-                      
-                      <div class="pricingBtn">
-                        <a href="" class="btn">Check Pricing</a>
-                      </div>
+  <div class="SecuredBusinessLoan" *ngIf="SecuredProductBannerData && SecuredProductBannerData.length > 0">
+    <div class="container-fluid p-0">
+      <div class="homeSlider">
+        <div class="silderSlide">
+          <img *ngIf="showDesktop" class="image mhidden"
+            src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/home_slide_01.webp" />
+          <img *ngIf="!showDesktop" class="image dhidden"
+            src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/home_slide_mobile_01.webp" />
+          <div class="silderText mobileResponsive">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-6">
+                  <div class="title shineTitle">
+                    <h1 class="mainHeading">
+                      Welcome to Shine!
+                    </h1>
+                    <div class="colorBox">
+                      Identify Issues. Improve Credit. Secure Capital.
+                    </div>
+                    <p>
+                      <img src="./assets/LandingPage/checkStar.svg" alt="">
+                      Our analysis reveals the obstacles to your loan success; we offer precise steps, from a lender's
+                      eye, to enhance your loan eligibility.
+                    </p>
+                    <p>
+                      <img src="./assets/LandingPage/checkStar.svg" alt="">
+                      Become Business Loan Eligible in 3-6 months.
+                    </p>
+
+                    <div class="pricingBtn">
+                      <a href="" class="btn">Check Pricing</a>
                     </div>
                   </div>
                 </div>
@@ -37,87 +39,205 @@
         </div>
       </div>
     </div>
-  
-  
- 
-    <div class="BusinessLoanOption">
+  </div>
+
+  <div class="twoSectionMarge section_padding" style="background-image: url(../../../assets/LandingPage/rightDesign.png);">
+
+    <div class="betterLoanOpportunties">
       <div class="container">
-        <div class="row mobilePd">
-          <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 mb-3">
-            <div class="businessText">
-              <div class="businessImg dhidden">
-                <img src="./assets/images/shine/loan_options_mobile.webp" alt="">
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
+            <div class="boxContent">
+              <div class="content">
+                <h3>Bureau</h3>
+                <p>Discover the secrets within your Bureau report, focusing on credit mix, loan inquiries, and repayment
+                  patterns. Gain an edge with insights for credit optimization, elevating your profile and unlocking
+                  lending opportunities.</p>
               </div>
-              <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
-                  <a class="iconBox">
-                    <h3>Bureau Score</h3>
-                  </a>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
-                  <a class="iconBox">
-                    <h3>Loan Repayment History</h3>
-                  </a>
-                </div>
-  
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
-                  <a class="iconBox">
-                    <h3>GST Filings History</h3>
-                  </a>
-                </div>
-  
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
-                  <a class="iconBox">
-                    <h3>Current Debt Analysis</h3>
-                  </a>
-                </div>
-  
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
-                  <a class="iconBox">
-                    <h3>Business Credit Amount</h3>
-                  </a>
-                </div>
-  
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
-                  <a class="iconBox">
-                    <h3>Business Credit Count</h3>
-                  </a>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
-                  <a class="iconBox">
-                    <h3>Average Monthly Balance</h3>
-                  </a>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
-                  <a class="iconBox">
-                    <h3>Debt-To-Turnover Ratio</h3>
-                  </a>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
-                  <a class="iconBox">
-                    <h3>Cheque Bounces</h3>
-                  </a>
-                </div>
-  
-  
-                <!-- <div class="ButtonNow">
-                  <a>Check Eligibility <mat-icon>keyboard_arrow_right</mat-icon></a>
-                </div> -->
+              <div class="boxIcon">
+                <img src="./assets/LandingPage/homeIconW.svg" alt="">
+              </div>
+            </div>
+            <div class="boxContent">
+              <div class="content">
+                <h3>Banking</h3>
+                <p>Navigate the intricacies of your GST filings with precision. We analyse your GST data to showcase your business’s financial health from a lender’s perspective.</p>
+              </div>
+              <div class="boxIcon">
+                <img src="./assets/LandingPage/homeIconW.svg" alt="">
+              </div>
+            </div>
+            <div class="boxContent">
+              <div class="content">
+                <h3>GST</h3>
+                <p>Banking transactions tell your business’s story. Our insights guide you to optimize transactions, manage balances, and present a compelling case for loan eligibility and favourable terms which lenders can’t ignore.</p>
+              </div>
+              <div class="boxIcon">
+                <img src="./assets/LandingPage/searchIconB.svg" alt="">
               </div>
             </div>
           </div>
-          <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 mb-3 mhidden">
-            <div class="businessImg">
-              <img src="./assets/images/shine/loan_options_desktop.webp" alt="">
+          
+          <div class="col-lg-6 col-md-10 col-sm-12 mb-3">
+            <div class="rightContent">
+              <h3>What Stands Between <span> You and Better Loan Opportunities?</span></h3>
+              <p>The only tool revealing lender insights by analysing your Bureau, GST, & Banking data.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  
-  
-    <app-testimonial [testimonialData]="Sme_Testimonial"></app-testimonial> 
-  
-  
+
+    <div class="transformFinance">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
+            <div class="rightContent">
+              <h3>Transform Finance:  <span> See What Others Don't</span></h3>
+              <p>The only tool revealing lender insights by analysing your Bureau, GST, & Banking data.</p>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-12 col-sm-12 mb-3">
+            <div class="laptopSilder">
+              <img class="laptopView" src="./assets/LandingPage/laptop.png" alt="">
+              <owl-carousel-o [options]="customOptionKeys">
+                <ng-container>
+                  <ng-template carouselSlide>
+                    <div class="setSilder">
+                      <div class="textSilder">
+                        <img src="./assets/LandingPage/checkStar.svg" alt="">
+                        <span>Increase Loan Possibility!</span>
+                      </div>
+                      <div class="laptopAnderImg">
+                        <img src="./assets/LandingPage/laptopAnder.png" alt="">
+                      </div>
+                    </div>
+                  </ng-template>
+                  
+                  <ng-template carouselSlide>
+                    <div class="setSilder">
+                      <div class="textSilder">
+                        <img src="./assets/LandingPage/checkStar.svg" alt="">
+                        <span>Increase Loan Possibility!</span>
+                      </div>
+                      <div class="laptopAnderImg">
+                        <img src="./assets/LandingPage/laptopAnder.png" alt="">
+                      </div>
+                    </div>
+                  </ng-template>
+                  
+                  <ng-template carouselSlide>
+                    <div class="setSilder">
+                      <div class="textSilder">
+                        <img src="./assets/LandingPage/checkStar.svg" alt="">
+                        <span>Increase Loan Possibility!</span>
+                      </div>
+                      <div class="laptopAnderImg">
+                        <img src="./assets/LandingPage/laptopAnder.png" alt="">
+                      </div>
+                    </div>
+                  </ng-template>
+                  
+                  <ng-template carouselSlide>
+                    <div class="setSilder">
+                      <div class="textSilder">
+                        <img src="./assets/LandingPage/checkStar.svg" alt="">
+                        <span>Increase Loan Possibility!</span>
+                      </div>
+                      <div class="laptopAnderImg">
+                        <img src="./assets/LandingPage/laptopAnder.png" alt="">
+                      </div>
+                    </div>
+                  </ng-template>
+                </ng-container>
+              </owl-carousel-o>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <app-faq></app-faq>
+
+
+
+  <div class="BusinessLoanOption">
+    <div class="container">
+      <div class="row mobilePd">
+        <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 mb-3">
+          <div class="businessText">
+            <div class="businessImg dhidden">
+              <img src="./assets/images/shine/loan_options_mobile.webp" alt="">
+            </div>
+            <div class="row">
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                <a class="iconBox">
+                  <h3>Bureau Score</h3>
+                </a>
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                <a class="iconBox">
+                  <h3>Loan Repayment History</h3>
+                </a>
+              </div>
+
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                <a class="iconBox">
+                  <h3>GST Filings History</h3>
+                </a>
+              </div>
+
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                <a class="iconBox">
+                  <h3>Current Debt Analysis</h3>
+                </a>
+              </div>
+
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                <a class="iconBox">
+                  <h3>Business Credit Amount</h3>
+                </a>
+              </div>
+
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                <a class="iconBox">
+                  <h3>Business Credit Count</h3>
+                </a>
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                <a class="iconBox">
+                  <h3>Average Monthly Balance</h3>
+                </a>
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                <a class="iconBox">
+                  <h3>Debt-To-Turnover Ratio</h3>
+                </a>
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                <a class="iconBox">
+                  <h3>Cheque Bounces</h3>
+                </a>
+              </div>
+
+
+              <!-- <div class="ButtonNow">
+                  <a>Check Eligibility <mat-icon>keyboard_arrow_right</mat-icon></a>
+                </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 mb-3 mhidden">
+          <div class="businessImg">
+            <img src="./assets/images/shine/loan_options_desktop.webp" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <app-testimonial [testimonialData]="Sme_Testimonial"></app-testimonial>
+
+
+</div>
+<app-faq></app-faq>

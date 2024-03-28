@@ -26,45 +26,11 @@ import { MaterialModule } from 'src/app/material.module';
 export class LandingPageComponent {
   openAccording: boolean = false;
 
-  customOptions: OwlOptions = {
-    loop: false,
-    rewind: true,
-    mouseDrag: false,
-    touchDrag: true,
-    dots: true,
-    autoplay: true,
-    navSpeed: 300,
-    nav: false,
-
-    autoplayTimeout:8000,
-    autoplaySpeed: 1500,
-    // navText: ["", ""],
-    // navText: ["<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>", "<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>"],
-    responsive: {
-      0: {
-        items: 1,
-        skip_validateItems: true,
-      },
-      400: {
-        items: 1,
-        skip_validateItems: true,
-      },
-      740: {
-        items: 1,
-        skip_validateItems: true,
-      },
-      940: {
-        items: 1,
-        skip_validateItems: true,
-      },
-    },
-  };
-
   customOptionKeys: OwlOptions = {
     loop: true,
     mouseDrag: false,
     touchDrag: true,
-    dots: false,
+    dots: true,
     autoplay: true,
     navSpeed: 300,
     nav: false,
@@ -92,38 +58,6 @@ export class LandingPageComponent {
       },
     },
   };
-
-  customOptions4: OwlOptions = {
-    loop: false,
-  rewind: true,
-   dots: false,
-   autoplay: true,
-   navSpeed: 300,
-   nav: true,
-   margin:8,
-   mouseDrag: false,
-   touchDrag: true,
-
-   autoplayTimeout:8000,
-   autoplaySpeed: 1500,
-   // navText: ["", ""],
-   navText: ["<img class='navTxtImg' src='./assets/images/homeIcon/left-arrow.svg'>", "<img class='navTxtImg' src='./assets/images/homeIcon/right-arrow.svg'>"],
-   responsive: {
-     0: {
-       items: 1,
-       dots: true,
-     },
-     400: {
-       items: 1,
-     },
-     740: {
-       items: 1,
-     },
-     940: {
-       items: 1,
-     },
-   },
- };
 
   smeProduct: any;
   smeProductPage: any  = {};
