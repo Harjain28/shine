@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { CommonModule, DatePipe } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -14,9 +14,16 @@ export class PaymentComponent {
   paramsObject: any;
   payloadString: any;
   mobileNo: any;
+  currentDate: any;
 
-  constructor(  private api: ApiService,  public router: Router,
-    ){}
+  constructor(  private api: ApiService,  public router: Router, private datePipe: DatePipe   , private route: ActivatedRoute,
+
+    ){
+      this.route.queryParamMap.subscribe((params) => {
+        this.paramsObject = { ...params };
+      });
+      this.currentDate = this.datePipe.transform(new Date(), 'yyyy-MM-ddTHH:mm:ss.SSS\'Z\'', 'UTC')
+    }
 
     goToForm1(){
       this.router.navigate(['/in/register'])
@@ -24,9 +31,9 @@ export class PaymentComponent {
 
     getForPaymentMethod() {
       let requestData: any = {}; 
-        requestData["dateTime"] = "";
-        requestData["amount"] = "";
-        requestData["isMultiSettlement"] = "";
+        requestData["dateTime"] = this.currentDate ;
+        requestData["amount"] = 9000;
+        requestData["isMultiSettlement"] = true;
         requestData["custMobile"] = "";
         requestData["apiKey"] = "";
         requestData["productId"] = "";
@@ -54,6 +61,8 @@ export class PaymentComponent {
           )
           .subscribe({
             next: (res: any) => {
+              this.router.navigate(['/in/register'])
+
            
             },
             error: (error:any) => {
@@ -89,7 +98,7 @@ export class PaymentComponent {
   
     paymentStatusCheck(){
       const defaultparams = {
-        payload: " ",
+        payload: "",
       };
       const params = { ...defaultparams, ...this.paramsObject.params };
       this.api.getPayment(

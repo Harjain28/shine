@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +34,7 @@ import { ShineHeaderComponent } from './shared/shine-header/shine-header.compone
     CarouselModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [DatePipe],
   exports: [
   ],
   bootstrap: [AppComponent]
