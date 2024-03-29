@@ -39,7 +39,7 @@ export class TestimonialComponent implements OnInit {
     autoplaySpeed: 1500,
     // startPosition: -1,
     // navText: ["", ""],
-    navText: ["<img class='navTxtImg' src='./assets/images/homeIcon/left-arrow.svg'>", "<img class='navTxtImg' src='./assets/images/homeIcon/right-arrow.svg'>"],
+    navText: ["<img class='navTxtImg' src='./assets/images/homeImage/left-arrow.svg'>", "<img class='navTxtImg' src='./assets/images/homeImage/right-arrow.svg'>"],
     responsive: {
       0: {
         items: 1,
