@@ -1,0 +1,579 @@
+.menuNumber{
+    position: absolute;
+    right: 30px;
+    top: -5px;
+}
+
+/* Add this style in your component's CSS file */
+  .mat-dialog {
+    background: none;
+    box-shadow: none;
+  }
+  
+
+.HeaderStart{
+    padding: 15px 12px;
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    height: 80px;
+
+    &:before{
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .35;
+        background: transparent linear-gradient(180deg, #000000 0%, #54545400 100%) 0% 0% no-repeat padding-box;
+    }
+
+    .mobileNumber{
+        text-align: right;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 6px;
+        padding-bottom: 18px;
+        font-size: 14px;
+
+        mat-icon{
+            font-size: 22px;
+        }
+    }
+    .HeaderSet{
+        padding: 0px;
+        
+        
+        .logoImg{
+            // height: 57px;
+            width: 161px;
+        }
+
+        .HeaderMenu{
+            display: block;
+
+            .numberMenu{
+                display: flex;
+                align-items: center;
+                gap: 26px;
+                height: 18px;
+            }
+
+            ::ng-deep{
+
+                .nav-link{
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-family: 'Poppins'!important;
+                    font-size: 14px;
+                    line-height: 0px;
+                    padding: 15px 0px;
+
+                    &.active {
+                        color: var(--main2);
+
+                        img{
+                            filter: invert(69%) sepia(76%) saturate(2960%) hue-rotate(122deg) brightness(89%) contrast(86%);
+                            opacity: 1;
+                        }
+                    }
+                    &:hover {
+                       color: var(--main2);
+
+                       img{
+                            filter: invert(69%) sepia(76%) saturate(2960%) hue-rotate(122deg) brightness(89%) contrast(86%);
+                            opacity: 1;
+                       }
+                }
+                }
+             
+
+                .dropdown-toggle:after{
+                    display: none;
+                }
+            }
+
+            .DropDownSet{
+                position: absolute;
+                right: 50%;
+                top: 36px;
+                transform: translate(50%, 0%);
+                min-width: max-content;
+                max-width: -webkit-fill-available;
+                padding: 48px 30px;
+                background-color: #fff;
+
+                ::ng-deep{
+                    .dropdown-item{
+                        padding: 10px 0px;
+                        border-bottom: 1px solid #e3e3e3;
+                        cursor: pointer;
+                        width: 260px;
+
+                    }
+
+                    .dropdown-item:last-child{
+                        border-bottom: none !important;
+
+                    }
+                    
+                }
+            }
+            .loginBtn{
+                    background-color: #fff;
+                    color: var(--main2);
+                    border-radius: 100px;
+                    max-width: 90px;
+                    min-width: 90px;
+                    height: 32px;
+                    justify-content: center;
+                    font-weight: 500;
+                    cursor: pointer;
+
+                &:hover{
+                    background-color: var(--main2);
+                    color: #fff;
+                }
+            }
+        }
+
+    }   
+}
+
+.hoverEffect{
+    position: relative;
+     cursor: pointer;
+
+
+
+    .DropDownSet{
+        display: none;
+        box-shadow: 0px 3px 6px #0000004F;
+        border-radius: 20px;
+        position: relative;
+
+        &:before{
+            content: "";
+            position: absolute;
+            height: 10px;
+            width: 114px;
+            background-color: var(--main2);
+            border-radius: 20px;
+            top: -5px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+      
+
+        .dropDownHeader{
+
+            a{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-family: 'Poppins' !important;
+                font-size: 16px;
+                color: #3F3F3F;
+                font-weight: normal;
+                height: 46px;
+                padding: 10px 8px !important;
+
+                &:hover{
+                    color: var(--main2);
+                    background: #F5F5F5;
+                }
+                &.active {
+                    color: var(--main2);
+                }
+                
+            }
+        }
+    }
+
+    &:hover{
+        transition: .5s;
+        
+        .DropDownSet{
+            display: block;
+            transition: .5s;
+        }
+    }
+}
+
+// .headerscroll {
+//     background-color: var(--main1);  
+// }
+
+// Responsive CSS Start
+
+@media (max-width: 767px) {
+
+ 
+}
+
+@media (max-width: 991px){
+    .HeaderStart{
+    
+        .mobileNumber{
+            padding: 0px 0px;
+            cursor: pointer;
+        }
+
+        .DropDownSet{
+            right: 0% !important;
+            transform: translate(0%, 0%) !important;
+            padding: 2px 10px !important;
+            min-width: 100% !important;
+            border-radius: 0px !important;
+            z-index: 2;
+            height: 100vh;
+
+            .dropDownHeader{
+
+                a{
+                    margin: 0px 0px !important;
+                    width: 100% !important;
+                }
+            }
+        }
+
+        .HeaderSet{
+            padding: 10px;
+
+            .logoImg{
+                height: 45px;
+                width: auto;
+            }
+        } 
+    }
+
+    .mobileResponsive{
+
+        .mobileSide{
+            background-color: #fff;
+            position: fixed;
+            width: 320px;
+            right: 0px;
+            // height: 100%;
+            top: 0px;
+            transition: .3s;
+            right: -100%;
+            overflow: hidden;
+            height: calc(100vh - 0px);
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            &.show{
+                right: 0%;
+            }
+
+            .HeaderMenu{
+                
+                .numberMenu{
+                    display: block;
+                    height: auto !important;
+                }
+
+                ::ng-deep{
+
+                    .nav-link{
+                        color: #3F3F3F;
+                        padding: 0px 0px !important;
+                        height: 44px;
+                    }
+    
+                    .dropdown-toggle:after{
+                        margin-left: 12px;
+                        vertical-align: 1px;
+                        font-size: 20px;
+                    }
+                }
+
+                a{
+                    margin: 0px 32px;
+                    padding: 12px 0px;
+
+                    &:after{
+                        position: absolute;
+                        top: 18px;
+                        right: 20px;
+                    }
+                }
+
+                .mobileTop{
+                    order: -1;
+                    display: flex;
+                    align-items: center;
+                    background: var(--main1);
+                    padding: 20px 18px !important;
+
+                    .mobileNumber{
+                        color: #fff;
+                        text-align: left;
+                        font-size: 14px;
+                        font-weight: 600;
+                        padding: 0px;
+                        margin: 0px 0px;
+                        border-bottom: none;
+                        display: flex !important;
+                        align-items: center;
+                        justify-content: flex-start;
+                    }
+                }
+                .loginBtn{
+                    margin: 0px;
+                }
+            }
+        }
+
+        .HeaderSet{
+
+            .bg-white[aria-expanded="true"]{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                border-radius: 0px;
+                opacity: 0;
+                background: #00000057 !important;
+            }
+
+            .bg-white{
+                background: transparent !important;
+                border: none;
+
+                span{
+                    background-image: url(../../../assets/images/homeImage/toggleMenu.svg) !important;
+                }
+
+                &:focus{
+                    box-shadow: none !important;
+                    outline: none;
+                }
+                
+            }
+        }
+    }
+
+    .hoverEffect{
+         
+        .DropDownSet{
+    
+            &:before{
+                display: none ;
+            }
+          
+        }
+    }
+}
+
+
+@media (max-width: 991px){
+
+    .newMobileSideHeader{
+
+        .mobileSide{
+
+            .HeaderMenu{
+                .headerMenuStart{
+                    margin-top: 35px;
+
+                    .nav-link{
+                        font-size: 15px !important;
+                        font-weight: 600 !important;
+                        border-bottom: 1.5px solid #e8e8e8;
+                        opacity: 1;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+
+                    ul{
+                        padding: 0px;
+                        border: none;
+
+                        li{
+
+                            a{
+                                display: flex;
+                                align-items: center;
+                                gap: 4px;
+                                font-size: 14px;
+                                font-family: 'Poppins' !important;
+                                font-weight: 400;
+                                padding: 9px 0px;
+                                margin: 0px 24px;
+
+                                &.active{
+                                    background-color: var(--main2);
+                                    color: #fff;
+                                }
+
+                                &:hover{
+                                    background-color: var(--main2);
+                                    color: #fff;
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 991px){
+.indicators {
+    mat-expansion-panel-header{
+
+        ::ng-deep{
+
+            .mat-expansion-indicator{
+                display: none !important;
+            }
+        }
+    }
+
+}
+    .newMobileSideHeader{
+
+        .mobileSide{
+
+            .HeaderMenu{
+
+                .headerMenuStart{
+
+                    .showMobileDrop{
+                                                
+                        mat-accordion{
+
+                            mat-expansion-panel{
+                                border-radius: none !important;
+                                box-shadow: none !important;
+                                margin: 0px !important;
+
+                                &.arrowNone{
+
+                                    mat-expansion-panel-header{
+
+                                        ::ng-deep{
+
+                                            .mat-expansion-indicator{
+                                                display: none !important;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                ::ng-deep{
+
+                                    .mat-expansion-panel-content{
+
+                                        .mat-expansion-panel-body{
+                                            padding: 0 0px 0px !important;
+                                            // border-bottom: 1px solid #dadada;
+
+                                            a{
+                                                display: flex;
+                                                font-size: 14px;
+                                                font-weight: 400;
+                                                font-family: "Poppins" !important;
+                                                text-decoration: none;
+                                                padding: 6px 0px;
+                                                color: var(--main1);
+                                                align-items: center;
+                                                justify-content: flex-start;
+                                                margin: 0px 28px;
+
+                                                &:hover{
+                                                    color: var(--main1);
+                                                }
+
+                                                &:last-child{
+                                                    border-bottom: 1px solid #BCBCBC;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                mat-expansion-panel-header{
+                                    padding: 0px 0px;
+                                    margin: 0px 32px;
+                                    height: 44px;
+                                    border-bottom: 1px solid #BCBCBC;
+
+                                    &:hover{
+                                        background-color: transparent !important;
+                                    }
+
+                                    &.mat-expanded{
+                                        
+                                        ::ng-deep{
+
+                                            .mat-expansion-panel-header-title{
+                                                color: #3F3F3F !important;
+                                            }
+                                        }
+                                    }
+
+                                    &.paddingSet{
+                                        
+                                        ::ng-deep{
+
+                                            .mat-expansion-panel-header-title{
+                                                font-size: 14px !important;
+                                                font-weight: 600 !important;
+                                                font-family: "Poppins" !important;
+                                                color: var(--main1);
+
+                                                &:hover{
+                                                    color: var(--main1);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    ::ng-deep{
+
+                                        .mat-expansion-panel-header-title{
+                                            font-size: 16px !important;
+                                            font-weight: 600 !important;
+                                            font-family: "Poppins" !important;
+                                            color: #3F3F3F;
+
+                                            &:hover{
+                                                color: var(--main1);
+                                            }
+                                        }
+                                    }
+
+                                    ::ng-deep{
+
+                                        .mat-expansion-indicator{
+
+                                            &:after{
+                                                color: #3f3f3f !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

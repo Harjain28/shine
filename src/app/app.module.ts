@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ShineHeaderComponent } from './shared/shine-header/shine-header.component';
+import { Header2Component } from './shared/header2/header2.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ShineHeaderComponent } from './shared/shine-header/shine-header.compone
     PagesComponent,
     FooterComponent,
     HeaderComponent,
+    Header2Component,
     ShineHeaderComponent,
     HttpClientModule,
     CarouselModule,

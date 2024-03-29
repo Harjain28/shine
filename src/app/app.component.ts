@@ -20,6 +20,10 @@ export class AppComponent {
     return !this.router.url.includes('report') 
   }
 
+  isHeader2Visible(): boolean {
+    return this.router.url.includes('/in')
+  }
+
 
 
   // isFooterVisible(): boolean {
