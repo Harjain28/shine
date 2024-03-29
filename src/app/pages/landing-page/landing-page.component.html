@@ -294,7 +294,7 @@
       </div>
       <div class="row row-cols-5" >  
         <div class="col" *ngFor = "let data of ProductTiles">
-          <div class="box" (click)="openPopup()">
+          <div class="box" (click)="openPopup(data.productCopy)">
             <img src={{data.icon}} alt="">
             <p>{{data.productCopy}}</p>
           </div>
@@ -354,8 +354,9 @@
       </div>
     </div>
   </div>
+</div>
+
 
   <app-testimonial [testimonialData]="Sme_Testimonial"></app-testimonial>
 
   <app-faq></app-faq>
-</div>

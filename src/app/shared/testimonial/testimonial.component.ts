@@ -5,6 +5,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { MaterialModule } from 'src/app/material.module';
+import { businessloansonlineJson } from 'src/app/pages/landing-page/lendingpage';
 
 @Component({
   selector: 'app-testimonial',
@@ -19,6 +20,7 @@ export class TestimonialComponent implements OnInit {
   selectedValue: any;
   @Input() testimonialData: any;
   
+  testimonialsJson:any
 
   
   constructor(private cdr: ChangeDetectorRef) { }
@@ -62,6 +64,13 @@ export class TestimonialComponent implements OnInit {
 
   countStar(star: any) {
     this.selectedValue = star;
+  }
+
+  getTestimonials(){
+    this.testimonialsJson = businessloansonlineJson;
+
+    
+
   }
 
 }

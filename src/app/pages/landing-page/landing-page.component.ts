@@ -127,6 +127,7 @@ export class LandingPageComponent {
     //this.MSMEPageMetaData = metaData?.MSMEpageMetaData;
     this.eventService?.addmetaTag(this.MSMEPageMetaData?.title , this.MSMEPageMetaData?.description , this.MSMEPageMetaData?.keywords);
     this.getBusinessLoanData();
+    this.getSmeProductsData();
 
   }
 
@@ -143,7 +144,8 @@ export class LandingPageComponent {
   });
 }
 
-openPopup(){
+openPopup(data:any){
+  localStorage.setItem("popupData",data);
   this.openDialog();
 }
 
@@ -155,7 +157,38 @@ openPopup(){
     this.readMore = true;
   }
 
-
+  getSmeProductsData() {
+    this.smeProduct  = msmeloansJson;
+    this.aaa = businessloansonlineJson.Shine_Features_Section;
+    const smeProduct1 = SMEproductJSON;
+        this.Benefits_Secured_Business_Loan = [];
+    this.SecuredProductBannerData =
+      this.smeProduct?.Homepage_Banner;
+      this.emiCalulatorData = this.smeProduct?.EMI_Calculator_Section;
+      this.smeProductPage  =  {name: 'smeproduct' , alt: this.emiCalulatorData?.imageText};
+      this.Key_Stats_Section  = this.smeProduct?.Key_Stats_Section;
+    this.Shine_Features_Section = this.smeProduct?.Shine_Features_Section;
+    this.SmeLendersData = this.smeProduct?.Lender_Section;
+    this.Secured_Loan_Description = this.smeProduct?.Secured_Loan_Description;
+    this.HelpSections = smeProduct1?.["machinery-loan-for-msme"]?.How_We_will_help_You;
+    this.smeProduct?.Benefits_Secured_Business_Loan.forEach((element: { Description_Header: any; Description_Body: any; }) => {
+      this.Benefits_Secured_Business_Loan.push({Description_Header: element?.Description_Header, Description_Body: element?.Description_Body, Long_Text: false});
+    });
+    this.Comparison_Section = this.smeProduct?.Comparison_Section;
+    this.Secured_Loan_Product_Options =
+      this.smeProduct?.Secured_Loan_Product_Options;
+    this.Eligibility_SectionData =
+      this.smeProduct?.Eligibility_Collateral_Section?.Eligibility_Section;
+    this.Collateral_SectionData =
+      this.smeProduct?.Eligibility_Collateral_Section?.Collateral_Section;
+    this.Documents_SectionData = this.smeProduct?.Documents_Section;
+    this.Other_Loan_Products_Available_Section =
+      this.smeProduct?.Your_Business_Loan_Options;
+    this.Sme_SyndicateData = this.smeProduct?.Syndication_Homepage;
+    this.Sme_Testimonial = this.smeProduct?.Homepage_Testimonial;
+    this.Useful_Links = this.smeProduct?.Useful_Links;
+  
+  }
 
   getBusinessLoanData(){
     this.businessLoanJson = businessloansonlineJson;
@@ -169,9 +202,10 @@ openPopup(){
       parameter: res?.Parameter
     }));
     this.ShineFeaturesSection = this.businessLoanJson?.Shine_Features_Section;
-    this.ProductTiles = this.ShineFeaturesSection?.Product_Tiles.map((res: { Icon: any; Product_copy: any; })=>({
+    this.ProductTiles = this.ShineFeaturesSection?.Product_Tiles.map((res: {Pop_up_copy: any; Icon: any; Product_copy: any; })=>({
       icon: res?.Icon,
-      productCopy: res?.Product_copy
+      productCopy: res?.Product_copy,
+      popupCopy: res?.Pop_up_copy
     }))
 
 
