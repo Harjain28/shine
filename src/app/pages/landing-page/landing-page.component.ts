@@ -11,7 +11,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { FaqComponent } from 'src/app/reports/faq/faq.component';
 import { TestimonialComponent } from 'src/app/shared/testimonial/testimonial.component';
-import { MaterialModule } from 'src/app/material.module';
+import { businessloansonlineJson } from './lendingpage';
 
 
 
@@ -63,7 +63,7 @@ export class LandingPageComponent {
   smeProductPage: any  = {};
   productPageType: string = 'smeproduct';
   SecuredProductBannerData: any;
-  Secured_Loan_Feature: any;
+  Shine_Features_Section: any;
   SmeLendersData: any;
   Secured_Loan_Description: any;
   HelpSections: any;
@@ -81,6 +81,7 @@ export class LandingPageComponent {
   productSubTitle: any;
   SMEProductmetaDataFromJSON: any;
   moreContent: any;
+  aaa:any;
   readMore: boolean = false;
   Key_Stats_Section: any;
   show: boolean = false;
@@ -100,6 +101,7 @@ export class LandingPageComponent {
       
   }
   ngOnInit(): void {
+    // console.log(businessloansonlineJson.Shine_Features_Section.Product_Tiles[0].Product_copy,"ll")
  //   this.localStorage.removeSomeItem();
     this.breakpointObserver
     .observe(['(min-width: 500px)'])
@@ -131,6 +133,7 @@ export class LandingPageComponent {
 
   getSmeProductsData() {
     this.smeProduct  = msmeloansJson;
+    this.aaa = businessloansonlineJson.Shine_Features_Section;
     const smeProduct1 = SMEproductJSON;
         this.Benefits_Secured_Business_Loan = [];
     this.SecuredProductBannerData =
@@ -138,7 +141,7 @@ export class LandingPageComponent {
       this.emiCalulatorData = this.smeProduct?.EMI_Calculator_Section;
       this.smeProductPage  =  {name: 'smeproduct' , alt: this.emiCalulatorData?.imageText};
       this.Key_Stats_Section  = this.smeProduct?.Key_Stats_Section;
-    this.Secured_Loan_Feature = this.smeProduct?.Secured_Loan_Feature;
+    this.Shine_Features_Section = this.smeProduct?.Shine_Features_Section;
     this.SmeLendersData = this.smeProduct?.Lender_Section;
     this.Secured_Loan_Description = this.smeProduct?.Secured_Loan_Description;
     this.HelpSections = smeProduct1?.["machinery-loan-for-msme"]?.How_We_will_help_You;

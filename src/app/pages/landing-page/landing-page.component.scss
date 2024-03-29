@@ -318,6 +318,309 @@
             }
         }
     }
+
+    .advantagesShine{
+        padding: 0px 0px 60px;
+
+        .content{
+            text-align: center;
+            margin-bottom: 22px;
+
+            h3{
+                color: #3f3f3f;
+                font-size: 30px;
+                line-height: 37px;
+                font-weight: 700;
+                font-family: 'Be Vietnam Pro' !important;
+                margin-bottom: 8px;
+
+                span{
+                    color: var(--main2);
+                }
+            }
+
+            p{
+                color: #3f3f3f;
+                font-size: 14px;
+                line-height: 22px;
+                font-weight: normal;
+                font-family: Poppins !important;
+                margin-bottom: 2px;
+
+            }
+        }
+
+        .rowTable{
+            border-top: 1px solid #ECECEC;
+
+            .tableHeading{
+                padding-left: 0px;
+                list-style: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 0px;
+
+                li{
+                    text-transform: uppercase;
+                    color: #989898;
+                    font-size: 14px;
+                    line-height: 22px;
+                    font-weight: 500;
+                    font-family: Poppins !important;
+                    padding: 30px 30px 15px;
+                    width: -webkit-fill-available;
+
+                    &:nth-of-type(2) {
+                        color: var(--main2);
+                    }
+
+                    &:nth-of-type(3) {
+                        color: var(--main1);
+                    }
+                }
+            }
+
+            .tableBox{
+                padding-left: 0px;
+                list-style: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                box-shadow: 0px 3px 10px #0000000F;
+                border: 1px solid #E8E8E8;
+                border-radius: 10px;
+                margin-bottom: 15px;
+
+                li{
+                    text-transform: uppercase;
+                    color: #3F3F3F;
+                    font-size: 14px;
+                    line-height: 22px;
+                    font-weight: 600;
+                    font-family: Poppins !important;
+                    padding: 18px 30px 18px;
+                    height: 100%;
+                    width: -webkit-fill-available;
+
+
+                    &:nth-of-type(2) {
+                        background-color: #41C8AF20;
+                    }
+                }
+            }
+        }
+    }
+
+    .shineHelp{
+        padding: 60px 0px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            background-image: url(../../../assets/LandingPage/leftDesign.png);
+            background-repeat: no-repeat;
+            width: 300px;
+        }
+
+        .content{
+            text-align: center;
+            margin-bottom: 22px;
+
+            h3{
+                color: #fff;
+                font-size: 30px;
+                line-height: 37px;
+                font-weight: 800;
+                font-family: 'Be Vietnam Pro' !important;
+                margin-bottom: 8px;
+
+                span{
+                    color: var(--main2);
+                }
+            }
+
+            p{
+                color: #fff;
+                font-size: 14px;
+                line-height: 22px;
+                font-weight: normal;
+                font-family: Poppins !important;
+                margin-bottom: 2px;
+
+            }
+        }
+
+        .boxCenter{
+            padding: 60px 0px;
+            position: relative;
+            z-index: 1;
+
+            &::before{
+                content: "";
+                position: absolute;
+                background-image: url(../../../assets/LandingPage/centerDesign.png);
+                height: 280px;
+                width: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-36%, -50%);
+                background-repeat: no-repeat;
+                z-index: -1;
+            }
+
+            .box{
+                border: 1px solid #E1E1E1;
+                border-radius: 20px;
+                background-color: #fff;
+                padding: 24px 22px;
+                text-align: center;
+                margin-bottom: 15px;
+                height: 175px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+
+                img{
+                    width: auto;
+                    height: 60px;
+                    margin: 0px auto;
+                }
+
+                p{
+                    color: var(--main1);
+                    font-size: 16px;
+                    line-height: 18px;
+                    font-weight: 600;
+                    font-family: Poppins !important;
+                    margin-bottom: 2px;
+                    width: 100%;  
+                }
+            }
+        }
+
+        .contentBtn{
+            text-align: center;
+
+            p{
+                color: #FFFFFF;
+                font-size: 14px;
+                line-height: 22px;
+                font-weight: normal;
+                font-family: Poppins !important;
+                margin-bottom: 14px;  
+            }
+
+            .btn{
+                background-color: var(--main2);
+                border-radius: 23px;
+                padding: 10px 26px;
+                color: #fff;
+                font-size: 16px;
+                font-family: Poppins !important;
+                font-weight: 500;
+                line-height: 22px;
+            }
+        }
+    }
+
+    .BusinessLoanOption{
+        background-color: #FAFAFA;
+        padding: 60px 0px;
+
+        .content{
+            text-align: center;
+            margin-bottom: 16px;
+
+            .btn{
+                border: 1px solid #D1D1D1;
+                border-radius: 10px;
+                background-color: #fff;
+                padding: 8px 32px;
+                font-size: 16px;
+                color: var(--main2);
+                line-height: 22px;
+                font-weight: 600;
+                min-width: 155px;
+                max-width: 155px;
+                height: 46px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0px auto 18px;
+            }
+
+            h3{
+                color: #3F3F3F;
+                font-size: 30px;
+                line-height: 37px;
+                font-weight: 800;
+                font-family: 'Be Vietnam Pro' !important;
+                margin-bottom: 8px;
+
+                span{
+                    color: var(--main2);
+                }
+            }
+
+            p{
+                color: #3F3F3F;
+                font-size: 14px;
+                line-height: 22px;
+                font-weight: normal;
+                font-family: Poppins !important;
+                margin-bottom: 2px;
+
+            }
+        }
+
+        .box{
+            border: 1px solid #E1E1E1;
+            border-radius: 20px;
+            background-color: #fff;
+            padding: 24px 22px;
+            text-align: center;
+            margin-bottom: 15px;
+            height: 175px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            img{
+                width: auto;
+                height: 60px;
+                margin: 0px auto;
+            }
+
+            p{
+                color: #3F3F3F;
+                font-size: 14px;
+                line-height: 18px;
+                font-weight: 500;
+                font-family: Poppins !important;
+                margin-bottom: 2px;
+                width: 100%;  
+            }
+        }
+
+        .boxImg{
+            height: 175px;
+
+            img{
+                border-radius: 20px;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
 }
 
 
@@ -498,155 +801,6 @@
         }
     }
 }
-
-.BusinessLoanOption{
-    padding-top: 50px;
-    padding-bottom: 80px;
-
-    .businessText{
-
-        .content{
-            margin-bottom: 36px;
-            padding-right: 30px;
-
-            h2{
-                font-size: 40px;
-                color: var(--main1);
-                line-height: 44px;
-                font-weight: 700;
-                font-family: 'Be Vietnam Pro' !important;
-                margin-bottom: 9px;
-            }
-    
-            p{
-                color: #3F3F3F;
-                margin-bottom: 5px;
-                font-size: 18px;
-                font-weight: 500;
-                font-family: Poppins !important;
-            }
-        }
-
-        .iconBox{
-            text-decoration: none;
-            display: block;
-            border: 1px solid #E8E8E8;
-            border-radius: 10px;
-            background-color: #fff;
-            text-align: center;
-            padding: 18px 38px;
-            margin-bottom: 10px;
-
-            &:hover{
-                background-color: #C3E128;
-                box-shadow: 15px 15px 15px #0000001A;
-                transition: .5s;
-            }
-
-            span{
-                width: 50px;
-                height: 50px;
-                display: block;
-                margin: 0 auto;
-                margin-bottom: 17px;
-
-                img{
-                    width: 50px;
-                    height: 50px;
-                    object-fit: initial;
-                }
-            }
-
-            h3{
-                font-size: 14px;
-                color: #3F3F3F;
-                font-family: Poppins !important;
-                line-height: 16px;
-                margin-bottom: 0px;
-            }
-
-            .btnArrow{
-                margin-top: 12px !important;
-                width: 28px;
-                height: 28px;
-                border: 2px solid var(--main1);
-                display: flex;
-                border-radius: 50%;
-                text-decoration: none;
-                margin: 0 auto;
-                align-items: center;
-                justify-content: center;
-                color: var(--main1);
-            }
-        }
-
-        .ButtonNow{
-            justify-content: start;
-            margin-top: 30px;
-
-            a{
-                background-color: var(--main1);
-            }
-        }
-    }
-
-    .businessImg{
-        height: 100%;
-        padding-left: 30px;
-
-        img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-
-}
-
-
-@media (max-width: 767px){
-
-    .BusinessLoanOption{
-        padding-bottom: 70px;
-    
-        .businessText{
-    
-            .content{
-                margin-bottom: 20px;
-                padding-right: 0px;
-    
-                h2{
-                    font-size: 24px;
-                    line-height: 30px;;
-                }
-        
-                p{
-                    font-size: 14px;
-                }
-            }
-    
-            .iconBox{
-                padding: 10px 20px;
-    
-                h3{
-                    font-weight: 500;
-                    min-height: 30px;
-                }
-            }
-    
-            .ButtonNow{
-                justify-content: center;
-            }
-        }
-    
-        .businessImg{
-            padding-left: 0px;
-            margin-bottom: 30px;
-        }
-    
-    }
-}
-
 
 @media (max-width:767px) {
 
