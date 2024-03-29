@@ -18,6 +18,8 @@ export class PopupCopyComponent {
   ngOnInit(): void {
   }
 
+ 
+
   closeDialoge(): void {
     this.dialogRef.close();
   }
