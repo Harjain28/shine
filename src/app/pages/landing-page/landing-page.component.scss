@@ -1,4 +1,3 @@
-
 .forSMEComponent {
 
     .SecuredBusinessLoan {
@@ -6,18 +5,18 @@
 
         .homeSlider {
             // position: relative;
-    
-            .silderSlide{
+
+            .silderSlide {
                 position: relative;
                 height: 604px;
                 overflow: hidden;
-            
-                .image{
+
+                .image {
                     display: block;
                     width: 100%;
                 }
-    
-                .silderText{
+
+                .silderText {
                     position: absolute;
                     top: 50%;
                     left: 0px;
@@ -25,10 +24,10 @@
                     z-index: 9;
                     display: block;
                     width: 100%;
-    
-                    .title{
 
-                        .mainHeading{
+                    .title {
+
+                        .mainHeading {
                             letter-spacing: -1.44px;
                             color: #FFFFFF;
                             font-weight: 600;
@@ -38,7 +37,7 @@
                             font-family: 'Be Vietnam Pro' !important;
                         }
 
-                        .colorBox{
+                        .colorBox {
                             border-radius: 7px;
                             background-color: #C3E128;
                             padding: 2px 8px;
@@ -53,7 +52,7 @@
                             justify-content: center;
                         }
 
-                        p{
+                        p {
                             position: relative;
                             color: #FFFFFF;
                             font-size: 14px;
@@ -63,7 +62,7 @@
                             margin-bottom: 12px;
                             padding-left: 32px;
 
-                            img{
+                            img {
                                 position: absolute;
                                 left: 0px;
                                 top: 2px;
@@ -71,10 +70,10 @@
 
                         }
 
-                        .pricingBtn{
+                        .pricingBtn {
                             margin-top: 50px;
 
-                            .btn{
+                            .btn {
                                 background-color: var(--main2);
                                 border-radius: 23px;
                                 padding: 10px 26px;
@@ -91,14 +90,14 @@
         }
     }
 
-    .twoSectionMarge{
+    .twoSectionMarge {
         background-repeat: no-repeat;
         background-position: right;
 
-        .betterLoanOpportunties{
+        .betterLoanOpportunties {
             padding-bottom: 60px;
 
-            .boxContent{
+            .boxContent {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -117,22 +116,22 @@
                 &:nth-of-type(3) {
                     background-color: #C3E128;
 
-                    .content{
+                    .content {
 
-                        h3{
+                        h3 {
                             color: #222222;
                         }
-    
-                        p{
+
+                        p {
                             color: #222222;
-    
+
                         }
                     }
                 }
 
-                .content{
+                .content {
 
-                    h3{
+                    h3 {
                         color: #FFFFFF;
                         font-size: 18px;
                         line-height: 28px;
@@ -141,7 +140,7 @@
                         margin-bottom: 9px;
                     }
 
-                    p{
+                    p {
                         color: #FFFFFF;
                         font-size: 13px;
                         line-height: 19px;
@@ -151,20 +150,20 @@
 
                     }
                 }
-                
-                .boxIcon{
 
-                    img{
+                .boxIcon {
+
+                    img {
                         width: auto;
                         height: 64px;
                     }
                 }
             }
 
-            .rightContent{
+            .rightContent {
                 padding-left: 70px;
 
-                h3{
+                h3 {
                     color: #3f3f3f;
                     font-size: 30px;
                     line-height: 37px;
@@ -172,13 +171,13 @@
                     font-family: 'Be Vietnam Pro' !important;
                     margin-bottom: 14px;
 
-                    span{
+                    span {
                         color: var(--main1);
                         display: block;
                     }
                 }
 
-                p{
+                p {
                     color: #3f3f3f;
                     font-size: 16px;
                     line-height: 22px;
@@ -191,17 +190,86 @@
             }
         }
 
-        .transformFinance{
-            background-color: #F3F3F3;
-            padding: 65px 0px;
-            z-index: -1;
-            position: relative;
+        .betterLoanOpportuntiesTwo {
+            padding-bottom: 60px;
 
-            .rightContent{
-                position: relative;
-                z-index: 9;
+            .boxColor {
 
-                h3{
+                .boxBackground {
+                    &:nth-of-type(2) {
+
+                        .boxContent {
+                            background-color: var(--main1);
+                        }
+                    }
+                    
+                    &:nth-of-type(4) {
+
+                        .boxContent {
+                            background-color: #C3E128;
+
+                            .content {
+
+                                h3 {
+                                    color: #222222;
+                                }
+        
+                                p {
+                                    color: #222222;
+        
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .boxContent {
+                box-shadow: 6px 6px 20px #0000001A;
+                border-radius: 20px;
+                background-color: var(--main2);
+                margin-bottom: 10px;
+                padding: 20px 30px;
+
+                .content {
+
+                    h3 {
+                        color: #FFFFFF;
+                        font-size: 18px;
+                        line-height: 28px;
+                        font-weight: 600;
+                        font-family: Poppins !important;
+                        margin-bottom: 9px;
+                    }
+
+                    p {
+                        color: #FFFFFF;
+                        font-size: 13px;
+                        line-height: 19px;
+                        font-weight: normal;
+                        font-family: Poppins !important;
+                        margin-bottom: 2px;
+                        width: 80%;
+                    }
+                }
+
+                .boxIcon {
+                    margin-top: -20px;
+                    display: flex;
+                    justify-content: flex-end;
+
+                    img {
+                        width: auto;
+                        height: 64px;
+                    }
+                }
+            }
+
+            .Content {
+                text-align: center;
+                margin-bottom: 26px;
+
+                h3 {
                     color: #3f3f3f;
                     font-size: 30px;
                     line-height: 37px;
@@ -209,13 +277,49 @@
                     font-family: 'Be Vietnam Pro' !important;
                     margin-bottom: 14px;
 
-                    span{
+                    span {
                         color: var(--main1);
                         display: block;
                     }
                 }
 
-                p{
+                p {
+                    color: #3f3f3f;
+                    font-size: 16px;
+                    line-height: 22px;
+                    font-weight: normal;
+                    font-family: Poppins !important;
+                    margin-bottom: 2px;
+
+                }
+            }
+        }
+
+        .transformFinance {
+            background-color: #F3F3F3;
+            padding: 65px 0px;
+            z-index: -1;
+            position: relative;
+
+            .rightContent {
+                position: relative;
+                z-index: 9;
+
+                h3 {
+                    color: #3f3f3f;
+                    font-size: 30px;
+                    line-height: 37px;
+                    font-weight: 700;
+                    font-family: 'Be Vietnam Pro' !important;
+                    margin-bottom: 14px;
+
+                    span {
+                        color: var(--main1);
+                        display: block;
+                    }
+                }
+
+                p {
                     color: #3f3f3f;
                     font-size: 16px;
                     line-height: 22px;
@@ -226,12 +330,12 @@
                 }
             }
 
-            .laptopSilder{
+            .laptopSilder {
                 position: relative;
                 overflow: hidden;
                 z-index: 9;
 
-                .textSilder{
+                .textSilder {
                     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1019607843);
                     border: 1px solid #12BA9B;
                     border-radius: 10px;
@@ -247,7 +351,7 @@
                     background: #fff;
                     left: 30px;
 
-                    img{
+                    img {
                         width: 32px;
                         height: 32px;
                         position: absolute;
@@ -255,7 +359,7 @@
                         left: -20px;
                     }
 
-                    span{
+                    span {
                         font-size: 16px;
                         line-height: 22px;
                         color: var(--main2);
@@ -264,50 +368,50 @@
                     }
                 }
 
-                .laptopView{
+                .laptopView {
                     width: 510px;
                     display: flex;
                     margin: 0px 0px 0px auto;
                 }
 
-                .laptopAnderImg{
+                .laptopAnderImg {
                     position: absolute;
                     top: -35px;
                     left: 100%;
                     transform: translate(50%, -100%);
 
-                    img{
+                    img {
                         height: 242px;
                         width: auto;
                         margin: auto;
                     }
                 }
-                
-                owl-carousel-o{
 
-                    ::ng-deep{
+                owl-carousel-o {
 
-                        .owl-carousel{
+                    ::ng-deep {
 
-                            .owl-stage-outer{
+                        .owl-carousel {
+
+                            .owl-stage-outer {
                                 overflow: visible;
                             }
                         }
 
-                        .owl-dots{
+                        .owl-dots {
 
-                            .owl-dot{
+                            .owl-dot {
 
-                                &.active{
+                                &.active {
 
-                                    span{
+                                    span {
                                         background: var(--main2);
                                     }
                                 }
 
-                                &:hover{
+                                &:hover {
 
-                                    span{
+                                    span {
                                         background: var(--main2);
                                     }
                                 }
@@ -319,14 +423,14 @@
         }
     }
 
-    .advantagesShine{
+    .advantagesShine {
         padding: 0px 0px 60px;
 
-        .content{
+        .content {
             text-align: center;
             margin-bottom: 22px;
 
-            h3{
+            h3 {
                 color: #3f3f3f;
                 font-size: 30px;
                 line-height: 37px;
@@ -334,12 +438,12 @@
                 font-family: 'Be Vietnam Pro' !important;
                 margin-bottom: 8px;
 
-                span{
+                span {
                     color: var(--main2);
                 }
             }
 
-            p{
+            p {
                 color: #3f3f3f;
                 font-size: 14px;
                 line-height: 22px;
@@ -350,10 +454,10 @@
             }
         }
 
-        .rowTable{
+        .rowTable {
             border-top: 1px solid #ECECEC;
 
-            .tableHeading{
+            .tableHeading {
                 padding-left: 0px;
                 list-style: none;
                 display: flex;
@@ -361,7 +465,7 @@
                 justify-content: space-between;
                 margin-bottom: 0px;
 
-                li{
+                li {
                     text-transform: uppercase;
                     color: #989898;
                     font-size: 14px;
@@ -381,7 +485,7 @@
                 }
             }
 
-            .tableBox{
+            .tableBox {
                 padding-left: 0px;
                 list-style: none;
                 display: flex;
@@ -392,7 +496,7 @@
                 border-radius: 10px;
                 margin-bottom: 15px;
 
-                li{
+                li {
                     text-transform: uppercase;
                     color: #3F3F3F;
                     font-size: 14px;
@@ -412,13 +516,13 @@
         }
     }
 
-    .shineHelp{
+    .shineHelp {
         padding: 60px 0px;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
 
-        &::before{
+        &::before {
             content: "";
             position: absolute;
             top: 0px;
@@ -429,11 +533,11 @@
             width: 300px;
         }
 
-        .content{
+        .content {
             text-align: center;
             margin-bottom: 22px;
 
-            h3{
+            h3 {
                 color: #fff;
                 font-size: 30px;
                 line-height: 37px;
@@ -441,12 +545,12 @@
                 font-family: 'Be Vietnam Pro' !important;
                 margin-bottom: 8px;
 
-                span{
+                span {
                     color: var(--main2);
                 }
             }
 
-            p{
+            p {
                 color: #fff;
                 font-size: 14px;
                 line-height: 22px;
@@ -457,12 +561,12 @@
             }
         }
 
-        .boxCenter{
+        .boxCenter {
             padding: 60px 0px;
             position: relative;
             z-index: 1;
 
-            &::before{
+            &::before {
                 content: "";
                 position: absolute;
                 background-image: url(../../../assets/LandingPage/centerDesign.png);
@@ -475,7 +579,7 @@
                 z-index: -1;
             }
 
-            .box{
+            .box {
                 border: 1px solid #E1E1E1;
                 border-radius: 20px;
                 background-color: #fff;
@@ -488,37 +592,37 @@
                 justify-content: center;
                 flex-wrap: wrap;
 
-                img{
+                img {
                     width: auto;
                     height: 60px;
                     margin: 0px auto;
                 }
 
-                p{
+                p {
                     color: var(--main1);
                     font-size: 16px;
                     line-height: 18px;
                     font-weight: 600;
                     font-family: Poppins !important;
                     margin-bottom: 2px;
-                    width: 100%;  
+                    width: 100%;
                 }
             }
         }
 
-        .contentBtn{
+        .contentBtn {
             text-align: center;
 
-            p{
+            p {
                 color: #FFFFFF;
                 font-size: 14px;
                 line-height: 22px;
                 font-weight: normal;
                 font-family: Poppins !important;
-                margin-bottom: 14px;  
+                margin-bottom: 14px;
             }
 
-            .btn{
+            .btn {
                 background-color: var(--main2);
                 border-radius: 23px;
                 padding: 10px 26px;
@@ -531,15 +635,15 @@
         }
     }
 
-    .BusinessLoanOption{
+    .BusinessLoanOption {
         background-color: #FAFAFA;
         padding: 60px 0px;
 
-        .content{
+        .content {
             text-align: center;
             margin-bottom: 16px;
 
-            .btn{
+            .btn {
                 border: 1px solid #D1D1D1;
                 border-radius: 10px;
                 background-color: #fff;
@@ -557,7 +661,7 @@
                 margin: 0px auto 18px;
             }
 
-            h3{
+            h3 {
                 color: #3F3F3F;
                 font-size: 30px;
                 line-height: 37px;
@@ -565,12 +669,12 @@
                 font-family: 'Be Vietnam Pro' !important;
                 margin-bottom: 8px;
 
-                span{
+                span {
                     color: var(--main2);
                 }
             }
 
-            p{
+            p {
                 color: #3F3F3F;
                 font-size: 14px;
                 line-height: 22px;
@@ -581,7 +685,7 @@
             }
         }
 
-        .box{
+        .box {
             border: 1px solid #E1E1E1;
             border-radius: 20px;
             background-color: #fff;
@@ -593,31 +697,154 @@
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
+            transition: .5s;
 
-            img{
+            &:hover{
+                background-color: #C3E128;
+            }
+
+            img {
                 width: auto;
                 height: 60px;
                 margin: 0px auto;
             }
 
-            p{
+            p {
                 color: #3F3F3F;
                 font-size: 14px;
                 line-height: 18px;
                 font-weight: 500;
                 font-family: Poppins !important;
                 margin-bottom: 2px;
-                width: 100%;  
+                width: 100%;
             }
         }
 
-        .boxImg{
+        .boxImg {
             height: 175px;
 
-            img{
+            img {
                 border-radius: 20px;
                 width: 100%;
                 height: 100%;
+            }
+        }
+    }
+
+    .guaranteedLoan{
+        padding: 60px 0px;
+
+        .content {
+            text-align: center;
+            margin-bottom: 40px;
+
+            h3 {
+                color: #3F3F3F;
+                font-size: 30px;
+                line-height: 37px;
+                font-weight: 800;
+                font-family: 'Be Vietnam Pro' !important;
+                margin-bottom: 8px;
+            }
+
+            p {
+                color: #3F3F3F;
+                font-size: 14px;
+                line-height: 22px;
+                font-weight: normal;
+                font-family: Poppins !important;
+                margin-bottom: 2px;
+
+            }
+        }
+
+        .yourRankingSilder{
+
+            .improveBox {
+                box-shadow: 0px 3px 10px #272D3B24;
+                border-radius: 20px;
+                background-color: #fff;
+                padding: 24px;
+                height: 100%;
+                margin: 10px;
+        
+                h3 {
+                    text-align: center;
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                    color: #3F3F3F;
+                }
+        
+                .numberImg {
+                    width: 70%;
+                }
+        
+                .howBox {
+                    border: 1px solid #E8E8E8;
+                    border-radius: 10px;
+                    padding: 15px 20px;
+                    background-color: #fff;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 12px;
+        
+                    img {
+                        width: 16px;
+                        height: 16px;
+                    }
+        
+                    .content {
+        
+                        h5 {
+                            font-size: 14px;
+                            font-weight: 600;
+                            margin-bottom: 10px;
+                            color: var(--main1);
+                            line-height: 18px;
+                            text-align: left;
+                        }
+        
+                        p {
+                            font-size: 13px;
+                            font-weight: normal;
+                            margin-bottom: 0px;
+                            color: #3F3F3F;
+                            line-height: 18px;
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+
+            .box{
+                position: relative;
+                background-color: var(--main1);
+                padding: 22px 30px;
+                border-radius: 10px;
+                margin-left: 20px;
+
+                &::before{
+                    position: absolute;
+                    content: "";
+                    width: 30px;
+                    height: 30px;
+                    background: var(--main1);
+                    clip-path: polygon(99% 1%, 100% 100%, 0 100%, 0 100%);
+                    top: 50%;
+                    transform: translate(0%, -50%);
+                    left: -25px;
+                    z-index: -1;
+                }
+
+                p{
+                    color: #fff;
+                    font-size: 14px;
+                    line-height: 20px;
+                    font-weight: normal;
+                    font-family: Poppins !important;
+                    margin: 2px 0px;
+                }
             }
         }
     }

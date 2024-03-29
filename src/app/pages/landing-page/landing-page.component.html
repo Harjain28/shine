@@ -1,5 +1,5 @@
-<div class="forSMEComponent" *ngIf="isBrowser">
-  <div class="SecuredBusinessLoan" *ngIf="SecuredProductBannerData && SecuredProductBannerData.length > 0">
+<div class="forSMEComponent" >
+  <div class="SecuredBusinessLoan">
     <div class="container-fluid p-0">
       <div class="homeSlider">
         <div class="silderSlide">
@@ -13,23 +13,23 @@
                 <div class="col-md-6">
                   <div class="title shineTitle">
                     <h1 class="mainHeading">
-                      Welcome to Shine!
+                      {{Shinebanner.Header1.Text}}
                     </h1>
                     <div class="colorBox">
-                      Identify Issues. Improve Credit. Secure Capital.
+                      {{Shinebanner.Header2.Text}}
                     </div>
                     <p>
                       <img src="./assets/LandingPage/checkStar.svg" alt="">
-                      Our analysis reveals the obstacles to your loan success; we offer precise steps, from a lender's
-                      eye, to enhance your loan eligibility.
+                      {{Shinebanner.Subheader[0]}}
+
                     </p>
                     <p>
                       <img src="./assets/LandingPage/checkStar.svg" alt="">
-                      Become Business Loan Eligible in 3-6 months.
+                      {{Shinebanner.Subheader[1]}}
                     </p>
 
                     <div class="pricingBtn">
-                      <a href="" class="btn">Check Pricing</a>
+                      <button class="btn" (click) = "goToPlans()">Check Pricing</button>
                     </div>
                   </div>
                 </div>
@@ -49,10 +49,8 @@
           <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
             <div class="boxContent">
               <div class="content">
-                <h3>Bureau</h3>
-                <p>Discover the secrets within your Bureau report, focusing on credit mix, loan inquiries, and repayment
-                  patterns. Gain an edge with insights for credit optimization, elevating your profile and unlocking
-                  lending opportunities.</p>
+                <h3>{{AnalyseSection?.Bureau_Feature?.Bureau_Title}}</h3>
+                <p>{{AnalyseSection?.Bureau_Feature?.Bureau_Details}}</p>
               </div>
               <div class="boxIcon">
                 <img src="./assets/LandingPage/homeIconW.svg" alt="">
@@ -60,9 +58,8 @@
             </div>
             <div class="boxContent">
               <div class="content">
-                <h3>Banking</h3>
-                <p>Navigate the intricacies of your GST filings with precision. We analyse your GST data to showcase
-                  your business’s financial health from a lender’s perspective.</p>
+                <h3>{{AnalyseSection?.Banking_Feature?.Banking_Title}}</h3>
+                <p>{{AnalyseSection?.Banking_Feature?.Banking_Details}}</p>
               </div>
               <div class="boxIcon">
                 <img src="./assets/LandingPage/homeIconW.svg" alt="">
@@ -70,10 +67,8 @@
             </div>
             <div class="boxContent">
               <div class="content">
-                <h3>GST</h3>
-                <p>Banking transactions tell your business’s story. Our insights guide you to optimize transactions,
-                  manage balances, and present a compelling case for loan eligibility and favourable terms which lenders
-                  can’t ignore.</p>
+                <h3>{{AnalyseSection?.GST_Feature?.GST_Title}}</h3>
+                <p>{{AnalyseSection?.GST_Feature?.GST_Details}}</p>
               </div>
               <div class="boxIcon">
                 <img src="./assets/LandingPage/searchIconB.svg" alt="">
@@ -83,8 +78,54 @@
 
           <div class="col-lg-6 col-md-10 col-sm-12 mb-3">
             <div class="rightContent">
-              <h3>What Stands Between <span> You and Better Loan Opportunities?</span></h3>
-              <p>The only tool revealing lender insights by analysing your Bureau, GST, & Banking data.</p>
+              <h3>{{AnalyseSection?.Headline1}} <span> {{AnalyseSection?.Headline2}}</span></h3>
+              <p>{{AnalyseSection?.Description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="betterLoanOpportuntiesTwo">
+      <div class="container">
+        <div class="row align-items-center boxColor">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="Content">
+              <h3>{{AnalyseSection?.Headline1}} <span> {{AnalyseSection?.Headline2}}</span></h3>
+              <p>{{AnalyseSection?.Description}}</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 mb-3 boxBackground">
+            <div class="boxContent">
+              <div class="content">
+                <h3>{{AnalyseSection?.Bureau_Feature?.Bureau_Title}}</h3>
+                <p>{{AnalyseSection?.Bureau_Feature?.Bureau_Details}}</p>
+              </div>
+              <div class="boxIcon">
+                <img src="./assets/LandingPage/homeIconW.svg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 mb-3 boxBackground">
+            <div class="boxContent">
+              <div class="content">
+                <h3>{{AnalyseSection?.Banking_Feature?.Banking_Title}}</h3>
+                <p>{{AnalyseSection?.Banking_Feature?.Banking_Details}}</p>
+              </div>
+              <div class="boxIcon">
+                <img src="./assets/LandingPage/homeIconW.svg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 mb-3 boxBackground">
+            <div class="boxContent">
+              <div class="content">
+                <h3>{{AnalyseSection?.GST_Feature?.GST_Title}}</h3>
+                <p>{{AnalyseSection?.GST_Feature?.GST_Details}}</p>
+              </div>
+              <div class="boxIcon">
+                <img src="./assets/LandingPage/searchIconB.svg" alt="">
+              </div>
             </div>
           </div>
         </div>
@@ -96,8 +137,8 @@
         <div class="row align-items-center">
           <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
             <div class="rightContent">
-              <h3>Transform Finance: <span> See What Others Don't</span></h3>
-              <p>The only tool revealing lender insights by analysing your Bureau, GST, & Banking data.</p>
+              <h3>{{WhatToExpectSection?.Headline}} <span> {{WhatToExpectSection?.Headline2}}</span></h3>
+              <p>{{AnalyseSection?.Description}}</p>
             </div>
           </div>
           <div class="col-lg-8 col-md-12 col-sm-12 mb-3">
@@ -210,39 +251,26 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="content">
-            <h3>How Shine will Help Your Loan Prospects</h3>
-            <p>Be Loan Ready in 3 Steps</p>
+            <h3>{{HowShineWillHelpSection?.Header}}</h3>
+            <p>{{HowShineWillHelpSection?.Subhead}}</p>
           </div>
         </div>
 
         <div class="col-lg-7 col-md-10 col-sm-12 m-auto">
           <div class="boxCenter">
             <div class="row justify-content-center;">
-              <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="col-lg-4 col-md-4 col-sm-6" *ngFor = "let data of Parameter">
                 <div class="box">
-                  <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/loan_big.svg" alt="">
-                  <p>Assess</p>
+                  <img src={{data.icon}} alt="">
+                  <p>{{data.parameter}}</p>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="box">
-                  <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/other/High%20conversion%20rate.svg"
-                    alt="">
-                  <p>Correct</p>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="box">
-                  <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/rupees_big.png" alt="">
-                  <p>Achieve</p>
-                </div>
-              </div>
+              
             </div>
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="contentBtn">
-              <p>Start your journey to your dream loan now! <br> Make the changes we recommend and be loan ready in 3-6
-                months.</p>
+              <p>{{HowShineWillHelpSection?.Body_Section[0]}} <br> {{HowShineWillHelpSection?.Body_Section[1]}}</p>
               <button class="btn">Check Pricing</button>
             </div>
           </div>
@@ -260,87 +288,67 @@
           <button class="btn">
             Deep Dive
           </button>
-          <h3>Comprehensive Analysis Tailored for Your Business</h3>
-          <p>Experience a new level of financial understanding with detailed reviews of your GST, banking, and credit
-            data, helping you make strategic moves.</p>
+          <h3>{{ShineFeaturesSection?.Header}}</h3>
+          <p>{{ShineFeaturesSection?.Subheader}}</p>
         </div>
       </div>
-      <div class="row row-cols-5">
-        <div class="col">
-          <div class="box">
-            <img src="{{aaa?.Product_Tiles?.Icon}}" alt="">
-            <p>{{aaa?.Product_Tiles?.Product_copy}}</p>
+      <div class="row row-cols-5" >  
+        <div class="col" *ngFor = "let data of ProductTiles">
+          <div class="box" (click)="openPopup()">
+            <img src={{data.icon}} alt="">
+            <p>{{data.productCopy}}</p>
           </div>
         </div>
-        <div class="col">
-          <div class="box">
-            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-            <p>Loan Repayment History</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="box">
-            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-            <p>Current Debt Analysis</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="box">
-            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-            <p>Business Risk</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="box">
-            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-            <p>Loan Inquiries</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="box">
-            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-            <p>GST Filings History</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="box">
-            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-            <p>Business Credit Amount & Count</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="box">
-            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-            <p>Average Banking Balance</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="box">
-            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-            <p>Monthly Running Expenses</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="box">
-            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-            <p>Cashflow Stability</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="box">
-            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-            <p>Debt-to-Turnover Ratio</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="box">
-            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-            <p>Cheque Bounces</p>
-          </div>
-        </div>
+       
+
         <div class="col-7 pe-0">
           <div class="boxImg">
             <img src="./assets/LandingPage/boxImg.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="guaranteedLoan">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="content">
+            <h3>Guaranteed Loan Success Starts Here</h3>
+            <p>Follow our tailored advice for a guaranteed shot at loan approval.</p>
+          </div>
+        </div>
+        <div class="col-lg-11 col-md-12">
+          <div class="yourRankingSilder">
+            <owl-carousel-o [options]="customOptionKeys">
+              <ng-container>
+                <ng-template carouselSlide>
+                  <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <div class="improveBox">
+                        <h3>Your Ranking</h3>
+                        <img class="numberImg" src="./assets/LandingPage/Mountain_Steps.png" alt="">
+                        <div class="howBox">
+                          <img src="./assets/LandingPage/themeInformation.svg" alt="">
+                          <div class="content">
+                            <h5>How to Improve</h5>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                              industry's standard dummy text ever since the 1500s,</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <div class="box">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ng-container>
+            </owl-carousel-o>
           </div>
         </div>
       </div>

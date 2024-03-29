@@ -8,56 +8,15 @@
   
           <div class="faqaccordion">
             <mat-accordion>
-              <mat-expansion-panel>
+              <mat-expansion-panel *ngFor = "let data of faqs">
                 <mat-expansion-panel-header>
                   <mat-panel-title>
-                    <h3>Why should I use CreditEnable to apply for my Business Loan?</h3>
+                    <h3>{{data.question}}</h3>
                   </mat-panel-title>
                 </mat-expansion-panel-header>
-                <p>Our goal is to make MSMEs loans easier, quicker, and convenient for entrepreneurs without breaking the
-                  bank. We aim to help you achieve your business dreams without compromising your business plan, which is
-                  why we negotiate with our 25+ lender partners to get you the best loan terms. </p>
+                <p>{{data.answer}} </p>
               </mat-expansion-panel>
-              <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <h3>Is CreditEnable a lender?</h3>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <p>Our goal is to make MSMEs loans easier, quicker, and convenient for entrepreneurs without breaking the
-                  bank. We aim to help you achieve your business dreams without compromising your business plan, which is
-                  why we negotiate with our 25+ lender partners to get you the best loan terms. </p>
-              </mat-expansion-panel>
-              <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <h3>Does CreditEnable check my Credit Report when I apply for a Business Loan?</h3>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <p>Our goal is to make MSMEs loans easier, quicker, and convenient for entrepreneurs without breaking the
-                  bank. We aim to help you achieve your business dreams without compromising your business plan, which is
-                  why we negotiate with our 25+ lender partners to get you the best loan terms. </p>
-              </mat-expansion-panel>
-              <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <h3>Who are CreditEnable's lender partners?</h3>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <p>Our goal is to make MSMEs loans easier, quicker, and convenient for entrepreneurs without breaking the
-                  bank. We aim to help you achieve your business dreams without compromising your business plan, which is
-                  why we negotiate with our 25+ lender partners to get you the best loan terms. </p>
-              </mat-expansion-panel>
-              <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    <h3>How does CreditEnable get me the best interest rates on the market?</h3>
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <p>Our goal is to make MSMEs loans easier, quicker, and convenient for entrepreneurs without breaking the
-                  bank. We aim to help you achieve your business dreams without compromising your business plan, which is
-                  why we negotiate with our 25+ lender partners to get you the best loan terms. </p>
-              </mat-expansion-panel>
+              
             </mat-accordion>
   
           </div>

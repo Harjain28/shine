@@ -12,6 +12,8 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { FaqComponent } from 'src/app/reports/faq/faq.component';
 import { TestimonialComponent } from 'src/app/shared/testimonial/testimonial.component';
 import { businessloansonlineJson } from './lendingpage';
+import { PopupCopyComponent } from 'src/app/modal/popup-copy/popup-copy.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 
@@ -34,6 +36,7 @@ export class LandingPageComponent {
     autoplay: true,
     navSpeed: 300,
     nav: false,
+    margin: 10,
 
     autoplayTimeout: 8000,
     autoplaySpeed: 1500,
@@ -90,9 +93,18 @@ export class LandingPageComponent {
   Comparison_Section: any;
   showDesktop: boolean = false;
   isBrowser: boolean = false;
+  Shinebanner: any;
+  businessLoanJson: any;
+  AnalyseSection: any;
+  WhatToExpectSection: any;
+  HowShineWillHelpSection: any;
+  Parameter: any;
+  ShineFeaturesSection: any;
+  ProductTiles: any;
   constructor(
     public eventService: EventService,
     public router: Router,
+    private dialog: MatDialog,
     public localStorage: LocalStorageService,
     private cdr: ChangeDetectorRef,
     private breakpointObserver: BreakpointObserver,
@@ -101,7 +113,7 @@ export class LandingPageComponent {
       
   }
   ngOnInit(): void {
-    // console.log(businessloansonlineJson.Shine_Features_Section.Product_Tiles[0].Product_copy,"ll")
+     console.log(businessloansonlineJson.Shine_Banner,"ll")
  //   this.localStorage.removeSomeItem();
     this.breakpointObserver
     .observe(['(min-width: 500px)'])
@@ -114,7 +126,7 @@ export class LandingPageComponent {
     });
     //this.MSMEPageMetaData = metaData?.MSMEpageMetaData;
     this.eventService?.addmetaTag(this.MSMEPageMetaData?.title , this.MSMEPageMetaData?.description , this.MSMEPageMetaData?.keywords);
-    this.getSmeProductsData();
+    this.getBusinessLoanData();
 
   }
 
@@ -122,6 +134,18 @@ export class LandingPageComponent {
     this.isBrowser = isPlatformBrowser(this.platformId); 
     this.cdr.detectChanges();
  }
+
+ openDialog(){
+  // this.getBorrowerInformation();
+  const dialogRef = this.dialog.open(PopupCopyComponent, {
+    width: 'auto',
+    height: 'auto',
+  });
+}
+
+openPopup(){
+  this.openDialog();
+}
 
  goToPlans(){
   this.router.navigate(['/in/pricing'])
@@ -131,37 +155,26 @@ export class LandingPageComponent {
     this.readMore = true;
   }
 
-  getSmeProductsData() {
-    this.smeProduct  = msmeloansJson;
-    this.aaa = businessloansonlineJson.Shine_Features_Section;
-    const smeProduct1 = SMEproductJSON;
-        this.Benefits_Secured_Business_Loan = [];
-    this.SecuredProductBannerData =
-      this.smeProduct?.Homepage_Banner;
-      this.emiCalulatorData = this.smeProduct?.EMI_Calculator_Section;
-      this.smeProductPage  =  {name: 'smeproduct' , alt: this.emiCalulatorData?.imageText};
-      this.Key_Stats_Section  = this.smeProduct?.Key_Stats_Section;
-    this.Shine_Features_Section = this.smeProduct?.Shine_Features_Section;
-    this.SmeLendersData = this.smeProduct?.Lender_Section;
-    this.Secured_Loan_Description = this.smeProduct?.Secured_Loan_Description;
-    this.HelpSections = smeProduct1?.["machinery-loan-for-msme"]?.How_We_will_help_You;
-    this.smeProduct?.Benefits_Secured_Business_Loan.forEach((element: { Description_Header: any; Description_Body: any; }) => {
-      this.Benefits_Secured_Business_Loan.push({Description_Header: element?.Description_Header, Description_Body: element?.Description_Body, Long_Text: false});
-    });
-    this.Comparison_Section = this.smeProduct?.Comparison_Section;
-    this.Secured_Loan_Product_Options =
-      this.smeProduct?.Secured_Loan_Product_Options;
-    this.Eligibility_SectionData =
-      this.smeProduct?.Eligibility_Collateral_Section?.Eligibility_Section;
-    this.Collateral_SectionData =
-      this.smeProduct?.Eligibility_Collateral_Section?.Collateral_Section;
-    this.Documents_SectionData = this.smeProduct?.Documents_Section;
-    this.Other_Loan_Products_Available_Section =
-      this.smeProduct?.Your_Business_Loan_Options;
-    this.Sme_SyndicateData = this.smeProduct?.Syndication_Homepage;
-    this.Sme_Testimonial = this.smeProduct?.Homepage_Testimonial;
-    this.Useful_Links = this.smeProduct?.Useful_Links;
-  
+
+
+  getBusinessLoanData(){
+    this.businessLoanJson = businessloansonlineJson;
+
+    this.Shinebanner = this.businessLoanJson?.Shine_Banner;
+    this.AnalyseSection = this.businessLoanJson?.Analyse_Section;
+    this.WhatToExpectSection = this.businessLoanJson?.What_To_Expect_Section;
+    this.HowShineWillHelpSection = this.businessLoanJson?.How_Shine_Will_Help_Section;
+    this.Parameter = this.HowShineWillHelpSection?.Parameter.map((res: {Parameter: any; Icon: any; }) =>({
+      icon : res?.Icon,
+      parameter: res?.Parameter
+    }));
+    this.ShineFeaturesSection = this.businessLoanJson?.Shine_Features_Section;
+    this.ProductTiles = this.ShineFeaturesSection?.Product_Tiles.map((res: { Icon: any; Product_copy: any; })=>({
+      icon: res?.Icon,
+      productCopy: res?.Product_copy
+    }))
+
+
   }
 
 }

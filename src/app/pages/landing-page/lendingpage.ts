@@ -1,6 +1,5 @@
 export const businessloansonlineJson  = {
-    Shine_Banner: 
-        {
+    Shine_Banner: {
             Header1: {
                 Text: "WELCOME TO SHINE", 
             },
@@ -21,7 +20,8 @@ export const businessloansonlineJson  = {
     
    
     Analyse_Section: {
-    Headline1: "What stands between you and better loan opportunities?",
+    Headline1: "What stands between ",
+    Headline2: "you and better loan opportunities?",
     Description: "The only tool revealing lender insights by analyzing your Bureau, GST, & Banking data.",
     Bureau_Feature:
     {
@@ -43,7 +43,8 @@ export const businessloansonlineJson  = {
     },
   
     What_To_Expect_Section: {
-      Headline: "Transform Finance: See What Others Don't!",
+      Headline: "Transform Finance: ",
+      Headline2: "See What Others Don't!",
       Body:
         "Unlock analysis that delves into the critical nuances of your finances, guiding you to course correct swiftly for loan eligibility. Empower your decisions with insights that elevate your financial strategy, trimming the journey from years to months. A future-focused financial revolution.",
         Background: {
@@ -126,7 +127,7 @@ export const businessloansonlineJson  = {
     },
   
     Shine_Features_Section: {
-      Header: "Dive Deep: Comprehensive Analysis Tailored for Your Business.",
+      Header: "Comprehensive Analysis Tailored for Your Business.",
       Subheader: "Experience a new level of financial understanding with detailed reviews of your GST, banking, and credit data, helping you make strategic moves.",
       CTA_Text: "Get Pricing",
       CTA_Link: "/in/check-eligibility",
