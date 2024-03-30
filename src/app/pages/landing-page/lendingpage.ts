@@ -1,7 +1,7 @@
 export const businessloansonlineJson = {
   Shine_Banner: {
     Header1: {
-      Text: "WELCOME TO SHINE",
+      Text: "Welcome to Shine",
     },
     Header2: {
       Text: "Identify Issues. Improve Credit. Secure Capital.",

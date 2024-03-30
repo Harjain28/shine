@@ -20,7 +20,7 @@
                     position: absolute;
                     top: 50%;
                     left: 0px;
-                    transform: translate(0%, -50%);
+                    transform: translate(0%, -25%);
                     z-index: 9;
                     display: block;
                     width: 100%;
@@ -30,7 +30,7 @@
                         .mainHeading {
                             letter-spacing: -1.44px;
                             color: #FFFFFF;
-                            font-weight: 600;
+                            font-weight: 600 !important;
                             font-size: 48px;
                             line-height: 44px;
                             margin-bottom: 5px;
@@ -40,7 +40,7 @@
                         .colorBox {
                             border-radius: 7px;
                             background-color: #C3E128;
-                            padding: 2px 50px;
+                            padding: 2px 12px;
                             margin-bottom: 22px;
                             color: #222;
                             font-weight: 600;
@@ -88,6 +88,14 @@
                             }
                         }
                     }
+                    
+                    .imgBanner{
+                        position: absolute;
+                        top: 50%;
+                        right: -30px;
+                        transform: translate(0%, -50%);
+                        width: 60%;
+                    }
                 }
             }
         }
@@ -98,108 +106,6 @@
         background-position: right;
 
         .betterLoanOpportunties {
-            padding-bottom: 60px;
-
-            .boxContent {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 22px;
-                box-shadow: 6px 6px 20px #0000001A;
-                border-radius: 20px;
-                background-color: var(--main2);
-                margin-bottom: 10px;
-                padding: 20px 30px;
-
-                &:nth-of-type(2) {
-                    background-color: var(--main1);
-                    transform: translate(30px, 0px);
-                }
-
-                &:nth-of-type(3) {
-                    background-color: #C3E128;
-
-                    .content {
-
-                        h3 {
-                            color: #222222;
-                        }
-
-                        p {
-                            color: #222222;
-
-                        }
-                    }
-                }
-
-                .content {
-
-                    h3 {
-                        color: #FFFFFF;
-                        font-size: 18px;
-                        line-height: 28px;
-                        font-weight: 600;
-                        font-family: Poppins !important;
-                        margin-bottom: 9px;
-                    }
-
-                    p {
-                        color: #FFFFFF;
-                        font-size: 13px;
-                        line-height: 19px;
-                        font-weight: normal;
-                        font-family: Poppins !important;
-                        margin-bottom: 2px;
-                        overflow: hidden;
-                        -o-text-overflow: ellipsis;
-                        text-overflow: ellipsis;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 5;
-                        -webkit-box-orient: vertical;
-
-                    }
-                }
-
-                .boxIcon {
-
-                    img {
-                        width: auto;
-                        height: 64px;
-                    }
-                }
-            }
-
-            .rightContent {
-                padding-left: 70px;
-
-                h3 {
-                    color: #3f3f3f;
-                    font-size: 30px;
-                    line-height: 37px;
-                    font-weight: 700;
-                    font-family: 'Be Vietnam Pro' !important;
-                    margin-bottom: 14px;
-
-                    span {
-                        color: var(--main1);
-                        display: block;
-                    }
-                }
-
-                p {
-                    color: #3f3f3f;
-                    font-size: 16px;
-                    line-height: 22px;
-                    font-weight: normal;
-                    font-family: Poppins !important;
-                    margin-bottom: 2px;
-                    padding-right: 130px;
-
-                }
-            }
-        }
-
-        .betterLoanOpportuntiesTwo {
             padding-bottom: 60px;
 
             .boxColor {
@@ -259,17 +165,16 @@
                         font-family: Poppins !important;
                         margin-bottom: 2px;
                         width: 90%;
-                        overflow: hidden;
-                        -o-text-overflow: ellipsis;
-                        text-overflow: ellipsis;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 6;
-                        -webkit-box-orient: vertical;
+                        // overflow: hidden;
+                        // -o-text-overflow: ellipsis;
+                        // text-overflow: ellipsis;
+                        // display: -webkit-box;
+                        // -webkit-line-clamp: 6;
+                        // -webkit-box-orient: vertical;
                     }
                 }
 
                 .boxIcon {
-                    margin-top: -10px;
                     display: flex;
                     justify-content: flex-end;
 
@@ -392,8 +297,8 @@
                 .laptopAnderImg {
                     position: absolute;
                     top: -35px;
-                    left: 100%;
-                    transform: translate(50%, -100%);
+                    left: 460px;
+                    transform: translate(100%, -100%);
 
                     img {
                         height: 242px;
@@ -867,10 +772,6 @@
 
 
 
-
-
-
-
 @media (max-width: 767px) {
 
     .SecuredBusinessLoan {
@@ -926,165 +827,165 @@
     }
 }
 
-@media (max-width: 420px) {
+// @media (max-width: 420px) {
 
-    .SecuredBusinessLoan {
-        .homeSlider {
+//     .SecuredBusinessLoan {
+//         .homeSlider {
 
-            ::ng-deep {
+//             ::ng-deep {
 
-                .owl-dots {
-                    bottom: 33% !important;
-                    justify-content: center;
-                    margin-top: 0px;
-                }
-            }
-        }
-    }
+//                 .owl-dots {
+//                     bottom: 33% !important;
+//                     justify-content: center;
+//                     margin-top: 0px;
+//                 }
+//             }
+//         }
+//     }
 
-}
+// }
 
-@media (max-width: 360px) {
+// @media (max-width: 360px) {
 
-    .SecuredBusinessLoan {
+//     .SecuredBusinessLoan {
 
-        .homeSlider {
+//         .homeSlider {
         
-                .silderSlide{
+//                 .silderSlide{
         
-                    .silderText{
-                        transform: translate(0%, -60%) !important;
+//                     .silderText{
+//                         transform: translate(0%, -60%) !important;
         
-                    }
-                }
+//                     }
+//                 }
 
-                ::ng-deep {
+//                 ::ng-deep {
 
-                    .owl-dots {
-                        bottom: 35% !important;
-                    }
-                }
-            }
-    }
-}
+//                     .owl-dots {
+//                         bottom: 35% !important;
+//                     }
+//                 }
+//             }
+//     }
+// }
 
-@media (min-width: 576px) {
+// @media (min-width: 576px) {
 
-    .forSMEComponent {
+//     .forSMEComponent {
 
-        .SecuredBusinessLoan {
+//         .SecuredBusinessLoan {
     
-            .homeSlider {
+//             .homeSlider {
     
-                ::ng-deep{
+//                 ::ng-deep{
         
-                    .owl-dots {
-                        width: 540px;
-                    }
-                }
-            }
-        }
-    }
-}
+//                     .owl-dots {
+//                         width: 540px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
-@media (min-width: 992px) {
+// @media (min-width: 992px) {
 
-    .forSMEComponent {
+//     .forSMEComponent {
 
-        .SecuredBusinessLoan {
+//         .SecuredBusinessLoan {
     
-            .homeSlider {
+//             .homeSlider {
     
-                ::ng-deep{
+//                 ::ng-deep{
         
-                    .owl-dots {
-                        width: 960px;
-                    }
-                }
-            }
-        }
-    }
-}
+//                     .owl-dots {
+//                         width: 960px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
-@media (min-width: 1200px) {
+// @media (min-width: 1200px) {
 
-    .forSMEComponent {
+//     .forSMEComponent {
 
-        .SecuredBusinessLoan {
+//         .SecuredBusinessLoan {
     
-            .homeSlider {
+//             .homeSlider {
     
-                ::ng-deep{
+//                 ::ng-deep{
         
-                    .owl-dots {
-                        width: 996px;
-                    }
-                }
-            }
-        }
-    }
-}
+//                     .owl-dots {
+//                         width: 996px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
-@media (min-width: 1400px) {
+// @media (min-width: 1400px) {
 
-    .forSMEComponent {
+//     .forSMEComponent {
 
-        .SecuredBusinessLoan {
+//         .SecuredBusinessLoan {
     
-            .homeSlider {
+//             .homeSlider {
     
-                ::ng-deep{
+//                 ::ng-deep{
         
-                    .owl-dots {
-                        width: 996px;
-                    }
-                }
-            }
-        }
-    }
-}
+//                     .owl-dots {
+//                         width: 996px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
-@media (max-width:767px) {
+// @media (max-width:767px) {
 
-    .SecuredBusinessLoan{
+//     .SecuredBusinessLoan{
 
-        .homeSlider{
+//         .homeSlider{
     
-            .silderSlide{
+//             .silderSlide{
     
-                .silderText{
+//                 .silderText{
 
-                    .title{
-                        margin-top: 60px;
-                        margin-bottom: 30px;
+//                     .title{
+//                         margin-top: 60px;
+//                         margin-bottom: 30px;
 
-                        &.shineTitle{
+//                         &.shineTitle{
     
-                        .mainHeading{
-                            font-size: 26px !important;
-                            text-transform: uppercase;
-                            text-align: center;
-                        }
+//                         .mainHeading{
+//                             font-size: 26px !important;
+//                             text-transform: uppercase;
+//                             text-align: center;
+//                         }
     
-                         p{
-                            font-size: 15px !important;
-                            line-height: 22px !important;
-                            text-align: center;
-                            margin-bottom: 8px !important;
-                         }
-                        }
-                    }
+//                          p{
+//                             font-size: 15px !important;
+//                             line-height: 22px !important;
+//                             text-align: center;
+//                             margin-bottom: 8px !important;
+//                          }
+//                         }
+//                     }
 
-                    &.mobileResponsive{
-                        transform: translate(0%, 0%) !important;
-                    }
+//                     &.mobileResponsive{
+//                         transform: translate(0%, 0%) !important;
+//                     }
     
-                    .getStartButtonBanner{
-                        justify-content: center !important;
-                        margin-right: 0px !important;
-                    }
-                }
-            }
-        }
-    }
-}
+//                     .getStartButtonBanner{
+//                         justify-content: center !important;
+//                         margin-right: 0px !important;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
