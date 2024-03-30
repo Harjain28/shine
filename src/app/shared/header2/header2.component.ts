@@ -28,7 +28,7 @@ export class Header2Component {
   smeproductArray: any = [
     {
       ProductTitle: "Secured Business Loans",
-      url: "none",
+      url: "/in/sme-business-loan/secured-business-loan",
       category: [
         {
           product: "Secured Term Loans",
@@ -261,7 +261,21 @@ export class Header2Component {
 
   // }
 
+  goToSME(){
+    window.location.href = 'https://www.creditenable.com/in/sme-business-loan/secured-business-loan';
+  }
   
+  goToPricing(){
+    this.router.navigate(['/in/pricing'])
+  }
+
+  goToAbout(){
+    window.location.href = 'https://www.creditenable.com/in/about-creditenable';
+  }
+
+  goToPravicy(){
+    window.location.href = 'https://www.creditenable.com/assets/images/pdf/CreditEnable_Privacy_Policy_2023.pdf';
+  }
 
   openDropdown() {
     this.showNav = true;

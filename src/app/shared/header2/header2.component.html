@@ -29,14 +29,14 @@
                             </div>
                         </div>
                         <div class=" hoverEffect">
-                            <a [class.active]="router.url ==='/in/sme-business-loan'" class="nav-link"
-                                data-bs-toggle="dropdown">SME Business Loans
+                            <a [class.active]="router.url ==='/in/sme-business-loan/secured-business-loan'" class="nav-link"
+                                data-bs-toggle="dropdown" (click)="goToSME()">SME Business Loans
                             </a>
                         </div>
                         <div class="nav-item"
                             (mouseleave)="closeDropdown()">
                             <a [class.active]="router.url ==='/in/sectors'" class="nav-link dropdown-toggle"
-                                data-bs-toggle="dropdown">Pricing
+                                data-bs-toggle="dropdown" (click)="goToPricing()">Pricing
                             </a>
                         </div>
 
@@ -56,14 +56,13 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="dropDownHeader">
-                                            <a class="dropdown-item" *ngFor="let about of aboutArray"
-                                                [routerLink]="[about?.url]" queryParamsHandling="preserve"
-                                                (click)="closeDropdown();" [class.active]="router.url == about?.url"
-                                                class="dropdown-item">{{about?.name}}
+                                            <a class="dropdown-item"  queryParamsHandling="preserve"
+                                                (click)="closeDropdown();" class="dropdown-item" target="_blank" 
+                                                (click)="goToAbout()">About CreditEnable
                                             </a>
                                             <a class="dropdown-item"
                                                 href="assets/images/pdf/CreditEnable_Privacy_Policy_2023.pdf"
-                                                target="_blank">Privacy Policy
+                                                target="_blank" (click)="goToPravicy()">Privacy Policy
                                             </a>
                                         </div>
                                     </div>
