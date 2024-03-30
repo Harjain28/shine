@@ -88,8 +88,8 @@
                             }
                         }
                     }
-                    
-                    .imgBanner{
+
+                    .imgBanner {
                         position: absolute;
                         top: 50%;
                         right: -30px;
@@ -117,7 +117,7 @@
                             background-color: var(--main1);
                         }
                     }
-                    
+
                     &:nth-of-type(4) {
 
                         .boxContent {
@@ -128,10 +128,10 @@
                                 h3 {
                                     color: #222222;
                                 }
-        
+
                                 p {
                                     color: #222222;
-        
+
                                 }
                             }
                         }
@@ -165,12 +165,16 @@
                         font-family: Poppins !important;
                         margin-bottom: 2px;
                         width: 90%;
-                        // overflow: hidden;
-                        // -o-text-overflow: ellipsis;
-                        // text-overflow: ellipsis;
-                        // display: -webkit-box;
-                        // -webkit-line-clamp: 6;
-                        // -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        // height: calc(100vh - 300px);
+                        max-height: 155px;
+                        min-height: 155px;
+                        overflow-x: hidden;
+                        overflow-y: auto;
+
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
                     }
                 }
 
@@ -218,7 +222,7 @@
         .transformFinance {
             background-color: #F3F3F3;
             padding: 65px 0px;
-            z-index: -1;
+            z-index: -2;
             position: relative;
 
             .rightContent {
@@ -253,23 +257,24 @@
             .laptopSilder {
                 position: relative;
                 overflow: hidden;
-                z-index: 9;
+                z-index: 900;
 
                 .textSilder {
                     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1019607843);
                     border: 1px solid #12BA9B;
                     border-radius: 10px;
-                    padding: 12px 22px;
+                    padding: 6px 16px;
                     text-align: center;
                     position: relative;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    width: -moz-fit-content;
                     width: fit-content;
                     top: -250px;
                     z-index: 99999;
                     background: #fff;
-                    left: 30px;
+                    left: 20px;
 
                     img {
                         width: 32px;
@@ -289,7 +294,7 @@
                 }
 
                 .laptopView {
-                    width: 510px;
+                    width: 480px;
                     display: flex;
                     margin: 0px 0px 0px auto;
                 }
@@ -297,11 +302,12 @@
                 .laptopAnderImg {
                     position: absolute;
                     top: -35px;
-                    left: 460px;
+                    left: 80%;
                     transform: translate(100%, -100%);
+                    z-index: 999;
 
                     img {
-                        height: 242px;
+                        height: 225px;
                         width: auto;
                         margin: auto;
                     }
@@ -619,7 +625,7 @@
             flex-wrap: wrap;
             transition: .5s;
 
-            &:hover{
+            &:hover {
                 background-color: #C3E128;
             }
 
@@ -651,7 +657,7 @@
         }
     }
 
-    .guaranteedLoan{
+    .guaranteedLoan {
         padding: 60px 0px;
 
         .content {
@@ -678,73 +684,23 @@
             }
         }
 
-        .yourRankingSilder{
+        .yourRankingSilder {
 
             .improveBox {
-                box-shadow: 0px 3px 10px #272D3B24;
-                border-radius: 20px;
-                background-color: #fff;
-                padding: 24px;
-                height: 100%;
-                margin: 10px;
-        
-                h3 {
-                    text-align: center;
-                    font-size: 18px;
-                    font-weight: 600;
-                    margin-bottom: 10px;
-                    color: #3F3F3F;
-                }
-        
-                .numberImg {
-                    width: 70%;
-                }
-        
-                .howBox {
-                    border: 1px solid #E8E8E8;
-                    border-radius: 10px;
-                    padding: 15px 20px;
-                    background-color: #fff;
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 12px;
-        
-                    img {
-                        width: 16px;
-                        height: 16px;
-                    }
-        
-                    .content {
-        
-                        h5 {
-                            font-size: 14px;
-                            font-weight: 600;
-                            margin-bottom: 10px;
-                            color: var(--main1);
-                            line-height: 18px;
-                            text-align: left;
-                        }
-        
-                        p {
-                            font-size: 13px;
-                            font-weight: normal;
-                            margin-bottom: 0px;
-                            color: #3F3F3F;
-                            line-height: 18px;
-                            text-align: left;
-                        }
-                    }
+                
+                img{
+                    width: 100%;
                 }
             }
 
-            .box{
+            .box {
                 position: relative;
                 background-color: var(--main1);
                 padding: 22px 30px;
                 border-radius: 10px;
                 margin-left: 20px;
 
-                &::before{
+                &::before {
                     position: absolute;
                     content: "";
                     width: 30px;
@@ -757,7 +713,7 @@
                     z-index: -1;
                 }
 
-                p{
+                p {
                     color: #fff;
                     font-size: 14px;
                     line-height: 20px;
@@ -774,58 +730,392 @@
 
 @media (max-width: 767px) {
 
-    .SecuredBusinessLoan {
+    .forSMEComponent {
 
-        .homeSlider {
-                .silderSlide{
-                        height: 100% !important;
+        .SecuredBusinessLoan {
 
-                        img{
-                            height: 100%;
-                        }
-        
-                    .silderText{
-                        transform: translate(0%, -60%) !important;
-                        text-align: center !important;
-                        padding: 0px 20px;
-                        width: 100% !important;
-                        bottom: auto !important;
-        
-                        h1{
-                            font-size: 25px !important;
-                            line-height: 30px !important;
-                        }
+            .homeSlider {
 
-                        p{
-                            padding-right: 0px !important;
-                        }
+                .silderSlide {
+                    height: 100%;
+
+                    .silderText {
+                        transform: translate(0%, -45%);
 
                         .title {
-                            p {
-                                font-size: 25px !important;
-                                line-height: 30px !important;
-                                padding-right: 0px;
+
+                            .mainHeading {
+                                font-size: 32px;
+                            }
+
+                            .pricingBtn {
+                                margin-top: 20px;
                             }
                         }
-                        h2{
-                            font-size: 14px !important;
-                            margin-bottom: 0px !important;
-                            line-height: 18px !important;
-                            padding-right: 0px !important;
+
+                        .imgBanner {
+                            position: relative;
+                            top: 20px;
+                            right: 30px;
+                            transform: translate(0%, 0%);
+                            width: 100%;
                         }
                     }
                 }
             }
+        }
 
-            .boxSizeRight{
-                top: auto !important;
-                transform: translate(-50%, -6%) !important;
-                bottom: 16px;
-                left: 50% !important;
-                width: 100%;
+        .twoSectionMarge {
+            background-image: none !important;
+            padding-bottom: 0px;
+
+            .betterLoanOpportunties {
+                padding-bottom: 30px;
+
+                .boxContent {
+
+                    .content {
+
+                        p {
+                            max-height: 130px;
+                            min-height: 130px;
+                        }
+                    }
+                }
+
+                .Content {
+                    margin-bottom: 20px;
+
+                    h3 {
+                        font-size: 22px;
+                        line-height: 27px;
+                        font-weight: 600;
+
+                        span {
+                            color: var(--main1);
+                            display: block;
+                        }
+                    }
+
+                    p {
+                        font-size: 14px;
+                        line-height: 20px;
+
+                    }
+                }
             }
+
+
+            .transformFinance {
+                padding: 42px 0px 0px;
+
+                .rightContent {
+                    text-align: center;
+
+                    h3 {
+                        font-size: 22px;
+                        line-height: 27px;
+                        font-weight: 600;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        line-height: 20px;
+
+                    }
+                }
+
+                .laptopSilder {
+                    padding-top: 30px;
+
+                    .textSilder {
+                        top: -190px;
+                        left: 50%;
+                        transform: translate(-47%, -50%);
+
+                        img {
+                            width: 32px;
+                            height: 32px;
+                            position: absolute;
+                            z-index: 999;
+                            left: -20px;
+                        }
+
+                        span {
+                            font-size: 16px;
+                            line-height: 22px;
+                            color: var(--main2);
+                            font-weight: 600;
+                            font-family: Poppins !important;
+                        }
+                    }
+
+                    .laptopView {
+                        width: 100%;
+                    }
+
+                    .laptopAnderImg {
+                        top: -50%;
+                        left: 130px;
+                        transform: translate(100%, -100%);
+
+                        img {
+                            height: 160px;
+                        }
+                    }
+
+                    owl-carousel-o {
+
+                        ::ng-deep {
+
+                            .owl-carousel {
+
+                                .owl-stage-outer {
+                                    overflow: visible;
+                                }
+                            }
+
+                            .owl-dots {
+
+                                .owl-dot {
+
+                                    &.active {
+
+                                        span {
+                                            background: var(--main2);
+                                        }
+                                    }
+
+                                    &:hover {
+
+                                        span {
+                                            background: var(--main2);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .advantagesShine {
+            padding: 0px 0px 60px;
+
+            .content {
+                text-align: center;
+                margin-bottom: 22px;
+
+                h3 {
+                    color: #3f3f3f;
+                    font-size: 30px;
+                    line-height: 37px;
+                    font-weight: 700;
+                    font-family: 'Be Vietnam Pro' !important;
+                    margin-bottom: 8px;
+
+                    span {
+                        color: var(--main2);
+                    }
+                }
+
+                p {
+                    color: #3f3f3f;
+                    font-size: 14px;
+                    line-height: 22px;
+                    font-weight: normal;
+                    font-family: Poppins !important;
+                    margin-bottom: 2px;
+
+                }
+            }
+
+            .rowTable {
+                border-top: 1px solid #ECECEC;
+
+                .tableHeading {
+                    padding-left: 0px;
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 0px;
+
+                    li {
+                        text-transform: uppercase;
+                        color: #989898;
+                        font-size: 14px;
+                        line-height: 22px;
+                        font-weight: 500;
+                        font-family: Poppins !important;
+                        padding: 30px 30px 15px;
+                        width: -webkit-fill-available;
+
+                        &:nth-of-type(2) {
+                            color: var(--main2);
+                        }
+
+                        &:nth-of-type(3) {
+                            color: var(--main1);
+                        }
+                    }
+                }
+
+                .tableBox {
+                    padding-left: 0px;
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    box-shadow: 0px 3px 10px #0000000F;
+                    border: 1px solid #E8E8E8;
+                    border-radius: 10px;
+                    margin-bottom: 15px;
+
+                    li {
+                        text-transform: uppercase;
+                        color: #3F3F3F;
+                        font-size: 14px;
+                        line-height: 22px;
+                        font-weight: 600;
+                        font-family: Poppins !important;
+                        padding: 18px 30px 18px;
+                        height: 100%;
+                        width: -webkit-fill-available;
+
+
+                        &:nth-of-type(2) {
+                            background-color: #41C8AF20;
+                        }
+                    }
+                }
+            }
+        }
+
+        .shineHelp {
+            padding: 40px 0px;
+            background-position: right;
+
+            &::before {
+                display: none;
+            }
+
+            .content {
+                margin-bottom: 12px;
+
+                h3 {
+                    font-size: 22px;
+                    line-height: 27px;
+                    font-weight: 600;
+                }
+            }
+
+            .boxCenter {
+                padding: 30px 30px;
+
+                &::before {
+                    display: none;
+                }
+
+                .box {
+                    padding: 12px 10px;
+                    height: auto;
+
+                    img {
+                        height: 40px;
+                        margin: 0px auto 12px;
+                    }
+
+                    p {
+                        font-size: 13px;
+                    }
+                }
+
+                .pdMobile{
+                    padding: 0px 3px;
+                }
+            }
+
+            .contentBtn {
+                text-align: center;
+
+                p {
+                    padding: 0px 50px;
+                }
+            }
+        }
+
+        .BusinessLoanOption {
+            padding: 50px 0px;
+
+            .content {
+
+                h3 {
+                    font-size: 22px;
+                    line-height: 27px;
+                    font-weight: 600;
+                }
+            }
+
+            .row-cols-5>*{
+                width: 50%;
+            }
+
+            .box {
+                padding: 14px 12px;
+                height: 155px;
+
+                img {
+                    height: 50px;
+                }
+
+                p {
+                    font-size: 13px;
+                }
+            }
+
+            .boxImg {
+                display: none;
+            }
+        }
+
+        .guaranteedLoan {
+            padding: 40px 0px;
+
+            .content {
+                margin-bottom: 15px;
+
+                h3 {
+                    font-size: 22px;
+                    line-height: 27px;
+                    font-weight: 600;
+                }
+            }
+
+            .yourRankingSilder {
+
+                .orderTop{
+                    order: -1;
+                }
+
+                .box {
+                    margin-left: 0px;
+                    margin-bottom: 20px;
+
+                    &::before {
+                        top: auto;
+                        transform: translate(50%, -50%);
+                        left: 50%;
+                        bottom: -34px;
+                        clip-path: polygon(0 1%, 100% 0, 100% 100%, 100% 100%);
+                    }
+                }
+            }
+        }
     }
 }
+
 
 // @media (max-width: 420px) {
 
@@ -850,12 +1140,12 @@
 //     .SecuredBusinessLoan {
 
 //         .homeSlider {
-        
+
 //                 .silderSlide{
-        
+
 //                     .silderText{
 //                         transform: translate(0%, -60%) !important;
-        
+
 //                     }
 //                 }
 
@@ -874,11 +1164,11 @@
 //     .forSMEComponent {
 
 //         .SecuredBusinessLoan {
-    
+
 //             .homeSlider {
-    
+
 //                 ::ng-deep{
-        
+
 //                     .owl-dots {
 //                         width: 540px;
 //                     }
@@ -893,11 +1183,11 @@
 //     .forSMEComponent {
 
 //         .SecuredBusinessLoan {
-    
+
 //             .homeSlider {
-    
+
 //                 ::ng-deep{
-        
+
 //                     .owl-dots {
 //                         width: 960px;
 //                     }
@@ -912,11 +1202,11 @@
 //     .forSMEComponent {
 
 //         .SecuredBusinessLoan {
-    
+
 //             .homeSlider {
-    
+
 //                 ::ng-deep{
-        
+
 //                     .owl-dots {
 //                         width: 996px;
 //                     }
@@ -931,11 +1221,11 @@
 //     .forSMEComponent {
 
 //         .SecuredBusinessLoan {
-    
+
 //             .homeSlider {
-    
+
 //                 ::ng-deep{
-        
+
 //                     .owl-dots {
 //                         width: 996px;
 //                     }
@@ -950,9 +1240,9 @@
 //     .SecuredBusinessLoan{
 
 //         .homeSlider{
-    
+
 //             .silderSlide{
-    
+
 //                 .silderText{
 
 //                     .title{
@@ -960,13 +1250,13 @@
 //                         margin-bottom: 30px;
 
 //                         &.shineTitle{
-    
+
 //                         .mainHeading{
 //                             font-size: 26px !important;
 //                             text-transform: uppercase;
 //                             text-align: center;
 //                         }
-    
+
 //                          p{
 //                             font-size: 15px !important;
 //                             line-height: 22px !important;
@@ -979,7 +1269,7 @@
 //                     &.mobileResponsive{
 //                         transform: translate(0%, 0%) !important;
 //                     }
-    
+
 //                     .getStartButtonBanner{
 //                         justify-content: center !important;
 //                         margin-right: 0px !important;
