@@ -748,6 +748,10 @@
                                 font-size: 32px;
                             }
 
+                            .colorBox{
+                                width: auto;
+                            }
+
                             .pricingBtn {
                                 margin-top: 20px;
                             }
@@ -863,130 +867,95 @@
                             height: 160px;
                         }
                     }
-
-                    owl-carousel-o {
-
-                        ::ng-deep {
-
-                            .owl-carousel {
-
-                                .owl-stage-outer {
-                                    overflow: visible;
-                                }
-                            }
-
-                            .owl-dots {
-
-                                .owl-dot {
-
-                                    &.active {
-
-                                        span {
-                                            background: var(--main2);
-                                        }
-                                    }
-
-                                    &:hover {
-
-                                        span {
-                                            background: var(--main2);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
         }
 
         .advantagesShine {
-            padding: 0px 0px 60px;
+            padding: 40px 0px 40px;
 
             .content {
-                text-align: center;
-                margin-bottom: 22px;
 
                 h3 {
-                    color: #3f3f3f;
-                    font-size: 30px;
-                    line-height: 37px;
-                    font-weight: 700;
-                    font-family: 'Be Vietnam Pro' !important;
-                    margin-bottom: 8px;
-
-                    span {
-                        color: var(--main2);
-                    }
-                }
-
-                p {
-                    color: #3f3f3f;
-                    font-size: 14px;
-                    line-height: 22px;
-                    font-weight: normal;
-                    font-family: Poppins !important;
-                    margin-bottom: 2px;
-
+                    font-size: 22px;
+                    line-height: 27px;
+                    font-weight: 600;
                 }
             }
 
-            .rowTable {
-                border-top: 1px solid #ECECEC;
+            .mobileTable{
 
-                .tableHeading {
-                    padding-left: 0px;
-                    list-style: none;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-bottom: 0px;
+                .mobileRow{
 
-                    li {
-                        text-transform: uppercase;
-                        color: #989898;
-                        font-size: 14px;
-                        line-height: 22px;
-                        font-weight: 500;
-                        font-family: Poppins !important;
-                        padding: 30px 30px 15px;
-                        width: -webkit-fill-available;
+                    ul{
+                        box-shadow: 0px 3px 10px #0000000F;
+                        border: 1px solid #E8E8E8;
+                        border-radius: 10px;
+                        padding: 0;
+                        list-style: none;
+                        margin-bottom: 30px;
 
-                        &:nth-of-type(2) {
-                            color: var(--main2);
-                        }
+                        li{
+                            padding: 20px 22px;
+                            height: 125px;
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
 
-                        &:nth-of-type(3) {
-                            color: var(--main1);
+                            &:nth-child(2){ 
+                                background-color: #41c8af20;
+                                
+                                span{
+                                    color: var(--main2);
+                                }
+                            }
+
+                            &:nth-child(3){ 
+                                
+                                span{
+                                    color: var(--main1);
+                                }
+                            }
+
+                            span{
+                                color: #989898;
+                                text-transform: uppercase;
+                                font-size: 14px;
+                                font-weight: 500;
+                                margin-bottom: 6px;
+                                display: block;
+                                width: 100%;
+                                font-family: Poppins !important;
+                            }
+
+                            p{
+                                color: #3F3F3F;
+                                font-size: 14px;
+                                font-weight: 500;
+                                margin-bottom: 2px;
+                                display: block;
+                                width: 100%;
+                                font-family: Poppins !important;
+                            }
                         }
                     }
                 }
 
-                .tableBox {
-                    padding-left: 0px;
-                    list-style: none;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    box-shadow: 0px 3px 10px #0000000F;
-                    border: 1px solid #E8E8E8;
-                    border-radius: 10px;
-                    margin-bottom: 15px;
+                owl-carousel-o {
 
-                    li {
-                        text-transform: uppercase;
-                        color: #3F3F3F;
-                        font-size: 14px;
-                        line-height: 22px;
-                        font-weight: 600;
-                        font-family: Poppins !important;
-                        padding: 18px 30px 18px;
-                        height: 100%;
-                        width: -webkit-fill-available;
+                    ::ng-deep {
 
+                        .owl-dots {
 
-                        &:nth-of-type(2) {
-                            background-color: #41C8AF20;
+                            .owl-dot {
+
+                                &.active {
+
+                                    span {
+                                        background: var(--main2);
+                                    }
+                                }
+                            }
                         }
                     }
                 }

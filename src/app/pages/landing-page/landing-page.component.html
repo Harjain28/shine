@@ -1,4 +1,4 @@
-<div class="forSMEComponent" >
+<div class="forSMEComponent">
   <div class="SecuredBusinessLoan">
     <div class="container-fluid p-0">
       <div class="homeSlider">
@@ -29,7 +29,7 @@
                     </p>
 
                     <div class="pricingBtn">
-                      <button class="btn" (click) = "goToPlans()">Check Pricing</button>
+                      <button class="btn" (click)="goToPlans()">Check Pricing</button>
                     </div>
                   </div>
                 </div>
@@ -119,9 +119,7 @@
                       </div>
                     </div>
                   </ng-template>
-<<<<<<< Updated upstream
-
-                  <ng-template carouselSlide>
+                  <<<<<<< Updated upstream <ng-template carouselSlide>
                     <div class="setSilder">
                       <div class="textSilder">
                         <img src="./assets/LandingPage/checkStar.svg" alt="">
@@ -131,33 +129,33 @@
                         <img src="./assets/LandingPage/laptopAnder.png" alt="">
                       </div>
                     </div>
-                  </ng-template>
+                    </ng-template>
 
-                  <ng-template carouselSlide>
-                    <div class="setSilder">
-                      <div class="textSilder">
-                        <img src="./assets/LandingPage/checkStar.svg" alt="">
-                        <span>{{WhatToExpectSection?.Background2?.imageText}}</span>
+                    <ng-template carouselSlide>
+                      <div class="setSilder">
+                        <div class="textSilder">
+                          <img src="./assets/LandingPage/checkStar.svg" alt="">
+                          <span>{{WhatToExpectSection?.Background2?.imageText}}</span>
+                        </div>
+                        <div class="laptopAnderImg">
+                          <img src="./assets/LandingPage/laptopAnder.png" alt="">
+                        </div>
                       </div>
-                      <div class="laptopAnderImg">
-                        <img src="./assets/LandingPage/laptopAnder.png" alt="">
-                      </div>
-                    </div>
-                  </ng-template>
+                    </ng-template>
 
-                  <ng-template carouselSlide>
-                    <div class="setSilder">
-                      <div class="textSilder">
-                        <img src="./assets/LandingPage/checkStar.svg" alt="">
-                        <span>{{WhatToExpectSection?.Background3?.imageText}}</span>
+                    <ng-template carouselSlide>
+                      <div class="setSilder">
+                        <div class="textSilder">
+                          <img src="./assets/LandingPage/checkStar.svg" alt="">
+                          <span>{{WhatToExpectSection?.Background3?.imageText}}</span>
+                        </div>
+                        <div class="laptopAnderImg">
+                          <img src="./assets/LandingPage/laptopAnder.png" alt="">
+                        </div>
                       </div>
-                      <div class="laptopAnderImg">
-                        <img src="./assets/LandingPage/laptopAnder.png" alt="">
-                      </div>
-                    </div>
-                  </ng-template>
-=======
->>>>>>> Stashed changes
+                    </ng-template>
+                    =======
+                    >>>>>>> Stashed changes
                 </ng-container>
               </owl-carousel-o>
             </div>
@@ -178,14 +176,70 @@
         </div>
 
         <div class="col-lg-12 col-md-12 col-sm-12">
-          <div class="rowTable">
+          <div class="rowTable mhidden">
             <ul class="tableHeading">
-              <li *ngFor = "let title of shine_comparison?.headerText">{{title}}</li>
+              <li *ngFor="let title of shine_comparison?.headerText">{{title}}</li>
             </ul>
-            <ul class="tableBox" *ngFor = "let coloums of shine_comparison?.col">
-              <li *ngFor = "let texts of coloums?.item">{{texts}}</li>
+            <ul class="tableBox" *ngFor="let coloums of shine_comparison?.col">
+              <li *ngFor="let texts of coloums?.item">{{texts}}</li>
             </ul>
           </div>
+
+          <div class="mobileTable dhidden">
+            <owl-carousel-o [options]="customOptionTable">
+              <ng-container>
+                <ng-template carouselSlide>
+                  <div class="mobileRow">
+                    <ul>
+                      <li>
+                        <div>
+                          <span>TTILE TEXTS 1</span>
+                          <p>Lorem Ipsum is simply dummy</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <span>TTILE TEXTS 2</span>
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <span>TTILE TEXTS 3</span>
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                  <div class="mobileRow">
+                    <ul>
+                      <li>
+                        <div>
+                          <span>TTILE TEXTS 1</span>
+                          <p>Lorem Ipsum is simply dummy</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <span>TTILE TEXTS 2</span>
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <span>TTILE TEXTS 3</span>
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </ng-template>
+              </ng-container>
+            </owl-carousel-o>
+          </div>
+
         </div>
       </div>
     </div>
@@ -204,19 +258,19 @@
         <div class="col-lg-7 col-md-10 col-sm-12 m-auto">
           <div class="boxCenter">
             <div class="row justify-content-center;">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-4 pdMobile" *ngFor = "let data of Parameter">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-4 pdMobile" *ngFor="let data of Parameter">
                 <div class="box">
                   <img src={{data.icon}} alt="">
                   <p>{{data.parameter}}</p>
                 </div>
               </div>
-              
+
             </div>
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="contentBtn">
               <p>{{HowShineWillHelpSection?.Body_Section[0]}} <br> {{HowShineWillHelpSection?.Body_Section[1]}}</p>
-              <button class="btn" (click) = "goToPlans()">Check Pricing</button>
+              <button class="btn" (click)="goToPlans()">Check Pricing</button>
             </div>
           </div>
         </div>
@@ -237,14 +291,14 @@
           <p>{{ShineFeaturesSection?.Subheader}}</p>
         </div>
       </div>
-      <div class="row row-cols-5" >  
-        <div class="col" *ngFor = "let data of ProductTiles">
+      <div class="row row-cols-5">
+        <div class="col" *ngFor="let data of ProductTiles">
           <div class="box" (click)="openPopup(data.productCopy)">
             <img src={{data.icon}} alt="">
             <p>{{data.productCopy}}</p>
           </div>
         </div>
-       
+
 
         <div class="col-7 pe-0">
           <div class="boxImg">
@@ -275,10 +329,11 @@
                         <img src="./assets/LandingPage/rankingImg.png" alt="">
                       </div>
                     </div>
-                    
+
                     <div class="col-lg-6 col-md-6 col-sm-12 orderTop">
                       <div class="box">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                          been the industry's standard dummy text ever since the 1500s,</p>
                       </div>
                     </div>
                   </div>
@@ -293,6 +348,6 @@
 </div>
 
 
-  <app-testimonial [testimonialData]="TestimonialsJson"></app-testimonial>
+<app-testimonial [testimonialData]="TestimonialsJson"></app-testimonial>
 
-  <app-faq [faqsData]="faqs"></app-faq>
+<app-faq [faqsData]="faqs"></app-faq>
