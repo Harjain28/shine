@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { businessloansonlineJson } from 'src/app/pages/landing-page/lendingpage';
 
 @Component({
   selector: 'app-faq',

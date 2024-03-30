@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MaterialModule } from 'src/app/material.module';
-import { businessloansonlineJson } from 'src/app/pages/landing-page/lendingpage';
+import { shineLendingPageJSON } from 'src/app/pages/landing-page/lendingpage';
 
 @Component({
   selector: 'app-popup-copy',
@@ -28,9 +28,9 @@ export class PopupCopyComponent {
   }
 
   getPopUpData(){
-    this.businessLoanJson = businessloansonlineJson;
+    this.businessLoanJson = shineLendingPageJSON;
     this.ShineFeaturesSection = this.businessLoanJson?.Shine_Features_Section;
-    this.filteredValues = businessloansonlineJson.Shine_Features_Section?.Product_Tiles.find(item => item.Product_copy === this.popupData);
+    this.filteredValues = shineLendingPageJSON.Shine_Features_Section?.Product_Tiles.find(item => item.Product_copy === this.popupData);
     // console.log(filteredValues?.Pop_up_copy, 'filteredValues')
   }
 

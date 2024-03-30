@@ -5,13 +5,11 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { LocalStorageService } from "src/app/services/local-storage.service";
 import { BreakpointObserver, BreakpointState } from "@angular/cdk/layout";
 import { isPlatformBrowser } from "@angular/common";
-import { msmeloansJson } from '../msmedata';
-import { SMEproductJSON } from '../data';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { FaqComponent } from 'src/app/reports/faq/faq.component';
 import { TestimonialComponent } from 'src/app/shared/testimonial/testimonial.component';
-import { businessloansonlineJson } from './lendingpage';
+import { shineLendingPageJSON } from './lendingpage';
 import { PopupCopyComponent } from 'src/app/modal/popup-copy/popup-copy.component';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -104,6 +102,7 @@ export class LandingPageComponent {
   faqs: any;
   TestimonialsJson: any;
   summarySection: any;
+  shine_comparison: any;
   constructor(
     public eventService: EventService,
     public router: Router,
@@ -116,7 +115,7 @@ export class LandingPageComponent {
       
   }
   ngOnInit(): void {
-     console.log(businessloansonlineJson.Shine_Banner,"ll")
+     console.log(shineLendingPageJSON.Shine_Banner,"ll")
  //   this.localStorage.removeSomeItem();
     this.breakpointObserver
     .observe(['(min-width: 500px)'])
@@ -162,11 +161,12 @@ openPopup(data:any){
 
 
   getBusinessLoanData(){
-    this.businessLoanJson = businessloansonlineJson;
+    this.businessLoanJson = shineLendingPageJSON;
 
     this.Shinebanner = this.businessLoanJson?.Shine_Banner;
     this.AnalyseSection = this.businessLoanJson?.Analyse_Section;
     this.WhatToExpectSection = this.businessLoanJson?.What_To_Expect_Section;
+    this.shine_comparison = this.businessLoanJson?.Shine_Comparison_Section;
     this.HowShineWillHelpSection = this.businessLoanJson?.How_Shine_Will_Help_Section;
     this.Parameter = this.HowShineWillHelpSection?.Parameter.map((res: {Parameter: any; Icon: any; }) =>({
       icon : res?.Icon,
@@ -179,9 +179,9 @@ openPopup(data:any){
       popupCopy: res?.Pop_up_copy
     }));
 
-    this.summarySection = businessloansonlineJson?.Summary_Section;
+    this.summarySection = this.businessLoanJson?.Summary_Section;
 
-    this.TestimonialsJson = businessloansonlineJson.Shine_Testimonial;
+    this.TestimonialsJson = this.businessLoanJson.Shine_Testimonial;
 
     this.faqs = this.businessLoanJson?.Faqs?.FAQs;
 
