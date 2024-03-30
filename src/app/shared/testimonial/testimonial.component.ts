@@ -20,7 +20,6 @@ export class TestimonialComponent implements OnInit {
   selectedValue: any;
   @Input() testimonialData: any;
   
-  testimonialsJson:any
 
   
   constructor(private cdr: ChangeDetectorRef) { }
@@ -66,11 +65,6 @@ export class TestimonialComponent implements OnInit {
     this.selectedValue = star;
   }
 
-  getTestimonials(){
-    this.testimonialsJson = businessloansonlineJson;
 
-    
-
-  }
 
 }

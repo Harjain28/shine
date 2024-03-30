@@ -112,7 +112,7 @@
                     <div class="setSilder">
                       <div class="textSilder">
                         <img src="./assets/LandingPage/checkStar.svg" alt="">
-                        <span>Increase Loan Possibility!</span>
+                        <span>{{WhatToExpectSection?.Background?.imageText}}</span>
                       </div>
                       <div class="laptopAnderImg">
                         <img src="./assets/LandingPage/laptopAnder.png" alt="">
@@ -124,7 +124,7 @@
                     <div class="setSilder">
                       <div class="textSilder">
                         <img src="./assets/LandingPage/checkStar.svg" alt="">
-                        <span>Increase Loan Possibility!</span>
+                        <span>{{WhatToExpectSection?.Background1?.imageText}}</span>
                       </div>
                       <div class="laptopAnderImg">
                         <img src="./assets/LandingPage/laptopAnder.png" alt="">
@@ -136,7 +136,7 @@
                     <div class="setSilder">
                       <div class="textSilder">
                         <img src="./assets/LandingPage/checkStar.svg" alt="">
-                        <span>Increase Loan Possibility!</span>
+                        <span>{{WhatToExpectSection?.Background2?.imageText}}</span>
                       </div>
                       <div class="laptopAnderImg">
                         <img src="./assets/LandingPage/laptopAnder.png" alt="">
@@ -148,7 +148,7 @@
                     <div class="setSilder">
                       <div class="textSilder">
                         <img src="./assets/LandingPage/checkStar.svg" alt="">
-                        <span>Increase Loan Possibility!</span>
+                        <span>{{WhatToExpectSection?.Background3?.imageText}}</span>
                       </div>
                       <div class="laptopAnderImg">
                         <img src="./assets/LandingPage/laptopAnder.png" alt="">
@@ -277,8 +277,8 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="content">
-            <h3>Guaranteed Loan Success Starts Here</h3>
-            <p>Follow our tailored advice for a guaranteed shot at loan approval.</p>
+            <h3>{{summarySection?.Header}}</h3>
+            <p>{{summarySection?.Subheader}}</p>
           </div>
         </div>
         <div class="col-lg-11 col-md-12">
@@ -319,6 +319,6 @@
 </div>
 
 
-  <app-testimonial [testimonialData]="Sme_Testimonial"></app-testimonial>
+  <app-testimonial [testimonialData]="TestimonialsJson"></app-testimonial>
 
-  <app-faq></app-faq>
+  <app-faq [faqsData]="faqs"></app-faq>

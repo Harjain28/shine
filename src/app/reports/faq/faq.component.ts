@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { businessloansonlineJson } from 'src/app/pages/landing-page/lendingpage';
@@ -11,19 +11,16 @@ import { businessloansonlineJson } from 'src/app/pages/landing-page/lendingpage'
   styleUrls: ['./faq.component.scss']
 })
 export class FaqComponent {
-  faq:any;
   faqs: any;
 
+  @Input() faqsData :any;
+
   ngOnInit(): void {
-    this.getFAQ();
-    console.log(businessloansonlineJson.Faqs.FAQs)
-    
+    this.getFAQ();    
   }
 
   getFAQ(){
-    this.faq = businessloansonlineJson;
-
-    this.faqs = this.faq?.Faqs?.FAQs.map((res: { Question: any; Answer: any; }) =>({
+    this.faqs = this.faqsData.map((res: { Question: any; Answer: any; }) =>({
       question: res?.Question,
       answer: res.Answer
     }));

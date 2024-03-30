@@ -21,7 +21,7 @@ export class AppComponent {
   }
 
   isHeader2Visible(): boolean {
-    return this.router.url.includes('/in')
+    return !this.router.url.includes('report') 
   }
 
 
