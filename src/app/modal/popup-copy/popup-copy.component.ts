@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MaterialModule } from 'src/app/material.module';
-import { shineLendingPageJSON } from 'src/app/pages/landing-page/lendingpage';
+import { shineLendingPageJSON } from 'src/app/JsonFiles/lendingpage';
 
 @Component({
   selector: 'app-popup-copy',

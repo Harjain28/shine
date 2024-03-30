@@ -9,7 +9,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { FaqComponent } from 'src/app/reports/faq/faq.component';
 import { TestimonialComponent } from 'src/app/shared/testimonial/testimonial.component';
-import { shineLendingPageJSON } from './lendingpage';
+import { shineLendingPageJSON } from '../../JsonFiles/lendingpage';
 import { PopupCopyComponent } from 'src/app/modal/popup-copy/popup-copy.component';
 import { MatDialog } from '@angular/material/dialog';
 

@@ -18,7 +18,9 @@ import { BuildBureauPopupComponent } from '../modal/build-bureau-popup/build-bur
 import { CreditJourneyPopupComponent } from '../modal/credit-journey-popup/credit-journey-popup.component';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { ApiService } from '../services/api.service';
-import { shineLendingPageJSON } from '../pages/landing-page/lendingpage';
+import { shineLendingPageJSON } from '../JsonFiles/lendingpage';
+import { Mixed3Component } from '../charts/mixed3/mixed3.component';
+import { Mixed4Component } from '../charts/mixed4/mixed4.component';
 
 
 
@@ -26,7 +28,7 @@ import { shineLendingPageJSON } from '../pages/landing-page/lendingpage';
   selector: 'app-reports',
   standalone: true,
   imports: [CommonModule,Mixed2Component,BarComponent,PieComponent,HistogramComponent,
-    MixedComponent,SemiDoughnutComponent,DoughnutComponent,FaqComponent,
+    MixedComponent,SemiDoughnutComponent,Mixed3Component,Mixed4Component,DoughnutComponent,FaqComponent,
     MatProgressBarModule,MatExpansionModule,MatFormFieldModule,MatCheckboxModule,MatIconModule,CarouselModule],
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.scss']
