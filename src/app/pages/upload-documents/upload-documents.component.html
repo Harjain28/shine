@@ -1,56 +1,55 @@
-<div class=" selectForm formMinsize v2checksection">
-    <div class="blueBack"></div>
-    <div class="container mobilePd">
+<div class="v2checksection selectForm formMinsize " *ngIf="  !isBrowser &&!showEligible">
+  <div class="blueBack"></div>
+  <div class="container mobilePd">
 
-        <div class="row">
-            <div class="col-xl-8 col-lg-8 col-md-12 m-auto">
+    <div class="row">
+      <div class="col-xl-8 col-lg-8 col-md-12 m-auto">
 
-                <div class="v2checkBox">
+        <div class="v2checkBox">
 
-                    <div class="from">
-                        <!-- <p class="pb-3 text-center text-white">Almost there!</p> -->
+          <div class="from">
+            <!-- <p class="pb-3 text-center text-white">Almost there!</p> -->
 
-                        <h1 class=" text-center">Upload Document</h1>
-                        <!-- <h3>Enter your information to update your business details</h3> -->
+            <h1 class=" text-center">Upload Document</h1>
+            <!-- <h3>Enter your information to update your business details</h3> -->
 
-                        <div class="formSelect">
-                            <div class="example-container">
-                                <!-- <form [formGroup]="form2"> -->
-                                <div class="row">
+            <div class="formSelect">
+              <div class="example-container">
+                <!-- <form [formGroup]="form2"> -->
+                <div class="row">
 
-                                    <div class="box">
-                                        <!-- <div class="content">
+                  <div class="box">
+                    <!-- <div class="content">
                                 <h3>4. Bank Statements</h3>
                             </div> -->
-                                        <div class="minHeight">
-                                            <div class="boxSpace">
+                    <div class="minHeight">
+                      <div class="boxSpace">
 
-                                                <div class="upload">
-                                                    <button
-                                                        class="btn">Upload<mat-icon>keyboard_arrow_right</mat-icon></button>
-                                                    <input type="file" (change)="onFileSelected($event)">
-                                                </div>
-                                                <p class="text-white">Note: 12 months bank statements</p>
+                        <div class="upload">
+                          <button class="btn">Upload<mat-icon>keyboard_arrow_right</mat-icon></button>
+                          <input type="file" (change)="onFileSelected($event)">
+                        </div>
+                        <p class="text-white">Note: 12 months bank statements</p>
 
-                                                <div class="NextOr">
-                                                    <span>Or</span>
-                                                </div>
+                        <div class="NextOr">
+                          <span>Or</span>
+                        </div>
 
-                                                <div class="sendOtpButton">
-                                                    <button class="btn" (click)="submitBankStatement()">Net Banking
-                                                        <mat-icon>keyboard_arrow_right</mat-icon></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="sendOtpButton">
+                          <button class="btn" (click)="submitBankStatement()">Net Banking
+                            <mat-icon>keyboard_arrow_right</mat-icon></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
 
-                                    <div class="checkBox" *ngIf="filteredStatemenetObject?.uploadStatus">
-                                        <span>
-                                            <mat-icon>check</mat-icon>
-                                        </span>
-                                    </div>
-                                    <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"
+                  <div class="checkBox" *ngIf="filteredStatemenetObject?.uploadStatus">
+                    <span>
+                      <mat-icon>check</mat-icon>
+                    </span>
+                  </div>
+                  <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"
                         [ngClass]=" form2.controls['personalPan'].touched &&
                                           form2.controls['personalPan'].hasError('required') ||  (form2.controls['personalPan'].dirty || form2.controls['personalPan'].touched) &&
                                           form2.controls['personalPan'].hasError('pattern') || showValidatePANError ? 'isvaliderror' :  ''">
@@ -120,7 +119,7 @@
                         </div>
                       </div> -->
 
-                                    <!-- <div class="col-md-12">
+                  <!-- <div class="col-md-12">
                         <div class="upload">
                           <label class="text-white"><strong>12 months Bank Statement</strong></label>
   
@@ -135,17 +134,64 @@
                         </div>
                       </div> -->
 
-                                  
-
-                                </div>
-                                <!-- </form> -->
-                            </div>
-                        </div>
 
 
-                    </div>
                 </div>
+                <!-- </form> -->
+              </div>
             </div>
+
+
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</div>
+
+<div class="v2checksection progressBaar" *ngIf="showEligible">
+  <div class="blueBack"></div>
+  <div class="container mobilePd">
+    <div class="row">
+      <div class="col-xl-8 col-lg-8 col-md-12 m-auto">
+        <div class="v2checkBox">
+          <div class="from">
+            <!-- <h3>
+              Almost There! <br />
+              We’re Calculating Your Best Fits!
+            </h3>
+ -->
+
+
+            <div class="progress-wrapper">
+              <div class="progress-container" #progressContainer>
+                <div class="progress" #progressbar></div>
+                <div class="progress-text">
+                  <div class="data" #progresstext>{{progress}}<sub>%</sub></div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <span class="mt-2">Please wait for {{transform(ncjcount)}} sec</span>
+
+            <div class="BoxAnimation">
+              <div class="progressBox">
+                <ng-container *ngFor="let text of loaderContent; let i = index">
+                  <p *ngIf="i === currentIndex"> {{text}}​ </p>
+                </ng-container>
+              </div>
+              <div class="progressBox box1">
+                <p> Your credit score is higher than 60% of people who got a loan in last 30 days​ </p>
+              </div>
+              <div class="progressBox box2">
+                <p> Your credit score is higher than 60% of people who got a loan in last 30 days​ </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

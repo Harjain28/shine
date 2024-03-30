@@ -27,11 +27,11 @@ export class PaymentComponent {
       this.currentDate = this.datePipe.transform(new Date(), 'yyyy-MM-ddTHH:mm:ss.SSS\'Z\'', 'UTC')
     }
 
-    goToForm1(){
-      this.router.navigate(['/in/register'])
-    }
+
 
     getForPaymentMethod() {
+      this.router.navigate(['/in/bank_statement'])
+
       let requestData: any = {}; 
         requestData["dateTime"] = this.currentDate ;
         requestData["amount"] = 9000;
@@ -66,8 +66,10 @@ export class PaymentComponent {
               this.reqData = res?.reqData;
               this.merchantId = res?.merchantId;
             //  window.location.href = res?.url;
+            
 
               this.confirmPayment();
+
 
            
             },

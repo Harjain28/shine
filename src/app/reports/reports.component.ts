@@ -18,6 +18,7 @@ import { BuildBureauPopupComponent } from '../modal/build-bureau-popup/build-bur
 import { CreditJourneyPopupComponent } from '../modal/credit-journey-popup/credit-journey-popup.component';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { ApiService } from '../services/api.service';
+import { shineLendingPageJSON } from '../pages/landing-page/lendingpage';
 
 
 
@@ -42,8 +43,14 @@ export class ReportsComponent {
   BusinessSectionBlock: boolean = true;
   paramsObject: any;
   expandDebtRatioSection!: boolean;
+  businessLoanJson: any;
+  faqs: any;
 
   constructor(private dialog: MatDialog, private api: ApiService ) { }
+
+  ngOnInit(): void {
+    this.getFaq();
+  }
 
   postForReport(){
       let requestData: any = {}; 
@@ -105,6 +112,12 @@ export class ReportsComponent {
      },
    },
  };
+
+ getFaq(){
+  this.businessLoanJson = shineLendingPageJSON;
+  this.faqs = this.businessLoanJson?.Faqs?.FAQs;
+
+ }
 
 
   openPopup(){
