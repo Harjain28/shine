@@ -1,0 +1,14 @@
+<svg id="Group_2929" data-name="Group 2929" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58.172" height="59.219" viewBox="0 0 58.172 59.219">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_2229" data-name="Rectangle 2229" width="58.172" height="59.219" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_2928" data-name="Group 2928" transform="translate(0 0)">
+    <g id="Group_2927" data-name="Group 2927" transform="translate(0 0)" clip-path="url(#clip-path)">
+      <path id="Path_5692" data-name="Path 5692" d="M29.074,45.2A21.544,21.544,0,0,0,15.242,18.054,20.482,20.482,0,0,0,8.584,17" transform="translate(21.041 -8.943)" fill="none" stroke="#e2e2e2" stroke-width="2"/>
+      <path id="Path_5693" data-name="Path 5693" d="M38.544,17a21.544,21.544,0,1,0,0,43.089A21.206,21.206,0,0,0,59.034,45.2" transform="translate(-8.92 -8.943)" fill="none" stroke="#12ba9b" stroke-linecap="round" stroke-width="8" opacity="0.8"/>
+    </g>
+  </g>
+  <text id="_45_" data-name="45%" transform="translate(30.172 33.401)" fill="#3f3f3f" font-size="12" font-family="Poppins-SemiBold, Poppins" font-weight="600" letter-spacing="0.02em"><tspan x="-13" y="0">45%</tspan></text>
+</svg>

@@ -2214,7 +2214,7 @@
                     background-color: #fff;
 
                     td {
-                        padding: 15px 30px;
+                        padding: 15px 20px;
                         font-size: 16px;
                         font-weight: 600;
                         font-family: Poppins !important;
@@ -2225,10 +2225,10 @@
                             position: absolute;
                             top: 50%;
                             transform: translate(0%, -50%);
-                            right: -10px;
+                            right: 4px;
 
                             img {
-                                width: 60px;
+                                width: 54px;
                             }
                         }
 
@@ -2629,6 +2629,772 @@
                 font-weight: 600;
                 font-family: Poppins !important;
                 color: var(--main2);
+            }
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .topBannerHeader {
+        padding: 50px 0px;
+    
+        .bannerText {
+    
+            h1 {
+                font-size: 25px;
+            }
+    
+            ul {
+                padding-left: 0px;
+                list-style: none;
+                margin-bottom: 0px;
+            }
+        }
+    }
+    
+    .creditReportSection {
+    
+        .title {
+            margin-bottom: 20px;
+    
+            &:before {
+                display: none;
+            }
+    
+            h2 {
+                font-size: 24px;
+
+                span{
+                    padding: 0px;
+                }
+            }
+        }
+    
+        .scoreBox {
+            padding: 15px 15px;
+    
+    
+    
+            h3 {
+                font-size: 15px;
+            }
+    
+            .box {
+    
+                span {
+                    font-size: 12px;
+                }
+            }
+        }
+    
+        .loanHistory {
+            padding: 22px 22px;
+    
+            .minus {
+                top: 12px;
+                right: 12px;
+    
+                span {
+                    width: 20px;
+                    height: 20px;
+                    font-size: 16px;
+                }
+            }
+    
+            .plus {
+                top: 12px;
+                right: 12px;
+    
+                span {
+                    width: 20px;
+                    height: 20px;
+                    font-size: 16px;
+                }
+            }
+    
+            .title {
+                font-size: 15px;
+            }
+    
+            .calendarBox {
+    
+                .otherAnalysis {
+                    padding: 20px;
+
+                    .banksBox{
+                        // display: block;
+                        flex-wrap: wrap;
+                    }
+                }
+    
+                .summaryBox {
+    
+                    h4 {
+                        font-size: 15px;
+                    }
+    
+                    .summaryContent {
+                        display: block;
+                    }
+                }
+
+                .defaultHistory{
+
+                    .numberBox{
+
+                        li{
+                            min-height: auto;
+                            padding: 24px 8px;
+
+                            span{
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .multiBox {
+                padding: 20px 20px;
+                margin-top: 10px;
+            }
+        }
+    
+        .numberBox {
+    
+            .numberText {
+                padding: 20px 22px;
+            }
+        }
+    }
+    
+    .gstFilings {
+    
+        .title {
+            margin-bottom: 20px;
+    
+            &:before {
+                display: none;
+            }
+    
+            h2 {
+                font-size: 24px;
+                padding: 0px 30px;
+
+                span{
+                    padding: 0px;
+                }
+            }
+        }
+    
+        .loanHistory {
+            padding: 24px 24px;
+    
+            .title {
+                font-size: 15px;
+            }
+    
+            .gstnumberBox {
+                padding: 14px 18px;
+            }
+    
+            .calendarBox {
+                margin-top: 14px;
+    
+                h3 {
+                    font-size: 15px;
+                }
+    
+                ul {
+                    width: 100%;
+                    margin: 0 auto 10px;
+                }
+            }
+    
+            .multiBox {
+                padding: 20px 18px;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .bankingHistory {
+
+        .title {
+            margin-bottom: 20px;
+    
+            &:before {
+                display: none;
+            }
+    
+            h2 {
+                font-size: 24px;
+                padding: 0px 30px;
+
+                span{
+                    padding: 0px;
+                }
+            }
+        }
+    
+        .affordability {
+            margin-bottom: 8px;
+    
+            h3 {
+                font-size: 18px;
+            }
+        }
+    
+        .businessTurnover {
+            padding: 22px 22px;
+            height: auto !important;
+            margin-top: 20px;
+    
+            .minus {
+                top: 12px;
+                right: 12px;
+    
+                span {
+                    width: 20px;
+                    height: 20px;
+                    font-size: 16px;
+                }
+            }
+    
+            .plus {
+                top: 12px;
+                right: 12px;
+    
+                span {
+                    width: 20px;
+                    height: 20px;
+                    font-size: 16px;
+                }
+            }
+    
+            h3 {
+                padding: 0px 30px;
+            }
+    
+            .valatilityBox {
+                height: auto;
+            }
+    
+            .chart {
+                margin-bottom: 12px;
+                display: flex;
+                align-items: center;
+                gap: 40px;
+                flex-wrap: wrap;
+    
+                canvas {
+                    width: 44% !important;
+                    height: 296px !important;
+                }
+    
+                &.chart1 {
+                    gap: 10px;
+    
+                    canvas {
+                        width: 100% !important;
+                    }
+                }
+    
+                &.chartLine {
+                    gap: 10px;
+    
+                    canvas {
+                        height: 100% !important;
+                    }
+                }
+    
+                &.chart2 {
+                    display: flex;
+                    justify-content: center;
+    
+                    canvas {
+                        width: 220px !important;
+                        height: 220px !important;
+                    }
+                }
+    
+                img {
+                    display: flex;
+                    margin: 0 auto;
+                    height: 200px;
+                    width: 100%;
+                }
+    
+                ul {
+                    padding-left: 0px;
+                    list-style: none;
+                    margin-bottom: 0px;
+    
+                    li {
+                        color: #3F3F3F;
+                        font-size: 12px;
+                        font-weight: normal;
+                        line-height: 16px;
+                        font-family: Poppins !important;
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        margin-bottom: 8px;
+    
+                        span {
+                            width: 15px;
+                            height: 15px;
+                            background-color: #fff;
+                            display: flex;
+                            border-radius: 50px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+    
+                            span {
+                                width: 8px;
+                                height: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .chequeBounces {
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                margin-top: -20px;
+    
+                span {
+                    font-size: 50px;
+                    font-weight: 500;
+                    line-height: 26px;
+                    color: #FF7B24;
+                    font-family: Poppins !important;
+    
+                    small {
+                        font-size: 12px;
+                    }
+                }
+    
+                img {
+                    width: 110px;
+                    height: auto;
+                }
+            }
+    
+            .scoreProgress {
+    
+                ul {
+                    padding-left: 0px;
+                    list-style: none;
+                    margin-bottom: 0px;
+    
+                    li {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        justify-content: space-between;
+                        padding: 8px 0px;
+    
+                        span {
+                            color: #3F3F3F;
+                            font-size: 13px;
+                            font-weight: 500;
+                            font-family: Poppins !important;
+                            position: relative;
+    
+                            mat-progress-bar {
+                                position: absolute;
+                                right: 32px;
+                                top: 7px;
+                                width: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .progressBarColor {
+    
+                .lineColor {
+    
+                    .colorChnage {
+    
+                        &:nth-of-type(1) {
+    
+                            span {
+                                mat-progress-bar {
+    
+                                    ::ng-deep {
+    
+                                        .mdc-linear-progress__bar {
+    
+                                            .mdc-linear-progress__bar-inner {
+                                                border-color: #EC1111;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-of-type(2) {
+    
+                            span {
+                                mat-progress-bar {
+    
+                                    ::ng-deep {
+    
+                                        .mdc-linear-progress__bar {
+    
+                                            .mdc-linear-progress__bar-inner {
+                                                border-color: #FF7B24;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-of-type(3) {
+    
+                            span {
+                                mat-progress-bar {
+    
+                                    ::ng-deep {
+    
+                                        .mdc-linear-progress__bar {
+    
+                                            .mdc-linear-progress__bar-inner {
+                                                border-color: #C3E128;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-of-type(4) {
+    
+                            span {
+                                mat-progress-bar {
+    
+                                    ::ng-deep {
+    
+                                        .mdc-linear-progress__bar {
+    
+                                            .mdc-linear-progress__bar-inner {
+                                                border-color: #12BA9B;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-of-type(5) {
+    
+                            span {
+                                mat-progress-bar {
+    
+                                    ::ng-deep {
+    
+                                        .mdc-linear-progress__bar {
+    
+                                            .mdc-linear-progress__bar-inner {
+                                                border-color: #6A2FC2;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .downwardBox {
+                border: 1px solid #6A2FC2;
+                border-radius: 10px;
+                padding: 12px 22px;
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+    
+                img {
+                    width: 16px;
+                    height: 16px;
+                }
+    
+                .downwardContent {
+    
+                    h4 {
+                        font-size: 14px;
+                        color: var(--main1);
+                        margin-bottom: 2px;
+                        font-weight: 600;
+                        line-height: 18px;
+                        font-family: Poppins !important;
+                    }
+    
+                    p {
+                        font-size: 13px;
+                        font-weight: normal;
+                        margin-bottom: 4px;
+                        font-family: Poppins !important;
+                        color: #3F3F3F;
+                        line-height: 16px;
+                        text-align: left;
+                        padding: 0px 0px;
+                    }
+    
+                    span {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 3px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        font-family: Poppins !important;
+                        color: var(--main2);
+                    }
+                }
+            }
+    
+            .summaryBox {
+                margin-top: 20px;
+            }
+        }
+
+        p{
+            padding: 0px 0px !important;
+        }
+    
+    }
+
+    .actionImprove {
+        background-color: #fafafa;
+    
+        .text {
+            margin-bottom: 20px;
+    
+            h3 {
+                font-size: 32px;
+                font-weight: 700;
+                margin-bottom: 5px;
+                color: #3F3F3F;
+                text-align: center;
+            }
+    
+            p {
+                color: #3F3F3F;
+                font-weight: normal;
+                font-size: 14px;
+                font-family: Poppins !important;
+                line-height: 20px;
+                margin-bottom: 0px;
+                text-align: center;
+            }
+        }
+    
+        .improveBox {
+            box-shadow: 0px 3px 10px #272D3B24;
+            border-radius: 20px;
+            background-color: #fff;
+            padding: 24px;
+            height: 100%;
+    
+            h3 {
+                text-align: center;
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 10px;
+                color: #3F3F3F;
+            }
+    
+            .numberImg {
+                width: 70%;
+            }
+    
+            .howBox {
+                border: 1px solid #E8E8E8;
+                border-radius: 10px;
+                padding: 15px 20px;
+                background-color: #fff;
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+    
+                img {
+                    width: 16px;
+                    height: 16px;
+                }
+    
+                .content {
+    
+                    h5 {
+                        font-size: 14px;
+                        font-weight: 600;
+                        margin-bottom: 10px;
+                        color: var(--main1);
+                        line-height: 18px;
+                    }
+    
+                    p {
+                        font-size: 13px;
+                        font-weight: normal;
+                        margin-bottom: 0px;
+                        color: #3F3F3F;
+                        line-height: 18px;
+                    }
+                }
+            }
+    
+            .summaryBox {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                width: 100%;
+    
+    
+    
+                .box {
+                    width: 50%;
+                    padding: 20px 20px;
+                    background: #fff;
+                    height: 100%;
+    
+                    &:nth-child(1),
+                    &:nth-child(3) {
+                        border-right: 1px solid #E6E6E6;
+                    }
+    
+                    &:nth-child(1),
+                    &:nth-child(2) {
+                        border-bottom: 1px solid #E6E6E6;
+                    }
+    
+                    .summaryContent {
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        height: 40px;
+    
+                        img {
+                            width: auto;
+                            height: 22px;
+                        }
+    
+                        span {
+                            text-align: center;
+                            font-size: 16px;
+                            font-weight: 600;
+                            margin-bottom: 0px;
+                            font-family: Poppins !important;
+                            color: #3F3F3F;
+                        }
+                    }
+    
+                    ul {
+                        padding-left: 0px;
+                        list-style: none;
+                        margin-bottom: 0px;
+                        margin-top: 10px;
+    
+                        li {
+                            position: relative;
+                            padding: 0px 20px 8px;
+                            font-size: 14px;
+                            font-weight: 500;
+                            margin-bottom: 0px;
+                            font-family: Poppins !important;
+                            color: #3F3F3F;
+    
+    
+                            span {
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50px;
+                                display: block;
+                                position: absolute;
+                                left: 0px;
+                                top: 6px;
+                            }
+                        }
+                    }
+                }
+    
+                .plusBox {
+                    width: 50%;
+                    padding: 62px 0px;
+                    height: 100%;
+                    background: #F6F6F6;
+                    text-align: center;
+    
+                    b {
+                        border: 1px solid #D8D8D8;
+                        border-radius: 8px;
+                        background-color: #fff;
+                        font-size: 22px;
+                        font-weight: 700;
+                        width: 30px;
+                        height: 30px;
+                        margin: 0 auto 8px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+    
+                    span {
+                        color: #3F3F3F;
+                        text-transform: uppercase;
+                        font-size: 12px;
+                        font-weight: normal;
+                        font-family: Poppins !important;
+                    }
+                }
+            }
+        }
+    
+    
+        .overollScore {
+            padding: 18px 18px;
+
+            h2{
+                margin-bottom: 20px;
+                line-height: 25px;
+                padding: 0px 30px;
+            }
+    
+            .boxRight {
+    
+                .border-right:nth-child(1),
+                .border-right:nth-child(2) {
+    
+                    .overallBox {
+                        border-right: none;
+                        border-bottom: 1px solid #A070E8;
+                    }
+                }
+            }
+        }
+    }
+
+    .probabilityLoan {
+
+        .title {
+            margin-bottom: 20px;
+    
+            &:before {
+                display: none;
+            }
+    
+            h2 {
+                font-size: 24px;
+                padding: 0px 20px;
+
+                span{
+                    padding: 0px;
+                }
             }
         }
     }
