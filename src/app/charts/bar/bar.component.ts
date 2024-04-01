@@ -14,17 +14,12 @@ export class BarComponent {
   @ViewChild('chartCanvas3') chartCanvas3!: ElementRef;
 
   private chart3!:Chart;
-
-
+  
   ngOnInit(): void{
-
   }
 
   ngAfterViewInit(): void {
-  
-
     this.mixedChart();
-
   }
 
    mixedChart(): void{
@@ -85,10 +80,6 @@ export class BarComponent {
    
   }
 
-  
-
-
-  
   private getColor2(value: number): string {
     if(value > 100){
       return '#400993'
@@ -104,6 +95,4 @@ export class BarComponent {
       return '#A070E2'; 
     }
   }
-
-  
 }

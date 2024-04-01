@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Chart, { ChartData } from 'chart.js/auto';
 
@@ -12,7 +12,10 @@ import Chart, { ChartData } from 'chart.js/auto';
 export class SemiDoughnutComponent {
   @ViewChild('semiDoughnutCanvas') semiDoughnutCanvas!: ElementRef;
 
+  @Input() semiDoughtnutJSONData :any;
   private semiDoughnutChart!: Chart;
+  sdValues: any;
+  sdColor: any;
 
 
   ngAfterViewInit(): void {
@@ -22,13 +25,14 @@ export class SemiDoughnutComponent {
   }
 
   private createSemiDoughnutChart(): void {
-    const dataValues = [50,40]; // Example data values
-    const labels = ['A']; // Example labels
-    const backgroundColors = [ '#12BA9B','#FFD700']
-    // Example background colors
+
+    this.sdValues = this.semiDoughtnutJSONData?.Values;
+    this.sdColor = this.semiDoughtnutJSONData?.Color;
+
+    const dataValues = [this.sdValues[0],this.sdValues[1]]; 
+    const backgroundColors = [ this.sdColor[0], this.sdColor[1]]
   
     const chartData: ChartData = {
-    //  labels: labels,
       datasets: [{
         data: dataValues,
         backgroundColor: backgroundColors,

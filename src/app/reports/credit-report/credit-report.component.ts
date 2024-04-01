@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SemiDoughnutComponent } from 'src/app/charts/semi-doughnut/semi-doughnut.component';
 import { DoughnutComponent } from 'src/app/charts/doughnut/doughnut.component';
@@ -20,9 +20,13 @@ import { BuildBureauPopupComponent } from 'src/app/modal/build-bureau-popup/buil
 })
 export class CreditReportComponent {
 
+  @Input() creditReportsChartsData: any;
+
   expandSection!: boolean;
   expandCurrentCreditSection!: boolean;
   expandBlocks!: boolean;
+  doughtnutData: any;
+  semiDoughtnutData: any;
 
   constructor(private dialog: MatDialog){}
 
@@ -42,6 +46,8 @@ export class CreditReportComponent {
 
   
   ngOnInit(): void {
+    this.doughtnutData = this.creditReportsChartsData?.Doughtnut;
+    this.semiDoughtnutData = this.creditReportsChartsData?.Semi_Doughtnut;
   }
 
   expand(){

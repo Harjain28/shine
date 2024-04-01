@@ -106,6 +106,9 @@ export class Form1Component implements OnInit {
     requestData["businessPan"] =  formValue.businessPan;
     requestData["propertyOwnership"] =  formValue.propertyOwnership;
     requestData["turnover"] =  this.unformattedX;
+
+    localStorage.setItem("reqData",JSON.stringify(requestData));
+
     if (this.validatePin) {
       this.showValidatepinError = false;
     } else {

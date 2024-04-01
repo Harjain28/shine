@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -26,11 +26,14 @@ import { BarComponent } from 'src/app/charts/bar/bar.component';
 })
 export class BankingBusinessComponent {
 
+
   expandBusinessSection!: boolean;
   expandBalanceSection!: boolean;
   balanceSectionBlock: boolean = true;
   BusinessSectionBlock: boolean = true;
   expandDebtRatioSection!: boolean;
+  doughtnutJSONData: any;
+  doughtnutData: any;
 
 
 
@@ -43,6 +46,10 @@ export class BankingBusinessComponent {
   ngOnInit(): void {
   }
 
+
+
+
+
   expandBankingBusniess(){
     this.expandBusinessSection = true;
     this.balanceSectionBlock = false;
@@ -53,8 +60,6 @@ export class BankingBusinessComponent {
     this.expandBusinessSection = false;
     this.balanceSectionBlock = true; 
        this.BusinessSectionBlock = true;
-
-
   }
 
   expandBankingBalance(){
@@ -62,28 +67,22 @@ export class BankingBusinessComponent {
     this.balanceSectionBlock = false;
     this.expandBusinessSection = false;
     this.BusinessSectionBlock = false;
-
-    
   }
 
   minimizeBankingBalance(){
     this.expandBalanceSection = false;
     this.balanceSectionBlock = true;
     this.BusinessSectionBlock = true;
-
-
   }
 
   expandBankingBlanceBlock(){
     this.expandBusinessSection = false;
     this.expandBalanceSection = true;
-
   }
 
   expandBusinessSectionBlock(){
     this.expandBalanceSection = false;
     this.expandBusinessSection = true;
-
   }
 
   
@@ -94,7 +93,6 @@ export class BankingBusinessComponent {
 
   mnimizeDebtRatioBlock(){
     this.expandDebtRatioSection = false;
-
   }
 
 

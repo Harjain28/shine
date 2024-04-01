@@ -1,4 +1,4 @@
-<div class="v2checksection selectForm formMinsize " *ngIf="  !isBrowser &&!showEligible">
+<div class="v2checksection selectForm formMinsize " *ngIf="!isBrowser &&!showEligible">
   <div class="blueBack"></div>
   <div class="container mobilePd">
 
@@ -26,8 +26,8 @@
                       <div class="boxSpace">
 
                         <div class="upload">
-                          <button class="btn">Upload<mat-icon>keyboard_arrow_right</mat-icon></button>
-                          <input type="file" (change)="onFileSelected($event)">
+                          <button class="btn"(click)="uploadDocumentLink()">Upload<mat-icon>keyboard_arrow_right</mat-icon></button>
+                          <!-- <input type="file"> -->
                         </div>
                         <p class="text-white">Note: 12 months bank statements</p>
 
@@ -36,7 +36,7 @@
                         </div>
 
                         <div class="sendOtpButton">
-                          <button class="btn" (click)="submitBankStatement()">Net Banking
+                          <button class="btn" (click)="netBankinglink()">Net Banking
                             <mat-icon>keyboard_arrow_right</mat-icon></button>
                         </div>
                       </div>
@@ -195,3 +195,7 @@
     </div>
   </div>
 </div>
+
+<!-- <div *ngIf="iframeUrl">
+  <iframe src="iframeUrl" width="800" height="600" frameborder="0"></iframe>
+</div> -->

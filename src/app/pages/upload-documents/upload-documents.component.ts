@@ -14,6 +14,7 @@ import { EligibilityPopupComponent } from 'src/app/modal/eligibility-popup/eligi
 import {  ElementRef,  ViewChild } from '@angular/core';
 import {  Subscription,  take, timer } from "rxjs";
 import { Location } from "@angular/common";
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 @Component({
   selector: 'app-upload-documents',
   standalone: true,
@@ -42,6 +43,8 @@ export class UploadDocumentsComponent {
   ncjcount: number = 60;
   tick = 1000;
   paramsObject: any;
+  iframeUrl!: SafeResourceUrl;
+
 
 
   progress = 0;
@@ -62,6 +65,10 @@ export class UploadDocumentsComponent {
   showValidatePANError!: boolean ;
   showEligible: boolean = false;
   isBrowser: boolean = false;
+  confirmUrl: any;
+  transID: any;
+  showiFrame: boolean = false;
+
  
   constructor(private api: ApiService,
       private route: ActivatedRoute,
@@ -69,6 +76,7 @@ export class UploadDocumentsComponent {
       private dialog: MatDialog,
       private location: Location,  
       private cdr: ChangeDetectorRef,
+      private sanitizer: DomSanitizer,
 
       public router: Router) {
     this.route.params.subscribe((params) => {
@@ -101,6 +109,101 @@ export class UploadDocumentsComponent {
        
 
     this.cdr.detectChanges();
+  }
+
+  callPerfiosCallback(id:any){
+
+    setInterval(() => {
+      const params = { ...this.paramsObject.params };
+        const formData = new FormData();
+        formData.append("PerfiosTransactionId", id);
+        formData.append("ClientTransactionId", '');
+        formData.append("Status", '')
+        formData.append("ErrorCode", '');
+        formData.append("ErrorMessage", '');
+    
+       
+        this.api.postForPerfiosCallback(`api/Remediation/PerfiosCallback`, formData, params)
+          .subscribe({
+            next: (res: any) => {
+               if (res) {
+               
+               }
+            },
+            error: error => {
+    
+              // this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
+            },
+            complete: () => {
+              ('Request complete');
+            }
+          });
+    
+        }, 15000); 
+        
+  }
+
+
+
+
+
+  netBankinglink(){
+    const defaultparams = {
+      mobile: "6281281878807",
+      callbackEnum: 0,
+    };
+    const params = { ...defaultparams, ...this.paramsObject.params };
+    this.api.getPayment(
+        `api/Remediation/NetBankingLink`,
+        params
+      )
+      .subscribe({
+        next: (res: any) => {
+          this.callPerfiosCallback(res?.transactionId);
+          this.submitBankStatement();
+      //   this.iframeUrl = res?.url;
+
+         //  window.location.href = res?.url;
+           
+
+        },
+        error: (error:any) => {
+        },
+        complete: () => {
+        //  ("Request complete");
+        },
+      });
+  }
+
+  uploadDocumentLink(){
+    const defaultparams = {
+      mobile: "6281281878807",
+      callbackEnum: 0,
+    };
+    const params = { ...defaultparams, ...this.paramsObject.params };
+    this.api
+      .getPayment(
+        `api/Remediation/UploadDocumentLink`,
+        params
+      )
+      .subscribe({
+        next: (res: any) => {
+
+           this.callPerfiosCallback(res?.transactionId);
+           this.submitBankStatement();
+       //   this.iframeUrl = res?.url;
+
+          //  window.location.href = res?.url;
+  
+
+         
+        },
+        error: (error:any) => {
+        },
+        complete: () => {
+        //  ("Request complete");
+        },
+      });
   }
 
 
@@ -152,7 +255,9 @@ export class UploadDocumentsComponent {
     
     //  this.api.uploadDocument(this.sharedData ,'Bank_Statement', params, file);
     }
+
       inputElement.value = '';
+      this.uploadDocumentLink();
   }
 
 

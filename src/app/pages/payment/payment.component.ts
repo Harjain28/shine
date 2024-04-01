@@ -30,12 +30,11 @@ export class PaymentComponent {
 
 
     getForPaymentMethod() {
-      this.router.navigate(['/in/bank_statement'])
 
       let requestData: any = {}; 
         requestData["dateTime"] = this.currentDate ;
         requestData["amount"] = 9000;
-        requestData["isMultiSettlement"] = true;
+        requestData["isMultiSettlement"] = "0";
         requestData["custMobile"] = "";
         requestData["apiKey"] = "";
         requestData["productId"] = "";
@@ -93,13 +92,17 @@ export class PaymentComponent {
               `api/Remediation/PaymentConfirmation`,
               params
             )
-            .subscribe(
-              (res: any) => {
-               
+            .subscribe({
+              next: (res: any) => {
+                this.router.navigate(['/in/bank_statement'])
+
               },
-              (err) => {
-              }
-            );
+              error: (error:any) => {
+              },
+              complete: () => {
+              //  ("Request complete");
+              },
+            });
         
       
     }
@@ -113,53 +116,20 @@ export class PaymentComponent {
           `api/Remediation/PaymentStatusCheck`,
           params
         )
-        .subscribe(
-          (res: any) => {
-           
+        .subscribe({
+          next: (res: any) => {
+        
+         
           },
-          (err) => {
-          }
-        );
+          error: (error:any) => {
+          },
+          complete: () => {
+          //  ("Request complete");
+          },
+        });
     }
   
-    netBankinglink(){
-      const defaultparams = {
-        mobile: this.mobileNo,
-        callbackEnum: 0,
-      };
-      const params = { ...defaultparams, ...this.paramsObject.params };
-      this.api.getPayment(
-          `api/Remediation/NetBankingLink`,
-          params
-        )
-        .subscribe(
-          (res: any) => {
-           
-          },
-          (err) => {
-          }
-        );
-    }
-  
-    uploadDocumentLink(){
-      const defaultparams = {
-        mobile: this.mobileNo,
-        callbackEnum: 0,
-      };
-      const params = { ...defaultparams, ...this.paramsObject.params };
-      this.api
-        .getPayment(
-          `api/Remediation/UploadDocumentLink`,
-          params
-        )
-        .subscribe(
-          (res: any) => {
-           
-          },
-          (err) => {
-          }
-        );
-    }
+ 
   }
   
   

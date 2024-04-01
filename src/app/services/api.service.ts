@@ -134,33 +134,19 @@ getwithHeader2(path: string, body: object = {} , params: HttpParams = new HttpPa
     return this.http.patch(`${this.API_URL}${path}`, body, {headers: this.httpOptions.headers , params}).pipe(catchError(this.formatErrors));
   }
 
-  perfiosCallback( params:any) {
-    const formData = new FormData();
-    formData.append("PerfiosTransactionId", ' ');
-    formData.append("ClientTransactionId", ' ');
-    formData.append("Status", ' ')
-    formData.append("ErrorCode", ' ');
-    formData.append("ErrorMessage", ' ');
-   
-    this.postForPerfiosCallback(`Remediation/PerfiosCallback`, formData, params)
-      .subscribe({
-        next: (res: any) => {
-           if (res) {
-           
-           }
-        },
-        error: error => {
 
-          // this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
-        },
-        complete: () => {
-          ('Request complete');
-        }
-      });
-
-}
 
 postForReport(path: string, body: object = {} , params: HttpParams = new HttpParams()) {
+  const posthttpOptions = {
+    headers: new HttpHeaders({
+      'accept': '*',
+      'Content-Type': 'application/json'
+    })
+  };    
+  return this.http.post(`${this.API_URL}${path}`,  body, {headers: posthttpOptions.headers , params}).pipe(catchError(this.formatErrors));
+}
+
+postMethod(path: string, body: object = {} , params: HttpParams = new HttpParams()) {
   const posthttpOptions = {
     headers: new HttpHeaders({
       'accept': '*',

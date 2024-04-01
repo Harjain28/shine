@@ -231,7 +231,7 @@
           <div class="scoreBox">
             <h3>Your Bureau Score</h3>
             <div class="scoreChart text-center">
-              <app-semi-doughnut></app-semi-doughnut>
+              <app-semi-doughnut [semiDoughtnutJSONData]="semiDoughtnutData"></app-semi-doughnut>
   
   
             </div>
@@ -315,7 +315,7 @@
               <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="creditContent">
                   <div class="currentChart">
-                    <app-doughnut></app-doughnut>
+                    <app-doughnut [doughtnutJSONData]="doughtnutData"></app-doughnut>
                     <ul>
                       <li>
                         <span style="border: 1px solid #12BA9B;"><span style="background-color: #12BA9B;"></span></span>
@@ -453,7 +453,7 @@
                     <div class="defaultHistory" style="box-shadow: 0px 3px 10px #272D3B24;">
                       <h3>Ratio Secured/Unsecured</h3>
                       <div class="currentChart">
-                        <app-doughnut></app-doughnut>
+                        <app-doughnut [doughtnutJSONData]="doughtnutData"></app-doughnut>
                         <ul>
                           <li>
                             <span style="border: 1px solid #12BA9B;"><span
@@ -525,7 +525,7 @@
                     <div class="defaultHistory" style="box-shadow: 0px 3px 10px #272D3B24;">
                       <h3>Ratio Credit Mix</h3>
                       <div class="currentChart">
-                        <app-doughnut></app-doughnut>
+                        <app-doughnut [doughtnutJSONData]="doughtnutData"></app-doughnut>
                         <ul>
                           <li>
                             <span style="border: 1px solid #12BA9B;"><span

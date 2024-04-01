@@ -67,6 +67,7 @@ export class OtpComponent implements OnInit{
 
   score: any;
   showThumbLabel: boolean = false;
+  requestData:any ={};
   constructor(
     public eventService: EventService,
     public router: Router,
@@ -79,6 +80,8 @@ export class OtpComponent implements OnInit{
 
     ngOnInit(): void {
       this.otpVerifyForm();
+      this.requestData = localStorage.getItem("reqData")
+      console.log(this.requestData.toString())
     }
    
 
@@ -230,50 +233,44 @@ export class OtpComponent implements OnInit{
   }
 
   resendOtp() {
-    // (this.istimer);
-    //  if (!this.istimer) {
-    //    this.counter = 60;
-    //    this.timeCounter();
-    //    let requestData = {};
-    //    requestData["landingPageSubVersion"] = this.router.url;
-    //    requestData["mobile"] = this.phoneNumber;
-    //    requestData["loanAmount"] = "";
-    //    this.istimer = true;
-    //    this.isResend = true;
-    //    const defaultparams = {
-    //      isMobileUpdated: false,
-    //      resend: true,
-    //    };
-    //    const params = { ...defaultparams, ...this.paramsObject.params };
-    //    this.api.post("account/otpnew", requestData, params).subscribe({
-    //      next: (res: any) => {
-    //        if (res.success == true) {
-    //          this.isOtpSubmit = false;
-    //          const mobile = Buffer.from(this.phoneNumber).toString("base64");
-    //          const stagingJourneyId = Buffer.from(
-    //            this.stagingJourneyId
-    //          ).toString("base64");
-    //          this.state.set("phone", mobile);
-    //          this.state.set("stagingJourneyId", stagingJourneyId);
-    //        } else {
-    //          this.istimer = false;
-    //          this.isResend = false;
-    //          this.api.alert("try again", "error");
-    //          this.isOtpSubmit = false;
-    //        }
-    //      },
-    //      error: (error) => {
-    //        this.istimer = false;
-    //        this.countDown.unsubscribe();
-    //        this.isResend = false;
-    //        this.api.alert("try again", "error");
-    //        this.isOtpSubmit = false;
-    //      },
-    //      complete: () => {
-    //       // ("Request complete");
-    //      },
-    //    });
-    //  }
+    (this.istimer);
+     if (!this.istimer) {
+       this.counter = 60;
+       this.timeCounter();
+       
+       this.istimer = true;
+       this.isResend = true;
+       const defaultparams = {
+        forceGenerate: false,
+         resend: true,
+         workflowName: ""
+       };
+       const params = { ...defaultparams, ...this.paramsObject.params };
+       this.api.postMethod(`api/Remediation/GetOTP`, this.requestData, params).subscribe({
+         next: (res: any) => {
+           if (res.success == true) {
+             this.isOtpSubmit = false;
+            
+
+           } else {
+             this.istimer = false;
+             this.isResend = false;
+             this.api.alert("try again", "error");
+             this.isOtpSubmit = false;
+           }
+         },
+         error: (error) => {
+           this.istimer = false;
+           this.countDown.unsubscribe();
+           this.isResend = false;
+           this.api.alert("try again", "error");
+           this.isOtpSubmit = false;
+         },
+         complete: () => {
+          // ("Request complete");
+         },
+       });
+     }
    }
 
 

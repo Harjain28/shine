@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Chart, { ChartData } from 'chart.js/auto';
 
@@ -13,7 +13,17 @@ import Chart, { ChartData } from 'chart.js/auto';
 export class DoughnutComponent {
   @ViewChild('donut') donut!: ElementRef;
 
+  @Input() doughtnutJSONData:any;
+
+
   private donutChart!: Chart;
+  doughtValues: any;
+  doughtnutColor: any;
+
+  ngOnInit():void{
+
+
+  }
 
   ngAfterViewInit(): void {
   
@@ -23,13 +33,15 @@ export class DoughnutComponent {
   }
 
   private createDonutChart():void{
-    const donutDataValues = [300000, 500000, 800000,800000]; 
-    // const donutLabels = ['A', 'B', 'C', 'D']; 
-    const donutColors = ['#452574', '#12BA9B', '#C3E128', '#9E77D6']; 
+
+    this.doughtValues = this.doughtnutJSONData?.Values;
+    this.doughtnutColor = this.doughtnutJSONData?.Color;
+
+    const donutDataValues = [this.doughtValues[0], this.doughtValues[1], this.doughtValues[2],this.doughtValues[3]]; 
+    const donutColors = [this.doughtnutColor[0], this.doughtnutColor[1], this.doughtnutColor[2], this.doughtnutColor[3]]; 
 
    
     const donutChartData: ChartData = {
-      // labels: labels,
       datasets: [{
         data: donutDataValues,
         backgroundColor: donutColors
