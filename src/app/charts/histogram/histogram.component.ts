@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Chart, { ChartData } from 'chart.js/auto';
 
@@ -13,7 +13,10 @@ export class HistogramComponent {
 
   @ViewChild('histogramCanvas') histogramCanvas!: ElementRef; 
 
+  @Input() HistogramJSONData: any;
+
   private histogramChart!: Chart; 
+  histogramValues: any;
 
   ngAfterViewInit(): void {
   
@@ -23,7 +26,12 @@ export class HistogramComponent {
   }
 
   private createHistogramChart(): void {
-    const histogramDataValues = [-10, -20, 40, 90, 47, 60, -70, -80, -90, 26, 40, 30]; 
+
+    this.histogramValues = this.HistogramJSONData?.Values;
+
+    const histogramDataValues = [this.histogramValues[0], this.histogramValues[1], this.histogramValues[2], this.histogramValues[3],
+    this.histogramValues[4], this.histogramValues[5], this.histogramValues[6], this.histogramValues[7], this.histogramValues[8],
+    this.histogramValues[9], this.histogramValues[10], this.histogramValues[11]]; 
     const histogramLabels = ['', '', '', '','', '', '', '','', '', '', '']; 
     const backgroundColors = histogramDataValues.map(value => (value < 0 ? 'red' : 'green'));
 

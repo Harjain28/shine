@@ -29,5 +29,11 @@ export default[
     },
     {
         path: 'bank_statement', loadComponent:() => import('./upload-documents/upload-documents.component').then(c=>c.UploadDocumentsComponent)
+    },
+    {
+        path: 'pricing1', loadComponent:() => import('./pricing1/pricing1.component').then(c=>c.Pricing1Component)
+    },
+    {
+        path: 'pricing2', loadComponent:() => import('./pricing2/pricing2.component').then(c=>c.Pricing2Component)
     }
 ] as Route[]

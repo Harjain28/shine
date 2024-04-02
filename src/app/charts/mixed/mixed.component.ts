@@ -13,10 +13,19 @@ export class MixedComponent {
 
   @ViewChild('chartCanvas2') chartCanvas2!: ElementRef;
 
+  @Input() MixedJSONData: any;
+
   private chart2!:Chart;
+  mixedValue1: any;
+  mixedValue2: any;
+  mixedLineValue1: any;
+  mixedLineValue2: any;
+  mixedLineValue3: any;
 
 
   ngOnInit(): void{
+
+  
 
   }
 
@@ -28,9 +37,17 @@ export class MixedComponent {
   }
 
    mixedChart(): void{
-    const dataValues = [ 20, 110, 67, 30, 20, 35 , 10]; 
 
-    const dataValues2 = [ 110, 82, 67, 45]; 
+    this.mixedValue1 = this.MixedJSONData?.Value1;
+    this.mixedValue2 = this.MixedJSONData?.Value2;
+    this.mixedLineValue1 = this.MixedJSONData?.LineValue1;
+    this.mixedLineValue2 = this.MixedJSONData?.LineValue2;
+    this.mixedLineValue3 = this.MixedJSONData?.LineValue3;
+
+    const dataValues = [ this.mixedValue1[0], this.mixedValue1[1], this.mixedValue1[2], this.mixedValue1[3],
+    this.mixedValue1[4], this.mixedValue1[5] , this.mixedValue1[6]]; 
+
+    const dataValues2 = [ this.mixedValue2[0], this.mixedValue2[1], this.mixedValue2[2], this.mixedValue2[3]]; 
 
 
     const backgroundColorsMixed = dataValues2.map(value => this.getMixedColor(value));
@@ -42,7 +59,12 @@ export class MixedComponent {
       datasets: [ {
         // label: 'Horizontal Line Dataset',
         type: 'line',
-        data: [{ x: 0, y: 150 }, { x: 8, y: 150 },{ x: 0, y: 150 }, { x: 8, y: 150 },{ x: 0, y: 150 }, { x: 8, y: 150 }],
+        data: [{ x: this.mixedLineValue1[0].x, y: this.mixedLineValue1[0].y }, 
+        { x: this.mixedLineValue1[1].x, y: this.mixedLineValue1[1].y },
+        { x: this.mixedLineValue1[2].x, y: this.mixedLineValue1[2].y }, 
+        { x: this.mixedLineValue1[3].x, y: this.mixedLineValue1[3].y },
+        { x: this.mixedLineValue1[4].x, y: this.mixedLineValue1[4].y }, 
+        { x: this.mixedLineValue1[5].x, y: this.mixedLineValue1[5].y }],
         borderColor: 'green',
         borderWidth: 1,
         fill: false,
@@ -51,7 +73,12 @@ export class MixedComponent {
       {
         // label: 'Horizontal Line Dataset',
         type: 'line',
-        data: [{ x: 0, y: 60 }, { x: 8, y: 60 },{ x: 0, y: 60 }, { x: 8, y: 60 },{ x: 0, y: 60 }, { x: 8, y: 60 }], 
+        data: [{ x: this.mixedLineValue2[0].x, y: this.mixedLineValue2[0].y }, 
+        { x: this.mixedLineValue2[1].x, y: this.mixedLineValue2[1].y },
+        { x: this.mixedLineValue2[2].x, y: this.mixedLineValue2[2].y }, 
+        { x: this.mixedLineValue2[3].x, y: this.mixedLineValue2[3].y },
+        { x: this.mixedLineValue2[4].x, y: this.mixedLineValue2[4].y }, 
+        { x: this.mixedLineValue2[5].x, y: this.mixedLineValue2[5].y }], 
         borderColor: 'yellow',
         borderWidth: 1,
         fill: false,
@@ -60,7 +87,12 @@ export class MixedComponent {
       },{
         // label: 'Horizontal Line Dataset',
         type: 'line',
-        data: [{ x: 0, y: 80 }, { x: 8, y: 80 },{ x: 0, y: 80 }, { x: 8, y: 80 },{ x: 0, y: 80 }, { x: 8, y: 80 }], 
+        data: [{ x: this.mixedLineValue3[0].x, y: this.mixedLineValue3[0].y }, 
+        { x: this.mixedLineValue3[1].x, y: this.mixedLineValue3[1].y },
+        { x: this.mixedLineValue3[2].x, y: this.mixedLineValue3[2].y }, 
+        { x: this.mixedLineValue3[3].x, y: this.mixedLineValue3[3].y },
+        { x: this.mixedLineValue3[4].x, y: this.mixedLineValue3[4].y }, 
+        { x: this.mixedLineValue3[5].x, y: this.mixedLineValue3[5].y }], 
         borderColor: 'red',
         borderWidth: 1,
         fill: false,

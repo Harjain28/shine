@@ -26,6 +26,7 @@ import { BarComponent } from 'src/app/charts/bar/bar.component';
 })
 export class BankingBusinessComponent {
 
+  @Input() bankingBusinessChartsData: any;
 
   expandBusinessSection!: boolean;
   expandBalanceSection!: boolean;
@@ -34,6 +35,13 @@ export class BankingBusinessComponent {
   expandDebtRatioSection!: boolean;
   doughtnutJSONData: any;
   doughtnutData: any;
+  barData: any;
+  pieData: any;
+  histogramData: any;
+  mixedData: any;
+  mixedData3: any;
+  mixedData4: any;
+  mixedData2: any;
 
 
 
@@ -44,6 +52,13 @@ export class BankingBusinessComponent {
 
   
   ngOnInit(): void {
+    this.barData = this.bankingBusinessChartsData?.Bar;
+    this.pieData = this.bankingBusinessChartsData?.Pie;
+    this.histogramData = this.bankingBusinessChartsData?.Histogram;
+    this.mixedData = this.bankingBusinessChartsData?.Mixed;
+    this.mixedData2 = this.bankingBusinessChartsData?.Mixed2;
+    this.mixedData3 = this.bankingBusinessChartsData?.Mixed3;
+    this.mixedData4 = this.bankingBusinessChartsData?.Mixed4;
   }
 
 

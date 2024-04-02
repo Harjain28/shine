@@ -8,7 +8,7 @@ import { BankingBusinessComponent } from './banking-business/banking-business.co
 import { ActionsRequiredComponent } from './actions-required/actions-required.component';
 import { ProbabilityOfLoanComponent } from './probability-of-loan/probability-of-loan.component';
 import { shineLendingPageJSON } from '../JsonFiles/lendingpage';
-import { creditReportsChartJSON } from '../JsonFiles/CreditReportsChartJSON';
+import { ChartsJsonData } from '../JsonFiles/ChartJSONData';
 
 
 
@@ -26,6 +26,7 @@ export class ReportsComponent {
   faqs: any;
   creditReportJson: any;
   CRData: any;
+  ChartsData: any;
  
 
   constructor( private api: ApiService ) { }
@@ -36,9 +37,8 @@ export class ReportsComponent {
   }
 
   getChartsData(){
-    this.creditReportJson = creditReportsChartJSON;
-    this.CRData = this.creditReportJson;
-
+    this.ChartsData = ChartsJsonData;
+    
   }
 
   postForReport(){

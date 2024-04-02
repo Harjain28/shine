@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Chart, { ChartData, RadialTickOptions } from 'chart.js/auto';
 
@@ -13,9 +13,14 @@ export class BarComponent {
 
   @ViewChild('chartCanvas3') chartCanvas3!: ElementRef;
 
+  @Input() barJSONData: any;
+
+
   private chart3!:Chart;
-  
+  barValues: any;
+
   ngOnInit(): void{
+    this.barValues = this.barJSONData?.Values;
   }
 
   ngAfterViewInit(): void {
@@ -24,7 +29,7 @@ export class BarComponent {
 
    mixedChart(): void{
 
-    const dataValues2 = [ 110, 82, 67, 45]; 
+    const dataValues2 = [ this.barValues[0], this.barValues[1], this.barValues[2], this.barValues[3]]; 
 
     const backgroundColors2 = dataValues2.map(value => this.getColor2(value));
 

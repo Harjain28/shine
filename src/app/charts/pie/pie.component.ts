@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Chart, { ChartData } from 'chart.js/auto';
 
@@ -13,7 +13,11 @@ export class PieComponent {
 
   @ViewChild('pieChartCanvas') pieChartCanvas!: ElementRef; 
 
+  @Input() pieJSONData: any;
+
   private pieChart!: Chart; 
+  pieValues: any;
+  pieColor: any;
 
   ngAfterViewInit(): void {
   
@@ -23,9 +27,13 @@ export class PieComponent {
   }
 
   private createPieChart(): void {
-    const pieDataValues = [45, 25, 100]; 
+
+    this.pieValues = this.pieJSONData?.Values;
+    this.pieColor = this.pieJSONData?.Color;
+
+    const pieDataValues = [this.pieValues[0], this.pieValues[1], this.pieValues[2]]; 
     // const pieLabels = ['Category A', 'Category B', 'Category C']; 
-    const pieColors = ['#C3E128', '#12BA9B', '#A070E8']; 
+    const pieColors = [this.pieColor[0], this.pieColor[1], this.pieColor[2]]; 
 
     const pieChartData: ChartData = {
       // labels: pieLabels,

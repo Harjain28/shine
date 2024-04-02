@@ -64,7 +64,7 @@ export class PaymentComponent {
             next: (res: any) => {
               this.reqData = res?.reqData;
               this.merchantId = res?.merchantId;
-            //  window.location.href = res?.url;
+              //window.location.href = res?.url;
             
 
               this.confirmPayment();
