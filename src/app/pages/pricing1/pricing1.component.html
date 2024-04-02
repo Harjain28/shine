@@ -7,80 +7,46 @@
                 <div class="planOneBox">
                     <div class="box w-33">
                         <div class="contentBox">
-                            <h3>Select Your Pricing Plan</h3>
-                            <p>Shine offers a low-cost entry for a high-return journey to your ideal loans</p>
+                            <h3>{{pricingHeader?.Header1?.Text}}</h3>
+                            <p>{{pricingHeader?.Subheader}}</p>
 
-                            <h5>Key Features</h5>
+                            <h5>{{pricingHeader?.headerText[0]}}</h5>
                         </div>
                     </div>
                     <div class="pricingBox w-33">
                         <div class="contentBox">
-                            <h3>Monthly Plan</h3>
+                            <h3>{{pricingHeader?.headerText[1]}}</h3>
                             <del>₹499</del>
                             <span>₹199</span>
                             <p>per member, per month</p>
-                            <button class="btn">Get Now</button>
+                            <button class="btn" (click)="goToSelection()">{{pricingHeader?.CTA_Text}}</button>
                         </div>
                     </div>
                     <div class="pricingBox w-33">
                         <div class="contentBox">
-                            <h3>Monthly Plan</h3>
-                            <del>₹499</del>
-                            <span>₹199</span>
+                            <h3>{{pricingHeader?.headerText[2]}}</h3>
+                            <del>2499</del>
+                            <span>₹999</span>
                             <p>per member, per month</p>
-                            <button class="btn">Get Now</button>
+                            <button class="btn" (click)="goToSelection()">{{pricingHeader?.CTA_Text}}</button>
                         </div>
                     </div>
                 </div>
 
                 <ul>
-                    <li>
-                        <span>Lorem ipsum dolor texts</span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
+                    <li *ngFor = "let data of pricingColumns">
+                        <span>{{data?.keyFeature}}</span>
+                        <span><img [src]="data?.value1 === 'Yes' ? './assets/LandingPage/yescheck.svg' : ' '" alt=""></span>
+                        <span><img [src]="data?.value2 === 'Yes' ? './assets/LandingPage/yescheck.svg' : ' '" alt=""></span>
                     </li>
-                    <li>
-                        <span>Lorem ipsum dolor texts</span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
-                    </li>
-                    <li>
-                        <span>Lorem ipsum dolor texts</span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
-                    </li>
-                    <li>
-                        <span>Lorem ipsum dolor texts</span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
-                    </li>
-                    <li>
-                        <span>Lorem ipsum dolor texts</span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
-                    </li>
-                    <li>
-                        <span>Lorem ipsum dolor texts</span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
-                    </li>
-                    <li>
-                        <span>Lorem ipsum dolor texts</span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
-                    </li>
-                    <li>
-                        <span>Lorem ipsum dolor texts</span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
-                        <span><img src="./assets/LandingPage/yescheck.svg" alt=""></span>
-                    </li>
+                   
                     <li class="button">
                         <span></span>
                         <span>
-                            <button class="btn">Get Now</button>
+                            <button class="btn" (click)="goToSelection()">{{pricingHeader?.CTA_Text}}</button>
                         </span>
                         <span>
-                            <button class="btn">Get Now</button>
+                            <button class="btn" (click)="goToSelection()">{{pricingHeader?.CTA_Text}}</button>
                         </span>
                     </li>
                 </ul>
@@ -94,29 +60,23 @@
         <div class="row">
             <div class="col-lg-7 col-md-12 col-sm-12 m-auto">
                 <div class="shineContent text-center">
-                    <h3>What is Shine?</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odit rem fuga harum quidem
-                        cupiditate doloribus. Aut voluptate consectetur dolores perferendis amet. Autem accusamus
-                        tenetur dolorum voluptatum suscipit itaque aspernatur.</p>
+                    <h3>{{WhatisShineSection?.Header}}</h3>
+                    <p>{{WhatisShineSection?.Subhead}}</p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
                 <div class="shineList">
                     <ul>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odit rem fuga harum quidem
-                        cupiditate doloribus.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odit rem fuga harum quidem
-                        cupiditate doloribus.</li>
+                        <li>{{WhatisShineSection?.Body_Section[0]}}</li>
+                        <li>{{WhatisShineSection?.Body_Section[1]}}</li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
                 <div class="shineList">
                     <ul>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odit rem fuga harum quidem
-                        cupiditate doloribus.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odit rem fuga harum quidem
-                        cupiditate doloribus.</li>
+                        <li>{{WhatisShineSection?.Body_Section[2]}}</li>
+                        <li>{{WhatisShineSection?.Body_Section[3]}}</li>
                     </ul>
                 </div>
             </div>
@@ -129,47 +89,20 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 m-auto">
                 <div class="Content text-center">
-                    <h3>How Does Shine Help Me?</h3>
+                    <h3>{{HowDoesShinehelpSection?.Header}}</h3>
                 </div>
             </div>
             
             <div class="col-lg-12 col-md-12 col-sm-12 m-auto">
                 <div class="boxMarge">
-                    <div class="helpBox">
-                        <span>01</span>
+                    <div class="helpBox" *ngFor="let data of featureSection">
+                        <span>{{data?.count}}</span>
                         <div class="box">
-                            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-                            <p>Clear & Simple Insights</p>
+                            <img src={{data?.icon}} alt="">
+                            <p>{{data?.productCopy}}</p>
                         </div>
                     </div>
-                    <div class="helpBox">
-                        <span>02</span>
-                        <div class="box">
-                            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-                            <p>Clear & Simple Insights</p>
-                        </div>
-                    </div>
-                    <div class="helpBox">
-                        <span>03</span>
-                        <div class="box">
-                            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-                            <p>Clear & Simple Insights</p>
-                        </div>
-                    </div>
-                    <div class="helpBox">
-                        <span>04</span>
-                        <div class="box">
-                            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-                            <p>Clear & Simple Insights</p>
-                        </div>
-                    </div>
-                    <div class="helpBox">
-                        <span>05</span>
-                        <div class="box">
-                            <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
-                            <p>Clear & Simple Insights</p>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

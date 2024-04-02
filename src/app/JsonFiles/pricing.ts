@@ -120,22 +120,27 @@ export const shinePricingPageJSON = {
         {
           Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
           Product_copy: 'Leading Low-Cost Product',
+          Count: '01'
         },
         {
           Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
           Product_copy: 'Clear & Simple Insights',
+          Count: '02'
         },
         {
           Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
           Product_copy: 'Data-Driven Edge',
+          Count: '03'
         },
         {
           Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
           Product_copy: 'Customized Financial Strategies',
+          Count: '04'
         },
         {
           Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
           Product_copy: 'Unmatched Market Knowledge',
+          Count: '05'
         },     
       ],
     },

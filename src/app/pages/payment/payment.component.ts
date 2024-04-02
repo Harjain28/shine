@@ -28,9 +28,19 @@ export class PaymentComponent {
     }
 
 
+    ngonInit() :void{
+      
+    }
+
+    paymentURL(){
+      this.api.postwithoutHeader().subscribe({
+        next: (res: any) => {
+        console.log(res,"hh");
+       }});
+    }
 
     getForPaymentMethod() {
-
+      
       let requestData: any = {}; 
         requestData["dateTime"] = this.currentDate ;
         requestData["amount"] = 9000;
@@ -56,7 +66,7 @@ export class PaymentComponent {
       
         const params = {  ...this.paramsObject.params };
         this.api
-          .getwithHeader2(
+          .postForPayment(
             `api/Remediation/Payment`,requestData,
             params
           )
@@ -65,6 +75,8 @@ export class PaymentComponent {
               this.reqData = res?.reqData;
               this.merchantId = res?.merchantId;
               //window.location.href = res?.url;
+
+             this.paymentURL();
             
 
               this.confirmPayment();
@@ -88,7 +100,7 @@ export class PaymentComponent {
       };
       const params = { ...defaultparams, ...this.paramsObject.params };
           this.api
-            .getPayment(
+            .remediation(
               `api/Remediation/PaymentConfirmation`,
               params
             )
@@ -112,7 +124,7 @@ export class PaymentComponent {
         payload: "",
       };
       const params = { ...defaultparams, ...this.paramsObject.params };
-      this.api.getPayment(
+      this.api.remediation(
           `api/Remediation/PaymentStatusCheck`,
           params
         )

@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import Chart, { ChartData } from 'chart.js/auto';
+import Chart, { ChartData, registerables } from 'chart.js/auto';
 
 @Component({
   selector: 'app-semi-doughnut',
@@ -10,53 +10,55 @@ import Chart, { ChartData } from 'chart.js/auto';
   styleUrls: ['./semi-doughnut.component.scss']
 })
 export class SemiDoughnutComponent {
-  @ViewChild('semiDoughnutCanvas') semiDoughnutCanvas!: ElementRef;
 
-  @Input() semiDoughtnutJSONData :any;
-  private semiDoughnutChart!: Chart;
-  sdValues: any;
-  sdColor: any;
+  @ViewChild('chartCa', { static: true }) chartCa!: ElementRef;
 
-
-  ngAfterViewInit(): void {
-
-    this.createSemiDoughnutChart();
-
+  ngOnInit(): void {
+    this.createChart();
   }
 
-  private createSemiDoughnutChart(): void {
+  private createChart(): void {
+    const ctx = this.chartCa.nativeElement.getContext('2d');
 
-    this.sdValues = this.semiDoughtnutJSONData?.Values;
-    this.sdColor = this.semiDoughtnutJSONData?.Color;
+    Chart.register(...registerables);
+    
 
-    const dataValues = [this.sdValues[0],this.sdValues[1]]; 
-    const backgroundColors = [ this.sdColor[0], this.sdColor[1]]
-  
-    const chartData: ChartData = {
-      datasets: [{
-        data: dataValues,
-        backgroundColor: backgroundColors,
-      }]
-    };
-  
-    this.semiDoughnutChart = new Chart(this.semiDoughnutCanvas.nativeElement, {
+    const gradient = ctx.createLinearGradient(0,0,300,0);
+    gradient.addColorStop(0, 'rgba(255, 215, 0, 0.9)'); 
+    gradient.addColorStop(1, 'rgba(0, 128, 0, 0.9)'); 
+     new Chart(ctx, {
       type: 'doughnut',
-      data: chartData,
+      data: {
+        datasets: [
+          {
+            data: [600, 300],
+            backgroundColor: gradient, 
+            hoverBackgroundColor: [
+              'rgba(255, 99, 132, 0.8)',
+              'rgba(54, 162, 235, 0.8)',
+            ],
+            borderWidth: 0,
+          },
+        ],
+      },
       options: {
         cutout: '80%',
         rotation: 85 * Math.PI,
         circumference: 59 * Math.PI,
         plugins: {
           legend: {
-            display: false
+            display: false,
           },
-          title: {
-            display: true,
-            text: 'Semi-Doughnut Chart'
-          }
-        }
-      }as any
+        
+        },
+        events: [],
+
+        
+      },
     });
-   
+    
   }
+
+  
 }
+

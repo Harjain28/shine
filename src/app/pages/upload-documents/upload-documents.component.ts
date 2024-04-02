@@ -15,6 +15,7 @@ import {  ElementRef,  ViewChild } from '@angular/core';
 import {  Subscription,  take, timer } from "rxjs";
 import { Location } from "@angular/common";
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-upload-documents',
   standalone: true,
@@ -77,6 +78,8 @@ export class UploadDocumentsComponent {
       private location: Location,  
       private cdr: ChangeDetectorRef,
       private sanitizer: DomSanitizer,
+      private http: HttpClient,
+
 
       public router: Router) {
     this.route.params.subscribe((params) => {
@@ -153,7 +156,7 @@ export class UploadDocumentsComponent {
       callbackEnum: 0,
     };
     const params = { ...defaultparams, ...this.paramsObject.params };
-    this.api.getPayment(
+    this.api.remediation(
         `api/Remediation/NetBankingLink`,
         params
       )
@@ -182,7 +185,7 @@ export class UploadDocumentsComponent {
     };
     const params = { ...defaultparams, ...this.paramsObject.params };
     this.api
-      .getPayment(
+      .remediation(
         `api/Remediation/UploadDocumentLink`,
         params
       )
@@ -192,6 +195,10 @@ export class UploadDocumentsComponent {
            this.callPerfiosCallback(res?.transactionId);
            this.submitBankStatement();
        //   this.iframeUrl = res?.url;
+
+    
+       
+   
 
           //  window.location.href = res?.url;
   

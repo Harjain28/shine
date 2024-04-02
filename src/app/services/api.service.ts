@@ -79,7 +79,7 @@ export class ApiService {
     .pipe(catchError(this.formatErrors));
 }
   
-getPayment(path: string, params: HttpParams = new HttpParams()) {
+remediation(path: string, params: HttpParams = new HttpParams()) {
   this.httpOptions = {
     headers: new HttpHeaders({
       'accept': '*',
@@ -89,7 +89,7 @@ getPayment(path: string, params: HttpParams = new HttpParams()) {
     .pipe(catchError(this.formatErrors));
 }
 
-getwithHeader2(path: string, body: object = {} , params: HttpParams = new HttpParams()) {
+postForPayment(path: string, body: object = {} , params: HttpParams = new HttpParams()) {
   const posthttpOptions = {
     headers: new HttpHeaders({
       'accept': '*',
@@ -102,6 +102,12 @@ getwithHeader2(path: string, body: object = {} , params: HttpParams = new HttpPa
   get(path: string, params: HttpParams = new HttpParams()) {
     return this.http.get(`${this.API_URL}${path}`, {params})
       .pipe(catchError(this.formatErrors));
+  }
+
+  postwithoutHeader(){
+    const data={};
+    return this.http.post(`https://pa-preprod.1pay.in/payment/payprocessorV2`, data)
+
   }
 
   post(path: any,   body: object = {} , params: any) {
