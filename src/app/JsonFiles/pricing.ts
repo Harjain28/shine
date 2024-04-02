@@ -93,8 +93,7 @@ export const shinePricingPageJSON = {
              'No',
              'Yes',
           ]
-        },
-         ,
+        }
         ],
       CTA_Text: 'Get Now',
       CTA_Link: '/in/check-eligibility',

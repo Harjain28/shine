@@ -22,7 +22,6 @@
             max-width: 312px;
         }
 
-
         .box{
 
             .contentBox{
@@ -145,7 +144,7 @@
         }
     }
 
-    ul{
+    .planListView{
         padding-left: 0px;
         margin: 0px;
         list-style: auto;
@@ -170,6 +169,17 @@
             span{
                 width: -webkit-fill-available;
                 padding: 10px 0px 10px 10px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                small{
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #3f3f3f;
+                    margin-right: 14px;
+                }
 
                 &:nth-of-type(2){
                     border-left: 1px solid #E2E2E2;
@@ -177,8 +187,8 @@
                 }
 
                 &:nth-of-type(3){
-                    border-left: 1px solid #E2E2E2;
-                    border-right: 1px solid #E2E2E2;
+                    border-left: 1px solid var(--main1);
+                    border-right: 1px solid var(--main1);
                 }
 
                 img{
@@ -192,6 +202,7 @@
             }
 
             &.button{
+                background-color: transparent;
 
                 span{
                     padding: 40px 0px 40px 10px;
@@ -202,6 +213,10 @@
 
                     &:first-child{
                         border: none;
+                    }
+
+                    &:last-child{
+                        border-bottom: 1px solid var(--main1);
                     }
 
                     .btn{
@@ -281,6 +296,22 @@
             }
         }
     }
+
+    .button{
+
+        .btn{
+            background: var(--main1);
+            border-radius: 50px;
+            padding: 4px 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 15px auto 0px;
+        }
+    }
 }
 
 .shineHelpSection{
@@ -322,6 +353,7 @@
             transition: 0.5s;
             position: relative;
             box-shadow: 6px 6px 10px #00000012;
+            width: 100%;
 
             &:nth-child(even){
                 transform: translate(0px, 50px);
@@ -352,6 +384,220 @@
                 font-family: Poppins !important;
                 margin-bottom: 2px;
                 width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+
+    .pricingPlan{
+
+        .mobileVIewSilder{
+
+            .planSilder{
+                border: 1px solid #E2E2E2;
+                border-radius: 20px 20px 20px 20px;
+                overflow: hidden;
+
+                .monthView{
+                    padding: 40px 48px;
+                    border: 1px solid #E2E2E2;
+                    border-radius: 20px 20px 0px 0px;
+                    background-color: #F5F5F5;
+                    text-align: center;
+
+                    h3{
+                        font-size: 22px;
+                        line-height: 22px;
+                        font-weight: 600;
+                        margin-bottom: 11px;
+                        font-family: Poppins !important;
+                        color: #3f3f3f;
+                    }
+
+                    del{
+                        font-size: 30px;
+                        color: #3F3F3F;
+                        line-height: 28px;
+                        opacity: 0.6;
+                        font-weight: normal;
+                        font-family: Poppins !important;
+                        display: block;
+                    }
+
+                    span{
+                        font-size: 50px;
+                        line-height: 58px;
+                        color: #3f3f3f;
+                        margin-bottom: 0px;
+                        font-weight: 600;
+                        font-family: Poppins !important;
+                    }
+
+                    p{
+                        color: #3F3F3F;
+                        margin-bottom: 20px;
+                        font-weight: normal;
+                        font-family: Poppins !important;
+                        font-size: 13px;
+                        line-height: 18px;
+                    }
+
+                    .btn{
+                        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1019607843);
+                        border-radius: 50px;
+                        padding: 9px 40px;
+                        background-color: var(--main2);
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: #fff;
+                        line-height: 22px;
+                        font-family: Poppins !important;
+                        min-width: 190px;
+                        max-width: 190px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 0 auto;
+                    }
+                }
+
+                ul{
+                    padding-left: 0px;
+                    list-style: none;
+                    margin-bottom: 0px;
+                    margin-top: 30px;
+
+                    li{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 8px 20px;
+                        gap: 10px;
+
+                        &:nth-child(even){
+                            background-color: #F9F9F9;
+                        }
+            
+
+                        span{
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #3f3f3f;
+                            font-family: Poppins !important;
+
+                            img{
+                                width: 25px;
+                                height: 25px;
+                            }
+                        }
+                    }
+                }
+
+                .button{
+                    display: flex;
+                    align-items: center;
+                    padding: 40px;
+                    justify-content: center;
+
+                    .btn{
+                        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1019607843);
+                        border-radius: 50px;
+                        padding: 9px 40px;
+                        background-color: var(--main2);
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: #fff;
+                        line-height: 22px;
+                        font-family: Poppins !important;
+                        min-width: 190px;
+                        max-width: 190px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 0 auto;
+                    }
+                }
+
+                &.active{
+                    border: 1px solid var(--main1);
+
+                    .monthView{
+                        background-color: var(--main1);
+    
+                        h3{
+                            color: #fff;
+                        }
+    
+                        del{
+                            color: #FFFFFF;
+                            opacity: 0.6;
+                        }
+    
+                        span{
+                            font-size: 50px;
+                            line-height: 58px;
+                            color: #fff;
+                        }
+    
+                        p{
+                            color: #E2E2E2;
+                        }
+                    }
+                }
+            }
+
+            owl-carousel-o {
+
+                ::ng-deep {
+
+                    .owl-dots {
+
+                        .owl-dot {
+
+                            &.active {
+
+                                span {
+                                    background: var(--main2);
+                                }
+                            }
+
+                            &:hover {
+
+                                span {
+                                    background: var(--main2);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .whatisShine{
+        padding: 50px 0px;
+    
+        .shineContent{
+            margin-bottom: 14px;
+        }
+    }
+    
+    .shineHelpSection{
+        padding: 0px 0px 70px;
+    
+        .Content{
+            margin-bottom: 22px;
+            padding-top: 0px;
+            border-top: none;
+        }
+    
+        .boxMarge{
+            flex-wrap: wrap;
+    
+            .helpBox{
+                width: 48%;
             }
         }
     }

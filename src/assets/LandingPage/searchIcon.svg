@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="20.532" viewBox="0 0 22 20.532">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_2242" data-name="Rectangle 2242" width="22" height="20.532" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Group_3261" data-name="Group 3261" transform="translate(0 0)">
+    <g id="Group_3260" data-name="Group 3260" transform="translate(0 0)" clip-path="url(#clip-path)">
+      <path id="Path_6001" data-name="Path 6001" d="M6.256,1.384H14.5V3.308a7.135,7.135,0,0,1,1.384.39V1.384A1.389,1.389,0,0,0,14.5,0H6.256Zm12,11.83a5.794,5.794,0,1,0-2.043,2.042l3.322,3.322a1.445,1.445,0,0,0,2.043-2.043Zm-1.636-2.948a3.356,3.356,0,0,0-3.354-3.354.526.526,0,1,0,0,1.052,2.3,2.3,0,0,1,2.3,2.3.526.526,0,0,0,1.052,0m-.4-2.958a4.185,4.185,0,1,1-5.918,0,4.186,4.186,0,0,1,5.918,0M0,4.982H4.982V0ZM14.5,17.227v1.921H1.384V6.256H0V19.148a1.389,1.389,0,0,0,1.384,1.384H14.5a1.389,1.389,0,0,0,1.384-1.384V16.834a7,7,0,0,1-1.384.393" transform="translate(0 0)" fill="#fff" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

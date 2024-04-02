@@ -5,6 +5,157 @@
 
 }
 
+.completeEnrollment{
+    padding: 60px 0px 0px;
+
+    .content{
+        margin-bottom: 30px;
+        text-align: center;
+
+        h3{
+            font-size: 30px;
+            color: #3f3f3f;
+            font-weight: 600;
+            margin-bottom: 4px;
+            line-height: 36px;
+            font-family: 'Be Vietnam Pro' !important;
+        }
+
+        p{
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 22px;
+            font-family: Poppins !important;
+            color: #3f3f3f;
+            margin-bottom: 2px;
+        }
+    }
+
+    .KeyPlanBox{
+        box-shadow: 10px 10px 30px #0000001A;
+        border: 1px solid #E8E8E8;
+        border-radius: 20px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+
+        .themeBox{
+            box-shadow: 10px 10px 30px #0000001A;
+            border: 1px solid #E8E8E8;
+            border-radius: 20px 0px 0px 20px;
+            padding: 90px;
+            height: 100%;
+            text-align: center;
+            background-color: var(--main1);
+            width: 40%;
+
+            h3{
+                color: #fff;
+                font-size: 22px;
+                font-weight: 600;
+                line-height: 22px;
+                padding-bottom: 12px;
+                border-bottom: 1px solid #E2E2E2;
+                font-family: Poppins !important;
+            }
+
+            del{
+                color: #FFFFFF;
+                opacity: 0.6;
+                font-size: 32px;
+                font-weight: 400;
+                margin-bottom: 4px;
+                display: block;
+                font-family: Poppins !important;
+            }
+
+            span{
+                color: #FFFFFF;
+                font-size: 64px;
+                font-weight: 600;
+                margin-bottom: 2px;
+                display: block;
+                line-height: 62px;
+                font-family: Poppins !important;
+            }
+
+            p{
+                color: #E2E2E2;
+                font-size: 13px;
+                font-weight: 500;
+                margin-bottom: 28px;
+                font-family: Poppins !important;
+            }
+            
+            .btn{
+                box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1019607843);
+                border-radius: 50px;
+                padding: 9px 40px;
+                background-color: var(--main2);
+                font-size: 16px;
+                font-weight: 500;
+                color: #fff;
+                line-height: 22px;
+                font-family: Poppins !important;
+                min-width: 190px;
+                max-width: 190px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto 25px;
+            }
+
+            small{
+                color: #E2E2E2;
+                font-size: 14px;
+                font-weight: 400;
+                margin-bottom: 0px;
+                font-family: Poppins !important;
+            }
+        }
+
+        .rightBox{
+            height: 100%;
+            padding: 34px 48px;
+
+            h3{
+                color: #3f3f3f;
+                font-size: 22px;
+                font-weight: 600;
+                line-height: 20px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #E2E2E2;
+                font-family: Poppins !important;
+            }
+
+            ul{
+                margin-bottom: 0px;
+                padding-left: 0px;
+                list-style: none;
+
+                li{
+                    font-size: 14px;
+                    color: #3F3F3F;
+                    font-weight: 400;
+                    font-family: Poppins !important;
+                    line-height: 22px;
+                    margin-bottom: 5px;
+                    position: relative;
+                    padding-left: 30px;
+
+                    img{
+                        width: 20px;
+                        height: 20px;
+                        left: 0px;
+                        top: 2px;
+                        position: absolute;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .whatisShine{
     padding: 60px 0px;
 
@@ -59,6 +210,22 @@
             }
         }
     }
+
+    .button{
+
+        .btn{
+            background: var(--main1);
+            border-radius: 50px;
+            padding: 4px 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 15px auto 0px;
+        }
+    }
 }
 
 .shineHelpSection{
@@ -100,6 +267,7 @@
             transition: 0.5s;
             position: relative;
             box-shadow: 6px 6px 10px #00000012;
+            width: 100%;
 
             &:nth-child(even){
                 transform: translate(0px, 50px);
@@ -130,6 +298,74 @@
                 font-family: Poppins !important;
                 margin-bottom: 2px;
                 width: 100%;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px) {
+    .completeEnrollment{
+        padding: 40px 0px 0px;
+    
+        .content{
+            margin-bottom: 18px;
+    
+            h3{
+                font-size: 22px;
+            }
+        }
+    
+        .KeyPlanBox{
+            display: block;
+    
+            .themeBox{
+                padding: 30px 12px;
+                width: 100%;
+                border-radius: 20px 20px 0px 0px;
+    
+                del{
+                    font-size: 28px;
+                }
+    
+                span{
+                    font-size: 52px;
+                }
+            }
+    
+            .rightBox{
+                padding: 30px 12px;
+    
+                h3{
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    
+    .whatisShine{
+        padding: 50px 0px;
+    
+        .shineContent{
+            margin-bottom: 14px;
+        }
+    }
+    
+    .shineHelpSection{
+        padding: 0px 0px 70px;
+    
+        .Content{
+            margin-bottom: 22px;
+            padding-top: 0px;
+            border-top: none;
+        }
+    
+        .boxMarge{
+            flex-wrap: wrap;
+    
+            .helpBox{
+                width: 48%;
             }
         }
     }
