@@ -35,9 +35,13 @@
 
                 <ul>
                     <li *ngFor = "let data of pricingColumns">
-                        <span>{{data?.keyFeature}}</span>
-                        <span><img [src]="data?.value1 === 'Yes' ? './assets/LandingPage/yescheck.svg' : ' '" alt=""></span>
-                        <span><img [src]="data?.value2 === 'Yes' ? './assets/LandingPage/yescheck.svg' : ' '" alt=""></span>
+                        <span>{{ data?.item[0] }}</span>
+                        <ng-container *ngFor="let item of data?.item.slice(1)">
+                            <span *ngIf="item.includes('Yes')">
+                                <img src="./assets/LandingPage/yescheck.svg" alt="">
+                            </span>
+                            <span *ngIf="item.includes('No')"></span>
+                        </ng-container>
                     </li>
                    
                     <li class="button">

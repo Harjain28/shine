@@ -37,12 +37,7 @@ export class Pricing1Component {
   getPricingData(){
     this.pricingJson = shinePricingPageJSON;
     this.pricingHeader = this.pricingJson?.Pricing_Header;
-    this.pricingColumns = this.pricingHeader?.col.map((res: { item: any[]; })=>({
-      keyFeature: res?.item[0],
-      value1: res?.item[1],
-      value2: res?.item[2]
-
-    }));
+    this.pricingColumns = this.pricingHeader?.col;
 
     this.WhatisShineSection = this.pricingJson?.What_is_Shine_Section;
     this.HowDoesShinehelpSection = this.pricingJson?.How_Does_Shine_help_Section;
