@@ -1,0 +1,136 @@
+.backgroundHeader{
+    width: 100%;
+    background-color: var(--main1);
+    height: 100px;
+
+}
+
+.whatisShine{
+    padding: 60px 0px;
+
+    .shineContent{
+        margin-bottom: 30px;
+
+        h3{
+            font-size: 22px;
+            color: #3f3f3f;
+            font-weight: 600;
+            margin-bottom: 4px;
+            line-height: 36px;
+            font-family: 'Be Vietnam Pro' !important;
+        }
+
+        p{
+            font-size: 14px;
+            font-weight: 500;
+            font-family: Poppins !important;
+            color: #3f3f3f;
+            margin-bottom: 2px;
+        }
+    }
+
+    .shineList{
+
+        ul{
+            padding-left: 0px;
+            margin-bottom: 0px;
+            list-style: none;
+
+            li{
+                font-size: 14px;
+                font-weight: 500;
+                font-family: Poppins !important;
+                color: #3f3f3f;
+                padding: 0px 22px;
+                margin: 5px 0px 15px;
+                position: relative;
+                line-height: 22px;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: 8px;
+                    height: 8px;
+                    background-color: var(--main1);
+                    border-radius: 50px;
+                    top: 6px;
+                    left: 0px;
+                }
+            }
+        }
+    }
+}
+
+.shineHelpSection{
+    padding: 0px 0px 160px;
+
+    .Content{
+        margin-bottom: 30px;
+        padding-top: 60px;
+        border-top: 1px solid #efefef;
+
+        h3{
+            font-size: 22px;
+            color: #3f3f3f;
+            font-weight: 600;
+            margin-bottom: 4px;
+            line-height: 36px;
+            font-family: 'Be Vietnam Pro' !important;
+        }
+    }
+
+    .boxMarge{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+
+        .helpBox{
+            border: 1px solid #E1E1E1;
+            border-radius: 20px;
+            background-color: #fff;
+            padding: 24px 22px;
+            text-align: center;
+            margin-bottom: 15px;
+            height: 175px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            transition: 0.5s;
+            position: relative;
+            box-shadow: 6px 6px 10px #00000012;
+
+            &:nth-child(even){
+                transform: translate(0px, 50px);
+            }
+
+            span{
+                color: #ebebeb;
+                font-size: 20px;
+                line-height: 18px;
+                font-weight: 500;
+                font-family: Poppins !important;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+
+            img{
+                width: auto;
+                height: 60px;
+                margin: 0px auto 18px;
+            }
+
+            p{
+                color: #3F3F3F;
+                font-size: 14px;
+                line-height: 18px;
+                font-weight: 600;
+                font-family: Poppins !important;
+                margin-bottom: 2px;
+                width: 100%;
+            }
+        }
+    }
+}
