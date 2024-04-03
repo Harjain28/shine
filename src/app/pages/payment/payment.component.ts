@@ -17,6 +17,7 @@ export class PaymentComponent {
   currentDate: any;
   reqData: any;
   merchantId: any;
+  paymentUrl: boolean = false;
 
   constructor(  private api: ApiService,  public router: Router, private datePipe: DatePipe   , private route: ActivatedRoute,
 
@@ -33,10 +34,7 @@ export class PaymentComponent {
     }
 
     paymentURL(){
-      this.api.postwithoutHeader().subscribe({
-        next: (res: any) => {
-        console.log(res,"hh");
-       }});
+      this.router.navigate(['in/selection'])
     }
 
     getForPaymentMethod() {
@@ -73,10 +71,12 @@ export class PaymentComponent {
           .subscribe({
             next: (res: any) => {
               this.reqData = res?.reqData;
-              this.merchantId = res?.merchantId;
+              localStorage.setItem("reqData",this.reqData);
+              localStorage.setItem("merchantId",res?.merchantId)
               //window.location.href = res?.url;
+              
 
-             this.paymentURL();
+             //this.paymentURL();
             
 
               this.confirmPayment();
@@ -92,7 +92,7 @@ export class PaymentComponent {
           });
       
     }
-  
+
     confirmPayment(){
       const defaultparams = {
         payloadString: this.reqData,
@@ -119,6 +119,7 @@ export class PaymentComponent {
       
     }
   
+
     paymentStatusCheck(){
       const defaultparams = {
         payload: "",

@@ -1,57 +1,26 @@
-
-<div class="priceSection section_padding">
+<!-- <div class="priceSection section_padding">
     <div class="container">
 
         <div class="features">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="content pt-5 text-center">
-                        <h3>
-                            You've selected our PRO VERSION!
-                        </h3>
-                        <p>Our Starter plan costs less than 1% of<br> your next project and can save
-                        </p>
+
+
+                        <form (ngSubmit)="onSubmit()" method="post"
+                            action="https://pa-preprod.1pay.in/payment/payprocessorV2">
+                            <input type="hidden" name="merchantId" [value]="merchantId">
+                            <input type="hidden" name="reqData" [value]="reqData">
+                            <button type="submit">Pay Now</button>
+                        </form>
+
 
 
                     </div>
-                    <h2>Order Confirmation</h2>
-                    <br>
-       
-                   <p style="font-weight: 500;">
-                    Thank you for your purchase! Please review your order details below<br> before proceeding to payment
-                </p>
-                    
-                      
+
+
+
                 </div>
-      <div class="col-12">
-          <div class="card-header">
-          </div>
-          <div class="card-body">
-            <div class="product" >
-                <hr>
-              <div class="row">
-                <div class="col-8">Product 1</div>
-                <div class="col-4">₹ 3,000.00</div>
-                <div class="col-8">Product 2</div>
-                <div class="col-4">₹ 3,000.00</div>
-                <div class="col-8">Product3</div>
-                <div class="col-4">₹ 3,000.00</div>
-              </div>
-              <hr>  
             </div>
-            <div class="row total">
-              <div class="col-8">
-                <span class="total-label"><strong>Total</strong></span>
-              </div>
-              <div class="col-4">
-                <span class="total-amount">₹ 9,000.00</span>
-              </div>
-            </div>
-            <br>
-            <br>
-            <button class="btn btn-primary proceed-button" (click)= "goToForm1()">Proceed to Payment</button>
         </div>
-      </div>
-    </div>
-  </div>
-  </div>
+    </div> -->

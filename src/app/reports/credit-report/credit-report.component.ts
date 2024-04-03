@@ -49,6 +49,7 @@ export class CreditReportComponent {
     this.doughtnutData = this.creditReportsChartsData?.Doughtnut;
     this.semiDoughtnutData = this.creditReportsChartsData?.Semi_Doughtnut;
   }
+  
 
   expand(){
     this.expandSection = true;
