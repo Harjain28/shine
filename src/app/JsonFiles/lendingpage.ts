@@ -21,6 +21,58 @@ export const shineLendingPageJSON = {
     CTA_Link: '/in/check-eligibility',
   },
 
+  Who_is_Shine_For_Section: {
+    Headline1: 'Who is SHINE For?',
+    Description:
+      'Whether you’re just starting your entrepreneurial or credit journey or looking for improved credit opportunities – Shine has something for every SME!',
+    Beginners_Feature: {
+      Beginners_Title: 'Beginners',
+      Beginners_Details:[
+      'Up-and-coming entrepreneurs',
+      'Early-stage credit-rating',
+      'Currently ineligible for a business loan',
+      'Taking the first steps in credit management',
+     
+       ],
+       Summary: 'Get answers to all the above along with a personalised plan for how to improve, and get your first business loan.', 
+        Vector_Background: {
+      Character_image: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/home_slide_01.webp',
+    },
+    },
+    Intermediate_Feature: {
+      Intermediate_Feature: 'Intermediate',
+      Intermediate_Details:[
+      'Business vintage 4-5 years', 
+      'GST registered',
+      'Successfully obtained at least one loan',
+      'Looking for better loan terms and offers',  
+      
+       ],
+       Summary: 'Get access to key information to help you manage your finances better, and get your next business loan at the best terms.', 
+        Vector_Background: {
+      Character_image: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/home_slide_01.webp',
+    },
+    },
+    Expert_Feature: {
+      Expert_Feature: 'Expert',
+      Expert_Details:[
+      'Business vintage >5 years', 
+      'GST registered', 
+      'Seeking better loan options and ROIs', 
+      'Open to best multi-funding options', 
+      'Seeking tailored financial advisory',  
+     
+       ],
+       Summary: 'Get access to essential financial insights to improve fiscal management and unlock multi-funding loan opportunities at the best terms.', 
+        Vector_Background: {
+      Character_image: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/home_slide_01.webp',
+    },
+    },
+
+    CTA_Text: 'Get Pricing',
+    CTA_Link: '/in/check-eligibility',
+  },
+
   Analyse_Section: {
     Headline1: 'What stands between ',
     Headline2: 'you and better loan opportunities?',
