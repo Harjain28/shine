@@ -18,6 +18,7 @@ export class PaymentComponent {
   reqData: any;
   merchantId: any;
   paymentUrl: boolean = false;
+  paymentGUrl: any;
 
   constructor(  private api: ApiService,  public router: Router, private datePipe: DatePipe   , private route: ActivatedRoute,
 
@@ -71,17 +72,12 @@ export class PaymentComponent {
           .subscribe({
             next: (res: any) => {
               this.reqData = res?.reqData;
+              this.paymentGUrl = res?.url;
               localStorage.setItem("reqData",this.reqData);
-              localStorage.setItem("merchantId",res?.merchantId)
+              localStorage.setItem("merchantId",res?.merchantId);
               //window.location.href = res?.url;
-              
-
-             //this.paymentURL();
-            
-
-              this.confirmPayment();
-
-
+             this.paymentURL();
+              // this.confirmPayment();
            
             },
             error: (error:any) => {

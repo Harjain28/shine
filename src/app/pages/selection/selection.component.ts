@@ -43,7 +43,7 @@ export class SelectionComponent {
     //       response => {
     //         // Handle success response
     //         console.log('Payment successful!', response);
-    //         this.confirmPayment()
+    //         // this.confirmPayment()
     //       },
     //       error => {
     //         // Handle error response
