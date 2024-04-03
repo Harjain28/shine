@@ -51,7 +51,7 @@
                     color: #3f3f3f;
                     margin-bottom: 2px;
                     line-height: 18px;
-                    margin-top: 120px;
+                    margin-top: 110px;
                 }
             }
         }
@@ -61,6 +61,25 @@
             border: 1px solid #E2E2E2;
             border-radius: 20px 20px 0px 0px;
             background-color: #F5F5F5;
+            position: relative;
+
+            .valueBtn{
+                padding: 5px 22px;
+                background-color: #C3E128;
+                color: #3F3F3F;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 25px;
+                border-radius: 50px;
+                position: absolute;
+                left: 50%;
+                top: 0px;
+                display: block;
+                width: max-content;
+                border: 1px solid #c3e128;
+                transform: translate(-50%, -18px);
+                font-family: Poppins !important;
+            }
 
             &:last-child{
                 background-color: var(--main1);
@@ -392,6 +411,7 @@
 @media (max-width: 767px) {
 
     .pricingPlan{
+        padding-top: 44px;
 
         .mobileVIewSilder{
 
@@ -401,7 +421,7 @@
                 overflow: hidden;
 
                 .monthView{
-                    padding: 40px 48px;
+                    padding: 20px 18px;
                     border: 1px solid #E2E2E2;
                     border-radius: 20px 20px 0px 0px;
                     background-color: #F5F5F5;
