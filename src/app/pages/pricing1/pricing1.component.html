@@ -58,8 +58,8 @@
 
             <div class="col-lg-12 dhidden">
                 <div class="content">
-                    <h3>Complete Your Enrollment</h3>
-                    <p>Shine offers a low-cost entry for a high-return journey to your ideal loans</p>
+                    <h3>{{pricingHeader?.Header1?.Text}}</h3>
+                    <p>{{pricingHeader?.Subheader}}</p>
                 </div>
             </div>
 
@@ -67,158 +67,38 @@
                 <div class="mobileVIewSilder">
                     <div class="priceBox">
                         <div class="monthView">
-                            <h3>Monthly</h3>
+                            <h3>{{pricingHeader?.headerText[1]}}</h3>
                             <del>₹1499</del>
                             <span>₹999</span>
                             <p>per member, per month</p>
-                            <button class="btn">Get Now</button>
+                            <button class="btn" (click)="goToSelection()">{{pricingHeader?.CTA_Text}}</button>
                         </div>
                         <div class="monthView active">
-                            <h3>Annual</h3>
-                            <del>₹4999</del>
+                            <h3>{{pricingHeader?.headerText[2]}}</h3>
+                            <del>4999</del>
                             <span>₹3999</span>
-                            <p>per member, per month</p>
-                            <button class="btn">Get Now</button>
+                            <p>per member, per year</p>
+                            <button class="btn" (click)="goToSelection()">{{pricingHeader?.CTA_Text}}</button>
                         </div>
                     </div>
 
                     <ul>
-                        <li>
-                            <small>1. Comprehensive Financial Overview</small>
+                        <li *ngFor = "let data of pricingColumns; let i = index">
+                            <small>{{i+1}}. {{ data?.item[0] }}</small> 
                             <p>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                            </p>
-                        </li>
-                        <li>
-                            <small>1. Comprehensive Financial Overview</small>
-                            <p>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                            </p>
-                        </li>
-                        <li>
-                            <small>1. Comprehensive Financial Overview</small>
-                            <p>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                            </p>
-                        </li>
-                        <li>
-                            <small>1. Comprehensive Financial Overview</small>
-                            <p>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                            </p>
-                        </li>
-                        <li>
-                            <small>1. Comprehensive Financial Overview</small>
-                            <p>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                            </p>
-                        </li>
-                        <li>
-                            <small>1. Comprehensive Financial Overview</small>
-                            <p>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                            </p>
-                        </li>
-                        <li>
-                            <small>1. Comprehensive Financial Overview</small>
-                            <p>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                            </p>
-                        </li>
-                        <li>
-                            <small>1. Comprehensive Financial Overview</small>
-                            <p>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                            </p>
-                        </li>
-                        <li>
-                            <small>1. Comprehensive Financial Overview</small>
-                            <p>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                            </p>
-                        </li>
-                        <li>
-                            <small>1. Comprehensive Financial Overview</small>
-                            <p>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                            </p>
-                        </li>
-                        <li>
-                            <small>1. Comprehensive Financial Overview</small>
-                            <p>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                            </p>
-                        </li>
-                        <li>
-                            <small>1. Comprehensive Financial Overview</small>
-                            <p>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
-                                <span>
-                                    <img src="./assets/LandingPage/yescheck.svg" alt="">
-                                </span>
+                                <ng-container *ngFor="let item of data?.item.slice(1)">
+                                
+                                        <span *ngIf="item.includes('Yes')">
+                                            <img src="./assets/LandingPage/yescheck.svg" alt="">
+                                        </span>
+                                        <span *ngIf="item.includes('No')"></span>
+                                </ng-container>
                             </p>
                         </li>
 
                         <div class="button">
-                            <button class="btn">Get Now</button>
-                            <button class="btn">Get Now</button>
+                            <button class="btn" (click)="goToSelection()">{{pricingHeader?.CTA_Text}}</button>
+                            <button class="btn" (click)="goToSelection()">{{pricingHeader?.CTA_Text}}</button>
                         </div>
                     </ul>
                 </div>
