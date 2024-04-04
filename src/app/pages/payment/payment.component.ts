@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { shinePricingPageJSON } from 'src/app/JsonFiles/pricing';
 
 @Component({
   selector: 'app-payment',
@@ -19,6 +20,15 @@ export class PaymentComponent {
   merchantId: any;
   paymentUrl: boolean = false;
   paymentGUrl: any;
+  
+  Headertext: any;
+  filteredData: any;
+  discountPrice: any;
+  total: any;
+  slicedData: boolean =false;
+  count: number = 0;
+  cuttedPrice: any;
+
 
   constructor(  private api: ApiService,  public router: Router, private datePipe: DatePipe   , private route: ActivatedRoute,
 
@@ -30,8 +40,35 @@ export class PaymentComponent {
     }
 
 
-    ngonInit() :void{
+    ngOnInit() :void{
+
+
+      this.Headertext = localStorage.getItem("text");
+      this.getConfirmPaymentJson();
       
+    }
+
+    getConfirmPaymentJson(){
+      this.filteredData = shinePricingPageJSON?.Confirm_Order_JSON?.OrderText.find(item => item.Headertext === this.Headertext)
+      for (const order of shinePricingPageJSON?.Confirm_Order_JSON?.OrderText) {
+        if (order.Headertext === this.Headertext) {
+          this.count += order.item.length;
+        }
+      }
+      if(this.Headertext === "Monthly")
+      {
+        this.cuttedPrice = '₹1499'
+      }
+      else{
+        this.cuttedPrice = '₹4999'
+
+      }
+      this.discountPrice = (this.filteredData?.Price*5)/100;
+      this.total = parseInt(this.filteredData?.Price) + this.discountPrice;
+    }
+
+    sliced(){
+      this.slicedData = true;
     }
 
     paymentURL(){

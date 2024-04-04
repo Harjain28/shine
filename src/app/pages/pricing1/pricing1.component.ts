@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -22,6 +22,9 @@ export class Pricing1Component {
   WhatisShineSection: any;
   HowDoesShinehelpSection: any;
   featureSection: any;
+
+  @Output() dataEvent = new EventEmitter<any>();
+
   constructor(public router: Router){
 
   }
@@ -65,8 +68,10 @@ export class Pricing1Component {
     console.log(this.pricingHeader.col,"gg")
   }
 
-  goToPayment(){
-    this.router.navigate(['/in/register'])
+  goToPayment(text:any){
+    localStorage.setItem("text",text);
+
+    this.router.navigate(['/in/payment'])
 
   }
   getPricingData(){

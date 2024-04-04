@@ -101,6 +101,46 @@ export const shinePricingPageJSON = {
     CTA_Text: 'Get Now',
     CTA_Link: '/in/check-eligibility',
   },
+
+  Confirm_Order_JSON:{
+
+    OrderText: [
+      {
+        Headertext: 'Monthly',
+        Price: '999',
+        item: [
+          'Comprehensive Financial Overview',
+          'Experian Credit Report Analysis',
+          'Early warning indicators for creditworthiness issues',
+          'GST Filing Analysis',
+          'Comprehensive Banking Assessment',
+          'Personalized Strategies to Improve Loan Prospects',
+          'Customized Insights into 15+ Lender Fits'
+        ]
+      },
+      {
+        Headertext: 'Annual',
+        Price: '3999',
+        item: [
+              'Comprehensive Financial Overview',
+              'Experian Credit Report Analysis',
+              'Early warning indicators for creditworthiness issues',
+              'GST Filing Analysis',
+              'Comprehensive Banking Assessment',
+              'Personalized Strategies to Improve Loan Prospects',
+              'Customized Insights into 15+ Lender Fits',
+              'Access to Educational Content on Best Borrowing Practices',
+             'Monthly Performance Tracking',
+             'Access to Credit Counsellor',
+             'Debt Consolidation Advisory ',
+             'Personalised Loan Negotiations'
+            ]
+          
+         
+      }
+  ]
+    
+  },
   
   What_is_Shine_Section: {
     Header: 'What is Shine?',
