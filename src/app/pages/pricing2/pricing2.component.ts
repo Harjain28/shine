@@ -19,12 +19,21 @@ export class Pricing2Component {
   HowDoesShinehelpSection: any;
   featureSection: any;
 
+  Headertext: any;
+  filteredData: any;
+  discountPrice: any;
+  total: any;
+  cuttedPrice: any;
+
   constructor(){
 
   }
 
   ngOnInit(): void{
     this.getPricingData();
+    this.Headertext = localStorage.getItem("text");
+
+    this.getConfirmPaymentJson();
   }
 
   getPricingData(){
@@ -39,6 +48,21 @@ export class Pricing2Component {
       count: res?.Count
     }))
 
+  }
+
+  getConfirmPaymentJson(){
+    this.filteredData = shinePricingPageJSON?.Confirm_Order_JSON?.OrderText.find(item => item.Headertext === this.Headertext)
+    
+    if(this.Headertext === "Monthly")
+    {
+      this.cuttedPrice = '₹1499'
+    }
+    else{
+      this.cuttedPrice = '₹4999'
+
+    }
+    this.discountPrice = (this.filteredData?.Price*5)/100;
+    this.total = parseInt(this.filteredData?.Price) + this.discountPrice;
   }
 
 }

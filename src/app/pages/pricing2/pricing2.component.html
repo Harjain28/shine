@@ -13,9 +13,9 @@
             <div class="col-lg-12">
                 <div class="KeyPlanBox">
                     <div class="themeBox">
-                        <h3>Annual Plan</h3>
-                        <del>₹2499</del>
-                        <span>₹999</span>
+                        <h3>{{filteredData?.Headertext}} Plan</h3>
+                        <del>{{cuttedPrice}}</del>
+                        <span>₹{{filteredData?.Price}}</span>
                         <p>per member, per month</p>
                         <button class="btn">Get Now</button>
                         <small>Exclusive features for unparalleled performance and top-tier benefits.</small>
@@ -23,34 +23,11 @@
                     <div class="rightBox">
                         <h3>Key Features</h3>
                         <ul>
-                            <li>
+                            <li *ngFor = "let data of filteredData?.item" >
                                 <img src="./assets/LandingPage/checkStar.svg" alt="">
-                                Comprehensive banking analysis inlcuding Volitility Index, Ratio Analysis, & Banking Discipline
-                            </li>
-                            <li>
-                                <img src="./assets/LandingPage/checkStar.svg" alt="">
-                                Comprehensive banking analysis inlcuding Volitility Index, Ratio Analysis, & Banking Discipline
-                            </li>
-                            <li>
-                                <img src="./assets/LandingPage/checkStar.svg" alt="">
-                                Comprehensive banking analysis inlcuding Volitility Index, Ratio Analysis, & Banking Discipline
-                            </li>
-                            <li>
-                                <img src="./assets/LandingPage/checkStar.svg" alt="">
-                                Comprehensive banking analysis inlcuding Volitility Index, Ratio Analysis, & Banking Discipline
-                            </li>
-                            <li>
-                                <img src="./assets/LandingPage/checkStar.svg" alt="">
-                                Comprehensive banking analysis inlcuding Volitility Index, Ratio Analysis, & Banking Discipline
-                            </li>
-                            <li>
-                                <img src="./assets/LandingPage/checkStar.svg" alt="">
-                                Comprehensive banking analysis inlcuding Volitility Index, Ratio Analysis, & Banking Discipline
-                            </li>
-                            <li>
-                                <img src="./assets/LandingPage/checkStar.svg" alt="">
-                                Comprehensive banking analysis inlcuding Volitility Index, Ratio Analysis, & Banking Discipline
-                            </li>
+                                {{data}}
+                              </li>
+                          
                         </ul>
                     </div>
                 </div>

@@ -366,17 +366,17 @@
           <div class="yourRankingSilder">
             <owl-carousel-o [options]="customOptionKeys">
               <ng-container>
-                <ng-template carouselSlide>
+                <ng-template carouselSlide *ngFor="let data of summarySection?.Banner">
                   <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6 col-sm-12">
                       <div class="improveBox">
-                        <img src="./assets/LandingPage/rankingImg.png" alt="">
+                        <img src={{data?.Desktop}} alt="">
                       </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-12 orderTop">
+                    <div class="col-lg-6 col-md-6 col-sm-12 orderTop" >
                       <div class="box">
-                        <p>{{summarySection?.Description}}</p>
+                        <p >{{data?.imageText}}</p>
                       </div>
                     </div>
                   </div>
