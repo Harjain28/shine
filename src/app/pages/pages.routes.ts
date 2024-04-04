@@ -35,9 +35,12 @@ export default[
     },
     {
         path: 'pricing2', loadComponent:() => import('./pricing2/pricing2.component').then(c=>c.Pricing2Component)
+    },
+    {
+        path: 'payment_status', loadComponent:() => import('./payment-status/payment-status.component').then(c=>c.PaymentStatusComponent)
     }
     ,
     {
-        path: 'payment_status', loadComponent:() => import('./payment-status/payment-status.component').then(c=>c.PaymentStatusComponent)
+        path: 'payment_status/:data', loadComponent:() => import('./payment-status/payment-status.component').then(c=>c.PaymentStatusComponent)
     }
 ] as Route[]

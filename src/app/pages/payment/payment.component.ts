@@ -1,15 +1,17 @@
-import { Component, Input } from '@angular/core';
+
+import { shinePricingPageJSON } from 'src/app/JsonFiles/pricing';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-import { shinePricingPageJSON } from 'src/app/JsonFiles/pricing';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-payment',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './payment.component.html',
-  styleUrls: ['./payment.component.scss']
+  styleUrls: ['./payment.component.scss'],
 })
 export class PaymentComponent {
   paramsObject: any;
@@ -29,16 +31,25 @@ export class PaymentComponent {
   count: number = 0;
   cuttedPrice: any;
 
+  showForm:boolean= false;
 
-  constructor(  private api: ApiService,  public router: Router, private datePipe: DatePipe   , private route: ActivatedRoute,
 
-    ){
-      this.route.queryParamMap.subscribe((params) => {
-        this.paramsObject = { ...params };
-      });
-      this.currentDate = this.datePipe.transform(new Date(), 'yyyy-MM-ddTHH:mm:ss.SSS\'Z\'', 'UTC')
-    }
-
+  constructor(
+    private api: ApiService,
+    public router: Router,
+    private http: HttpClient,
+    private datePipe: DatePipe,
+    private route: ActivatedRoute
+  ) {
+    this.route.queryParamMap.subscribe((params) => {
+      this.paramsObject = { ...params };
+    });
+    this.currentDate = this.datePipe.transform(
+      new Date(),
+      "yyyy-MM-ddTHH:mm:ss.SSS'Z'",
+      'UTC'
+    );
+  }
 
     ngOnInit() :void{
 
@@ -75,107 +86,78 @@ export class PaymentComponent {
       this.router.navigate(['in/selection'])
     }
 
-    getForPaymentMethod() {
-      
-      let requestData: any = {}; 
-        requestData["dateTime"] = this.currentDate ;
-        requestData["amount"] = "2.00";
-        requestData["isMultiSettlement"] = "0";
-        requestData["custMobile"] = "7976330044";
-        requestData["apiKey"] = "";
-        requestData["productId"] = "DEFAULT";
-        requestData["instrumentId"] = "NA";
-        requestData["cardType"] = "NA";
-        requestData["txnType"] = "DIRECT";
-        requestData["udf1"] = "NA";
-        requestData["udf2"] = "NA";
-        requestData["udf3"] = "NA";
-        requestData["udf4"] = "NA";
-        requestData["udf5"] = "NA";
-        requestData["udf6"] = "NA";
-        requestData["merchantId"] = "";
-        requestData["custMail"] = "harshit.appic@gmail.com";
-        requestData["returnUrl"] = "http://localhost:4200/in/payment_status";
-        requestData["channelId"] = "0";
-        requestData["txnId"] = "";
-        requestData["cardDetails"] = "NA";
-      
-        const params = {  ...this.paramsObject.params };
-        this.api
-          .postForPayment(
-            `api/Remediation/Payment`,requestData,
-            params
-          )
-          .subscribe({
-            next: (res: any) => {
-              this.reqData = res?.reqData;
-              this.paymentGUrl = res?.url;
-              localStorage.setItem("reqData",this.reqData);
-              localStorage.setItem("merchantId",res?.merchantId);
-              //window.location.href = res?.url;
-             this.paymentURL();
-              // this.confirmPayment();
-           
-            },
-            error: (error:any) => {
-            },
-            complete: () => {
-            //  ("Request complete");
-            },
-          });
-      
-    }
+  getForPaymentMethod() {
+    let requestData: any = {};
+    requestData['dateTime'] = this.currentDate;
+    requestData['amount'] = '2.00';
+    requestData['isMultiSettlement'] = '0';
+    requestData['custMobile'] = '7976330044';
+    requestData['apiKey'] = '';
+    requestData['productId'] = 'DEFAULT';
+    requestData['instrumentId'] = 'NA';
+    requestData['cardType'] = 'NA';
+    requestData['txnType'] = 'DIRECT';
+    requestData['udf1'] = 'NA';
+    requestData['udf2'] = 'NA';
+    requestData['udf3'] = 'NA';
+    requestData['udf4'] = 'NA';
+    requestData['udf5'] = 'NA';
+    requestData['udf6'] = 'NA';
+    requestData['merchantId'] = '';
+    requestData['custMail'] = 'harshit.appic@gmail.com';
+    requestData['returnUrl'] = 'http://localhost:4200/in/payment_status';
+    requestData['channelId'] = '0';
+    requestData['txnId'] = '';
+    requestData['cardDetails'] = 'NA';
 
-    confirmPayment(){
-      const defaultparams = {
-        payloadString: this.reqData,
-        mobile: "9444444444",
-      };
-      const params = { ...defaultparams, ...this.paramsObject.params };
-          this.api
-            .remediation(
-              `api/Remediation/PaymentConfirmation`,
-              params
-            )
-            .subscribe({
-              next: (res: any) => {
-                this.router.navigate(['/in/bank_statement'])
-
-              },
-              error: (error:any) => {
-              },
-              complete: () => {
-              //  ("Request complete");
-              },
-            });
-        
-      
-    }
-  
-
-    paymentStatusCheck(){
-      const defaultparams = {
-        payload: "",
-      };
-      const params = { ...defaultparams, ...this.paramsObject.params };
-      this.api.remediation(
-          `api/Remediation/PaymentStatusCheck`,
-          params
-        )
-        .subscribe({
-          next: (res: any) => {
-        
-         
-          },
-          error: (error:any) => {
-          },
-          complete: () => {
+    const params = { ...this.paramsObject.params };
+    this.api
+      .postForPayment(`api/Remediation/Payment`, requestData, params)
+      .subscribe({
+        next: (res: any) => {
+          this.reqData = res;
+          this.paymentGUrl = res.url;
+          if (res?.url) {
+            this.showForm = true;
+            setTimeout(() => {
+              this.submitForm();
+            }, 1000);
+             
+          }
+          // localStorage.setItem('reqData', this.reqData?.reqData);
+          // localStorage.setItem('merchantId', res?.merchantId);
+          // this.paymentURL();
+        },
+        error: (error: any) => {},
+        complete: () => {
           //  ("Request complete");
-          },
-        });
-    }
-  
- 
+        },
+      });
   }
-  
-  
+
+  submitForm() {
+    const formElement = document.getElementById('paymentForm') as HTMLFormElement;
+    if (formElement) {
+      formElement.submit();
+    }
+  }
+  confirmPayment() {
+    const defaultparams = {
+      payloadString: this.reqData,
+      mobile: '9444444444',
+    };
+    const params = { ...defaultparams, ...this.paramsObject.params };
+    this.api
+      .remediation(`api/Remediation/PaymentConfirmation`, params)
+      .subscribe({
+        next: (res: any) => {
+          this.router.navigate(['/in/bank_statement']);
+        },
+        error: (error: any) => {},
+        complete: () => {
+          //  ("Request complete");
+        },
+      });
+  }
+
+}
