@@ -171,6 +171,7 @@ export class LandingPageComponent {
   TestimonialsJson: any;
   summarySection: any;
   shine_comparison: any;
+  WhoisShineForSection: any;
   constructor(
     public eventService: EventService,
     public router: Router,
@@ -252,6 +253,8 @@ openPopup(data:any){
     this.TestimonialsJson = this.businessLoanJson.Shine_Testimonial;
 
     this.faqs = this.businessLoanJson?.Faqs?.FAQs;
+
+    this.WhoisShineForSection = this.businessLoanJson?.Who_is_Shine_For_Section
 
 
   }

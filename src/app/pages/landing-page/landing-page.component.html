@@ -170,10 +170,8 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 col-sm-12 m-auto">
           <div class="content">
-            <h3>Who Should Take This Plan</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil aliquam eum iusto ut laboriosam expedita
-              odio accusantium, accusamus nisi, voluptates reprehenderit nobis veritatis doloribus dicta ducimus
-              pariatur? Ipsum, inventore quam?</p>
+            <h3>{{WhoisShineForSection?.Headline1}}</h3>
+            <p>{{WhoisShineForSection?.Description}}</p>
           </div>
         </div>
         
@@ -184,78 +182,45 @@
                 <ng-template carouselSlide>
                     <div class="box">
                       <img class="userImg" src="./assets/LandingPage/BiginnerImg.svg" alt="">
-                      <h3>A Biginner</h3>
-                      <p>Never taken a loan</p>
+                      <h3>{{WhoisShineForSection?.Beginners_Feature?.Beginners_Title}}</h3>
+                      <p>{{WhoisShineForSection?.Beginners_Feature?.Summary}}</p>
 
                       <ul>
-                        <li>
+                        <li *ngFor="let data of WhoisShineForSection?.Beginners_Feature?.Beginners_Details">
                           <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          Newly started business
+                          {{data}}
                         </li>
-                        <li>
-                          <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          Newly started business
-                        </li>
-                        <li>
-                          <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          Newly started business
-                        </li>
-                        <li>
-                          <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          Newly started business
-                        </li>
+                       
                       </ul>
                     </div>
                 </ng-template>
                 <ng-template carouselSlide>
                     <div class="box">
                       <img class="userImg" src="./assets/LandingPage/IntermediateImg.svg" alt="">
-                      <h3>An Intermediate</h3>
-                      <p>Applied for a loan and not get</p>
+                      <h3>{{WhoisShineForSection?.Intermediate_Feature?.Intermediate_Feature}}</h3>
+                      <p>{{WhoisShineForSection?.Intermediate_Feature?.Summary}}</p>
 
                       <ul>
-                        <li>
+                        <li *ngFor="let data of WhoisShineForSection?.Intermediate_Feature?.Intermediate_Details">
                           <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          Newly started business
+                          {{data}}
                         </li>
-                        <li>
-                          <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          Newly started business
-                        </li>
-                        <li>
-                          <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          Newly started business
-                        </li>
-                        <li>
-                          <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          Newly started business
-                        </li>
+                       
                       </ul>
                     </div>
                 </ng-template>
                 <ng-template carouselSlide>
                     <div class="box">
                       <img class="userImg" src="./assets/LandingPage/ExpertImg.svg" alt="">
-                      <h3>An Expert</h3>
-                      <p>Got loan sanctioned multiple time</p>
+                      <h3>{{WhoisShineForSection?.Expert_Feature?.Expert_Feature}}</h3>
+                      <p>{{WhoisShineForSection?.Expert_Feature?.Summary}}</p>
 
                       <ul>
-                        <li>
+                        <li *ngFor="let data of WhoisShineForSection?.Expert_Feature?.Expert_Details">
                           <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          Newly started business
+                          {{data}}
                         </li>
-                        <li>
-                          <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          Newly started business
-                        </li>
-                        <li>
-                          <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          Newly started business
-                        </li>
-                        <li>
-                          <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          Newly started business
-                        </li>
+                       
                       </ul>
                     </div>
                 </ng-template>
@@ -290,49 +255,26 @@
           <div class="mobileTable dhidden">
             <owl-carousel-o [options]="customOptionTable">
               <ng-container>
-                <ng-template carouselSlide>
+               
+                <ng-template carouselSlide *ngFor="let texts of shine_comparison?.colMobile">
                   <div class="mobileRow">
                     <ul>
                       <li>
                         <div>
-                          <span>TTILE TEXTS 1</span>
-                          <p>Lorem Ipsum is simply dummy</p>
+                          <span>{{shine_comparison?.headerText[0]}}</span>
+                          <p >{{texts?.item[0]}}</p>
                         </div>
                       </li>
                       <li>
                         <div>
-                          <span>TTILE TEXTS 2</span>
-                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                          <span>{{shine_comparison?.headerText[1]}}</span>
+                          <p >{{texts?.item[1]}}</p>
                         </div>
                       </li>
                       <li>
                         <div>
-                          <span>TTILE TEXTS 3</span>
-                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </ng-template>
-                <ng-template carouselSlide>
-                  <div class="mobileRow">
-                    <ul>
-                      <li>
-                        <div>
-                          <span>TTILE TEXTS 1</span>
-                          <p>Lorem Ipsum is simply dummy</p>
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <span>TTILE TEXTS 2</span>
-                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <span>TTILE TEXTS 3</span>
-                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                          <span>{{shine_comparison?.headerText[2]}}</span>
+                          <p >{{texts?.item[2]}}</p>
                         </div>
                       </li>
                     </ul>
@@ -434,8 +376,7 @@
 
                     <div class="col-lg-6 col-md-6 col-sm-12 orderTop">
                       <div class="box">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                          been the industry's standard dummy text ever since the 1500s,</p>
+                        <p>{{summarySection?.Description}}</p>
                       </div>
                     </div>
                   </div>

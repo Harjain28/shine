@@ -173,8 +173,44 @@ export const shineLendingPageJSON = {
            'Track your month-on-month process to get closer to your dream funding.',
            'Get a one-time snapshot of your credit health to assess your creditworthiness.',
          ]
-       },
+       }
       ],
+
+    colMobile:[
+      
+       {
+         item: [
+           'Depth of Analysis',
+           'Determine your financial health based on your Credit History, Banking, & GST Filings.',
+           'The assessments are usually only based on your Credit History.',
+          
+         ]
+       },
+       {
+         item: [
+
+          'Best Return on Investment',
+          'Pay lower than market rates for a 360° assessment of your business to turn around your loan prospects within 3-6 months.',
+          'Pay more to know only one part of your financial story.',
+         ]
+       },
+       {
+         item: [
+          'Accessible Analysis',
+          'Clear and easy to understand language, breaks down complex financial terms.',
+          'Jargon-heavy and confusing to understand.', 
+         ]
+       },
+       {
+         item: [
+          'Growth Tracking',
+          'Track your month-on-month process to get closer to your dream funding.',    
+          'Get a one-time snapshot of your credit health to assess your creditworthiness.',  
+
+
+         ]
+       },
+    ],
     CTA_Text: 'Get Pricing',
     CTA_Link: '/in/check-eligibility',
   },
@@ -342,6 +378,8 @@ export const shineLendingPageJSON = {
     Header: 'Guaranteed Loan Success Starts Here.',
     Subheader:
       'Follow our tailored advice for a guaranteed shot at loan approval.',
+    Description:
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
     CTA_Text: 'Get Pricing',
     CTA_Link: '/in/check-eligibility',
     Banner: [
