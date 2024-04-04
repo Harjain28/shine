@@ -206,8 +206,6 @@ export const shineLendingPageJSON = {
           'Growth Tracking',
           'Track your month-on-month process to get closer to your dream funding.',    
           'Get a one-time snapshot of your credit health to assess your creditworthiness.',  
-
-
          ]
        },
     ],

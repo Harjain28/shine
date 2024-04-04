@@ -65,7 +65,7 @@ export class Pricing1Component {
     console.log(this.pricingHeader.col,"gg")
   }
 
-  goToSelection(){
+  goToPayment(){
     this.router.navigate(['/in/register'])
 
   }

@@ -10,6 +10,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MatDialog } from '@angular/material/dialog';
 import { BuildBureauPopupComponent } from 'src/app/modal/build-bureau-popup/build-bureau-popup.component';
+import { CreditJourneyPopupComponent } from 'src/app/modal/credit-journey-popup/credit-journey-popup.component';
 
 @Component({
   selector: 'app-credit-report',
@@ -33,7 +34,7 @@ export class CreditReportComponent {
   
   openBureauDialog(){
     // this.getBorrowerInformation();
-    const dialogRef = this.dialog.open(BuildBureauPopupComponent, {
+    const dialogRef = this.dialog.open(CreditJourneyPopupComponent, {
       width: 'auto',
       height: 'auto',
     });
