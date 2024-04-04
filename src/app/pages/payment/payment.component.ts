@@ -58,7 +58,7 @@ export class PaymentComponent {
         requestData["udf6"] = "NA";
         requestData["merchantId"] = "";
         requestData["custMail"] = "harshit.appic@gmail.com";
-        requestData["returnUrl"] = "http://localhost:4400/in/pricing1";
+        requestData["returnUrl"] = "http://localhost:4200/in/payment_status";
         requestData["channelId"] = "0";
         requestData["txnId"] = "";
         requestData["cardDetails"] = "NA";
