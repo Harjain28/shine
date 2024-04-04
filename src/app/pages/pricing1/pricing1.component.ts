@@ -71,7 +71,7 @@ export class Pricing1Component {
   goToPayment(text:any){
     localStorage.setItem("text",text);
 
-    this.router.navigate(['/in/payment'])
+    this.router.navigate(['/in/register'])
 
   }
   getPricingData(){
