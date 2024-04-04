@@ -42,26 +42,26 @@ export class PaymentComponent {
       
       let requestData: any = {}; 
         requestData["dateTime"] = this.currentDate ;
-        requestData["amount"] = 9000;
+        requestData["amount"] = "2.00";
         requestData["isMultiSettlement"] = "0";
-        requestData["custMobile"] = "";
+        requestData["custMobile"] = "7976330044";
         requestData["apiKey"] = "";
-        requestData["productId"] = "";
-        requestData["instrumentId"] = "";
-        requestData["cardType"] = "";
-        requestData["txnType"] = "";
-        requestData["udf1"] = "";
-        requestData["udf2"] = "";
-        requestData["udf3"] = "";
-        requestData["udf4"] = "";
-        requestData["udf5"] = "";
-        requestData["udf6"] = "";
+        requestData["productId"] = "DEFAULT";
+        requestData["instrumentId"] = "NA";
+        requestData["cardType"] = "NA";
+        requestData["txnType"] = "DIRECT";
+        requestData["udf1"] = "NA";
+        requestData["udf2"] = "NA";
+        requestData["udf3"] = "NA";
+        requestData["udf4"] = "NA";
+        requestData["udf5"] = "NA";
+        requestData["udf6"] = "NA";
         requestData["merchantId"] = "";
-        requestData["custMail"] = "";
-        requestData["returnUrl"] = "";
-        requestData["channelId"] = "";
+        requestData["custMail"] = "harshit.appic@gmail.com";
+        requestData["returnUrl"] = "http://localhost:4400/in/pricing1";
+        requestData["channelId"] = "0";
         requestData["txnId"] = "";
-        requestData["cardDetails"] = "";
+        requestData["cardDetails"] = "NA";
       
         const params = {  ...this.paramsObject.params };
         this.api
