@@ -3,7 +3,7 @@
     display: flex;
     position: relative;
     overflow: hidden;
-    padding-top: 70px;
+    padding-top: 160px;
     padding-bottom: 140px;
 
     .blueBack{
@@ -16,8 +16,18 @@
         top: 0px;
     }
 
+    .topContent{
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: normal;
+            margin-bottom: 25px;
+            color: #E2E2E2;
+            font-family: Poppins !important;
+            text-align: center;
+            position: relative;
+    }
+
     .v2checkBox{
-        margin-top: 100px;
         position: relative;
         z-index: 2;
         background-color: var(--main1);
