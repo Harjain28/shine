@@ -281,6 +281,17 @@
         display: block;
         line-height: 40px;
         font-family: Poppins !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+
+        small{
+          
+          font-size: 12px; 
+          font-weight: 300;
+          color:  #E2E2E2;
+        }
       }
 
       p{

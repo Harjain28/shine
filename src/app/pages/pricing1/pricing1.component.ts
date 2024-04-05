@@ -6,6 +6,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { shinePricingPageJSON } from 'src/app/JsonFiles/pricing';
 import { Router } from '@angular/router';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-pricing1',
@@ -25,7 +26,7 @@ export class Pricing1Component {
 
   @Output() dataEvent = new EventEmitter<any>();
 
-  constructor(public router: Router){
+  constructor(public router: Router, private state: LocalStorageService){
 
   }
 
@@ -64,6 +65,8 @@ export class Pricing1Component {
   };
 
   ngOnInit(): void{
+
+    this.state.removeItem();
     this.getPricingData();
     console.log(this.pricingHeader.col,"gg")
   }

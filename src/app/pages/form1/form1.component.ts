@@ -212,6 +212,7 @@ export class Form1Component implements OnInit {
             if (res.valid == true) {
               this.validatePin = true;
               this.showValidatepinError = false;
+              localStorage.setItem("state",res.state);
             } else {
               this.validatePin = false;
               this.showValidatepinError = true;

@@ -46,18 +46,18 @@ export class LocalStorageService {
 //     return !!localStorage
 //   }
 
-//   removeItem() {
-//      localStorage.removeItem('phone');
-//      localStorage.removeItem('stagingJourneyId');
-//     localStorage.removeItem('borrowerJourney');
-//     localStorage.removeItem('borrowerDetails');
-//     localStorage.removeItem('borrowerInfo');
+  removeItem() {
+     localStorage.removeItem('reqData');
+     localStorage.removeItem('mobile');
+    localStorage.removeItem('fullName');
+    localStorage.removeItem('companyName');
+    localStorage.removeItem('popupData');
     
-//      localStorage.removeItem('token');
-//      localStorage.setItem('isSubmit', 'false');
-//      localStorage.setItem('isncjSubmit','false');
-//     localStorage.removeItem('ncjData');
-//   }
+     localStorage.removeItem('text');
+     localStorage.removeItem('isV3');
+     localStorage.removeItem('userMobileNumber');
+     localStorage.removeItem('state');
+  }
 
 //   removeSomeItem() {
 //     localStorage.removeItem('stagingJourneyId');

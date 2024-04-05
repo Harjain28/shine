@@ -178,12 +178,15 @@ export class LandingPageComponent {
     private dialog: MatDialog,
     public localStorage: LocalStorageService,
     private cdr: ChangeDetectorRef,
+    private state: LocalStorageService,
     private breakpointObserver: BreakpointObserver,
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {
       
   }
   ngOnInit(): void {
+
+    this.state.removeItem();
      console.log(shineLendingPageJSON.Shine_Banner,"ll")
  //   this.localStorage.removeSomeItem();
     this.breakpointObserver

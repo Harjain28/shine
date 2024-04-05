@@ -6,11 +6,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { HttpClient } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-payment',
   standalone: true,
-  imports: [CommonModule,MatIconModule],
+  imports: [CommonModule,MatIconModule,FormsModule],
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.scss'],
 })
@@ -36,6 +37,14 @@ export class PaymentComponent {
   fullName:any;
   mobile: any;
   companyName: any;
+  discountSection: boolean = false;
+
+  couponInput: string = '';
+  isButtonDisabled: boolean = true;
+  calGST: any;
+  couponValue1 =  "test1";
+  couponValue2 = "test2";
+  state: any;
 
 
   constructor(
@@ -57,6 +66,8 @@ export class PaymentComponent {
 
     ngOnInit() :void{
 
+      this.state = localStorage.getItem("state");
+
       this.fullName = localStorage.getItem("fullName");
       this.mobile = localStorage.getItem("mobile")
       this.companyName = localStorage.getItem("companyName");
@@ -64,6 +75,33 @@ export class PaymentComponent {
       this.Headertext = localStorage.getItem("text");
       this.getConfirmPaymentJson();  
     }
+
+    cancelCoupon(){
+      this.discountSection = false;
+      this.calGST = ((this.filteredData?.Price)*18)/100;
+      this.total = parseInt(this.filteredData?.Price) + this.calGST;
+    }
+    
+    couponCode(){
+      this.discountSection = true;
+      if(this.couponInput === this.couponValue1){
+        this.discountPrice =100;
+        this.calGST = ((this.filteredData?.Price - this.discountPrice)*18)/100;
+
+        this.total = parseInt(this.filteredData?.Price) + this.calGST - this.discountPrice;
+      }
+      if(this.couponInput === this.couponValue2){
+        this.discountPrice =200;
+        this.calGST = ((this.filteredData?.Price - this.discountPrice)*18)/100;
+        this.total = parseInt(this.filteredData?.Price) + this.calGST - this.discountPrice;
+
+      }
+    }
+
+    onInputChange(): void {
+      this.isButtonDisabled = (this.couponInput.trim() !== this.couponValue1) && (this.couponInput.trim() !== this.couponValue2);
+    }
+  
 
     getConfirmPaymentJson(){
       this.filteredData = shinePricingPageJSON?.Confirm_Order_JSON?.OrderText.find(item => item.Headertext === this.Headertext)
@@ -80,8 +118,10 @@ export class PaymentComponent {
         this.cuttedPrice = '₹4999'
 
       }
-      this.discountPrice = (this.filteredData?.Price*5)/100;
-      this.total = parseInt(this.filteredData?.Price) + this.discountPrice;
+
+      this.calGST = ((this.filteredData?.Price)*18)/100;
+      this.total = parseInt(this.filteredData?.Price) + this.calGST;
+
     }
 
     sliced(){
