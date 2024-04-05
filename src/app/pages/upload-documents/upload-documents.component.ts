@@ -44,7 +44,7 @@ export class UploadDocumentsComponent {
   ncjcount: number = 60;
   tick = 1000;
   paramsObject: any;
-  iframeUrl!: SafeResourceUrl;
+  iframeUrl!: string;
 
 
 
@@ -152,7 +152,7 @@ export class UploadDocumentsComponent {
 
   netBankinglink(){
     const defaultparams = {
-      mobile: "6281281878807",
+      mobile: "8128187880",
       callbackEnum: 0,
     };
     const params = { ...defaultparams, ...this.paramsObject.params };
@@ -163,12 +163,8 @@ export class UploadDocumentsComponent {
       .subscribe({
         next: (res: any) => {
           this.callPerfiosCallback(res?.transactionId);
-          this.submitBankStatement();
-      //   this.iframeUrl = res?.url;
-
-         //  window.location.href = res?.url;
-           
-
+        this.iframeUrl = res?.url;
+        window.location.href = this.iframeUrl;
         },
         error: (error:any) => {
         },
@@ -180,7 +176,7 @@ export class UploadDocumentsComponent {
 
   uploadDocumentLink(){
     const defaultparams = {
-      mobile: "6281281878807",
+      mobile: "8128187880",
       callbackEnum: 0,
     };
     const params = { ...defaultparams, ...this.paramsObject.params };
@@ -193,16 +189,7 @@ export class UploadDocumentsComponent {
         next: (res: any) => {
 
            this.callPerfiosCallback(res?.transactionId);
-           this.submitBankStatement();
-       //   this.iframeUrl = res?.url;
-
-    
-       
-   
-
-          //  window.location.href = res?.url;
-  
-
+           window.location.href = res?.url;
          
         },
         error: (error:any) => {
@@ -224,35 +211,6 @@ export class UploadDocumentsComponent {
   }
 
 
-
-  validatePanNumber() {
-    // const formValue = this.v1enquiryForm.value;
-    // this.validatePAN = true;
-    // this.showValidatePANError = false;
-
-    // const params = { ...this.paramsObject.params };
-
-    // if (formValue.businesspan) {
-    //   this.api
-    //     .getwithHeader(
-    //       `api/Gst/ValidatePan?website=true&panNumber=${formValue.businesspan.toUpperCase()}`,
-    //       params
-    //     )
-    //     .subscribe(
-    //       (res: any) => {
-    //         if (typeof res === "boolean") {
-    //           this.validatePAN = res;
-    //         }
-    //         if (res && typeof res === "object" && "valid" in res) {
-    //           this.validatePAN = res.valid;
-    //         }
-    //       },
-    //       (err) => {
-    //         this.validatePAN = true;
-    //       }
-    //     );
-    // }
-  }
   
   onFileSelected(event:any) {
     const params = { ...this.paramsObject.params };
@@ -276,32 +234,6 @@ export class UploadDocumentsComponent {
       this.router.navigate(['/in/report'])   
     }, 1000)
     this.showEligible = true;
-
-
-//     let requestData = {};
-//     const defaultparams = {
-//      // ceDealId: this.sharedData?.dealId,
-//     };
-//     const params = { ...defaultparams, ...this.paramsObject.params };
-//     this.api
-//       .postForPostEligibility(`BankStatement/BankStatement/NetBanking`, null , params)
-//       .subscribe({
-//         next: (res: any) => {
-//           if (res?.success) {
-//             window.location.href = res?.url;
-          
-//           } else {         
-//           }
-//         },
-//         error: error => {
-//           console.log(error, "error");
-//         },
-//         complete: () => {
-//           console.log('Request complete');
-//         }
-//       });
-//  }
-
   }
 
   

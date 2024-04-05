@@ -52,7 +52,7 @@ export class FooterComponent {
   ngOnInit(): void {
     setTimeout(() => {
       this.isLoading = true;
-   }, 2000);
+   }, 200);
 
     // this.isBrowser = isPlatformBrowser(this.platformId);
   }
