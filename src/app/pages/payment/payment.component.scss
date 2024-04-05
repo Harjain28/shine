@@ -67,6 +67,7 @@
 
   .heading{
     margin-bottom: 30px;
+    position: relative;
 
     h3{
       font-size: 30px;
@@ -79,6 +80,23 @@
       span{
         color: var(--main2);
       }
+    }
+
+    .backbtn {
+        border: 1px solid #E2E2E2;
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        line-height: 7px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--main1);
+        justify-content: center;
+        padding: 5px 22px 5px 19px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
     }
 
     p{
@@ -346,11 +364,16 @@
   
     .heading{
       margin-bottom: 18px;
+      margin-top: 20px;
   
       h3{
         font-size: 22px;
         margin-bottom: 2px;
         line-height: 26px;
+      }
+
+      .backbtn {
+        top: -52px;
       }
     }
   
