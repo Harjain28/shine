@@ -38,9 +38,11 @@ export default[
     },
     {
         path: 'payment_status', loadComponent:() => import('./payment-status/payment-status.component').then(c=>c.PaymentStatusComponent)
-    }
-    ,
+    },
     {
         path: 'payment_status/:data', loadComponent:() => import('./payment-status/payment-status.component').then(c=>c.PaymentStatusComponent)
+    },
+    {
+        path: 'page-not-found', loadComponent:() => import('./page-not-found/page-not-found.component').then(c=>c.PageNotFoundComponent)
     }
 ] as Route[]

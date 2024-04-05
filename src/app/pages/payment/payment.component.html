@@ -33,7 +33,7 @@
 
           <ul>
             <li>
-              <span>Shine Annual Plan</span>
+              <span>Shine {{filteredData?.Headertext}} Plan</span>
               <span><b>₹{{filteredData?.Price}}</b></span>
             </li>
             <li>
@@ -50,11 +50,11 @@
             </li> -->
             <li>
               <span>GST</span>
-              <span><b>₹{{discountPrice}}</b></span>
+              <span><b>₹20</b></span>
             </li>
             <li>
               <span>CGST</span>
-              <span><b>₹{{discountPrice}}</b></span>
+              <span><b>₹20</b></span>
             </li>
             <li>
               <span>Total Payable Amount</span>
@@ -76,17 +76,17 @@
             <li>
               <span>Full Name</span>
               :
-              <span>Mr. Arnab Guha</span>
+              <span>{{fullName}}</span>
             </li>
             <li>
               <span>Mobile Number</span>
               :
-              <span>91+ 90909 09090</span>
+              <span>91+ {{mobile}}</span>
             </li>
             <li>
               <span>Company Name</span>
               :
-              <span> XYZ Name Company</span>
+              <span> {{companyName}}</span>
             </li>
           </ul>
           <h5 class="productText">Product Summary</h5>

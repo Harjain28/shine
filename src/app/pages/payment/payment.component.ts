@@ -33,6 +33,9 @@ export class PaymentComponent {
   cuttedPrice: any;
 
   showForm:boolean= false;
+  fullName:any;
+  mobile: any;
+  companyName: any;
 
 
   constructor(
@@ -53,6 +56,11 @@ export class PaymentComponent {
   }
 
     ngOnInit() :void{
+
+      this.fullName = localStorage.getItem("fullName");
+      this.mobile = localStorage.getItem("mobile")
+      this.companyName = localStorage.getItem("companyName");
+
       this.Headertext = localStorage.getItem("text");
       this.getConfirmPaymentJson();  
     }

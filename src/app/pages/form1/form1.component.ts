@@ -127,6 +127,16 @@ export class Form1Component implements OnInit {
     this.api.post(`api/Remediation/GetOTP`, requestData, params).subscribe({ next: (res: any) => {
           if (res.success) {
             localStorage.setItem("mobile",formValue.phoneNumber);
+
+            const capitalizeFirstLetter = (str: string) => {
+              return str.charAt(0).toUpperCase() + str.slice(1);
+            };
+            const fullName1 = formValue.title + ' ' + capitalizeFirstLetter(formValue.firstName) + ' ' + capitalizeFirstLetter(formValue.lastName);
+            localStorage.setItem("fullName",fullName1);
+            localStorage.setItem("companyName",formValue.busninessName);
+
+
+            console.log(formValue.busninessName,"kkk")
             this.router.navigate(['/in/otp']);
             this.isSubmit = true;
           } else          

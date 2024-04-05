@@ -1,0 +1,110 @@
+.pagenotfound{
+    padding-bottom: 120px;
+    padding-top: 320px;
+    // height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main1);
+    background-image: url(../../../assets/images/shine/leftLight.svg);
+    background-repeat: no-repeat;
+    background-position: initial;
+
+    .backgroundImages{
+        position: relative;
+
+        &:before{
+            position: absolute;
+            content: "";
+            display: block;
+            background-image: url(../../../assets/images/shine/grils.svg);
+            background-repeat: no-repeat;
+            left: 0px;
+            z-index: 1;
+            width: 200px;
+            height: 100%;
+            top: 0px;
+            transform: translate(30% , 0%);
+        }
+        &:after{
+            position: absolute;
+            content: "";
+            display: block;
+            background-image: url(../../../assets/images/shine/star.svg);
+            background-repeat: no-repeat;
+            right: 0px;
+            z-index: 1;
+            width: 210px;
+            height: 290px;
+            top: 0px;
+            transform: translate(0%, -50%);
+            background-size: 100%;
+        }
+
+        .pageFound{
+            text-align: center;
+
+            h2{
+                font-size: 65px;
+                font-weight: 600;
+                margin-bottom: 28px;
+                line-height: 38px;
+                color: #FFFFFF;
+            }
+            
+            p{
+                color: #fff;
+                font-size: 18px;
+                line-height: 28px;
+                font-weight: 400;
+            }
+
+            .ButtonNow{
+                margin-top: 46px !important;
+            }
+        }
+
+    }
+}
+
+
+
+@media (max-width: 767px) {
+
+    .pagenotfound{
+        padding-bottom: 230px;
+        padding-top: 250px;
+    
+        .backgroundImages{
+    
+            &:before{
+                left: -10px;
+                top: 20px;
+                transform: translate(0%, 100%);
+            }
+            &:after{
+                width: 130px;
+                height: 100%;
+                transform: translate(0%, -63%);
+                background-size: 100%;
+            }
+    
+            .pageFound{
+                text-align: center;
+    
+                h2{
+                    font-size: 40px;
+                }
+                
+                p{
+                    font-size: 14px;
+                }
+    
+                .ButtonNow{
+                    margin-top: 26px !important;
+                }
+            }
+    
+        }
+    }
+}
