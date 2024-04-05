@@ -2,6 +2,62 @@
 <div class="creditReportSection section_padding_top">
     <div class="container">
       <div class="row">
+
+        <div class="mobileSilder dhidden">
+          <owl-carousel-o [options]="customOptions4">
+            <ng-container>
+              <ng-template carouselSlide>
+                  <div class="scoreBox">
+                    <h3>Your Bureau Score</h3>
+                    <div class="scoreChart text-center">
+                      <app-semi-doughnut ></app-semi-doughnut>
+                    </div>
+                    <div class="buttonJob">
+                      <button class="btn" (click)="openPopup()">Your Bureau Score</button>
+                    </div>
+                    <p>Your bureau score plays a critical role in the assessments and it would be an important criteria
+                      for your eligibility. A score above 700 is considered.</p>
+                    <div class="box">
+                      <img src="./assets/LandingPage/whiteInformation.svg" alt="">
+                      <span>Have you thoroughly read your Experian Bureau report yet?</span>
+                    </div>
+                  </div>
+              </ng-template>
+              <ng-template carouselSlide>
+                  <div class="heightBox">
+                    <div class="row">
+                      <div class="col-lg-12 mb-4">
+                        <div class="numberBox">
+                          <div class="content">
+                            <h3>How Risky You are As a Businessssss</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
+                          </div>
+                          <div class="numberText">
+                            <p>2</p>
+                            <span>Remarks</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-12">
+                        <div class="numberBox colorChange">
+                          <div class="content">
+                            <h3>How Hungry You are For a Loan</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
+                          </div>
+                          <div class="numberText">
+                            <p>1</p>
+                            <span>Credit Enquiry</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+          <button class="btn moreBtn">1 more <mat-icon>keyboard_arrow_right</mat-icon></button>
+        </div>
+
         <div class="col-lg-12">
           <div class="title">
             <h2><span>Your Credit Report</span></h2>
@@ -10,8 +66,6 @@
         </div>
         <div class="container" *ngIf="expandSection">
           <div class="row">
-  
-  
             <div class="col-lg-12 mb-4">
               <div class="loanHistory">
                 <div class="minus" (click)=minimize()>
@@ -227,13 +281,12 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+
+        <div class="col-lg-4 col-md-4 col-sm-12 mb-4 mhidden">
           <div class="scoreBox">
             <h3>Your Bureau Score</h3>
             <div class="scoreChart text-center">
               <app-semi-doughnut ></app-semi-doughnut>
-  
-  
             </div>
             <div class="buttonJob">
               <button class="btn" (click)="openPopup()">Your Bureau Score</button>
@@ -363,7 +416,7 @@
           </div>
         </div>
   
-        <div class="col-lg-4 col-md-4 col-sm-12 mb-4" *ngIf="!expandBlocks">
+        <div class="col-lg-4 col-md-4 col-sm-12 mb-4 mhidden" *ngIf="!expandBlocks">
           <div class="heightBox">
             <div class="row">
               <div class="col-lg-12 mb-4">

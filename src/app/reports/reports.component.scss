@@ -90,14 +90,13 @@
         height: 100%;
         position: relative;
 
-
-
         h3 {
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 22px;
             color: #3F3F3F;
             text-align: center;
+            font-family: Poppins !important;
         }
 
         .scoreChart {
@@ -2652,6 +2651,68 @@
             }
         }
     }
+
+    .mobileSilder{
+        margin-bottom: 30px;
+
+        .heightBox{
+            margin: 10px;
+
+            .numberBox{
+                padding: 40px 24px;
+                height: 220px;
+
+                .content{
+
+                    h3{
+                        font-size: 18px;
+                        line-height: 26px;
+                    }
+                }
+                
+                .numberText{
+                    min-height: 190px;
+                }
+            }
+        }
+
+        .scoreBox{
+            margin: 10px 10px 20px;
+        }
+
+        .btn{
+
+            &.moreBtn{
+                padding: 0px;
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+                font-weight: 600;
+                color: var(--main1);
+                justify-content: flex-end;
+                width: 100%;
+                font-family: Poppins !important;
+                margin-top: -28px;
+                margin-left: -20px;
+            }
+        }
+
+        ::ng-deep {
+
+            .owl-dots {
+
+                .owl-dot {
+
+                    &.active {
+
+                        span {
+                            background-color: var(--main1);
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     .creditReportSection {
     
@@ -2736,12 +2797,18 @@
     
                     .summaryContent {
                         display: block;
+
+                        .smileImg{
+                            display: flex;
+                            justify-content: center;
+                        }
                     }
                 }
 
                 .defaultHistory{
 
                     .numberBox{
+                        flex-wrap: wrap;
 
                         li{
                             min-height: auto;

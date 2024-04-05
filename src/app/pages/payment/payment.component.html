@@ -1,56 +1,21 @@
-<!-- <div class="priceSection section_padding">
+<div class="headerBackground"></div>
+
+<div class="paymentUnsuccessful">
   <div class="container">
-    <div class="features">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="content pt-5 text-center">
-            <h3>
-              You've selected our PRO VERSION!
-            </h3>
-            <p>Our Starter plan costs less than 1% of<br> your next project and can save
-            </p>
-          </div>
-          <h2>Order Confirmation</h2>
-          <br>
-          <p style="font-weight: 500;">
-            Thank you for your purchase! Please review your order details below<br> before proceeding to payment
-          </p>
-        </div>
-        <div class="col-12">
-          <div class="card-header">
-          </div>
-          <div class="card-body">
-            <div class="product">
-              <hr>
-              <div class="row">
-                <div class="col-8">Product 1</div>
-                <div class="col-4">₹ 3,000.00</div>
-                <div class="col-8">Product 2</div>
-                <div class="col-4">₹ 3,000.00</div>
-                <div class="col-8">Product 3</div>
-                <div class="col-4">₹ 3,000.00</div>
-              </div>
-              <hr>
-            </div>
-            <div class="row total">
-              <div class="col-8">
-                <span class="total-label"><strong>Total</strong></span>
-              </div>
-              <div class="col-4">
-                <span class="total-amount">₹ 9,000.00</span>
-              </div>
-            </div>
-            <br>
-            <br>
-            <button class="btn btn-primary proceed-button" (click)="getForPaymentMethod()">Proceed to Payment</button>
-          </div>
+    <div class="row">
+      <div class="col-lg-9 col-md-10 col-sm-12 m-auto">
+        <div class="title">
+          <h3>
+            <mat-icon>warning</mat-icon>
+            Payment Unsuccessful
+          </h3>
+          <p>No funds were taken from your account. In case of a deduction, you will receive a refund within 5-7
+            business days. Please input accurate information or try another payment method.</p>
         </div>
       </div>
     </div>
   </div>
-</div> -->
-
-<div class="headerBackground"></div>
+</div>
 
 <div class="annualPlanSection">
   <div class="container">
@@ -68,11 +33,27 @@
 
           <ul>
             <li>
-              <span>Unit Price</span>
+              <span>Shine Annual Plan</span>
               <span><b>₹{{filteredData?.Price}}</b></span>
             </li>
             <li>
-              <span>Discount Offer</span>
+              <span>
+                <div class="from-control">
+                  <input type="text" placeholder="Enter Coupon Code">
+                  <button class="btn">Apply</button>
+                </div>
+              </span>
+            </li>
+            <!-- <li>
+              <span>Discount Offer (<span>Sample Copoun Applied</span>)</span>
+              <span><b class="color">₹{{discountPrice}}</b></span>
+            </li> -->
+            <li>
+              <span>GST</span>
+              <span><b>₹{{discountPrice}}</b></span>
+            </li>
+            <li>
+              <span>CGST</span>
               <span><b>₹{{discountPrice}}</b></span>
             </li>
             <li>
@@ -83,38 +64,38 @@
 
           <div class="paymentBtn">
             <button class="btn" (click)="getForPaymentMethod()">Proceed to Payment</button>
+            <!-- <button class="btn" (click)="getForPaymentMethod()">Retry Payment</button> -->
           </div>
         </div>
       </div>
-      
+
       <div class="col-lg-6 co-md-12 col-sm-12">
         <div class="col-lg-8 col-md-10 col-sm-12 m-auto">
+          <h5 class="productText">Your Details</h5>
+          <ul class="nameList">
+            <li>
+              <span>Full Name</span>
+              :
+              <span>Mr. Arnab Guha</span>
+            </li>
+            <li>
+              <span>Mobile Number</span>
+              :
+              <span>91+ 90909 09090</span>
+            </li>
+            <li>
+              <span>Company Name</span>
+              :
+              <span> XYZ Name Company</span>
+            </li>
+          </ul>
+          <h5 class="productText">Product Summary</h5>
           <div class="paymentPlan">
             <div class="box">
               <h3>{{filteredData?.Headertext}} Plan</h3>
               <del>{{cuttedPrice}}</del>
               <span>₹{{filteredData?.Price}}</span>
-              <p>per member, per year</p>
-            </div>
-            <div class="priceList">
-              <h3>Key Features</h3>
-              <ul>
-
-                <li *ngFor = "let data of filteredData?.item.slice(0, 5)" >
-                  <img src="./assets/LandingPage/checkStar.svg" alt="">
-                  {{data}}
-                </li>
-
-                <ul *ngIf = "slicedData">
-                <li *ngFor = "let data of filteredData?.item.slice(5)" >
-                  <img src="./assets/LandingPage/checkStar.svg" alt="">
-                  {{data}}
-                </li>
-              </ul>
-               
-
-                <button class="btn" *ngIf = "!slicedData" (click)="sliced()">{{count-5}}+ more features</button>
-              </ul>
+              <p>4 reports per year</p>
             </div>
           </div>
         </div>
