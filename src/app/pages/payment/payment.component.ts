@@ -52,11 +52,8 @@ export class PaymentComponent {
   }
 
     ngOnInit() :void{
-
-
       this.Headertext = localStorage.getItem("text");
-      this.getConfirmPaymentJson();
-      
+      this.getConfirmPaymentJson();  
     }
 
     getConfirmPaymentJson(){
@@ -121,12 +118,8 @@ export class PaymentComponent {
             this.showForm = true;
             setTimeout(() => {
               this.submitForm();
-            }, 1000);
-             
+            }, 1000);  
           }
-          // localStorage.setItem('reqData', this.reqData?.reqData);
-          // localStorage.setItem('merchantId', res?.merchantId);
-          // this.paymentURL();
         },
         error: (error: any) => {},
         complete: () => {
@@ -141,23 +134,6 @@ export class PaymentComponent {
       formElement.submit();
     }
   }
-  confirmPayment() {
-    const defaultparams = {
-      payloadString: this.reqData,
-      mobile: '9444444444',
-    };
-    const params = { ...defaultparams, ...this.paramsObject.params };
-    this.api
-      .remediation(`api/Remediation/PaymentConfirmation`, params)
-      .subscribe({
-        next: (res: any) => {
-          this.router.navigate(['/in/bank_statement']);
-        },
-        error: (error: any) => {},
-        complete: () => {
-          //  ("Request complete");
-        },
-      });
-  }
+ 
 
 }
