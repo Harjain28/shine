@@ -24,7 +24,7 @@
         <div class="heading text-center ">
           <h3>You have selected our <span>{{filteredData?.Headertext}} Plan</span>!</h3>
           <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> -->
-          <button class="btn backbtn">
+          <button class="btn backbtn" (click)="back()">
             <mat-icon>keyboard_arrow_left</mat-icon>
             Back</button>
         </div>
@@ -103,7 +103,7 @@
               <h3>{{filteredData?.Headertext}} Plan</h3>
               <del>{{cuttedPrice}}</del>
               <span>₹{{filteredData?.Price}} <small>+GST</small></span>
-              <p>4 reports per year</p>
+              <p>4 reports per {{per_text}}</p>
             </div>
           </div>
         </div>

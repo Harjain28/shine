@@ -45,6 +45,7 @@ export class PaymentComponent {
   couponValue1 =  "test1";
   couponValue2 = "test2";
   state: any;
+  per_text: any;
 
 
   constructor(
@@ -112,9 +113,11 @@ export class PaymentComponent {
       }
       if(this.Headertext === "Monthly")
       {
+        this.per_text = "month"
         this.cuttedPrice = '₹1499'
       }
       else{
+        this.per_text = "year"
         this.cuttedPrice = '₹4999'
 
       }
@@ -122,6 +125,10 @@ export class PaymentComponent {
       this.calGST = ((this.filteredData?.Price)*18)/100;
       this.total = parseInt(this.filteredData?.Price) + this.calGST;
 
+    }
+
+    back(){
+      this.router.navigate(['in/otp'])
     }
 
     sliced(){
