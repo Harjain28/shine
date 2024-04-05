@@ -163,6 +163,12 @@
           font-family: Poppins !important;
           color: #3f3f3f;
 
+          .cancel{
+            padding: 0px;
+            margin-top: -6px;
+            margin-left: 6px;
+          }
+
           span{
             color: var(--main2);
           }
@@ -193,6 +199,11 @@
 
                 &::placeholder{
                   color: var(--main2);
+                }
+
+                &:focus{
+                  outline: none;
+                  box-shadow: none;
                 }
               }
 
