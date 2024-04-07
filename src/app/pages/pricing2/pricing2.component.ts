@@ -6,6 +6,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { shinePricingPageJSON } from 'src/app/JsonFiles/pricing';
 
+
 @Component({
   selector: 'app-pricing2',
   standalone: true,
@@ -26,14 +27,15 @@ export class Pricing2Component {
   cuttedPrice: any;
 
   constructor(){
+    this.getPricingData();
 
   }
 
   ngOnInit(): void{
-    this.getPricingData();
+    
     this.Headertext = localStorage.getItem("text");
-
     this.getConfirmPaymentJson();
+   
   }
 
   getPricingData(){
@@ -47,6 +49,7 @@ export class Pricing2Component {
       productCopy: res?.Product_copy,
       count: res?.Count
     }))
+    
 
   }
 

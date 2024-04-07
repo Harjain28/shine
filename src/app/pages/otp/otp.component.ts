@@ -120,7 +120,7 @@ export class OtpComponent implements OnInit{
         next: (res: any) => {
           if (res.success == true) {
           //  const stateData = Buffer.from(res.token).toString("base64");
-            this.router.navigate(['/in/payment']);
+            this.router.navigate(['/in/confirm_order']);
             console.log("Otp Verfied")
 
           } else {

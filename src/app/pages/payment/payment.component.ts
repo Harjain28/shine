@@ -7,6 +7,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { HttpClient } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-payment',
@@ -46,6 +47,7 @@ export class PaymentComponent {
   couponValue2 = "test2";
   state: any;
   per_text: any;
+  transactionFailed: boolean = false;
 
 
   constructor(
@@ -53,6 +55,7 @@ export class PaymentComponent {
     public router: Router,
     private http: HttpClient,
     private datePipe: DatePipe,
+    private event: EventService,
     private route: ActivatedRoute
   ) {
     this.route.queryParamMap.subscribe((params) => {
@@ -66,7 +69,9 @@ export class PaymentComponent {
   }
 
     ngOnInit() :void{
-
+      this.event.paymentStatus$.subscribe((status: boolean) => {
+        this.transactionFailed = status;
+      });
       this.state = localStorage.getItem("state");
 
       this.fullName = localStorage.getItem("fullName");
@@ -75,6 +80,8 @@ export class PaymentComponent {
 
       this.Headertext = localStorage.getItem("text");
       this.getConfirmPaymentJson();  
+
+      
     }
 
     cancelCoupon(){

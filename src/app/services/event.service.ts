@@ -33,6 +33,10 @@ export class EventService {
     "disbursal",
   ];
   selectedStepIndex: any;
+  private paymentStatusSubject = new BehaviorSubject<boolean>(false);
+  paymentStatus$ = this.paymentStatusSubject.asObservable();
+
+ 
   constructor(public location: Location , private title: Title, private meta: Meta , private canonicalService: CanonicalService , private router: Router , private route : ActivatedRoute ) {
 
     this.route.queryParamMap.subscribe((params) => {
@@ -43,6 +47,11 @@ export class EventService {
   trigger() {
     this.triggerComponent.next();
   }
+
+  updatePaymentStatus(status: boolean) {
+    this.paymentStatusSubject.next(status);
+  }
+
 
   numberOnly(event: any, type: string): boolean {
     const charCode = event.which ? event.which : event.keyCode;

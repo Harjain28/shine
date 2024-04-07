@@ -12,13 +12,12 @@ import { Location } from '@angular/common';
 })
 export class AuthGuard  {
   private readonly pageUrls: string[] = [
-    "/in/pricing1",
+    "/in/pricing_group",
     "/in/register",
     "/in/otp",
-    "/in/pricing1",
-    "/in/pricing2",
+    "/in/pricing_annual",
     "/in/payment_status",
-    "/in/payment",
+    "/in/confirm_order",
     "/in/bank_statement",
     "/in/report"
   ];

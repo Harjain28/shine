@@ -266,7 +266,7 @@ export class Header2Component {
   }
   
   goToPricing(){
-    this.router.navigate(['/in/pricing'])
+    this.router.navigate(['/in/pricing_group'])
   }
 
   goToAbout(){

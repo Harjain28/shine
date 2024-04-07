@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'shine';
 
   constructor(
-    public router: Router){}
+    public router: Router, ){}
 
   isShineHeaderVisible(): boolean {
     return this.router.url.includes('report') 

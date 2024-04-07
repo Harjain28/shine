@@ -1,6 +1,6 @@
 <div class="headerBackground"></div>
 
-<!-- <div class="paymentUnsuccessful">
+<div class="paymentUnsuccessful" *ngIf="transactionFailed">
   <div class="container">
     <div class="row">
       <div class="col-lg-9 col-md-10 col-sm-12 m-auto">
@@ -15,7 +15,7 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>
 
 <div class="annualPlanSection">
   <div class="container">
@@ -70,10 +70,14 @@
             </li>
           </ul>
 
-          <div class="paymentBtn">
+          <div class="paymentBtn"  *ngIf="!transactionFailed">
             <button class="btn" (click)="getForPaymentMethod()">Proceed to Payment</button>
-            <!-- <button class="btn" (click)="getForPaymentMethod()">Retry Payment</button> -->
           </div>
+
+          <div class="paymentBtn"  *ngIf="transactionFailed">
+            <button class="btn" (click)="getForPaymentMethod()">Retry Payment</button>
+          </div>
+         
         </div>
       </div>
 

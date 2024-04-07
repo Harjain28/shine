@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { StatusPopupComponent } from 'src/app/modal/status-popup/status-popup.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-payment-status',
@@ -15,7 +16,9 @@ import { ApiService } from 'src/app/services/api.service';
 export class PaymentStatusComponent {
   paramsObject: any;
   isDialogShow: boolean = false;
-  constructor(private dialog: MatDialog, private router: Router, private api: ApiService, private route: ActivatedRoute){
+  dialogRef: MatDialogRef<StatusPopupComponent> | undefined;
+
+  constructor(private dialog: MatDialog, private router: Router, private api: ApiService, private route: ActivatedRoute, private event: EventService){
     this.route.queryParamMap.subscribe((params) => {
       this.paramsObject = { ...params };
       this.confirmPayment();
@@ -31,10 +34,15 @@ export class PaymentStatusComponent {
 
     
   openBureauDialog(){
-    const dialogRef = this.dialog.open(StatusPopupComponent, {
+    this.dialogRef = this.dialog.open(StatusPopupComponent, {
       width: 'auto',
       height: 'auto',
     });
+  }
+  closeBureauDialog() {
+    if (this.dialogRef) {
+        this.dialogRef.close(); // Close the dialog using the stored reference
+    }
   }
 
   confirmPayment() {
@@ -50,10 +58,12 @@ export class PaymentStatusComponent {
           if (res?.trans_status === 'F') {
             this.isDialogShow = true;
              this.api.alert(res?.resp_message, "error");
-            this.router.navigate(['/in/payment']);
+             this.closeBureauDialog();
+             this.event.updatePaymentStatus(true);
+             this.router.navigate(['/in/confirm_order'], { replaceUrl: true });
           } else {
             this.api.alert('Please upload documents', "success");
-          this.router.navigate(['/in/bank_statement']);
+          this.router.navigate(['/in/bank_statement'],{ replaceUrl: true });
           }
           
         },

@@ -223,7 +223,7 @@ openPopup(data:any){
 }
 
  goToPlans(){
-  this.router.navigate(['/in/pricing1'])
+  this.router.navigate(['/in/pricing_group'])
  }
   showAboutClass(body: any) {
     this.moreContent = body;
