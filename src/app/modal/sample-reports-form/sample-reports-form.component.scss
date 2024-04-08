@@ -177,4 +177,17 @@
     }
 }
 
+.container {
+    position: relative;
+    /* Add any other styles for your container */
+  }
+  
+  .cross-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: -30px -29px 5px 4px;
+    /* Add any other styles for your icon */
+  }
+
    

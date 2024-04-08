@@ -7,6 +7,8 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { shinePricingPageJSON } from 'src/app/JsonFiles/pricing';
 import { Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { SampleReportsFormComponent } from 'src/app/modal/sample-reports-form/sample-reports-form.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-pricing1',
@@ -26,7 +28,7 @@ export class Pricing1Component {
 
   @Output() dataEvent = new EventEmitter<any>();
 
-  constructor(public router: Router, private state: LocalStorageService){
+  constructor(public router: Router, private state: LocalStorageService,private dialog:MatDialog){
 
   }
 
@@ -70,6 +72,18 @@ export class Pricing1Component {
     this.getPricingData();
     console.log(this.pricingHeader.col,"gg")
   }
+
+  viewReportsForm(){
+    this.openDialog();
+   }
+ 
+   openDialog(){
+     // this.getBorrowerInformation();
+     const dialogRef = this.dialog.open(SampleReportsFormComponent, {
+       width: '320px',
+       height: 'auto',
+     });
+   }
 
   goToPayment(text:any){
     localStorage.setItem("text",text);

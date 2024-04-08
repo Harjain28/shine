@@ -2,9 +2,15 @@
 <div class="modalOpen" *ngIf="!isOTPShow">
     <div class="blueBack"></div>
     <div class="modalBox">
-        <div class="Box">
 
-            <h3>Fill the Form to View Sample Report</h3>
+        <div class="Box">     
+            
+            <div class="container" (click)="cancel()">
+                <mat-icon class="cross-icon text-white">cancel</mat-icon>
+              </div>
+              
+              <h3>Fill the Form to View Sample Report</h3>
+
 
             <form [formGroup]="viewForm">
                 <div class="row">

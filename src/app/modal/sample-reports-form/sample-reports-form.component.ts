@@ -96,6 +96,11 @@ export class SampleReportsFormComponent {
     this.form();
 
    }
+
+   cancel(){
+    this.closeDialoge();
+   }
+
    back(){
     this.isOTPShow = false;
    }
@@ -110,6 +115,9 @@ export class SampleReportsFormComponent {
   }
 
   submitOtp() {
+
+    this.router.navigate(['in/report_model1'])
+    this.closeDialoge();
     // this.isOtpSubmit = true;
     // const formValue = this.otpVerify.value;
     // const requestData = {};
@@ -150,6 +158,8 @@ export class SampleReportsFormComponent {
     //   this.isOtpSubmit = false;
     // }
   }
+
+  
 
 
   onInputChange(event: Event) {
