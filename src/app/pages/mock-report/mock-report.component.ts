@@ -18,6 +18,7 @@ import { Mixed3Component } from 'src/app/charts/mixed3/mixed3.component';
 import { Mixed4Component } from 'src/app/charts/mixed4/mixed4.component';
 import { PieComponent } from 'src/app/charts/pie/pie.component';
 import { ChartsJsonData } from 'src/app/JsonFiles/ChartJSONData';
+import { shineLendingPageJSON } from 'src/app/JsonFiles/lendingpage';
 
 @Component({
   selector: 'app-mock-report',
@@ -32,6 +33,7 @@ import { ChartsJsonData } from 'src/app/JsonFiles/ChartJSONData';
 })
 export class MockReportComponent {
   charts: any;
+  businessLoanJson: any;
     constructor(private dialog: MatDialog){}
 
   @Input() creditReportsChartsData: any;
@@ -101,32 +103,7 @@ export class MockReportComponent {
 
 
 
-  
-  openDialog(){
-    // this.getBorrowerInformation();
-    const dialogRef = this.dialog.open(CreditJourneyPopupComponent, {
-      width: 'auto',
-      height: 'auto',
-    });
-  }
 
-  getFAQ(){
-    this.faqs = this.faqsData.map((res: { Question: any; Answer: any; }) =>({
-      question: res?.Question,
-      answer: res.Answer
-    }));
-    
-  }
-
-
-  
-  openPopup(){
-    this.openDialog();
-  }
-
-  moreOffers(){
-    this.visibleOffers = true;
-  }
   
   ngOnInit(): void {
     this.charts = ChartsJsonData;
@@ -141,6 +118,34 @@ export class MockReportComponent {
     this.mixedData4 = this.charts?.Mixed4;
     this.getFAQ();    
 
+  }
+
+    
+  openDialog(){
+    // this.getBorrowerInformation();
+    const dialogRef = this.dialog.open(CreditJourneyPopupComponent, {
+      width: 'auto',
+      height: 'auto',
+    });
+  }
+
+  getFAQ(){
+    this.businessLoanJson = shineLendingPageJSON;
+    this.faqs = this.businessLoanJson?.Faqs?.FAQs.map((res: { Question: any; Answer: any; }) =>({
+      question: res?.Question,
+      answer: res.Answer
+    }));
+    
+  }
+
+
+  
+  openPopup(){
+    this.openDialog();
+  }
+
+  moreOffers(){
+    this.visibleOffers = true;
   }
   
 
