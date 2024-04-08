@@ -63,7 +63,7 @@ export class CreditReportComponent {
    },
  };
   
-  openBureauDialog(){
+  openDialog(){
     // this.getBorrowerInformation();
     const dialogRef = this.dialog.open(CreditJourneyPopupComponent, {
       width: 'auto',
@@ -73,7 +73,7 @@ export class CreditReportComponent {
 
   
   openPopup(){
-    this.openBureauDialog();
+    this.openDialog();
   }
 
   

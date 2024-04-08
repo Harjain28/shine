@@ -35,5 +35,8 @@ export default[
     },
     {
         path: 'page-not-found', loadComponent:() => import('./page-not-found/page-not-found.component').then(c=>c.PageNotFoundComponent)
+    },
+    {
+        path: 'report_model1', loadComponent:() => import('./mock-report/mock-report.component').then(c=>c.MockReportComponent)
     }
 ] as Route[]

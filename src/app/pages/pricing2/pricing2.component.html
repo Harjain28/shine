@@ -14,7 +14,7 @@
                 <div class="KeyPlanBox">
                     <div class="themeBox">
                         <h3>{{filteredData?.Headertext}} Plan</h3>
-                        <del>{{cuttedPrice}}</del>
+                        <del>₹4999</del>
                         <span>₹{{filteredData?.Price}}</span>
                         <p>per member, per month</p>
                         <button class="btn">Get Now</button>
@@ -64,7 +64,7 @@
 
             <div class="col-lg-12 col-md-12 col-sm-12 m-auto">
                 <div class="button">
-                    <button class="btn">
+                    <button class="btn" (click)="viewReportsForm()">
                         <img src="./assets/LandingPage/searchIcon.svg" alt="">
                         View Sample Report
                     </button>
@@ -98,3 +98,4 @@
         </div>
     </div>
 </div>
+

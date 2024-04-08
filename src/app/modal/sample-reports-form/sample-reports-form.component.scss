@@ -1,0 +1,180 @@
+.modalOpen {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 111;
+
+
+    .blueBack {
+        background-color: #ffffffee;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        opacity: 0.95;
+    }
+
+    .modalBox {
+        box-shadow: 0px 3px 6px #00000017;
+        border: 1px solid #E8E8E8;
+        border-radius: 10px;
+        background-color: #fff;
+        // width: 280px;
+        // height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+
+        .Box {
+            position: relative;
+            z-index: 2;
+            background-color: var(--main1);
+            padding: 36px 35px;
+            border-radius: 10px;
+            width: 340px;
+
+            &.otpBox{
+                width: 380px;
+            }
+
+            img {
+                display: flex;
+                margin: 0 auto 15px;
+                width: 32px;
+                height: 32px;
+            }
+
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 22px;
+                margin-bottom: 20px;
+                color: #fff;
+                font-family: "Poppins" !important;
+                text-align: center;
+                margin-top: -14px;
+            }
+
+            p {
+                margin-top: 8px;
+                font-size: 14px;
+                color: #3F3F3F;
+                line-height: 18px;
+                margin-bottom: 18px;
+                overflow: hidden;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+            }
+
+            ::ng-deep{
+                mat-form-field{
+                    width: 100%;
+                }
+            }
+        }
+
+        .resend{
+
+            .btn{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                color: #fff;
+                justify-content: center;
+            }
+        }
+
+        
+    }
+
+    .ButtonNow{
+
+        button{
+            min-width: 100%;
+                }
+    }
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none;
+  }
+  
+  .checkbox-container {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 25px; 
+    color: #fff;
+    line-height: 15px;
+    font-size: small;
+  }
+  
+  .checkbox-container .checkmark {
+    margin-top: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px; 
+    width: 20px; 
+    border: 2px solid white; 
+    background-color: #fff; 
+    border-radius: 20%;
+
+  }
+  
+  .checkbox-container .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .checkbox-container input[type="checkbox"]:checked + .checkmark:after {
+    display: block;
+    margin: 1px 1px 1px 1px;
+  }
+  
+  .checkbox-container .checkmark:after {
+    left: 5px; 
+    top: 1px; 
+    width: 5px; 
+    height: 10px; 
+    border: 2px solid #00B549; 
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+
+.isvaliderror {
+
+    mat-form-field {
+
+        ::ng-deep {
+
+            .mat-mdc-text-field-wrapper {
+                
+                    background-color: #FFCECE !important;
+                    border: 1px solid #FFCECE !important;
+
+                    input {
+                        color: #3f3f3f !important;
+                    }
+
+                    mat-label {
+                        color: #AC1E1E !important;
+                    }
+            }
+        }
+    }
+}
+
+   

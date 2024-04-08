@@ -5,6 +5,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { shinePricingPageJSON } from 'src/app/JsonFiles/pricing';
+import { MatDialog } from '@angular/material/dialog';
+import { SampleReportsFormComponent } from 'src/app/modal/sample-reports-form/sample-reports-form.component';
 
 
 @Component({
@@ -26,17 +28,29 @@ export class Pricing2Component {
   total: any;
   cuttedPrice: any;
 
-  constructor(){
+  constructor(private dialog: MatDialog ){
     this.getPricingData();
 
   }
 
   ngOnInit(): void{
     
-    this.Headertext = localStorage.getItem("text");
     this.getConfirmPaymentJson();
    
   }
+
+  viewReportsForm(){
+   this.openDialog();
+  }
+
+  openDialog(){
+    // this.getBorrowerInformation();
+    const dialogRef = this.dialog.open(SampleReportsFormComponent, {
+      width: '320px',
+      height: 'auto',
+    });
+  }
+
 
   getPricingData(){
     this.pricingJson = shinePricingPageJSON;
@@ -54,18 +68,7 @@ export class Pricing2Component {
   }
 
   getConfirmPaymentJson(){
-    this.filteredData = shinePricingPageJSON?.Confirm_Order_JSON?.OrderText.find(item => item.Headertext === this.Headertext)
-    
-    if(this.Headertext === "Monthly")
-    {
-      this.cuttedPrice = '₹1499'
-    }
-    else{
-      this.cuttedPrice = '₹4999'
-
-    }
-    this.discountPrice = (this.filteredData?.Price*5)/100;
-    this.total = parseInt(this.filteredData?.Price) + this.discountPrice;
+    this.filteredData = shinePricingPageJSON?.Confirm_Order_JSON?.OrderText[1];
   }
 
 }

@@ -303,6 +303,107 @@
     }
 }
 
+.modalOpen {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 111;
+    
+
+    .blueBack{     
+        background-color: #fff;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        opacity: 0.95;
+    }
+
+    .modalBox {
+        box-shadow: 0px 3px 6px #00000017;
+        border: 1px solid #E8E8E8;
+        border-radius: 10px;
+        background-color: #fff;
+        width: 280px;
+        height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+
+        .Box {
+            padding: 24px;
+
+            img{
+                display: flex;
+                margin: 0 auto 15px;
+                width: 32px;
+                height: 32px;
+            }
+
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 22px;
+                margin-bottom: 0px;
+                color: #333;
+                font-family: 'Poppins' !important;
+                text-align: center;
+                margin-top: 6px;
+            }
+
+            p {
+                margin-top: 8px;
+                font-size: 14px;
+                color: #3F3F3F;
+                line-height: 18px;
+                margin-bottom: 18px;
+                overflow: hidden;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+            }
+
+            .my-progress-bar{
+
+                mat-progress-bar{
+                    height: 6px;
+                    border-radius: 30px;
+
+                    ::ng-deep{
+
+                        .mdc-linear-progress__buffer-bar {
+                            background-color: #EFEFEF;
+                        }
+
+                        .mdc-linear-progress__bar-inner{
+
+                                border-color: var(--main1);
+                                border-width: 7px;
+                        }
+                    }
+                }
+
+                b{
+                    color: var(--main2);
+                    font-size: 14px;
+                    line-height: 22px;
+                    font-family: 'Poppins' !important;
+                    margin-top: 4px;
+                }
+            }
+        }
+    }
+}
+
 
 
 @media (max-width: 767px) {
