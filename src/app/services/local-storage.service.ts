@@ -53,7 +53,7 @@ export class LocalStorageService {
     localStorage.removeItem('companyName');
     localStorage.removeItem('popupData');
     
-     localStorage.removeItem('text');
+   //  localStorage.removeItem('text');
      localStorage.removeItem('isV3');
      localStorage.removeItem('userMobileNumber');
      localStorage.removeItem('state');
