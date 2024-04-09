@@ -116,8 +116,10 @@ export class SampleReportsFormComponent {
 
   submitOtp() {
 
-    this.router.navigate(['in/report_model1'])
     this.closeDialoge();
+
+    this.router.navigate(['in/report_model1'])
+
     // this.isOtpSubmit = true;
     // const formValue = this.otpVerify.value;
     // const requestData = {};

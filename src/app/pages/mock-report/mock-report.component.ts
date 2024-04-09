@@ -34,7 +34,8 @@ import { shineLendingPageJSON } from 'src/app/JsonFiles/lendingpage';
 export class MockReportComponent {
   charts: any;
   businessLoanJson: any;
-    constructor(private dialog: MatDialog){}
+    constructor(private dialog: MatDialog){  
+    }
 
   @Input() creditReportsChartsData: any;
 
@@ -106,6 +107,7 @@ export class MockReportComponent {
 
   
   ngOnInit(): void {
+
     this.charts = ChartsJsonData;
     this.doughtnutData = this.charts?.Doughtnut;
     this.semiDoughtnutData = this.charts?.Semi_Doughtnut;

@@ -34,6 +34,7 @@ export class ReportsComponent {
   ngOnInit(): void {
     this.getFaq();
     this.getChartsData();
+    this.postForReport();
   }
 
   getChartsData(){
@@ -43,12 +44,14 @@ export class ReportsComponent {
 
   postForReport(){
       let requestData: any = {}; 
-      requestData["mobile"] = " ";
+      requestData["mobile"] = "8128187880";
       
         const params = { ...this.paramsObject.params };
           this.api.postForReport(`api/Remediation/Report`,requestData , params) .subscribe({
               next: (res: any) => {
                 if (res) {
+
+                  console.log(res)
                  
                 }
               },

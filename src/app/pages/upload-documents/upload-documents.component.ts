@@ -130,6 +130,16 @@ export class UploadDocumentsComponent {
           .subscribe({
             next: (res: any) => {
                if (res) {
+
+                if(res?.success){
+
+                  setTimeout(() => {
+                    this.showEligible = false;  
+                    this.router.navigate(['/in/report'])   
+                  }, 1500)
+                  this.showEligible = true;
+
+                }
                
                }
             },
@@ -187,6 +197,7 @@ export class UploadDocumentsComponent {
       )
       .subscribe({
         next: (res: any) => {
+          console.log("svbib")
 
            this.callPerfiosCallback(res?.transactionId);
            window.location.href = res?.url;
@@ -229,11 +240,7 @@ export class UploadDocumentsComponent {
   
   submitBankStatement() {
 
-     setTimeout(() => {
-      this.showEligible = false;  
-      this.router.navigate(['/in/report'])   
-    }, 1000)
-    this.showEligible = true;
+    
   }
 
   
