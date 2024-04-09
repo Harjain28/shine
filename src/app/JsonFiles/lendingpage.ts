@@ -12,9 +12,9 @@ export const shineLendingPageJSON = {
     ],
     Background: {
       Desktop:
-        'https://dzzu957mxv8q0.cloudfront.net/images/website/home/home_slide_01.webp',
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens.png',
       Mobile:
-        'https://dzzu957mxv8q0.cloudfront.net/images/website/home/home_slide_mobile_01.webp',
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens_mobile.png',
     },
 
     CTA_Text: 'Get Pricing',
@@ -36,7 +36,7 @@ export const shineLendingPageJSON = {
        ],
        Summary: 'Get answers to all the above along with a personalised plan for how to improve, and get your first business loan.', 
         Vector_Background: {
-      Character_image: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/home_slide_01.webp',
+      Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/biginner.png',
     },
     },
     Intermediate_Feature: {
@@ -46,11 +46,11 @@ export const shineLendingPageJSON = {
       'GST registered',
       'Successfully obtained at least one loan',
       'Looking for better loan terms and offers',  
-      
+    
        ],
        Summary: 'Get access to key information to help you manage your finances better, and get your next business loan at the best terms.', 
         Vector_Background: {
-      Character_image: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/home_slide_01.webp',
+      Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/intermediate.png',
     },
     },
     Expert_Feature: {
@@ -61,11 +61,11 @@ export const shineLendingPageJSON = {
       'Seeking better loan options and ROIs', 
       'Open to best multi-funding options', 
       'Seeking tailored financial advisory',  
-     
+    
        ],
        Summary: 'Get access to essential financial insights to improve fiscal management and unlock multi-funding loan opportunities at the best terms.', 
         Vector_Background: {
-      Character_image: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/home_slide_01.webp',
+      Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/expert.png',
     },
     },
 
@@ -173,42 +173,8 @@ export const shineLendingPageJSON = {
            'Track your month-on-month process to get closer to your dream funding.',
            'Get a one-time snapshot of your credit health to assess your creditworthiness.',
          ]
-       }
+       },
       ],
-
-    colMobile:[
-      
-       {
-         item: [
-           'Depth of Analysis',
-           'Determine your financial health based on your Credit History, Banking, & GST Filings.',
-           'The assessments are usually only based on your Credit History.',
-          
-         ]
-       },
-       {
-         item: [
-
-          'Best Return on Investment',
-          'Pay lower than market rates for a 360° assessment of your business to turn around your loan prospects within 3-6 months.',
-          'Pay more to know only one part of your financial story.',
-         ]
-       },
-       {
-         item: [
-          'Accessible Analysis',
-          'Clear and easy to understand language, breaks down complex financial terms.',
-          'Jargon-heavy and confusing to understand.', 
-         ]
-       },
-       {
-         item: [
-          'Growth Tracking',
-          'Track your month-on-month process to get closer to your dream funding.',    
-          'Get a one-time snapshot of your credit health to assess your creditworthiness.',  
-         ]
-       },
-    ],
     CTA_Text: 'Get Pricing',
     CTA_Link: '/in/check-eligibility',
   },
@@ -217,15 +183,15 @@ export const shineLendingPageJSON = {
     Subhead: 'Be Loan Ready in 3 Steps',
     Parameter: [
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/loan_big.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/assess.png',
         Parameter: 'Assess',
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/other/High%20conversion%20rate.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/correct.png',
         Parameter: 'Correct',
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/rupees_big.png',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/achieve.png',
         Parameter: 'Achieve',
       },
     ],
@@ -251,7 +217,7 @@ export const shineLendingPageJSON = {
     },
     Product_Tiles: [
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/credit_score_big.svg',
         Product_copy: 'BUREAU SCORE',
         Pop_up_copy: [
           "The bureau score is a number calculated by the credit bureaus. It shows if you're creditworthy.",
@@ -261,7 +227,7 @@ export const shineLendingPageJSON = {
         ],
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/loan_history.svg',
         Product_copy: 'LOAN REPAYMENT HISTORY',
         Pop_up_copy: [
           'Your repayment history is a record of all your past and current payments to lenders, whether on time or late.',
@@ -271,7 +237,7 @@ export const shineLendingPageJSON = {
         ],
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/current_debt_big.svg',
         Product_copy: 'CURRENT DEBT ANALYSIS',
         Pop_up_copy: [
           'This analyses the credit mix that your business holds.',
@@ -281,7 +247,7 @@ export const shineLendingPageJSON = {
         ],
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/business_risk_big.svg',
         Product_copy: 'BUSINESS RISK',
         Pop_up_copy: [
           'Business risk is the chance of something bad happening that could reduce gains or increase losses.',
@@ -291,7 +257,7 @@ export const shineLendingPageJSON = {
         ],
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/loan_inquires_big.svg',
         Product_copy: 'LOAN INQUIRIES',
         Pop_up_copy: [
           'Loan inquiries refer to the instances when a financial institution or lender accesses your credit report to check your creditworthiness.',
@@ -301,7 +267,7 @@ export const shineLendingPageJSON = {
         ],
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/gst_filing.svg',
         Product_copy: 'GST FILINGS HISTORY',
         Pop_up_copy: [
           "Your GST filings history acts as your business's tax report card.",
@@ -311,7 +277,7 @@ export const shineLendingPageJSON = {
         ],
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/business_credit.svg',
         Product_copy: 'BUSINESS CREDIT AMOUNT & COUNT',
         Pop_up_copy: [
           'Business credit amount is also known as your business turnover.',
@@ -321,7 +287,7 @@ export const shineLendingPageJSON = {
         ],
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/banking_big.svg',
         Product_copy: 'AVERAGE BANKING BALANCE',
         Pop_up_copy: [
           'The average balance is determined by adding up the daily closing balances throughout a specific period and then dividing that sum by the number of days in that period.',
@@ -331,7 +297,7 @@ export const shineLendingPageJSON = {
         ],
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/turnover_ratio_big.svg',
         Product_copy: 'DEBT-TO-TURNOVER RATIO',
         Pop_up_copy: [
           "The debt-to-turnover ratio compares a business's debt to its revenue.",
@@ -341,7 +307,7 @@ export const shineLendingPageJSON = {
         ],
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/cheque_big.svg',
         Product_copy: 'CHEQUE BOUNCES',
         Pop_up_copy: [
           'Cheque bounces occur when an issued cheque cannot be processed due to insufficient funds or other issues.',
@@ -351,7 +317,7 @@ export const shineLendingPageJSON = {
         ],
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/cashflow_big.svg',
         Product_copy: 'CASHFLOW STABILITY',
         Pop_up_copy: [
           'Cash flow stability refers to the consistent and reliable flow of cash in and out of a business.',
@@ -361,7 +327,7 @@ export const shineLendingPageJSON = {
         ],
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/Running_expences_big.svg',
         Product_copy: 'MONTHLY RUNNING EXPENSES',
         Pop_up_copy: [
           'Monthly running expenses are the regular costs a business incurs to operate, such as rent, utilities, salaries, and other ongoing expenditures.',
@@ -376,8 +342,6 @@ export const shineLendingPageJSON = {
     Header: 'Guaranteed Loan Success Starts Here.',
     Subheader:
       'Follow our tailored advice for a guaranteed shot at loan approval.',
-    Description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
     CTA_Text: 'Get Pricing',
     CTA_Link: '/in/check-eligibility',
     Banner: [

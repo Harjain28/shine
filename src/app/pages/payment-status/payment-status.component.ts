@@ -63,6 +63,7 @@ export class PaymentStatusComponent {
              this.router.navigate(['/in/confirm_order'], { replaceUrl: true });
           } else {
             this.api.alert('Please upload documents', "success");
+            this.closeBureauDialog();
           this.router.navigate(['/in/bank_statement'],{ replaceUrl: true });
           }
           
