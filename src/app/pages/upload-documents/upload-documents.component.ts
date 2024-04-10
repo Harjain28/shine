@@ -69,7 +69,6 @@ export class UploadDocumentsComponent {
   confirmUrl: any;
   transID: any;
   showiFrame: boolean = false;
-  isPerfiosCheck: boolean =false;
 
  
   constructor(private api: ApiService,
@@ -99,8 +98,11 @@ export class UploadDocumentsComponent {
 
     this.isChecked = this.api.isDocumentChecked;
 
+    this.transID =localStorage.getItem("transID");
+      if(this.transID){
+        console.log(this.transID,"ff")
       this.callPerfiosCallback(this.transID);
-
+      }
   
   }
 
@@ -123,10 +125,10 @@ export class UploadDocumentsComponent {
       const params = { ...this.paramsObject.params };
         const formData = new FormData();
         formData.append("PerfiosTransactionId", id);
-        formData.append("ClientTransactionId", '');
-        formData.append("Status", '')
-        formData.append("ErrorCode", '');
-        formData.append("ErrorMessage", '');
+        formData.append("ClientTransactionId", " ");
+        formData.append("Status", " ")
+        formData.append("ErrorCode", " ");
+        formData.append("ErrorMessage", " ");
     
        
         this.api.postForPerfiosCallback(`api/Remediation/PerfiosCallback`, formData, params)
@@ -176,8 +178,7 @@ export class UploadDocumentsComponent {
       .subscribe({
         next: (res: any) => {
           
-          this.isPerfiosCheck = true;
-          this.transID = res?.transactionId
+          localStorage.setItem("transID",res?.transactionId)
         this.iframeUrl = res?.url;
         window.location.href = this.iframeUrl;
         },
@@ -202,10 +203,8 @@ export class UploadDocumentsComponent {
       )
       .subscribe({
         next: (res: any) => {
-          console.log("svbib")
 
-          this.isPerfiosCheck = true;
-          this.transID = res?.transactionId
+          localStorage.setItem("transID",res?.transactionId)
            window.location.href = res?.url;
          
         },

@@ -7,10 +7,20 @@ import { Buffer } from "buffer";
 })
 export class LocalStorageService {
 
-  private storageKey = 'ncjData';
-  changes$ = new Subject();
+  
 
   constructor() {
+  }
+
+  removeItem() {
+    localStorage.removeItem('reqData');
+    localStorage.removeItem('popupData');
+    
+     localStorage.removeItem('text');
+     localStorage.removeItem('isV3');
+     localStorage.removeItem('userMobileNumber');
+     localStorage.removeItem('state');
+
   }
 
 //   get(key: string): any {
@@ -46,35 +56,6 @@ export class LocalStorageService {
 //     return !!localStorage
 //   }
 
-  removeItem() {
-    localStorage.removeItem('reqData');
-    localStorage.removeItem('popupData');
-    
-     localStorage.removeItem('text');
-     localStorage.removeItem('isV3');
-     localStorage.removeItem('userMobileNumber');
-     localStorage.removeItem('state');
-  }
-
-//   removeSomeItem() {
-//     localStorage.removeItem('stagingJourneyId');
-//     localStorage.removeItem('borrowerInfo');
-//    localStorage.removeItem('borrowerDetails');
-//    localStorage.removeItem('borrowerJourney');
-//     localStorage.removeItem('isV3');
-//     localStorage.setItem('isSubmit', 'false');
-//     localStorage.removeItem('token');
-//     localStorage.setItem('isncjSubmit','false');
-//    localStorage.removeItem('ncjData');
-//  }
 
 
-//  setNcjData(data: any): void {
-//    localStorage.setItem(this.storageKey, JSON.stringify(data));
-//  }
-
-//  getNcjData(): any {
-//    const storedData = localStorage.getItem(this.storageKey);
-//    return storedData ? JSON.parse(storedData) : null;
-//  }
 } 
