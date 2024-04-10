@@ -68,6 +68,8 @@ export class OtpComponent implements OnInit{
   score: any;
   showThumbLabel: boolean = false;
   requestData:any ={};
+  parsedData: any;
+  mobileNo: any;
   constructor(
     public eventService: EventService,
     public router: Router,
@@ -81,7 +83,11 @@ export class OtpComponent implements OnInit{
     ngOnInit(): void {
       this.otpVerifyForm();
       this.requestData = localStorage.getItem("reqData")
-      console.log(this.requestData.toString())
+      this.parsedData = JSON.parse(this.requestData);
+
+      if(this.parsedData){
+      this.mobileNo = this.parsedData.mobile;
+      }
     }
    
 
@@ -106,7 +112,7 @@ export class OtpComponent implements OnInit{
     const formValue = this.otpVerify.value;
     const requestData = {};
     const defaultparams = {
-      mobile: localStorage.getItem("mobile"),
+      mobile: this.mobileNo,
       otp: this.phoneOtp,
     };
     const params = { ...defaultparams, ...this.paramsObject.params };

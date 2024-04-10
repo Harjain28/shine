@@ -47,10 +47,7 @@ export class LocalStorageService {
 //   }
 
   removeItem() {
-     localStorage.removeItem('reqData');
-     localStorage.removeItem('mobile');
-    localStorage.removeItem('fullName');
-    localStorage.removeItem('companyName');
+    localStorage.removeItem('reqData');
     localStorage.removeItem('popupData');
     
      localStorage.removeItem('text');

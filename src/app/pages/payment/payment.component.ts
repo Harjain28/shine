@@ -48,6 +48,12 @@ export class PaymentComponent {
   state: any;
   per_text: any;
   transactionFailed: boolean = false;
+  parsedData: any;
+  requestData:any;
+  title: any;
+  fName: any;
+  lName: any;
+  email: any;
 
 
   constructor(
@@ -72,11 +78,23 @@ export class PaymentComponent {
       this.event.paymentStatus$.subscribe((status: boolean) => {
         this.transactionFailed = status;
       });
+
+      this.requestData = localStorage.getItem("reqData");
+      this.parsedData = JSON.parse(this.requestData);
+      this.title = localStorage.getItem("title");
+
+      if(this.parsedData){
+        this.fName = this.parsedData.firstName.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase());
+        this.lName = this.parsedData.lastName.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase());
+        this.fullName = this.title + ' ' + this.fName + ' ' + this.lName;
+        this.mobile = this.parsedData.mobile;
+        this.companyName = this.parsedData.businessName.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase());
+        this.email = this.parsedData.email;
+      }
+
+
       this.state = localStorage.getItem("state");
 
-      this.fullName = localStorage.getItem("fullName");
-      this.mobile = localStorage.getItem("mobile")
-      this.companyName = localStorage.getItem("companyName");
 
       this.Headertext = localStorage.getItem("text");
       this.getConfirmPaymentJson();  
@@ -149,8 +167,8 @@ export class PaymentComponent {
   getForPaymentMethod() {
     let requestData: any = {};
     requestData['amount'] = '2.00';
-    requestData['custMobile'] = localStorage.getItem("mobile");
-    requestData['custMail'] = localStorage.getItem("email");
+    requestData['custMobile'] = this.mobile;
+    requestData['custMail'] = this.email;
     requestData['returnUrl'] = 'http://localhost:4200/in/payment_status';
 
 
