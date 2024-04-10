@@ -102,6 +102,38 @@
         .scoreChart {
             display: flex;
             justify-content: center;
+            position: relative;
+            padding-top: 10px;
+
+            svg{
+                overflow: visible;
+                height: 100px;
+
+                .topText{
+                    position: absolute;
+                    top: 0px;
+                    left: 50%;
+                    transform: translate(0%, -80%);
+                    color: #3F3F3F;
+                    font-weight: 600;
+                    font-size: 20px;
+                }
+                .leftText {
+                    position: absolute;
+                    transform: translate(-13%, -30%);
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: #3F3F3F;
+                }
+
+                .rightText {
+                    position: absolute;
+                    transform: translate(17%, -30%);
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: #3F3F3F;
+                }
+            }
 
             canvas {
                 width: 190px !important;
@@ -386,6 +418,14 @@
                         color: #fff;
                     }
 
+                    p{
+                        color: #fff;
+                    }
+
+                    hr{
+                        border-color: #fff;
+                    }
+
                     .historyList {
 
                         li {
@@ -488,6 +528,8 @@
                         background: transparent;
                         display: flex;
                         align-items: center;
+                        font-weight: 500;
+                        gap: 20px;
 
                         .NoColor {
                             border-radius: 5px;
@@ -519,8 +561,7 @@
 
                 .numberBox {
                     margin-bottom: 0px;
-                    display: flex;
-                    align-items: center;
+                    display: block;
                     gap: 10px;
                     list-style: none;
                     flex-wrap: nowrap;
@@ -542,7 +583,7 @@
                         width: 100%;
                         display: block;
                         text-align: center;
-                        min-height: 108px;
+                        margin-bottom: 10px;
 
                         &:last-child {
                             background-color: var(--main2);
@@ -551,7 +592,7 @@
 
                         span {
                             display: block;
-                            font-size: 32px;
+                            font-size: 18px;
                             text-transform: uppercase;
                             margin-bottom: 12px;
                         }
@@ -851,12 +892,12 @@
     .numberBox {
         box-shadow: 0px 3px 10px #272D3B24;
         border-radius: 20px;
-        padding: 14px 12px;
+        padding: 20px 18px;
         background-color: var(--main1);
         display: flex;
         align-items: center;
         gap: 12px;
-        height: 165px;
+        // height: 165px;
 
         &.colorChange {
             background-color: var(--main2);
@@ -1130,6 +1171,11 @@
                         border-color: #FF7B24;
                         color: #fff;
                     }
+
+                    &.blur {
+                        border-color: #E2E2E2;
+                        color: #E2E2E2;
+                    }
                 }
             }
 
@@ -1150,6 +1196,7 @@
                 color: #3F3F3F;
                 line-height: 16px;
                 text-align: center;
+                padding: 0px 40px;
             }
         }
 
@@ -1609,7 +1656,7 @@
                 li {
                     color: #3F3F3F;
                     font-size: 12px;
-                    font-weight: normal;
+                    font-weight: 500;
                     line-height: 16px;
                     font-family: Poppins !important;
                     display: flex;

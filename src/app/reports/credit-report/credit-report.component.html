@@ -158,7 +158,7 @@
                             </li>
                           </ul>
 
-                          <div class="box">
+                          <div class="box" style="border: 1px solid #6A2FC2; background-color: #FBF8FF;">
                             <p>
                               Lorem ipsum dolor sit amet, consectetur adipiscing
                               elit, sed Lorem ipsum do. Lorem ipsum dolor sit
@@ -171,31 +171,22 @@
                       <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
                         <div class="defaultHistory solutions">
                           <h3>Solutions</h3>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum sem quis interdum sagittis. Aliquam erat volutpat. Morbi quam vivamus.
+                          </p>
+
+                          <hr>
                           <ul class="historyList">
                             <li>
                               <span></span>
-                              Lorem ipsum dolor sit amet
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel convallis libero, eu efficitur eros.
                             </li>
                             <li>
                               <span></span>
-                              Consectetur adipiscing elit
+                              In sit amet fringilla eros. Aliquam ut arcu vehicula, maximus dui nec, tempus est.
                             </li>
-                            <li><span></span>Sed Lorem ipsum do.</li>
-                            <li><span></span>Lorem ipsum dolor sit amet</li>
+                            <li><span></span>Donec fringilla justo libero, ac suscipit neque sollicitudin gravida. Ut vitae viverra lectus. Nam ac neque nec enim pulvinar pharetra et vitae dui.</li>
                           </ul>
-
-                          <div class="box">
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit, sed Lorem ipsum do. Lorem ipsum dolor sit
-                              amet, consectetur adipiscing elit, sed Lorem ipsum
-                              do. Lorem ipsum dolor sit amet, consectetur
-                              adipiscing elit, sed Lorem ipsum do. Lorem ipsum
-                              dolor sit amet, consectetur adipiscing elit, sed
-                              Lorem ipsum do. Lorem ipsum dolor sit amet,
-                              consectetur adipiscing elit.
-                            </p>
-                          </div>
                         </div>
                       </div>
                       <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
@@ -203,12 +194,12 @@
                           <h3>Impact</h3>
                           <ul class="numberBox">
                             <li>
-                              <span>20+</span>
-                              Points are less to get a loan
+                              <span>Your Current Stage</span>
+                              Level - 2
                             </li>
                             <li>
-                              <span>30+</span>
-                              Points score Increase
+                              <span>Your Potential Stage</span>
+                              Level - 4
                             </li>
                           </ul>
 
@@ -231,35 +222,32 @@
 
                     <div class="row">
                       <div class="col-md-8 col-lg-8 col-sm-12 mb-3">
-                        <div class="otherAnalysis">
-                          <h3>By Top Banks</h3>
-                          <div class="checkBox">
-                            <mat-checkbox>Yes</mat-checkbox>
-                            <mat-checkbox>No</mat-checkbox>
-                          </div>
-                          <div class="banksBox">
-                            <ul>
-                              <li>
-                                <span></span>
-                                Lorem ipsum dolor sit amet
-                              </li>
-                              <li>
-                                <span></span>
-                                Lorem ipsum dolor sit amet
-                              </li>
-                              <li>
-                                <span></span>
-                                Lorem ipsum dolor sit amet
-                              </li>
-                            </ul>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit, sed Lorem ipsum do. Lorem ipsum dolor sit
-                              amet.
-                            </p>
+                          <div class="otherAnalysis">
+                            <h3>By Top Banks</h3>
+                            <div class="checkBox">
+                              <mat-checkbox>Yes</mat-checkbox>
+                              <mat-checkbox>No</mat-checkbox>
+                            </div>
+                            <div class="banksBox">
+                              <ul>
+                                <li>
+                                  <span></span>
+                                  Lorem ipsum dolor sit amet
+                                </li>
+                                <li>
+                                  <span></span>
+                                  Lorem ipsum dolor sit amet
+                                </li>
+                                <li>
+                                  <span></span>
+                                  Lorem ipsum dolor sit amet
+                                </li>
+                              </ul>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
+                                dolor sit amet.</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
                       <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
                         <div class="otherAnalysis">
                           <h3>Suit Filed</h3>
@@ -335,14 +323,14 @@
         <div class="scoreBox">
           <h3>Your Bureau Score</h3>
           <div class="scoreChart text-center">
-         <svg width="200" height="200">
-          <path fill="none" stroke="#ddd" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
-          <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 100)'" x1="10" y1="100" x2="100" y2="100" stroke="black" stroke-width="3"></line>
-          <text x="100" y="80" text-anchor="middle">{{ angle }}</text>
+         <svg width="200">
+          <path fill="none" stroke="#12BA9B" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
+          <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 100)'" x1="10" y1="100" x2="100" y2="100" stroke="#707070" stroke-width="3"></line>
+          <text class="topText" x="100" y="80" text-anchor="middle">{{ angle }}</text>
 
-          <text x="30" y="130" text-anchor="middle">{{ minAngle }}</text>
+          <text class="leftText" x="30" y="130" text-anchor="middle">{{ minAngle }}</text>
           
-          <text x="170" y="130" text-anchor="middle">{{ maxAngle }}</text>
+          <text class="rightText" x="170" y="130" text-anchor="middle">{{ maxAngle }}</text>
       </svg>
       
       
