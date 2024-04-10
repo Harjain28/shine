@@ -29,6 +29,9 @@ export class CreditReportComponent {
   doughtnutData: any;
   semiDoughtnutData: any;
 
+  angle: number = 450;
+  minAngle: number = 0;
+  maxAngle: number = 900;
   constructor(private dialog: MatDialog){}
 
   customOptions4: OwlOptions = {
@@ -71,7 +74,12 @@ export class CreditReportComponent {
     });
   }
 
-  
+ // Function to calculate the rotation of the needle
+ calculateRotation(angle: number): number {
+  return (angle - 0) / 5; 
+}
+
+
   openPopup(){
     this.openDialog();
   }
