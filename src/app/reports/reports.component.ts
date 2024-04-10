@@ -45,9 +45,11 @@ export class ReportsComponent {
   postForReport(){
       let requestData: any = {}; 
       requestData["mobile"] = "8128187880";
+
       
-        const params = { ...this.paramsObject.params };
-          this.api.postForReport(`api/Remediation/Report`,requestData , params) .subscribe({
+      
+      //  const params = { ...this.paramsObject.params };
+          this.api.postForReport(`api/Remediation/Report`,requestData ) .subscribe({
               next: (res: any) => {
                 if (res) {
 

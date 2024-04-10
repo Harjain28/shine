@@ -12,7 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialog } from '@angular/material/dialog';
 import { EligibilityPopupComponent } from 'src/app/modal/eligibility-popup/eligibility-popup.component';
 import {  ElementRef,  ViewChild } from '@angular/core';
-import {  Subscription,  take, timer } from "rxjs";
+import {  Subscription,  flatMap,  take, timer } from "rxjs";
 import { Location } from "@angular/common";
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
@@ -69,6 +69,7 @@ export class UploadDocumentsComponent {
   confirmUrl: any;
   transID: any;
   showiFrame: boolean = false;
+  isPerfiosCheck: boolean =false;
 
  
   constructor(private api: ApiService,
@@ -97,6 +98,10 @@ export class UploadDocumentsComponent {
     this.form();
 
     this.isChecked = this.api.isDocumentChecked;
+
+    if(this.isPerfiosCheck){
+      this.callPerfiosCallback(this.transID);
+    }
   
   }
 
@@ -115,6 +120,7 @@ export class UploadDocumentsComponent {
   }
 
   callPerfiosCallback(id:any){
+
 
     setInterval(() => {
       const params = { ...this.paramsObject.params };
@@ -172,7 +178,10 @@ export class UploadDocumentsComponent {
       )
       .subscribe({
         next: (res: any) => {
-          this.callPerfiosCallback(res?.transactionId);
+          
+          this.isPerfiosCheck = true;
+          this.transID = res?.transactionId
+          this.callPerfiosCallback(this.transID);
         this.iframeUrl = res?.url;
         window.location.href = this.iframeUrl;
         },
@@ -199,7 +208,9 @@ export class UploadDocumentsComponent {
         next: (res: any) => {
           console.log("svbib")
 
-           this.callPerfiosCallback(res?.transactionId);
+          this.isPerfiosCheck = true;
+          this.transID = res?.transactionId
+          this.callPerfiosCallback(this.transID);
            window.location.href = res?.url;
          
         },

@@ -127,6 +127,7 @@ export class Form1Component implements OnInit {
     this.api.post(`api/Remediation/GetOTP`, requestData, params).subscribe({ next: (res: any) => {
           if (res.success) {
             localStorage.setItem("mobile",formValue.phoneNumber);
+            localStorage.setItem("email",formValue.emailId);
 
             const capitalizeFirstLetter = (str: string) => {
               return str.charAt(0).toUpperCase() + str.slice(1);

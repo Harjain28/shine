@@ -148,27 +148,11 @@ export class PaymentComponent {
 
   getForPaymentMethod() {
     let requestData: any = {};
-    requestData['dateTime'] = this.currentDate;
     requestData['amount'] = '2.00';
-    requestData['isMultiSettlement'] = '0';
-    requestData['custMobile'] = '7976330044';
-    requestData['apiKey'] = '';
-    requestData['productId'] = 'DEFAULT';
-    requestData['instrumentId'] = 'NA';
-    requestData['cardType'] = 'NA';
-    requestData['txnType'] = 'DIRECT';
-    requestData['udf1'] = 'NA';
-    requestData['udf2'] = 'NA';
-    requestData['udf3'] = 'NA';
-    requestData['udf4'] = 'NA';
-    requestData['udf5'] = 'NA';
-    requestData['udf6'] = 'NA';
-    requestData['merchantId'] = '';
-    requestData['custMail'] = 'harshit.appic@gmail.com';
+    requestData['custMobile'] = localStorage.getItem("mobile");
+    requestData['custMail'] = localStorage.getItem("email");
     requestData['returnUrl'] = 'http://localhost:4200/in/payment_status';
-    requestData['channelId'] = '0';
-    requestData['txnId'] = '';
-    requestData['cardDetails'] = 'NA';
+
 
     const params = { ...this.paramsObject.params };
     this.api
