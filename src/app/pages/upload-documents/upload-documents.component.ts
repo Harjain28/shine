@@ -99,9 +99,8 @@ export class UploadDocumentsComponent {
 
     this.isChecked = this.api.isDocumentChecked;
 
-    if(this.isPerfiosCheck){
       this.callPerfiosCallback(this.transID);
-    }
+
   
   }
 
@@ -120,8 +119,6 @@ export class UploadDocumentsComponent {
   }
 
   callPerfiosCallback(id:any){
-
-
     setInterval(() => {
       const params = { ...this.paramsObject.params };
         const formData = new FormData();
@@ -181,7 +178,6 @@ export class UploadDocumentsComponent {
           
           this.isPerfiosCheck = true;
           this.transID = res?.transactionId
-          this.callPerfiosCallback(this.transID);
         this.iframeUrl = res?.url;
         window.location.href = this.iframeUrl;
         },
@@ -210,7 +206,6 @@ export class UploadDocumentsComponent {
 
           this.isPerfiosCheck = true;
           this.transID = res?.transactionId
-          this.callPerfiosCallback(this.transID);
            window.location.href = res?.url;
          
         },

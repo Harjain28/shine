@@ -30,13 +30,14 @@ export class Mixed3Component {
 
   ngAfterViewInit(): void {
   
-
+    const canvas = this.chartCanvas3.nativeElement as HTMLCanvasElement;
+    canvas.width = 600; // Example width
+    canvas.height = 200; // Example height
     this.mixedChart();
 
   }
 
   mixedChart(): void{
-
     this.mixedValue1 = this.MixedJSONData3?.Value1;
     this.mixedValue2 = this.MixedJSONData3?.Value2;
     this.mixedLineValue1 = this.MixedJSONData3?.LineValue1;
