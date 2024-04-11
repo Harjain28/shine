@@ -16,19 +16,19 @@
                   <ul>
                     <li>
                       <h5>GST Number:</h5>
-                      <span>12345678TGH98D6</span>
+                      <span>{{gstDetails?.GST_number}}</span>
                     </li>
                     <li>
                       <h5>Company Name:</h5>
-                      <span>Aadarsh Enterprises Ltd.</span>
+                      <span>{{gstDetails?.company_name}}</span>
                     </li>
                     <li>
                       <h5>Turnover as per GST:</h5>
-                      <span>Rs 40-60L</span>
+                      <span>{{gstDetails?.turnover_as_per_gst}}</span>
                     </li>
                     <li>
                       <h5>Current GST Status:</h5>
-                      <button>ACTIVE</button>
+                      <button>{{currStatus}}</button>
                     </li>
                   </ul>
                 </div>
@@ -38,17 +38,11 @@
                 <div class="calendarBox">
                   <h3>GSTIN Filings: Last 6 Months</h3>
                   <ul>
-                    <li>JAN</li>
-                    <li>FEB</li>
-                    <li>MAR</li>
-                    <li>APR</li>
-                    <li>MAY</li>
-                    <li class="active">JUN</li>
-                    <li class="blur">JUL</li>
-                    <li class="blur">AUG</li>
+                    <li *ngFor="let month of months" [ngClass]="{ 'active': isSelectedMonth(month) }">{{ month }}</li>
+                    
                   </ul>
                   <div class="missingPayment">
-                    1 Missed Filings
+                    {{gstDetails?.missed_gst_filings?.length}} Missed Filings
                   </div>
                   <p>You seem to have missed filing your GST once in 6 months, having a solidtrack record helps secure
                     loans easily</p>
