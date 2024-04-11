@@ -5,7 +5,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { CarouselModule } from 'ngx-owl-carousel-o';
+import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { Mixed2Component } from 'src/app/charts/mixed2/mixed2.component';
 import { Mixed3Component } from 'src/app/charts/mixed3/mixed3.component';
 import { Mixed4Component } from 'src/app/charts/mixed4/mixed4.component';
@@ -62,7 +62,38 @@ export class BankingBusinessComponent {
   }
 
 
+  customOptions4: OwlOptions = {
+    loop: false,
+  rewind: true,
+   dots: true,
+   autoplay: false,
+   navSpeed: 300,
+   nav: false,
+   margin:10,
+   mouseDrag: false,
+   touchDrag: true,
 
+
+   autoplayTimeout:8000,
+   autoplaySpeed: 1500,
+   // navText: ["", ""],
+   navText: ["<img class='navTxtImg' src='./assets/images/homeIcon/left-arrow.svg'>", "<img class='navTxtImg' src='./assets/images/homeIcon/right-arrow.svg'>"],
+   responsive: {
+     0: {
+       items: 1,
+       dots: true,
+     },
+     400: {
+       items: 1,
+     },
+     740: {
+       items: 1,
+     },
+     940: {
+       items: 1,
+     },
+   },
+ };
 
 
   expandBankingBusniess(){
