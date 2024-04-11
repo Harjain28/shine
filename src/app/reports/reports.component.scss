@@ -113,7 +113,7 @@
                     position: absolute;
                     top: 0px;
                     left: 50%;
-                    transform: translate(0%, -80%);
+                    transform: translate(0%, -10%);
                     color: #3F3F3F;
                     font-weight: 600;
                     font-size: 20px;
@@ -779,8 +779,8 @@
                                 background: #3f3f3f;
                                 border-radius: 50px;
                                 position: absolute;
-                                top: 50%;
-                                transform: translate(0%, -50%);
+                                top: 9px;
+                                transform: translate(0%, 0%);
                                 left: 0px;
                             }
                         }
@@ -2676,6 +2676,28 @@
                 font-family: Poppins !important;
                 color: var(--main2);
             }
+        }
+    }
+}
+
+.poweredBy {
+    padding: 25px 0px;
+
+    .powerLogo{
+        text-align: center;
+
+        span{
+            font-size: 14px;
+            font-weight: 500;
+            color: #3F3F3F;
+            font-family: Poppins !important;
+            line-height: 28px;
+            margin-right: 6px;
+        }
+
+        img{
+            width: auto;
+            height: 62px;
         }
     }
 }

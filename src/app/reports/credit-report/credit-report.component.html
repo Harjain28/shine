@@ -232,25 +232,23 @@
                               <ul>
                                 <li>
                                   <span></span>
-                                  Lorem ipsum dolor sit amet
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae efficitur velit, in fermentum magna.
                                 </li>
                                 <li>
                                   <span></span>
-                                  Lorem ipsum dolor sit amet
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae efficitur velit, in fermentum magna.
                                 </li>
                                 <li>
                                   <span></span>
-                                  Lorem ipsum dolor sit amet
+                                  Vivamus consectetur congue commodo. Nullam sit amet dictum elit eros.
                                 </li>
                               </ul>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum
-                                dolor sit amet.</p>
                             </div>
                           </div>
                         </div>
                       <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
                         <div class="otherAnalysis">
-                          <h3>Suit Filed</h3>
+                          <h3>Ongoing Legal Cases with Banks</h3>
                           <div class="checkBox">
                             <h5>Suit Filed Ever</h5>
                             <button>No</button>
@@ -259,17 +257,13 @@
                             <ul>
                               <li>
                                 <span></span>
-                                Lorem ipsum dolor sit amet
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae efficitur velit, in fermentum magna.
                               </li>
                               <li>
                                 <span></span>
-                                Lorem ipsum dolor sit amet
+                                Vivamus consectetur congue commodo. Nullam sit amet dictum elit eros.
                               </li>
                             </ul>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit, sed Lorem ipsum do.
-                            </p>
                           </div>
                         </div>
                       </div>
@@ -323,15 +317,15 @@
         <div class="scoreBox">
           <h3>Your Bureau Score</h3>
           <div class="scoreChart text-center">
-         <svg width="200">
-          <path fill="none" stroke="#12BA9B" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
-          <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 100)'" x1="10" y1="100" x2="100" y2="100" stroke="#707070" stroke-width="3"></line>
-          <text class="topText" x="100" y="80" text-anchor="middle">{{ angle }}</text>
-
-          <text class="leftText" x="30" y="130" text-anchor="middle">{{ minAngle }}</text>
-          
-          <text class="rightText" x="170" y="130" text-anchor="middle">{{ maxAngle }}</text>
-      </svg>
+            <svg width="200">
+              <path fill="none" stroke="#12BA9B" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
+              <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 100)'" x1="10" y1="100" x2="100" y2="100" stroke="#707070" stroke-width="3"></line>
+              <text class="topText" [attr.transform]="'rotate(' + (180 - calculateRotation(angle)) + ', 100, 100)'" x="100" y="10" text-anchor="middle">{{ angle }}</text>
+              
+              <text class="leftText" x="30" y="130" text-anchor="middle">{{ minAngle }}</text>
+              
+              <text class="rightText" x="170" y="130" text-anchor="middle">{{ maxAngle }}</text>
+          </svg>
       
       
       
@@ -818,48 +812,28 @@
                   <div class="otherAnalysis">
                     <h3>Credit Card Utilization</h3>
                     <div class="checkBox">
-                      <h5>If Credit Card > 60%</h5>
-                      <button>No</button>
+                      <h5>Credit Card Usage >60%</h5>
+                      <button>Yes</button>
                     </div>
                     <div class="banksBox flex-wrap">
-                      <ul>
-                        <li>
-                          <span></span>
-                          Lorem ipsum dolor sit amet
-                        </li>
-                        <li>
-                          <span></span>
-                          Lorem ipsum dolor sit amet
-                        </li>
-                      </ul>
+                      <h3>Neque porro quisquam est qui dolorem</h3>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed Lorem ipsum do.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum iaculis volutpat. Suspendisse lacinia nibh laoreet lacus laoreet volutpat. Praesent et ultrices tellus.
                       </p>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-12 mb-3">
                   <div class="otherAnalysis">
-                    <h3>Credit Card Utilization</h3>
+                    <h3>Recurring Micro Loans</h3>
                     <div class="checkBox">
                       <h5>Small Loans</h5>
-                      <button style="background-color: #ec1111;">Yes</button>
+                      <button style="background-color: #ec1111;">No</button>
                     </div>
                     <div class="banksBox flex-wrap">
-                      <ul>
-                        <li>
-                          <span></span>
-                          Lorem ipsum dolor sit amet
-                        </li>
-                        <li>
-                          <span></span>
-                          Lorem ipsum dolor sit amet
-                        </li>
-                      </ul>
+                      <h3>Neque porro quisquam est qui dolorem</h3>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed Lorem ipsum do.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum iaculis volutpat. Suspendisse lacinia nibh laoreet lacus laoreet volutpat. Praesent et ultrices tellus.
                       </p>
                     </div>
                   </div>
