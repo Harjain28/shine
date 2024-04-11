@@ -47,6 +47,7 @@ export class CreditReportComponent {
   credit_analysis: any;
   secured_unsecured_ratio: any;
   turnover_analysis: any;
+  other_Canalysis: any;
   
   constructor(private dialog: MatDialog){}
 
@@ -121,7 +122,7 @@ export class CreditReportComponent {
      this.credit_analysis = this.credit_debt_analysis?.credit_analysis;
      this.secured_unsecured_ratio = this.credit_debt_analysis?.secured_unsecured_ratio;
      this.turnover_analysis = this.credit_debt_analysis?.turnover_analysis;
-
+     this.other_Canalysis = this.credit_debt_analysis?.other_analysis;
 
     this.doughtnutData = this.creditReportsChartsData?.Doughtnut;
     this.semiDoughtnutData = this.creditReportsChartsData?.Semi_Doughtnut;

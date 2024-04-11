@@ -743,7 +743,7 @@
                   <div class="otherAnalysis">
                     <h3>Credit Card Utilization</h3>
                     <div class="checkBox">
-                      <h5>Credit Card Usage >60%</h5>
+                      <h5>Credit Card Usage >{{other_Canalysis?.credit_card_utilization * 100}}%</h5>
                       <button>Yes</button>
                     </div>
                     <div class="banksBox flex-wrap">
@@ -758,7 +758,7 @@
                   <div class="otherAnalysis">
                     <h3>Recurring Micro Loans</h3>
                     <div class="checkBox">
-                      <h5>Small Loans</h5>
+                      <h5>Loans < {{other_Canalysis?.small_loans}}L taken in 1 year</h5>
                       <button style="background-color: #ec1111;">No</button>
                     </div>
                     <div class="banksBox flex-wrap">
