@@ -110,10 +110,10 @@
                 height: 100px;
 
                 .topText{
-                    position: absolute;
-                    top: 0px;
-                    left: 50%;
-                    transform: translate(0%, -10%);
+                    // position: absolute;
+                    // top: 0px;
+                    // left: 50%;
+                    // transform: translate(0%, -80%);
                     color: #3F3F3F;
                     font-weight: 600;
                     font-size: 20px;
@@ -321,6 +321,7 @@
                     padding: 6px 22px;
                     border: 1px solid #CECECE;
                     border-radius: 8px;
+                    cursor: pointer;
 
                     &.active {
                         background-color: var(--main1);

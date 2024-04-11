@@ -19,6 +19,14 @@ export const reportPageJson =
                 {
                     "year": 2023,
                     "month": 2
+                },
+                {
+                    "year": 2023,
+                    "month": 6
+                },
+                {
+                    "year": 2022,
+                    "month": 2
                 }
             ],
             "default_analysis":{
@@ -87,13 +95,13 @@ export const reportPageJson =
                     },
                     {
                         "name": "Unsecured",
-                        "value": 759038
+                        "value": 400000
                     }
                 ],
                 "by_count": [
                     {
                         "name": "Secured",
-                        "value": 1
+                        "value": 2
                     },
                     {
                         "name": "Unsecured",

@@ -11,6 +11,7 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { MatDialog } from '@angular/material/dialog';
 import { BuildBureauPopupComponent } from 'src/app/modal/build-bureau-popup/build-bureau-popup.component';
 import { CreditJourneyPopupComponent } from 'src/app/modal/credit-journey-popup/credit-journey-popup.component';
+import { reportPageJson } from 'src/app/JsonFiles/report';
 
 @Component({
   selector: 'app-credit-report',
@@ -32,6 +33,21 @@ export class CreditReportComponent {
   angle: number = 100;
   minAngle: number = 0;
   maxAngle: number = 900;
+  reportsData: any;
+  creditReportData: any;
+  bureau_score: any;
+  loan_repayment_history: any;
+  selectedYear: number | undefined;
+  months: string[] = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+  years: number[] | undefined;
+  default_analysis: any;
+  defaultHistoryItems: any =[];
+  other_analysis: any;
+  credit_debt_analysis:any;
+  credit_analysis: any;
+  secured_unsecured_ratio: any;
+  turnover_analysis: any;
+  
   constructor(private dialog: MatDialog){}
 
   customOptions4: OwlOptions = {
@@ -74,10 +90,6 @@ export class CreditReportComponent {
     });
   }
 
- // Function to calculate the rotation of the needle
- calculateRotation(angle: number): number {
-  return (angle - 0) / 5; 
-}
 
 
   openPopup(){
@@ -86,10 +98,74 @@ export class CreditReportComponent {
 
   
   ngOnInit(): void {
+    this.reportsData = reportPageJson;
+    this.creditReportData = this.reportsData?.credit_report;
+    console.log(this.creditReportData, "creditReportData");
+    this.angle = this.creditReportData?.bureau_score?.score;
+    this.loan_repayment_history = this.creditReportData?.loan_repayment_history;
+    this.credit_debt_analysis = this.creditReportData?.credit_debt_analysis;
+
+
+    
+    this.default_analysis = this.loan_repayment_history?.default_analysis;
+    this.other_analysis = this.loan_repayment_history?.other_analysis;
+    this.defaultHistoryItems = [
+      { label: 'Recent Default', value: this.default_analysis.default_history.recent_default },
+      { label: 'Default Ever', value: this.default_analysis.default_history.default_ever },
+      { label: '30 days delayed', value: this.default_analysis.default_history.thirty_days_delayed },
+      { label: 'Delayed Severity of Payment (90-180 days)', value: this.default_analysis.default_history.delayed_severity }
+    ];
+    this.years = this.extractYears(this.loan_repayment_history?.missed_payments);
+    this.selectedYear = this.years[0];
+
+     this.credit_analysis = this.credit_debt_analysis?.credit_analysis;
+     this.secured_unsecured_ratio = this.credit_debt_analysis?.secured_unsecured_ratio;
+     this.turnover_analysis = this.credit_debt_analysis?.turnover_analysis;
+
+
     this.doughtnutData = this.creditReportsChartsData?.Doughtnut;
     this.semiDoughtnutData = this.creditReportsChartsData?.Semi_Doughtnut;
   }
   
+
+  loanColor(name: string): string {
+    switch (name) {
+      case 'Credit Card':
+        return '#12ba9b';
+      case 'Gold Loan':
+        return '#c3e128';
+      case 'Housing Loan':
+        return '#6a2fc2';
+      case 'Personal Loan':
+        return '#211261';
+      default:
+        return '#000000'; // Default color
+    }
+  }
+
+  extractYears(payments: any[]): number[] {
+    const yearsSet = new Set<number>();
+    payments.forEach(payment => {
+      if (typeof payment.year === 'number') {
+        yearsSet.add(payment.year);
+      }
+    });
+    return Array.from(yearsSet);
+  }
+
+  selectYear(year: number): void {
+    this.selectedYear = year;
+  }
+
+  isSelectedMonth(month: string): boolean {
+    const index = this.months.indexOf(month) + 1;
+    return this.loan_repayment_history?.missed_payments.some((payment: { year: number | undefined; month: number; }): any => payment.year === this.selectedYear && payment.month === index);
+  }
+   // Function to calculate the rotation of the needle
+ calculateRotation(angle: number): number {
+  return (angle - 0) / 5; 
+}
+
 
   expand(){
     this.expandSection = true;

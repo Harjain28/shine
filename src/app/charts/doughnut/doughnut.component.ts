@@ -1,6 +1,7 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Chart, { ChartData } from 'chart.js/auto';
+import { ChartsJsonData } from 'src/app/JsonFiles/ChartJSONData';
 
 
 @Component({
@@ -33,11 +34,10 @@ export class DoughnutComponent {
   }
 
   private createDonutChart():void{
+    this.doughtValues = this.doughtnutJSONData?.by_amount;
+    this.doughtnutColor = ChartsJsonData?.Doughtnut?.Color;
 
-    this.doughtValues = this.doughtnutJSONData?.Values;
-    this.doughtnutColor = this.doughtnutJSONData?.Color;
-
-    const donutDataValues = [this.doughtValues[0], this.doughtValues[1], this.doughtValues[2],this.doughtValues[3]]; 
+    const donutDataValues = [...this.doughtValues]; 
     const donutColors = [this.doughtnutColor[0], this.doughtnutColor[1], this.doughtnutColor[2], this.doughtnutColor[3]]; 
 
    
