@@ -1103,6 +1103,16 @@
             .boxCenter {
                 padding: 30px 30px;
 
+                &.mobileImg{
+
+                    &::before{
+                        background-image: url(../../../assets/LandingPage/centerDesignMobile.svg);
+                        height: 160px;
+                        transform: translate(-32%, -50%);
+                        display: block !important;
+                    }
+                }
+
                 &::before {
                     display: none;
                 }
