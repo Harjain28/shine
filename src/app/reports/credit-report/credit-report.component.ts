@@ -29,7 +29,7 @@ export class CreditReportComponent {
   doughtnutData: any;
   semiDoughtnutData: any;
 
-  angle: number = 450;
+  angle: number = 100;
   minAngle: number = 0;
   maxAngle: number = 900;
   constructor(private dialog: MatDialog){}
