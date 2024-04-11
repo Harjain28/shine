@@ -100,7 +100,6 @@ export class UploadDocumentsComponent {
 
     this.transID =localStorage.getItem("transID");
       if(this.transID){
-        console.log(this.transID,"ff")
       this.callPerfiosCallback(this.transID);
       }
   

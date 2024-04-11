@@ -101,8 +101,9 @@ export class MockReportComponent {
 
  @Input() faqsData :any;
 
-
-
+ angle: number = 100;
+ minAngle: number = 0;
+ maxAngle: number = 900;
 
 
   
@@ -122,6 +123,10 @@ export class MockReportComponent {
 
   }
 
+   // Function to calculate the rotation of the needle
+ calculateRotation(angle: number): number {
+  return (angle - 0) / 5; 
+}
     
   openDialog(){
     // this.getBorrowerInformation();

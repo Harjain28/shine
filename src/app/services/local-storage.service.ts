@@ -20,6 +20,8 @@ export class LocalStorageService {
      localStorage.removeItem('isV3');
      localStorage.removeItem('userMobileNumber');
      localStorage.removeItem('state');
+     localStorage.removeItem('transID');
+
 
   }
 
