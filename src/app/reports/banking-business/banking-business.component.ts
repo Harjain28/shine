@@ -13,6 +13,7 @@ import { MixedComponent } from 'src/app/charts/mixed/mixed.component';
 import { HistogramComponent } from 'src/app/charts/histogram/histogram.component';
 import { PieComponent } from 'src/app/charts/pie/pie.component';
 import { BarComponent } from 'src/app/charts/bar/bar.component';
+import { reportPageJson } from 'src/app/JsonFiles/report';
 
 @Component({
   selector: 'app-banking-business',
@@ -42,24 +43,68 @@ export class BankingBusinessComponent {
   mixedData3: any;
   mixedData4: any;
   mixedData2: any;
-
-
+  graphData: any;
+  banking_history: any;
 
 
   constructor(){
 
   }
 
+ formatMonth(month:any) {
+    const date = new Date(month);
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    return monthNames[date.getMonth()];
+}
+
+
   
   ngOnInit(): void {
-    this.barData = this.bankingBusinessChartsData?.Bar;
+    // this.barData = this.bankingBusinessChartsData?.Bar;
     this.pieData = this.bankingBusinessChartsData?.Pie;
     this.histogramData = this.bankingBusinessChartsData?.Histogram;
     this.mixedData = this.bankingBusinessChartsData?.Mixed;
-    this.mixedData2 = this.bankingBusinessChartsData?.Mixed2;
+    // this.mixedData2 = this.bankingBusinessChartsData?.Mixed2;
     this.mixedData3 = this.bankingBusinessChartsData?.Mixed3;
     this.mixedData4 = this.bankingBusinessChartsData?.Mixed4;
+
+
+
+    this.banking_history = reportPageJson?.banking_history;
+    this.graphData = this.banking_history?.graph_data;
+    
+
+    const simplifiedMonthlyData = this.graphData?.monthly.map((item: {
+      cashflow: any;
+      average_balance: any;
+      credit_count: any; month: any; turnover: any; 
+}): any => {
+      return {
+          month: this.formatMonth(item.month),
+          turnover:  item.turnover,
+          creditCount: item.credit_count,
+          averageBalance: item.average_balance,
+          cashflow: item.cashflow,
+      };
+  });
+
+  const firstSixObjects = simplifiedMonthlyData.slice(0, 6);
+  const monthsArray = firstSixObjects.map((item: { month: any; }) => item.month);
+  const turnoversArray = firstSixObjects.map((item: { turnover: any; }) => item.turnover);
+  const creditCountArray = firstSixObjects.map((item: { creditCount: any; }) => item.creditCount);
+  
+  // Creating an object with two arrays
+  const resultObject = {
+      months: monthsArray,
+      turnovers: turnoversArray,
+      creditCount: creditCountArray
+  };
+
+  this.mixedData2 = resultObject;
+  this.barData = resultObject;
+    console.log(firstSixObjects, 'simplifiedMonthlyData');
   }
+
 
 
   customOptions4: OwlOptions = {

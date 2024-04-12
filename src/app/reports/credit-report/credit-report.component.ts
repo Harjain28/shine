@@ -48,7 +48,7 @@ export class CreditReportComponent {
   secured_unsecured_ratio: any;
   turnover_analysis: any;
   other_Canalysis: any;
-  
+
   constructor(private dialog: MatDialog){}
 
   customOptions4: OwlOptions = {
@@ -164,7 +164,7 @@ export class CreditReportComponent {
   }
    // Function to calculate the rotation of the needle
  calculateRotation(angle: number): number {
-  return (angle - 0) / 5; 
+  return (angle) / 5; 
 }
 
 

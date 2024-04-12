@@ -140,28 +140,28 @@ export const reportPageJson =
             "monthly":[
                 {
                     "month": "2024-01-01",
-                    "turnover": 1209462,
+                    "turnover": 1009462,
                     "credit_count": 759038,
                     "average_balance": 759038,
                     "cashflow": 500000
                 },
                 {
                     "month": "2024-02-01",
-                    "turnover": 1209462,
+                    "turnover": 1809462,
                     "credit_count": 759038,
                     "average_balance": 759038,
                     "cashflow": 500000
                 },
                 {
                     "month": "2024-03-01",
-                    "turnover": 1209462,
+                    "turnover": 2009462,
                     "credit_count": 759038,
                     "average_balance": 759038,
                     "cashflow": 500000
                 },
                 {
                     "month": "2024-04-01",
-                    "turnover": 1209462,
+                    "turnover": 3009462,
                     "credit_count": 759038,
                     "average_balance": 759038,
                     "cashflow": 500000
