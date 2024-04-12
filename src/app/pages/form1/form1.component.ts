@@ -57,7 +57,7 @@ export class Form1Component implements OnInit {
       phoneNumber: new FormControl("", [Validators.required,Validators.pattern("^[6-9]\\d{9}$"),Validators.maxLength(10),]),
       emailId: new FormControl("", {validators: [Validators.required,Validators.pattern("^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$"),],updateOn: "blur",}),
       pincode: new FormControl("", [Validators.required]),
-      busninessName: new FormControl("", [Validators.required,Validators.pattern("^[a-zA-Z ]+$"),]),
+      busninessName: new FormControl("", [Validators.required,Validators.pattern("^[a-zA-Z &]+$"),]),
       businessTurnover: new FormControl("", [Validators.required]),
       propertyOwnership: new FormControl("", [Validators.required]),
       businessPan: new FormControl("", [Validators.required]),

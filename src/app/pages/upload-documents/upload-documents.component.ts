@@ -69,6 +69,9 @@ export class UploadDocumentsComponent {
   confirmUrl: any;
   transID: any;
   showiFrame: boolean = false;
+  requestData: any;
+  parsedData: any;
+  mobileNo: any;
 
  
   constructor(private api: ApiService,
@@ -97,6 +100,13 @@ export class UploadDocumentsComponent {
     this.form();
 
     this.isChecked = this.api.isDocumentChecked;
+
+    this.requestData = localStorage.getItem("reqData");
+      this.parsedData = JSON.parse(this.requestData);
+
+      if(this.parsedData){
+        this.mobileNo = this.parsedData.mobile;
+      }
 
     this.transID =localStorage.getItem("transID");
       if(this.transID){
@@ -166,7 +176,7 @@ export class UploadDocumentsComponent {
 
   netBankinglink(){
     const defaultparams = {
-      mobile: "8128187880",
+      mobile: this.mobileNo,
       callbackEnum: 0,
     };
     const params = { ...defaultparams, ...this.paramsObject.params };
@@ -191,7 +201,7 @@ export class UploadDocumentsComponent {
 
   uploadDocumentLink(){
     const defaultparams = {
-      mobile: "8128187880",
+      mobile: this.mobileNo,
       callbackEnum: 0,
     };
     const params = { ...defaultparams, ...this.paramsObject.params };
