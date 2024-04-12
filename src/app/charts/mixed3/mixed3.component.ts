@@ -157,7 +157,6 @@ export class Mixed3Component {
    
   }
 
-
   getMixedColor(value: number, sortedValues:any) {
     const index = sortedValues.indexOf(value);
     if(index === 0){
@@ -174,4 +173,5 @@ export class Mixed3Component {
       return '#EC1111'; // Black color (you can change it to any default color)
     }
   }
+
 }

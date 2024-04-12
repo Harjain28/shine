@@ -17,10 +17,7 @@ export class Mixed2Component {
   private chart!: Chart;
   mixedValue1: any;
   mixedValue2: any;
-  mixedLineValue1: any;
-  mixedLineValue2: any;
-  mixedLineValue3: any;
-
+  turnoverLineData: any;
   ngOnInit(): void {
     console.log(this.MixedJSONData2, 'MixedJSONData2');
   }
@@ -35,10 +32,10 @@ export class Mixed2Component {
   mixedChart(): void {
     this.mixedValue1 = this.MixedJSONData2?.turnovers.slice(0,6);
     this.mixedValue2 = this.MixedJSONData2?.months.slice(0,6);
-    // this.mixedLineValue1 = this.MixedJSONData2?.LineValue1;
-    // this.mixedLineValue2 = this.MixedJSONData2?.LineValue2;
-    // this.mixedLineValue3 = this.MixedJSONData2?.LineValue3;
-    console.log(this.mixedValue2, 'mixed');
+    
+    this.turnoverLineData = this.MixedJSONData2?.turnoverLineData;
+
+    console.log(this.mixedValue1, 'mixed');
     const dataValues = [...this.mixedValue1];
 
   
@@ -51,49 +48,49 @@ export class Mixed2Component {
     const chartData2: ChartData = {
       labels: [...this.mixedValue2],
       datasets: [
-        //    {
-        //   // label: 'Horizontal Line Dataset',
-        //   type: 'line',
-        //   data: [{ x: this.mixedLineValue1[0].x, y: this.mixedLineValue1[0].y },
-        //   { x: this.mixedLineValue1[1].x, y: this.mixedLineValue1[1].y },
-        //   { x: this.mixedLineValue1[2].x, y: this.mixedLineValue1[2].y },
-        //   { x: this.mixedLineValue1[3].x, y: this.mixedLineValue1[3].y },
-        //   { x: this.mixedLineValue1[4].x, y: this.mixedLineValue1[4].y },
-        //   { x: this.mixedLineValue1[5].x, y: this.mixedLineValue1[5].y }],
-        //   borderColor: 'green',
-        //   borderWidth: 1,
-        //   fill: false,
-        //   pointStyle:"line"
-        // },
-        // {
-        //   // label: 'Horizontal Line Dataset',
-        //   type: 'line',
-        //   data: [{ x: this.mixedLineValue2[0].x, y: this.mixedLineValue2[0].y },
-        //   { x: this.mixedLineValue2[1].x, y: this.mixedLineValue2[1].y },
-        //   { x: this.mixedLineValue2[2].x, y: this.mixedLineValue2[2].y },
-        //   { x: this.mixedLineValue2[3].x, y: this.mixedLineValue2[3].y },
-        //   { x: this.mixedLineValue2[4].x, y: this.mixedLineValue2[4].y },
-        //   { x: this.mixedLineValue2[5].x, y: this.mixedLineValue2[5].y }],
-        //   borderColor: 'yellow',
-        //   borderWidth: 1,
-        //   fill: false,
-        //   pointStyle:"line"
+           {
+          // label: 'Horizontal Line Dataset',
+          type: 'line',
+          data: [{ x: 0, y:this.turnoverLineData?.mean},
+          { x: 0, y: this.turnoverLineData?.mean},
+          { x: 0, y: this.turnoverLineData?.mean },
+          { x: 0, y: this.turnoverLineData?.mean},
+          { x: 0, y: this.turnoverLineData?.mean},
+          { x: 0, y: this.turnoverLineData?.mean }],
+          borderColor: 'green',
+          borderWidth: 1,
+          fill: false,
+          pointStyle:"line"
+        },
+        {
+          // label: 'Horizontal Line Dataset',
+          type: 'line',
+          data: [{ x: 0, y:this.turnoverLineData?.low_sd},
+            { x: 0, y: this.turnoverLineData?.low_sd},
+            { x: 0, y: this.turnoverLineData?.low_sd },
+            { x: 0, y: this.turnoverLineData?.low_sd},
+            { x: 0, y: this.turnoverLineData?.low_sd},
+            { x: 0, y: this.turnoverLineData?.low_sd }],
+          borderColor: 'yellow',
+          borderWidth: 1,
+          fill: false,
+          pointStyle:"line"
 
-        // },{
-        //   // label: 'Horizontal Line Dataset',
-        //   type: 'line',
-        //   data: [{ x: this.mixedLineValue3[0].x, y: this.mixedLineValue3[0].y },
-        //   { x: this.mixedLineValue3[1].x, y: this.mixedLineValue3[1].y },
-        //   { x: this.mixedLineValue3[2].x, y: this.mixedLineValue3[2].y },
-        //   { x: this.mixedLineValue3[3].x, y: this.mixedLineValue3[3].y },
-        //   { x: this.mixedLineValue3[4].x, y: this.mixedLineValue3[4].y },
-        //   { x: this.mixedLineValue3[5].x, y: this.mixedLineValue3[5].y }],
-        //   borderColor: 'red',
-        //   borderWidth: 1,
-        //   fill: false,
-        //   pointStyle:"line"
+        },{
+          // label: 'Horizontal Line Dataset',
+          type: 'line',
+          data: [{ x: 0, y:this.turnoverLineData?.high_sd},
+            { x: 0, y: this.turnoverLineData?.high_sd},
+            { x: 0, y: this.turnoverLineData?.high_sd },
+            { x: 0, y: this.turnoverLineData?.high_sd},
+            { x: 0, y: this.turnoverLineData?.high_sd},
+            { x: 0, y: this.turnoverLineData?.high_sd }],
+          borderColor: 'red',
+          borderWidth: 1,
+          fill: false,
+          pointStyle:"line"
 
-        // },
+        },
         {
           // label: 'Bar Dataset',
           type: 'bar',
@@ -144,6 +141,22 @@ export class Mixed2Component {
     });
   }
 
+  formatTurnover(turnover: any) {
+    const roundedTurnover = Math.round(turnover);
+    if (roundedTurnover >= 10000000) {
+      return (roundedTurnover / 10000000).toFixed(0) + 'Cr';
+    } else if (roundedTurnover >= 100000) {
+      return (roundedTurnover / 100000).toFixed(0) + 'L';
+    } else if (roundedTurnover >= 1000) {
+      return (roundedTurnover / 1000).toFixed(0) + 'K';
+    } else {
+      return roundedTurnover.toString();
+    }
+  }
+
+  getMixedColor(value: any): any {
+    throw new Error('Method not implemented.');
+  }
 
 
  getColor(value:any, sortedValues:any) {

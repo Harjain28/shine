@@ -49,8 +49,8 @@ export class BankingBusinessComponent {
   monthly_expenses: any;
   isExpand: boolean = false;
   mixedData5: any;
-
-
+  turnoverLineData: any;
+  businessLinedata:any;
   constructor(){
 
   }
@@ -89,6 +89,8 @@ formatAmount(value:any) {
     this.banking_history = reportPageJson?.banking_history;
     this.graphData = this.banking_history?.graph_data;
     this.monthly_expenses = this.banking_history?.monthly_expenses;
+    this.turnoverLineData = this.graphData?.turnover;
+    this.businessLinedata = this.graphData?.abb;
     
 
     const simplifiedMonthlyData = this.graphData?.monthly.map((item: {
@@ -117,7 +119,10 @@ formatAmount(value:any) {
       turnovers: turnoversArray,
       creditCount: creditCountArray,
       cashFlow: cashFlowArray,
-      averageBalance: averageBalanceArray
+      averageBalance: averageBalanceArray,
+      turnoverLineData: this.turnoverLineData,
+      businessLinedata: this.businessLinedata
+
   };
 
   this.mixedData2 = resultObject;

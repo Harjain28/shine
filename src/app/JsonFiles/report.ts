@@ -254,13 +254,13 @@ export const reportPageJson =
                 }
             ],
             "turnover" : {
-                "mean": 5000000,
-                "low_sd": 3700000,
-                "high_sd": 6700000,
+                "mean": 1000000,
+                "low_sd": 1700000,
+                "high_sd": 2700000,
                 "min": 2500000
             },
             "abb" : {
-                "mean": 1000000,
+                "mean": 200000,
                 "low_sd": 700000,
                 "high_sd": 1200000,
                 "min": 600000
