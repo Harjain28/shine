@@ -18,6 +18,8 @@ export class BarComponent {
 
   private chart3!:Chart;
   barValues: any;
+  barLabels: any;
+  barvalues: any;
 
   ngOnInit(): void{
     this.barValues = this.barJSONData?.Values;
@@ -33,20 +35,25 @@ export class BarComponent {
 
    mixedChart(): void{
 
-    const dataValues2 = [ this.barValues[0], this.barValues[1], this.barValues[2], this.barValues[3]]; 
+    this.barvalues = this.barJSONData?.creditCount;
+    this.barLabels = this.barJSONData?.months;
+    console.log(this.barJSONData, "kk")
 
-    const backgroundColors2 = dataValues2.map(value => this.getColor2(value));
+    const dataValues = [...this.barvalues]; 
+
+    const sortedValues = dataValues.slice().sort((a, b) => b - a);
+
+    const backgroundColors = dataValues.map(value => this.getColor(value,sortedValues));
 
 
 
 
     const chartData3: ChartData = {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr'],
+      labels: [...this.barLabels],
       datasets: [{
-        // label: 'Bar Dataset',
         type: 'bar',
-        data: dataValues2,
-        backgroundColor: backgroundColors2,
+        data: dataValues,
+        backgroundColor: backgroundColors,
         borderWidth: 1,
         
       }]
@@ -58,30 +65,36 @@ export class BarComponent {
       options: {
         plugins: {
           legend: {
-            display: false // Set to false to hide the legend
-          }
+            display: false, // Set to false to hide the legend
+          },
         },
         scales: {
-          x:{
-            grid:{
-              display: false
-            }
-
+          x: {
+            grid: {
+              display: false,
+            },
           },
           y: {
             grid: {
-              display: false
+              display: false,
             },
             beginAtZero: true,
             ticks: {
-              callback: function(value: any, index: any, values: any) {
-                return value + ' L';
-              }
-            } as RadialTickOptions
-            
-          }
+              callback: function (value: any, index: any, values: any) {
+                const roundedTurnover = Math.round(value);
+                if (roundedTurnover >= 10000000) {
+                  return (roundedTurnover / 10000000).toFixed(0) + ' Cr';
+                } else if (roundedTurnover >= 100000) {
+                  return (roundedTurnover / 100000).toFixed(0) + ' L';
+                } else if (roundedTurnover >= 1000) {
+                  return (roundedTurnover / 1000).toFixed(0) + ' K';
+                } else {
+                  return roundedTurnover.toString();
+                }
+              },
+            } as RadialTickOptions,
+          },
         },
-       
       }
     });
 
@@ -89,19 +102,16 @@ export class BarComponent {
    
   }
 
-  private getColor2(value: number): string {
-    if(value > 100){
-      return '#400993'
-    }
-    else if (value >= 80 && value < 100) {
-      return '#6A2FC2'; 
-    } else if (value >= 60 && value < 80) {
-      return '#A070E8'; 
-    } else if (value >= 40 && value < 60) {
-      return '#9E77D6'; 
+  getColor(value:any, sortedValues:any) {
+    const index = sortedValues.indexOf(value);
+    if (index === 0) {
+        return '#400993'; // First value color
+    } else if (index > 0 && index <= 2) {
+        return '#6A2FC2'; // Second and third value color
+    } else if (index > 2 && index <= 4) {
+        return '#A070E8'; // Fourth and fifth value color
     } else {
-      
-      return '#A070E2'; 
+        return '#9E77D6'; // Rest of the values color
     }
-  }
+}
 }
