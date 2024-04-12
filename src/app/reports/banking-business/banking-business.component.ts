@@ -45,7 +45,7 @@ export class BankingBusinessComponent {
   mixedData2: any;
   graphData: any;
   banking_history: any;
-
+  monthly_expenses: any;
 
   constructor(){
 
@@ -57,13 +57,25 @@ export class BankingBusinessComponent {
     return monthNames[date.getMonth()];
 }
 
+formatAmount(value:any) {
+  const roundedTurnover = Math.round(value);
+  if (roundedTurnover >= 10000000) {
+    return (roundedTurnover / 10000000).toFixed(0) + ' Cr';
+  } else if (roundedTurnover >= 100000) {
+    return (roundedTurnover / 100000).toFixed(0) + ' L';
+  } else if (roundedTurnover >= 1000) {
+    return (roundedTurnover / 1000).toFixed(0) + ' K';
+  } else {
+    return roundedTurnover.toString();
+  }  
+}
 
   
   ngOnInit(): void {
     // this.barData = this.bankingBusinessChartsData?.Bar;
     this.pieData = this.bankingBusinessChartsData?.Pie;
     this.histogramData = this.bankingBusinessChartsData?.Histogram;
-    this.mixedData = this.bankingBusinessChartsData?.Mixed;
+    // this.mixedData = this.bankingBusinessChartsData?.Mixed;
     // this.mixedData2 = this.bankingBusinessChartsData?.Mixed2;
     this.mixedData3 = this.bankingBusinessChartsData?.Mixed3;
     this.mixedData4 = this.bankingBusinessChartsData?.Mixed4;
@@ -72,6 +84,7 @@ export class BankingBusinessComponent {
 
     this.banking_history = reportPageJson?.banking_history;
     this.graphData = this.banking_history?.graph_data;
+    this.monthly_expenses = this.banking_history?.monthly_expenses;
     
 
     const simplifiedMonthlyData = this.graphData?.monthly.map((item: {
@@ -93,17 +106,20 @@ export class BankingBusinessComponent {
   const turnoversArray = firstSixObjects.map((item: { turnover: any; }) => item.turnover);
   const creditCountArray = firstSixObjects.map((item: { creditCount: any; }) => item.creditCount);
   const cashFlowArray = firstSixObjects.map((item: { cashflow: any; }) => item.cashflow);
+  const averageBalanceArray = firstSixObjects.map((item: { averageBalance: any; }) => item.averageBalance);
   // Creating an object with two arrays
   const resultObject = {
       months: monthsArray,
       turnovers: turnoversArray,
       creditCount: creditCountArray,
-      cashFlow: cashFlowArray
+      cashFlow: cashFlowArray,
+      averageBalance: averageBalanceArray
   };
 
   this.mixedData2 = resultObject;
   this.barData = resultObject;
   this.histogramData = resultObject;
+  this.mixedData = resultObject;
     console.log(cashFlowArray, 'kkk');
   }
 

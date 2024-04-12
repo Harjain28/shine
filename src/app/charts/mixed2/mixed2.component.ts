@@ -144,19 +144,6 @@ export class Mixed2Component {
     });
   }
 
-  formatTurnover(turnover: any) {
-    const roundedTurnover = Math.round(turnover);
-    if (roundedTurnover >= 10000000) {
-      return (roundedTurnover / 10000000).toFixed(0) + 'Cr';
-    } else if (roundedTurnover >= 100000) {
-      return (roundedTurnover / 100000).toFixed(0) + 'L';
-    } else if (roundedTurnover >= 1000) {
-      return (roundedTurnover / 1000).toFixed(0) + 'K';
-    } else {
-      return roundedTurnover.toString();
-    }
-  }
-
   getMixedColor(value: any): any {
     throw new Error('Method not implemented.');
   }
