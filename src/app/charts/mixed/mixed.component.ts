@@ -39,8 +39,8 @@ export class MixedComponent {
 
    mixedChart(): void{
 
-    this.mixedValue1 = this.MixedJSONData?.averageBalance;
-    this.mixedValue2 = this.MixedJSONData?.months;
+    this.mixedValue1 = this.MixedJSONData?.averageBalance.slice(0,6);
+    this.mixedValue2 = this.MixedJSONData?.months.slice(0,6);
 
     // this.mixedLineValue1 = this.MixedJSONData?.LineValue1;
     // this.mixedLineValue2 = this.MixedJSONData?.LineValue2;

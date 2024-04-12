@@ -3,18 +3,18 @@ import { CommonModule } from '@angular/common';
 import Chart, { ChartData, RadialTickOptions } from 'chart.js/auto';
 
 @Component({
-  selector: 'app-mixed2',
+  selector: 'app-mixed5',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './mixed2.component.html',
-  styleUrls: ['./mixed2.component.scss'],
+  templateUrl: './mixed5.component.html',
+  styleUrls: ['./mixed5.component.scss'],
 })
-export class Mixed2Component {
-  @ViewChild('chartCanvas') chartCanvas!: ElementRef;
+export class Mixed5Component {
+  @ViewChild('chartCanvas5') chartCanvas5!: ElementRef;
 
-  @Input() MixedJSONData2: any;
+  @Input() MixedJSONData5: any;
 
-  private chart!: Chart;
+  private chart5!: Chart;
   mixedValue1: any;
   mixedValue2: any;
   mixedLineValue1: any;
@@ -22,19 +22,19 @@ export class Mixed2Component {
   mixedLineValue3: any;
 
   ngOnInit(): void {
-    console.log(this.MixedJSONData2, 'MixedJSONData2');
+    console.log(this.MixedJSONData5, 'MixedJSONData5');
   }
 
   ngAfterViewInit(): void {
-    const canvas = this.chartCanvas.nativeElement as HTMLCanvasElement;
-    canvas.width = 300;
-    canvas.height = 130;
+    const canvas = this.chartCanvas5.nativeElement as HTMLCanvasElement;
+    canvas.width = 600; // Example width
+    canvas.height = 200; // Example height
     this.mixedChart();
   }
 
   mixedChart(): void {
-    this.mixedValue1 = this.MixedJSONData2?.turnovers.slice(0,6);
-    this.mixedValue2 = this.MixedJSONData2?.months.slice(0,6);
+    this.mixedValue1 = this.MixedJSONData5?.turnovers;
+    this.mixedValue2 = this.MixedJSONData5?.months;
     // this.mixedLineValue1 = this.MixedJSONData2?.LineValue1;
     // this.mixedLineValue2 = this.MixedJSONData2?.LineValue2;
     // this.mixedLineValue3 = this.MixedJSONData2?.LineValue3;
@@ -48,7 +48,7 @@ export class Mixed2Component {
 
 
 
-    const chartData2: ChartData = {
+    const chartData5: ChartData = {
       labels: [...this.mixedValue2],
       datasets: [
         //    {
@@ -104,9 +104,9 @@ export class Mixed2Component {
       ],
     };
 
-    this.chart = new Chart(this.chartCanvas.nativeElement, {
+    this.chart5 = new Chart(this.chartCanvas5.nativeElement, {
       type: 'bar',
-      data: chartData2,
+      data: chartData5,
       options: {
         plugins: {
           legend: {

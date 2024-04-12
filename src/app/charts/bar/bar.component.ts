@@ -20,9 +20,14 @@ export class BarComponent {
   barValues: any;
   barLabels: any;
   barvalues: any;
+  fullData: any;
 
   ngOnInit(): void{
-    this.barValues = this.barJSONData?.Values;
+
+      this.barvalues = this.barJSONData?.creditCount.slice(0,6);
+    this.barLabels = this.barJSONData?.months.slice(0,6);
+
+    
   }
 
   ngAfterViewInit(): void {
@@ -35,8 +40,8 @@ export class BarComponent {
 
    mixedChart(): void{
 
-    this.barvalues = this.barJSONData?.creditCount;
-    this.barLabels = this.barJSONData?.months;
+
+    
 
     const dataValues = [...this.barvalues]; 
 

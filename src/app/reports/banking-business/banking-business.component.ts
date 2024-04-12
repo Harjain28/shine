@@ -14,13 +14,14 @@ import { HistogramComponent } from 'src/app/charts/histogram/histogram.component
 import { PieComponent } from 'src/app/charts/pie/pie.component';
 import { BarComponent } from 'src/app/charts/bar/bar.component';
 import { reportPageJson } from 'src/app/JsonFiles/report';
+import { Mixed5Component } from 'src/app/charts/mixed5/mixed5.component';
 
 @Component({
   selector: 'app-banking-business',
   standalone: true,
   imports: [CommonModule,MatProgressBarModule,MatExpansionModule,
     MatFormFieldModule,MatCheckboxModule,MatIconModule,CarouselModule,
-    Mixed2Component,Mixed3Component,Mixed4Component,MixedComponent,HistogramComponent,
+    Mixed2Component,Mixed3Component,Mixed4Component,MixedComponent,Mixed5Component,HistogramComponent,
     PieComponent,BarComponent],
   templateUrl: './banking-business.component.html',
   styleUrls: ['./banking-business.component.scss','../reports.component.scss']
@@ -46,6 +47,9 @@ export class BankingBusinessComponent {
   graphData: any;
   banking_history: any;
   monthly_expenses: any;
+  isExpand: boolean = false;
+  mixedData5: any;
+
 
   constructor(){
 
@@ -101,7 +105,7 @@ formatAmount(value:any) {
       };
   });
 
-  const firstSixObjects = simplifiedMonthlyData.slice(0, 6);
+  const firstSixObjects = simplifiedMonthlyData;
   const monthsArray = firstSixObjects.map((item: { month: any; }) => item.month);
   const turnoversArray = firstSixObjects.map((item: { turnover: any; }) => item.turnover);
   const creditCountArray = firstSixObjects.map((item: { creditCount: any; }) => item.creditCount);
@@ -120,6 +124,10 @@ formatAmount(value:any) {
   this.barData = resultObject;
   this.histogramData = resultObject;
   this.mixedData = resultObject;
+  this.mixedData3 = resultObject;
+  this.mixedData4 = resultObject;
+  this.mixedData5 = resultObject;
+
     console.log(cashFlowArray, 'kkk');
   }
 
@@ -160,12 +168,15 @@ formatAmount(value:any) {
 
 
   expandBankingBusniess(){
+
+    localStorage.setItem("isExpand", "true")
     this.expandBusinessSection = true;
     this.balanceSectionBlock = false;
     this.BusinessSectionBlock = false;
   }
 
   minimizeBusinessBanking(){
+    localStorage.setItem("isExpand", "false")
     this.expandBusinessSection = false;
     this.balanceSectionBlock = true; 
        this.BusinessSectionBlock = true;
@@ -190,6 +201,7 @@ formatAmount(value:any) {
   }
 
   expandBusinessSectionBlock(){
+    localStorage.setItem("isExpand", "true")
     this.expandBalanceSection = false;
     this.expandBusinessSection = true;
   }
