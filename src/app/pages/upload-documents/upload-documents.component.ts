@@ -213,7 +213,7 @@ export class UploadDocumentsComponent {
       .subscribe({
         next: (res: any) => {
 
-          localStorage.setItem("transID",res?.transactionId)
+          localStorage.setItem("transID",res?.transactionId);
            window.location.href = res?.url;
          
         },

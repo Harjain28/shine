@@ -92,16 +92,18 @@ export class BankingBusinessComponent {
   const monthsArray = firstSixObjects.map((item: { month: any; }) => item.month);
   const turnoversArray = firstSixObjects.map((item: { turnover: any; }) => item.turnover);
   const creditCountArray = firstSixObjects.map((item: { creditCount: any; }) => item.creditCount);
-  
+  const casFlowArray = firstSixObjects.map((item: { cashFlow: any; }) => item.cashFlow);
   // Creating an object with two arrays
   const resultObject = {
       months: monthsArray,
       turnovers: turnoversArray,
-      creditCount: creditCountArray
+      creditCount: creditCountArray,
+      casFlow: casFlowArray
   };
 
   this.mixedData2 = resultObject;
   this.barData = resultObject;
+  this.histogramData = resultObject;
     console.log(firstSixObjects, 'simplifiedMonthlyData');
   }
 

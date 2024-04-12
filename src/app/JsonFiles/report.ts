@@ -141,28 +141,28 @@ export const reportPageJson =
                 {
                     "month": "2024-01-01",
                     "turnover": 1009462,
-                    "credit_count": 759038,
+                    "credit_count": 722038,
                     "average_balance": 759038,
                     "cashflow": 500000
                 },
                 {
                     "month": "2024-02-01",
                     "turnover": 1809462,
-                    "credit_count": 759038,
+                    "credit_count": 500000,
                     "average_balance": 759038,
                     "cashflow": 500000
                 },
                 {
                     "month": "2024-03-01",
                     "turnover": 2009462,
-                    "credit_count": 759038,
+                    "credit_count": 4005505,
                     "average_balance": 759038,
                     "cashflow": 500000
                 },
                 {
                     "month": "2024-04-01",
                     "turnover": 3009462,
-                    "credit_count": 759038,
+                    "credit_count": 879330,
                     "average_balance": 759038,
                     "cashflow": 500000
                 },
@@ -176,28 +176,28 @@ export const reportPageJson =
                 {
                     "month": "2024-06-01",
                     "turnover": 1209462,
-                    "credit_count": 759038,
+                    "credit_count": 129462,
                     "average_balance": 759038,
                     "cashflow": 500000
                 },
                 {
                     "month": "2024-07-01",
                     "turnover": 1209462,
-                    "credit_count": 759038,
+                    "credit_count": 879038,
                     "average_balance": 759038,
                     "cashflow": 500000
                 },
                 {
                     "month": "2024-08-01",
                     "turnover": 1209462,
-                    "credit_count": 759038,
+                    "credit_count": 259038,
                     "average_balance": 759038,
                     "cashflow": 500000
                 },
                 {
                     "month": "2024-09-01",
                     "turnover": 1209462,
-                    "credit_count": 759038,
+                    "credit_count": 289038,
                     "average_balance": 759038,
                     "cashflow": 500000
                 },
