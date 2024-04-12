@@ -27,12 +27,10 @@ export class HistogramComponent {
 
   private createHistogramChart(): void {
 
-    this.histogramValues = this.HistogramJSONData?.Values;
+    this.histogramValues = this.HistogramJSONData?.cashFlow;
 
-    const histogramDataValues = [this.histogramValues[0], this.histogramValues[1], this.histogramValues[2], this.histogramValues[3],
-    this.histogramValues[4], this.histogramValues[5], this.histogramValues[6], this.histogramValues[7], this.histogramValues[8],
-    this.histogramValues[9], this.histogramValues[10], this.histogramValues[11]]; 
-    const histogramLabels = ['', '', '', '','', '', '', '','', '', '', '']; 
+    const histogramDataValues = [...this.histogramValues]; 
+    const histogramLabels = Array.from({ length: histogramDataValues.length }, () => ''); 
     const backgroundColors = histogramDataValues.map(value => (value < 0 ? 'red' : 'green'));
 
     const histogramChartData: ChartData = {
@@ -54,7 +52,7 @@ export class HistogramComponent {
         
         plugins: {
           legend: {
-            display: false // Set to false to hide the legend
+            display: false 
           }
         },
 

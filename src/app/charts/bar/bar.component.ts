@@ -37,7 +37,6 @@ export class BarComponent {
 
     this.barvalues = this.barJSONData?.creditCount;
     this.barLabels = this.barJSONData?.months;
-    console.log(this.barJSONData, "kk")
 
     const dataValues = [...this.barvalues]; 
 
