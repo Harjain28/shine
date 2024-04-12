@@ -27,7 +27,7 @@ export class HistogramComponent {
 
   private createHistogramChart(): void {
 
-    this.histogramValues = this.HistogramJSONData?.cashFlow.slice(0,6);
+    this.histogramValues = this.HistogramJSONData?.cashFlow;
 
     const histogramDataValues = [...this.histogramValues]; 
     const histogramLabels = Array.from({ length: histogramDataValues.length }, () => ''); 
