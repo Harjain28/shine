@@ -101,7 +101,7 @@ export class BankingBusinessComponent {
 
 
 
-    this.banking_history = reportPageJson?.report.banking_history;
+    this.banking_history = reportPageJson?.report.bankingHistory;
     this.graphData = this.banking_history?.graph_data;
     this.monthly_expenses = this.banking_history?.monthly_expenses;
     this.turnoverLineData = this.graphData?.turnover;

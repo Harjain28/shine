@@ -34,7 +34,7 @@ export class DoughnutComponent {
   }
 
   private createDonutChart():void{
-    this.doughtValues = this.doughtnutJSONData?.by_amount;
+    this.doughtValues = this.doughtnutJSONData?.byAmount;
     this.doughtnutColor = ChartsJsonData?.Doughtnut?.Color;
 
     const donutDataValues = [...this.doughtValues]; 

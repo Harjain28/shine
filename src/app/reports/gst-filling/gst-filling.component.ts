@@ -35,7 +35,7 @@ export class GstFillingComponent {
 
   ngOnInit(): void{
     this.reportsData = reportPageJson?.report;
-    this.gstDetails = this.reportsData?.gst;
+    this.gstDetails = this.reportsData?.gstHistory;
 
     if(this.gstDetails?.current_gst_status){
       this.currStatus = "Active"
@@ -43,7 +43,7 @@ export class GstFillingComponent {
       this.currStatus = "Inactive"
     }
 
-    this.month=this.gstDetails?.missed_gst_filings?.month;
+    this.month=this.gstDetails?.missedGstFilings?.month;
     const gstInsights = this.reportsData?.gstHistory;
 
     this.missedGstFilings = this.concatenateInsights(

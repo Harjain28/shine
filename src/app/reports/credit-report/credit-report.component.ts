@@ -47,7 +47,7 @@ export class CreditReportComponent {
   bureau_score: any;
   loan_repayment_history: any;
   selectedYear: number | undefined;
-  months: string[] = [
+  month: string[] = [
     'JAN',
     'FEB',
     'MAR',
@@ -61,15 +61,12 @@ export class CreditReportComponent {
     'NOV',
     'DEC',
   ];
-  years: number[] | undefined;
+  year: number[] | undefined;
   default_analysis: any;
   defaultHistoryItems: any = [];
   other_analysis: any;
   credit_debt_analysis: any;
   credit_analysis: any;
-  secured_unsecured_ratio: any;
-  turnover_analysis: any;
-  other_Canalysis: any;
   bureauScoreInsights: any;
   infoCardLRP: any;
   defaulthistoryText: any;
@@ -85,6 +82,8 @@ export class CreditReportComponent {
   smallLoans: any;
   credit_debt_analysis_summary: any;
   creditEnquiry: any;
+  securedUnsecuredRatioData: any;
+  ratiosecured: any = [];
   constructor(private dialog: MatDialog) {}
 
   customOptions4: OwlOptions = {
@@ -136,46 +135,51 @@ export class CreditReportComponent {
 
   ngOnInit(): void {
     this.reportsData = reportPageJson?.report;
-    this.creditReportData = this.reportsData?.credit_report;
-    console.log(this.creditReportData, 'creditReportData');
-    this.angle = this.creditReportData?.bureau_score?.score;
-    this.loan_repayment_history = this.creditReportData?.loan_repayment_history;
-    this.credit_debt_analysis = this.creditReportData?.credit_debt_analysis;
+    this.creditReportData = this.reportsData?.creditReport;
+    this.angle = this.creditReportData?.bureauScore?.score;
+    this.loan_repayment_history = this.creditReportData?.loanRepaymentHistory;
 
-    this.getInsights();
-    this.default_analysis = this.loan_repayment_history?.default_analysis;
-    this.other_analysis = this.loan_repayment_history?.other_analysis;
+    this.year = this.extractYears(this.loan_repayment_history?.missedPayments);
+    this.selectedYear = this.year[0];
+
+    this.default_analysis = this.loan_repayment_history?.defaultAnalysis;
+    this.other_analysis = this.loan_repayment_history?.otherAnalysis;
     this.defaultHistoryItems = [
       {
         label: 'Recent Default',
-        value: this.default_analysis.default_history.recent_default,
+        value: this.default_analysis.defaultHistory.recentDefault,
       },
       {
         label: 'Default Ever',
-        value: this.default_analysis.default_history.default_ever,
+        value: this.default_analysis.defaultHistory.defaultEver,
       },
       {
         label: '30 days delayed',
-        value: this.default_analysis.default_history.thirty_days_delayed,
+        value: this.default_analysis.defaultHistory.thirtyDaysDelayed,
       },
       {
         label: 'Delayed Severity of Payment (90-180 days)',
-        value: this.default_analysis.default_history.delayed_severity,
+        value: this.default_analysis.defaultHistory.delayedSeverity,
       },
     ];
-    this.years = this.extractYears(
-      this.loan_repayment_history?.missed_payments
-    );
-    this.selectedYear = this.years[0];
+    this.credit_analysis = this.creditReportData?.creditAnalysis;
+    this.securedUnsecuredRatioData =
+      this.creditReportData?.securedUnsecuredRatio;
+    
+      this.ratiosecured = {
+        byAmount: [
+            {
+                name: 'secured',
+                value: this.securedUnsecuredRatioData?.securedOutstanding || 0,
+            },
+            {
+                name: 'unsecured',
+                value: this.securedUnsecuredRatioData?.unsecuredOutstanding || 0,
+            }
+        ]
+    };
 
-    this.credit_analysis = this.credit_debt_analysis?.credit_analysis;
-    this.secured_unsecured_ratio =
-      this.credit_debt_analysis?.secured_unsecured_ratio;
-    this.turnover_analysis = this.credit_debt_analysis?.turnover_analysis;
-    this.other_Canalysis = this.credit_debt_analysis?.other_analysis;
-
-    this.doughtnutData = this.creditReportsChartsData?.Doughtnut;
-    this.semiDoughtnutData = this.creditReportsChartsData?.Semi_Doughtnut;
+    this.getInsights();
   }
 
   getInsights() {
@@ -185,8 +189,6 @@ export class CreditReportComponent {
 
     const defaultAnalysis = loanRepaymentHistory?.defaultAnalysis;
     const otherAnalysis = loanRepaymentHistory?.otherAnalysis;
-
-    
 
     this.summary = this.concatenateInsights(
       loanRepaymentHistory?.summary.filter(
@@ -230,7 +232,7 @@ export class CreditReportComponent {
     );
 
     const credit_analysis = creditreportInsights?.credit_analysis;
-    
+
     this.securedUnsecuredRatio = this.concatenateInsights(
       credit_analysis?.securedUnsecuredRatio.filter(
         (item: { condition_status: any }) => item.condition_status
@@ -269,7 +271,7 @@ export class CreditReportComponent {
       )
     );
 
-     console.log(credit_analysis, "credit_analysis");
+    console.log(credit_analysis, 'credit_analysis');
     // console.log(this.summary, 'summary');
     // console.log(this.suitFiledEver, 'suitFiledEver');
   }
@@ -342,8 +344,8 @@ export class CreditReportComponent {
   }
 
   isSelectedMonth(month: string): boolean {
-    const index = this.months.indexOf(month) + 1;
-    return this.loan_repayment_history?.missed_payments.some(
+    const index = this.month.indexOf(month) + 1;
+    return this.loan_repayment_history?.missedPayments.some(
       (payment: { year: number | undefined; month: number }): any =>
         payment.year === this.selectedYear && payment.month === index
     );

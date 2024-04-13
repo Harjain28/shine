@@ -312,6 +312,7 @@
                 align-items: center;
                 justify-content: space-between;
                 margin-bottom: 18px;
+                flex-wrap: wrap;
 
                 span {
                     color: #3F3F3F;
@@ -319,6 +320,7 @@
                     font-weight: 500;
                     font-family: Poppins !important;
                     padding: 6px 22px;
+                    margin-bottom: 10px;
                     border: 1px solid #CECECE;
                     border-radius: 8px;
                     cursor: pointer;
