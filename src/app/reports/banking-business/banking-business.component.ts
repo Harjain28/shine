@@ -54,25 +54,40 @@ export class BankingBusinessComponent {
   constructor(){
 
   }
+  customOptions4: OwlOptions = {
+    loop: false,
+  rewind: true,
+   dots: true,
+   autoplay: false,
+   navSpeed: 300,
+   nav: false,
+   margin:10,
+   mouseDrag: false,
+   touchDrag: true,
 
- formatMonth(month:any) {
-    const date = new Date(month);
-    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    return monthNames[date.getMonth()];
-}
 
-formatAmount(value:any) {
-  const roundedTurnover = Math.round(value);
-  if (roundedTurnover >= 10000000) {
-    return (roundedTurnover / 10000000).toFixed(0) + ' Cr';
-  } else if (roundedTurnover >= 100000) {
-    return (roundedTurnover / 100000).toFixed(0) + ' L';
-  } else if (roundedTurnover >= 1000) {
-    return (roundedTurnover / 1000).toFixed(0) + ' K';
-  } else {
-    return roundedTurnover.toString();
-  }  
-}
+   autoplayTimeout:8000,
+   autoplaySpeed: 1500,
+   // navText: ["", ""],
+   navText: ["<img class='navTxtImg' src='./assets/images/homeIcon/left-arrow.svg'>", "<img class='navTxtImg' src='./assets/images/homeIcon/right-arrow.svg'>"],
+   responsive: {
+     0: {
+       items: 1,
+       dots: true,
+     },
+     400: {
+       items: 1,
+     },
+     740: {
+       items: 1,
+     },
+     940: {
+       items: 1,
+     },
+   },
+ };
+
+
 
   
   ngOnInit(): void {
@@ -86,7 +101,7 @@ formatAmount(value:any) {
 
 
 
-    this.banking_history = reportPageJson?.banking_history;
+    this.banking_history = reportPageJson?.report.banking_history;
     this.graphData = this.banking_history?.graph_data;
     this.monthly_expenses = this.banking_history?.monthly_expenses;
     this.turnoverLineData = this.graphData?.turnover;
@@ -138,38 +153,24 @@ formatAmount(value:any) {
 
 
 
-  customOptions4: OwlOptions = {
-    loop: false,
-  rewind: true,
-   dots: true,
-   autoplay: false,
-   navSpeed: 300,
-   nav: false,
-   margin:10,
-   mouseDrag: false,
-   touchDrag: true,
+  formatMonth(month:any) {
+    const date = new Date(month);
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    return monthNames[date.getMonth()];
+}
 
-
-   autoplayTimeout:8000,
-   autoplaySpeed: 1500,
-   // navText: ["", ""],
-   navText: ["<img class='navTxtImg' src='./assets/images/homeIcon/left-arrow.svg'>", "<img class='navTxtImg' src='./assets/images/homeIcon/right-arrow.svg'>"],
-   responsive: {
-     0: {
-       items: 1,
-       dots: true,
-     },
-     400: {
-       items: 1,
-     },
-     740: {
-       items: 1,
-     },
-     940: {
-       items: 1,
-     },
-   },
- };
+formatAmount(value:any) {
+  const roundedTurnover = Math.round(value);
+  if (roundedTurnover >= 10000000) {
+    return (roundedTurnover / 10000000).toFixed(0) + ' Cr';
+  } else if (roundedTurnover >= 100000) {
+    return (roundedTurnover / 100000).toFixed(0) + ' L';
+  } else if (roundedTurnover >= 1000) {
+    return (roundedTurnover / 1000).toFixed(0) + ' K';
+  } else {
+    return roundedTurnover.toString();
+  }  
+}
 
 
   expandBankingBusniess(){

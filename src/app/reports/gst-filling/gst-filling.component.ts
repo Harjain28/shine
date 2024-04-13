@@ -32,7 +32,7 @@ export class GstFillingComponent {
   }
 
   ngOnInit(): void{
-    this.reportsData = reportPageJson;
+    this.reportsData = reportPageJson?.report;
     this.gstDetails = this.reportsData?.gst;
 
     if(this.gstDetails?.current_gst_status){

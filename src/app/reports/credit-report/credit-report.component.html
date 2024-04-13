@@ -22,13 +22,11 @@
                 </div>
                 <div class="buttonJob">
                   <button class="btn" (click)="openPopup()">
-                    Your Bureau Score
+                    {{bureauScoreInsights?.header}}
                   </button>
                 </div>
                 <p>
-                  Your bureau score plays a critical role in the assessments and
-                  it would be an important criteria for your eligibility. A
-                  score above 700 is considered.
+                  {{bureauScoreInsights?.description}}
                 </p>
                 <div class="box">
                   <img src="./assets/LandingPage/whiteInformation.svg" alt="" />
@@ -140,10 +138,7 @@
 
                           <div class="box" style="border: 1px solid #6A2FC2; background-color: #FBF8FF;">
                             <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit, sed Lorem ipsum do. Lorem ipsum dolor sit
-                              amet, consectetur adipiscing elit, sed Lorem ipsum
-                              do.
+                             {{defaulthistoryText?.description}}
                             </p>
                           </div>
                         </div>
@@ -152,20 +147,15 @@
                         <div class="defaultHistory solutions">
                           <h3>Solutions</h3>
                           <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum sem quis interdum sagittis. Aliquam erat volutpat. Morbi quam vivamus.
+                           {{solutions?.header}}
                           </p>
 
                           <hr>
                           <ul class="historyList">
-                            <li>
+                            <li *ngFor="let bullets of solutions?.bullets">
                               <span></span>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel convallis libero, eu efficitur eros.
+                             {{bullets}}
                             </li>
-                            <li>
-                              <span></span>
-                              In sit amet fringilla eros. Aliquam ut arcu vehicula, maximus dui nec, tempus est.
-                            </li>
-                            <li><span></span>Donec fringilla justo libero, ac suscipit neque sollicitudin gravida. Ut vitae viverra lectus. Nam ac neque nec enim pulvinar pharetra et vitae dui.</li>
                           </ul>
                         </div>
                       </div>
@@ -185,11 +175,7 @@
 
                           <div class="box boxBorder">
                             <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit, sed Lorem ipsum do. Lorem ipsum dolor sit
-                              amet, consectetur adipiscing elit, sed Lorem ipsum
-                              do. Lorem ipsum dolor sit amet, consectetur
-                              adipiscing elit, sed Lorem ipsum do.
+                              {{impact?.description}}
                             </p>
                           </div>
                         </div>
@@ -208,19 +194,19 @@
                             <mat-checkbox [checked]="other_analysis.top_banks">Yes</mat-checkbox>
                             <mat-checkbox [checked]="!other_analysis.top_banks">No</mat-checkbox>
                           </div>
-                          <div class="banksBox">
+                          <div class="banksBox" *ngIf="topBanks?.bullets">
+                            <ul>
+                              <li *ngFor="let bullets of topBanks?.bullets">
+                                <span></span>
+                               {{bullets}}
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="banksBox" *ngIf="!topBanks?.bullets && topBanks?.description">
                             <ul>
                               <li>
                                 <span></span>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae efficitur velit, in fermentum magna.
-                              </li>
-                              <li>
-                                <span></span>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae efficitur velit, in fermentum magna.
-                              </li>
-                              <li>
-                                <span></span>
-                                Vivamus consectetur congue commodo. Nullam sit amet dictum elit eros.
+                               {{topBanks?.description}}
                               </li>
                             </ul>
                           </div>
@@ -233,49 +219,40 @@
                             <h5>Suit Filed Ever</h5>
                             <button [ngClass]="{ 'YesColor': other_analysis.suit_filed_ever, 'NoColor': !other_analysis.suit_filed_ever }">{{ other_analysis.suit_filed_ever ? 'Yes' : 'No' }}</button>
                           </div>
-                          <div class="banksBox flex-wrap">
+                          <div class="banksBox flex-wrap" *ngIf="suitFiledEver?.bullets">
+                            <ul>
+                              <li  *ngFor="let bullets of suitFiledEver?.bullets">
+                                <span></span>
+                                {{bullets}}
+                              </li>
+                            
+                            </ul>
+                          </div>
+                          <div class="banksBox flex-wrap" *ngIf="!suitFiledEver?.bullets && suitFiledEver?.description">
                             <ul>
                               <li>
                                 <span></span>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae efficitur velit, in fermentum magna.
+                                {{suitFiledEver?.description}}
                               </li>
-                              <li>
-                                <span></span>
-                                Vivamus consectetur congue commodo. Nullam sit amet dictum elit eros.
-                              </li>
+                            
                             </ul>
                           </div>
                         </div>
                       </div>
                       
                       <div class="col-md-12 col-lg-12 col-sm-12 mb-3">
-                        <div class="summaryBox">
+                        <div class="summaryBox" *ngIf="summary && summary.length > 0">
                           <h4>Summary</h4>
                           <div class="summaryContent">
                             <ul>
-                              <li>
+                              <ng-container *ngFor = "let data of summary">
+                              <li *ngFor = "let bullets of data?.bullets">
                                 <span></span>
-                                It signals a pattern of financial instability
-                                that could deter lenders.
+                                {{bullets}}
                               </li>
-                              <li>
-                                <span></span>
-                                Combining efforts to address these areas is
-                                crucial. Focus on creating a solid plan to catch
-                                up on overdue payments and engage with creditors
-                                about possible solutions.
-                              </li>
-                              <li>
-                                <span></span>
-                                Consistent improvement in these areas can
-                                gradually rebuild your creditworthiness.
-                              </li>
-                              <li>
-                                <span></span>
-                                Consistent improvement in these areas can
-                                gradually rebuild your creditworthiness.
-                              </li>
+                            </ng-container>
                             </ul>
+                            
                             <div class="smileImg">
                               <img
                                 src="./assets/LandingPage/smileImg.svg"
@@ -312,12 +289,10 @@
           </div>
           <div class="buttonJob">
             <!-- <button class="btn" (click)="openPopup()">Your Bureau Score</button> -->
-            <button class="btn" >Your Bureau Score</button>
+            <button class="btn" > {{bureauScoreInsights?.header}}</button>
           </div>
           <p>
-            Your bureau score plays a critical role in the assessments and it
-            would be an important criteria for your eligibility. A score above
-            700 is considered.
+           {{bureauScoreInsights?.description}}
           </p>
           <div class="box">
             <img src="./assets/LandingPage/whiteInformation.svg" alt="" />
@@ -356,9 +331,10 @@
               <div class="multiBox">
                 <img src="./assets/LandingPage/whiteInformation.svg" alt="" />
                 <div class="textContent">
-                  <h3>Multiple Delayed Payments!</h3>
+                  <!-- <h3>Multiple Delayed Payments!</h3> -->
+                  <h3>{{infoCardLRP?.header}}</h3>
                   <p>
-                    Frequent missed or delayed payments, highlighting potential financial distress or mismanagement. You seem to be missing payments on Nov & Sept for last 2 years.
+                    {{infoCardLRP?.description}}
                   </p>
                   <p>
                     <span style="color: #ec1111;">

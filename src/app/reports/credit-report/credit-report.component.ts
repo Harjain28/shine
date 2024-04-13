@@ -48,7 +48,14 @@ export class CreditReportComponent {
   secured_unsecured_ratio: any;
   turnover_analysis: any;
   other_Canalysis: any;
-
+  bureauScoreInsights: any;
+  infoCardLRP:any;
+  defaulthistoryText: any;
+  solutions: any;
+  impact: any;
+  topBanks: any;
+  suitFiledEver: any;
+  summary: any =[];
   constructor(private dialog: MatDialog){}
 
   customOptions4: OwlOptions = {
@@ -99,7 +106,7 @@ export class CreditReportComponent {
 
   
   ngOnInit(): void {
-    this.reportsData = reportPageJson;
+    this.reportsData = reportPageJson?.report;
     this.creditReportData = this.reportsData?.credit_report;
     console.log(this.creditReportData, "creditReportData");
     this.angle = this.creditReportData?.bureau_score?.score;
@@ -107,7 +114,7 @@ export class CreditReportComponent {
     this.credit_debt_analysis = this.creditReportData?.credit_debt_analysis;
 
 
-    
+    this.getInsights();
     this.default_analysis = this.loan_repayment_history?.default_analysis;
     this.other_analysis = this.loan_repayment_history?.other_analysis;
     this.defaultHistoryItems = [
@@ -127,8 +134,35 @@ export class CreditReportComponent {
     this.doughtnutData = this.creditReportsChartsData?.Doughtnut;
     this.semiDoughtnutData = this.creditReportsChartsData?.Semi_Doughtnut;
   }
+
+
+  getInsights() {
+    this.reportsData = reportPageJson?.insights;
+    const creditreportInsights =  this.reportsData?.creditReport;
+    const loanRepaymentHistory = creditreportInsights?.loanRepaymentHistory;
+    const credit_analysis = creditreportInsights?.credit_analysis;
+
+    const defaultAnalysis = loanRepaymentHistory?.defaultAnalysis;
+    const otherAnalysis = loanRepaymentHistory?.otherAnalysis;
+
+     this.summary =  loanRepaymentHistory?.summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
+
   
 
+    this.bureauScoreInsights = creditreportInsights?.bureauScore.filter((item: { condition_status: boolean; }):any => item.condition_status);
+
+    console.log(this.bureauScoreInsights , "bureauScoreInsights");
+
+    this.infoCardLRP = loanRepaymentHistory?.infoCard.filter((item: { condition_status: any; }):any => item.condition_status);
+
+    this.defaulthistoryText = defaultAnalysis?.defaultHistory.filter((item: { condition_status: any; }):any => item.condition_status);
+    this.solutions = defaultAnalysis?.solutions.filter((item: { condition_status: any; }):any => item.condition_status);
+    this.impact = defaultAnalysis?.impact.filter((item: { condition_status: any; }):any => item.condition_status);
+
+    this.topBanks = otherAnalysis?.topBanks.filter((item: { condition_status: any; }):any => item.condition_status);
+    this.suitFiledEver = otherAnalysis?.suitFiledEver.filter((item: { condition_status: any; }):any => item.condition_status);
+  }
+  
   loanColor(name: string): string {
     switch (name) {
       case 'Credit Card':
