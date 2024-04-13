@@ -16,12 +16,21 @@ import { reportPageJson } from 'src/app/JsonFiles/report';
 @Component({
   selector: 'app-credit-report',
   standalone: true,
-  imports: [CommonModule,SemiDoughnutComponent,DoughnutComponent,MatProgressBarModule,MatExpansionModule,MatFormFieldModule,MatCheckboxModule,MatIconModule,CarouselModule],
+  imports: [
+    CommonModule,
+    SemiDoughnutComponent,
+    DoughnutComponent,
+    MatProgressBarModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatIconModule,
+    CarouselModule,
+  ],
   templateUrl: './credit-report.component.html',
-  styleUrls: ['./credit-report.component.scss', '../reports.component.scss']
+  styleUrls: ['./credit-report.component.scss', '../reports.component.scss'],
 })
 export class CreditReportComponent {
-
   @Input() creditReportsChartsData: any;
 
   expandSection!: boolean;
@@ -38,59 +47,82 @@ export class CreditReportComponent {
   bureau_score: any;
   loan_repayment_history: any;
   selectedYear: number | undefined;
-  months: string[] = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+  months: string[] = [
+    'JAN',
+    'FEB',
+    'MAR',
+    'APR',
+    'MAY',
+    'JUN',
+    'JUL',
+    'AUG',
+    'SEP',
+    'OCT',
+    'NOV',
+    'DEC',
+  ];
   years: number[] | undefined;
   default_analysis: any;
-  defaultHistoryItems: any =[];
+  defaultHistoryItems: any = [];
   other_analysis: any;
-  credit_debt_analysis:any;
+  credit_debt_analysis: any;
   credit_analysis: any;
   secured_unsecured_ratio: any;
   turnover_analysis: any;
   other_Canalysis: any;
   bureauScoreInsights: any;
-  infoCardLRP:any;
+  infoCardLRP: any;
   defaulthistoryText: any;
   solutions: any;
   impact: any;
   topBanks: any;
   suitFiledEver: any;
-  summary: any =[];
-  constructor(private dialog: MatDialog){}
+  summary: any = [];
+  securedUnsecuredRatio: any;
+  solutionsAnalysis: any;
+  variety_of_active_loans: any;
+  creditCardUtilization: any;
+  smallLoans: any;
+  credit_debt_analysis_summary: any;
+  creditEnquiry: any;
+  constructor(private dialog: MatDialog) {}
 
   customOptions4: OwlOptions = {
     loop: false,
-  rewind: true,
-   dots: true,
-   autoplay: false,
-   navSpeed: 300,
-   nav: false,
-   margin:8,
-   mouseDrag: false,
-   touchDrag: true,
+    rewind: true,
+    dots: true,
+    autoplay: false,
+    navSpeed: 300,
+    nav: false,
+    margin: 8,
+    mouseDrag: false,
+    touchDrag: true,
 
-   autoplayTimeout:8000,
-   autoplaySpeed: 1500,
-   // navText: ["", ""],
-   navText: ["<img class='navTxtImg' src='./assets/images/homeIcon/left-arrow.svg'>", "<img class='navTxtImg' src='./assets/images/homeIcon/right-arrow.svg'>"],
-   responsive: {
-     0: {
-       items: 1,
-       dots: true,
-     },
-     400: {
-       items: 1,
-     },
-     740: {
-       items: 1,
-     },
-     940: {
-       items: 1,
-     },
-   },
- };
-  
-  openDialog(){
+    autoplayTimeout: 8000,
+    autoplaySpeed: 1500,
+    // navText: ["", ""],
+    navText: [
+      "<img class='navTxtImg' src='./assets/images/homeIcon/left-arrow.svg'>",
+      "<img class='navTxtImg' src='./assets/images/homeIcon/right-arrow.svg'>",
+    ],
+    responsive: {
+      0: {
+        items: 1,
+        dots: true,
+      },
+      400: {
+        items: 1,
+      },
+      740: {
+        items: 1,
+      },
+      940: {
+        items: 1,
+      },
+    },
+  };
+
+  openDialog() {
     // this.getBorrowerInformation();
     const dialogRef = this.dialog.open(CreditJourneyPopupComponent, {
       width: 'auto',
@@ -98,71 +130,188 @@ export class CreditReportComponent {
     });
   }
 
-
-
-  openPopup(){
+  openPopup() {
     this.openDialog();
   }
 
-  
   ngOnInit(): void {
     this.reportsData = reportPageJson?.report;
     this.creditReportData = this.reportsData?.credit_report;
-    console.log(this.creditReportData, "creditReportData");
+    console.log(this.creditReportData, 'creditReportData');
     this.angle = this.creditReportData?.bureau_score?.score;
     this.loan_repayment_history = this.creditReportData?.loan_repayment_history;
     this.credit_debt_analysis = this.creditReportData?.credit_debt_analysis;
-
 
     this.getInsights();
     this.default_analysis = this.loan_repayment_history?.default_analysis;
     this.other_analysis = this.loan_repayment_history?.other_analysis;
     this.defaultHistoryItems = [
-      { label: 'Recent Default', value: this.default_analysis.default_history.recent_default },
-      { label: 'Default Ever', value: this.default_analysis.default_history.default_ever },
-      { label: '30 days delayed', value: this.default_analysis.default_history.thirty_days_delayed },
-      { label: 'Delayed Severity of Payment (90-180 days)', value: this.default_analysis.default_history.delayed_severity }
+      {
+        label: 'Recent Default',
+        value: this.default_analysis.default_history.recent_default,
+      },
+      {
+        label: 'Default Ever',
+        value: this.default_analysis.default_history.default_ever,
+      },
+      {
+        label: '30 days delayed',
+        value: this.default_analysis.default_history.thirty_days_delayed,
+      },
+      {
+        label: 'Delayed Severity of Payment (90-180 days)',
+        value: this.default_analysis.default_history.delayed_severity,
+      },
     ];
-    this.years = this.extractYears(this.loan_repayment_history?.missed_payments);
+    this.years = this.extractYears(
+      this.loan_repayment_history?.missed_payments
+    );
     this.selectedYear = this.years[0];
 
-     this.credit_analysis = this.credit_debt_analysis?.credit_analysis;
-     this.secured_unsecured_ratio = this.credit_debt_analysis?.secured_unsecured_ratio;
-     this.turnover_analysis = this.credit_debt_analysis?.turnover_analysis;
-     this.other_Canalysis = this.credit_debt_analysis?.other_analysis;
+    this.credit_analysis = this.credit_debt_analysis?.credit_analysis;
+    this.secured_unsecured_ratio =
+      this.credit_debt_analysis?.secured_unsecured_ratio;
+    this.turnover_analysis = this.credit_debt_analysis?.turnover_analysis;
+    this.other_Canalysis = this.credit_debt_analysis?.other_analysis;
 
     this.doughtnutData = this.creditReportsChartsData?.Doughtnut;
     this.semiDoughtnutData = this.creditReportsChartsData?.Semi_Doughtnut;
   }
 
-
   getInsights() {
     this.reportsData = reportPageJson?.insights;
-    const creditreportInsights =  this.reportsData?.creditReport;
+    const creditreportInsights = this.reportsData?.creditReport;
     const loanRepaymentHistory = creditreportInsights?.loanRepaymentHistory;
-    const credit_analysis = creditreportInsights?.credit_analysis;
 
     const defaultAnalysis = loanRepaymentHistory?.defaultAnalysis;
     const otherAnalysis = loanRepaymentHistory?.otherAnalysis;
 
-     this.summary =  loanRepaymentHistory?.summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
+    
 
-  
+    this.summary = this.concatenateInsights(
+      loanRepaymentHistory?.summary.filter(
+        (item: { condition_status: boolean }) => item.condition_status === true
+      )
+    );
+    this.bureauScoreInsights = this.concatenateInsights(
+      creditreportInsights?.bureauScore.filter(
+        (item: { condition_status: boolean }) => item.condition_status
+      )
+    );
+    this.infoCardLRP = this.concatenateInsights(
+      loanRepaymentHistory?.infoCard.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.defaulthistoryText = this.concatenateInsights(
+      defaultAnalysis?.defaultHistory.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.solutions = this.concatenateInsights(
+      defaultAnalysis?.solutions.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.impact = this.concatenateInsights(
+      defaultAnalysis?.impact.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.topBanks = this.concatenateInsights(
+      otherAnalysis?.topBanks.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.suitFiledEver = this.concatenateInsights(
+      otherAnalysis?.suitFiledEver.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
 
-    this.bureauScoreInsights = creditreportInsights?.bureauScore.filter((item: { condition_status: boolean; }):any => item.condition_status);
+    const credit_analysis = creditreportInsights?.credit_analysis;
+    
+    this.securedUnsecuredRatio = this.concatenateInsights(
+      credit_analysis?.securedUnsecuredRatio.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
 
-    console.log(this.bureauScoreInsights , "bureauScoreInsights");
+    this.solutionsAnalysis = this.concatenateInsights(
+      credit_analysis?.solutions.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
 
-    this.infoCardLRP = loanRepaymentHistory?.infoCard.filter((item: { condition_status: any; }):any => item.condition_status);
+    this.variety_of_active_loans = this.concatenateInsights(
+      credit_analysis?.variety_of_active_loans.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.creditCardUtilization = this.concatenateInsights(
+      credit_analysis?.creditCardUtilization.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.smallLoans = this.concatenateInsights(
+      credit_analysis?.smallLoans.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.credit_debt_analysis_summary = this.concatenateInsights(
+      credit_analysis?.credit_debt_analysis_summary.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.creditEnquiry = this.concatenateInsights(
+      credit_analysis?.creditEnquiry.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
 
-    this.defaulthistoryText = defaultAnalysis?.defaultHistory.filter((item: { condition_status: any; }):any => item.condition_status);
-    this.solutions = defaultAnalysis?.solutions.filter((item: { condition_status: any; }):any => item.condition_status);
-    this.impact = defaultAnalysis?.impact.filter((item: { condition_status: any; }):any => item.condition_status);
-
-    this.topBanks = otherAnalysis?.topBanks.filter((item: { condition_status: any; }):any => item.condition_status);
-    this.suitFiledEver = otherAnalysis?.suitFiledEver.filter((item: { condition_status: any; }):any => item.condition_status);
+     console.log(credit_analysis, "credit_analysis");
+    // console.log(this.summary, 'summary');
+    // console.log(this.suitFiledEver, 'suitFiledEver');
   }
-  
+
+  concatenateInsights(insightsArray: any) {
+    return insightsArray.reduce(
+      (result: any, insight: any) => {
+        if (insight.header !== null && insight.header !== undefined) {
+          result.header += insight.header + ' ';
+        }
+        if (insight.subheader !== null && insight.subheader !== undefined) {
+          result.subheader += insight.subheader + ' ';
+        }
+        if (insight.description !== null && insight.description !== undefined) {
+          result.description += insight.description + ' ';
+        }
+        if (insight.bullets !== null && insight.bullets !== undefined) {
+          result.bullets.push(...insight.bullets);
+        }
+        if (insight.class !== null && insight.class !== undefined) {
+          result.class += insight.class + ' ';
+        }
+        if (insight.type !== null && insight.type !== undefined) {
+          result.type += insight.type + ' ';
+        }
+        if (insight.warning !== null && insight.warning !== undefined) {
+          result.warning += insight.warning + ' ';
+        }
+        return result;
+      },
+      {
+        header: '',
+        subheader: '',
+        description: '',
+        bullets: [],
+        class: '',
+        type: '',
+        warning: '',
+      }
+    );
+  }
+
   loanColor(name: string): string {
     switch (name) {
       case 'Credit Card':
@@ -180,7 +329,7 @@ export class CreditReportComponent {
 
   extractYears(payments: any[]): number[] {
     const yearsSet = new Set<number>();
-    payments.forEach(payment => {
+    payments.forEach((payment) => {
       if (typeof payment.year === 'number') {
         yearsSet.add(payment.year);
       }
@@ -194,50 +343,42 @@ export class CreditReportComponent {
 
   isSelectedMonth(month: string): boolean {
     const index = this.months.indexOf(month) + 1;
-    return this.loan_repayment_history?.missed_payments.some((payment: { year: number | undefined; month: number; }): any => payment.year === this.selectedYear && payment.month === index);
+    return this.loan_repayment_history?.missed_payments.some(
+      (payment: { year: number | undefined; month: number }): any =>
+        payment.year === this.selectedYear && payment.month === index
+    );
   }
-   // Function to calculate the rotation of the needle
- calculateRotation(angle: number): number {
-  return (angle) / 5; 
-}
+  // Function to calculate the rotation of the needle
+  calculateRotation(angle: number): number {
+    return angle / 5;
+  }
 
-
-  expand(){
+  expand() {
     this.expandSection = true;
-    this.expandBlocks = true 
+    this.expandBlocks = true;
 
-    if(this.expandCurrentCreditSection == true){
-       this.expandCurrentCreditSection = false;
+    if (this.expandCurrentCreditSection == true) {
+      this.expandCurrentCreditSection = false;
     }
-  
   }
 
-  minimize(){
+  minimize() {
     this.expandSection = false;
     this.expandBlocks = false;
-
   }
 
-  expandCurrentCredit(){
-
-    if(this.expandSection == true){
+  expandCurrentCredit() {
+    if (this.expandSection == true) {
       this.expandSection = false;
       this.expandCurrentCreditSection = true;
-    }
-    else{
+    } else {
       this.expandCurrentCreditSection = true;
       this.expandBlocks = true;
-
     }
   }
 
-
-  minimizeCurrentCredit(){
-
+  minimizeCurrentCredit() {
     this.expandCurrentCreditSection = false;
     this.expandBlocks = false;
-
-
   }
-
 }

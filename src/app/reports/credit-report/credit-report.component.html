@@ -194,7 +194,7 @@
                             <mat-checkbox [checked]="other_analysis.top_banks">Yes</mat-checkbox>
                             <mat-checkbox [checked]="!other_analysis.top_banks">No</mat-checkbox>
                           </div>
-                          <div class="banksBox" *ngIf="topBanks?.bullets">
+                          <div class="banksBox" *ngIf="topBanks?.bullets && topBanks?.bullets.length > 0">
                             <ul>
                               <li *ngFor="let bullets of topBanks?.bullets">
                                 <span></span>
@@ -219,7 +219,7 @@
                             <h5>Suit Filed Ever</h5>
                             <button [ngClass]="{ 'YesColor': other_analysis.suit_filed_ever, 'NoColor': !other_analysis.suit_filed_ever }">{{ other_analysis.suit_filed_ever ? 'Yes' : 'No' }}</button>
                           </div>
-                          <div class="banksBox flex-wrap" *ngIf="suitFiledEver?.bullets">
+                          <div class="banksBox flex-wrap" *ngIf="suitFiledEver?.bullets && suitFiledEver?.bullets.length > 0">
                             <ul>
                               <li  *ngFor="let bullets of suitFiledEver?.bullets">
                                 <span></span>
@@ -228,7 +228,7 @@
                             
                             </ul>
                           </div>
-                          <div class="banksBox flex-wrap" *ngIf="!suitFiledEver?.bullets && suitFiledEver?.description">
+                          <div class="banksBox flex-wrap" *ngIf="!suitFiledEver?.bullets && suitFiledEver?.bullets.length < 0 && suitFiledEver?.description">
                             <ul>
                               <li>
                                 <span></span>
@@ -241,16 +241,14 @@
                       </div>
                       
                       <div class="col-md-12 col-lg-12 col-sm-12 mb-3">
-                        <div class="summaryBox" *ngIf="summary && summary.length > 0">
+                        <div class="summaryBox" *ngIf="summary">
                           <h4>Summary</h4>
                           <div class="summaryContent">
                             <ul>
-                              <ng-container *ngFor = "let data of summary">
-                              <li *ngFor = "let bullets of data?.bullets">
+                              <li *ngFor = "let bullets of summary?.bullets">
                                 <span></span>
                                 {{bullets}}
                               </li>
-                            </ng-container>
                             </ul>
                             
                             <div class="smileImg">
@@ -562,16 +560,12 @@
                     </ul>
 
                     <div class="stabilityBox">
-                      <p>Stability: <span>Good</span></p>
+                      <p>Stability: <span>{{securedUnsecuredRatio?.header}}</span></p>
                     </div>
 
                     <div class="box boxBorder mt-2">
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed Lorem ipsum do. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit, sed Lorem ipsum do. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        Lorem ipsum do.
+                        {{securedUnsecuredRatio?.description}}
                       </p>
                     </div>
                   </div>
@@ -580,22 +574,11 @@
                   <div class="defaultHistory solutions">
                     <h3>Solutions</h3>
                     <ul class="historyList">
-                      <li>
+                      <li *ngFor="let bullet of solutionsAnalysis?.bullets">
                         <span></span>
-                        Lorem ipsum dolor sit amet Consectetur adipiscing elit
+                        {{bullet}}
                       </li>
-                      <li>
-                        <span></span>
-                        Lorem ipsum dolor sit amet Consectetur adipiscing elit
-                      </li>
-                      <li><span></span>Sed Lorem ipsum do.</li>
-                      <li><span></span>Lorem ipsum dolor sit amet</li>
-                      <li><span></span>Lorem ipsum dolor sit amet</li>
-                      <li><span></span>Lorem ipsum dolor sit amet</li>
-                      <li>
-                        <span></span>Lorem ipsum dolor sit amet Consectetur
-                        adipiscing elit
-                      </li>
+                    
                     </ul>
                   </div>
                 </div>
@@ -607,7 +590,7 @@
 
               <div class="row">
                 <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                  <div
+                  <div  
                     class="defaultHistory"
                     style="box-shadow: 0px 3px 10px #272d3b24;"
                   >
@@ -697,10 +680,7 @@
                           />
                           <div class="downwardContent">
                             <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit, sed Lorem ipsum do. Lorem ipsum dolor sit
-                              amet, consectetur adipiscing elit, sed Lorem ipsum
-                              do.
+                              {{variety_of_active_loans?.description}}
                             </p>
                           </div>
                         </div>
@@ -723,9 +703,9 @@
                       <button>Yes</button>
                     </div>
                     <div class="banksBox flex-wrap">
-                      <h3>Neque porro quisquam est qui dolorem</h3>
+                      <h3>{{creditCardUtilization?.header}}</h3>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum iaculis volutpat. Suspendisse lacinia nibh laoreet lacus laoreet volutpat. Praesent et ultrices tellus.
+                        {{creditCardUtilization?.description}}
                       </p>
                     </div>
                   </div>
@@ -738,9 +718,9 @@
                       <button style="background-color: #ec1111;">No</button>
                     </div>
                     <div class="banksBox flex-wrap">
-                      <h3>Neque porro quisquam est qui dolorem</h3>
+                      <h3>{{smallLoans?.header}}</h3>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum iaculis volutpat. Suspendisse lacinia nibh laoreet lacus laoreet volutpat. Praesent et ultrices tellus.
+                        {{smallLoans?.description}}
                       </p>
                     </div>
                   </div>
@@ -748,25 +728,11 @@
                 <div class="col-md-12 col-lg-12 col-sm-12 mb-3">
                   <div class="summaryBox">
                     <h4>Summary</h4>
-                    <div class="summaryContent">
+                    <div class="summaryContent" *ngIf="credit_debt_analysis_summary?.bullets && credit_debt_analysis_summary?.bullets.length>0">
                       <ul>
-                        <li>
+                        <li *ngFor="let summary of credit_debt_analysis_summary?.bullets">
                           <span></span>
-                          A diversified credit portfolio showcases your
-                          adeptness at managing various financial
-                          responsibilities, a trait favored by lenders for
-                          demonstrating financial resilience.
-                        </li>
-                        <li>
-                          <span></span>
-                          Balancing secured and unsecured loans while keeping
-                          new credit inquiries minimal can further solidify your
-                          standing.
-                        </li>
-                        <li>
-                          <span></span>
-                          Consistent improvement in these areas can gradually
-                          rebuild your creditworthiness.
+                         {{summary}}
                         </li>
                       </ul>
                       <div class="smileImg">

@@ -25,6 +25,8 @@ export class GstFillingComponent {
   months: string[] = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG'];
   year: any;
   month: any;
+  missedGstFilings: any;
+  info_card: any;
 
 
   constructor(){
@@ -42,9 +44,60 @@ export class GstFillingComponent {
     }
 
     this.month=this.gstDetails?.missed_gst_filings?.month;
+    const gstInsights = this.reportsData?.gstHistory;
+
+    this.missedGstFilings = this.concatenateInsights(
+      gstInsights?.missedGstFilings.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+
+    this.info_card = this.concatenateInsights(
+      gstInsights?.info_card.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+
+
   }
 
-
+ concatenateInsights(insightsArray: any) {
+    return insightsArray.reduce(
+      (result: any, insight: any) => {
+        if (insight.header !== null && insight.header !== undefined) {
+          result.header += insight.header + ' ';
+        }
+        if (insight.subheader !== null && insight.subheader !== undefined) {
+          result.subheader += insight.subheader + ' ';
+        }
+        if (insight.description !== null && insight.description !== undefined) {
+          result.description += insight.description + ' ';
+        }
+        if (insight.bullets !== null && insight.bullets !== undefined) {
+          result.bullets.push(...insight.bullets);
+        }
+        if (insight.class !== null && insight.class !== undefined) {
+          result.class += insight.class + ' ';
+        }
+        if (insight.type !== null && insight.type !== undefined) {
+          result.type += insight.type + ' ';
+        }
+        if (insight.warning !== null && insight.warning !== undefined) {
+          result.warning += insight.warning + ' ';
+        }
+        return result;
+      },
+      {
+        header: '',
+        subheader: '',
+        description: '',
+        bullets: [],
+        class: '',
+        type: '',
+        warning: '',
+      }
+    );
+  }
 
   isSelectedMonth(month: string): boolean {
     const index = this.months.indexOf(month) + 1;

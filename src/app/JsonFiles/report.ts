@@ -319,12 +319,12 @@ export const reportPageJson =
             "condition": null,
             "header": null,
             "subheader": null,
-            "description":  "Improving your score can unlock attractive loan options and fetch you low ROIs. Consider diversifying your credit and keeping a low balance on existing lines of credit.",
+            "description": null,
             "bullets": null,
             "class": null,
             "type": null,
             "warning": null,
-            "condition_status": true
+            "condition_status": false
           },
           {
             "condition": null,
@@ -797,12 +797,7 @@ export const reportPageJson =
             }
           ]
         }
-      },
-
-
-
-
-      
+      },      
       "gstHistory": {
         "missedGstFilings": [
           {
@@ -1392,7 +1387,7 @@ export const reportPageJson =
             "condition_status": false
           }
         ],
-        "cheque_bounces": [
+        "cheque_bounces": [ 
           {
             "condition": null,
             "header": null,
