@@ -453,17 +453,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     <div class="row mt-5">
       <div class="col-lg-12">
         <div class="affordability">
@@ -484,7 +473,7 @@
           <div class="row">
             <div class="col-lg-6 m-auto">
               <div class="chart chart2">
-                <app-pie [pieJSONData]="pieData"></app-pie>
+                <app-pie [pieJSONData]="ratiosecured"></app-pie>
                 <ul>
                   <li>
                     <span style="border: 1px solid #6A2FC2;"><span style="background-color: #6A2FC2;"></span></span>
@@ -515,15 +504,15 @@
                 <ul class="d-blockList">
                   <li style="border-bottom: 1px solid #E2E2E2;">
                     <span style="border: 1px solid #6A2FC2;"><span style="background-color: #6A2FC2;"></span></span>
-                    Turnover : <b>Rs. 10,00,000</b>
+                    Turnover : <b>Rs. {{turnoverLineData?.sum}}</b>
                   </li>
                   <li>
                     <span style="border: 1px solid #12BA9B;"><span style="background-color: #12BA9B;"></span></span>
-                    Secured Loan : <b>Rs. 2,50,000 (45%)</b>
+                    Secured Loan : <b>Rs. {{securedUnsecuredRatioData?.securedOutstanding }} (45%)</b>
                   </li>
                   <li>
                     <span style="border: 1px solid #C3E128;"><span style="background-color: #C3E128;"></span></span>
-                    Unecured Loan: <b>Rs. 4,50,000 (25%)</b>
+                    Unecured Loan: <b>Rs. {{securedUnsecuredRatioData?.unsecuredOutstanding}} (25%)</b>
                   </li>
                 </ul>
 
@@ -631,7 +620,7 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="chart chart2">
-                <app-pie [pieJSONData]="pieData"></app-pie>
+                <app-pie [pieJSONData]="ratiosecured"></app-pie>
 
 
                 <ul>
@@ -677,7 +666,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="chequeBounces">
-                <span>{{banking_history?.cheque_bounces}}  <small>BOUNCES</small></span>
+                <span>{{banking_history?.chequeBounces?.chequeBounces6M}}  <small>BOUNCES</small></span>
                 <img src="./assets/LandingPage/chequeBouns.png" alt="">
 
               </div>
@@ -766,7 +755,7 @@
                   <div class="row">
                     <div class="col-lg-12">
                       <div class="chequeBounces">
-                        <span>{{banking_history?.cheque_bounces}}  <small>BOUNCES</small></span>
+                        <span>{{banking_history?.chequeBounces?.chequeBounces6M}} <small>BOUNCES</small></span>
                         <img src="./assets/LandingPage/chequeBouns.png" alt="">
         
                       </div>

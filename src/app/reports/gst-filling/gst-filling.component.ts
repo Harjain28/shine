@@ -22,7 +22,7 @@ export class GstFillingComponent {
   currStatus: any;
   gst_filling_details: any;
 
-  months: string[] = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG'];
+  months: string[] = ['OCT', 'NOV', 'DEC', 'JAN', 'FEB', 'MAR'];
   year: any;
   month: any;
   missedGstFilings: any;
@@ -37,14 +37,10 @@ export class GstFillingComponent {
     this.reportsData = reportPageJson?.report;
     this.gstDetails = this.reportsData?.gstHistory;
 
-    if(this.gstDetails?.current_gst_status){
-      this.currStatus = "Active"
-    }else{
-      this.currStatus = "Inactive"
-    }
-
+  
     this.month=this.gstDetails?.missedGstFilings?.month;
-    const gstInsights = this.reportsData?.gstHistory;
+
+    const gstInsights = reportPageJson.insights?.gstHistory;
 
     this.missedGstFilings = this.concatenateInsights(
       gstInsights?.missedGstFilings.filter(
@@ -101,7 +97,7 @@ export class GstFillingComponent {
 
   isSelectedMonth(month: string): boolean {
     const index = this.months.indexOf(month) + 1;
-    return this.gstDetails?.missed_gst_filings.some((payment: { month: number; }): any => payment.month === index);
+    return this.gstDetails?.missedGstFilings.some((payment: { month: number; }): any => payment.month === index);
   }
 
 }

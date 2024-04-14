@@ -514,11 +514,11 @@ export const reportPageJson =
             },
             "abb": {
               "stdev": 0,
-              "mean": 1219389.71,
+              "mean": 1019389.71,
               "lowSd": 1219389.71,
-              "highSd": 1219389.71,
+              "highSd": 819389.71,
               "cv": 0,
-              "min": 10000,
+              "min": 100000,
               "sum": 14632676.52,
               "belowMinCount": 0
             },

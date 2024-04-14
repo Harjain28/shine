@@ -1,4 +1,4 @@
-<div class="gstFilings section_padding">
+<div class="gstFilings section_padding" *ngIf = "gstDetails">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -16,19 +16,19 @@
                   <ul>
                     <li>
                       <h5>GST Number:</h5>
-                      <span>{{gstDetails?.GST_number}}</span>
+                      <span>{{gstDetails?.gstNumber}}</span>
                     </li>
                     <li>
                       <h5>Company Name:</h5>
-                      <span>{{gstDetails?.company_name}}</span>
+                      <span>{{gstDetails?.companyName}}</span>
                     </li>
                     <li>
                       <h5>Turnover as per GST:</h5>
-                      <span>{{gstDetails?.turnover_as_per_gst}}</span>
+                      <span>{{gstDetails?.turnoverAsPerGst}}</span>
                     </li>
                     <li>
                       <h5>Current GST Status:</h5>
-                      <button>{{currStatus}}</button>
+                      <button>{{gstDetails?.currentGstStatus}}</button>
                     </li>
                   </ul>
                 </div>
@@ -42,9 +42,9 @@
                     
                   </ul>
                   <div class="missingPayment">
-                    {{gstDetails?.missed_gst_filings?.length}} Missed Filings
+                    {{missedGstFilings?.header}}
                   </div>
-                  <p>{{missedGstFilings?.descrioption}}</p>
+                  <p>{{missedGstFilings?.subheader}}</p>
                 </div>
               </div>
   
