@@ -141,7 +141,7 @@ export class BankingBusinessComponent {
     this.securedUnsecuredRatioData =
       reportPageJson?.report?.creditReport?.securedUnsecuredRatio;
     this.aboveMinMonths = this.getMonthsAboveMin(this.graphData);
-    const data = this.formatAboveMinMonths(this.aboveMinMonths);
+    
   
 
     this.ratiosecured = {
@@ -367,9 +367,9 @@ export class BankingBusinessComponent {
         aboveMinMonths.push(graphData.monthly[i]?.month);
       }
     }
-    console.log(aboveMinMonths, 'aboveMinMonths');
-   
+    this.formatAboveMinMonths(aboveMinMonths);
     return aboveMinMonths;
+    
   }
 
   formatAboveMinMonths(aboveMinMonths:any) {
