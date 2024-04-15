@@ -783,6 +783,10 @@
                         justify-content: center;
                         border: none;
                         padding: 3px 14px;
+
+                        &.NoColor{
+                            background-color: #EC1111;
+                        }
                     }
 
                     ::ng-deep {
