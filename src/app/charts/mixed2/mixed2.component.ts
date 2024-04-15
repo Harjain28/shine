@@ -43,8 +43,6 @@ export class Mixed2Component {
     const sortedValues = dataValues.slice().sort((a, b) => b - a);
     const backgroundColorsMixed = dataValues.map(value => this.getColor(value, sortedValues));
 
-    const { lowSd, mean, highSd } = this.turnoverLineData;
-
 
 
     const chartData2: ChartData = {
@@ -53,7 +51,12 @@ export class Mixed2Component {
            {
           // label: 'Horizontal Line Dataset',
           type: 'line',
-          data: Array.from({ length: 6 }, () => ({ x: 0, y: mean })),
+          data: [{ x: 0, y:this.turnoverLineData?.mean},
+          { x: 0, y: this.turnoverLineData?.mean},
+          { x: 0, y: this.turnoverLineData?.mean },
+          { x: 0, y: this.turnoverLineData?.mean},
+          { x: 0, y: this.turnoverLineData?.mean},
+          { x: 0, y: this.turnoverLineData?.mean }],
           borderColor: 'green',
           borderWidth: 1,
           fill: false,
@@ -62,7 +65,12 @@ export class Mixed2Component {
         {
           // label: 'Horizontal Line Dataset',
           type: 'line',
-          data: Array.from({ length: 6 }, () => ({ x: 0, y: lowSd })),
+          data: [{ x: 0, y:this.turnoverLineData?.lowSd},
+            { x: 0, y: this.turnoverLineData?.lowSd},
+            { x: 0, y: this.turnoverLineData?.lowSd },
+            { x: 0, y: this.turnoverLineData?.lowSd},
+            { x: 0, y: this.turnoverLineData?.lowSd},
+            { x: 0, y: this.turnoverLineData?.lowSd }],
           borderColor: 'yellow',
           borderWidth: 1,
           fill: false,
@@ -71,7 +79,12 @@ export class Mixed2Component {
         },{
           // label: 'Horizontal Line Dataset',
           type: 'line',
-          data: Array.from({ length: 6 }, () => ({ x: 0, y: highSd })),
+          data: [{ x: 0, y:this.turnoverLineData?.highSd},
+            { x: 0, y: this.turnoverLineData?.highSd},
+            { x: 0, y: this.turnoverLineData?.highSd },
+            { x: 0, y: this.turnoverLineData?.highSd},
+            { x: 0, y: this.turnoverLineData?.highSd},
+            { x: 0, y: this.turnoverLineData?.highSd }],
           borderColor: 'red',
           borderWidth: 1,
           fill: false,
