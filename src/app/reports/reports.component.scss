@@ -261,6 +261,53 @@
                     }
 
                     ul {
+                        li {
+
+                            &:nth-child(1) {
+
+                                span {
+                                    border: 1px solid var(--main2);
+                                    
+                                    span {
+                                        background-color: var(--main2);
+                                    }
+                                }
+                            }
+                            &:nth-child(2) {
+
+                                span {
+                                    border: 1px solid #C3E128;
+                                    
+                                    span {
+                                        background-color: #C3E128;
+                                    }
+                                }
+                            }
+                            &:nth-child(3) {
+
+                                span {
+                                    border: 1px solid var(--main1);
+                                    
+                                    span {
+                                        background-color: var(--main1);
+                                    }
+                                }
+                            }
+                            &:nth-child(4) {
+
+                                span {
+                                    border: 1px solid #211261;
+                                    
+                                    span {
+                                        background-color: #211261;
+                                    }
+                                }
+                            }
+                        }
+                      }
+                      
+
+                    ul {
                         padding-left: 0px;
                         list-style: none;
                         margin-bottom: 0px;
@@ -272,13 +319,13 @@
                             line-height: 16px;
                             font-family: Poppins !important;
                             display: flex;
-                            align-items: center;
+                            align-items: flex-start;
                             gap: 6px;
                             margin-bottom: 8px;
 
                             span {
-                                width: 15px;
-                                height: 15px;
+                                min-width: 15px;
+                                min-height: 15px;
                                 background-color: #fff;
                                 display: flex;
                                 border-radius: 50px;
@@ -287,8 +334,8 @@
                                 justify-content: center;
 
                                 span {
-                                    width: 8px;
-                                    height: 8px;
+                                    min-width: 8px;
+                                    min-height: 8px;
                                 }
                             }
                         }
@@ -469,11 +516,60 @@
                 }
 
                 .currentChart {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
 
                     canvas {
                         width: 130px !important;
                         height: 130px !important;
                     }
+
+                    ul {
+                        li {
+
+                            &:nth-child(1) {
+
+                                span {
+                                    border: 1px solid var(--main2);
+                                    
+                                    span {
+                                        background-color: var(--main2);
+                                    }
+                                }
+                            }
+                            &:nth-child(2) {
+
+                                span {
+                                    border: 1px solid #C3E128;
+                                    
+                                    span {
+                                        background-color: #C3E128;
+                                    }
+                                }
+                            }
+                            &:nth-child(3) {
+
+                                span {
+                                    border: 1px solid var(--main1);
+                                    
+                                    span {
+                                        background-color: var(--main1);
+                                    }
+                                }
+                            }
+                            &:nth-child(4) {
+
+                                span {
+                                    border: 1px solid #211261;
+                                    
+                                    span {
+                                        background-color: #211261;
+                                    }
+                                }
+                            }
+                        }
+                      }
 
                     ul {
                         padding-left: 0px;
@@ -490,11 +586,10 @@
                             align-items: center;
                             gap: 6px;
                             margin-bottom: 8px;
-                            justify-content: center;
 
                             span {
-                                width: 15px;
-                                height: 15px;
+                                min-width: 15px;
+                                min-height: 15px;
                                 background-color: #fff;
                                 display: flex;
                                 border-radius: 50px;
@@ -503,8 +598,8 @@
                                 justify-content: center;
 
                                 span {
-                                    width: 8px;
-                                    height: 8px;
+                                   min-width: 8px;
+                                    min-height: 8px;
                                 }
                             }
                         }
@@ -2527,6 +2622,7 @@
                     font-weight: 500;
                     font-family: Poppins !important;
                     position: relative;
+                    max-width: 110px;
 
                     mat-progress-bar {
                         position: absolute;
