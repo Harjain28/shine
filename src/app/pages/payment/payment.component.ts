@@ -4,7 +4,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { EventService } from 'src/app/services/event.service';
@@ -186,7 +186,11 @@ export class PaymentComponent {
             }, 1000);  
           }
         },
-        error: (error: any) => {},
+        error: (error: HttpErrorResponse) => {
+          if (error.status === 401) {
+            this.router.navigate(['in/register'])
+          }
+        },
         complete: () => {
           //  ("Request complete");
         },

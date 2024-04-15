@@ -39,17 +39,16 @@ export class ApiService {
     });
 
    
-   // this.TOKEN = localStorage.getItem('token');
+   // 
   
     this.API_URL = environment.BASE_API_ENDPOINT;
-
-   
+    this.TOKEN = localStorage.getItem("token");   
   }
 
 
 
  setHeader() {
-  this.TOKEN = localStorage.getItem('token');
+  
   
   if(this.TOKEN) {
     this.httpOptions = {
@@ -62,16 +61,19 @@ export class ApiService {
           this.httpOptions = {
             headers: new HttpHeaders({
               'Content-Type': 'application/json',
+              Authorization: 'Bearer ' + this.TOKEN
             })
           };
   }
  }
 
  getwithHeader(path: string, params: HttpParams = new HttpParams()) {
+  
   this.httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'X-Api-Version' : '2.0'
+      'X-Api-Version' : '2.0',
+      Authorization: 'Bearer ' + this.TOKEN
     })
   };
 
@@ -80,9 +82,11 @@ export class ApiService {
 }
   
 remediation(path: string, params: HttpParams = new HttpParams()) {
+  
   this.httpOptions = {
     headers: new HttpHeaders({
       'accept': '*',
+      Authorization: 'Bearer ' + this.TOKEN
     })
   };
   return this.http.get(`${this.API_URL}${path}`,{headers: this.httpOptions.headers, params })
@@ -90,10 +94,12 @@ remediation(path: string, params: HttpParams = new HttpParams()) {
 }
 
 postForPayment(path: string, body: object = {} , params: HttpParams = new HttpParams()) {
+
+
   const posthttpOptions = {
     headers: new HttpHeaders({
-      'accept': '*',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.TOKEN
     })
   };    
   return this.http.post(`${this.API_URL}${path}`,  body, {headers: posthttpOptions.headers , params}).pipe(catchError(this.formatErrors));
@@ -111,25 +117,29 @@ postForPayment(path: string, body: object = {} , params: HttpParams = new HttpPa
   }
 
   post(path: any,   body: object = {} , params: any) {
+    
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + this.TOKEN
       })
     };
     return this.http.post(`${this.API_URL}${path}`,  body, {headers: this.httpOptions.headers , params}).pipe(catchError(this.formatErrors));
   }
 
   postForPerfiosCallback(path: any,   body: object = {} , params: any) {
+    
     this.httpOptions = {
       headers: new HttpHeaders({
         'accept': '*',
+        Authorization: 'Bearer ' + this.TOKEN
       })
     };
     return this.http.post(`${this.API_URL}${path}`,  body, {headers: this.httpOptions.headers , params}).pipe(catchError(this.formatErrors));
   }
 
   patch(path: any, body: object = {} , params: any) {
-    this.TOKEN = localStorage.getItem('token');
+    
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -143,20 +153,26 @@ postForPayment(path: string, body: object = {} , params: HttpParams = new HttpPa
 
 
 postForReport(path: string, body: object = {} , params: HttpParams = new HttpParams()) {
+  
+  
   const posthttpOptions = {
     headers: new HttpHeaders({
       'accept': '*',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.TOKEN
     })
   };    
   return this.http.post(`${this.API_URL}${path}`,  body, {headers: posthttpOptions.headers , params}).pipe(catchError(this.formatErrors));
 }
 
 postMethod(path: string, body: object = {} , params: HttpParams = new HttpParams()) {
+  
   const posthttpOptions = {
     headers: new HttpHeaders({
       'accept': '*',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.TOKEN
+
     })
   };    
   return this.http.post(`${this.API_URL}${path}`,  body, {headers: posthttpOptions.headers , params}).pipe(catchError(this.formatErrors));

@@ -9,6 +9,8 @@ import { NgOtpInputModule } from 'ng-otp-input';
 import { MatSliderModule } from '@angular/material/slider';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Buffer } from "buffer";
+
 
 @Component({
   selector: 'app-otp',
@@ -125,7 +127,9 @@ export class OtpComponent implements OnInit{
       this.api.post(`api/Remediation/ValidateLogin`, requestData, params).subscribe({
         next: (res: any) => {
           if (res.success == true) {
-          //  const stateData = Buffer.from(res.token).toString("base64");
+            const stateData = Buffer.from(res.token).toString("base64");
+            localStorage.setItem("token",stateData);
+            console.log(stateData,"hh")
             this.router.navigate(['/in/confirm_order']);
             console.log("Otp Verfied")
 
@@ -255,8 +259,10 @@ export class OtpComponent implements OnInit{
        this.api.postMethod(`api/Remediation/GetOTP`, this.requestData, params).subscribe({
          next: (res: any) => {
            if (res.success == true) {
+            const stateData = Buffer.from(res.token).toString("base64");
+
              this.isOtpSubmit = false;
-            
+
 
            } else {
              this.istimer = false;
