@@ -221,7 +221,7 @@ export class BankingBusinessComponent {
     const creditreportInsights = this.bankingData?.bankingHistory;
 
     const abb = creditreportInsights?.abb;
-    const debt_to_revenue_ratio = this.bankingData?.debt_to_revenue_ratio;
+    const debt_to_revenue_ratio = creditreportInsights?.debt_to_revenue_ratio;
 
     this.volatility = this.concatenateInsights(
       creditreportInsights?.volatility.filter(
@@ -303,11 +303,15 @@ export class BankingBusinessComponent {
         (item: { condition_status: any }) => item.condition_status
       )
     );
+
+
     this.debt_to_revenue_summary = this.concatenateInsights(
       creditreportInsights?.debt_to_revenue_summary.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+
+
     this.cheque_bounces = this.concatenateInsights(
       creditreportInsights?.cheque_bounces.filter(
         (item: { condition_status: any }) => item.condition_status

@@ -41,17 +41,24 @@ export class PieComponent {
       // labels: pieLabels,
       datasets: [{
         data: pieDataValues,
-        backgroundColor: pieColors,
-        borderColor:pieColors
-      },
-      // },{
+        backgroundColor: ['#783ecf', '#24c8aa', '#b6d031'],
+        borderColor:['#783ecf', '#24c8aa', '#b6d031'],
         
+      },
+      { 
+        data: pieDataValues,
+        backgroundColor: pieColors,
+        borderColor:pieColors,
+
+      },
+      // { 
       //   data: pieDataValues,
-      //   backgroundColor: ['#91a622', '#2c8e7c', '#682ebe'],
-      //   borderColor:['#91a622', '#2c8e7c', '#682ebe'],
-      //   hoverBackgroundColor:['#91a622', '#2c8e7c', '#682ebe'],
+      //   backgroundColor: ['#8641ec', '#95ecdc', '#d9eb7e'],
+      //   borderColor:['#8641ec', '#95ecdc', '#d9eb7e'],
+      //   // hoverBackgroundColor:['#8641ec', '#95ecdc', '#d9eb7e'],
       //   hoverBorderWidth:0
-      // },{
+      // },
+      // {
       //   data: pieDataValues,
       //   backgroundColor: ['#91a622', '#2c8e7c', '#682ebe'],
       //   borderColor:['#91a622', '#2c8e7c', '#682ebe'],   

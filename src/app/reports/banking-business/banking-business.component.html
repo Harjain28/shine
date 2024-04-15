@@ -449,22 +449,11 @@
               <div class="valatilityBox">
                 <h3>Lenders Perspective</h3>
                 <ul>
-                  <li>
+                  <li *ngFor="let bullet of debt_to_revenue_ratio_lenders_perspective?.bullets">
                     <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
+                    {{bullet}}
                   </li>
-                  <li>
-                    <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
-                  </li>
-                  <li>
-                    <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
-                  </li>
-                  <li>
-                    <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
-                  </li>
+
                 </ul>
               </div>
             </div>
@@ -474,20 +463,11 @@
                 <h4>Summary</h4>
                 <div class="summaryContent">
                   <ul>
-                    <li>
+                    <li *ngFor="let summary of debt_to_revenue_summary?.bullets">
                       <span></span>
-                      A diversified credit portfolio showcases your adeptness at managing various financial
-                      responsibilities, a trait favored by lenders for demonstrating financial resilience.
+                     {{summary}}
                     </li>
-                    <li>
-                      <span></span>
-                      Balancing secured and unsecured loans while keeping new credit inquiries minimal can further
-                      solidify your standing.
-                    </li>
-                    <li>
-                      <span></span>
-                      Consistent improvement in these areas can gradually rebuild your creditworthiness.
-                    </li>
+
                   </ul>
                   <div class="smileImg">
                     <img src="./assets/LandingPage/smileImg.svg" alt="">
@@ -516,11 +496,8 @@
                   <div class="downwardBox" style="background-color: #FBF8FF;">
                     <img src="./assets/LandingPage/themeInformation.svg" alt="">
                     <div class="downwardContent">
-                      <h4>High Inward Cheque <br> Bounces</h4>
-                      <p>Outflows consistently exceed inflows or are highly erratic, suggesting financial distress or
-                        poor
-                        cash management. In some months, outflows of ₹4 lakh overshadow inflows of ₹2 lakh, leading to
-                        negative cash flow.</p>
+                      <h4>{{cheque_bounces?.header}}</h4>
+                      <p *ngFor="let bullet of cheque_bounces?.bullets">{{bullet}}</p>
                       <span style="color:#EC1111;">
                         <mat-icon>warning</mat-icon>
                         Needs Attention
@@ -601,14 +578,12 @@
               <div class="downwardBox">
                 <img src="./assets/LandingPage/themeInformation.svg" alt="">
                 <div class="downwardContent">
-                  <h4>High Inward Cheque Bounces</h4>
-                  <p>Outflows consistently exceed inflows or are highly erratic, suggesting financial distress or poor
-                    cash management. In some months, outflows of ₹4 lakh overshadow inflows of ₹2 lakh, leading to
-                    negative cash flow.</p>
-                  <span style="color:#EC1111;">
-                    <mat-icon>warning</mat-icon>
-                    Needs Attention
-                  </span>
+                                      <h4>{{cheque_bounces?.header}}</h4>
+                      <p *ngFor="let bullet of cheque_bounces?.bullets">{{bullet}}</p>
+                      <span style="color:#EC1111;">
+                        <mat-icon>warning</mat-icon>
+                        Needs Attention
+                      </span>
                 </div>
               </div>
             </div>
@@ -655,11 +630,8 @@
                       <div class="downwardBox">
                         <img src="./assets/LandingPage/themeInformation.svg" alt="">
                         <div class="downwardContent">
-                          <h4>High Debt Usage</h4>
-                          <p>Your DTI fluctuates, but seems to be on the higher side often. Maintaining an average DTI between
-                            30-40% increases your creditworthiness. Focus on increasing income streams or reducing non-essential
-                            expenses.For instance, diversifying services or ... products to generate additional revenue can
-                            improve the debt-to-turnover ratio.</p>
+                          <h4>{{dcard_view?.header}}</h4>
+                          <p>{{dcard_view?.description}}</p>
                           <span style="color:#EC1111;">
                             <mat-icon>warning</mat-icon>
                             Needs Attention
@@ -746,8 +718,8 @@
               <div class="downwardBox">
                 <img src="./assets/LandingPage/themeInformation.svg" alt="">
                 <div class="downwardContent">
-                  <h4>Negative Cashflow Observed</h4>
-                  <p>A decreasing trend in average balance, signaling financial distress.</p>
+                  <h4>{{cashflow?.header}}</h4>
+                  <p>{{cashflow?.description}}</p>
                   <span>
                     Good Job!
                     <img src="./assets/LandingPage/goodWork.svg" alt="">

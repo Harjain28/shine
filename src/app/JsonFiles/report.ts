@@ -358,7 +358,7 @@ export const reportPageJson =
           "businessRiskRemark": 0,
           "creditEnquiry": 2,
           "securedUnsecuredRatio": {
-            "securedOutstanding": 0,
+            "securedOutstanding": 1000000,
             "unsecuredOutstanding": 968654,
             "ratio": 1,
             "securedToTurnoverRatio": 0,
@@ -1528,7 +1528,7 @@ export const reportPageJson =
               },
               {
                 "condition": null,
-                "header": "Header: Good Debt Management",
+                "header": "Good Debt Management",
                 "subheader": null,
                 "description": "Secured debt below 60% suggests financial responsibility. If below 25%, then you may be eligible to take more secured loans.",
                 "bullets": null,
