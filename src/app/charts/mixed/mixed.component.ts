@@ -43,18 +43,16 @@ export class MixedComponent {
     const sortedValues = dataValues.slice().sort((a, b) => b - a);
     const backgroundColorsMixed = dataValues.map(value => this.getMixedColor(value, sortedValues));
 
+    const { lowSd, mean, highSd } = this.businessLinedata;
+
+
     const chartData2: ChartData = {
       labels: [...this.mixedValue2],
       datasets: [
         {
           // label: 'Horizontal Line Dataset',
           type: 'line',
-          data: [{ x: 0, y:this.businessLinedata?.mean},
-          { x: 0, y: this.businessLinedata?.mean},
-          { x: 0, y: this.businessLinedata?.mean },
-          { x: 0, y: this.businessLinedata?.mean},
-          { x: 0, y: this.businessLinedata?.mean},
-          { x: 0, y: this.businessLinedata?.mean }],
+          data: Array.from({ length: 6 }, () => ({ x: 0, y: mean })),
           borderColor: 'green',
           borderWidth: 1,
           fill: false,
@@ -63,12 +61,7 @@ export class MixedComponent {
         {
           // label: 'Horizontal Line Dataset',
           type: 'line',
-          data: [{ x: 0, y:this.businessLinedata?.lowSd},
-            { x: 0, y: this.businessLinedata?.lowSd},
-            { x: 0, y: this.businessLinedata?.lowSd },
-            { x: 0, y: this.businessLinedata?.lowSd},
-            { x: 0, y: this.businessLinedata?.lowSd},
-            { x: 0, y: this.businessLinedata?.lowSd }],
+          data: Array.from({ length: 6 }, () => ({ x: 0, y: lowSd })),
           borderColor: 'yellow',
           borderWidth: 1,
           fill: false,
@@ -77,12 +70,7 @@ export class MixedComponent {
         },{
           // label: 'Horizontal Line Dataset',
           type: 'line',
-          data: [{ x: 0, y:this.businessLinedata?.highSd},
-            { x: 0, y: this.businessLinedata?.highSd},
-            { x: 0, y: this.businessLinedata?.highSd },
-            { x: 0, y: this.businessLinedata?.highSd},
-            { x: 0, y: this.businessLinedata?.highSd},
-            { x: 0, y: this.businessLinedata?.highSd }],
+          data: Array.from({ length: 6 }, () => ({ x: 0, y: highSd })),
           borderColor: 'red',
           borderWidth: 1,
           fill: false,
