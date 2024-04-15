@@ -33,35 +33,23 @@
           </div>
           <div class="row">
             <div class="col-lg-6">
-              <div class="valatilityBox backgrundColor">
+              <div class="valatilityBox backgrundColor" *ngIf = "volatility">
                 <h3 class="mb-1">Volatility Observation</h3>
-                <p class="mt-0 mb-3">Lorem ipsum dolor sit amet, consectetur</p>
-                <div class="checkBox">
+                <p class="mt-0 mb-3">static text</p>
+                <div class="checkBox" *ngIf="volatility?.header">
                   <h5>Volatility</h5>
-                  <button>GOOD</button>
+                  <button>{{volatility?.header}}</button>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
+                <p>{{volatility?.description}}</p>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="valatilityBox">
                 <h3>Lenders Perspective</h3>
                 <ul>
-                  <li>
+                  <li *ngFor = "let bullet of volitility_lenders_perspective?.bullets">
                     <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
-                  </li>
-                  <li>
-                    <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
-                  </li>
-                  <li>
-                    <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
-                  </li>
-                  <li>
-                    <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
+                    {{bullet}}
                   </li>
                 </ul>
               </div>
@@ -100,8 +88,7 @@
                   </div>
                   <div class="col-lg-6">
                     <div class="contentQtr">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor
-                        sit amet.</p>
+                      <p>{{dip?.description}}</p>
                     </div>
                   </div>
                 </div>
@@ -111,21 +98,9 @@
               <div class="valatilityBox">
                 <h3>Lenders Perspective</h3>
                 <ul>
-                  <li>
+                  <li *ngFor="let bullet of turnover_lenders_perspective?.bullets">
                     <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
-                  </li>
-                  <li>
-                    <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
-                  </li>
-                  <li>
-                    <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
-                  </li>
-                  <li>
-                    <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
+                    {{bullet}}
                   </li>
                 </ul>
               </div>
@@ -149,10 +124,9 @@
                 <h3>Count Observation</h3>
                 <div class="checkBox">
                   <h5>Revenue Mix:</h5>
-                  <button style="background-color: #FF7B24;">GOOD</button>
+                  <button style="background-color: #FF7B24;">{{count_volatility?.header}}</button>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit
-                  amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
+                <p>{{count_volatility?.description}}</p>
               </div>
             </div>
 
@@ -161,20 +135,11 @@
                 <h4>Summary</h4>
                 <div class="summaryContent">
                   <ul>
-                    <li>
+                    <li *ngFor = "let bullet of bankingHistory_summary?.bullets">
                       <span></span>
-                      A diversified credit portfolio showcases your adeptness at managing various financial
-                      responsibilities, a trait favored by lenders for demonstrating financial resilience.
+                     {{bullet}}
                     </li>
-                    <li>
-                      <span></span>
-                      Balancing secured and unsecured loans while keeping new credit inquiries minimal can further
-                      solidify your standing.
-                    </li>
-                    <li>
-                      <span></span>
-                      Consistent improvement in these areas can gradually rebuild your creditworthiness.
-                    </li>
+                  
                   </ul>
                   <div class="smileImg">
                     <img src="./assets/LandingPage/smileImg.svg" alt="">
@@ -241,32 +206,20 @@
               <div class="valatilityBox backgrundColor">
                 <h3>Volatility Observation</h3>
                 <div class="checkBox">
-                  <button>GOOD JOB!</button>
+                  <button>{{bank_balance_observation?.header}}</button>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor sit
-                  amet, consectetur adipiscing elit, sed Lorem ipsum do.</p>
+                <p>{{bank_balance_observation?.description}}</p>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="valatilityBox">
                 <h3>Lenders Perspective</h3>
                 <ul>
-                  <li>
+                  <li *ngFor="let bullet of bank_balance_lenders_perspective?.bullets">
                     <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
+                   {{bullet}}
                   </li>
-                  <li>
-                    <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
-                  </li>
-                  <li>
-                    <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
-                  </li>
-                  <li>
-                    <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
-                  </li>
+                
                 </ul>
               </div>
             </div>
@@ -284,24 +237,19 @@
                     <div class="qtrBox">
                       <div class="qtrList">
                         <ul>
-                          <li class="active">JAN</li>
-                          <li>FEB</li>
-                          <li>MAR</li>
-                          <li>APR</li>
+                          <li class="active" *ngFor="let month of months">{{month}}</li>
                         </ul>
                       </div>
                       <ul>
+                        <li class="active" *ngFor="let year of monthsWithYear">{{year}}
+                          <span></span></li>
                         <li>
-                          <span></span>
-                          January 2023
-                        </li>
                       </ul>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="contentQtr">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum do. Lorem ipsum dolor
-                        sit amet.</p>
+                      <p>{{minimum_balance?.description}}</p>
                     </div>
                   </div>
                 </div>
@@ -311,21 +259,9 @@
               <div class="valatilityBox">
                 <h3>Lenders Perspective</h3>
                 <ul>
-                  <li>
+                  <li *ngFor="let bullet of minimum_balance_lenders_perspective?.bullets">
                     <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
-                  </li>
-                  <li>
-                    <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
-                  </li>
-                  <li>
-                    <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
-                  </li>
-                  <li>
-                    <span></span>
-                    Lorem ipsum dolor sit amet Consectetur adipiscing elit Sed Lorem ipsum do.
+                    {{bullet}}
                   </li>
                 </ul>
               </div>
@@ -337,19 +273,9 @@
                 <h4>Summary</h4>
                 <div class="summaryContent">
                   <ul>
-                    <li>
+                    <li *ngFor="let summay of abb_summary?.bullets">
                       <span></span>
-                      A diversified credit portfolio showcases your adeptness at managing various financial
-                      responsibilities, a trait favored by lenders for demonstrating financial resilience.
-                    </li>
-                    <li>
-                      <span></span>
-                      Balancing secured and unsecured loans while keeping new credit inquiries minimal can further
-                      solidify your standing.
-                    </li>
-                    <li>
-                      <span></span>
-                      Consistent improvement in these areas can gradually rebuild your creditworthiness.
+                      {{summay}}
                     </li>
                   </ul>
                   <div class="smileImg">
@@ -438,8 +364,8 @@
           <div class="downwardBox">
             <img src="./assets/LandingPage/themeInformation.svg" alt="">
             <div class="downwardContent">
-              <h4>Declining Balance</h4>
-              <p>Declining or highly volatile balances, indicating potential cash flow issues.</p>
+              <h4>{{card_view?.header}}</h4>
+              <p>{{card_view?.description}}</p>
               <span style="color:#EC1111;">
                 <mat-icon>warning</mat-icon>
                 Needs Attention

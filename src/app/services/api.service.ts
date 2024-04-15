@@ -82,7 +82,7 @@ export class ApiService {
 }
   
 remediation(path: string, params: HttpParams = new HttpParams()) {
-  
+  this.TOKEN = localStorage.getItem("token");   
   this.httpOptions = {
     headers: new HttpHeaders({
       'accept': '*',
@@ -95,7 +95,7 @@ remediation(path: string, params: HttpParams = new HttpParams()) {
 
 postForPayment(path: string, body: object = {} , params: HttpParams = new HttpParams()) {
 
-
+  this.TOKEN = localStorage.getItem("token");   
   const posthttpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ postForPayment(path: string, body: object = {} , params: HttpParams = new HttpPa
   }
 
   post(path: any,   body: object = {} , params: any) {
-    
+    this.TOKEN = localStorage.getItem("token");   
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -128,7 +128,7 @@ postForPayment(path: string, body: object = {} , params: HttpParams = new HttpPa
   }
 
   postForPerfiosCallback(path: any,   body: object = {} , params: any) {
-    
+    this.TOKEN = localStorage.getItem("token");   
     this.httpOptions = {
       headers: new HttpHeaders({
         'accept': '*',

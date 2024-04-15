@@ -368,7 +368,7 @@ export const reportPageJson =
         "gstHistory": {
           "gstNumber": "27AADPV6007D1ZU",
           "companyName": "PRECITECH WEIGHING SYSTEMS",
-          "turnoverAsPerGst": "NA",
+        //   "turnoverAsPerGst": "NA",
           "currentGstStatus": "Active",
           "missedGstFilings": []
         },
@@ -1293,7 +1293,7 @@ export const reportPageJson =
                 "Instability raises concerns with lenders, reducing your loan prospects.",
                 "Addressing variability head-on can improve your attractiveness.",
                 "Act on the causes of fluctuations and improve your financial planning."
-              ],
+              ],    
               "class": "negative",
               "type": null,
               "warning": null,

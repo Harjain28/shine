@@ -65,6 +65,30 @@ export class BankingBusinessComponent {
   businessLinedata: any;
   ratiosecured: any;
   securedUnsecuredRatioData: any;
+  bankingData: any;
+  volatility: any;
+  volitility_lenders_perspective: any;
+  dip: any;
+  turnover_lenders_perspective: any;
+  count_volatility: any;
+  bankingHistory_summary: any;
+  abb: any;
+  debt_to_revenue_ratio: any;
+  debt_to_revenue_summary: any;
+  cheque_bounces: any;
+  cashflow: any;
+  card_view: any;
+  bank_balance_observation: any;
+  bank_balance_lenders_perspective: any;
+  minimum_balance: any;
+  minimum_balance_lenders_perspective: any;
+  abb_summary: any;
+  dcard_view: any;
+  debt_to_revenue_ratio_lenders_perspective: any;
+  aboveMinMonths: any = [];
+  months: any =[];
+  monthsWithYear: any = [];
+
   constructor() {}
   customOptions4: OwlOptions = {
     loop: false,
@@ -102,22 +126,24 @@ export class BankingBusinessComponent {
   };
 
   ngOnInit(): void {
-    // this.barData = this.bankingBusinessChartsData?.Bar;
-    this.pieData = this.bankingBusinessChartsData?.Pie;
-    this.histogramData = this.bankingBusinessChartsData?.Histogram;
-    // this.mixedData = this.bankingBusinessChartsData?.Mixed;
-    // this.mixedData2 = this.bankingBusinessChartsData?.Mixed2;
-    this.mixedData3 = this.bankingBusinessChartsData?.Mixed3;
-    this.mixedData4 = this.bankingBusinessChartsData?.Mixed4;
+    this.getBankingHistory();
 
+    this.getInsights();
+  }
+
+  getBankingHistory() {
     this.banking_history = reportPageJson?.report.bankingHistory;
     this.graphData = this.banking_history?.graphData;
+
     this.monthly_expenses = this.banking_history?.monthly_expenses;
     this.turnoverLineData = this.graphData?.turnover;
     this.businessLinedata = this.graphData?.abb;
     this.securedUnsecuredRatioData =
-    reportPageJson?.report?.creditReport?.securedUnsecuredRatio;
+      reportPageJson?.report?.creditReport?.securedUnsecuredRatio;
+    this.aboveMinMonths = this.getMonthsAboveMin(this.graphData);
+    const data = this.formatAboveMinMonths(this.aboveMinMonths);
   
+
     this.ratiosecured = {
       byAmount: [
         {
@@ -190,6 +216,178 @@ export class BankingBusinessComponent {
     console.log(cashFlowArray, 'kkk');
   }
 
+  getInsights() {
+    this.bankingData = reportPageJson?.insights;
+    const creditreportInsights = this.bankingData?.bankingHistory;
+
+    const abb = creditreportInsights?.abb;
+    const debt_to_revenue_ratio = this.bankingData?.debt_to_revenue_ratio;
+
+    this.volatility = this.concatenateInsights(
+      creditreportInsights?.volatility.filter(
+        (item: { condition_status: boolean }) => item.condition_status === true
+      )
+    );
+    this.volitility_lenders_perspective = this.concatenateInsights(
+      creditreportInsights?.volitility_lenders_perspective.filter(
+        (item: { condition_status: boolean }) => item.condition_status
+      )
+    );
+    this.dip = this.concatenateInsights(
+      creditreportInsights?.dip.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.turnover_lenders_perspective = this.concatenateInsights(
+      creditreportInsights?.turnover_lenders_perspective.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.count_volatility = this.concatenateInsights(
+      creditreportInsights?.count_volatility.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.bankingHistory_summary = this.concatenateInsights(
+      creditreportInsights?.bankingHistory_summary.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+
+    //abb balance
+    console.log(abb, 'card_view');
+
+    this.card_view = this.concatenateInsights(
+      abb?.card_view.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+
+    this.bank_balance_observation = this.concatenateInsights(
+      abb?.bank_balance_observation.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+
+    this.bank_balance_lenders_perspective = this.concatenateInsights(
+      abb?.bank_balance_lenders_perspective.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.minimum_balance = this.concatenateInsights(
+      abb?.minimum_balance.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+
+    this.minimum_balance_lenders_perspective = this.concatenateInsights(
+      abb?.minimum_balance_lenders_perspective.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+
+    this.abb_summary = this.concatenateInsights(
+      abb?.abb_summary.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+
+    this.dcard_view = this.concatenateInsights(
+      debt_to_revenue_ratio?.card_view.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+
+    this.debt_to_revenue_ratio_lenders_perspective = this.concatenateInsights(
+      debt_to_revenue_ratio?.debt_to_revenue_ratio_lenders_perspective.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.debt_to_revenue_summary = this.concatenateInsights(
+      creditreportInsights?.debt_to_revenue_summary.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.cheque_bounces = this.concatenateInsights(
+      creditreportInsights?.cheque_bounces.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+    this.cashflow = this.concatenateInsights(
+      creditreportInsights?.cashflow.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+  }
+
+  concatenateInsights(insightsArray: any) {
+    return insightsArray.reduce(
+      (result: any, insight: any) => {
+        if (insight.header !== null && insight.header !== undefined) {
+          result.header += insight.header + ' ';
+        }
+        if (insight.subheader !== null && insight.subheader !== undefined) {
+          result.subheader += insight.subheader + ' ';
+        }
+        if (insight.description !== null && insight.description !== undefined) {
+          result.description += insight.description + ' ';
+        }
+        if (insight.bullets !== null && insight.bullets !== undefined) {
+          result.bullets.push(...insight.bullets);
+        }
+        if (insight.class !== null && insight.class !== undefined) {
+          result.class += insight.class + ' ';
+        }
+        if (insight.type !== null && insight.type !== undefined) {
+          result.type += insight.type + ' ';
+        }
+        if (insight.warning !== null && insight.warning !== undefined) {
+          result.warning += insight.warning + ' ';
+        }
+        return result;
+      },
+      {
+        header: '',
+        subheader: '',
+        description: '',
+        bullets: [],
+        class: '',
+        type: '',
+        warning: '',
+      }
+    );
+  }
+
+  getMonthsAboveMin(graphData: any) {
+    console.log(graphData, 'graphData');
+    const aboveMinMonths: string[] = [];
+    const minBalance = this.businessLinedata?.min;
+    for (let i = 0; i < graphData.monthly.length; i++) {
+      if (graphData.monthly[i]?.averageBalance > minBalance) {
+        aboveMinMonths.push(graphData.monthly[i]?.month);
+      }
+    }
+    console.log(aboveMinMonths, 'aboveMinMonths');
+   
+    return aboveMinMonths;
+  }
+
+  formatAboveMinMonths(aboveMinMonths:any) {
+    this.months = [];
+    this.monthsWithYear = [];
+    for (let i = 0; i < aboveMinMonths.length; i++) {
+      const [monthStr, yearStr] = aboveMinMonths[i].split('-');
+      const year = parseInt(yearStr);
+      const fullYear = year < 50 ? 2000 + year : 1900 + year;
+
+      // Push the month to the months array
+      this.months.push(monthStr.toUpperCase());
+
+      // Convert the month to its full name and append the year
+      const monthWithYear =  monthStr + '-' + fullYear;
+      this.monthsWithYear.push(monthWithYear);
+    }
+  }
   formatMonth(month: any) {
     const date = new Date(month);
     const monthNames = [
