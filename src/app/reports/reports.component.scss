@@ -783,6 +783,10 @@
                         justify-content: center;
                         border: none;
                         padding: 3px 14px;
+
+                        &.NoColor{
+                            background-color: #EC1111;
+                        }
                     }
 
                     ::ng-deep {
@@ -1578,6 +1582,7 @@
                 justify-content: flex-start;
                 display: flex;
                 flex-wrap: wrap;
+                gap: 10px;
 
                 li {
                     color: #3f3f3f;
@@ -1643,6 +1648,20 @@
             }
 
             .qtrBox {
+
+                &.scrollMonth{
+
+                    ul{
+                        overflow: hidden;
+                        height: 86px;
+                        overflow-x: hidden;
+                        overflow-y: auto;
+
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+                    }
+                }
 
                 .qtrList {
                     margin-bottom: 20px;
