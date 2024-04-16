@@ -1,0 +1,282 @@
+.forbusinessLoanProductComponent {
+
+    .BusinessLoanSection {
+        position: relative;
+
+        .homeSlider {
+
+            .silderSlide {
+                position: relative;
+                height: 390px;
+                overflow: hidden;
+
+                .image {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .silderText {
+                    position: absolute;
+                    top: 50%;
+                    left: 0px;
+                    transform: translate(0%, 0%);
+                    z-index: 9;
+                    display: block;
+                    width: 100%;
+
+                    h1 {
+                        color: var(--main1);
+                        font-size: 38px;
+                        font-weight: 800;
+                        line-height: 44px;
+                        margin-bottom: 12px;
+
+                        span {
+                            color: var(--main2);
+                        }
+                    }
+
+                    p {
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 26px;
+                        margin-bottom: 2px;
+                        color: #3F3F3F;
+                    }
+                }
+            }
+        }
+    }
+
+    .dueamountSection{
+        padding-top: 80px;
+        padding-bottom: 100px;
+
+        .dueContent{
+            padding-right: 50px;
+
+            h3{
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: 600;
+                margin-bottom: 22px;
+                color: #3F3F3F;
+                font-family: 'Poppins', sans-serif !important;
+            }
+
+            p{
+                color: #3F3F3F;
+                font-size: 14px;
+                line-height: 22px;
+                font-family: 'Poppins', sans-serif !important;
+                margin-bottom: 0px;
+            }
+
+            ul{
+                padding-left: 0px;
+                list-style: none;
+                margin-bottom: 0px;
+
+                li{
+                    margin-top: 40px;                    
+
+                    h5{
+                        font-family: 'Poppins', sans-serif !important;
+                        font-size: 16px;
+                        font-weight: 600;
+                        margin-bottom: 16px;
+                        line-height: 28px;
+                        padding-left: 24px;
+                        color: var(--main1);
+                       
+                    }
+
+                    p{
+                            padding-left: 24px;
+                            position: relative;
+                            margin-left: 40px;
+                        span{
+                            width: 6px;
+                            height: 6px;
+                            display: block;
+                            background: #000;
+                            border-radius: 20px;
+                            position: absolute;
+                            top: 8px;
+                            left: 0px;
+                            cursor: pointer;
+                          
+                        }
+                          
+                        a {
+                            color: var(--main1);
+                            text-decoration: underline;
+                        }
+                    } 
+                }
+            }
+
+        }
+
+        .accodionStart{
+            border: 1px solid #E8E8E8;
+            border-radius: 10px;
+
+            .accodionHeadding{
+                padding: 20px 28px;
+                background-color: #F3F3F3;
+
+                h3{
+                    font-size: 18px;
+                    line-height: 22px;
+                    font-weight: 600;
+                    margin-bottom: 0px;
+                    color: #3F3F3F;
+                    font-family: 'Poppins', sans-serif !important;
+                }
+            }
+
+            .accodionBox{
+
+                .mat-accordion{
+
+                    .mat-expansion-panel{
+                        box-shadow: none;
+                        border-radius: 0px;
+                        padding: 0px;
+                        border-bottom: 1px solid #E6E6E6;
+                        margin: 0px;
+
+                        &:last-child{
+                            border-bottom: none !important;
+                        }
+
+                        .mat-expansion-panel-header{
+                            padding: 0px 28px;
+                            height: 56px;
+                            font-family: 'Poppins', sans-serif !important;
+                            font-size: 14px;
+                            line-height: 30px;
+                            font-weight: 600;
+                            color: #3F3F3F;
+
+                            &:hover{
+                                background-color: transparent;
+                            }
+
+                            ::ng-deep{
+
+                                .mat-expansion-indicator{
+                                    border-radius: 50px;
+                                    background-color: #D1D1D1;
+                                    width: 24px;
+                                    height: 24px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    &:after{
+                                        color: #fff;
+                                        position: absolute;
+                                        top: 6px;
+                                    }
+                                }
+                            }
+                        }
+
+                        p{
+                            margin-bottom: 2px;
+                            color: #3F3F3F;
+                            font-size: 14px;
+                            line-height: 22px;
+                            font-family: 'Poppins', sans-serif !important;
+
+                            a{
+                                color: var(--main1);
+                                font-size: 14px;
+                                font-weight: 500;
+                                text-decoration: none;
+                                position: relative;
+                                display: inline-block;
+  
+                                mat-icon{
+                                  position: absolute;
+                                  top: -1px;
+                                  right: -22px;
+                                }
+                              }
+                        }
+                    }
+
+                    ::ng-deep{
+                        .mat-expansion-panel-spacing{
+                            mat-expansion-panel-header{
+                                .mat-expansion-indicator{
+                                    background-color: var(--main2) !important;
+                                }
+                            } 
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width: 767px) {
+    .forbusinessLoanProductComponent {
+
+        .BusinessLoanSection {
+            position: relative;
+    
+            .homeSlider {
+    
+                .silderSlide {
+    
+                    .image {
+                        height: 100%;
+                        object-fit: cover;
+                    }
+    
+                    .silderText {
+                        transform: translate(0%, 50%);
+    
+                        h1 {
+                            font-size: 30px;
+                            text-align: center;
+    
+                            span {
+                                color: var(--main2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .dueamountSection{
+            padding-top: 60px;
+            padding-bottom: 80px;
+    
+            .dueContent{
+                padding-right: 0px;
+    
+                ul{
+    
+                    li{
+                        margin-top: 30px; 
+                    }
+                }
+    
+            }
+    
+            .accodionStart{
+                margin-top: 50px;
+            }
+    
+        }
+     }
+ }

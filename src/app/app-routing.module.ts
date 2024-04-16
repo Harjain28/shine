@@ -4,6 +4,7 @@ import { PagesComponent } from './pages/pages.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { ReportsComponent } from './reports/reports.component';
 import { AuthGuard } from './guard/auth.gaurd';
+import { RefundPolicyComponent } from './view/refund-policy/refund-policy.component';
 
 const routes: Routes = [
      
@@ -20,6 +21,12 @@ const routes: Routes = [
   {
     path:'in/report', 
     component: ReportsComponent   
+  },
+  
+
+  {
+    path:'in/refund-policy', 
+    component: RefundPolicyComponent   
   }
 ];
 

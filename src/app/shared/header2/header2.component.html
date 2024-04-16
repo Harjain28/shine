@@ -47,27 +47,11 @@
                             </a>
                         </div>
 
-                        <div class="nav-item dropdown hoverEffect" (mouseenter)="openDropdown()"
+                        <div class="nav-item"
                             (mouseleave)="closeDropdown()">
-                            <a class="nav-item nav-link">About Us
-                                <img src="./assets/images/homeImage/topheaderIcon.svg" alt="" />
+                            <a href="in/refund-policy" class="nav-link dropdown-toggle"
+                                >Refund Policy
                             </a>
-                            <div class="DropDownSet" [hidden]="!showNav">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="dropDownHeader">
-                                            <a class="dropdown-item"  queryParamsHandling="preserve"
-                                                (click)="closeDropdown();" class="dropdown-item" target="_blank" 
-                                                (click)="goToAbout()">About CreditEnable
-                                            </a>
-                                            <a class="dropdown-item"
-                                                href="assets/images/pdf/CreditEnable_Privacy_Policy_2023.pdf"
-                                                target="_blank" (click)="goToPravicy()">Privacy Policy
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
                         <!-- <div class="mobileTop mhidden">
