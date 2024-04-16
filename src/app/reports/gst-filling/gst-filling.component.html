@@ -39,6 +39,8 @@
                   <h3>GSTIN Filings: Last 6 Months</h3>
                   <ul>
                     <li *ngFor="let month of months" [ngClass]="{ 'active': isSelectedMonth(month) }">{{ month }}</li>
+                    <li class="blur">Apr</li>
+                    <li class="blur">May</li>
                     
                   </ul>
                   <div class="missingPayment">
