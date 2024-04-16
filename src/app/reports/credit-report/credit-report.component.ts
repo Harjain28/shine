@@ -31,7 +31,7 @@ import { reportPageJson } from 'src/app/JsonFiles/report';
   styleUrls: ['./credit-report.component.scss', '../reports.component.scss'],
 })
 export class CreditReportComponent {
-  @Input() creditReportsChartsData: any;
+  @Input() creditReportsData: any;
 
   expandSection!: boolean;
   expandCurrentCreditSection!: boolean;
@@ -281,10 +281,10 @@ export class CreditReportComponent {
         (result: any, insight: any) => {
             if (insight.class === "negative") {
                 if (insight.header !== null && insight.header !== undefined) {
-                    result.header += insight.header + ' ';
+                    result.header = insight.header + ' ';
                 }
                 if (insight.subheader !== null && insight.subheader !== undefined) {
-                    result.subheader += insight.subheader + ' ';
+                    result.subheader = insight.subheader + ' ';
                 }
                 if (insight.warning !== null && insight.warning !== undefined) {
                     result.warning += insight.warning + ' ';

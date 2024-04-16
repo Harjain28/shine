@@ -169,7 +169,7 @@ export class PaymentComponent {
     requestData['amount'] = '2.00';
     requestData['custMobile'] = this.mobile;
     requestData['custMail'] = this.email;
-    requestData['returnUrl'] = 'http://localhost:4200/in/payment_status';
+    requestData['returnUrl'] = 'https://borrowerportal-staging.creditenable.com/api/Remediation/PGResponse';
 
 
     const params = { ...this.paramsObject.params };

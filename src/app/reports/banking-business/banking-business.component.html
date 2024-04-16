@@ -233,8 +233,8 @@
               <div class="valatilityBox">
                 <h3>Not Maintained in</h3>
                 <div class="row">
-                  <div class="col-lg-6">
-                    <div class="qtrBox">
+                  <div class="col-lg-7">
+                    <div class="qtrBox scrollMonth">
                       <div class="qtrList">
                         <ul>
                           <li class="active" *ngFor="let month of months">{{month}}</li>
@@ -247,7 +247,7 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="col-lg-6">
+                  <div class="col-lg-5">
                     <div class="contentQtr">
                       <p>{{minimum_balance?.description}}</p>
                     </div>
@@ -368,7 +368,7 @@
               <p>{{card_view?.description}}</p>
               <span style="color:#EC1111;">
                 <mat-icon>warning</mat-icon>
-                Needs Attention
+                {{card_view?.warning}}
               </span>
             </div>
           </div>
@@ -500,7 +500,7 @@
                       <p *ngFor="let bullet of cheque_bounces?.bullets">{{bullet}}</p>
                       <span style="color:#EC1111;">
                         <mat-icon>warning</mat-icon>
-                        Needs Attention
+                        {{cheque_bounces?.warning}}
                       </span>
                     </div>
                   </div>
@@ -546,14 +546,11 @@
               <div class="downwardBox">
                 <img src="./assets/LandingPage/themeInformation.svg" alt="">
                 <div class="downwardContent">
-                  <h4>High Debt Usage</h4>
-                  <p>Your DTI fluctuates, but seems to be on the higher side often. Maintaining an average DTI between
-                    30-40% increases your creditworthiness. Focus on increasing income streams or reducing non-essential
-                    expenses.For instance, diversifying services or ... products to generate additional revenue can
-                    improve the debt-to-turnover ratio.</p>
+                  <h4>{{dcard_view?.header}}</h4>
+                  <p>{{dcard_view?.description}}</p>
                   <span style="color:#EC1111;">
                     <mat-icon>warning</mat-icon>
-                    Needs Attention
+                    {{dcard_view?.warning}}
                   </span>
                 </div>
               </div>
@@ -582,7 +579,7 @@
                       <p *ngFor="let bullet of cheque_bounces?.bullets">{{bullet}}</p>
                       <span style="color:#EC1111;">
                         <mat-icon>warning</mat-icon>
-                        Needs Attention
+                        {{cheque_bounces?.warning}}
                       </span>
                 </div>
               </div>
@@ -634,7 +631,7 @@
                           <p>{{dcard_view?.description}}</p>
                           <span style="color:#EC1111;">
                             <mat-icon>warning</mat-icon>
-                            Needs Attention
+                            {{dcard_view?.warning}}
                           </span>
                         </div>
                       </div>
@@ -721,7 +718,7 @@
                   <h4>{{cashflow?.header}}</h4>
                   <p>{{cashflow?.description}}</p>
                   <span>
-                    Good Job!
+                   {{cashflow?.warning}}
                     <img src="./assets/LandingPage/goodWork.svg" alt="">
                   </span>
                 </div>

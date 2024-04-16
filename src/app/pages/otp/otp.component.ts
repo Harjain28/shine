@@ -127,9 +127,8 @@ export class OtpComponent implements OnInit{
       this.api.post(`api/Remediation/ValidateLogin`, requestData, params).subscribe({
         next: (res: any) => {
           if (res.success == true) {
-            const stateData = Buffer.from(res.token).toString("base64");
-            localStorage.setItem("token",stateData);
-            console.log(stateData,"hh")
+            // const stateData = Buffer.from(res.token).toString("base64");
+            localStorage.setItem("token",res?.token);
             this.router.navigate(['/in/confirm_order']);
             console.log("Otp Verfied")
 

@@ -40,7 +40,7 @@ import { Mixed5Component } from 'src/app/charts/mixed5/mixed5.component';
   styleUrls: ['./banking-business.component.scss', '../reports.component.scss'],
 })
 export class BankingBusinessComponent {
-  @Input() bankingBusinessChartsData: any;
+  @Input() bankingBusinessData: any;
 
   expandBusinessSection!: boolean;
   expandBalanceSection!: boolean;
@@ -326,41 +326,40 @@ export class BankingBusinessComponent {
 
   concatenateInsights(insightsArray: any) {
     return insightsArray.reduce(
-      (result: any, insight: any) => {
-        if (insight.header !== null && insight.header !== undefined) {
-          result.header += insight.header + ' ';
+        (result: any, insight: any) => {
+            if (insight.class === "negative") {
+                if (insight.header !== null && insight.header !== undefined) {
+                    result.header = insight.header + ' ';
+                }
+                if (insight.subheader !== null && insight.subheader !== undefined) {
+                    result.subheader = insight.subheader + ' ';
+                }
+                if (insight.warning !== null && insight.warning !== undefined) {
+                    result.warning = insight.warning + ' ';
+                }
+            }
+            if (insight.description !== null && insight.description !== undefined) {
+                result.description += insight.description + ' ';
+            }
+            if (insight.bullets !== null && insight.bullets !== undefined) {
+                result.bullets.push(...insight.bullets);
+            }
+            if (insight.type !== null && insight.type !== undefined) {
+                result.type += insight.type + ' ';
+            }
+            return result;
+        },
+        {
+            header: '',
+            subheader: '',
+            description: '',
+            bullets: [],
+            class: '',
+            type: '',
+            warning: '',
         }
-        if (insight.subheader !== null && insight.subheader !== undefined) {
-          result.subheader += insight.subheader + ' ';
-        }
-        if (insight.description !== null && insight.description !== undefined) {
-          result.description += insight.description + ' ';
-        }
-        if (insight.bullets !== null && insight.bullets !== undefined) {
-          result.bullets.push(...insight.bullets);
-        }
-        if (insight.class !== null && insight.class !== undefined) {
-          result.class += insight.class + ' ';
-        }
-        if (insight.type !== null && insight.type !== undefined) {
-          result.type += insight.type + ' ';
-        }
-        if (insight.warning !== null && insight.warning !== undefined) {
-          result.warning += insight.warning + ' ';
-        }
-        return result;
-      },
-      {
-        header: '',
-        subheader: '',
-        description: '',
-        bullets: [],
-        class: '',
-        type: '',
-        warning: '',
-      }
     );
-  }
+}
 
   getMonthsAboveMin(graphData: any) {
     console.log(graphData, 'graphData');

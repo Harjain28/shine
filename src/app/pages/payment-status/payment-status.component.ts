@@ -17,6 +17,7 @@ export class PaymentStatusComponent {
   paramsObject: any;
   isDialogShow: boolean = false;
   dialogRef: MatDialogRef<StatusPopupComponent> | undefined;
+  defaultparams: any;
 
   constructor(private dialog: MatDialog, private router: Router, private api: ApiService, private route: ActivatedRoute, private event: EventService){
     this.route.queryParamMap.subscribe((params) => {
@@ -46,12 +47,13 @@ export class PaymentStatusComponent {
   }
 
   confirmPayment() {
-    const defaultparams = {
+    this.defaultparams = {
       mobile: '7976330044',
+      payloadString:this.paramsObject.params?.respData 
     };
-    const params = { ...defaultparams, ...this.paramsObject.params };
+    // const params = { ...defaultparams };
     this.api
-      .remediation(`api/Remediation/PaymentConfirmation`, params)
+      .remediation(`api/Remediation/PaymentConfirmation`, this.defaultparams)
       .subscribe({
         next: (res: any) => {
           console.log(res, "res");

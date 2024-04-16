@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -27,7 +27,7 @@ export class GstFillingComponent {
   month: any;
   missedGstFilings: any;
   info_card: any;
-
+  @Input() gstData: any;
 
   constructor(){
 
