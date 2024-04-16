@@ -57,43 +57,43 @@ export class GstFillingComponent {
 
   }
 
- concatenateInsights(insightsArray: any) {
+  concatenateInsights(insightsArray: any) {
     return insightsArray.reduce(
-      (result: any, insight: any) => {
-        if (insight.header !== null && insight.header !== undefined) {
-          result.header += insight.header + ' ';
+        (result: any, insight: any) => {
+            if (insight.class === "negative") {
+                if (insight.header !== null && insight.header !== undefined) {
+                    result.header = insight.header + ' ';
+                }
+                if (insight.subheader !== null && insight.subheader !== undefined) {
+                    result.subheader = insight.subheader + ' ';
+                }
+                if (insight.warning !== null && insight.warning !== undefined) {
+                    result.warning = insight.warning + ' ';
+                }
+            }
+            if (insight.description !== null && insight.description !== undefined) {
+                result.description += insight.description + ' ';
+            }
+            if (insight.bullets !== null && insight.bullets !== undefined) {
+                result.bullets.push(...insight.bullets);
+            }
+            if (insight.type !== null && insight.type !== undefined) {
+                result.type += insight.type + ' ';
+            }
+            return result;
+        },
+        {
+            header: '',
+            subheader: '',
+            description: '',
+            bullets: [],
+            class: '',
+            type: '',
+            warning: '',
         }
-        if (insight.subheader !== null && insight.subheader !== undefined) {
-          result.subheader += insight.subheader + ' ';
-        }
-        if (insight.description !== null && insight.description !== undefined) {
-          result.description += insight.description + ' ';
-        }
-        if (insight.bullets !== null && insight.bullets !== undefined) {
-          result.bullets.push(...insight.bullets);
-        }
-        if (insight.class !== null && insight.class !== undefined) {
-          result.class += insight.class + ' ';
-        }
-        if (insight.type !== null && insight.type !== undefined) {
-          result.type += insight.type + ' ';
-        }
-        if (insight.warning !== null && insight.warning !== undefined) {
-          result.warning += insight.warning + ' ';
-        }
-        return result;
-      },
-      {
-        header: '',
-        subheader: '',
-        description: '',
-        bullets: [],
-        class: '',
-        type: '',
-        warning: '',
-      }
     );
-  }
+}
+
 
   isSelectedMonth(month: string): boolean {
     const index = this.months.indexOf(month) + 1;
