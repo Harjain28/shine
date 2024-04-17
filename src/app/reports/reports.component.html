@@ -1,6 +1,6 @@
 <!-- Top-Banner-Section Start -->
 
-<ng-container *ngIf = "showEligible">
+<ng-container>
 <div class="topBannerHeader">
   <div class="container">
     <div class="row align-items-center">
@@ -78,7 +78,7 @@
 
 </ng-container>
 
-<ng-container *ngIf = "!showEligible">
+<!-- <ng-container *ngIf = "!showEligible">
 <div class="progress-wrapper">
   <div class="progress-container" #progressContainer>
       <div class="progress" #progressbar></div>
@@ -87,18 +87,4 @@
       </div>
   </div>
 </div>
-<!-- 
-<div class="BoxAnimation">
-<div class="progressBox">
-<ng-container *ngFor="let text of loaderContent; let i = index">
-  <p  *ngIf="i === currentIndex"> {{text}}​ </p>
-</ng-container>
-</div>
-<div class="progressBox box1">
-  <p> Your credit score is higher than 60% of people who got a loan in last 30 days​ </p>
-</div>
-<div class="progressBox box2">
-  <p> Your credit score is higher than 60% of people who got a loan in last 30 days​ </p>
-</div>
-</div> -->
-</ng-container>
+</ng-container> -->

@@ -264,13 +264,13 @@ export class BankingBusinessComponent {
     );
 
     this.bank_balance_observation = this.concatenateInsights(
-      abb?.bank_balance_observation.filter(
+      abb?.volatility_observation.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
 
     this.bank_balance_lenders_perspective = this.concatenateInsights(
-      abb?.bank_balance_lenders_perspective.filter(
+      abb?.volatility_lenders_perspective.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
@@ -322,6 +322,7 @@ export class BankingBusinessComponent {
         (item: { condition_status: any }) => item.condition_status
       )
     );
+    console.log(this.cashflow , "cashflow");
   }
 
   concatenateInsights(insightsArray: any) {
