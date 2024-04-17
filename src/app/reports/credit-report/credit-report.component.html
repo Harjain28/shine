@@ -287,6 +287,7 @@
           <div class="buttonJob">
             <!-- <button class="btn" (click)="openPopup()">Your Bureau Score</button> -->
             <button class="btn" > {{bureauScoreInsights?.header}}</button>
+            
           </div>
           <p>
            {{bureauScoreInsights?.description}}
@@ -334,11 +335,17 @@
                     {{infoCardLRP?.description}}
                   </p>
                   <p>
-                    <span style="color: #ec1111;">
+                    <span style="color: #ec1111;" *ngIf="infoCardLRP?.class === 'negative' ">
                       <mat-icon>warning</mat-icon>
-                      Needs Attention
+                     {{infoCardLRP?.warning}}
                     </span>
-                    <!-- <span style="color: var(--main2);">Good Job! <img src="./assets/LandingPage/goodWork.svg" alt=""></span> -->
+                    <span style="color: #ec1111;" *ngIf="infoCardLRP?.warning === null">
+                      <mat-icon>warning</mat-icon>
+                     Needs Attention
+                    </span>
+                    <ng-container *ngIf="infoCardLRP?.class !== 'negative'">
+                    <span style="color: var(--main2);" >   {{infoCardLRP?.warning}}<img src="./assets/LandingPage/goodWork.svg" alt=""></span>
+                  </ng-container>
                   </p>
                 </div>
               </div>

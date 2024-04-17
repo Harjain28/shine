@@ -619,14 +619,14 @@ export const reportPageJson =
           },
           {
             "condition": null,
-            "header": null,
+            "header": "null",
             "subheader": null,
             "description": null,
             "bullets": null,
             "class": null,
             "type": null,
             "warning": null,
-            "condition_status": false
+            "condition_status": true
           },
           {
             "condition": null,
