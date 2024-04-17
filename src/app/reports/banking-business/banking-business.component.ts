@@ -15,6 +15,7 @@ import { PieComponent } from 'src/app/charts/pie/pie.component';
 import { BarComponent } from 'src/app/charts/bar/bar.component';
 import { reportPageJson } from 'src/app/JsonFiles/report';
 import { Mixed5Component } from 'src/app/charts/mixed5/mixed5.component';
+import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 
 @Component({
   selector: 'app-banking-business',
@@ -88,6 +89,11 @@ export class BankingBusinessComponent {
   aboveMinMonths: any = [];
   months: any =[];
   monthsWithYear: any = [];
+  banking_section: any;
+  banking_section_data: any;
+  affordability_section: any;
+  risk_section: any;
+  cashflow_section: any;
 
   constructor() {}
   customOptions4: OwlOptions = {
@@ -129,6 +135,16 @@ export class BankingBusinessComponent {
     this.getBankingHistory();
 
     this.getInsights();
+    this.getBankingSection();
+  }
+
+
+  getBankingSection(){
+    this.banking_section = reportStatciData;
+    this.banking_section_data = this.banking_section?.banking_section;
+    this.affordability_section = this.banking_section_data?.affordability_section;
+    this.risk_section = this.banking_section_data?.risks_section;
+    this.cashflow_section = this.banking_section_data?.cashflow_section;
   }
 
   getBankingHistory() {

@@ -19,10 +19,12 @@ export class FaqComponent {
   }
 
   getFAQ(){
-    this.faqs = this.faqsData.map((res: { Question: any; Answer: any; }) =>({
-      question: res?.Question,
-      answer: res.Answer
+    this.faqs = this.faqsData?.points?.map((res: { question: any; answer: any; }) =>({
+      Question: res?.question,
+      Answer: res?.answer
     }));
+
+
     
   }
 

@@ -3,9 +3,8 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="title">
-            <h2><span>Your GST Filings History</span></h2>
-            <p>Your profile gets assessed against these parameters and <br> it's important that you improve on them to get
-              funding</p>
+            <h2><span>{{gstSectionHeadings?.header}}</span></h2>
+            <p>{{gstSectionHeadings?.subeader}}</p>
           </div>
         </div>
         <div class="col-lg-12 mb-4">
@@ -36,7 +35,7 @@
   
               <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="calendarBox">
-                  <h3>GSTIN Filings: Last 6 Months</h3>
+                  <h3>{{gstSectionHeadings?.gst_filing_card?.header}}</h3>
                   <ul>
                     <li *ngFor="let month of months" [ngClass]="{ 'active': isSelectedMonth(month) }">{{ month }}</li>
                     <li class="blur">Apr</li>

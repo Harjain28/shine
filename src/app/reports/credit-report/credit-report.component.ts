@@ -12,6 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { BuildBureauPopupComponent } from 'src/app/modal/build-bureau-popup/build-bureau-popup.component';
 import { CreditJourneyPopupComponent } from 'src/app/modal/credit-journey-popup/credit-journey-popup.component';
 import { reportPageJson } from 'src/app/JsonFiles/report';
+import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 
 @Component({
   selector: 'app-credit-report',
@@ -84,6 +85,11 @@ export class CreditReportComponent {
   creditEnquiry: any;
   securedUnsecuredRatioData: any;
   ratiosecured: any = [];
+  reportStaticData: any;
+  CR_Data: any;
+  LoanReplacementExpanded: any;
+  credit_analysis_card: any;
+  credit_analysis_card_Expanded: any;
   constructor(private dialog: MatDialog) {}
 
   customOptions4: OwlOptions = {
@@ -274,6 +280,13 @@ export class CreditReportComponent {
     console.log(credit_analysis, 'credit_analysis');
     // console.log(this.summary, 'summary');
     // console.log(this.suitFiledEver, 'suitFiledEver');
+
+    this.reportStaticData = reportStatciData;
+    this.CR_Data = this.reportStaticData?.credit_report_section;
+    this.LoanReplacementExpanded = this.CR_Data?.loanRepaymentHistory_expanded;
+    this.credit_analysis_card = this.CR_Data?.credit_analysis_card;
+    this.credit_analysis_card_Expanded = this.CR_Data?.credit_analysis_expanded;
+
   }
 
   concatenateInsights(insightsArray: any) {

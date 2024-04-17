@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 
 @Component({
   selector: 'app-actions-required',
@@ -15,10 +16,21 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./actions-required.component.scss','../reports.component.scss']
 })
 export class ActionsRequiredComponent {
+  summary_section:any;
+  summary_section_Data: any;
 
   constructor(){
 
   }
+
+  ngOnInit(): void{
+
+    this.summary_section = reportStatciData;
+    this.summary_section_Data = this.summary_section?.summary_section;
+
+  }
+
+  
 
   customOptions4: OwlOptions = {
     loop: false,

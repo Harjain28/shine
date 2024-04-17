@@ -10,6 +10,7 @@ import { ProbabilityOfLoanComponent } from './probability-of-loan/probability-of
 import { shineLendingPageJSON } from '../JsonFiles/lendingpage';
 import { ChartsJsonData } from '../JsonFiles/ChartJSONData';
 import { Subscription, take, timer } from 'rxjs';
+import { reportStatciData } from '../JsonFiles/reportpageStaticData';
 
 
 
@@ -62,6 +63,8 @@ export class ReportsComponent {
   filteredStatemenetObject: any;
   showEligible: boolean = false;
   reportData: any;
+  headerSection: any;
+  reportStaticData: any;
 
   constructor( private api: ApiService, private cdr: ChangeDetectorRef, ) { }
 
@@ -69,6 +72,7 @@ export class ReportsComponent {
     this.getFaq();
     this.getChartsData();
     this.postForReport();
+    this.getHeaderSectionData();
   }
 
   ngAfterViewInit(): void {
@@ -89,6 +93,11 @@ export class ReportsComponent {
   getChartsData(){
     this.ChartsData = ChartsJsonData;
     
+  }
+
+  getHeaderSectionData(){
+    this.reportStaticData = reportStatciData;
+    this.headerSection = reportStatciData?.header_section;
   }
 
   postForReport(){
@@ -116,8 +125,8 @@ export class ReportsComponent {
   }
 
  getFaq(){
-  this.businessLoanJson = shineLendingPageJSON;
-  this.faqs = this.businessLoanJson?.Faqs?.FAQs;
+  this.businessLoanJson = reportStatciData;
+  this.faqs = this.businessLoanJson?.faq_section;
  }
 
 

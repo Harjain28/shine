@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { reportPageJson } from 'src/app/JsonFiles/report';
+import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 
 @Component({
   selector: 'app-gst-filling',
@@ -28,6 +29,8 @@ export class GstFillingComponent {
   missedGstFilings: any;
   info_card: any;
   @Input() gstData: any;
+  gst_section: any;
+  gstSectionHeadings: any;
 
   constructor(){
 
@@ -53,6 +56,9 @@ export class GstFillingComponent {
         (item: { condition_status: any }) => item.condition_status
       )
     );
+
+    this.gst_section = reportStatciData;
+    this.gstSectionHeadings = this.gst_section?.gst_section;
 
 
   }

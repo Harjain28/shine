@@ -3,15 +3,14 @@
       <div class="row">
         <div class="col-lg-10 col-md-12 m-auto">
           <div class="text">
-            <h3>Actions Required to Improve</h3>
-            <p>Your profile gets assessed against these parameters and <br> it's important that you improve on them to get
-              funding.</p>
+            <h3>{{summary_section_Data?.header}}</h3>
+            <p>{{summary_section_Data?.subheader}}</p>
           </div>
         </div>
         <div class="col-lg-5 col-md-5 col-sm-12 mb-3 mhidden">
           <div class="improveBox">
             <div class="col-lg-11 col-md-12 col-sm-12">
-              <h3>Your Ranking</h3>
+              <h3>{{summary_section_Data?.ranking_card?.header}}</h3>
               <img class="numberImg" src="./assets/LandingPage/Mountain_Steps.png" alt="">
               <div class="howBox">
                 <img src="./assets/LandingPage/themeInformation.svg" alt="">
@@ -26,12 +25,12 @@
         </div>
         <div class="col-lg-7 col-md-7 col-sm-12 mb-3 mhidden">
           <div class="improveBox">
-            <h3>Your Ranking</h3>
+            <h3>{{summary_section_Data?.summary?.header}}</h3>
             <div class="summaryBox">
               <div class="box">
                 <div class="summaryContent">
                   <img src="./assets/LandingPage/Bureau.svg" alt="">
-                  <span>Bureau</span>
+                  <span>{{summary_section_Data?.summary?.bureau_card?.header}}</span>
                 </div>
                 <ul>
                   <li>
@@ -47,7 +46,7 @@
               <div class="box">
                 <div class="summaryContent">
                   <img src="./assets/LandingPage/Banking.svg" alt="">
-                  <span>Banking</span>
+                  <span>{{summary_section_Data?.summary?.banking_card?.header}}</span>
                 </div>
                 <ul>
                   <li>
@@ -63,7 +62,7 @@
               <div class="box">
                 <div class="summaryContent">
                   <img src="./assets/LandingPage/gsticon.svg" alt="">
-                  <span>GST</span>
+                  <span>{{summary_section_Data?.summary?.gst_card?.header}}</span>
                 </div>
                 <ul>
                   <li>
@@ -96,7 +95,7 @@
                     </div>
 
                     <div class="col-lg-11 col-md-12 col-sm-12">
-                      <h3>Your Ranking</h3>
+                      <h3>{{summary_section_Data?.ranking_card?.header}}</h3>
                       <img class="numberImg" src="./assets/LandingPage/Mountain_Steps.png" alt="">
                       <div class="howBox">
                         <img src="./assets/LandingPage/themeInformation.svg" alt="">
@@ -114,7 +113,7 @@
               <ng-template carouselSlide>
                 <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
                   <div class="improveBox" style="margin: 10px;">
-                    <h3>Your Ranking</h3>
+                    <h3>{{summary_section_Data?.summary?.header}}</h3>
                     <div class="plus">
                       <span>+</span>
                     </div>
@@ -122,7 +121,7 @@
                       <div class="box">
                         <div class="summaryContent">
                           <img src="./assets/LandingPage/Bureau.svg" alt="">
-                          <span>Bureau</span>
+                          <span>{{summary_section_Data?.summary?.bureau_card?.header}}</span>
                         </div>
                         <ul>
                           <li>
@@ -138,7 +137,7 @@
                       <div class="box">
                         <div class="summaryContent">
                           <img src="./assets/LandingPage/Banking.svg" alt="">
-                          <span>Banking</span>
+                          <span>{{summary_section_Data?.summary?.banking_card?.header}}</span>
                         </div>
                         <ul>
                           <li>
@@ -154,7 +153,7 @@
                       <div class="box">
                         <div class="summaryContent">
                           <img src="./assets/LandingPage/gsticon.svg" alt="">
-                          <span>GST</span>
+                          <span>{{summary_section_Data?.summary?.gst_card?.header}}</span>
                         </div>
                         <ul>
                           <li>
@@ -191,7 +190,7 @@
                 <div class="overallBox">
                   <img src="../../assets/LandingPage/01Bureau.svg" alt="">
                   <div class="text">
-                    <h5>01. Bureau</h5>
+                    <h5>{{summary_section_Data?.tips_card?.bureau_card?.header}}</h5>
                     <p>You need to get onto the credit ladder. Consider taking a personal loan. You need to get onto the
                       credit ladder. Consider taking a personal loan. You need to get onto the credit ladder. Consider
                       taking a personal loan.</p>
@@ -202,7 +201,7 @@
                 <div class="overallBox">
                   <img src="../../assets/LandingPage/02Banking.svg" alt="">
                   <div class="text">
-                    <h5>02. Banking</h5>
+                    <h5>{{summary_section_Data?.tips_card?.banking_card?.header}}</h5>
                     <p>You are banking from your Savings Account. This impacts your ability to get loan. You are banking
                       from your Savings Account. This impacts your ability to get loan. You are banking from your Savings
                       Account. This impacts your ability to get loan.</p>
@@ -213,7 +212,7 @@
                 <div class="overallBox">
                   <img src="../../assets/LandingPage/03gsticon.svg" alt="">
                   <div class="text">
-                    <h5>03. GST</h5>
+                    <h5>{{summary_section_Data?.tips_card?.gst_card?.header}}</h5>
                     <p>You have been late filling. This impacts your ability to get credit at good rates. You have been
                       late
                       filling. This impacts your ability to get credit at good rates. You have been late filling. This

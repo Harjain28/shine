@@ -7,7 +7,7 @@
           <ng-container>
             <ng-template carouselSlide>
               <div class="scoreBox">
-                <h3>Your Bureau Score</h3>
+                <h3>{{CR_Data?.bureau_score_card?.header}}</h3>
                 <div class="scoreChart text-center">
                   <svg width="200">
                     <path fill="none" stroke="#12BA9B" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
@@ -31,8 +31,7 @@
                 <div class="box">
                   <img src="./assets/LandingPage/whiteInformation.svg" alt="" />
                   <span
-                    >Have you thoroughly read your Experian Bureau report
-                    yet?</span
+                    >{{CR_Data?.bureau_score_card?.description}}</span
                   >
                 </div>
               </div>
@@ -82,8 +81,8 @@
 
       <div class="col-lg-12">
         <div class="title">
-          <h2><span>Your Credit Report</span></h2>
-          <p>What Matters Most and How to Improve</p>
+          <h2><span>{{CR_Data?.header}}</span></h2>
+          <p>{{CR_Data?.subheader}}</p>
         </div>
       </div>
       <div class="container">
@@ -94,7 +93,7 @@
               <div class="minus" (click)="minimize()">
                 <span>-</span>
               </div>
-              <h3 class="title">Loan Repayment History</h3>
+              <h3 class="title">{{CR_Data?.loanRepaymentHistory_card?.header}}</h3>
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                   <div class="calendarBox">
@@ -110,14 +109,14 @@
                       </div>
 </div>
                     <div class="defaultContent">
-                      <h3>Default Analysis</h3>
+                      <h3>{{LoanReplacementExpanded?.defaultAnalysis?.header}}</h3>
                     </div>
 
                     <div class="row">
                       <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
                         <div class="defaultHistory">
                           <h3>
-                            Default History
+                            {{LoanReplacementExpanded?.defaultAnalysis?.defaultHistory?.header}}
                             <img
                               src="./assets/LandingPage/themeInformation.svg"
                               alt=""
@@ -183,13 +182,13 @@
                     </div>
 
                     <div class="defaultContent">
-                      <h3>Other Analysis</h3>
+                      <h3>{{LoanReplacementExpanded?.otherAnalysis?.header}}</h3>
                     </div>
 
                     <div class="row">
                       <div *ngIf="other_analysis" class="col-md-8 col-lg-8 col-sm-12 mb-3">
                         <div class="otherAnalysis">
-                          <h3>By Top Banks</h3>
+                          <h3>{{LoanReplacementExpanded?.otherAnalysis?.topBanks?.header}}</h3>
                           <div class="checkBox">
                             <mat-checkbox [checked]="other_analysis.topBanks">Yes</mat-checkbox>
                             <mat-checkbox [checked]="!other_analysis.topBanks">No</mat-checkbox>
@@ -214,7 +213,7 @@
                       </div>
                       <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
                         <div class="otherAnalysis">
-                          <h3>Ongoing Legal Cases with Banks</h3>
+                          <h3>{{LoanReplacementExpanded?.otherAnalysis?.suitFiledEver?.header}}</h3>
                           <div class="checkBox">
                             <h5>Suit Filed Ever</h5>
                             <button [ngClass]="other_analysis.suitFiledEver ? 'YesColor' : 'NoColor'">{{ other_analysis.suitFiledEver ? 'Yes' : 'No' }}</button>
@@ -242,7 +241,7 @@
                       
                       <div class="col-md-12 col-lg-12 col-sm-12 mb-3">
                         <div class="summaryBox" *ngIf="summary">
-                          <h4>Summary</h4>
+                          <h4>{{LoanReplacementExpanded?.summary?.header}}</h4>
                           <div class="summaryContent">
                             <ul>
                               <li *ngFor = "let bullets of summary?.bullets">
@@ -272,7 +271,7 @@
 
       <div class="col-lg-4 col-md-4 col-sm-12 mb-4 mhidden">
         <div class="scoreBox">
-          <h3>Your Bureau Score</h3>
+          <h3>{{CR_Data?.bureau_score_card?.header}}</h3>
           <div class="scoreChart text-center">
             <svg width="200">
               <path fill="none" stroke="#12BA9B" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
@@ -295,7 +294,7 @@
           <div class="box">
             <img src="./assets/LandingPage/whiteInformation.svg" alt="" />
             <span
-              >Have you thoroughly read your Experian Bureau report yet?</span
+              >{{CR_Data?.bureau_score_card?.description}}</span
             >
           </div>
         </div>
@@ -306,7 +305,7 @@
           <div class="plus" (click)="expand()">
             <span>+</span>
           </div>
-          <h3 class="title">Loan Repayment History</h3>
+          <h3 class="title">{{CR_Data?.loanRepaymentHistory_card?.header}}</h3>
           <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="calendarBox">
@@ -320,7 +319,7 @@
                   {{ loan_repayment_history?.missedPayments.length }} Missing Payments
                 </div>
                 <p>
-                  Timely payments on existing EMIs tells the lender about your repayments discipline and is an important factor deciding your risk.
+                  {{CR_Data?.loanRepaymentHistory_card?.description}}
                 </p>
               </div>
             </div>
@@ -357,7 +356,7 @@
           <div class="plus" (click)="expandCurrentCredit()">
             <span>+</span>
           </div>
-          <h3 class="title">Current Credit/Debt Analysis</h3>
+          <h3 class="title">{{credit_analysis_card?.header}}</h3>
           <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="creditContent">
@@ -375,9 +374,7 @@
                   </ul>
                 </div>
                 <p>
-                  Timely payments on existing EMIs tells the lender about your
-                  repayments discipline and is an important factor deciding your
-                  risk.
+                  {{credit_analysis_card?.description}}
                 </p>
               </div>
             </div>
@@ -497,19 +494,15 @@
         <div class="minus" (click)="minimizeCurrentCredit()">
           <span>-</span>
         </div>
-        <h3 class="title mb-2">Current Credit/Debt Analysis</h3>
+        <h3 class="title mb-2">{{credit_analysis_card_Expanded?.header}}</h3> 
         <p class="text-center mb-3">
-          Your credit mix refers to the variety of credit accounts you have,
-          including both secured loans like home loans or car loans and
-          unsecured loans like credit cards and personal loans. A diverse credit
-          mix can show lenders that you're capable of managing different types
-          of credit responsibly.
+          {{credit_analysis_card_Expanded?.subheader}}
         </p>
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="calendarBox">
               <div class="defaultContent">
-                <h3>Credit Ratio Analysis</h3>
+                <h3>{{credit_analysis_card_Expanded?.credit_ratio_analysis?.header}}</h3>
               </div>
               <div class="row">
                 <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
@@ -517,7 +510,7 @@
                     class="defaultHistory"
                     style="box-shadow: 0px 3px 10px #272d3b24;"
                   >
-                    <h3>Ratio Secured/Unsecured</h3>
+                    <h3>{{credit_analysis_card_Expanded?.credit_ratio_analysis?.ratio_card?.header}}</h3>
                     <div class="currentChart">
                       <app-doughnut
                         [doughtnutJSONData]="ratiosecured"
@@ -549,7 +542,7 @@
                 </div>
                 <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
                   <div class="defaultHistory">
-                    <h3>Business Turnover Analysis</h3>
+                    <h3>{{credit_analysis_card_Expanded?.credit_ratio_analysis?.business_turnover_analysis?.header}}</h3>
                     <ul class="numberBox">
                       <li>
                         Secured
@@ -574,7 +567,7 @@
                 </div>
                 <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
                   <div class="defaultHistory solutions">
-                    <h3>Solutions</h3>
+                    <h3>{{credit_analysis_card_Expanded?.credit_ratio_analysis?.solutions?.header}}</h3>
                     <ul class="historyList">
                       <li *ngFor="let bullet of solutionsAnalysis?.bullets">
                         <span></span>
@@ -587,7 +580,7 @@
               </div>
 
               <div class="defaultContent">
-                <h3>Product Type Analysis</h3>
+                <h3>{{credit_analysis_card_Expanded?.product_type_analysis?.header}}</h3>
               </div>
 
               <div class="row">
@@ -615,7 +608,7 @@
 
                 <div class="col-lg-8 col-md-8 col-sm-12 mb-3">
                   <div class="businessTurnover2 h-100">
-                    <h3>Ratio of Mix</h3>
+                    <h3>{{credit_analysis_card_Expanded?.product_type_analysis?.ratio_credit_mix?.header}}</h3>
 
                     <div class="row mt-5">
                       <div class="col-lg-6">
@@ -654,13 +647,13 @@
               </div>
 
               <div class="defaultContent">
-                <h3>Other Analysis</h3>
+                <h3>{{credit_analysis_card_Expanded?.other_analysis?.header}}</h3>
               </div>
 
               <div class="row">
                 <div class="col-md-6 col-lg-6 col-sm-12 mb-3">
                   <div class="otherAnalysis">
-                    <h3>Credit Card Utilization</h3>
+                    <h3>{{credit_analysis_card_Expanded?.other_analysis?.credit_card_utilization?.header}}</h3>
                     <div class="checkBox">
                       <h5>Credit Card Usage >{{other_analysis?.creditCardUtilization * 100}}%</h5>
                       <button>Yes</button>
@@ -675,7 +668,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-12 mb-3">
                   <div class="otherAnalysis">
-                    <h3>Recurring Micro Loans</h3>
+                    <h3>{{credit_analysis_card_Expanded?.other_analysis?.small_loans?.header}}</h3>
                     <div class="checkBox">
                       <h5>Loans < {{other_analysis?.smallLoans}}L taken in 1 year</h5>
                       <button style="background-color: #ec1111;">No</button>
@@ -690,7 +683,7 @@
                 </div>
                 <div class="col-md-12 col-lg-12 col-sm-12 mb-3">
                   <div class="summaryBox">
-                    <h4>Summary</h4>
+                    <h4>{{credit_analysis_card_Expanded?.summary?.header}}</h4>
                     <div class="summaryContent" *ngIf="credit_debt_analysis_summary?.bullets && credit_debt_analysis_summary?.bullets.length>0">
                       <ul>
                         <li *ngFor="let summary of credit_debt_analysis_summary?.bullets">
@@ -723,7 +716,7 @@
             <div class="col-lg-6 col-sm-12 mt-4">
               <div class="numberBox p-4">
                 <div class="content">
-                  <h3>How Risky You are As a Business</h3>
+                  <h3>{{CR_Data?.business_remarks_card?.header}}</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     Lorem ipsum do.
@@ -738,7 +731,7 @@
             <div class="col-lg-6 col-sm-12 mt-4">
               <div class="numberBox colorChange p-4">
                 <div class="content">
-                  <h3>How Hungry You are For a Loan</h3>
+                  <h3>{{CR_Data?.enquiries_card?.header}}</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     Lorem ipsum do.

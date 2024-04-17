@@ -1,4 +1,4 @@
-<div class="faqsection section_padding" *ngIf="faqsData && faqsData.length > 0">
+<div class="faqsection section_padding" *ngIf="faqs && faqs.length > 0">
     <div class="container">
       <div class="row">
         <div class="col-lg-11 col-md-12 m-auto">
@@ -11,10 +11,10 @@
               <mat-expansion-panel *ngFor = "let data of faqs">
                 <mat-expansion-panel-header>
                   <mat-panel-title>
-                    <h3>{{data.question}}</h3>
+                    <h3>{{data.Question}}</h3>
                   </mat-panel-title>
                 </mat-expansion-panel-header>
-                <p>{{data.answer}} </p>
+                <p>{{data.Answer}} </p>
               </mat-expansion-panel>
               
             </mat-accordion>

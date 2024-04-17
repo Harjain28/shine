@@ -3,12 +3,12 @@
     <div class="row ">
       <div class="col-lg-12">
         <div class="title">
-          <h2><span>Your Banking & Business History</span></h2>
-          <p>What to change so you can grow faster/pay less for debt</p>
+          <h2><span>{{banking_section_data?.header}}</span></h2>
+          <p>{{banking_section_data?.subheader}}</p>
         </div>
         <div class="affordability">
-          <h3>Affordability</h3>
-          <p>Month-on-Month Cashflow</p>
+          <h3>{{affordability_section?.header}}</h3>
+          <p>{{affordability_section?.subheader}}</p>
         </div>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12" style="transition: .5s;" *ngIf="expandBusinessSection">
@@ -17,25 +17,23 @@
             <span>-</span>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-12 m-auto mb-5">
-            <h3>Business Turnover & Credit Count</h3>
-            <p>Lorem Ipsum is simply dummy text of the printin</p>
+            <h3>{{affordability_section?.business_turnover_expanded?.header}}</h3>
+            <p>{{affordability_section?.business_turnover_expanded?.subheader}}</p>
             <div class="chart chart1 chartLine">
               <app-mixed5 [MixedJSONData5]="mixedData5"></app-mixed5>
 
               <!-- <app-mixed3 [MixedJSONData3]="mixedData3"></app-mixed3> -->
             </div>
-            <p>Lorem Ipsum is simply dummy text of the printin Lorem Ipsum is simply dummy text of the printin Lorem
-              Ipsum
-              is simply dummy text of the printin Lorem Ipsum is simply dummy text of the printin.</p>
+            <p>{{affordability_section?.business_turnover_expanded?.description}}</p>
           </div>
           <div class="defaultContent">
-            <h3>Volatility Analysis</h3>
+            <h3>{{affordability_section?.business_turnover_expanded?.volatility_analysis?.header}}</h3>
           </div>
           <div class="row">
             <div class="col-lg-6">
               <div class="valatilityBox backgrundColor" *ngIf = "volatility">
-                <h3 class="mb-1">Volatility Observation</h3>
-                <p class="mt-0 mb-3">static text</p>
+                <h3 class="mb-1">{{affordability_section?.business_turnover_expanded?.volatility_analysis?.observations?.header}}</h3>
+                <p class="mt-0 mb-3">{{affordability_section?.business_turnover_expanded?.volatility_analysis?.observations?.subheader}}</p>
                 <div class="checkBox" *ngIf="volatility?.header">
                   <h5>Volatility</h5>
                   <button>{{volatility?.header}}</button>
@@ -45,7 +43,7 @@
             </div>
             <div class="col-lg-6">
               <div class="valatilityBox">
-                <h3>Lenders Perspective</h3>
+                <h3>{{affordability_section?.business_turnover_expanded?.volatility_analysis?.lenders_perspective?.header}}</h3>
                 <ul>
                   <li *ngFor = "let bullet of volitility_lenders_perspective?.bullets">
                     <span></span>
@@ -57,12 +55,12 @@
           </div>
 
           <div class="defaultContent">
-            <h3>Quarterly Dip</h3>
+            <h3>{{affordability_section?.business_turnover_expanded?.quarterly_dip?.header}}</h3>
           </div>
           <div class="row">
             <div class="col-lg-6">
               <div class="valatilityBox">
-                <h3>Dip Recently</h3>
+                <h3>{{affordability_section?.business_turnover_expanded?.quarterly_dip?.recent_dip?.header}}</h3>
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="qtrBox">
@@ -96,7 +94,7 @@
             </div>
             <div class="col-lg-6">
               <div class="valatilityBox">
-                <h3>Lenders Perspective</h3>
+                <h3>{{affordability_section?.business_turnover_expanded?.quarterly_dip?.lenders_perspective?.header}}</h3>
                 <ul>
                   <li *ngFor="let bullet of turnover_lenders_perspective?.bullets">
                     <span></span>
@@ -108,7 +106,7 @@
           </div>
 
           <div class="defaultContent">
-            <h3>Credit Count</h3>
+            <h3>{{affordability_section?.business_turnover_expanded?.credit_count?.header}}</h3>
           </div>
           <div class="row">
             <div class="col-lg-6">
@@ -121,7 +119,7 @@
             </div>
             <div class="col-lg-6">
               <div class="valatilityBox backgrundColor">
-                <h3>Count Observation</h3>
+                <h3>{{affordability_section?.business_turnover_expanded?.credit_count?.observations?.header}}</h3>
                 <div class="checkBox">
                   <h5>Revenue Mix:</h5>
                   <button style="background-color: #FF7B24;">{{count_volatility?.header}}</button>
@@ -132,7 +130,7 @@
 
             <div class="col-md-12 col-lg-12 col-sm-12 mb-3">
               <div class="summaryBox">
-                <h4>Summary</h4>
+                <h4>{{affordability_section?.business_turnover_expanded?.summary?.header}}</h4>
                 <div class="summaryContent">
                   <ul>
                     <li *ngFor = "let bullet of bankingHistory_summary?.bullets">
@@ -155,8 +153,8 @@
               <span>+</span>
             </div>
             <div class="col-lg-8 col-mg-10 col-sm-12 m-auto">
-              <h3>Banking Balance</h3>
-              <p>Lorem Ipsum is simply dummy text of the printin</p>
+              <h3>{{affordability_section?.bank_balance_card?.header}}</h3>
+              <p>{{affordability_section?.bank_balance_card?.subheader}}</p>
 
               <div class="row mt-4">
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
@@ -189,22 +187,20 @@
             <span>-</span>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-12 m-auto mb-5">
-            <h3>Banking Balance</h3>
-            <p>Lorem Ipsum is simply dummy <br> text of the printin</p>
+            <h3>{{affordability_section?.bank_balance_expanded?.header}}</h3>
+            <p>{{affordability_section?.bank_balance_expanded?.subheader}}</p>
             <div class="chart chart1 chartLine">
               <app-mixed3 [MixedJSONData3]="mixedData3"></app-mixed3>
             </div>
-            <p>Lorem Ipsum is simply dummy text of the printin Lorem Ipsum is simply dummy text of the printin Lorem
-              Ipsum
-              is simply dummy text of the printin Lorem Ipsum is simply dummy text of the printin.</p>
+            <p>{{affordability_section?.bank_balance_expanded?.description}}</p>
           </div>
           <div class="defaultContent">
-            <h3>Volatility Analysis</h3>
+            <h3>{{affordability_section?.bank_balance_expanded?.volatility_analysis?.header}}</h3>
           </div>
           <div class="row">
             <div class="col-lg-6">
               <div class="valatilityBox backgrundColor">
-                <h3>Volatility Observation</h3>
+                <h3>{{affordability_section?.bank_balance_expanded?.volatility_analysis?.observations?.header}}</h3>
                 <div class="checkBox">
                   <button>{{bank_balance_observation?.header}}</button>
                 </div>
@@ -213,7 +209,7 @@
             </div>
             <div class="col-lg-6">
               <div class="valatilityBox">
-                <h3>Lenders Perspective</h3>
+                <h3>{{affordability_section?.bank_balance_expanded?.volatility_analysis?.lenders_perspective?.header}}</h3>
                 <ul>
                   <li *ngFor="let bullet of bank_balance_lenders_perspective?.bullets">
                     <span></span>
@@ -226,12 +222,12 @@
           </div>
 
           <div class="defaultContent">
-            <h3>Minimum Balance</h3>
+            <h3>{{affordability_section?.bank_balance_expanded?.minimum_balance?.header}}</h3>
           </div>
           <div class="row">
             <div class="col-lg-6">
               <div class="valatilityBox">
-                <h3>Not Maintained in</h3>
+                <h3>{{affordability_section?.bank_balance_expanded?.minimum_balance?.recent_dip?.header}}</h3>
                 <div class="row">
                   <div class="col-lg-7">
                     <div class="qtrBox scrollMonth">
@@ -257,7 +253,7 @@
             </div>
             <div class="col-lg-6">
               <div class="valatilityBox">
-                <h3>Lenders Perspective</h3>
+                <h3>{{affordability_section?.bank_balance_expanded?.minimum_balance?.lenders_perspective?.header}}</h3>
                 <ul>
                   <li *ngFor="let bullet of minimum_balance_lenders_perspective?.bullets">
                     <span></span>
@@ -270,7 +266,7 @@
           <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12 mb-3">
               <div class="summaryBox">
-                <h4>Summary</h4>
+                <h4>{{affordability_section?.bank_balance_expanded?.summary?.header}}</h4>
                 <div class="summaryContent">
                   <ul>
                     <li *ngFor="let summay of abb_summary?.bullets">
@@ -292,8 +288,8 @@
             <div class="plus" (click)="expandBusinessSectionBlock()">
               <span>+</span>
             </div>
-            <h3>Business Turnover & Credit Count</h3>
-            <p>Lorem Ipsum is simply dummy text of the printin</p>
+            <h3>{{affordability_section?.business_turnover_card?.header}}</h3>
+            <p>{{affordability_section?.business_turnover_card?.subheader}}</p>
 
             <div class="row">
               <div class="col-lg-8 col-md-8 col-sm-12 mt-3">
@@ -327,8 +323,8 @@
           <div class="plus" (click)="expandBankingBusniess()">
             <span>+</span>
           </div>
-          <h3>Business Turnover & Credit Count</h3>
-          <p>Lorem Ipsum is simply dummy text of the printin</p>
+          <h3>{{affordability_section?.business_turnover_card?.header}}</h3>
+            <p>{{affordability_section?.business_turnover_card?.subheader}}</p>
 
           <div class="chart chartLine">
             <app-mixed2 [MixedJSONData2]="mixedData2"></app-mixed2>
@@ -354,8 +350,8 @@
           <div class="plus" (click)="expandBankingBalance()">
             <span>+</span>
           </div>
-          <h3>Banking Balance</h3>
-          <p>Lorem Ipsum is simply dummy text of the printin</p>
+          <h3>{{affordability_section?.bank_balance_card?.header}}</h3>
+          <p>{{affordability_section?.bank_balance_card?.subheader}}</p>
 
           <div class="chart chart1 chartLine">
             <app-mixed [MixedJSONData]="mixedData"></app-mixed>
@@ -382,8 +378,8 @@
     <div class="row mt-5">
       <div class="col-lg-12">
         <div class="affordability">
-          <h3>Risks</h3>
-          <p>Loremipsum text dummy</p>
+          <h3>{{risk_section?.header}}</h3>
+          <p>{{risk_section?.subheader}}</p>
         </div>
       </div>
 
@@ -392,9 +388,8 @@
           <div class="minus" (click)="mnimizeDebtRatioBlock()">
             <span>-</span>
           </div>
-          <h3>Debt-to-Turnover Ratio</h3>
-          <p>DTI compares your total monthly debt payments to their gross monthly income. It is used by lenders to
-            assess your ability to manage your debt repayment in relation to your income.</p>
+          <h3>{{risk_section?.debt_turnover_expanded?.header}}</h3>
+          <p>{{risk_section?.debt_turnover_expanded?.subheader}}</p>
 
           <div class="row">
             <div class="col-lg-6 m-auto">
@@ -419,13 +414,13 @@
           </div>
 
           <div class="defaultContent">
-            <h3>Secured & Unsecured Debt to Turnover</h3>
+            <h3>{{risk_section?.debt_turnover_expanded?.secured_unsecured_turnover?.header}}</h3>
           </div>
 
           <div class="row">
             <div class="col-lg-6">
               <div class="valatilityBox backgrundColor">
-                <h3>Debt Ratio</h3>
+                <h3>{{risk_section?.debt_turnover_expanded?.secured_unsecured_turnover?.debt_ratio?.header}}</h3>
 
                 <ul class="d-blockList">
                   <li style="border-bottom: 1px solid #E2E2E2;">
@@ -447,7 +442,7 @@
             </div>
             <div class="col-lg-6">
               <div class="valatilityBox">
-                <h3>Lenders Perspective</h3>
+                <h3>{{risk_section?.debt_turnover_expanded?.secured_unsecured_turnover?.lenders_perspective?.header}}</h3>
                 <ul>
                   <li *ngFor="let bullet of debt_to_revenue_ratio_lenders_perspective?.bullets">
                     <span></span>
@@ -460,7 +455,7 @@
 
             <div class="col-md-12 col-lg-12 col-sm-12 mt-3">
               <div class="summaryBox">
-                <h4>Summary</h4>
+                <h4>{{risk_section?.debt_turnover_expanded?.summary?.header}}</h4>
                 <div class="summaryContent">
                   <ul>
                     <li *ngFor="let summary of debt_to_revenue_summary?.bullets">
@@ -482,8 +477,8 @@
 
         <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
           <div class="businessTurnover h-100">
-            <h3>Cheque Bounces</h3>
-            <p>Lorem Ipsum is simply dummy text of the printin</p>
+            <h3>{{risk_section?.cheque_bounces_card?.header}}</h3>
+            <p>{{risk_section?.cheque_bounces_card?.subheader}}</p>
 
             <div class="row">
               <div class="col-lg-10 m-auto">
@@ -516,9 +511,8 @@
           <div class="plus" (click)="expandDebtRatioBlock()">
             <span>+</span>
           </div>
-          <h3>Debt-to-Turnover Ratio</h3>
-          <p>DTI compares your total monthly debt payments to their gross monthly income. It is used by lenders to
-            assess your ability to manage your debt repayment in relation to your income.</p>
+          <h3>{{risk_section?.debt_turnover_card?.header}}</h3>
+          <p>{{risk_section?.debt_turnover_card?.subheader}}</p>
 
           <div class="row">
             <div class="col-lg-6">
@@ -560,8 +554,8 @@
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12 mhidden" *ngIf="!expandDebtRatioSection">
         <div class="businessTurnover h-100">
-          <h3>Cheque Bounces</h3>
-          <p>Lorem Ipsum is simply dummy text of the printin</p>
+          <h3>{{risk_section?.cheque_bounces_card?.header}}</h3>
+            <p>{{risk_section?.cheque_bounces_card?.subheader}}</p>
 
           <div class="row">
             <div class="col-lg-12">
@@ -597,9 +591,8 @@
                   <div class="plus" (click)="expandDebtRatioBlock()">
                     <span>+</span>
                   </div>
-                  <h3>Debt-to-Turnover Ratio</h3>
-                  <p>DTI compares your total monthly debt payments to their gross monthly income. It is used by lenders to
-                    assess your ability to manage your debt repayment in relation to your income.</p>
+                  <h3>{{risk_section?.debt_turnover_card?.header}}</h3>
+          <p>{{risk_section?.debt_turnover_card?.subheader}}</p>
         
                   <div class="row">
                     <div class="col-lg-6">
@@ -644,8 +637,8 @@
             <ng-template carouselSlide>
               <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="!expandDebtRatioSection">
                 <div class="businessTurnover h-100" style="margin: 10px; min-height: 780px;">
-                  <h3>Cheque Bounces</h3>
-                  <p>Lorem Ipsum is simply dummy text of the printin</p>
+                  <h3>{{risk_section?.cheque_bounces_card?.header}}</h3>
+            <p>{{risk_section?.cheque_bounces_card?.subheader}}</p>
         
                   <div class="row">
                     <div class="col-lg-12">
@@ -685,14 +678,14 @@
     <div class="row mt-5">
       <div class="col-lg-12">
         <div class="affordability">
-          <h3>Cashflow Management</h3>
-          <p>Loremipsum text dummy</p>
+          <h3>{{cashflow_section?.header}}</h3>
+          <p>{{cashflow_section?.subheader}}</p>
         </div>
       </div>
       <div class="col-lg-8 col-md-8 col-sm-12 mhidden">
         <div class="businessTurnover h-100">
-          <h3>Cashflow Stability</h3>
-          <p>Lorem Ipsum is simply dummy text of the printin</p>
+          <h3>{{cashflow_section?.cashflow_stability_card?.header}}</h3>
+          <p>{{cashflow_section?.cashflow_stability_card?.subheader}}</p>
 
           <div class="row">
             <div class="col-lg-6">
@@ -729,8 +722,8 @@
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12 mhidden">
         <div class="businessTurnover h-100">
-          <h3>Monthly Running Expenses</h3>
-          <p>Lorem Ipsum is simply dummy text of the printin</p>
+          <h3>{{cashflow_section?.monthly_expenses_card?.header}}</h3>
+          <p>{{cashflow_section?.monthly_expenses_card?.subheader}}</p>
 
           <div class="row">
             <div class="col-lg-12">
