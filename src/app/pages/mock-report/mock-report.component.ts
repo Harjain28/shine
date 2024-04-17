@@ -64,7 +64,7 @@ export class MockReportComponent {
    autoplayTimeout:8000,
    autoplaySpeed: 1500,
    // navText: ["", ""],
-   navText: ["<img class='navTxtImg' src='./assets/images/homeIcon/left-arrow.svg'>", "<img class='navTxtImg' src='./assets/images/homeIcon/right-arrow.svg'>"],
+   navText: ["<img class='navTxtImg' src='./assets/images/homeImage/left-arrow.svg'>", "<img class='navTxtImg' src='./assets/images/homeImage/right-arrow.svg'>"],
    responsive: {
      0: {
        items: 1,

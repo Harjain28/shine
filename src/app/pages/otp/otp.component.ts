@@ -130,7 +130,6 @@ export class OtpComponent implements OnInit{
             // const stateData = Buffer.from(res.token).toString("base64");
             localStorage.setItem("token",res?.token);
             this.router.navigate(['/in/confirm_order']);
-            console.log("Otp Verfied")
 
           } else {
             this.api.alert("Please add valid information", "error");
@@ -156,7 +155,6 @@ export class OtpComponent implements OnInit{
   onInputChange(event: Event) {
     // Handle slider value changes here
     // For example, you can log the new value to the console
-    console.log(this.sliderValue);
   }
   goToPricing(){
     // this.router.navigate(['/pages/plans']);

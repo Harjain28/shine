@@ -187,7 +187,6 @@ export class LandingPageComponent {
   ngOnInit(): void {
 
     this.state.removeItem();
-     console.log(shineLendingPageJSON.Shine_Banner,"ll")
  //   this.localStorage.removeSomeItem();
     this.breakpointObserver
     .observe(['(min-width: 500px)'])

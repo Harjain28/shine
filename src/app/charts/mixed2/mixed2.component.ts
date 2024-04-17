@@ -19,7 +19,6 @@ export class Mixed2Component {
   mixedValue2: any;
   turnoverLineData: any;
   ngOnInit(): void {
-    console.log(this.MixedJSONData2, 'MixedJSONData2');
   }
 
   ngAfterViewInit(): void {
@@ -35,7 +34,6 @@ export class Mixed2Component {
     
     this.turnoverLineData = this.MixedJSONData2?.turnoverLineData;
 
-    console.log(this.mixedValue1, 'mixed');
     const dataValues = [...this.mixedValue1];
 
   

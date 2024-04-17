@@ -44,7 +44,6 @@ export class Mixed3Component {
     
 
     const dataValues = [...this.mixedValue1]; 
-    console.log(this.mixedValue1,"ggg")
 
 
     this.businessLinedata = this.MixedJSONData3?.businessLinedata;

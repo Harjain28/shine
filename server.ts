@@ -7,6 +7,8 @@ import { existsSync } from 'fs';
 import { join } from 'path';
 
 import { AppServerModule } from './src/main.server';
+import 'localstorage-polyfill';
+
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -14,9 +16,29 @@ export function app(): express.Express {
   const distFolder = join(process.cwd(), 'dist/shine/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
 
+  const domino = require('domino');
+  const win = domino.createWindow(indexHtml);
+global['window'] = win;
+global['Node'] = win.Node;
+global['navigator'] = win.navigator;
+global['Event'] = win.Event;
+global['KeyboardEvent'] = win.Event;
+global['MouseEvent'] = win.Event;
+global['Event']['prototype'] = win.Event.prototype;
+global['document'] = win.document;
+const compression = require('compression')
+
+server.use(compression())
+// global['document'] = mock.getDocument();
+// global['window'] = mock.getWindow();
+
+//localstorage is not defined for ssr 
+   global['localStorage'] = localStorage;
+
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
   server.engine('html', ngExpressEngine({
     bootstrap: AppServerModule,
+    inlineCriticalCss: false,
   }));
 
   server.set('view engine', 'html');

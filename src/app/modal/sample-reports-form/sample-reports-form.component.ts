@@ -139,7 +139,6 @@ export class SampleReportsFormComponent {
     //       if (res.success == true) {
     //       //  const stateData = Buffer.from(res.token).toString("base64");
     //         this.router.navigate(['/in/confirm_order']);
-    //         console.log("Otp Verfied")
 
     //       } else {
     //         this.api.alert("Please add valid information", "error");
@@ -166,7 +165,6 @@ export class SampleReportsFormComponent {
 
   onInputChange(event: Event) {
    
-    console.log(this.sliderValue);
   }
 
   

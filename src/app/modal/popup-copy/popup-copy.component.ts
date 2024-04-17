@@ -31,7 +31,6 @@ export class PopupCopyComponent {
     this.businessLoanJson = shineLendingPageJSON;
     this.ShineFeaturesSection = this.businessLoanJson?.Shine_Features_Section;
     this.filteredValues = shineLendingPageJSON.Shine_Features_Section?.Product_Tiles.find(item => item.Product_copy === this.popupData);
-    // console.log(filteredValues?.Pop_up_copy, 'filteredValues')
   }
 
 

@@ -21,7 +21,6 @@ export class Mixed5Component {
  
 
   ngOnInit(): void {
-    console.log(this.MixedJSONData5, 'MixedJSONData5');
   }
 
   ngAfterViewInit(): void {

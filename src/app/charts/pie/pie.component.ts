@@ -36,7 +36,6 @@ export class PieComponent {
 
     const pieDataValues = [...this.pieValues]; 
     const pieColors = ['#6A2FC2', '#12BA9B', '#C3E128']; 
-     console.log(this.pieValues, "pieValues");
     const pieChartData: ChartData = {
       // labels: pieLabels,
       datasets: [{

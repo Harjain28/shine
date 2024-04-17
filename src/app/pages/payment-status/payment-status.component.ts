@@ -56,7 +56,6 @@ export class PaymentStatusComponent {
       .remediation(`api/Remediation/PaymentConfirmation`, this.defaultparams)
       .subscribe({
         next: (res: any) => {
-          console.log(res, "res");
           if (res?.trans_status === 'F') {
             this.isDialogShow = true;
              this.api.alert(res?.resp_message, "error");

@@ -70,7 +70,6 @@ export class Pricing1Component {
 
     this.state.removeItem();
     this.getPricingData();
-    console.log(this.pricingHeader.col,"gg")
   }
 
   viewReportsForm(){
