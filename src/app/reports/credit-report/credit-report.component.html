@@ -335,7 +335,7 @@
                     {{infoCardLRP?.description}}
                   </p>
                   <p>
-                    <span style="color: #ec1111;" *ngIf="infoCardLRP?.class === 'negative' ">
+                    <!-- <span style="color: #ec1111;" *ngIf="infoCardLRP?.class === 'negative' ">
                       <mat-icon>warning</mat-icon>
                      {{infoCardLRP?.warning}}
                     </span>
@@ -345,7 +345,12 @@
                     </span>
                     <ng-container *ngIf="infoCardLRP?.class !== 'negative'">
                     <span style="color: var(--main2);" >   {{infoCardLRP?.warning}}<img src="./assets/LandingPage/goodWork.svg" alt=""></span>
-                  </ng-container>
+                  </ng-container> -->
+
+                  <span style="color: #ec1111;">
+                    <mat-icon>warning</mat-icon>
+                   Needs Attention
+                  </span>
                   </p>
                 </div>
               </div>

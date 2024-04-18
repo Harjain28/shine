@@ -240,7 +240,8 @@ export const reportStatciData = {
             },
             "monthly_expenses_card" : {
                 "header": "Monthly Running Expenses",
-                "subheader": "Overall recurring operating costs of a business"
+                "subheader": "Overall recurring operating costs of a business",
+                "description": "As a rule of thumb, try to not spend more than 25% of your revenue on EMI payments."
             }
         }
     },
