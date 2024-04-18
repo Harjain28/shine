@@ -1,0 +1,297 @@
+<div class="forContactUsComponent" *ngIf="!urlService.isGlobal">
+
+    <!--  ProfitableLendingSection section  -->
+    <div class="AboutUsSection">
+        <div class="container-fluid p-0 mb-4">
+            <div class="homeSlider">
+                <div class="silderSlide">
+                    <img class="image mhidden" [lazyLoad]="ContactUspage_banner?.Background_Map?.Desktop" [alt]="ContactUspage_banner?.Background_Map?.imageText">
+                    <img class="image dhidden" [lazyLoad]="ContactUspage_banner?.Background_Map?.Mobile" [alt]="ContactUspage_banner?.Background_Map?.imageText"/>
+                    <div class="silderText">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <h1>{{ContactUspage_banner?.Header?.Bold_French_Violet_Text}} </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contactUsBox">
+        <div class="container mobilePd">
+            <div class="getTeachBox">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
+                        <div class="leftBox">
+                            <div class="title">
+                                <h2>{{Get_In_Touch_Section?.Header}}</h2>
+                                <p *ngFor = "let body of Get_In_Touch_Section?.Body">{{body}}</p>
+                            </div>
+
+                            <div class="needHelp">
+                                <h5>{{Get_In_Touch_Section?.Headline}} </h5>
+                                <p>{{Get_In_Touch_Section?.Subheadline}}</p>
+                                <ul>
+                                    <li class="call" *ngFor = "let numbers of Get_In_Touch_Section?.Call">
+                                        <img [lazyLoad]="numbers?.Icon" alt="">
+                                       <a href="tel:{{numbers?.Number}}"> {{numbers?.Number}}</a>
+                                    </li>
+                                    <li class="message">
+                                        <img [lazyLoad]="Get_In_Touch_Section?.Email?.Icon" alt="">
+                                       <a href="mailto:{{Get_In_Touch_Section?.Email?.Id}}"> {{Get_In_Touch_Section?.Email?.Id}}</a>
+                                    </li>
+                                    <li class="cin">
+                                        {{Get_In_Touch_Section?.GSTNumber}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                        <div class="rightBox">
+                            <div class="title">
+                                <div class="box mt-3" *ngFor = "let address of Get_In_Touch_Section?.Office_address">
+                                    <a [href]="address?.Hyperlink" target="_blank" class="box">
+                                    <h3>
+                                        <img [lazyLoad]="address?.Icon" alt="">
+                                       {{address?.Office}}</h3>
+                                    <p>{{address?.Address}}</p>
+                                    </a>
+                                </div>
+                                
+                                <div class="boxTwo">
+                                    <h5>{{Get_In_Touch_Section?.Partnership_Headline}}</h5>
+                                    <p style="color: white;">{{Get_In_Touch_Section?.Partnership_Subheadline}}</p>
+                                    <ul>
+                                        <li class="call" *ngFor = "let Grievances_Call of Get_In_Touch_Section?.Partnership_Call">
+                                            <img [lazyLoad] ="Get_In_Touch_Section?.Icon" alt="">
+                                           <a href="tel:{{Get_In_Touch_Section?.Number}}"> {{Get_In_Touch_Section?.Number}}</a>
+                                        </li>
+                                        <li class="message">
+                                             <img [lazyLoad] ="Get_In_Touch_Section?.Partnership_Email?.Icon" alt="">
+                                            <a href="mailto:{{Get_In_Touch_Section?.Partnership_Email?.Id}}"> {{Get_In_Touch_Section?.Partnership_Email?.Id}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="boxTwo">
+                                    <h5>{{Get_In_Touch_Section?.Grievances_Headline}}</h5>
+                                    <p style="color: white;">{{Get_In_Touch_Section?.Partnership_Subheadline}}</p>
+                                    <ul>
+                                        <li class="call" *ngFor = "let Grievances_Call of Get_In_Touch_Section?.Grievances_Call">
+                                             <img [lazyLoad] ="Get_In_Touch_Section?.Icon" alt="">
+                                            <a href="tel:{{Get_In_Touch_Section?.Number}}"> {{Get_In_Touch_Section?.Number}}</a>
+                                        </li>
+                                        <li class="message">
+                                             <img [lazyLoad] ="Get_In_Touch_Section?.Grievances_Email?.Icon" alt="">
+                                            <a href="mailto:{{Get_In_Touch_Section?.Grievances_Email?.Id}}"> {{Get_In_Touch_Section?.Grievances_Email?.Id}}</a>
+                                        </li>
+                                        <li>
+                                            {{Get_In_Touch_Section?.Officer_Name}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- worldClasses Section -->
+    <div class="worldClasses">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 m-auto">
+                    <div class="classesHeading">
+                        <h2>{{World_Class_Section?.Header}}</h2>
+
+                        <ul class="rating-list">
+                            <li class="selected" *ngFor="let star of stars" (click)="countStar(star)">
+                                <img lazyLoad="./assets/images/homeImage/starIcon.svg" alt="">
+                            </li>
+                        </ul>
+
+                        <div class="logoBox mhidden">
+                            <ul class="listNone">
+                                <li class="underLine" *ngFor = "let PartnersLogos of World_Class_Section?.Partners_Logos">
+                                    <img [lazyLoad]="PartnersLogos" alt="">
+                                </li>
+                            </ul>
+                        </div>
+
+                        <owl-carousel-o [options]="customOptions4" class="dhidden">
+                            <ng-container  *ngFor = "let PartnersLogos of World_Class_Section?.Partners_Logos">
+                                <ng-template carouselSlide *ngFor = "let logo of World_Class_Section?.Partners_Logos">
+                                    <div class="logoBox">
+                                        <ul class="listNone">
+                                            <li class="underLine" >
+                                                <img [lazyLoad]="logo" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ng-template>
+                            </ng-container>
+                        </owl-carousel-o>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="forContactUsComponent" *ngIf="urlService.isGlobal">
+
+    <!--  ProfitableLendingSection section  -->
+    <div class="AboutUsSection">
+        <div class="container-fluid p-0 mb-4">
+            <div class="homeSlider">
+                <div class="silderSlide">
+                    <img class="image mhidden" [lazyLoad]="ContactUspage_banner?.Background_GlobalMap?.Desktop" [alt]="ContactUspage_banner?.Background_GlobalMap?.imageText">
+                    <img class="image dhidden" [lazyLoad]="ContactUspage_banner?.Background_GlobalMap?.Mobile" [alt]="ContactUspage_banner?.Background_GlobalMap?.imageText"/>
+                    <div class="silderText">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <h1>{{ContactUspage_banner?.Header?.Bold_French_Violet_Text}} </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contactUsBox">
+        <div class="container mobilePd">
+            <div class="getTeachBox">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
+                        <div class="leftBox">
+                            <div class="title">
+                                <h2>{{Get_In_Touch_Section?.Header}}</h2>
+                                <p *ngFor = "let body of Get_In_Touch_Section?.Body">{{body}}</p>
+                            </div>
+
+                            <div class="needHelp">
+                                <h5>{{Get_In_Touch_Section?.Headline}} </h5>
+                                <p>{{Get_In_Touch_Section?.Subheadline}}</p>
+                                <ul>
+                                    <li class="call">
+                                        <img [lazyLoad]="Get_In_Touch_Section?.Call[1]?.Icon" alt="">
+                                       <a href="tel:{{Get_In_Touch_Section?.Call[1]?.Number}}"> {{Get_In_Touch_Section?.Call[1]?.Number}}</a>
+                                    </li>
+                                    <li class="message">
+                                        <img [lazyLoad]="Get_In_Touch_Section?.Email?.Icon" alt="">
+                                       <a href="mailto:{{Get_In_Touch_Section?.Email?.Id}}"> {{Get_In_Touch_Section?.Email?.Id}}</a>
+                                    </li>
+                                    <li class="cin">
+                                        {{Get_In_Touch_Section?.GSTNumber}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                        <div class="rightBox">
+                            <div class="title">
+                                <div class="box mt-3" *ngFor = "let address of Get_In_Touch_Section?.Office_address">
+                                    <a [href]="address?.Hyperlink" target="_blank" class="box">
+                                    <h3>
+                                        <img [lazyLoad]="Get_In_Touch_Section?.Office_address[1]?.Icon" alt="">
+                                       {{Get_In_Touch_Section?.Office_address[1]?.Office}}</h3>
+                                    <p>{{Get_In_Touch_Section?.Office_address[1]?.Address}}</p>
+                                    </a>
+                                </div>
+                                
+                                <div class="boxTwo">
+                                    <h5>{{Get_In_Touch_Section?.Partnership_Headline}}</h5>
+                                    <p style="color: white;">{{Get_In_Touch_Section?.Partnership_Subheadline}}</p>
+                                    <ul>
+                                        <li class="call" *ngFor = "let Grievances_Call of Get_In_Touch_Section?.Partnership_Call">
+                                            <img [lazyLoad] ="Get_In_Touch_Section?.Icon" alt="">
+                                           <a href="tel:{{Get_In_Touch_Section?.Number}}"> {{Get_In_Touch_Section?.Number}}</a>
+                                        </li>
+                                        <li class="message">
+                                             <img [lazyLoad] ="Get_In_Touch_Section?.Partnership_Email?.Icon" alt="">
+                                            <a href="mailto:{{Get_In_Touch_Section?.Partnership_Email?.Id}}"> {{Get_In_Touch_Section?.Partnership_Email?.Id}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="boxTwo">
+                                    <h5>{{Get_In_Touch_Section?.Grievances_Headline}}</h5>
+                                    <p style="color: white;">{{Get_In_Touch_Section?.Partnership_Subheadline}}</p>
+                                    <ul>
+                                        <li class="call" *ngFor = "let Grievances_Call of Get_In_Touch_Section?.Grievances_Call">
+                                             <img [lazyLoad] ="Get_In_Touch_Section?.Icon" alt="">
+                                            <a href="tel:{{Get_In_Touch_Section?.Number}}"> {{Get_In_Touch_Section?.Number}}</a>
+                                        </li>
+                                        <li class="message">
+                                             <img [lazyLoad] ="Get_In_Touch_Section?.Grievances_Email?.Icon" alt="">
+                                            <a href="mailto:{{Get_In_Touch_Section?.Grievances_Email?.Id}}"> {{Get_In_Touch_Section?.Grievances_Email?.Id}}</a>
+                                        </li>
+                                        <li>
+                                            {{Get_In_Touch_Section?.Officer_Name}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- worldClasses Section -->
+    <div class="worldClasses">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 m-auto">
+                    <div class="classesHeading">
+                        <h2>{{World_Class_Section?.Header}}</h2>
+
+                        <ul class="rating-list">
+                            <li class="selected" *ngFor="let star of stars" (click)="countStar(star)">
+                                <img lazyLoad="./assets/images/homeImage/starIcon.svg" alt="">
+                            </li>
+                        </ul>
+
+                        <div class="logoBox mhidden">
+                            <ul class="listNone">
+                                <li class="underLine" *ngFor = "let PartnersLogos of World_Class_Section?.Partners_Logos">
+                                    <img [lazyLoad]="PartnersLogos" alt="">
+                                </li>
+                            </ul>
+                        </div>
+
+                        <owl-carousel-o [options]="customOptions4" class="dhidden">
+                            <ng-container  *ngFor = "let PartnersLogos of World_Class_Section?.Partners_Logos">
+                                <ng-template carouselSlide *ngFor = "let logo of World_Class_Section?.Partners_Logos">
+                                    <div class="logoBox">
+                                        <ul class="listNone">
+                                            <li class="underLine" >
+                                                <img [lazyLoad]="logo" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ng-template>
+                            </ng-container>
+                        </owl-carousel-o>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -38,5 +38,8 @@ export default[
     },
     {
         path: 'report_model1', loadComponent:() => import('./mock-report/mock-report.component').then(c=>c.MockReportComponent)
+    },
+    {
+        path: 'contact_us', loadComponent:() => import('./contactus/contactus.component').then(c=>c.ContactusComponent)
     }
 ] as Route[]

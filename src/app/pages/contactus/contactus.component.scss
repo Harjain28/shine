@@ -1,0 +1,502 @@
+.forContactUsComponent{
+
+    .AboutUsSection {
+        position: relative;
+
+        .homeSlider {
+    
+            .silderSlide{
+                position: relative;
+                height: 604px;
+                overflow: hidden;
+            
+                .image{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+    
+                .silderText{
+                    position: absolute;
+                    top: 50%;
+                    left: 0px;
+                    transform: translate(0%, -50%);
+                    z-index: 9;
+                    display: block;
+                    width: 100%;
+    
+                    h1{
+                        color: var(--main1);
+                        font-size: 38px;
+                        font-weight: 800;
+                        line-height: 44px;
+                        margin-bottom: 12px;
+    
+                        span{
+                            color: var(--main2);
+                        }
+                    }
+                    p{
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 26px;
+                        margin-bottom: 2px;
+                        color: #3F3F3F;
+                        padding-right: 40px;
+                    }
+                }
+            }
+    
+            ::ng-deep{
+    
+                .owl-dots {
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    bottom: 16%;
+                    width: 100%;
+                    display: flex;
+                    padding: 0px 8px;
+                    gap: 8px;
+
+                    .owl-dot{
+
+                        span{
+                            margin: 0px !important;
+                            background-color: #FFFFFF;
+                            box-shadow: 0px 0px 4px #00000033;
+                        }
+                    }
+                }
+                .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+                    background-color: var(--main2);
+                }
+            }
+
+            .boxSizeRight{
+                   position: absolute;
+                    left: 0px;
+                    top: 50%;
+                    transform: translate(0%, -50%);
+                    width: 100%;
+                    z-index: 9;
+            }
+        }
+    }
+
+    .contactUsBox{
+
+        .getTeachBox{
+            margin-top: -220px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid #EFEFEF;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+          
+            .leftBox{
+                padding: 35px 52px;
+
+                .title{
+                    padding-bottom: 32px;
+                    border-bottom: 1px solid #EEEEEE;
+
+                    h2{
+                        color: #3F3F3F;
+                        font-size: 28px;
+                        font-weight: 800;
+                        line-height: 28px;
+                        margin-bottom: 11px;
+                        font-family: 'Be Vietnam Pro' !important;
+                    }
+
+                    P{
+                        color: #666666;
+                        font-size: 14px;
+                        line-height: 22px;
+                        font-family: 'Poppins', sans-serif !important;
+                        margin-bottom: 20px;
+                    }
+                }
+
+                .needHelp{
+                    padding-top: 43px;
+
+                    h5{
+                        font-size: 18px;
+                        font-weight: 500;
+                        line-height : 20px;
+                        font-family: 'Poppins', sans-serif !important;
+                        margin-bottom: 2px;
+                        color: #3F3F3F;
+                    }
+
+                    p{
+                        color: #3F3F3F;
+                        font-size: 16px;
+                        line-height: 20px;
+                        font-family: 'Poppins', sans-serif !important;
+                        margin-bottom: 16px;
+                    }
+
+                    ul{
+                        list-style: none;
+                        padding-left: 0px;
+                        margin-bottom: 0px;
+
+                        li{
+                            padding: 6px 0px;
+                            font-family: 'Poppins', sans-serif !important;
+                        }
+
+                        .call{
+                            color: #3F3F3F;
+                            font-size: 14px;
+                            line-height: 20px;
+                            font-weight: 500;
+                            position: relative;
+                            padding-left: 28px;
+
+
+                            img{
+                                width: 12px;
+                                position: absolute;
+                                left: 0px;
+                                top: 6px;
+                            }
+
+                            a{
+                                color: #3F3F3F;
+                                text-decoration: none;
+                            }
+                        }
+
+                        .message{
+                            color: #6A2FC2;
+                            font-size: 14px;
+                            line-height: 20px;
+                            font-weight: 400;
+                            position: relative;
+                            padding-left: 28px;
+
+                            img{
+                                width: 17px;
+                                position: absolute;
+                                left: 0px;
+                                top: 10px;
+                            }
+
+                            a{
+                                color: #3F3F3F;
+                                text-decoration: none;
+                            }
+                        }
+
+                        .cin{
+                            color: #666666;
+                            font-size: 14px;
+                            line-height: 22px;
+                            font-weight: 400;
+
+                            span{
+                                font-weight: 500;
+                                color: #666666;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .rightBox{
+                background-color: var(--main1);
+                padding: 52px 42px 28px 42px;
+
+               
+
+                .title{
+
+                    .boxTwo:last-child{
+                        border-bottom: none;
+                        padding-bottom: 0px;
+                    }
+
+                    .box{
+                        padding-bottom: 26px;
+                        border-bottom: 1px solid #8C79D4;
+                        opacity: 1;
+                        text-decoration: none;
+
+                        h3{
+                            color: #FFFFFF;
+                            font-size: 18px;
+                            line-height: 20px;
+                            font-family: 'Poppins', sans-serif !important;
+                            font-weight: 500;
+                            margin-bottom: 19px;
+
+                            img{
+                                width: 12px;
+                                height: 18px;
+                                margin-right: 10px;
+                            }
+                        }
+
+                        p{
+                            color: #FFFFFF;
+                            font-size: 14px;
+                            line-height: 20px;
+                            font-family: 'Poppins', sans-serif !important;
+                        }
+
+                    }
+
+                    .boxTwo{
+                        padding: 22px 0px;
+                        border-bottom: 1px solid #8C79D4;
+                        opacity: 1;
+
+                        h5{
+                            color: #FFFFFF;
+                            font-size: 16px;
+                            line-height: 20px;
+                            margin-bottom: 10px;
+                        
+                        }
+
+                        ul{
+                            padding-left: 0px;
+                            margin-bottom: 0px;
+                            list-style: none;
+
+                            li{
+                                padding: 5px 0px;
+                                color: #FFFFFF;
+                                font-size: 14px;
+                                line-height: 22px;
+                                font-weight: 400;
+
+                                span{
+                                    font-weight: 500;
+                                }
+                            }
+
+                            .call{
+                                color: #FFFFFF;
+                                font-size: 14px;
+                                line-height: 20px;
+                                font-weight: 500;
+                                position: relative;
+                                padding-left: 28px;
+    
+    
+                                img{
+                                    width: 12px;
+                                    position: absolute;
+                                    left: 0px;
+                                    top: 6px;
+                                }
+
+                                a{
+                                    color: #ffffff;
+                                    text-decoration: none;
+                                }
+                            }
+    
+                            .message{
+                                color: #C3E128;
+                                font-size: 14px;
+                                line-height: 20px;
+                                font-weight: 400;
+                                position: relative;
+                                padding-left: 28px;
+    
+                                img{
+                                    width: 17px;
+                                    position: absolute;
+                                    left: 0px;
+                                    top: 10px;
+                                }
+
+                                a{
+                                    color: #C3E128;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+          
+        }
+    }
+
+    .worldClasses{
+        padding: 90px 0px;
+
+        .classesHeading{
+
+            h2{
+                color: #3F3F3F;
+                font-size: 28px;
+                font-weight: 800;
+                line-height: 35px;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+
+            .rating-list{
+                display: flex;
+                justify-content: center;
+            }
+
+            .listNone{
+
+                .underLine:last-child{
+
+                    &:before{
+                        display: none;
+                    }
+                }
+            }
+
+            .logoBox{
+                margin-top: 22px;
+                border: 1px solid #E8E8E8;
+                border-radius: 10px;
+                padding: 34px 25px;
+
+                ul{
+                    padding-left: 0px;
+                    list-style: none;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    margin-bottom: 0px;
+                    align-items: center;
+
+                    li{
+                        position: relative;
+
+                        img{
+                            // height: 36px;
+                            width: 120px;
+                        }
+
+                        &:before{
+                            content: "";
+                            position: absolute;
+                            height: 100%;
+                            width: 1px;
+                            background: #E8E8E8;
+                            right: -40px;
+                            transform: translate(50%, -0%);                        
+                            display: block;
+                        }
+                    }
+
+                    
+                }
+            }
+        }
+
+    }
+}
+
+
+@media (max-width: 767px) {
+    .forContactUsComponent {
+
+        .AboutUsSection {
+    
+            .homeSlider {
+        
+                .silderSlide{
+        
+                    .silderText{
+                        transform: translate(0%, -30%);
+        
+                        h1{
+                            font-size: 32px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        .contactUsBox{
+
+            .getTeachBox{
+              
+                .leftBox{
+                    padding: 24px 20px;
+    
+                    .title{
+                        padding-bottom: 38px;
+                        border-bottom: none;
+                        text-align: center;
+    
+                        h2{
+                            font-size: 18px;
+                            font-weight: 600;
+                        }
+                    }
+    
+                    .needHelp{
+                        padding-top: 0px;
+    
+                        h5{
+                            font-size: 16px;
+                        }
+                    }
+                }
+    
+                .rightBox{
+                    background-color: var(--main1);
+                    padding: 30px 20px;
+                }
+              
+            }
+        }
+
+        .worldClasses{
+            padding: 50px 0px;
+    
+            .classesHeading{
+    
+                h2{
+                    font-size: 24px;
+                }
+    
+                .logoBox{
+                    padding: 5px 18px;
+    
+                    ul{
+    
+                        li{
+                            margin: 0 auto;
+                            height: 100%;
+                            width: 160px;
+                            margin: 0 auto;
+    
+                            img{
+                                height: 70px;
+                                width: auto;
+                                margin: 0 auto;                         
+                            }
+    
+                            &:before{
+                                display: none;
+                            }
+                        }
+    
+                        
+                    }
+                }
+            }
+    
+        }
+     }
+ }
