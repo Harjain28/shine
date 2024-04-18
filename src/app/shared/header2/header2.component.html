@@ -48,9 +48,9 @@
                         </div> -->
 
                         <div class="nav-item"
-                            (mouseleave)="closeDropdown()">
-                            <a href="in/refund-policy" class="nav-link dropdown-toggle"
-                                >Refund Policy
+                            (mouseleave)="closeDropdown()" [class.active]="router.url ==='/in/contact-us'">
+                            <a href="in/contact-us" class="nav-link dropdown-toggle"
+                                >Contact Us
                             </a>
                         </div>
 

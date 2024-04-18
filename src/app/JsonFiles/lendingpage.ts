@@ -4,10 +4,10 @@ export const shineLendingPageJSON = {
       Text: 'Welcome to Shine',
     },
     Header2: {
-      Text: 'Identify Issues. Improve Credit. Secure Capital.',
+      Text: 'Identify Issues. Improve Your Credit Profile. Secure Capital.',
     },
     Subheader: [
-      "Our analysis reveals the obstacles to your loan success; we offer precise steps, from a lender's eye, to enhance your loan eligibility.",
+      "Our expert analysis reveals how to best achieve financing success. SHINE exposes any issues lenders will have with your profile, tells you the precise steps you can take to improve your chances of getting a loan, lets you know how to become business loan eligible in 3-6 months, and helps you get better financing terms on any existing loans you have. It is like having a CFO in a box all for one low yearly fee.",
       'Become Business Loan Eligible in 3-6 months.',
     ],
     Background: {
@@ -17,24 +17,23 @@ export const shineLendingPageJSON = {
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens_mobile.png',
     },
 
-    CTA_Text: 'Get Pricing',
+    CTA_Text: 'Enrol Now',
     CTA_Link: '/in/check-eligibility',
   },
 
   Who_is_Shine_For_Section: {
     Headline1: 'Who is SHINE For?',
     Description:
-      'Whether you’re just starting your entrepreneurial or credit journey or looking for improved credit opportunities – Shine has something for every SME!',
+      'Whether you’re just starting out and have never had a loan before, or you are an experienced business looking for improved loan opportunities – Shine has something for every SME!',
     Beginners_Feature: {
       Beginners_Title: 'Beginners',
       Beginners_Details:[
-      'Up-and-coming entrepreneurs',
-      'Early-stage credit-rating',
-      'Currently ineligible for a business loan',
-      'Taking the first steps in credit management',
-     
+      'Have never taken a loan',
+      'Don’t know how to go about getting a loan or if you will even be eligible',
+      'Want to take the be in control of your financing options.',
+
        ],
-       Summary: 'Get answers to all the above along with a personalised plan for how to improve, and get your first business loan.', 
+       Summary: 'Get answers to all the above along with a personalised plan for how to improve and get your first business loan.', 
         Vector_Background: {
       Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/biginner.png',
     },
@@ -43,12 +42,11 @@ export const shineLendingPageJSON = {
       Intermediate_Feature: 'Intermediate',
       Intermediate_Details:[
       'Business vintage 4-5 years', 
-      'GST registered',
       'Successfully obtained at least one loan',
       'Looking for better loan terms and offers',  
-    
+     
        ],
-       Summary: 'Get access to key information to help you manage your finances better, and get your next business loan at the best terms.', 
+       Summary: 'A personalised programme for your business that helps you manage your finances better, track your progress over time and get your next business loan at the best terms.', 
         Vector_Background: {
       Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/intermediate.png',
     },
@@ -57,13 +55,14 @@ export const shineLendingPageJSON = {
       Expert_Feature: 'Expert',
       Expert_Details:[
       'Business vintage >5 years', 
-      'GST registered', 
+      'GST registered',
+      'Already have a portfolio of loans.', 
       'Seeking better loan options and ROIs', 
-      'Open to best multi-funding options', 
-      'Seeking tailored financial advisory',  
+      'Searching for the best multi-funding options', 
+      'Seeking tailored financial advice',  
     
        ],
-       Summary: 'Get access to essential financial insights to improve fiscal management and unlock multi-funding loan opportunities at the best terms.', 
+       Summary: 'A personalised programme for your business that gives you access to essential financial insights to improve fiscal management and unlock multi-funding loan opportunities at the best terms.', 
         Vector_Background: {
       Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/expert.png',
     },
@@ -74,24 +73,33 @@ export const shineLendingPageJSON = {
   },
 
   Analyse_Section: {
-    Headline1: 'What stands between ',
+    Headline1: 'What stands between you and better loan opportunities?',
     Headline2: 'you and better loan opportunities?',
     Description:
-      'The only tool revealing lender insights by analyzing your Bureau, GST, & Banking data.',
+      'The only tool revealing how lenders will assess your business for a loan based on your Bureau, GST, & banking data.',
     Bureau_Feature: {
       Bureau_Title: 'Bureau Analysis',
       Bureau_Details:
-        'Discover the secrets within your Bureau report, focusing on credit mix, loan inquiries, and repayment patterns. Gain an edge with insights for credit optimization, elevating your profile and unlocking lending opportunities.',
+        'Discover what lenders like and don’t like about your business based on the patterns and trends in your Bureau report, including your credit mix, loan inquiries, and repayment history. Gain an edge with insights for credit optimization, elevating your profile and unlocking lending opportunities',
+         Vector_Background: {
+      Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/credit_score.png',
+    },
     },
     GST_Feature: {
       GST_Title: 'GST Analysis',
       GST_Details:
-        "Your GST history is your business's tax report card. Consistency and accuracy demonstrate financial responsibility and impacts lenders' risk assessment. We review compliance to offer insights to improve your financial health for better loan opportunities. Navigate the intricacies of your GST filings with precision. We analyse your GST data to showcase your business’s financial health from a lender’s perspective.",
+        "See how lenders interpret your business’s financial health based on your GST filings.",
+         Vector_Background: {
+      Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/GST.png',
+    },
     },
     Banking_Feature: {
       Banking_Title: 'Banking Analysis',
       Banking_Details:
-        'Banking transactions tell your business’s story.Our insights guide you to optimize transactions, manage balances, and present a compelling case for loan eligibility and favorable terms which lenders cant ignore.',
+        'Understand how to optimise transactions, manage balances, and present a compelling case for loan eligibility and favourable terms which lenders can’t ignore.',
+         Vector_Background: {
+      Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/banking_big.svg',
+    },
     },
     CTA_Text: 'Get Pricing',
     CTA_Link: '/in/check-eligibility',
@@ -100,43 +108,43 @@ export const shineLendingPageJSON = {
   What_To_Expect_Section: {
     Headline: 'Transform Finance: ',
     Headline2: "See What Others Don't!",
-    Body: 'Unlock analysis that delves into the critical nuances of your finances, guiding you to course correct swiftly for loan eligibility. Empower your decisions with insights that elevate your financial strategy, trimming the journey from years to months. A future-focused financial revolution.',
+    Body: 'Gain deep financial insights to swiftly adjust for better loan eligibility. Be empowered to   accelerate your growth. Join the future-focused financial revolution!',
     Background: {
       Desktop:
-        'https://dzzu957mxv8q0.cloudfront.net/images/website/Balance%20Transfer/balance_transfer_desktop.webp',
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Credit%20analysis.png',
       Mobile:
-        'https://dzzu957mxv8q0.cloudfront.net/images/website/Balance%20Transfer/balance_transfer_mobile.webp',
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Credit%20analysis.png',
       imageText: 'Increase Loan Possibility!',
     },
     Background1: {
       Desktop:
-        'https://dzzu957mxv8q0.cloudfront.net/images/website/Balance%20Transfer/balance_transfer_desktop.webp',
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_count.png',
       Mobile:
-        'https://dzzu957mxv8q0.cloudfront.net/images/website/Balance%20Transfer/balance_transfer_mobile.webp',
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_count.png',
       imageText: 'Customized Financial Analysis',
     },
     Background2: {
       Desktop:
-        'https://dzzu957mxv8q0.cloudfront.net/images/website/Balance%20Transfer/balance_transfer_desktop.webp',
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_mix.png',
       Mobile:
-        'https://dzzu957mxv8q0.cloudfront.net/images/website/Balance%20Transfer/balance_transfer_mobile.webp',
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_mix.png',
       imageText: 'Unmatched Lender Insights',
     },
     Background3: {
       Desktop:
-        'https://dzzu957mxv8q0.cloudfront.net/images/website/Balance%20Transfer/balance_transfer_desktop.webp',
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Probablity.png',
       Mobile:
-        'https://dzzu957mxv8q0.cloudfront.net/images/website/Balance%20Transfer/balance_transfer_mobile.webp',
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Probablity.png',
       imageText: 'Increase Loan Possibility!',
     },
-    CTA_Text: 'Get Pricing',
+    CTA_Text: 'Enrol Today',
     CTA_Link: '/in/check-eligibility',
   },
 
   Shine_Comparison_Section: {
-    Title: 'What Makes Shine Different',
+    Title: 'What makes Shine different?',
     Subtitle:
-      'Get on the path to the right business funding with a comprehensive assessment',
+      'Get on the path to the right business funding with a comprehensive assessment.',
 
     headerText:[
       'Parameter', 'Shine' , 'Others'
@@ -146,8 +154,8 @@ export const shineLendingPageJSON = {
         Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/loan_big.svg',
          item: [
            'Depth of Analysis',
-            'Determine your financial health based on your Credit History, Banking, & GST Filings.',
-            'The assessments are usually only based on your Credit History.',
+            'Determine your financial health and attractiveness to lenders with unmatched market insights on your Credit History, Banking, & GST Filings along with tips on how to improve.',
+            'Pay for details that are already in your free credit report.',
          ]
        },
        {
@@ -170,7 +178,7 @@ export const shineLendingPageJSON = {
         Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/calendar_Big.png',
          item: [
            'Growth Tracking',
-           'Track your month-on-month process to get closer to your dream funding.',
+           'Get the data-driven edge to track your Quarter-on-Quarter progress and get closer to your dream funding.',
            'Get a one-time snapshot of your credit health to assess your creditworthiness.',
          ]
        },
@@ -181,6 +189,13 @@ export const shineLendingPageJSON = {
   How_Shine_Will_Help_Section: {
     Header: 'How SHINE Will Help Your Loan Prospects',
     Subhead: 'Be Loan Ready in 3 Steps',
+    Background_Banner: {
+      Desktop:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/help_banner_desktop.jpg',
+      Mobile:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/help_banner_mobile.jpg',
+      
+    },
     Parameter: [
       {
         Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/assess.png',
@@ -196,33 +211,30 @@ export const shineLendingPageJSON = {
       },
     ],
     Body_Section: [
-      'Start your journey to your dream loan now!',
-      'Make the changes we recommend and be loan ready in 3-6 months.',
+      'Start your customized journey to your dream loan now!',
+      'Make the strategic changes we recommend and be loan ready in 3-6 months.',
     ],
-    CTA_Text: 'Get Pricing',
+    CTA_Text: 'Enrol Today',
     CTA_Link: '/in/check-eligibility',
   },
 
   Shine_Features_Section: {
-    Header: 'Comprehensive Analysis Tailored for Your Business.',
+    Header: 'Dive Deep: Comprehensive Financial Assessment and Advice Tailored to your Business.',
     Subheader:
-      'Experience a new level of financial understanding with detailed reviews of your GST, banking, and credit data, helping you make strategic moves.',
+      'Experience a new level of financial understanding about your business with detailed reviews of your credit report, GST and banking, that personalised advice to help you improve your ability to access affordable finance.',
     CTA_Text: 'Get Pricing',
     CTA_Link: '/in/check-eligibility',
     Image: {
       Desktop:
-        'https://dzzu957mxv8q0.cloudfront.net/images/website/home/loan_options_desktop.webp',
-      Mobile:
-        'https://dzzu957mxv8q0.cloudfront.net/images/website/home/loan_options_mobile.webp',
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/banner_analysis.jpg',
     },
     Product_Tiles: [
       {
         Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/credit_score_big.svg',
         Product_copy: 'BUREAU SCORE',
         Pop_up_copy: [
-          "The bureau score is a number calculated by the credit bureaus. It shows if you're creditworthy.",
+          "Your bureau score is a number calculated by the credit bureaus. It shows if you're creditworthy.",
           'The 4 credit bureaus including Experian are authorized by RBI, to prepare your credit report.',
-          "It's based on your credit history—timely payments, low credit use, etc.",
           'A higher score improves your chances of getting loans at competitive interest rates.',
         ],
       },
@@ -230,39 +242,34 @@ export const shineLendingPageJSON = {
         Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/loan_history.svg',
         Product_copy: 'LOAN REPAYMENT HISTORY',
         Pop_up_copy: [
-          'Your repayment history is a record of all your past and current payments to lenders, whether on time or late.',
-          "It's crucial for lenders to assess you as a borrower, and greatly influences loan approvals and interest rates.",
-          'A clean payment history, including on-time payments and no defaults is vital for a good credit score.',
-          'Errors or outstanding debts in this history can result in unfavourable rates or even loan denials.',
+          'Your repayment history is a record of all your past and current payments to lenders, and whether you were on time or late.',
+          "This is a crucial metric for lenders greatly influences loan approvals and interest rates. ",
+          'A clean repayment history, including on-time payments and no defaults is vital for a good credit score.',
+          'Late or missed payments that show up in your history can result in your loan application being rejected or in you being offered unfavourable loan terms.',
         ],
       },
       {
         Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/current_debt_big.svg',
         Product_copy: 'CURRENT DEBT ANALYSIS',
         Pop_up_copy: [
-          'This analyses the credit mix that your business holds.',
-          'The analysis reflects the different types of on-going debt that your business has on its bureau report.',
-          'The analysis also includes an assessment of your credit card usage, which directly impacts your creditworthiness.',
-          'A healthy mix of secured and unsecured debt creates favourable lending conditions.',
+          'The analysis shows the different types of on-going loans   that are reflected in your bureau report, including your credit card utilisation level and whether your mix is in balance.',
+          'A healthy mix of secured and unsecured debt along with low credit card utilisation levels create favourable lending conditions.',
         ],
       },
       {
         Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/business_risk_big.svg',
         Product_copy: 'BUSINESS RISK',
         Pop_up_copy: [
-          'Business risk is the chance of something bad happening that could reduce gains or increase losses.',
-          "In other words, it's factors that raise the odds of losing money in business and decrease profit opportunities.",
-          'If a lender sees a business as risky, their probability of recovering the loan is lower, thus impacting your loan prospects.',
-          'If your business is high-risk, it might limit your access to the best loan options.',
+          'Business risk is the chance of something bad happening that could reduce gains or increase losses in your business.',
+          'If a lender sees a business as risky, they will calculate that the probability of recovering the loan that give you is lower, thus impacting your loan prospects.',
         ],
       },
       {
         Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/loan_inquires_big.svg',
         Product_copy: 'LOAN INQUIRIES',
         Pop_up_copy: [
-          'Loan inquiries refer to the instances when a financial institution or lender accesses your credit report to check your creditworthiness.',
-          "These inquiries, defined as 'hard' or 'soft', influence your loan approval.",
-          'Numerous hard inquiries close together may signal risk to lenders, potentially affecting your business loan terms and approval prospects.',
+          'Loan inquiries refer to the number of times a lender has done a hard pull of your credit report.',
+          'If your credit report shows numerous hard pulls within a short period of time lenders see this as an indication that you may have financial distress and this is likely to affecting your business loan terms and approval prospects.',
           'Managing inquiries strategically is essential for maintaining a favourable credit profile.',
         ],
       },
@@ -270,40 +277,38 @@ export const shineLendingPageJSON = {
         Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/gst_filing.svg',
         Product_copy: 'GST FILINGS HISTORY',
         Pop_up_copy: [
-          "Your GST filings history acts as your business's tax report card.",
-          'Being consistent and accurate shows financial responsibility.',
-          "Missed filings could affect how lenders view your business, so keep your filing clean to show you're reliable.",
-          'It influences how lenders asses the riskiness of your business.',
+          "Your GST filing history is like your business's tax report card.",
+          'Being consistent and accurate in your filings shows financial responsibility.',
+          "Lenders see inaccurate or late filings as an indication of riskiness in your business.",
+          'Missed filings could affect how lenders view your business, so keep your filings on time to show you are reliable',
         ],
       },
       {
         Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/business_credit.svg',
         Product_copy: 'BUSINESS CREDIT AMOUNT & COUNT',
         Pop_up_copy: [
-          'Business credit amount is also known as your business turnover.',
-          'Business credit amount is the total revenue or sales generated by your business within a specific period.',
+          'Business credit amount (or business turnover) is the total revenue or sales generated by your business within a specific period.',
+          'The higher your revenue, the better your loan options.',
           'Credit count refers to the number of credits made to your business account within a specified period, from varied sources.',
-          'A higher credit count reflects a thriving business with multiple sources of income.',
+          'A higher credit count reflects a thriving business with multiple sources of income which is something lenders like to see.',
         ],
       },
       {
         Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/banking_big.svg',
         Product_copy: 'AVERAGE BANKING BALANCE',
         Pop_up_copy: [
-          'The average balance is determined by adding up the daily closing balances throughout a specific period and then dividing that sum by the number of days in that period.',
-          'Your average monthly balance plays a crucial role in impacting business loans probabilities.',
-          'Lenders often consider the available average cash in your business account on any given day, as an indicator of financial stability and repayment capacity.',
-          'A healthy average monthly balance can enhance loan eligibility and may lead to more favourable terms. ',
+          'Your average banking balance is calculated by adding up the daily closing balances throughout a specific period and then dividing that sum by the number of days in that period',
+          'Lenders check your ABB when you apply for a loan and will consider the available average cash in your business account on any given day, as an indicator of financial stability and repayment capacity.',
+          'A healthy average monthly balance can enhance loan eligibility and may lead to more favourable terms.',
         ],
       },
       {
         Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/turnover_ratio_big.svg',
         Product_copy: 'DEBT-TO-TURNOVER RATIO',
         Pop_up_copy: [
-          "The debt-to-turnover ratio compares a business's debt to its revenue.",
-          'The debt to turnover ratio defines the ability to repay a loan for a business.',
-          'Lenders use this to see how well a business manages debt.',
-          'A lower ratio is good for loan approval, while a higher one may affect terms.',
+          "Your debt-to-revenue ratio compares a business's outstanding debt(loans) to its revenue (sales)",
+          'Lenders define thresholds for borrowers they don’t want them to cross in terms of this ratio.',
+          'A lower ratio normally increases your chances of getting a loan, while a loan approval, while a higher reduces your loan options and negatively impacts on the terms you will be offered.',
         ],
       },
       {
@@ -311,19 +316,18 @@ export const shineLendingPageJSON = {
         Product_copy: 'CHEQUE BOUNCES',
         Pop_up_copy: [
           'Cheque bounces occur when an issued cheque cannot be processed due to insufficient funds or other issues.',
-          'Cheque bounces can also occur in form of bounced EMI payments.',
-          'For business loans, frequent cheque bounces can negatively impact creditworthiness, raising concerns for lenders.',
-          'High cheque bounces may lead to loan rejection or result in higher interest rates and less favourable loan terms due to perceived financial instability.',
+          'Lenders see cheque bounces as an indication of financial indiscipline.',
+          'The higher the number of cheque bounces, the more likely lenders are to reject your loan application, offer you less favourable terms and increase the interest rate they charge you.',
         ],
       },
       {
         Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/cashflow_big.svg',
         Product_copy: 'CASHFLOW STABILITY',
         Pop_up_copy: [
-          'Cash flow stability refers to the consistent and reliable flow of cash in and out of a business.',
-          'It impacts business loans by providing assurance to lenders that the company can meet its financial obligations.',
+          'Cash flow stability refers to whether the revenue you generate in your business is consistent and reliable.',
+          'Having a stable cash flow provides assurance to lenders that if they give you a loan, your business will be able to meet its repayment obligations.',
           'A stable cash flow enhances loan eligibility and may lead to more favourable terms.',
-          'Unpredictable or inconsistent cash flow can raise concerns for lenders, potentially affecting loan approval or resulting in less favourable loan conditions.',
+          ' Unpredictable or inconsistent cash flow can raise concerns for lenders, potentially affecting loan approval or resulting in less favourable loan conditions.',
         ],
       },
       {
@@ -341,29 +345,29 @@ export const shineLendingPageJSON = {
   Summary_Section: {
     Header: 'Guaranteed Loan Success Starts Here.',
     Subheader:
-      'Follow our tailored advice for a guaranteed shot at loan approval.',
-    CTA_Text: 'Get Pricing',
+      'Follow our tailor-made financial recommendations for a guaranteed shot at loan approval.',
+    CTA_Text: 'Check Pricing',
     CTA_Link: '/in/check-eligibility',
     Banner: [
       {
         Desktop:
-          'https://dzzu957mxv8q0.cloudfront.net/images/website/Balance%20Transfer/balance_transfer_desktop.webp',
+          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/ranking.png',
         Mobile:
-          'https://dzzu957mxv8q0.cloudfront.net/images/website/Balance%20Transfer/balance_transfer_mobile.webp',
+          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/ranking.png',
         imageText: 'Increase Loan Possibility!',
       },
       {
         Desktop:
-          'https://dzzu957mxv8q0.cloudfront.net/images/website/Balance%20Transfer/balance_transfer_desktop.webp',
+          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/ratio.png',
         Mobile:
-          'https://dzzu957mxv8q0.cloudfront.net/images/website/Balance%20Transfer/balance_transfer_mobile.webp',
+          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/ratio.png',
         imageText: 'Customized Financial Analysis',
       },
       {
         Desktop:
-          'https://dzzu957mxv8q0.cloudfront.net/images/website/Balance%20Transfer/balance_transfer_desktop.webp',
+          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/running_expences_desktop.png',
         Mobile:
-          'https://dzzu957mxv8q0.cloudfront.net/images/website/Balance%20Transfer/balance_transfer_mobile.webp',
+          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/running_expences_desktop.png',
         imageText: 'Unmatched Lender Insights',
       },
     ],
