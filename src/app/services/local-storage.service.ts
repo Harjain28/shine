@@ -21,6 +21,7 @@ export class LocalStorageService {
      localStorage.removeItem('userMobileNumber');
      localStorage.removeItem('state');
      localStorage.removeItem('transID');
+     localStorage.removeItem('token');
 
 
   }
