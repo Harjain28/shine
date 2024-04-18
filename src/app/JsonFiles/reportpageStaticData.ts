@@ -5,28 +5,33 @@ export const reportStatciData = {
         "background": [
             {
                 "stage": 1,
-                "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens.png",
-                "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens_mobile.png"
+                "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/step1-desktop.jpg",
+                "mobile_bg":"https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/Fold_1_Mobile_bg.jpg",
+                "mobile_content":"https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/step1-mobile.png"
             },
             {
                 "stage": 2,
-                "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens.png",
-                "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens_mobile.png",
+                "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/step2-desktop.jpg",
+                "mobile_bg":"https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/Fold_1_Mobile_bg.jpg",
+                "mobile_content":"https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/step2-mobile.png"
             },
             {
                 "stage": 3,
-                "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens.png",
-                "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens_mobile.png",
+                "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/step3-desktop.jpg",
+                "mobile_bg":"https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/Fold_1_Mobile_bg.jpg",
+                "mobile_content": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/step3-mobile.png"
             },
             {
                 "stage": 4,
-                "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens.png",
-                "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens_mobile.png",
+                "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/step4-desktop.jpg",
+                "mobile_bg":"https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/Fold_1_Mobile_bg.jpg",
+                "mobile_content": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/step4-mobile.png"
             },
             {
                 "stage": 5,
-                "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens.png",
-                "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens_mobile.png",
+                "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/step5-desktop.jpg",
+                "mobile_bg":"https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/Fold_1_Mobile_bg.jpg",
+                "mobile_content": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/step5-mobile.png"
             }
         ]
     },

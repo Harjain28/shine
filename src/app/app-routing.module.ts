@@ -31,7 +31,7 @@ const routes: Routes = [
   },
 
   {
-    path:'in/contact_us', 
+    path:'in/contact-us', 
     component: ContactusComponent   
   }
 ];
