@@ -5,6 +5,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { ReportsComponent } from './reports/reports.component';
 import { AuthGuard } from './guard/auth.gaurd';
 import { RefundPolicyComponent } from './view/refund-policy/refund-policy.component';
+import { ContactusComponent } from './view/contactus/contactus.component';
 
 const routes: Routes = [
      
@@ -27,6 +28,11 @@ const routes: Routes = [
   {
     path:'in/refund-policy', 
     component: RefundPolicyComponent   
+  },
+
+  {
+    path:'in/contact_us', 
+    component: ContactusComponent   
   }
 ];
 
