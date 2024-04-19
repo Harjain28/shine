@@ -192,6 +192,10 @@ export class CreditReportComponent {
     this.getInsights();
   }
 
+  roundValue(value: number): number {
+    return Math.round(value);
+  }
+
   getInsights() {
     this.reportsData = reportPageJson?.insights;
     const creditreportInsights = this.reportsData?.creditReport;
