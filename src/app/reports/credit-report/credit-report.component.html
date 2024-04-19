@@ -377,9 +377,9 @@
                     [doughtnutJSONData]="credit_analysis"
                   ></app-doughnut>
                   <ul>
-                    <li *ngFor="let loan of credit_analysis?.byAmount">
-                      <span>
-                        <span></span>
+                    <li *ngFor="let loan of credit_analysis?.byAmount; let i = index">
+                      <span [style.border]="'1px solid ' + colorDots[i % colorDots.length]">
+                        <span [style.background-color]="colorDots[i % colorDots.length]"></span>
                       </span>
                       {{ loan.name }}
                     </li>
@@ -528,9 +528,9 @@
                         [doughtnutJSONData]="ratiosecured"
                       ></app-doughnut>
                       <ul>
-                        <li *ngFor="let loan of ratiosecured?.byAmount">
-                          <span>
-                            <span style="background-color: #12ba9b;"></span>
+                        <li *ngFor="let loan of ratiosecured?.byAmount; let i = index">
+                          <span [style.border]="'1px solid ' + deptCompColors[i % deptCompColors.length]">
+                            <span [style.background-color]="deptCompColors[i % deptCompColors.length]"></span>
                           </span>
                           {{ loan.name }}
                         </li>
@@ -607,9 +607,9 @@
                     [doughtnutJSONData]="credit_analysis"
                   ></app-doughnut>
                   <ul>
-                    <li *ngFor="let loan of credit_analysis?.byAmount">
-                      <span>
-                        <span></span>
+                    <li *ngFor="let loan of credit_analysis?.byAmount; let i = index">
+                      <span [style.border]="'1px solid ' + colorDots[i % colorDots.length]">
+                        <span [style.background-color]="colorDots[i % colorDots.length]"></span>
                       </span>
                       {{ loan.name }}
                     </li>

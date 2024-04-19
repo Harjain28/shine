@@ -31,6 +31,8 @@ export class GstFillingComponent {
   @Input() gstData: any;
   gst_section: any;
   gstSectionHeadings: any;
+  monthArray!: string[];  
+
 
   constructor(){
 
@@ -60,7 +62,26 @@ export class GstFillingComponent {
     this.gst_section = reportStatciData;
     this.gstSectionHeadings = this.gst_section?.gst_section;
 
+    const currentDate = new Date();
 
+    this.monthArray = this.calculateMonths(currentDate.getMonth(), 7  );
+    console.log(this.monthArray,"kkk")
+
+
+  }
+
+  calculateMonths(startMonth: number, numberOfMonths: number): string[] {
+    const months: string[] = [];
+    const monthNames = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const aheadMonth = (startMonth + 1);
+    months.push(monthNames[aheadMonth]);
+    for (let i = 0; i < numberOfMonths; i++) {
+      const monthIndex = (startMonth - i + 12) % 12;
+      months.push(monthNames[monthIndex]);
+    }
+    months.reverse();
+
+    return months;
   }
 
   concatenateInsights(insightsArray: any) {

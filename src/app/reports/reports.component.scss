@@ -272,51 +272,7 @@
                         height: 130px !important;
                     }
 
-                    ul {
-                        li {
-
-                            &:nth-child(1) {
-
-                                span {
-                                    border: 1px solid var(--main2);
-                                    
-                                    span {
-                                        background-color: var(--main2);
-                                    }
-                                }
-                            }
-                            &:nth-child(2) {
-
-                                span {
-                                    border: 1px solid #C3E128;
-                                    
-                                    span {
-                                        background-color: #C3E128;
-                                    }
-                                }
-                            }
-                            &:nth-child(3) {
-
-                                span {
-                                    border: 1px solid var(--main1);
-                                    
-                                    span {
-                                        background-color: var(--main1);
-                                    }
-                                }
-                            }
-                            &:nth-child(4) {
-
-                                span {
-                                    border: 1px solid #211261;
-                                    
-                                    span {
-                                        background-color: #211261;
-                                    }
-                                }
-                            }
-                        }
-                      }
+                   
                       
 
                     ul {
@@ -537,51 +493,7 @@
                         height: 130px !important;
                     }
 
-                    ul {
-                        li {
-
-                            &:nth-child(1) {
-
-                                span {
-                                    border: 1px solid var(--main2);
-                                    
-                                    span {
-                                        background-color: var(--main2);
-                                    }
-                                }
-                            }
-                            &:nth-child(2) {
-
-                                span {
-                                    border: 1px solid #C3E128;
-                                    
-                                    span {
-                                        background-color: #C3E128;
-                                    }
-                                }
-                            }
-                            &:nth-child(3) {
-
-                                span {
-                                    border: 1px solid var(--main1);
-                                    
-                                    span {
-                                        background-color: var(--main1);
-                                    }
-                                }
-                            }
-                            &:nth-child(4) {
-
-                                span {
-                                    border: 1px solid #211261;
-                                    
-                                    span {
-                                        background-color: #211261;
-                                    }
-                                }
-                            }
-                        }
-                      }
+                    
 
                     ul {
                         padding-left: 0px;
@@ -1885,7 +1797,7 @@
                                     .mdc-linear-progress__bar {
 
                                         .mdc-linear-progress__bar-inner {
-                                            border-color: #EC1111;
+                                            border-color: #C3E128;
                                         }
                                     }
                                 }
@@ -1902,7 +1814,7 @@
                                     .mdc-linear-progress__bar {
 
                                         .mdc-linear-progress__bar-inner {
-                                            border-color: #FF7B24;
+                                            border-color: #12ba9b;
                                         }
                                     }
                                 }
@@ -1919,7 +1831,7 @@
                                     .mdc-linear-progress__bar {
 
                                         .mdc-linear-progress__bar-inner {
-                                            border-color: #C3E128;
+                                            border-color: #EC1111;
                                         }
                                     }
                                 }
@@ -1936,7 +1848,7 @@
                                     .mdc-linear-progress__bar {
 
                                         .mdc-linear-progress__bar-inner {
-                                            border-color: #12BA9B;
+                                            border-color: #ff7b24;
                                         }
                                     }
                                 }
@@ -2682,7 +2594,7 @@
                                 .mdc-linear-progress__bar {
 
                                     .mdc-linear-progress__bar-inner {
-                                        border-color: #EC1111;
+                                        border-color: #C3E128;
                                     }
                                 }
                             }
@@ -2699,7 +2611,7 @@
                                 .mdc-linear-progress__bar {
 
                                     .mdc-linear-progress__bar-inner {
-                                        border-color: #FF7B24;
+                                        border-color: #12ba9b;
                                     }
                                 }
                             }
@@ -2716,7 +2628,7 @@
                                 .mdc-linear-progress__bar {
 
                                     .mdc-linear-progress__bar-inner {
-                                        border-color: #C3E128;
+                                        border-color: #EC1111;
                                     }
                                 }
                             }
@@ -2733,7 +2645,7 @@
                                 .mdc-linear-progress__bar {
 
                                     .mdc-linear-progress__bar-inner {
-                                        border-color: #12BA9B;
+                                        border-color: #ff7b24;
                                     }
                                 }
                             }
@@ -3449,42 +3361,8 @@
                 .lineColor {
     
                     .colorChnage {
-    
+
                         &:nth-of-type(1) {
-    
-                            span {
-                                mat-progress-bar {
-    
-                                    ::ng-deep {
-    
-                                        .mdc-linear-progress__bar {
-    
-                                            .mdc-linear-progress__bar-inner {
-                                                border-color: #EC1111;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        &:nth-of-type(2) {
-    
-                            span {
-                                mat-progress-bar {
-    
-                                    ::ng-deep {
-    
-                                        .mdc-linear-progress__bar {
-    
-                                            .mdc-linear-progress__bar-inner {
-                                                border-color: #FF7B24;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        &:nth-of-type(3) {
     
                             span {
                                 mat-progress-bar {
@@ -3501,6 +3379,40 @@
                                 }
                             }
                         }
+                        &:nth-of-type(2) {
+    
+                            span {
+                                mat-progress-bar {
+    
+                                    ::ng-deep {
+    
+                                        .mdc-linear-progress__bar {
+    
+                                            .mdc-linear-progress__bar-inner {
+                                                border-color: #12ba9b;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-of-type(3) {
+    
+                            span {
+                                mat-progress-bar {
+    
+                                    ::ng-deep {
+    
+                                        .mdc-linear-progress__bar {
+    
+                                            .mdc-linear-progress__bar-inner {
+                                                border-color: #EC1111;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                         &:nth-of-type(4) {
     
                             span {
@@ -3511,7 +3423,7 @@
                                         .mdc-linear-progress__bar {
     
                                             .mdc-linear-progress__bar-inner {
-                                                border-color: #12BA9B;
+                                                border-color: #ff7b24;
                                             }
                                         }
                                     }

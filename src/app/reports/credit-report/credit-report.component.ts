@@ -90,6 +90,9 @@ export class CreditReportComponent {
   LoanReplacementExpanded: any;
   credit_analysis_card: any;
   credit_analysis_card_Expanded: any;
+  colorDots: string[] = ['#C3E128', '#12ba9b', '#EC1111', '#ff7b24', '#6a2fc2', '#3f51b5', '#11c897', '#d32ec3'];
+  deptCompColors: string[] = ['#C3E128', '#12ba9b'];
+
   constructor(private dialog: MatDialog) {}
 
   customOptions4: OwlOptions = {
@@ -140,6 +143,7 @@ export class CreditReportComponent {
   }
 
   ngOnInit(): void {
+    localStorage.setItem('colorDots', JSON.stringify(this.colorDots));
     this.reportsData = reportPageJson?.report;
     this.creditReportData = this.reportsData?.creditReport;
     this.angle = this.creditReportData?.bureauScore?.score;

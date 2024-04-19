@@ -20,10 +20,15 @@ export class DoughnutComponent {
   private donutChart!: Chart;
   doughtValues: any;
   doughtnutColor: any;
+  colorDots: any;
 
   ngOnInit():void{
 
-
+    const colorDotsString = localStorage.getItem('colorDots');
+    if (colorDotsString) {
+      this.colorDots = JSON.parse(colorDotsString);
+      console.log(this.colorDots,"hhh")
+    }
   }
 
   ngAfterViewInit(): void {
@@ -37,8 +42,9 @@ export class DoughnutComponent {
     this.doughtValues = this.doughtnutJSONData?.byAmount;
     this.doughtnutColor = ChartsJsonData?.Doughtnut?.Color;
 
+    console.log(this.doughtValues,"hhh")
     const donutDataValues = [...this.doughtValues]; 
-    const donutColors = [this.doughtnutColor[0], this.doughtnutColor[1], this.doughtnutColor[2], this.doughtnutColor[3]]; 
+    const donutColors = [...this.colorDots];
 
    
     const donutChartData: ChartData = {
