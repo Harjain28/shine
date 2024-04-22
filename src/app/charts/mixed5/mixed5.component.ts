@@ -1,6 +1,8 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Chart, { ChartData, RadialTickOptions } from 'chart.js/auto';
+import { BreakpointObserver, BreakpointState } from "@angular/cdk/layout";
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-mixed5',
@@ -18,15 +20,32 @@ export class Mixed5Component {
   mixedValue1: any;
   mixedValue2: any;
   turnoverLineData: any;
- 
+
+  constructor(    private breakpointObserver: BreakpointObserver,
+    ){}
 
   ngOnInit(): void {
+
+   
   }
 
   ngAfterViewInit(): void {
-    const canvas = this.chartCanvas5.nativeElement as HTMLCanvasElement;
-    canvas.width = 600; // Example width
-    canvas.height = 200; // Example height
+
+    this.breakpointObserver
+    .observe(['(min-width: 500px)'])
+    .subscribe((state: BreakpointState) => {
+      if (state.matches) {
+        const canvas = this.chartCanvas5.nativeElement as HTMLCanvasElement;
+    canvas.width = 600; 
+    canvas.height = 200; 
+        
+      } else {
+        const canvas = this.chartCanvas5.nativeElement as HTMLCanvasElement;
+    canvas.width = 309; 
+    canvas.height = 206; 
+      }
+    });
+    
     this.mixedChart();
   }
 

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SemiDoughnutComponent } from 'src/app/charts/semi-doughnut/semi-doughnut.component';
 import { DoughnutComponent } from 'src/app/charts/doughnut/doughnut.component';
@@ -7,13 +7,12 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import {  CarouselComponent, CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { MatDialog } from '@angular/material/dialog';
-import { BuildBureauPopupComponent } from 'src/app/modal/build-bureau-popup/build-bureau-popup.component';
 import { CreditJourneyPopupComponent } from 'src/app/modal/credit-journey-popup/credit-journey-popup.component';
 import { reportPageJson } from 'src/app/JsonFiles/report';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
-import { RoundPipe } from 'src/app/pipe/round.pipe';
+
 @Component({
   selector: 'app-credit-report',
   standalone: true,
@@ -33,6 +32,8 @@ import { RoundPipe } from 'src/app/pipe/round.pipe';
 })
 export class CreditReportComponent {
   @Input() creditReportsData: any;
+  @ViewChild('owlCarousel') owlCarousel!: CarouselComponent;
+
 
   expandSection!: boolean;
   expandCurrentCreditSection!: boolean;
@@ -91,12 +92,11 @@ export class CreditReportComponent {
   credit_analysis_card: any;
   credit_analysis_card_Expanded: any;
   colorDots: string[] = ['#C3E128', '#12ba9b', '#EC1111', '#ff7b24', '#6a2fc2', '#3f51b5', '#11c897', '#d32ec3'];
-  deptCompColors: string[] = ['#C3E128', '#12ba9b'];
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private el:  ElementRef) {}
 
   customOptions4: OwlOptions = {
-    loop: false,
+    loop: true,
     rewind: true,
     dots: true,
     autoplay: false,
@@ -130,6 +130,7 @@ export class CreditReportComponent {
     },
   };
 
+
   openDialog() {
     // this.getBorrowerInformation();
     const dialogRef = this.dialog.open(CreditJourneyPopupComponent, {
@@ -143,7 +144,6 @@ export class CreditReportComponent {
   }
 
   ngOnInit(): void {
-    localStorage.setItem('colorDots', JSON.stringify(this.colorDots));
     this.reportsData = reportPageJson?.report;
     this.creditReportData = this.reportsData?.creditReport;
     this.angle = this.creditReportData?.bureauScore?.score;
@@ -173,6 +173,12 @@ export class CreditReportComponent {
       },
     ];
     this.credit_analysis = this.creditReportData?.creditAnalysis;
+    this.credit_analysis = Object.assign({}, this.credit_analysis, {
+      colorDots: ['#C3E128', '#12ba9b', '#EC1111', '#ff7b24', '#6a2fc2', '#3f51b5', '#11c897', '#d32ec3'],
+      deptCompColors: ['#C3E128', '#12ba9b']
+
+    });
+    console.log(this.credit_analysis,'hhhh')
     this.securedUnsecuredRatioData =
       this.creditReportData?.securedUnsecuredRatio;
     
@@ -186,7 +192,10 @@ export class CreditReportComponent {
                 name: 'unsecured',
                 value: this.securedUnsecuredRatioData?.unsecuredOutstanding || 0,
             }
-        ]
+        ],
+        colorDots: ['#C3E128', '#12ba9b']
+
+
     };
 
     this.getInsights();

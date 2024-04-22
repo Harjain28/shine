@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="mobileSilder dhidden">
-        <owl-carousel-o [options]="customOptions4">
+        <owl-carousel-o [options]="customOptions4" >
           <ng-container>
             <ng-template carouselSlide>
               <div class="scoreBox">
@@ -74,7 +74,7 @@
             </ng-template>
           </ng-container>
         </owl-carousel-o>
-        <button class="btn moreBtn">
+        <button class="btn moreBtn"  >
           1 more <mat-icon>keyboard_arrow_right</mat-icon>
         </button>
       </div>
@@ -374,16 +374,30 @@
               <div class="creditContent">
                 <div class="currentChart">
                   <app-doughnut
-                    [doughtnutJSONData]="credit_analysis"
+                    [doughtnutJSONData]="ratiosecured"
                   ></app-doughnut>
                   <ul>
-                    <li *ngFor="let loan of credit_analysis?.byAmount; let i = index">
+                    <li *ngFor="let loan of ratiosecured?.byAmount; let i = index">
                       <span [style.border]="'1px solid ' + colorDots[i % colorDots.length]">
                         <span [style.background-color]="colorDots[i % colorDots.length]"></span>
                       </span>
                       {{ loan.name }}
                     </li>
                   </ul>
+                  <!-- <ul>
+                    <li>
+                      <span style="border: 1px solid #12ba9b;"
+                        ><span style="background-color: #12ba9b;"></span
+                      ></span>
+                      Secured 
+                    </li>
+                    <li>
+                      <span style="border: 1px solid #6a2fc2;"
+                        ><span style="background-color: #6a2fc2;"></span
+                      ></span>
+                      Unsecured
+                    </li>
+                  </ul> -->
                 </div>
                 <p>
                   {{credit_analysis_card?.description}}
