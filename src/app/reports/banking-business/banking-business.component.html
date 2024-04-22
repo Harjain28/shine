@@ -66,22 +66,13 @@
                     <div class="qtrBox">
                       <div class="qtrList">
                         <ul>
-                          <li class="active">QTR 1</li>
-                          <li>QTR 2</li>
                           <li>QTR 3</li>
                           <li class="active">QTR 4</li>
                         </ul>
                       </div>
-                      <ul>
-                        <li>
-                          <span></span>
-                          Quater 1, 2023
-                        </li>
-                        <li>
-                          <span></span>
-                          Quater 4, 2023
-                        </li>
-                      </ul>
+                      <span>Good Job!
+                        <img src="./assets/LandingPage/goodWork.svg" alt="">
+                      </span>
                     </div>
                   </div>
                   <div class="col-lg-6">
@@ -89,6 +80,7 @@
                       <p>{{dip?.description}}</p>
                     </div>
                   </div>
+                  
                 </div>
               </div>
             </div>
@@ -233,14 +225,12 @@
                     <div class="qtrBox scrollMonth">
                       <div class="qtrList">
                         <ul>
-                          <li class="active" *ngFor="let month of months">{{month}}</li>
+                          <li *ngFor="let month of monthNames.slice(0,6)">{{month}}</li>
+                          <li class="active" >JUL</li>
+                          <li *ngFor="let month of monthNames.slice(7,12)">{{month}}</li>
                         </ul>
                       </div>
-                      <ul>
-                        <li class="active" *ngFor="let year of monthsWithYear">{{year}}
-                          <span></span></li>
-                        <li>
-                      </ul>
+                      
                     </div>
                   </div>
                   <div class="col-lg-5">

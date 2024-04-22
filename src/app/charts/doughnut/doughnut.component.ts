@@ -47,13 +47,35 @@ export class DoughnutComponent {
     const donutChartData: ChartData = {
       datasets: [{
         data: donutDataValues,
-        backgroundColor: donutColors
-      }]
+        backgroundColor: donutColors,
+        borderWidth: 0,
+      },
+      {
+        data: donutDataValues,
+        backgroundColor: [
+          '#A5C019',
+          '#0D9972',
+          '#D50000',
+          '#DB7020',
+          '#4D1E9F',
+          '#263D95',
+          '#0FAC82',
+          '#A42B99'
+        ],
+        borderWidth: 0,
+      }],
     };
 
     this.donutChart = new Chart(this.donut.nativeElement, {
       type: 'doughnut',
-      data: donutChartData
+      data: donutChartData,
+      options: {
+        elements: {
+          arc: {
+            borderWidth: 0, // Hide borders between segments
+          }
+        }
+      }
     });
   }
 

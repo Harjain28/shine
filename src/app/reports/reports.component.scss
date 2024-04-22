@@ -5,9 +5,9 @@
     // background-position: bottom;
     padding: 30px 0px;
 
-    .backgroundImg{
+    .backgroundImg {
 
-        img{
+        img {
             width: 100%;
             height: auto;
         }
@@ -49,11 +49,11 @@
         }
     }
 
-    .bannerImg{
-            width: 100%;
-            overflow: hidden;
-        
-        img{
+    .bannerImg {
+        width: 100%;
+        overflow: hidden;
+
+        img {
             max-width: 100%;
             height: 259px;
             object-fit: cover;
@@ -125,11 +125,11 @@
             position: relative;
             padding-top: 10px;
 
-            svg{
+            svg {
                 overflow: visible;
                 height: 100px;
 
-                .topText{
+                .topText {
                     // position: absolute;
                     // top: 0px;
                     // left: 50%;
@@ -138,12 +138,17 @@
                     font-weight: 600;
                     font-size: 20px;
                 }
+
                 .leftText {
                     position: absolute;
                     transform: translate(-13%, -30%);
                     font-size: 18px;
                     font-weight: 400;
                     color: #3F3F3F;
+                }
+
+                .top{
+                    font-weight: 800;
                 }
 
                 .rightText {
@@ -442,11 +447,11 @@
                         color: #fff;
                     }
 
-                    p{
+                    p {
                         color: #fff;
                     }
 
-                    hr{
+                    hr {
                         border-color: #fff;
                     }
 
@@ -499,7 +504,7 @@
                         height: 130px !important;
                     }
 
-                    
+
 
                     ul {
                         padding-left: 0px;
@@ -509,7 +514,7 @@
                         height: 120px;
                         overflow-x: hidden;
                         overflow-y: auto;
-                
+
                         &::-webkit-scrollbar {
                             display: none;
                         }
@@ -537,7 +542,7 @@
                                 justify-content: center;
 
                                 span {
-                                   min-width: 8px;
+                                    min-width: 8px;
                                     min-height: 8px;
                                 }
                             }
@@ -723,7 +728,7 @@
                         border: none;
                         padding: 3px 14px;
 
-                        &.NoColor{
+                        &.NoColor {
                             background-color: #EC1111;
                         }
                     }
@@ -1402,7 +1407,7 @@
         }
 
         h3 {
-            font-size: 18px;
+            font-size: 19px;
             color: #3F3F3F;
             margin-bottom: 8px;
             font-weight: 600;
@@ -1419,7 +1424,7 @@
             color: #3F3F3F;
             line-height: 20px;
             text-align: center;
-            padding: 0px 40px;
+            padding: 0px 0px;
         }
 
         .defaultContent {
@@ -1546,7 +1551,7 @@
                 }
             }
 
-            .d-blockList{
+            .d-blockList {
                 display: block;
                 background-color: #fff;
                 padding: 20px 22px;
@@ -1554,7 +1559,7 @@
                 border-radius: 10px;
                 margin-bottom: 0px;
 
-                li{
+                li {
                     color: #3F3F3F;
                     font-size: 14px;
                     font-weight: 600;
@@ -1588,18 +1593,25 @@
 
             .qtrBox {
 
-                &.scrollMonth{
+                &.scrollMonth {
 
-                    ul{
-                        overflow: hidden;
+                    ul {
                         height: 100px;
-                        overflow-x: hidden;
-                        overflow-y: auto;
 
                         &::-webkit-scrollbar {
                             display: none;
                         }
                     }
+                }
+
+                span {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 3px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    font-family: Poppins !important;
+                    color: var(--main2);
                 }
 
                 .qtrList {
@@ -1614,15 +1626,18 @@
                         li {
                             padding: 8px;
                             border: 1px solid #CECECE;
-                            min-width: 83px;
+                            min-width: 44px;
                             display: flex;
                             align-items: center;
                             justify-content: center;
                             border-radius: 8px;
+                            font-size: 12px;
+                            text-transform: uppercase;
 
                             &.active {
-                                background-color: var(--main1);
+                                background-color: #FF7B24;
                                 color: #fff;
+                                font-size: 12px;
                             }
                         }
 
@@ -1819,6 +1834,7 @@
                             }
                         }
                     }
+
                     &:nth-of-type(2) {
 
                         span {
@@ -1836,6 +1852,7 @@
                             }
                         }
                     }
+
                     &:nth-of-type(3) {
 
                         span {
@@ -1853,6 +1870,7 @@
                             }
                         }
                     }
+
                     &:nth-of-type(4) {
 
                         span {
@@ -1870,6 +1888,7 @@
                             }
                         }
                     }
+
                     &:nth-of-type(5) {
 
                         span {
@@ -2123,7 +2142,7 @@
                     li {
                         position: relative;
                         padding: 0px 20px 8px;
-                        font-size: 14px;
+                        font-size: 13px;
                         font-weight: 500;
                         margin-bottom: 0px;
                         font-family: Poppins !important;
@@ -2624,6 +2643,7 @@
                         }
                     }
                 }
+
                 &:nth-of-type(2) {
 
                     span {
@@ -2641,6 +2661,7 @@
                         }
                     }
                 }
+
                 &:nth-of-type(3) {
 
                     span {
@@ -2658,6 +2679,7 @@
                         }
                     }
                 }
+
                 &:nth-of-type(4) {
 
                     span {
@@ -2675,6 +2697,7 @@
                         }
                     }
                 }
+
                 &:nth-of-type(5) {
 
                     span {
@@ -2749,10 +2772,10 @@
     padding: 0px 0px 25px;
     margin-top: -40px;
 
-    .powerLogo{
+    .powerLogo {
         text-align: center;
 
-        span{
+        span {
             font-size: 14px;
             font-weight: 500;
             color: #3F3F3F;
@@ -2761,20 +2784,20 @@
             margin-right: 6px;
         }
 
-        img{
+        img {
             width: auto;
             height: 62px;
         }
     }
 }
 
-.disclaimer{
+.disclaimer {
     padding: 45px 0px;
     background-color: #fff;
 
-    .content{
+    .content {
 
-        span{
+        span {
             font-size: 11px;
             color: #3F3F3F;
             line-height: 18px;
@@ -2787,15 +2810,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .progress-container {
+}
+
+.progress-container {
     position: relative;
     width: 180px;
     height: 180px;
-  }
-  
-  .progress {
+}
+
+.progress {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -2804,9 +2827,9 @@
     transform-origin: center;
     animation: fill-progress 5s forwards;
     position: absolute;
-  }
-  
-  .progress-text {
+}
+
+.progress-text {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -2814,9 +2837,9 @@
     justify-content: center;
     align-items: center;
     font-size: 24px;
-  }
-  
-  .data {
+}
+
+.data {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -2827,8 +2850,9 @@
     z-index: 111;
     color: white;
     border: 2px solid #ffffff
-  }
-  .progressBaar {
+}
+
+.progressBaar {
 
     .v2checkBox {
 
@@ -2842,7 +2866,7 @@
                 margin-bottom: 30px;
             }
 
-            .BoxAnimation{
+            .BoxAnimation {
                 position: relative;
 
                 .progressBox {
@@ -2854,7 +2878,7 @@
                     margin: 0 auto;
                     margin-top: 15px;
 
-                    &.box1{
+                    &.box1 {
                         opacity: .2;
                         position: absolute;
                         margin: 0 auto;
@@ -2865,7 +2889,7 @@
                         z-index: -1;
                     }
 
-                    &.box2{
+                    &.box2 {
                         opacity: .1;
                         position: absolute;
                         margin: 0 auto;
@@ -2875,7 +2899,7 @@
                         top: 37px;
                         z-index: -2;
                     }
-    
+
                     p {
                         color: #3F3F3F;
                         font-size: 13px;
@@ -2890,27 +2914,27 @@
     }
 }
 
-  @keyframes fill-progress {
+@keyframes fill-progress {
     from {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
-  
+
     to {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
 
 
 @media (max-width: 767px) {
     .topBannerHeader {
         padding: 50px 0px;
-    
+
         .bannerText {
-    
+
             h1 {
                 font-size: 25px;
             }
-    
+
             ul {
                 padding-left: 0px;
                 list-style: none;
@@ -2920,7 +2944,7 @@
 
         .bannerImg {
 
-            img{
+            img {
                 width: 100%;
                 position: relative;
                 left: -40px;
@@ -2929,37 +2953,37 @@
         }
     }
 
-    .mobileSilder{
+    .mobileSilder {
         margin-bottom: 30px;
 
-        .heightBox{
+        .heightBox {
             margin: 10px;
 
-            .numberBox{
+            .numberBox {
                 padding: 40px 24px;
                 height: 220px;
 
-                .content{
+                .content {
 
-                    h3{
+                    h3 {
                         font-size: 18px;
                         line-height: 26px;
                     }
                 }
-                
-                .numberText{
+
+                .numberText {
                     min-height: 190px;
                 }
             }
         }
 
-        .scoreBox{
+        .scoreBox {
             margin: 10px 10px 20px;
         }
 
-        .btn{
+        .btn {
 
-            &.moreBtn{
+            &.moreBtn {
                 padding: 0px;
                 display: flex;
                 align-items: center;
@@ -2990,172 +3014,172 @@
             }
         }
     }
-    
+
     .creditReportSection {
-    
+
         .title {
             margin-bottom: 20px;
-    
+
             &:before {
                 display: none;
             }
-    
+
             h2 {
                 font-size: 24px;
 
-                span{
+                span {
                     padding: 0px;
                 }
             }
         }
-    
+
         .scoreBox {
             padding: 15px 15px;
-    
-    
-    
+
+
+
             h3 {
                 font-size: 15px;
             }
-    
+
             .box {
-    
+
                 span {
                     font-size: 12px;
                 }
             }
         }
-    
+
         .loanHistory {
             padding: 22px 22px;
-    
+
             .minus {
                 top: 12px;
                 right: 12px;
-    
+
                 span {
                     width: 20px;
                     height: 20px;
                     font-size: 16px;
                 }
             }
-    
+
             .plus {
                 top: 12px;
                 right: 12px;
-    
+
                 span {
                     width: 20px;
                     height: 20px;
                     font-size: 16px;
                 }
             }
-    
+
             .title {
                 font-size: 15px;
             }
-    
+
             .calendarBox {
-    
+
                 .otherAnalysis {
                     padding: 20px;
 
-                    .banksBox{
+                    .banksBox {
                         // display: block;
                         flex-wrap: wrap;
                     }
                 }
-    
+
                 .summaryBox {
-    
+
                     h4 {
                         font-size: 15px;
                     }
-    
+
                     .summaryContent {
                         display: block;
 
-                        .smileImg{
+                        .smileImg {
                             display: flex;
                             justify-content: center;
                         }
                     }
                 }
 
-                .defaultHistory{
+                .defaultHistory {
 
-                    .numberBox{
+                    .numberBox {
                         flex-wrap: wrap;
 
-                        li{
+                        li {
                             min-height: auto;
                             padding: 24px 8px;
 
-                            span{
+                            span {
                                 font-size: 16px;
                             }
                         }
                     }
                 }
             }
-    
+
             .multiBox {
                 padding: 20px 20px;
                 margin-top: 10px;
             }
         }
-    
+
         .numberBox {
-    
+
             .numberText {
                 padding: 20px 22px;
             }
         }
     }
-    
+
     .gstFilings {
-    
+
         .title {
             margin-bottom: 20px;
-    
+
             &:before {
                 display: none;
             }
-    
+
             h2 {
                 font-size: 24px;
                 padding: 0px 30px;
 
-                span{
+                span {
                     padding: 0px;
                 }
             }
         }
-    
+
         .loanHistory {
             padding: 24px 24px;
-    
+
             .title {
                 font-size: 15px;
             }
-    
+
             .gstnumberBox {
                 padding: 14px 18px;
             }
-    
+
             .calendarBox {
                 margin-top: 14px;
-    
+
                 h3 {
                     font-size: 15px;
                 }
-    
+
                 ul {
                     width: 100%;
                     margin: 0 auto 10px;
                 }
             }
-    
+
             .multiBox {
                 padding: 20px 18px;
                 margin-top: 10px;
@@ -3163,10 +3187,10 @@
         }
     }
 
-    .mobileSilderView{
+    .mobileSilderView {
         position: relative;
 
-        .moreBtn{
+        .moreBtn {
             padding: 0px;
             display: flex;
             align-items: center;
@@ -3201,114 +3225,114 @@
 
         .title {
             margin-bottom: 20px;
-    
+
             &:before {
                 display: none;
             }
-    
+
             h2 {
                 font-size: 24px;
                 padding: 0px 30px;
 
-                span{
+                span {
                     padding: 0px;
                 }
             }
         }
-    
+
         .affordability {
             margin-bottom: 8px;
-    
+
             h3 {
                 font-size: 18px;
             }
         }
-    
+
         .businessTurnover {
             padding: 22px 22px;
             height: auto !important;
             margin-top: 20px;
-    
+
             .minus {
                 top: 12px;
                 right: 12px;
-    
+
                 span {
                     width: 20px;
                     height: 20px;
                     font-size: 16px;
                 }
             }
-    
+
             .plus {
                 top: 12px;
                 right: 12px;
-    
+
                 span {
                     width: 20px;
                     height: 20px;
                     font-size: 16px;
                 }
             }
-    
+
             h3 {
                 padding: 0px 30px;
             }
-    
+
             .valatilityBox {
                 height: auto;
             }
-    
+
             .chart {
                 margin-bottom: 12px;
                 display: flex;
                 align-items: center;
                 gap: 40px;
                 flex-wrap: wrap;
-    
+
                 canvas {
                     width: 44% !important;
                     height: 296px !important;
                 }
-    
+
                 &.chart1 {
                     gap: 10px;
-    
+
                     canvas {
                         width: 100% !important;
                     }
                 }
-    
+
                 &.chartLine {
                     gap: 10px;
-    
+
                     canvas {
                         height: 100% !important;
                     }
                 }
-    
+
                 &.chart2 {
                     display: flex;
                     justify-content: center;
-    
+
                     canvas {
                         width: 220px !important;
                         height: 220px !important;
                     }
                 }
-    
+
                 img {
                     display: flex;
                     margin: 0 auto;
                     height: 200px;
                     width: 100%;
                 }
-    
+
                 ul {
                     padding-left: 0px;
                     list-style: none;
                     margin-bottom: 0px;
-    
+
                     li {
                         color: #3F3F3F;
                         font-size: 12px;
@@ -3319,7 +3343,7 @@
                         align-items: center;
                         gap: 6px;
                         margin-bottom: 8px;
-    
+
                         span {
                             width: 15px;
                             height: 15px;
@@ -3329,7 +3353,7 @@
                             display: flex;
                             align-items: center;
                             justify-content: center;
-    
+
                             span {
                                 width: 8px;
                                 height: 8px;
@@ -3338,53 +3362,53 @@
                     }
                 }
             }
-    
+
             .chequeBounces {
                 display: flex;
                 align-items: flex-end;
                 justify-content: space-between;
                 margin-bottom: 10px;
                 margin-top: -20px;
-    
+
                 span {
                     font-size: 50px;
                     font-weight: 500;
                     line-height: 26px;
                     color: #FF7B24;
                     font-family: Poppins !important;
-    
+
                     small {
                         font-size: 12px;
                     }
                 }
-    
+
                 img {
                     width: 110px;
                     height: auto;
                 }
             }
-    
+
             .scoreProgress {
-    
+
                 ul {
                     padding-left: 0px;
                     list-style: none;
                     margin-bottom: 0px;
-    
+
                     li {
                         display: flex;
                         align-items: center;
                         gap: 10px;
                         justify-content: space-between;
                         padding: 8px 0px;
-    
+
                         span {
                             color: #3F3F3F;
                             font-size: 13px;
                             font-weight: 500;
                             font-family: Poppins !important;
                             position: relative;
-    
+
                             mat-progress-bar {
                                 position: absolute;
                                 right: 32px;
@@ -3395,22 +3419,22 @@
                     }
                 }
             }
-    
+
             .progressBarColor {
-    
+
                 .lineColor {
-    
+
                     .colorChnage {
 
                         &:nth-of-type(1) {
-    
+
                             span {
                                 mat-progress-bar {
-    
+
                                     ::ng-deep {
-    
+
                                         .mdc-linear-progress__bar {
-    
+
                                             .mdc-linear-progress__bar-inner {
                                                 border-color: #C3E128;
                                             }
@@ -3419,15 +3443,16 @@
                                 }
                             }
                         }
+
                         &:nth-of-type(2) {
-    
+
                             span {
                                 mat-progress-bar {
-    
+
                                     ::ng-deep {
-    
+
                                         .mdc-linear-progress__bar {
-    
+
                                             .mdc-linear-progress__bar-inner {
                                                 border-color: #12ba9b;
                                             }
@@ -3436,15 +3461,16 @@
                                 }
                             }
                         }
+
                         &:nth-of-type(3) {
-    
+
                             span {
                                 mat-progress-bar {
-    
+
                                     ::ng-deep {
-    
+
                                         .mdc-linear-progress__bar {
-    
+
                                             .mdc-linear-progress__bar-inner {
                                                 border-color: #EC1111;
                                             }
@@ -3453,15 +3479,16 @@
                                 }
                             }
                         }
+
                         &:nth-of-type(4) {
-    
+
                             span {
                                 mat-progress-bar {
-    
+
                                     ::ng-deep {
-    
+
                                         .mdc-linear-progress__bar {
-    
+
                                             .mdc-linear-progress__bar-inner {
                                                 border-color: #ff7b24;
                                             }
@@ -3470,15 +3497,16 @@
                                 }
                             }
                         }
+
                         &:nth-of-type(5) {
-    
+
                             span {
                                 mat-progress-bar {
-    
+
                                     ::ng-deep {
-    
+
                                         .mdc-linear-progress__bar {
-    
+
                                             .mdc-linear-progress__bar-inner {
                                                 border-color: #6A2FC2;
                                             }
@@ -3490,7 +3518,7 @@
                     }
                 }
             }
-    
+
             .downwardBox {
                 border: 1px solid #6A2FC2;
                 border-radius: 10px;
@@ -3498,14 +3526,14 @@
                 display: flex;
                 align-items: flex-start;
                 gap: 12px;
-    
+
                 img {
                     width: 16px;
                     height: 16px;
                 }
-    
+
                 .downwardContent {
-    
+
                     h4 {
                         font-size: 14px;
                         color: var(--main1);
@@ -3514,7 +3542,7 @@
                         line-height: 18px;
                         font-family: Poppins !important;
                     }
-    
+
                     p {
                         font-size: 13px;
                         font-weight: normal;
@@ -3525,7 +3553,7 @@
                         text-align: left;
                         padding: 0px 0px;
                     }
-    
+
                     span {
                         display: flex;
                         align-items: flex-start;
@@ -3537,29 +3565,29 @@
                     }
                 }
             }
-    
+
             .summaryBox {
                 margin-top: 20px;
             }
         }
 
-        p{
+        p {
             padding: 0px 0px !important;
         }
-    
+
     }
 
     .actionImprove {
         background-color: #fafafa;
-    
+
         .text {
             margin-bottom: 20px;
-    
+
             h3 {
                 font-size: 22px;
             }
         }
-    
+
         .improveBox {
             box-shadow: 0px 3px 10px #272D3B24;
             border-radius: 20px;
@@ -3567,12 +3595,12 @@
             padding: 24px;
             height: 100%;
             position: relative;
-            
+
             .plus {
                 position: absolute;
                 top: 20px;
                 right: 20px;
-    
+
                 span {
                     width: 22px;
                     height: 22px;
@@ -3588,12 +3616,12 @@
                     cursor: pointer;
                 }
             }
-    
+
             .minus {
                 position: absolute;
                 top: 20px;
                 right: 20px;
-    
+
                 span {
                     width: 22px;
                     height: 22px;
@@ -3608,7 +3636,7 @@
                     cursor: pointer;
                 }
             }
-    
+
             h3 {
                 text-align: center;
                 font-size: 18px;
@@ -3616,11 +3644,11 @@
                 margin-bottom: 10px;
                 color: #3F3F3F;
             }
-    
+
             .numberImg {
                 width: 70%;
             }
-    
+
             .howBox {
                 border: 1px solid #E8E8E8;
                 border-radius: 10px;
@@ -3629,14 +3657,14 @@
                 display: flex;
                 align-items: flex-start;
                 gap: 12px;
-    
+
                 img {
                     width: 16px;
                     height: 16px;
                 }
-    
+
                 .content {
-    
+
                     h5 {
                         font-size: 14px;
                         font-weight: 600;
@@ -3644,7 +3672,7 @@
                         color: var(--main1);
                         line-height: 18px;
                     }
-    
+
                     p {
                         font-size: 13px;
                         font-weight: normal;
@@ -3654,37 +3682,37 @@
                     }
                 }
             }
-    
+
             .summaryBox {
                 display: block;
-    
+
                 .box {
                     width: 100%;
                     padding: 20px 20px;
                     background: #fff;
                     height: 100%;
-    
+
                     &:nth-child(1),
                     &:nth-child(3) {
                         border-right: none;
                     }
-    
+
                     &:nth-child(1),
                     &:nth-child(2) {
                         border-bottom: 1px solid #E6E6E6;
                     }
-    
+
                     .summaryContent {
                         display: flex;
                         align-items: center;
                         gap: 12px;
                         height: 40px;
-    
+
                         img {
                             width: auto;
                             height: 22px;
                         }
-    
+
                         span {
                             text-align: center;
                             font-size: 16px;
@@ -3694,13 +3722,13 @@
                             color: #3F3F3F;
                         }
                     }
-    
+
                     ul {
                         padding-left: 0px;
                         list-style: none;
                         margin-bottom: 0px;
                         margin-top: 10px;
-    
+
                         li {
                             position: relative;
                             padding: 0px 20px 8px;
@@ -3709,8 +3737,8 @@
                             margin-bottom: 0px;
                             font-family: Poppins !important;
                             color: #3F3F3F;
-    
-    
+
+
                             span {
                                 width: 10px;
                                 height: 10px;
@@ -3723,14 +3751,14 @@
                         }
                     }
                 }
-    
+
                 .plusBox {
                     width: 50%;
                     padding: 62px 0px;
                     height: 100%;
                     background: #F6F6F6;
                     text-align: center;
-    
+
                     b {
                         border: 1px solid #D8D8D8;
                         border-radius: 8px;
@@ -3744,7 +3772,7 @@
                         align-items: center;
                         justify-content: center;
                     }
-    
+
                     span {
                         color: #3F3F3F;
                         text-transform: uppercase;
@@ -3755,22 +3783,22 @@
                 }
             }
         }
-    
-    
+
+
         .overollScore {
             padding: 18px 18px;
 
-            h2{
+            h2 {
                 margin-bottom: 20px;
                 line-height: 25px;
                 padding: 0px 30px;
             }
-    
+
             .boxRight {
-    
+
                 .border-right:nth-child(1),
                 .border-right:nth-child(2) {
-    
+
                     .overallBox {
                         border-right: none;
                         border-bottom: 1px solid #A070E8;
@@ -3784,16 +3812,16 @@
 
         .title {
             margin-bottom: 20px;
-    
+
             &:before {
                 display: none;
             }
-    
+
             h2 {
                 font-size: 24px;
                 padding: 0px 20px;
 
-                span{
+                span {
                     padding: 0px;
                 }
             }

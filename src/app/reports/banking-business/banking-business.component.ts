@@ -94,6 +94,20 @@ export class BankingBusinessComponent {
   affordability_section: any;
   risk_section: any;
   cashflow_section: any;
+  monthNames = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
 
   constructor() {}
   customOptions4: OwlOptions = {

@@ -42,12 +42,16 @@ export class PieComponent {
         data: pieDataValues,
         backgroundColor: ['#783ecf', '#24c8aa', '#b6d031'],
         borderColor:['#783ecf', '#24c8aa', '#b6d031'],
+        hoverBackgroundColor: ['#783ecf', '#24c8aa', '#b6d031'], // Set hover background color
+    hoverBorderColor: ['#783ecf', '#24c8aa', '#b6d031'],
         
       },
       { 
         data: pieDataValues,
         backgroundColor: pieColors,
         borderColor:pieColors,
+        hoverBackgroundColor: ['#783ecf', '#24c8aa', '#b6d031'], // Set hover background color
+    hoverBorderColor: ['#783ecf', '#24c8aa', '#b6d031'],
 
       },
       // { 
