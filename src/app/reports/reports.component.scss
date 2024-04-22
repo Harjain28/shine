@@ -1,14 +1,22 @@
 .topBannerHeader {
-    background-image: url(../../assets/LandingPage/bannerBackground.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
+    // background-image: url(../../assets/LandingPage/bannerBackground.png);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: bottom;
     padding: 30px 0px;
+
+    .backgroundImg{
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
 
     .bannerText {
 
         h1 {
-            color: var(--main1);
+            color: #3f3f3f;
             font-size: 32px;
             font-weight: 600;
             margin-bottom: 13px;
@@ -47,9 +55,9 @@
         
         img{
             max-width: 100%;
-    height: 259px;
-    object-fit: cover;
-    object-position: 33% 50%;
+            height: 259px;
+            object-fit: cover;
+            object-position: 33% 50%;
         }
     }
 }
@@ -497,6 +505,14 @@
                         padding-left: 0px;
                         list-style: none;
                         margin-bottom: 0px;
+                        overflow: hidden;
+                        height: 120px;
+                        overflow-x: hidden;
+                        overflow-y: auto;
+                
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
 
                         li {
                             color: #3F3F3F;
@@ -505,9 +521,10 @@
                             line-height: 16px;
                             font-family: Poppins !important;
                             display: flex;
-                            align-items: center;
+                            align-items: flex-start;
                             gap: 6px;
                             margin-bottom: 8px;
+                            text-align: left;
 
                             span {
                                 min-width: 15px;
@@ -2544,6 +2561,14 @@
     }
 
     .scoreProgress {
+        overflow: hidden;
+        height: 200px;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         ul {
             padding-left: 0px;
@@ -2721,7 +2746,8 @@
 }
 
 .poweredBy {
-    padding: 25px 0px;
+    padding: 0px 0px 25px;
+    margin-top: -40px;
 
     .powerLogo{
         text-align: center;
@@ -2741,6 +2767,22 @@
         }
     }
 }
+
+.disclaimer{
+    padding: 45px 0px;
+    background-color: #fff;
+
+    .content{
+
+        span{
+            font-size: 11px;
+            color: #3F3F3F;
+            line-height: 18px;
+            font-family: "Poppins" !important;
+        }
+    }
+}
+
 .progress-wrapper {
     display: flex;
     justify-content: center;

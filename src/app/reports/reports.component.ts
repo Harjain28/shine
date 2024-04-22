@@ -65,6 +65,7 @@ export class ReportsComponent {
   reportData: any;
   headerSection: any;
   reportStaticData: any;
+  disclaimer: any;
 
   constructor( private api: ApiService, private cdr: ChangeDetectorRef, ) { }
 
@@ -98,6 +99,7 @@ export class ReportsComponent {
   getHeaderSectionData(){
     this.reportStaticData = reportStatciData;
     this.headerSection = reportStatciData?.header_section;
+    this.disclaimer = reportStatciData?.disclaimer?.description;
   }
 
   postForReport(){

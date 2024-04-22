@@ -1,7 +1,7 @@
 <!-- Top-Banner-Section Start -->
 
 <ng-container>
-<div class="topBannerHeader">
+  <!-- <div class="topBannerHeader">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-5">
@@ -36,45 +36,75 @@
       </div>
     </div>
   </div>
-</div>
-<!-- Top-Banner-Section End -->
+</div> -->
 
-<!-- Credit-Report-Section Start -->
-<app-credit-report [creditReportsData]="reportData"></app-credit-report>
-<!-- Two-plus-Section End -->
+  <div class="topBannerHeader">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-12">
+          <div class="bannerText text-center">
+            <h1>Welcome to Shine</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<!-- GST-Filings-Section Start -->
-<app-gst-filling [gstData]="reportData"></app-gst-filling>
-<!-- GST-Filings-Section End -->
+    <div class="backgroundImg">
+      <img src={{headerSection?.background[0]?.desktop}} alt="">
+    </div>
+  </div>
 
-<!-- BankingBalance-Section Start -->
-<app-banking-business [bankingBusinessData]="reportData"></app-banking-business>
-<!-- BankingBalance-Section End -->
+  <!-- Top-Banner-Section End -->
 
-<!-- ActionImprove-Section Start -->
-<app-actions-required></app-actions-required>
-<!-- ActionImprove-Section End -->
+  <!-- Credit-Report-Section Start -->
+  <app-credit-report [creditReportsData]="reportData"></app-credit-report>
+  <!-- Two-plus-Section End -->
 
-<!-- ProbabilityLoan-Section Start -->
-<!-- <app-probability-of-loan></app-probability-of-loan> -->
-<!-- ProbabilityLoan-Section End -->
-
-<!-- faqsData-Section Start -->
-<app-faq [faqsData]="faqs"></app-faq>
-<!-- faqsData-Section End -->
-
-<div class="poweredBy">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="powerLogo">
-          <span>Your credit report powered by</span>
-          <img src="./assets/LandingPage/Experian-logo.png" alt="">
+  <div class="poweredBy">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="powerLogo">
+            <span>Your credit report powered by</span>
+            <img src="./assets/LandingPage/Experian-logo.png" alt="">
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+  <!-- GST-Filings-Section Start -->
+  <app-gst-filling [gstData]="reportData"></app-gst-filling>
+  <!-- GST-Filings-Section End -->
+
+  <!-- BankingBalance-Section Start -->
+  <app-banking-business [bankingBusinessData]="reportData"></app-banking-business>
+  <!-- BankingBalance-Section End -->
+
+  <!-- ActionImprove-Section Start -->
+  <app-actions-required></app-actions-required>
+  <!-- ActionImprove-Section End -->
+
+  <!-- ProbabilityLoan-Section Start -->
+  <!-- <app-probability-of-loan></app-probability-of-loan> -->
+  <!-- ProbabilityLoan-Section End -->
+
+  <!-- faqsData-Section Start -->
+  <app-faq [faqsData]="faqs"></app-faq>
+  <!-- faqsData-Section End -->
+
+  <div class="disclaimer">
+    <div class="container">
+      <div class="row" *ngIf = "disclaimer">
+        <div class="col-lg-12">
+          <div class="content">
+            <span><b>Disclaimer: </b>{{disclaimer}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </ng-container>
 
