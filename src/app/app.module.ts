@@ -14,11 +14,13 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ShineHeaderComponent } from './shared/shine-header/shine-header.component';
 import { Header2Component } from './shared/header2/header2.component';
+import { RoundPipe } from './pipe/round.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    RoundPipe
   ],
   imports: [
     CommonModule,

@@ -354,7 +354,24 @@ export class BankingBusinessComponent {
                 if (insight.warning !== null && insight.warning !== undefined) {
                     result.warning = insight.warning + ' ';
                 }
+                if (insight.class !== null && insight.class !== undefined) {
+                  result.class = insight.class + ' ';
+              }
+            } else {
+                if (!result.header && insight.header !== null && insight.header !== undefined) {
+                    result.header = insight.header + ' ';
+                }
+                if (!result.subheader && insight.subheader !== null && insight.subheader !== undefined) {
+                    result.subheader = insight.subheader + ' ';
+                }
+                if (!result.warning && insight.warning !== null && insight.warning !== undefined) {
+                    result.warning = insight.warning + ' ';
+                }
+                if (insight.class !== null && insight.class !== undefined) {
+                  result.class = insight.class + ' ';
+              }
             }
+            
             if (insight.description !== null && insight.description !== undefined) {
                 result.description += insight.description + ' ';
             }
@@ -364,6 +381,7 @@ export class BankingBusinessComponent {
             if (insight.type !== null && insight.type !== undefined) {
                 result.type += insight.type + ' ';
             }
+          
             return result;
         },
         {

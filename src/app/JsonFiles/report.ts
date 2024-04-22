@@ -319,6 +319,7 @@ export const reportPageJson =
             "smallLoans": 8
           }
         },
+        
         "creditAnalysis": {
           "byAmount": [
             {

@@ -13,7 +13,7 @@ import { BuildBureauPopupComponent } from 'src/app/modal/build-bureau-popup/buil
 import { CreditJourneyPopupComponent } from 'src/app/modal/credit-journey-popup/credit-journey-popup.component';
 import { reportPageJson } from 'src/app/JsonFiles/report';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
-
+import { RoundPipe } from 'src/app/pipe/round.pipe';
 @Component({
   selector: 'app-credit-report',
   standalone: true,
