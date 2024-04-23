@@ -214,10 +214,12 @@
                       <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
                         <div class="otherAnalysis">
                           <h3>{{LoanReplacementExpanded?.otherAnalysis?.suitFiledEver?.header}}</h3>
-                          <div class="checkBox">
-                            <h5>Suit Filed Ever</h5>
-                            <button [ngClass]="other_analysis.suitFiledEver ? 'YesColor' : 'NoColor'">{{ other_analysis.suitFiledEver ? 'Yes' : 'No' }}</button>
-                          </div>
+                    
+                            <div class="checkBox">
+                              <mat-checkbox [checked]="other_analysis.suitFiledEver">Yes</mat-checkbox>
+                              <mat-checkbox [checked]="!other_analysis.suitFiledEvers">No</mat-checkbox>
+                            </div>
+                        
                           <div class="banksBox flex-wrap" *ngIf="suitFiledEver?.bullets && suitFiledEver?.bullets.length > 0">
                             <ul>
                               <li  *ngFor="let bullets of suitFiledEver?.bullets">
