@@ -126,7 +126,7 @@
                             <div *ngIf="default_analysis" class="historyList">
                               <ng-container *ngFor="let item of defaultHistoryItems">
                                 <li>
-                                  {{ item.label }}
+                                  {{ item.key }}
                                   <span [ngClass]="item.value ? 'YesColor' : 'NoColor'">{{ item.value ? 'YES' : 'No' }}</span>
                                 </li>
                               </ng-container>

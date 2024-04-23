@@ -231,6 +231,28 @@
 
                     </div>
 
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"
+                      [ngClass]="form1.controls['businessVintage'].touched &&
+                                      form1.controls['businessVintage'].hasError('required')  ? 'isvaliderror' :  ''">
+                      <mat-form-field appearance="fill">
+                        <mat-label> Business Vintage</mat-label>
+                        <mat-select formControlName='businessVintage' placeholder="">
+                          <mat-option value="Less than 1 year">Less than 1 year </mat-option>
+                          <mat-option value="1 - 3 years">1 - 3 years </mat-option>
+                          <mat-option value="3 - 5 years">3 - 5 years </mat-option>
+                          <mat-option value="More than 5 years">More than 5 years </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+
+                      <div class="error mb-2" *ngIf="
+                                          form1.controls['businessVintage'].touched &&
+                                          form1.controls['businessVintage'].hasError('required')
+                                        ">
+                        Please complete this mandatory field.
+                      </div>
+
+                    </div>
+
                   </div>
                 </form>
               </div>

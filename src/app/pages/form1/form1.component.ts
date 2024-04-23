@@ -61,6 +61,7 @@ export class Form1Component implements OnInit {
       businessTurnover: new FormControl("", [Validators.required]),
       propertyOwnership: new FormControl("", [Validators.required]),
       businessPan: new FormControl("", [Validators.required]),
+      businessVintage: new FormControl("", [Validators.required]),
 
 
 
@@ -106,6 +107,7 @@ export class Form1Component implements OnInit {
     requestData["businessPan"] =  formValue.businessPan;
     requestData["propertyOwnership"] =  formValue.propertyOwnership;
     requestData["turnover"] =  this.unformattedX;
+    requestData["businessVintage"] =  formValue.businessVintage;
 
     localStorage.setItem("reqData",JSON.stringify(requestData));
     localStorage.setItem("title",formValue.title);

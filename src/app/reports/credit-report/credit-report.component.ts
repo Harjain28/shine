@@ -154,24 +154,28 @@ export class CreditReportComponent {
 
     this.default_analysis = this.loan_repayment_history?.defaultAnalysis;
     this.other_analysis = this.loan_repayment_history?.otherAnalysis;
-    this.defaultHistoryItems = [
-      {
-        label: 'Recent Default',
-        value: this.default_analysis.defaultHistory.recentDefault,
-      },
-      {
-        label: 'Default Ever',
-        value: this.default_analysis.defaultHistory.defaultEver,
-      },
-      {
-        label: '30 days delayed',
-        value: this.default_analysis.defaultHistory.thirtyDaysDelayed,
-      },
-      {
-        label: 'Delayed Severity of Payment (90-180 days)',
-        value: this.default_analysis.defaultHistory.delayedSeverity,
-      },
-    ];
+
+    function toCamelCase(str: string) {
+      return str.replace(/([-_][a-z])/gi, ($1) => {
+          return $1.toUpperCase()
+              .replace('-', '')
+              .replace('_', '');
+      });
+  }
+
+
+for (const key in this.default_analysis.defaultHistory) {
+    if (this.default_analysis.defaultHistory.hasOwnProperty(key)) {
+        this.defaultHistoryItems.push({
+            key: toCamelCase(key),
+            value: this.default_analysis.defaultHistory[key]
+        });
+    }
+}
+
+console.log(this.defaultHistoryItems,"tt");
+
+  
     this.credit_analysis = this.creditReportData?.creditAnalysis;
     this.credit_analysis = Object.assign({}, this.credit_analysis, {
       colorDots: ['#C3E128', '#12ba9b', '#EC1111', '#ff7b24', '#6a2fc2', '#3f51b5', '#11c897', '#d32ec3'],
