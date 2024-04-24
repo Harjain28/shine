@@ -92,6 +92,8 @@ export class CreditReportComponent {
   credit_analysis_card: any;
   credit_analysis_card_Expanded: any;
   colorDots: string[] = ['#C3E128', '#12ba9b', '#EC1111', '#ff7b24', '#6a2fc2', '#3f51b5', '#11c897', '#d32ec3'];
+  currStage: any;
+  potStage: any;
 
   constructor(private dialog: MatDialog, private el:  ElementRef) {}
 
@@ -173,7 +175,12 @@ for (const key in this.default_analysis.defaultHistory) {
     }
 }
 
-console.log(this.defaultHistoryItems,"tt");
+this.currStage= this.reportsData?.currentStage
+this.potStage = this.reportsData?.potentialStage
+
+
+
+
 
   
     this.credit_analysis = this.creditReportData?.creditAnalysis;

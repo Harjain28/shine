@@ -11,6 +11,7 @@ import { shineLendingPageJSON } from '../JsonFiles/lendingpage';
 import { ChartsJsonData } from '../JsonFiles/ChartJSONData';
 import { Subscription, take, timer } from 'rxjs';
 import { reportStatciData } from '../JsonFiles/reportpageStaticData';
+import { reportPageJson } from '../JsonFiles/report';
 
 
 
@@ -66,14 +67,26 @@ export class ReportsComponent {
   headerSection: any;
   reportStaticData: any;
   disclaimer: any;
+  reportsData: any;
+  criticalTotal: any;
+  mediumTotal: any;
+  imgUrlDesktop: any;
+  imgUrlMobile: any;
 
   constructor( private api: ApiService, private cdr: ChangeDetectorRef, ) { }
 
   ngOnInit(): void {
+
+    
+
+
+
     this.getFaq();
     this.getChartsData();
     this.postForReport();
     this.getHeaderSectionData();
+
+
   }
 
   ngAfterViewInit(): void {
@@ -97,9 +110,24 @@ export class ReportsComponent {
   }
 
   getHeaderSectionData(){
-    this.reportStaticData = reportStatciData;
+    this.reportStaticData = reportStatciData;  
+    this.reportsData = reportPageJson?.report;
+
     this.headerSection = reportStatciData?.header_section;
     this.disclaimer = reportStatciData?.disclaimer?.description;
+
+
+    const { bankingSummary, bureauSummary, gstSummary } = this.reportsData;
+    this.criticalTotal = bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
+    this.mediumTotal = bankingSummary.medium + bureauSummary.medium + gstSummary.medium
+
+    const compareStage = this.headerSection?.background.find((image: { stage: any; }) => image.stage ===this.reportsData?.currentStage);
+    if(compareStage){
+      this.imgUrlDesktop = compareStage.desktop;
+      this.imgUrlMobile = compareStage.mobile_content;
+    }
+
+
   }
 
   postForReport(){
