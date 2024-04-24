@@ -57,9 +57,6 @@ export class Mixed4Component {
 
     this.mixedValue1 = this.MixedJSONData4?.creditCount;
     this.mixedValue2 = this.MixedJSONData4?.months;
-    // this.mixedLineValue1 = this.MixedJSONData2?.LineValue1;
-    // this.mixedLineValue2 = this.MixedJSONData2?.LineValue2;
-    // this.mixedLineValue3 = this.MixedJSONData2?.LineValue3;
     const dataValues = [...this.mixedValue1];
 
   

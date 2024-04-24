@@ -12,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CreditJourneyPopupComponent } from 'src/app/modal/credit-journey-popup/credit-journey-popup.component';
 import { reportPageJson } from 'src/app/JsonFiles/report';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
-
+import { RoundPipe } from 'src/app/pipe/round.pipe';
 @Component({
   selector: 'app-credit-report',
   standalone: true,
