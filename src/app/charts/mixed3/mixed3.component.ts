@@ -43,8 +43,8 @@ export class Mixed3Component {
         
       } else {
         const canvas = this.chartCanvas3.nativeElement as HTMLCanvasElement;
-    canvas.width = 340; 
-    canvas.height = 250; 
+        canvas.width = 309; 
+        canvas.height = 206; 
       }
     });
     this.mixedChart();

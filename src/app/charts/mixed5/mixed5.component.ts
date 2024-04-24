@@ -41,8 +41,8 @@ export class Mixed5Component {
         
       } else {
         const canvas = this.chartCanvas5.nativeElement as HTMLCanvasElement;
-    canvas.width = 300; 
-    canvas.height = 200; 
+        canvas.width = 309; 
+        canvas.height = 206; 
       }
     });
     
