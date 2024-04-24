@@ -1031,6 +1031,16 @@
                             }
                         }
                     }
+
+                    .smileImg {
+                        display: flex;
+                        justify-content: center;
+
+                        img{
+                            width: auto;
+                            height: 110px;
+                        }
+                    }
                 }
             }
         }
@@ -1825,7 +1835,7 @@
             margin-bottom: 12px;
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 20px;
             flex-wrap: wrap;
 
             canvas {
@@ -2189,6 +2199,16 @@
                         }
                     }
                 }
+
+                .smileImg {
+                    display: flex;
+                    justify-content: center;
+
+                    img{
+                        width: auto;
+                        height: 110px;
+                    }
+                }
             }
         }
     }
@@ -2306,6 +2326,16 @@
                     img {
                         width: auto;
                         height: 22px;
+                    }
+
+                    .smileImg {
+                        display: flex;
+                        justify-content: center;
+
+                        img{
+                            width: auto;
+                            height: 110px;
+                        }
                     }
 
                     span {
@@ -3112,7 +3142,7 @@
 
 @media (max-width: 767px) {
     .topBannerHeader {
-        padding: 50px 0px;
+        padding: 50px 0px 0px;
 
         .bannerText {
 
@@ -3391,6 +3421,7 @@
 
                 .otherAnalysis {
                     padding: 20px;
+                    height: auto;
 
                     .banksBox {
                         // display: block;
@@ -3410,6 +3441,11 @@
                         .smileImg {
                             display: flex;
                             justify-content: center;
+
+                            img{
+                                width: auto;
+                                height: 110px;
+                            }
                         }
                     }
                 }
@@ -3434,6 +3470,18 @@
             .multiBox {
                 padding: 20px 20px;
                 margin-top: 10px;
+            }
+
+            .calendarBox{
+
+                .year{
+                    gap: 8px !important;
+
+                    span{
+                        font-size: 12px;
+                        padding: 6px 16px;
+                    }
+                }
             }
         }
 
@@ -3589,14 +3637,34 @@
 
             .valatilityBox {
                 height: auto;
-                padding: 24px 0px !important;
+                padding: 24px 12px !important;
+
+                .qtrBox{
+                    margin-bottom: 8px;
+
+                    .qtrList{
+                        margin-bottom: 10px;
+                    }
+                }
+
+                .contentQtr{
+                    margin-top: 18px;
+                }
+
+                .checkBox {
+
+                    button{
+                        padding: 3px 8px;
+                        font-size: 14px;
+                    }
+                }
             }
 
             .chart {
                 margin-bottom: 12px;
                 display: flex;
                 align-items: center;
-                gap: 40px;
+                gap: 20px;
                 flex-wrap: wrap;
 
                 canvas {
@@ -3671,29 +3739,28 @@
                     }
                 }
             }
+            .mobileAlign{
+                display: block !important;
 
-            .chequeBounces {
-                display: flex;
-                align-items: flex-end;
-                justify-content: space-between;
-                margin-bottom: 10px;
-                margin-top: -20px;
+                .chequeBounces {
+                    display: flex !important;
 
-                span {
-                    font-size: 50px;
-                    font-weight: 500;
-                    line-height: 26px;
-                    color: #FF7B24;
-                    font-family: Poppins !important;
+                    span {
+                        font-size: 50px;
+                        font-weight: 500;
+                        line-height: 26px;
+                        color: #FF7B24;
+                        font-family: Poppins !important;
 
-                    small {
-                        font-size: 12px;
+                        small {
+                            font-size: 12px;
+                        }
                     }
-                }
 
-                img {
-                    width: 110px;
-                    height: auto;
+                    img {
+                        width: 110px;
+                        height: auto;
+                    }
                 }
             }
 
@@ -3877,6 +3944,15 @@
 
             .summaryBox {
                 margin-top: 20px;
+
+                .summaryContent{
+                    display: block;
+
+                    .smileImg{
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
             }
         }
 
