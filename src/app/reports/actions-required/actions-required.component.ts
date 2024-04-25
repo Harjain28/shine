@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
+import { reportPageJson } from 'src/app/JsonFiles/report';
 
 @Component({
   selector: 'app-actions-required',
@@ -18,6 +19,10 @@ import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 export class ActionsRequiredComponent {
   summary_section:any;
   summary_section_Data: any;
+  reportsData: any;
+  bankingSummary: any;
+  bureauSummary: any;
+  gstSummary: any;
 
   constructor(){
 
@@ -28,6 +33,11 @@ export class ActionsRequiredComponent {
     this.summary_section = reportStatciData;
     this.summary_section_Data = this.summary_section?.summary_section;
 
+    this.reportsData = reportPageJson?.report
+
+    this.bankingSummary = this.reportsData?.bankingSummary?.summary;
+    this.bureauSummary = this.reportsData?.bureauSummary?.summary;
+    this.gstSummary = this.reportsData?.gstSummary?.summary;
   }
 
   

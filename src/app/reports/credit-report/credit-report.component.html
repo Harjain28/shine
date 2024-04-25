@@ -42,14 +42,15 @@
                   <div class="col-lg-12 mb-4">
                     <div class="numberBox">
                       <div class="content">
-                        <h3>How Risky You are As a Business</h3>
+                        <h3>{{CR_Data?.business_remarks_card?.header}}</h3>
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
                           elit, sed Lorem ipsum do.
                         </p>
                       </div>
                       <div class="numberText">
-                        <p>{{creditReportData?.businessRiskRemark}}</p>
+                        <p *ngIf="creditReportData?.businessRiskRemark">Yes</p>
+                        <p *ngIf="!creditReportData?.businessRiskRemark">No</p>
                         <span>Remarks</span>
                       </div>
                     </div>
@@ -57,7 +58,7 @@
                   <div class="col-lg-12">
                     <div class="numberBox colorChange">
                       <div class="content">
-                        <h3>How Hungry You are For a Loan</h3>
+                        <h3>{{CR_Data?.enquiries_card?.header}}</h3>
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
                           elit, sed Lorem ipsum do.
@@ -246,7 +247,7 @@
                           <h4>{{LoanReplacementExpanded?.summary?.header}}</h4>
                           <div class="summaryContent">
                             <ul>
-                              <li *ngFor = "let bullets of summary?.bullets">
+                              <li *ngFor = "let bullets of bullets">
                                 <span></span>
                                 {{bullets}}
                               </li>
@@ -254,7 +255,7 @@
                             
                             <div class="smileImg">
                               <img
-                                src="./assets/LandingPage/smileImg.svg"
+                                src={{imgageIcon}}
                                 alt=""
                               />
                             </div>
@@ -439,14 +440,15 @@
             <div class="col-lg-12 mb-4">
               <div class="numberBox">
                 <div class="content">
-                  <h3>How Risky You are As a Business</h3>
+                  <h3>{{CR_Data?.business_remarks_card?.header}}</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     Lorem ipsum do.
                   </p>
                 </div>
                 <div class="numberText">
-                  <p>{{creditReportData?.businessRiskRemark}}</p>
+                  <p *ngIf="creditReportData?.businessRiskRemark">Yes</p>
+                  <p *ngIf="!creditReportData?.businessRiskRemark">No</p>
                   <span>Remarks</span>
                 </div>
               </div>
@@ -454,7 +456,7 @@
             <div class="col-lg-12">
               <div class="numberBox colorChange">
                 <div class="content">
-                  <h3>How Hungry You are For a Loan</h3>
+                  <h3>{{CR_Data?.enquiries_card?.header}}</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     Lorem ipsum do.
@@ -476,14 +478,15 @@
             <div class="col-lg-6 col-md-12 mb-4">
               <div class="numberBox p-3">
                 <div class="content">
-                  <h3>How Risky You are As a Business</h3>
+                  <h3>{{CR_Data?.business_remarks_card?.header}}</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     Lorem ipsum do.
                   </p>
                 </div>
                 <div class="numberText">
-                  <p>{{creditReportData?.businessRiskRemark}}</p>
+                  <p *ngIf="creditReportData?.businessRiskRemark">Yes</p>
+                  <p *ngIf="!creditReportData?.businessRiskRemark">No</p>
                   <span>Remarks</span>
                 </div>
               </div>
@@ -491,7 +494,7 @@
             <div class="col-lg-6 col-md-12 mb-4">
               <div class="numberBox colorChange p-3">
                 <div class="content">
-                  <h3>How Hungry You are For a Loan</h3>
+                  <h3>{{CR_Data?.enquiries_card?.header}}</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     Lorem ipsum do.
@@ -751,7 +754,8 @@
                   </p>
                 </div>
                 <div class="numberText">
-                   <p>{{creditReportData?.businessRiskRemark}}</p>
+                  <p *ngIf="creditReportData?.businessRiskRemark">Yes</p>
+                  <p *ngIf="!creditReportData?.businessRiskRemark">No</p>
                   <span>Remarks</span>
                 </div>
               </div>

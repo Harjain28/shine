@@ -94,6 +94,8 @@ export class CreditReportComponent {
   colorDots: string[] = ['#C3E128', '#12ba9b', '#EC1111', '#ff7b24', '#6a2fc2', '#3f51b5', '#11c897', '#d32ec3'];
   currStage: any;
   potStage: any;
+  imgageIcon: any;
+  bullets: any;
 
   constructor(private dialog: MatDialog, private el:  ElementRef) {}
 
@@ -150,6 +152,7 @@ export class CreditReportComponent {
     this.creditReportData = this.reportsData?.creditReport;
     this.angle = this.creditReportData?.bureauScore?.score;
     this.loan_repayment_history = this.creditReportData?.loanRepaymentHistory;
+   
 
     this.year = this.extractYears(this.loan_repayment_history?.missedPayments);
     this.selectedYear = this.year[0];
@@ -221,6 +224,27 @@ this.potStage = this.reportsData?.potentialStage
     const creditreportInsights = this.reportsData?.creditReport;
     const loanRepaymentHistory = creditreportInsights?.loanRepaymentHistory;
 
+
+    loanRepaymentHistory?.summary.forEach((item: any) => {
+      if (item?.bullets !== null && item?.bullets.length > 0) {
+        this.bullets = item?.bullets;
+        if (item?.class !== null) {
+          if (item.class === "negative") {
+            this.imgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
+          } else {
+            this.imgageIcon = "./assets/LandingPage/smileImg.svg";
+          }
+        } else {
+          this.imgageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
+        }
+      } 
+    });
+    
+
+    
+
+
+
     const defaultAnalysis = loanRepaymentHistory?.defaultAnalysis;
     const otherAnalysis = loanRepaymentHistory?.otherAnalysis;
 
@@ -264,6 +288,8 @@ this.potStage = this.reportsData?.potentialStage
         (item: { condition_status: any }) => item.condition_status
       )
     );
+
+    
 
     const credit_analysis = creditreportInsights?.credit_analysis;
 

@@ -79,10 +79,20 @@ export class ReportsComponent {
   mediumTotal: any;
   imgUrlDesktop: any;
   imgUrlMobile: any;
+  requestData: any;
+  parsedData: any;
+  mobileNo: any;
 
   constructor(private api: ApiService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
+    this.requestData = localStorage.getItem("reqData")
+    this.parsedData = JSON.parse(this.requestData);
+
+    if(this.parsedData){
+    this.mobileNo = this.parsedData.mobile;
+    }
+
     this.getFaq();
     this.getChartsData();
     this.postForReport();
@@ -130,26 +140,29 @@ export class ReportsComponent {
 
   postForReport() {
     this.showEligible = false;
-    let requestData: any = {};
-    requestData['mobile'] = '8128187880';
-    //  const params = { ...this.paramsObject.params };
-    this.api.postForReport(`api/Remediation/Report`, requestData).subscribe({
-      next: (res: any) => {
-        if (res) {
-          this.showEligible = true;
-          console.log(res);
-          this.reportData = res;
-        }
-      },
-      error: (error) => {
-        this.showEligible = true;
-      },
-      complete: () => {
-        // ('Request complete');
-      },
-    });
+      let requestData: any = {}; 
+      requestData["mobile"] = this.mobileNo;
+      //  const params = { ...this.paramsObject.params };
+          this.api.postForReport(`api/Remediation/Report`,requestData ) .subscribe({
+              next: (res: any) => {
+                if (res) {
+                  this.showEligible = true;
+                  console.log(res);
+                  this.reportData = res;
+                 
+                }
+              },
+              error: error => {
+                this.showEligible = true;
+              },
+              complete: () => {
+               // ('Request complete');
+              }
+            });
+      
   }
 
+ 
   getFaq() {
     this.businessLoanJson = reportStatciData;
     this.faqs = this.businessLoanJson?.faq_section;
