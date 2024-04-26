@@ -288,7 +288,7 @@
 
                   <app-bar [barJSONData]="barData"></app-bar>
                 </div>
-                <p>Lorem Ipsum is simply dummy text of the printin Lorem Ipsum is simply dummy text of the printin</p>
+                <p>{{affordability_section?.business_turnover_card?.description}}</p>
               </div>
 
               <div class="col-lg-4 col-md-4 col-sm-12 mt-3">
@@ -321,8 +321,8 @@
 
             <app-bar [barJSONData]="barData"></app-bar>
           </div>
-          <p>Lorem Ipsum is simply dummy text of the printin Lorem Ipsum is simply dummy text of the printin</p>
-
+          <p>{{affordability_section?.business_turnover_card?.description}}</p>
+          
           <div class="downwardBox">
             <img src="./assets/LandingPage/themeInformation.svg" alt="">
             <div class="downwardContent">
@@ -448,7 +448,7 @@
                   </li>
                 </ul>
 
-                <p>Your debt-to-turnover ratio gives perspective on our ability to take new loans.</p>
+                <p>{{risk_section?.debt_turnover_expanded?.secured_unsecured_turnover?.debt_ratio?.description}}</p>
               </div>
             </div>
             <div class="col-lg-6">
@@ -496,7 +496,7 @@
                 <div class="d-flex gap-4 align-items-center mobileAlign">
                   <div class="chequeBounces d-block">
                     <span class="d-flex">{{banking_history?.cheque_bounces}} <small>BOUNCES</small></span>
-                    <img class="d-block" src="./assets/LandingPage/chequeBouns.png" alt="">
+                    <img class="d-block" src={{risk_section?.cheque_bounces_card?.icon}} alt="">
 
                   </div>
                   <div class="downwardBox" style="background-color: #FBF8FF;">
@@ -572,7 +572,7 @@
             <div class="col-lg-12">
               <div class="chequeBounces">
                 <span>{{banking_history?.chequeBounces?.chequeBounces6M}}  <small>BOUNCES</small></span>
-                <img src="./assets/LandingPage/chequeBouns.png" alt="">
+                <img src={{risk_section?.cheque_bounces_card?.icon}} alt="">
               </div>
             </div>
             <div class="col-lg-12">
@@ -654,7 +654,7 @@
                     <div class="col-lg-12">
                       <div class="chequeBounces">
                         <span>{{banking_history?.chequeBounces?.chequeBounces6M}} <small>BOUNCES</small></span>
-                        <img src="./assets/LandingPage/chequeBouns.png" alt="">
+                        <img src={{risk_section?.cheque_bounces_card?.icon}} alt="">
         
                       </div>
                     </div>

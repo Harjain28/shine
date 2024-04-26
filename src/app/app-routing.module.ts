@@ -23,6 +23,10 @@ const routes: Routes = [
     path:'in/report', 
     component: ReportsComponent   
   },
+  {
+    path:'in/sample_report', 
+    component: ReportsComponent   
+  },
   
 
   {

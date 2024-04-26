@@ -17,6 +17,12 @@ import { ChartsJsonData } from '../JsonFiles/ChartJSONData';
 import { Subscription, take, timer } from 'rxjs';
 import { reportStatciData } from '../JsonFiles/reportpageStaticData';
 import { reportPageJson } from '../JsonFiles/report';
+import { Router } from '@angular/router';
+import { goodBureauJSON } from '../JsonFiles/good_bureau';
+import { avgBureauJSON } from '../JsonFiles/avg_bureau';
+import { noBureauJSON } from '../JsonFiles/no_bureau';
+import { poorBureauJSON } from '../JsonFiles/poor_bureau';
+import { vpoorBureauJSON } from '../JsonFiles/v_poor_bureau';
 
 @Component({
   selector: 'app-reports',
@@ -83,7 +89,7 @@ export class ReportsComponent {
   parsedData: any;
   mobileNo: any;
 
-  constructor(private api: ApiService, private cdr: ChangeDetectorRef) {}
+  constructor(private api: ApiService, private cdr: ChangeDetectorRef,private router: Router) {}
 
   ngOnInit(): void {
     this.requestData = localStorage.getItem("reqData")
@@ -96,7 +102,12 @@ export class ReportsComponent {
     this.getFaq();
     this.getChartsData();
     this.postForReport();
-    this.getHeaderSectionData();
+    const url = this.router.url;
+    if (url.includes('/report')) {
+      this.getHeaderSectionData();
+    }else{
+      this.navigateToSampleReportWithParams()
+    }
   }
 
   ngAfterViewInit(): void {
@@ -116,9 +127,52 @@ export class ReportsComponent {
     this.ChartsData = ChartsJsonData;
   }
 
+  navigateToSampleReportWithParams() {
+    const fileName = this.router.parseUrl(this.router.url).queryParams['name'];
+    const queryParams = {
+      name: fileName 
+    };
+
+    if (fileName === 'good_bureau.json') {
+      this.reportsData = goodBureauJSON?.report;
+    } else if (fileName === 'avg_bureau.json') {
+      this.reportsData = avgBureauJSON?.report;
+
+    } else if (fileName === 'no_bureau.json') {
+      this.reportsData = noBureauJSON?.report;
+
+    } else if (fileName === 'poor_bureau.json') {
+      this.reportsData = poorBureauJSON?.report;
+    } else {
+      this.reportsData = vpoorBureauJSON?.report;
+    } 
+
+    this.headerSection = reportStatciData?.header_section;
+    this.disclaimer = reportStatciData?.disclaimer?.description;
+
+    const { bankingSummary, bureauSummary, gstSummary } = this.reportsData;
+    this.criticalTotal =
+      bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
+    this.mediumTotal =
+      bankingSummary.medium + bureauSummary.medium + gstSummary.medium;
+
+    const compareStage = this.headerSection?.background.find(
+      (image: { stage: any }) => image.stage === this.reportsData?.currentStage
+    );
+    if (compareStage) {
+      this.imgUrlDesktop = compareStage.desktop;
+      this.imgUrlMobile = compareStage.mobile_content;
+    }
+
+    this.router.navigate(['/in/sample_report'], { queryParams: queryParams });
+
+  }
+
+
   getHeaderSectionData() {
     this.reportStaticData = reportStatciData;
     this.reportsData = reportPageJson?.report;
+    
 
     this.headerSection = reportStatciData?.header_section;
     this.disclaimer = reportStatciData?.disclaimer?.description;

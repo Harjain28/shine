@@ -23,7 +23,9 @@ export class ActionsRequiredComponent {
   bankingSummary: any;
   bureauSummary: any;
   gstSummary: any;
-
+  imgUrlDesktop: any;
+  imgUrlMobile: any;
+  rankingSection: any;
   constructor(){
 
   }
@@ -38,6 +40,15 @@ export class ActionsRequiredComponent {
     this.bankingSummary = this.reportsData?.bankingSummary?.summary;
     this.bureauSummary = this.reportsData?.bureauSummary?.summary;
     this.gstSummary = this.reportsData?.gstSummary?.summary;
+
+    this.rankingSection = reportStatciData?.summary_section;
+    const compareStage = this.rankingSection?.ranking_card?.ranking_images.find(
+      (image: { stage: any }) => image.stage === this.reportsData?.currentStage
+    );
+    if (compareStage) {
+      this.imgUrlDesktop = compareStage.desktop;
+      this.imgUrlMobile = compareStage.mobile;
+    }
   }
 
   

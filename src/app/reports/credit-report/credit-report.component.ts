@@ -96,7 +96,7 @@ export class CreditReportComponent {
   potStage: any;
   imgageIcon: any;
   bullets: any;
-
+  default_analysis_labels:any;
   constructor(private dialog: MatDialog, private el:  ElementRef) {}
 
   customOptions4: OwlOptions = {
@@ -148,7 +148,8 @@ export class CreditReportComponent {
   }
 
   ngOnInit(): void {
-    this.reportsData = reportPageJson?.report;
+    console.log(this.creditReportsData,"fff")
+    this.reportsData = this.creditReportsData;
     this.creditReportData = this.reportsData?.creditReport;
     this.angle = this.creditReportData?.bureauScore?.score;
     this.loan_repayment_history = this.creditReportData?.loanRepaymentHistory;
@@ -158,6 +159,10 @@ export class CreditReportComponent {
     this.selectedYear = this.year[0];
 
     this.default_analysis = this.loan_repayment_history?.defaultAnalysis;
+
+    this.default_analysis_labels = reportStatciData?.credit_report_section?.loanRepaymentHistory_expanded?.defaultAnalysis.defaultHistory["labels"];
+
+    
     this.other_analysis = this.loan_repayment_history?.otherAnalysis;
 
     function toCamelCase(str: string) {
