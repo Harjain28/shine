@@ -164,11 +164,11 @@
                           <h3>Impact</h3>
                           <ul class="numberBox">
                             <li>
-                              <span>Your Current Stage</span>
+                              <span>Your current stage</span>
                               Level - {{currStage}}
                             </li>
                             <li>
-                              <span>Your Potential Stage</span>
+                              <span>Your potential stage</span>
                               Level - {{potStage}}
                             </li>
                           </ul>
@@ -277,7 +277,13 @@
           <h3>{{CR_Data?.bureau_score_card?.header}}</h3>
           <div class="scoreChart text-center">
             <svg width="200">
-              <path fill="none" stroke="#12BA9B" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#FF00FF;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#0000FF;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <path fill="none" stroke="url(#gradient)" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
               <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 100)'" x1="10" y1="100" x2="100" y2="100" stroke="#707070" stroke-width="3"></line>
               <text class="top" [attr.transform]="'rotate(' + (180 - calculateRotation(angle)) + ', 100, 100)'" x="100" y="10" text-anchor="middle">{{ angle }}</text>
               
@@ -586,7 +592,7 @@
                     </ul>
 
                     <div class="stabilityBox">
-                      <p>Stability: <span>{{securedUnsecuredRatio?.header}}</span></p>
+                      <p>Lenders Perspective: <span>{{securedUnsecuredRatio?.header}}</span></p>
                     </div>
 
                     <div class="box boxBorder mt-2">
