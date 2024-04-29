@@ -108,6 +108,22 @@ export class BankingBusinessComponent {
     'Nov',
     'Dec',
   ];
+  cvColor!: string;
+  cvText!: string;
+  dipColor!: string;
+  dipText!: string;
+  abbcardView: any;
+  abbColor!: string;
+  abbText!: string;
+  dcColor!: string;
+  dcText!: string;
+  cbText!: string;
+  cbColor!: string;
+  cfColor!: string;
+  cfText!: string;
+  bhImageIcon: any;
+  abbImgageIcon: any;
+  dtrImgageIcon: any;
 
   constructor() {}
   customOptions4: OwlOptions = {
@@ -146,6 +162,9 @@ export class BankingBusinessComponent {
   };
 
   ngOnInit(): void {
+
+    this.bankingData = this.bankingBusinessData;
+
     this.getBankingHistory();
 
     this.getInsights();
@@ -162,8 +181,7 @@ export class BankingBusinessComponent {
   }
 
   getBankingHistory() {
-    this.banking_history = this.bankingBusinessData?.bankingHistory;
-    this.graphData = this.banking_history?.graphData;
+    this.graphData = this.bankingData?.report?.bankingHistory?.graphData;
 
     this.monthly_expenses = this.banking_history?.monthly_expenses;
     this.turnoverLineData = this.graphData?.turnover;
@@ -246,9 +264,29 @@ export class BankingBusinessComponent {
     console.log(cashFlowArray, 'kkk');
   }
 
+  private setColorAndText(classValue: string): { color: string, text: string } {
+    let color: string;
+    let text: string;
+  
+    switch (classValue.trim()) {
+      case "negative":
+        color = "#ec1111"; // Red
+        text = "Needs Attention";
+        break;
+      case "positive":
+        color = "var(--main2)"; // Green
+        text = "Good Job!";
+        break;
+      default:
+        color = "#FF7B24"; // Orange
+        text = "Improvement";
+    }
+  
+    return { color, text };
+  }
+
   getInsights() {
-    this.bankingData = reportPageJson?.insights;
-    const creditreportInsights = this.bankingData?.bankingHistory;
+    const creditreportInsights = this.bankingData?.insights?.bankingHistory;
 
     const abb = creditreportInsights?.abb;
     const debt_to_revenue_ratio = creditreportInsights?.debt_to_revenue_ratio;
@@ -268,6 +306,13 @@ export class BankingBusinessComponent {
         (item: { condition_status: any }) => item.condition_status
       )
     );
+    const dipClass = this.dip?.class;
+    const { color: dipColor, text: dipText } = this.setColorAndText(dipClass);
+    this.dipColor = dipColor;
+    this.dipText = dipText;
+
+
+
     this.turnover_lenders_perspective = this.concatenateInsights(
       creditreportInsights?.turnover_lenders_perspective.filter(
         (item: { condition_status: any }) => item.condition_status
@@ -284,14 +329,42 @@ export class BankingBusinessComponent {
       )
     );
 
+    creditreportInsights?.bankingHistory_summary.forEach((item: any) => {
+      if (item?.bullets !== null && item?.bullets.length > 0) {
+        if (item?.class !== null) {
+          if (item.class === "negative") {
+            this.bhImageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
+          } else {
+            this.bhImageIcon = "./assets/LandingPage/smileImg.svg";
+          }
+        } else {
+          this.bhImageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
+        }
+      } 
+    });
+
     //abb balance
-    console.log(abb, 'card_view');
 
     this.card_view = this.concatenateInsights(
+      creditreportInsights?.card_view.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+
+    const cardViewClass = this.card_view?.class;
+    const { color: cardViewColor, text: cardViewText } = this.setColorAndText(cardViewClass);
+    this.cvColor = cardViewColor;
+    this.cvText = cardViewText;
+
+    this.abbcardView = this.concatenateInsights(
       abb?.card_view.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+    const abbcardViewClass = this.abbcardView?.class;
+    const { color: abbColor, text: abbText } = this.setColorAndText(abbcardViewClass);
+    this.abbColor = abbColor;
+    this.abbText = abbText;
 
     this.bank_balance_observation = this.concatenateInsights(
       abb?.volatility_observation.filter(
@@ -316,17 +389,38 @@ export class BankingBusinessComponent {
       )
     );
 
+
+
     this.abb_summary = this.concatenateInsights(
       abb?.abb_summary.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
 
+    abb?.abb_summary.forEach((item: any) => {
+      if (item?.bullets !== null && item?.bullets.length > 0) {
+        if (item?.class !== null) {
+          if (item.class === "negative") {
+            this.abbImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
+          } else {
+            this.abbImgageIcon = "./assets/LandingPage/smileImg.svg";
+          }
+        } else {
+          this.abbImgageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
+        }
+      } 
+    });
+
     this.dcard_view = this.concatenateInsights(
       debt_to_revenue_ratio?.card_view.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+
+    const dcardViewClass = this.dcard_view?.class;
+    const { color: dcColor, text: dcText } = this.setColorAndText(dcardViewClass);
+    this.dcColor = dcColor;
+    this.dcText = dcText;
 
     this.debt_to_revenue_ratio_lenders_perspective = this.concatenateInsights(
       debt_to_revenue_ratio?.debt_to_revenue_ratio_lenders_perspective.filter(
@@ -341,18 +435,44 @@ export class BankingBusinessComponent {
       )
     );
 
+    creditreportInsights?.debt_to_revenue_summary.forEach((item: any) => {
+      if (item?.bullets !== null && item?.bullets.length > 0) {
+        if (item?.class !== null) {
+          if (item.class === "negative") {
+            this.dtrImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
+          } else {
+            this.dtrImgageIcon = "./assets/LandingPage/smileImg.svg";
+          }
+        } else {
+          this.dtrImgageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
+        }
+      } 
+    });
+
 
     this.cheque_bounces = this.concatenateInsights(
       creditreportInsights?.cheque_bounces.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+
+    const cheque_bouncesClass = this.cheque_bounces?.class;
+    const { color: cbColor, text: cbText } = this.setColorAndText(cheque_bouncesClass);
+    this.cbColor = cbColor;
+    this.cbText = cbText;
+
+
     this.cashflow = this.concatenateInsights(
       creditreportInsights?.cashflow.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
-    console.log(this.cashflow , "cashflow");
+
+    const cashflowClass = this.cashflow?.class;
+    const { color: cfColor, text: cfText } = this.setColorAndText(cashflowClass);
+    this.cfColor = cfColor;
+    this.cfText = cfText;
+
   }
 
   concatenateInsights(insightsArray: any) {

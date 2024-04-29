@@ -53,15 +53,29 @@
                 <div class="multiBox" *ngIf="info_card">
                   <img src="./assets/LandingPage/whiteInformation.svg" alt="">
                   <div class="textContent">
-                    <h3>{{info_card?.header}}</h3>
+                    <h3>{{info_card.header}}</h3>
                     <p>{{info_card?.description}}
                     </p>
-                    <p>
-                      <span style="color:#EC1111;">
-                        <mat-icon>warning</mat-icon>
-                        Needs Attention
-                      </span>
-                    </p>
+                    
+                    <div [ngSwitch]="warningText">
+                      <p *ngSwitchCase="'Needs Attention'">
+                        <span [style.color]="warningColor">
+                          <mat-icon>warning</mat-icon>
+                          {{ warningText }}
+                        </span>
+                      </p>
+                      <p *ngSwitchCase="'Good Job!'">
+                        <span [style.color]="warningColor">
+                          {{ warningText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                        </span>
+                      </p>
+                      <p *ngSwitchCase="'Improvement'">
+                        <span [style.color]="warningColor">
+                          {{ warningText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                        </span>
+                      </p>
+                    </div>
+                        
                   </div>
                 </div>
               </div>

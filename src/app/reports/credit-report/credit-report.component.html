@@ -44,8 +44,7 @@
                       <div class="content">
                         <h3>{{CR_Data?.business_remarks_card?.header}}</h3>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed Lorem ipsum do.
+                          {{creditRemarks?.description}}
                         </p>
                       </div>
                       <div class="numberText">
@@ -60,8 +59,7 @@
                       <div class="content">
                         <h3>{{CR_Data?.enquiries_card?.header}}</h3>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed Lorem ipsum do.
+                          {{creditEnquiry?.description}}
                         </p>
                       </div>
                       <div class="numberText">
@@ -125,10 +123,10 @@
                           </h3>
                           <ul class="historyList">
                             <div *ngIf="default_analysis" class="historyList">
-                              <ng-container *ngFor="let item of defaultHistoryItems">
+                              <ng-container *ngFor="let item of defaultHistoryItems; let i= index">
                                 <li>
-                                  {{ item.key }}
-                                  <span [ngClass]="item.value ? 'YesColor' : 'NoColor'">{{ item.value ? 'YES' : 'No' }}</span>
+                                  {{default_analysis_labels[i]}}
+                                  <span [ngClass]="item.value ? 'YesColor' : 'NoColor'">{{ item.value ? 'YES' : 'NO' }}</span>
                                 </li>
                               </ng-container>
                             </div>
@@ -343,24 +341,24 @@
                   <p>
                     {{infoCardLRP?.description}}
                   </p>
-                  <p>
-                    <!-- <span style="color: #ec1111;" *ngIf="infoCardLRP?.class === 'negative' ">
-                      <mat-icon>warning</mat-icon>
-                     {{infoCardLRP?.warning}}
-                    </span>
-                    <span style="color: #ec1111;" *ngIf="infoCardLRP?.warning === null">
-                      <mat-icon>warning</mat-icon>
-                     Needs Attention
-                    </span>
-                    <ng-container *ngIf="infoCardLRP?.class !== 'negative'">
-                    <span style="color: var(--main2);" >   {{infoCardLRP?.warning}}<img src="./assets/LandingPage/goodWork.svg" alt=""></span>
-                  </ng-container> -->
-
-                  <span style="color: #ec1111;">
-                    <mat-icon>warning</mat-icon>
-                   Needs Attention
-                  </span>
-                  </p>
+                  <div [ngSwitch]="infoCardLRPText">
+                    <p *ngSwitchCase="'Needs Attention'">
+                      <span [style.color]="infoCardLRPColor">
+                        <mat-icon>warning</mat-icon>
+                        {{ infoCardLRPText }}
+                      </span>
+                    </p>
+                    <p *ngSwitchCase="'Good Job!'">
+                      <span [style.color]="infoCardLRPColor">
+                        {{ infoCardLRPText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                      </span>
+                    </p>
+                    <p *ngSwitchCase="'Improvement'">
+                      <span [style.color]="infoCardLRPColor">
+                        {{ infoCardLRPText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -418,20 +416,28 @@
               <div class="multiBox">
                 <img src="./assets/LandingPage/whiteInformation.svg" alt="" />
                 <div class="textContent">
-                  <h3>Too Many Credit Cards!</h3>
+                  <h3>{{cardView?.header}}</h3>
                   <p>
-                    Over-reliance on one type of credit (e.g., multiple
-                    high-balance credit cards), which could indicate potential
-                    financial stress. You seem to have no secured loan in the
-                    mix.
+                    {{cardView?.description}}
                   </p>
-                  <p>
-                    <!-- <span style="color: #ec1111;">
-                      <mat-icon>warning</mat-icon>
-                      Needs Attention
-                    </span> -->
-                    <span style="color: var(--main2);">Good Job! <img src="./assets/LandingPage/goodWork.svg" alt=""></span>
-                  </p>
+                  <div [ngSwitch]="warningText">
+                    <p *ngSwitchCase="'Needs Attention'">
+                      <span [style.color]="warningColor">
+                        <mat-icon>warning</mat-icon>
+                        {{ warningText }}
+                      </span>
+                    </p>
+                    <p *ngSwitchCase="'Good Job!'">
+                      <span [style.color]="warningColor">
+                        {{ warningText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                      </span>
+                    </p>
+                    <p *ngSwitchCase="'Improvement'">
+                      <span [style.color]="warningColor">
+                        {{ warningText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -448,8 +454,7 @@
                 <div class="content">
                   <h3>{{CR_Data?.business_remarks_card?.header}}</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    Lorem ipsum do.
+                    {{creditRemarks?.description}}
                   </p>
                 </div>
                 <div class="numberText">
@@ -464,8 +469,7 @@
                 <div class="content">
                   <h3>{{CR_Data?.enquiries_card?.header}}</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    Lorem ipsum do.
+                    {{creditEnquiry?.description}}
                   </p>
                 </div>
                 <div class="numberText">
@@ -486,8 +490,7 @@
                 <div class="content">
                   <h3>{{CR_Data?.business_remarks_card?.header}}</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    Lorem ipsum do.
+                    {{creditRemarks?.description}}
                   </p>
                 </div>
                 <div class="numberText">
@@ -502,8 +505,7 @@
                 <div class="content">
                   <h3>{{CR_Data?.enquiries_card?.header}}</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    Lorem ipsum do.
+                    {{creditEnquiry?.description}}
                   </p>
                 </div>
                 <div class="numberText">
@@ -692,7 +694,7 @@
                   <div class="otherAnalysis">
                     <h3>{{credit_analysis_card_Expanded?.other_analysis?.credit_card_utilization?.header}}</h3>
                     <div class="checkBox">
-                      <h5>Credit Card Usage >{{other_analysis?.creditCardUtilization * 100}}%</h5>
+                      <h5>{{credit_analysis_card_Expanded?.other_analysis?.credit_card_utilization?.labels}}</h5>
                       <button>Yes</button>
                     </div>
                     <div class="banksBox flex-wrap">
@@ -707,7 +709,7 @@
                   <div class="otherAnalysis">
                     <h3>{{credit_analysis_card_Expanded?.other_analysis?.small_loans?.header}}</h3>
                     <div class="checkBox">
-                      <h5>Loans < {{other_analysis?.smallLoans}}L taken in 1 year</h5>
+                      <h5>{{credit_analysis_card_Expanded?.other_analysis?.small_loans?.labels}}</h5>
                       <button style="background-color: #ec1111;">No</button>
                     </div>
                     <div class="banksBox flex-wrap">
@@ -729,7 +731,7 @@
                         </li>
                       </ul>
                       <div class="smileImg">
-                        <img src="./assets/LandingPage/smileImg.svg" alt="" />
+                        <img src={{caImgageIcon}} alt="" />
                       </div>
                     </div>
                   </div>
@@ -755,8 +757,7 @@
                 <div class="content">
                   <h3>{{CR_Data?.business_remarks_card?.header}}</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    Lorem ipsum do.
+                    {{creditRemarks?.description}}
                   </p>
                 </div>
                 <div class="numberText">
@@ -771,8 +772,7 @@
                 <div class="content">
                   <h3>{{CR_Data?.enquiries_card?.header}}</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    Lorem ipsum do.
+                    {{creditEnquiry?.description}}
                   </p>
                 </div>
                 <div class="numberText">

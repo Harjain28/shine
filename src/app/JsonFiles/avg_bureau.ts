@@ -1884,7 +1884,7 @@ export const avgBureauJSON =
           },
           {
             "condition": null,
-            "header": "Header: Good Debt Management",
+            "header": "Good Debt Management",
             "subheader": null,
             "description": "Your secured debt ratio is below 60%. If your ratio is below 25%, then you may be eligible to take more secured loans.",
             "bullets": null,

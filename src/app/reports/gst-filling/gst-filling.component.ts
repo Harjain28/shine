@@ -32,6 +32,8 @@ export class GstFillingComponent {
   gst_section: any;
   gstSectionHeadings: any;
   monthArray!: string[];  
+  warningColor!: string;
+  warningText!: string;
 
 
   constructor(){
@@ -40,7 +42,7 @@ export class GstFillingComponent {
 
   ngOnInit(): void{
     this.reportsData = this.gstData;
-    this.gstDetails = this.reportsData?.gstHistory;
+    this.gstDetails = this.reportsData?.report?.gstHistory;
 
   
     this.month=this.gstDetails?.missedGstFilings?.month;
@@ -58,6 +60,19 @@ export class GstFillingComponent {
         (item: { condition_status: any }) => item.condition_status
       )
     );
+
+    if(this.info_card?.class === "negative ")
+    {
+      this.warningColor  = "#ec1111"  //red
+      this.warningText = "Needs Attention"
+    } else if(this.info_card?.class === "positive ") {
+      this.warningColor  = "var(--main2)"  //green
+      this.warningText = "Good Job!"
+    }else{
+      this.warningColor  = "#FF7B24"  //green
+      this.warningText = "Improvments"
+    }
+    console.log(this.info_card,"fff")
 
     this.gst_section = reportStatciData;
     this.gstSectionHeadings = this.gst_section?.gst_section;
@@ -97,7 +112,25 @@ export class GstFillingComponent {
                 if (insight.warning !== null && insight.warning !== undefined) {
                     result.warning = insight.warning + ' ';
                 }
+                if (insight.class !== null && insight.class !== undefined) {
+                  result.class = insight.class + ' ';
+              }
             }
+            else {
+                if (!result.header && insight.header !== null && insight.header !== undefined) {
+                    result.header = insight.header + ' ';
+                }
+                if (!result.subheader && insight.subheader !== null && insight.subheader !== undefined) {
+                    result.subheader = insight.subheader + ' ';
+                }
+                if (!result.warning && insight.warning !== null && insight.warning !== undefined) {
+                    result.warning = insight.warning + ' ';
+                }
+                if (insight.class !== null && insight.class !== undefined) {
+                  result.class = insight.class + ' ';
+              }
+            }
+            
             if (insight.description !== null && insight.description !== undefined) {
                 result.description += insight.description + ' ';
             }
@@ -107,6 +140,7 @@ export class GstFillingComponent {
             if (insight.type !== null && insight.type !== undefined) {
                 result.type += insight.type + ' ';
             }
+          
             return result;
         },
         {

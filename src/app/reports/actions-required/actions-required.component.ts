@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -8,6 +8,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 import { reportPageJson } from 'src/app/JsonFiles/report';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-actions-required',
@@ -17,6 +18,8 @@ import { reportPageJson } from 'src/app/JsonFiles/report';
   styleUrls: ['./actions-required.component.scss','../reports.component.scss']
 })
 export class ActionsRequiredComponent {
+
+  @Input() sampleReportsData : any;
   summary_section:any;
   summary_section_Data: any;
   reportsData: any;
@@ -26,7 +29,7 @@ export class ActionsRequiredComponent {
   imgUrlDesktop: any;
   imgUrlMobile: any;
   rankingSection: any;
-  constructor(){
+  constructor(private router: Router){
 
   }
 
@@ -35,7 +38,11 @@ export class ActionsRequiredComponent {
     this.summary_section = reportStatciData;
     this.summary_section_Data = this.summary_section?.summary_section;
 
-    this.reportsData = reportPageJson?.report
+
+
+      this.reportsData = this.sampleReportsData?.report;
+    
+
 
     this.bankingSummary = this.reportsData?.bankingSummary?.summary;
     this.bureauSummary = this.reportsData?.bureauSummary?.summary;

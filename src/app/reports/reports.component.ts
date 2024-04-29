@@ -88,6 +88,7 @@ export class ReportsComponent {
   requestData: any;
   parsedData: any;
   mobileNo: any;
+  sampleData: any;
 
   constructor(private api: ApiService, private cdr: ChangeDetectorRef,private router: Router) {}
 
@@ -134,30 +135,33 @@ export class ReportsComponent {
     };
 
     if (fileName === 'good_bureau.json') {
-      this.reportsData = goodBureauJSON?.report;
+      this.reportsData = goodBureauJSON;
     } else if (fileName === 'avg_bureau.json') {
-      this.reportsData = avgBureauJSON?.report;
+      this.reportsData = avgBureauJSON;
 
     } else if (fileName === 'no_bureau.json') {
-      this.reportsData = noBureauJSON?.report;
+      this.reportsData = noBureauJSON;
 
     } else if (fileName === 'poor_bureau.json') {
-      this.reportsData = poorBureauJSON?.report;
+      this.reportsData = poorBureauJSON;
     } else {
-      this.reportsData = vpoorBureauJSON?.report;
+      this.reportsData = vpoorBureauJSON;
     } 
+
+    console.log(this.reportsData,"klkl")
+    this.sampleData = this.reportsData;
 
     this.headerSection = reportStatciData?.header_section;
     this.disclaimer = reportStatciData?.disclaimer?.description;
 
-    const { bankingSummary, bureauSummary, gstSummary } = this.reportsData;
+    const { bankingSummary, bureauSummary, gstSummary } = this.reportsData?.report;
     this.criticalTotal =
       bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
     this.mediumTotal =
       bankingSummary.medium + bureauSummary.medium + gstSummary.medium;
 
     const compareStage = this.headerSection?.background.find(
-      (image: { stage: any }) => image.stage === this.reportsData?.currentStage
+      (image: { stage: any }) => image.stage === this.reportsData?.report?.currentStage
     );
     if (compareStage) {
       this.imgUrlDesktop = compareStage.desktop;
@@ -202,7 +206,7 @@ export class ReportsComponent {
                 if (res) {
                   this.showEligible = true;
                   console.log(res);
-                  this.reportData = res;
+                  this.reportsData = res;
                  
                 }
               },

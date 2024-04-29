@@ -13,6 +13,7 @@ import { CreditJourneyPopupComponent } from 'src/app/modal/credit-journey-popup/
 import { reportPageJson } from 'src/app/JsonFiles/report';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 import { RoundPipe } from 'src/app/pipe/round.pipe';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-credit-report',
   standalone: true,
@@ -96,8 +97,16 @@ export class CreditReportComponent {
   potStage: any;
   imgageIcon: any;
   bullets: any;
-  default_analysis_labels:any;
-  constructor(private dialog: MatDialog, private el:  ElementRef) {}
+  default_analysis_labels:any ;
+  staticData: any;
+  warningColor!: string;
+  cardView: any;
+  creditRemarks: any;
+  infoCardLRPColor!: string;
+  infoCardLRPText!: string;
+  warningText!: string;
+  caImgageIcon: any;
+   constructor(private dialog: MatDialog, private el:  ElementRef,private router:Router) {}
 
   customOptions4: OwlOptions = {
     loop: true,
@@ -148,11 +157,15 @@ export class CreditReportComponent {
   }
 
   ngOnInit(): void {
-    console.log(this.creditReportsData,"fff")
-    this.reportsData = this.creditReportsData;
-    this.creditReportData = this.reportsData?.creditReport;
+
+      this.reportsData = this.creditReportsData;
+    
+
+    this.creditReportData = this.reportsData?.report?.creditReport;
     this.angle = this.creditReportData?.bureauScore?.score;
     this.loan_repayment_history = this.creditReportData?.loanRepaymentHistory;
+
+
    
 
     this.year = this.extractYears(this.loan_repayment_history?.missedPayments);
@@ -160,9 +173,9 @@ export class CreditReportComponent {
 
     this.default_analysis = this.loan_repayment_history?.defaultAnalysis;
 
-    this.default_analysis_labels = reportStatciData?.credit_report_section?.loanRepaymentHistory_expanded?.defaultAnalysis.defaultHistory["labels"];
+    this.staticData = reportStatciData?.credit_report_section;
+    this.default_analysis_labels = Object.values(this.staticData?.loanRepaymentHistory_expanded?.defaultAnalysis.defaultHistory.labels);
 
-    
     this.other_analysis = this.loan_repayment_history?.otherAnalysis;
 
     function toCamelCase(str: string) {
@@ -173,6 +186,7 @@ export class CreditReportComponent {
       });
   }
 
+  
 
 for (const key in this.default_analysis.defaultHistory) {
     if (this.default_analysis.defaultHistory.hasOwnProperty(key)) {
@@ -224,9 +238,29 @@ this.potStage = this.reportsData?.potentialStage
     return Math.round(value);
   }
 
+  private setColorAndText(classValue: string): { color: string, text: string } {
+    let color: string;
+    let text: string;
+  
+    switch (classValue.trim()) {
+      case "negative":
+        color = "#ec1111"; // Red
+        text = "Needs Attention";
+        break;
+      case "positive":
+        color = "var(--main2)"; // Green
+        text = "Good Job!";
+        break;
+      default:
+        color = "#FF7B24"; // Orange
+        text = "Improvement";
+    }
+  
+    return { color, text };
+  }
+
   getInsights() {
-    this.reportsData = reportPageJson?.insights;
-    const creditreportInsights = this.reportsData?.creditReport;
+    const creditreportInsights = this.reportsData?.insights?.creditReport;
     const loanRepaymentHistory = creditreportInsights?.loanRepaymentHistory;
 
 
@@ -268,6 +302,12 @@ this.potStage = this.reportsData?.potentialStage
         (item: { condition_status: any }) => item.condition_status
       )
     );
+
+    const infoCardLRPClass = this.infoCardLRP?.class;
+const { color: infoCardLRPColor, text: infoCardLRPText } = this.setColorAndText(infoCardLRPClass);
+this.infoCardLRPColor = infoCardLRPColor;
+this.infoCardLRPText = infoCardLRPText;
+
     this.defaulthistoryText = this.concatenateInsights(
       defaultAnalysis?.defaultHistory.filter(
         (item: { condition_status: any }) => item.condition_status
@@ -298,11 +338,26 @@ this.potStage = this.reportsData?.potentialStage
 
     const credit_analysis = creditreportInsights?.credit_analysis;
 
-    this.securedUnsecuredRatio = this.concatenateInsights(
-      credit_analysis?.securedUnsecuredRatio.filter(
-        (item: { condition_status: any }) => item.condition_status
+    this.cardView = this.concatenateInsights(
+      credit_analysis?.card_view.filter(
+        (item: { condition_status: any, }) => item.condition_status
       )
     );
+
+    const cardViewClass = this.cardView?.class;
+const { color: cardViewColor, text: cardViewText } = this.setColorAndText(cardViewClass);
+this.warningColor = cardViewColor;
+this.warningText = cardViewText;
+
+    console.log(this.cardView,"ee")
+    
+    
+    this.securedUnsecuredRatio = this.concatenateInsights(
+      credit_analysis?.securedUnsecuredRatio.filter(
+        (item: { condition_status: any, }) => item.condition_status
+      )
+    );
+
 
     this.solutionsAnalysis = this.concatenateInsights(
       credit_analysis?.solutions.filter(
@@ -330,8 +385,32 @@ this.potStage = this.reportsData?.potentialStage
         (item: { condition_status: any }) => item.condition_status
       )
     );
+
+    credit_analysis?.credit_debt_analysis_summary.forEach((item: any) => {
+      if (item?.bullets !== null && item?.bullets.length > 0) {
+        this.bullets = item?.bullets;
+        if (item?.class !== null) {
+          if (item.class === "negative") {
+            this.caImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
+          } else {
+            this.caImgageIcon = "./assets/LandingPage/smileImg.svg";
+          }
+        } else {
+          this.caImgageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
+        }
+      } 
+    });
+
+    console.log(this.caImgageIcon,"ees")
+
     this.creditEnquiry = this.concatenateInsights(
       credit_analysis?.creditEnquiry.filter(
+        (item: { condition_status: any }) => item.condition_status
+      )
+    );
+
+    this.creditRemarks = this.concatenateInsights(
+      credit_analysis?.creditRemark.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
@@ -364,7 +443,8 @@ this.potStage = this.reportsData?.potentialStage
                 if (insight.class !== null && insight.class !== undefined) {
                   result.class = insight.class + ' ';
               }
-            } else {
+            }
+            else {
                 if (!result.header && insight.header !== null && insight.header !== undefined) {
                     result.header = insight.header + ' ';
                 }

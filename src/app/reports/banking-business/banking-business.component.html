@@ -70,9 +70,24 @@
                           <li class="active">QTR 4</li>
                         </ul>
                       </div>
-                      <span>Good Job!
-                        <img src="./assets/LandingPage/goodWork.svg" alt="">
-                      </span>
+                      <div [ngSwitch]="dipText">
+                        <p *ngSwitchCase="'Needs Attention'">
+                          <span [style.color]="dipColor">
+                            <mat-icon>warning</mat-icon>
+                            {{ dipText }}
+                          </span>
+                        </p>
+                        <p *ngSwitchCase="'Good Job!'">
+                          <span [style.color]="dipColor">
+                            {{ dipText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                          </span>
+                        </p>
+                        <p *ngSwitchCase="'Improvement'">
+                          <span [style.color]="dipColor">
+                            {{ dipText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                          </span>
+                        </p>
+                      </div>
                     </div>
                   </div>
                   <div class="col-lg-6">
@@ -132,7 +147,7 @@
                   
                   </ul>
                   <div class="smileImg">
-                    <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/summary_smily.png" alt="">
+                    <img src={{bhImageIcon}} alt="">
                   </div>
                 </div>
               </div>
@@ -159,11 +174,26 @@
                     <img src="./assets/LandingPage/themeInformation.svg" alt="">
                     <div class="downwardContent">
                       <h4>Declining Balance</h4>
-                      <p>Declining or highly volatile balances, indicating potential cash flow issues.</p>
-                      <span style="color:#EC1111;">
-                        <mat-icon>warning</mat-icon>
-                        Needs Attention
-                      </span>
+                      <p>{{abbcardView?.description}}</p>
+
+                    <div [ngSwitch]="abbText">
+                      <p *ngSwitchCase="'Needs Attention'">
+                        <span [style.color]="abbColor">
+                          <mat-icon>warning</mat-icon>
+                          {{ abbText }}
+                        </span>
+                      </p>
+                      <p *ngSwitchCase="'Good Job!'">
+                        <span [style.color]="abbColor">
+                          {{ abbText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                        </span>
+                      </p>
+                      <p *ngSwitchCase="'Improvement'">
+                        <span [style.color]="abbColor">
+                          {{ abbText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                        </span>
+                      </p>
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -265,7 +295,7 @@
                     </li>
                   </ul>
                   <div class="smileImg">
-                    <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png" alt="">
+                    <img src={{abbImgageIcon}} alt="">
                   </div>
                 </div>
               </div>
@@ -296,10 +326,27 @@
                   <img src="./assets/LandingPage/themeInformation.svg" alt="">
                   <div class="downwardContent">
                     <h4>Downward Trend</h4>
-                    <p>Declining or highly volatile balances, indicating potential cash flow issues.</p>
-                    <span>Good Job!
-                      <img src="./assets/LandingPage/goodWork.svg" alt="">
-                    </span>
+                    <p>{{card_view?.description}}</p>
+
+                    <div [ngSwitch]="cvText">
+                      <p *ngSwitchCase="'Needs Attention'">
+                        <span [style.color]="cvColor">
+                          <mat-icon>warning</mat-icon>
+                          {{ cvText }}
+                        </span>
+                      </p>
+                      <p *ngSwitchCase="'Good Job!'">
+                        <span [style.color]="cvColor">
+                          {{ cvText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                        </span>
+                      </p>
+                      <p *ngSwitchCase="'Improvement'">
+                        <span [style.color]="cvColor">
+                          {{ cvText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                        </span>
+                      </p>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -327,10 +374,26 @@
             <img src="./assets/LandingPage/themeInformation.svg" alt="">
             <div class="downwardContent">
               <h4>Downward Trend</h4>
-              <p>Declining or highly volatile balances, indicating potential cash flow issues.</p>
-              <span>Good Job!
-                <img src="./assets/LandingPage/goodWork.svg" alt="">
-              </span>
+              <p>{{card_view?.description}}</p>
+
+              <div [ngSwitch]="cvText">
+                <p *ngSwitchCase="'Needs Attention'">
+                  <span [style.color]="cvColor">
+                    <mat-icon>warning</mat-icon>
+                    {{ cvText }}
+                  </span>
+                </p>
+                <p *ngSwitchCase="'Good Job!'">
+                  <span [style.color]="cvColor">
+                    {{ cvText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                  </span>
+                </p>
+                <p *ngSwitchCase="'Improvement'">
+                  <span [style.color]="cvColor">
+                    {{ cvText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -372,11 +435,26 @@
             <img src="./assets/LandingPage/themeInformation.svg" alt="">
             <div class="downwardContent">
               <h4>{{card_view?.header}}</h4>
-              <p>{{card_view?.description}}</p>
-              <span style="color:#EC1111;">
-                <mat-icon>warning</mat-icon>
-                {{card_view?.warning}}
-              </span>
+              <p>{{abbcardView?.description}}</p>
+
+              <div [ngSwitch]="abbText">
+                <p *ngSwitchCase="'Needs Attention'">
+                  <span [style.color]="abbColor">
+                    <mat-icon>warning</mat-icon>
+                    {{ abbText }}
+                  </span>
+                </p>
+                <p *ngSwitchCase="'Good Job!'">
+                  <span [style.color]="abbColor">
+                    {{ abbText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                  </span>
+                </p>
+                <p *ngSwitchCase="'Improvement'">
+                  <span [style.color]="abbColor">
+                    {{ abbText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -476,7 +554,7 @@
 
                   </ul>
                   <div class="smileImg">
-                    <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png" alt="">
+                    <img src={{dtrImgageIcon}} alt="">
                   </div>
                 </div>
               </div>
@@ -504,10 +582,24 @@
                     <div class="downwardContent">
                       <h4>{{cheque_bounces?.header}}</h4>
                       <p *ngFor="let bullet of cheque_bounces?.bullets">{{bullet}}</p>
-                      <span style="color:#EC1111;">
-                        <mat-icon>warning</mat-icon>
-                        {{cheque_bounces?.warning}}
-                      </span>
+                      <div [ngSwitch]="cbText">
+                        <p *ngSwitchCase="'Needs Attention'">
+                          <span [style.color]="cbColor">
+                            <mat-icon>warning</mat-icon>
+                            {{ cbText }}
+                          </span>
+                        </p>
+                        <p *ngSwitchCase="'Good Job!'">
+                          <span [style.color]="cbColor">
+                            {{ cbText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                          </span>
+                        </p>
+                        <p *ngSwitchCase="'Improvement'">
+                          <span [style.color]="cbColor">
+                            {{ cbText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                          </span>
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -553,10 +645,25 @@
                 <div class="downwardContent">
                   <h4>{{dcard_view?.header}}</h4>
                   <p>{{dcard_view?.description}}</p>
-                  <span style="color:#EC1111;">
-                    <mat-icon>warning</mat-icon>
-                    {{dcard_view?.warning}}
-                  </span>
+
+                  <div [ngSwitch]="dcText">
+                    <p *ngSwitchCase="'Needs Attention'">
+                      <span [style.color]="dcColor">
+                        <mat-icon>warning</mat-icon>
+                        {{ dcText }}
+                      </span>
+                    </p>
+                    <p *ngSwitchCase="'Good Job!'">
+                      <span [style.color]="dcColor">
+                        {{ dcText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                      </span>
+                    </p>
+                    <p *ngSwitchCase="'Improvement'">
+                      <span [style.color]="dcColor">
+                        {{ dcText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -581,10 +688,25 @@
                 <div class="downwardContent">
                                       <h4>{{cheque_bounces?.header}}</h4>
                       <p *ngFor="let bullet of cheque_bounces?.bullets">{{bullet}}</p>
-                      <span style="color:#EC1111;">
-                        <mat-icon>warning</mat-icon>
-                        {{cheque_bounces?.warning}}
-                      </span>
+
+                      <div [ngSwitch]="cbText">
+                        <p *ngSwitchCase="'Needs Attention'">
+                          <span [style.color]="cbColor">
+                            <mat-icon>warning</mat-icon>
+                            {{ cbText }}
+                          </span>
+                        </p>
+                        <p *ngSwitchCase="'Good Job!'">
+                          <span [style.color]="cbColor">
+                            {{ cbText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                          </span>
+                        </p>
+                        <p *ngSwitchCase="'Improvement'">
+                          <span [style.color]="cbColor">
+                            {{ cbText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                          </span>
+                        </p>
+                      </div>
                 </div>
               </div>
             </div>
@@ -632,10 +754,25 @@
                         <div class="downwardContent">
                           <h4>{{dcard_view?.header}}</h4>
                           <p>{{dcard_view?.description}}</p>
-                          <span style="color:#EC1111;">
-                            <mat-icon>warning</mat-icon>
-                            {{dcard_view?.warning}}
-                          </span>
+
+                          <div [ngSwitch]="dcText">
+                            <p *ngSwitchCase="'Needs Attention'">
+                              <span [style.color]="dcColor">
+                                <mat-icon>warning</mat-icon>
+                                {{ dcText }}
+                              </span>
+                            </p>
+                            <p *ngSwitchCase="'Good Job!'">
+                              <span [style.color]="dcColor">
+                                {{ dcText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                              </span>
+                            </p>
+                            <p *ngSwitchCase="'Improvement'">
+                              <span [style.color]="dcColor">
+                                {{ dcText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                              </span>
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -662,14 +799,27 @@
                       <div class="downwardBox">
                         <img src="./assets/LandingPage/themeInformation.svg" alt="">
                         <div class="downwardContent">
-                          <h4>High Inward Cheque Bounces</h4>
-                          <p>Outflows consistently exceed inflows or are highly erratic, suggesting financial distress or poor
-                            cash management. In some months, outflows of ₹4 lakh overshadow inflows of ₹2 lakh, leading to
-                            negative cash flow.</p>
-                          <span style="color:#EC1111;">
-                            <mat-icon>warning</mat-icon>
-                            Needs Attention
-                          </span>
+                          <h4>{{cheque_bounces?.header}}</h4>
+                          <p *ngFor="let bullet of cheque_bounces?.bullets">{{bullet}}</p>
+    
+                          <div [ngSwitch]="cbText">
+                            <p *ngSwitchCase="'Needs Attention'">
+                              <span [style.color]="cbColor">
+                                <mat-icon>warning</mat-icon>
+                                {{ cbText }}
+                              </span>
+                            </p>
+                            <p *ngSwitchCase="'Good Job!'">
+                              <span [style.color]="cbColor">
+                                {{ cbText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                              </span>
+                            </p>
+                            <p *ngSwitchCase="'Improvement'">
+                              <span [style.color]="cbColor">
+                                {{ cbText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                              </span>
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -720,10 +870,25 @@
                 <div class="downwardContent">
                   <h4>{{cashflow?.header}}</h4>
                   <p>{{cashflow?.description}}</p>
-                  <span>
-                   {{cashflow?.warning}}
-                    <img src="./assets/LandingPage/goodWork.svg" alt="">
-                  </span>
+
+                  <div [ngSwitch]="cfText">
+                    <p *ngSwitchCase="'Needs Attention'">
+                      <span [style.color]="cfColor">
+                        <mat-icon>warning</mat-icon>
+                        {{ cfText }}
+                      </span>
+                    </p>
+                    <p *ngSwitchCase="'Good Job!'">
+                      <span [style.color]="cfColor">
+                        {{ cfText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                      </span>
+                    </p>
+                    <p *ngSwitchCase="'Improvement'">
+                      <span [style.color]="cfColor">
+                        {{ cfText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
