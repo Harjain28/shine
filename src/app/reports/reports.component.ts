@@ -107,12 +107,8 @@ export class ReportsComponent {
     this.getFaq();
     this.getChartsData();
     this.postForReport();
-    const url = this.router.url;
-    if (url.includes('/report')) {
-      this.getHeaderSectionData();
-    }else{
-      this.navigateToSampleReportWithParams()
-    }
+    this.navigateToSampleReportWithParams()
+  
   }
 
   ngAfterViewInit(): void {
@@ -148,9 +144,11 @@ export class ReportsComponent {
 
     } else if (fileName === 'poor_bureau.json') {
       this.reportsData = poorBureauJSON;
-    } else {
+    } else if (fileName === 'vpoor_bureau.json') {
       this.reportsData = vpoorBureauJSON;
-    } 
+    }  else {
+      this.reportsData = reportPageJson;
+    }
 
     console.log(this.reportsData,"klkl")
     this.sampleData = this.reportsData;
@@ -172,33 +170,33 @@ export class ReportsComponent {
       this.imgUrlMobile = compareStage.mobile_content;
     }
 
-    this.router.navigate(['/in/sample_report'], { queryParams: queryParams });
+    // this.router.navigate(['/in/sample_report'], { queryParams: queryParams });
 
   }
 
 
-  getHeaderSectionData() {
-    this.reportStaticData = reportStatciData;
-    this.reportsData = reportPageJson?.report;
+  // getHeaderSectionData() {
+  //   this.reportStaticData = reportStatciData;
+  //   this.reportsData = reportPageJson?.report;
     
 
-    this.headerSection = reportStatciData?.header_section;
-    this.disclaimer = reportStatciData?.disclaimer?.description;
+  //   this.headerSection = reportStatciData?.header_section;
+  //   this.disclaimer = reportStatciData?.disclaimer?.description;
 
-    const { bankingSummary, bureauSummary, gstSummary } = this.reportsData;
-    this.criticalTotal =
-      bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
-    this.mediumTotal =
-      bankingSummary.medium + bureauSummary.medium + gstSummary.medium;
+  //   const { bankingSummary, bureauSummary, gstSummary } = this.reportsData;
+  //   this.criticalTotal =
+  //     bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
+  //   this.mediumTotal =
+  //     bankingSummary.medium + bureauSummary.medium + gstSummary.medium;
 
-    const compareStage = this.headerSection?.background.find(
-      (image: { stage: any }) => image.stage === this.reportsData?.currentStage
-    );
-    if (compareStage) {
-      this.imgUrlDesktop = compareStage.desktop;
-      this.imgUrlMobile = compareStage.mobile_content;
-    }
-  }
+  //   const compareStage = this.headerSection?.background.find(
+  //     (image: { stage: any }) => image.stage === this.reportsData?.currentStage
+  //   );
+  //   if (compareStage) {
+  //     this.imgUrlDesktop = compareStage.desktop;
+  //     this.imgUrlMobile = compareStage.mobile_content;
+  //   }
+  // }
 
   postForReport() {
     this.showEligible = false;
