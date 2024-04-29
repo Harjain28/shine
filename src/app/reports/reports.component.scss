@@ -242,7 +242,7 @@
         box-shadow: 0px 3px 10px #272D3B24;
         border-radius: 20px;
         background-color: #fff;
-        padding: 20px 20px;
+        padding: 29px 30px;
         height: 100%;
         position: relative;
 
@@ -278,7 +278,7 @@
                 .leftText {
                     position: absolute;
                     transform: translate(-13%, -30%);
-                    font-size: 18px;
+                    font-size: 12px;
                     font-weight: 400;
                     color: #3F3F3F;
                 }
@@ -290,7 +290,7 @@
                 .rightText {
                     position: absolute;
                     transform: translate(17%, -30%);
-                    font-size: 18px;
+                    font-size: 12px;
                     font-weight: 400;
                     color: #3F3F3F;
                 }
@@ -355,7 +355,7 @@
     .loanHistory {
         box-shadow: 0px 3px 30px #272D3B66;
         border-radius: 20px;
-        padding: 34px 34px;
+        padding: 29px 31px;
         background-color: #fff;
         height: 100%;
         position: relative;
@@ -462,8 +462,9 @@
 
         .title {
             font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 22px;
+            font-weight: 600;    
+            width: max-content;
+            margin: 0 auto 20px;
             color: #3F3F3F;
             text-align: center;
         }
@@ -514,7 +515,7 @@
                     color: var(--main2);
                     text-transform: uppercase;
                     font-weight: 600;
-                    font-size: 12px;
+                    font-size: 11px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -586,6 +587,8 @@
 
                     p {
                         color: #fff;
+                        font-size: 14px;
+                        font-weight: 500;
                     }
 
                     hr {
@@ -607,6 +610,8 @@
                             position: relative;
                             display: block;
                             padding-left: 20px;
+                            font-size: 14px;
+                            font-weight: 400;                        
 
                             span {
                                 width: 10px;
@@ -626,7 +631,7 @@
                     display: flex;
                     align-items: flex-end;
                     gap: 8px;
-                    font-size: 16px;
+                    font-size: 18px;
                     font-weight: 600;
                     color: #3F3F3F;
                     font-family: Poppins !important;
@@ -718,6 +723,7 @@
                         align-items: center;
                         font-weight: 500;
                         gap: 20px;
+                        font-family: Poppins !important;
 
                         .NoColor {
                             border-radius: 5px;
@@ -763,7 +769,7 @@
                         padding: 15px 8px;
                         background-color: #C3E128;
                         color: #3F3F3F;
-                        font-size: 12px;
+                        font-size: 14px;
                         font-weight: 600;
                         line-height: 16px;
                         font-family: Poppins !important;
@@ -840,11 +846,11 @@
                     display: flex;
                     align-items: flex-end;
                     gap: 8px;
-                    font-size: 14px;
+                    font-size: 16px;
                     font-weight: 600;
                     color: #3F3F3F;
                     font-family: Poppins !important;
-                    margin-bottom: 20px;
+                    margin-bottom: 12px;
                     justify-content: center;
                 }
 
@@ -961,8 +967,10 @@
                             color: #3f3f3f;
                             font-weight: 400;
                             position: relative;
-                            padding-left: 20px;
+                            padding: 7px 0px 0px 20px;
                             text-align: left;
+                            font-size: 13px;
+                            font-family: Poppins !important;
 
                             span {
                                 width: 8px;
@@ -990,6 +998,7 @@
                 border-radius: 10px;
                 background: #FBF8FF;
                 padding: 18px 24px;
+                margin-top: 20px;
 
                 h4 {
                     font-size: 16px;
@@ -1011,13 +1020,13 @@
 
                         li {
                             position: relative;
-                            padding-left: 20px;
+                            padding: 0px 0px 0px 20px;
                             font-size: 14px;
                             font-weight: normal;
-                            margin-bottom: 0px;
                             font-family: Poppins !important;
                             color: #3F3F3F;
                             line-height: 22px;
+                            margin: 8px 0px;
 
                             span {
                                 display: block;
@@ -1061,7 +1070,7 @@
             .textContent {
 
                 h3 {
-                    font-size: 15px;
+                    font-size: 14px;
                     color: var(--main1);
                     margin-bottom: 5px;
                     font-weight: 600;
@@ -1150,7 +1159,7 @@
             p {
                 color: #FF7B24;
                 font-weight: 600;
-                font-size: 40px;
+                font-size: 26px;
                 margin-bottom: 10px;
                 font-family: Poppins !important;
                 text-align: center;
@@ -2821,8 +2830,8 @@
 
                 span {
                     color: #3F3F3F;
-                    font-size: 13px;
-                    font-weight: 500;
+                    font-size: 14px;
+                    font-weight: 600;
                     font-family: Poppins !important;
                     position: relative;
                     max-width: 110px;

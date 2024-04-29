@@ -1,5 +1,5 @@
 <!-- Credit-Report-Section Start -->
-<div class="creditReportSection section_padding_top">
+<div class="creditReportSection section_padding">
   <div class="container">
     <div class="row">
       <div class="mobileSilder dhidden">
@@ -10,7 +10,13 @@
                 <h3>{{CR_Data?.bureau_score_card?.header}}</h3>
                 <div class="scoreChart text-center">
                   <svg width="200">
-                    <path fill="none" stroke="#12BA9B" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
+                    <defs>
+                      <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" style="stop-color:#C3E128;stop-opacity:1" />
+                          <stop offset="100%" style="stop-color:#12BA9B;stop-opacity:1" />
+                      </linearGradient>
+                  </defs>
+                  <path fill="none" stroke="url(#gradient1)" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
                     <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 100)'" x1="10" y1="100" x2="100" y2="100" stroke="#707070" stroke-width="3"></line>
                     <text class="topText" x="100" y="80" text-anchor="middle">{{ angle }}</text>
           
@@ -84,6 +90,7 @@
           <p>{{CR_Data?.subheader}}</p>
         </div>
       </div>
+      
       <div class="container">
         <ng-container *ngIf="expandSection">
         <div class="row">
@@ -111,15 +118,25 @@
                       <h3>{{LoanReplacementExpanded?.defaultAnalysis?.header}}</h3>
                     </div>
 
-                    <div class="row">
+                    <div class="row fontOpenSmall">
                       <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                        <div class="defaultHistory">
+                        <div class="defaultHistory position-relative">
                           <h3>
                             {{LoanReplacementExpanded?.defaultAnalysis?.defaultHistory?.header}}
-                            <img
-                              src="./assets/LandingPage/themeInformation.svg"
-                              alt=""
-                            />
+                            <!-- tooltip.component.html -->
+                            <div class="tooltipShow">
+                              <button (click)="toggleTooltip()">
+                                <img src="./assets/LandingPage/themeInformation.svg" alt="Information Icon"/>
+                              </button>
+                              <div class="toolTipContent" *ngIf="isVisible">
+                                <p>Defaults (36 Months): Any defaults in your loan repayments over the last 36 months.</p>
+                                <p>Fresh Defaults (90 Days): Any defaults in your loan repayments over the last 90 days.</p>
+                                <p>Late Payments (12 Months): Any Days Past Due (DPDs) listed on your credit report within the last 12 months.</p>
+                                <p>30+ Late Payments (12 Months): More than 30 Days Past Due (DPDs) recorded on your credit report in the last 12 months.</p>
+                                <p>Severe Late Payments (90-180 Days): Any Days Past Due (DPDs) for 90-180 days recorded on your credit report over past 36 months.</p>
+                                <p>Total Overdue > ₹25,000: Total dues recorded on your credit report amounting to ₹25,000 or more, excluding credit card dues.</p>
+                              </div>
+                            </div>
                           </h3>
                           <ul class="historyList">
                             <div *ngIf="default_analysis" class="historyList">
@@ -189,8 +206,8 @@
                         <div class="otherAnalysis">
                           <h3>{{LoanReplacementExpanded?.otherAnalysis?.topBanks?.header}}</h3>
                           <div class="checkBox">
-                            <mat-checkbox [checked]="other_analysis.topBanks">Yes</mat-checkbox>
-                            <mat-checkbox [checked]="!other_analysis.topBanks">No</mat-checkbox>
+                            <mat-checkbox [checked]="other_analysis.topBanks" disabled>Yes</mat-checkbox>
+                            <mat-checkbox [checked]="!other_analysis.topBanks" disabled>No</mat-checkbox>
                           </div>
                           <div class="banksBox" *ngIf="topBanks?.bullets && topBanks?.bullets.length > 0">
                             <ul>
@@ -215,8 +232,8 @@
                           <h3>{{LoanReplacementExpanded?.otherAnalysis?.suitFiledEver?.header}}</h3>
                     
                             <div class="checkBox">
-                              <mat-checkbox [checked]="other_analysis.suitFiledEver">Yes</mat-checkbox>
-                              <mat-checkbox [checked]="!other_analysis.suitFiledEvers">No</mat-checkbox>
+                              <mat-checkbox [checked]="other_analysis.suitFiledEver" disabled>Yes</mat-checkbox>
+                              <mat-checkbox [checked]="!other_analysis.suitFiledEvers" disabled>No</mat-checkbox>
                             </div>
                         
                           <div class="banksBox flex-wrap" *ngIf="suitFiledEver?.bullets && suitFiledEver?.bullets.length > 0">
@@ -277,8 +294,8 @@
             <svg width="200">
               <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#FF00FF;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#0000FF;stop-opacity:1" />
+                    <stop offset="0%" style="stop-color:#C3E128;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#12BA9B;stop-opacity:1" />
                 </linearGradient>
             </defs>
             <path fill="none" stroke="url(#gradient)" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
@@ -543,7 +560,7 @@
               <div class="defaultContent">
                 <h3>{{credit_analysis_card_Expanded?.credit_ratio_analysis?.header}}</h3>
               </div>
-              <div class="row">
+              <div class="row fontOpenSmall">
                 <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
                   <div
                     class="defaultHistory"
@@ -582,7 +599,7 @@
                 <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
                   <div class="defaultHistory">
                     <h3>{{credit_analysis_card_Expanded?.credit_ratio_analysis?.business_turnover_analysis?.header}}</h3>
-                    <ul class="numberBox">
+                    <ul class="numberBox d-flex">
                       <li>
                         Secured
                         <span class="mb-0 mt-3">{{roundValue(securedUnsecuredRatioData?.securedToTurnoverRatio*100)}}%</span>
@@ -594,7 +611,7 @@
                     </ul>
 
                     <div class="stabilityBox">
-                      <p>Lenders Perspective: <span>{{securedUnsecuredRatio?.header}}</span></p>
+                      <p>Lenders’ Perspective</p>
                     </div>
 
                     <div class="box boxBorder mt-2">
@@ -669,12 +686,12 @@
                       </div>
                       <div class="col-lg-6">
                         <div class="downwardBox">
-                          <img
+                          <!-- <img
                             src="./assets/LandingPage/themeInformation.svg"
                             alt=""
-                          />
+                          /> -->
                           <div class="downwardContent">
-                            <p>
+                            <p class="text-center">
                               {{variety_of_active_loans?.description}}
                             </p>
                           </div>
@@ -697,9 +714,9 @@
                       <h5>{{credit_analysis_card_Expanded?.other_analysis?.credit_card_utilization?.labels}}</h5>
                       <button>Yes</button>
                     </div>
-                    <div class="banksBox flex-wrap">
+                    <div class="banksBox flex-wrap d-block text-center">
                       <h3>{{creditCardUtilization?.header}}</h3>
-                      <p>
+                      <p class="text-center">
                         {{creditCardUtilization?.description}}
                       </p>
                     </div>
@@ -712,9 +729,9 @@
                       <h5>{{credit_analysis_card_Expanded?.other_analysis?.small_loans?.labels}}</h5>
                       <button style="background-color: #ec1111;">No</button>
                     </div>
-                    <div class="banksBox flex-wrap">
+                    <div class="banksBox flex-wrap d-block text-center">
                       <h3>{{smallLoans?.header}}</h3>
-                      <p>
+                      <p class="text-center">
                         {{smallLoans?.description}}
                       </p>
                     </div>
@@ -760,10 +777,10 @@
                     {{creditRemarks?.description}}
                   </p>
                 </div>
-                <div class="numberText">
+                <div class="numberText d-flex align-items-center">
                   <p *ngIf="creditReportData?.businessRiskRemark">Yes</p>
                   <p *ngIf="!creditReportData?.businessRiskRemark">No</p>
-                  <span>Remarks</span>
+                  <!-- <span>Remarks</span> -->
                 </div>
               </div>
             </div>

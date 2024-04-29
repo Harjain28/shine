@@ -23,6 +23,8 @@ import { avgBureauJSON } from '../JsonFiles/avg_bureau';
 import { noBureauJSON } from '../JsonFiles/no_bureau';
 import { poorBureauJSON } from '../JsonFiles/poor_bureau';
 import { vpoorBureauJSON } from '../JsonFiles/v_poor_bureau';
+import { NoBureauComponent } from './no-bureau/no-bureau.component';
+import { NoGstComponent } from './no-gst/no-gst.component';
 
 @Component({
   selector: 'app-reports',
@@ -35,6 +37,8 @@ import { vpoorBureauJSON } from '../JsonFiles/v_poor_bureau';
     ActionsRequiredComponent,
     ProbabilityOfLoanComponent,
     FaqComponent,
+    NoBureauComponent,
+    NoGstComponent,
   ],
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.scss'],

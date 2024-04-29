@@ -1,0 +1,71 @@
+.tooltipShow{
+
+    button{
+        border: none;
+        background: transparent;
+        padding: 0px;
+    }
+
+    .toolTipContent{
+        background-color: #fff;
+        padding: 16px;
+        border-radius: 10px;
+        box-shadow: 0px 3px 10px rgba(39, 45, 59, 0.1411764706);
+        width: 90%;
+        position: absolute;
+        left: 50%;
+        top: 50px;
+        transform: translate(-50%, 0%);
+        
+        p{
+            text-align: left !important;
+        }
+    }
+}
+
+.fontOpenSmall{
+
+    .defaultHistory{
+
+        h3{
+            font-size: 16px !important; 
+        }
+
+        .numberBox{
+
+            &.d-flex{
+
+                li{
+                    height: 100px !important;
+                    display: flex !important;
+                    flex-wrap: wrap;
+                    justify-content: center;
+
+                    span{
+                        font-size: 40px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.loanHistory{
+
+    .creditContent{
+
+        p{
+            color: #3F3F3F;
+            font-weight: normal;
+            font-size: 13px;
+            font-family: Poppins !important;
+            line-height: 16px;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+    }
+}
+
+.banksBox.flex-wrap h3 {
+    font-size: 14px !important;
+}

@@ -1,0 +1,230 @@
+.modalbureauNumber{
+    padding: 70px 0px;
+    background-color: #E2E2E252;
+
+    .title {
+        text-align: center;
+        position: relative;
+        margin-bottom: 40px;
+
+        &:before {
+            left: 0px;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            content: "";
+            background-color: #efefef;
+            top: 20px;
+            z-index: -1;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #3F3F3F;
+
+            span {
+                background-color: #f6f6f6;
+                padding: 0px 30px;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 0px;
+            font-family: Poppins !important;
+            color: #3F3F3F;
+            line-height: 25px;
+        }
+    }
+
+    .boxModal{
+        box-shadow: 0px 3px 10px #00000024;
+        border: 1px solid #E2E2E2;
+        border-radius: 20px;
+        background-color: #fff;
+        overflow: hidden;
+
+        .gstNumberBox{
+            padding: 30px 40px;
+            text-align: center;
+
+            img{
+                width: auto;
+                height: 100px;
+                margin-bottom: 30px;
+            }
+
+            h3{
+                color: #3F3F3F;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 22px;
+                margin-bottom: 5px;
+                font-family: Poppins !important;
+            }
+
+            p{
+                color: #3F3F3F;
+                font-size: 14px;
+                font-weight: normal;
+                line-height: 18px;
+                margin-bottom: 25px;
+                font-family: Poppins !important;
+            }
+
+            .form-group{
+                display: flex;
+                align-items: center;
+                width: 100%;
+                gap: 6px;
+
+                input{
+                    height: 47px;
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    color: #3f3f3f;
+                    font-size: 14px;
+                    font-weight: 400;
+                    background-color: #fff;
+                    border: 2px solid var(--main1);
+                    text-align: center;
+                    border-radius: 10px;
+
+                    &:focus{
+                        outline: none;
+                        box-shadow: none;
+                    }
+
+                    &::placeholder{
+                        color: #A1A1A1;
+                    }
+                }
+
+                button{
+                    height: 47px;
+                    padding: 10px 20px;
+                    background: var(--main1);
+                    color: #fff;
+                    border-radius: 10px;
+                    border: 2px solid var(--main1);
+                    font-weight: 600;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .gstRegistration {
+        padding: 30px 40px;
+        background: var(--main1);
+
+        h3{
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 22px;
+            margin-bottom: 5px;
+            font-family: Poppins !important;
+            text-align: center;
+        }
+
+        p{
+            color: #fff;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 18px;
+            margin-bottom: 16px;
+            font-family: Poppins !important;
+            text-align: center;
+        }
+
+        .iconBox {
+            display: flex;
+            justify-content: center;
+
+            img{
+                width: auto;
+                height: 90px;
+            }
+        }
+
+        .box{
+            border: 1px solid #6A2FC2;
+            border-radius: 10px;
+            background-color: #fff;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 20px;
+
+            h5{
+                color: var(--main1);
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 22px;
+                margin-bottom: 6px;
+                font-family: Poppins !important;
+            }
+    
+            p{
+                color: #3F3F3F;
+                font-size: 13px;
+                font-weight: normal;
+                line-height: 18px;
+                margin-bottom: 12px;
+                font-family: Poppins !important;
+                text-align: left;
+            }
+        }
+    }
+    
+}
+
+@media (max-width: 767px) {
+    .modalbureauNumber{
+        padding: 10px 10px;
+
+        .title {
+            margin-bottom: 20px;
+
+            &:before {
+                display: none;
+            }
+
+            h2 {
+                font-size: 24px;
+
+                span {
+                    padding: 0px;
+                    background-color: transparent;
+                }
+            }
+
+            p{
+                br{
+                    display: none;
+                }
+            }
+        }
+
+        .boxModal{
+    
+            .gstNumberBox{
+                padding: 15px 20px;
+            }
+        }
+    
+        .gstRegistration {
+            padding: 15px 20px;
+    
+            .box{
+                padding: 15px;
+            }
+        }
+    }
+}

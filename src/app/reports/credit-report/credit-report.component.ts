@@ -35,6 +35,11 @@ export class CreditReportComponent {
   @Input() creditReportsData: any;
   @ViewChild('owlCarousel') owlCarousel!: CarouselComponent;
 
+  isVisible = false;
+
+  toggleTooltip(): void {
+    this.isVisible = !this.isVisible;
+  }
 
   expandSection!: boolean;
   expandCurrentCreditSection!: boolean;
