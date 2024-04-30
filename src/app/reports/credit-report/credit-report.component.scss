@@ -11,7 +11,7 @@
         padding: 16px;
         border-radius: 10px;
         box-shadow: 0px 3px 10px rgba(39, 45, 59, 0.1411764706);
-        width: 90%;
+        width: 95%;
         position: absolute;
         left: 50%;
         top: 50px;
@@ -19,6 +19,20 @@
         
         p{
             text-align: left !important;
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 7px !important;
+            display: block;
+
+            span{
+                min-height: 8px;
+                min-width: 8px;
+                background-color: #3f3f3f;
+                border-radius: 50px;
+                position: absolute;
+                left: 0px;
+                top: 4px;
+            }
         }
     }
 }
@@ -43,6 +57,7 @@
 
                     span{
                         font-size: 40px !important;
+                        width: 100%;
                     }
                 }
             }

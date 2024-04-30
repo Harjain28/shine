@@ -129,9 +129,13 @@
                                 <img src="./assets/LandingPage/themeInformation.svg" alt="Information Icon"/>
                               </button>
                               <div class="toolTipContent" *ngIf="isVisible">
-                                <p *ngFor="let data of staticData?.loanRepaymentHistory_expanded?.defaultAnalysis.defaultHistory?.additional_information">
-                                  {{data}}
+                                <ng-container *ngFor="let data of staticData?.loanRepaymentHistory_expanded?.defaultAnalysis.defaultHistory?.additional_information">
+                                <p >
+                                  <span></span>
+                                  <b>{{data?.lable}}:</b>
+                                  {{data?.description}}
                                   </p>
+                                </ng-container>
                               </div>
                             </div>
                           </h3>
@@ -584,11 +588,11 @@
                     <h3> {{securedUnsecuredRatio?.header}}</h3>
                     <ul class="numberBox d-flex">
                       <li>
-                        Secured
+                        Unsecured
                         <span class="mb-0 mt-3">{{roundValue(securedUnsecuredRatioData?.securedToTurnoverRatio*100)}}%</span>
                       </li>
                       <li>
-                        Unsecured
+                        Secured
                         <span class="mb-0 mt-3">{{roundValue(securedUnsecuredRatioData?.ratio * 100)}}%</span>
                       </li>
                     </ul>

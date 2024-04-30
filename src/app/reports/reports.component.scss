@@ -520,6 +520,7 @@
                     align-items: center;
                     justify-content: center;
                     font-family: Poppins !important;
+                    cursor: pointer;
 
                     &.active {
                         background-color: #FF7B24;
@@ -979,7 +980,7 @@
                                 background: #3f3f3f;
                                 border-radius: 50px;
                                 position: absolute;
-                                top: 9px;
+                                top: 13px;
                                 transform: translate(0%, 0%);
                                 left: 0px;
                             }
@@ -1117,6 +1118,7 @@
 
                 p {
                     color: var(--main2);
+                    margin-bottom: -20px;
                 }
 
                 span {
@@ -1155,12 +1157,16 @@
             padding: 20px 25px;
             min-width: 100px;
             min-height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
 
             p {
                 color: #FF7B24;
                 font-weight: 600;
                 font-size: 26px;
-                margin-bottom: 10px;
+                margin-bottom: 0px;
                 font-family: Poppins !important;
                 text-align: center;
                 display: flex;

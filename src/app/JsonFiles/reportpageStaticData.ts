@@ -61,12 +61,31 @@ export const reportStatciData =
                         "overdueExceedsThreshold": "Total Overdue > ₹25,000"
                     },
                     "additional_information": [
-                        "Defaults (36 Months): Any defaults in your loan repayments over the last 36 months.",
-                        "Fresh Defaults (90 Days): Any defaults  in your loan repayments over the last 90 days.",
-                        "Late Payments (12 Months): Any Days Past Due (DPDs) listed on your credit report within the last 12 months.",
-                        "30+ Late Payments (12 Months): More than 30 Days Past Due (DPDs) recorded on your credit report in the last 12 months.",
-                        "Severe Late Payments (90-180 Days): Any Days Past Due (DPDs) for 90-180 days recorded on your credit report over past 36 months.",
-                        "Total Overdue > ₹25,000: Total dues recorded on your credit report amounting to ₹25,000 or more, excluding credit card dues."
+                        {
+                        "lable": "Defaults (36 Months)",
+                        "description": "Any defaults in your loan repayments over the last 36 months."
+                    },
+                    {
+                        "lable": "Fresh Defaults (90 Days)",
+                        "description": "Any defaults  in your loan repayments over the last 90 days."
+                    },
+                    {
+                        "lable": "Late Payments (12 Months)",
+                        "description": "Any Days Past Due (DPDs) listed on your credit report within the last 12 months."
+                    },
+                    {
+                        "lable": "30+ Late Payments (12 Months)",
+                        "description": "More than 30 Days Past Due (DPDs) recorded on your credit report in the last 12 months."
+                    },
+                    {
+                        "lable": "Severe Late Payments (90-180 Days)",
+                        "description": "Any Days Past Due (DPDs) for 90-180 days recorded on your credit report over past 36 months."
+                    },
+                    {
+                        "lable": "Total Overdue > ₹25,000",
+                        "description": "Total dues recorded on your credit report amounting to ₹25,000 or more, excluding credit card dues."
+                    }
+
                     ]
                 }
             },
