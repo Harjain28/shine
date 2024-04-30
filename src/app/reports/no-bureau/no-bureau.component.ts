@@ -10,5 +10,5 @@ import { MaterialModule } from 'src/app/material.module';
   styleUrls: ['./no-bureau.component.scss']
 })
 export class NoBureauComponent {
-
+  isShow: boolean = false;
 }

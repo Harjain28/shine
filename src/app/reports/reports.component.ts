@@ -93,6 +93,7 @@ export class ReportsComponent {
   parsedData: any;
   mobileNo: any;
   sampleData: any;
+  isShowNoBureau: boolean = false;
 
   constructor(private api: ApiService, private cdr: ChangeDetectorRef,private router: Router) {}
 
@@ -147,6 +148,7 @@ export class ReportsComponent {
 
     } else if (fileName === 'no_bureau.json') {
       this.reportsData = noBureauJSON;
+      this.isShowNoBureau = true;
 
     } else if (fileName === 'poor_bureau.json') {
       this.reportsData = poorBureauJSON;

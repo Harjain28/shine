@@ -1,6 +1,34 @@
 <div class="backgroundColor"></div>
 
-<!-- <div class="modalbureauNumber">
+
+
+<div class="bureauDetails"  *ngIf = "!isShow">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-mg-10 col-sm-12 m-auto">
+        <div class="boxDetails">
+          <div class="vectorIcon">
+            <img src="./assets/LandingPage/img1.svg" alt="">
+          </div>
+          <div class="content">
+            <h3>We are unable to fetch your Bureau Details</h3>
+            <p>Kindly share the mobile number which is linked to your credit bureau</p>
+            <div class="formInput">
+              <form>
+                <div class="form-group">
+                  <input class="form-control" type="number" placeholder="Enter Mobile no. linked to Bureau">
+                </div>
+                <button (click)="isShow = true;">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modalbureauNumber" *ngIf = "isShow">
   <div class="background"></div>
   <div class="container">
     <div class="title">
@@ -107,32 +135,6 @@
         <div class="col-lg-6">
           <div class="bottomText text-center">
             <p>Which ever loan you choose, remember to pay your EMIs on time to ramp up yorur bureau score.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<div class="bureauDetails">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-mg-10 col-sm-12 m-auto">
-        <div class="boxDetails">
-          <div class="vectorIcon">
-            <img src="./assets/LandingPage/img1.svg" alt="">
-          </div>
-          <div class="content">
-            <h3>We are unable to fetch your Bureau Details</h3>
-            <p>Kindly share the mobile number which is linked to your credit bureau</p>
-            <div class="formInput">
-              <form>
-                <div class="form-group">
-                  <input class="form-control" type="number" placeholder="Enter Mobile no. linked to Bureau">
-                </div>
-                <button>Submit</button>
-              </form>
-            </div>
           </div>
         </div>
       </div>

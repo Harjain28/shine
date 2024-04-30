@@ -91,9 +91,13 @@
   <!-- Top-Banner-Section End -->
 
   <!-- Credit-Report-Section Start -->
+  <ng-container *ngIf="!isShowNoBureau">
   <app-credit-report [creditReportsData]="reportsData"></app-credit-report>
+</ng-container>
   <!-- Two-plus-Section End -->
-
+<ng-container *ngIf="isShowNoBureau">
+  <app-no-bureau></app-no-bureau>
+</ng-container>
   <!-- <app-no-bureau></app-no-bureau> -->
 
   <div class="poweredBy">
