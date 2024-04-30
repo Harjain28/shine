@@ -56,26 +56,15 @@
                     <h3>{{info_card.header}}</h3>
                     <p>{{info_card?.description}}
                     </p>
-                    
-                    <div [ngSwitch]="warningText">
-                      <p *ngSwitchCase="'Needs Attention'">
-                        <span [style.color]="warningColor">
-                          <mat-icon>warning</mat-icon>
-                          {{ warningText }}
-                        </span>
-                      </p>
-                      <p *ngSwitchCase="'Good Job!'">
-                        <span [style.color]="warningColor">
-                          {{ warningText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
-                        </span>
-                      </p>
-                      <p *ngSwitchCase="'Improvement'">
-                        <span [style.color]="warningColor">
-                          {{ warningText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
-                        </span>
-                      </p>
-                    </div>
-                        
+                    <p>
+                    <span [style.color]="warningColor">
+                      <mat-icon *ngIf ="info_card?.class === 'negative'">warning</mat-icon>
+                      {{ info_card?.warning }}
+                      <span *ngIf ="info_card?.class === 'positive'">
+                      <img src="./assets/LandingPage/goodWork.svg" alt="">
+                    </span>
+                    </span>
+                  </p>
                   </div>
                 </div>
               </div>

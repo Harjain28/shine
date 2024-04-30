@@ -41,13 +41,12 @@ export class GstFillingComponent {
   }
 
   ngOnInit(): void{
-    this.reportsData = this.gstData;
-    this.gstDetails = this.reportsData?.report?.gstHistory;
+    this.gstDetails = this.gstData?.report?.gstHistory;
 
   
     this.month=this.gstDetails?.missedGstFilings?.month;
 
-    const gstInsights = reportPageJson.insights?.gstHistory;
+    const gstInsights = this.gstData.insights?.gstHistory;
 
     this.missedGstFilings = this.concatenateInsights(
       gstInsights?.missedGstFilings.filter(
@@ -61,16 +60,13 @@ export class GstFillingComponent {
       )
     );
 
-    if(this.info_card?.class === "negative ")
+    if(this.info_card?.class === "negative")
     {
       this.warningColor  = "#ec1111"  //red
-      this.warningText = "Needs Attention"
-    } else if(this.info_card?.class === "positive ") {
+    } else if(this.info_card?.class === "positive") {
       this.warningColor  = "var(--main2)"  //green
-      this.warningText = "Good Job!"
     }else{
       this.warningColor  = "#FF7B24"  //green
-      this.warningText = "Improvments"
     }
     console.log(this.info_card,"fff")
 
@@ -104,30 +100,30 @@ export class GstFillingComponent {
         (result: any, insight: any) => {
             if (insight.class === "negative") {
                 if (insight.header !== null && insight.header !== undefined) {
-                    result.header = insight.header + ' ';
+                    result.header = insight.header;
                 }
                 if (insight.subheader !== null && insight.subheader !== undefined) {
-                    result.subheader = insight.subheader + ' ';
+                    result.subheader = insight.subheader;
                 }
                 if (insight.warning !== null && insight.warning !== undefined) {
-                    result.warning = insight.warning + ' ';
+                    result.warning = insight.warning;
                 }
                 if (insight.class !== null && insight.class !== undefined) {
-                  result.class = insight.class + ' ';
+                  result.class = insight.class;
               }
             }
             else {
                 if (!result.header && insight.header !== null && insight.header !== undefined) {
-                    result.header = insight.header + ' ';
+                    result.header = insight.header;
                 }
                 if (!result.subheader && insight.subheader !== null && insight.subheader !== undefined) {
-                    result.subheader = insight.subheader + ' ';
+                    result.subheader = insight.subheader;
                 }
                 if (!result.warning && insight.warning !== null && insight.warning !== undefined) {
-                    result.warning = insight.warning + ' ';
+                    result.warning = insight.warning;
                 }
                 if (insight.class !== null && insight.class !== undefined) {
-                  result.class = insight.class + ' ';
+                  result.class = insight.class;
               }
             }
             

@@ -275,7 +275,7 @@ this.potStage = this.reportsData?.report?.potentialStage
     for (let i = 0; i <= 3; i++) {
         this.previousYears.push(year - i);
     }
-    this.previousYears.reverse();
+    // this.previousYears.reverse();
     
   }
 
