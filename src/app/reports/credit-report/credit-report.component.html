@@ -129,12 +129,9 @@
                                 <img src="./assets/LandingPage/themeInformation.svg" alt="Information Icon"/>
                               </button>
                               <div class="toolTipContent" *ngIf="isVisible">
-                                <p>Defaults (36 Months): Any defaults in your loan repayments over the last 36 months.</p>
-                                <p>Fresh Defaults (90 Days): Any defaults in your loan repayments over the last 90 days.</p>
-                                <p>Late Payments (12 Months): Any Days Past Due (DPDs) listed on your credit report within the last 12 months.</p>
-                                <p>30+ Late Payments (12 Months): More than 30 Days Past Due (DPDs) recorded on your credit report in the last 12 months.</p>
-                                <p>Severe Late Payments (90-180 Days): Any Days Past Due (DPDs) for 90-180 days recorded on your credit report over past 36 months.</p>
-                                <p>Total Overdue > ₹25,000: Total dues recorded on your credit report amounting to ₹25,000 or more, excluding credit card dues.</p>
+                                <p *ngFor="let data of staticData?.loanRepaymentHistory_expanded?.defaultAnalysis.defaultHistory?.additional_information">
+                                  {{data}}
+                                  </p>
                               </div>
                             </div>
                           </h3>
