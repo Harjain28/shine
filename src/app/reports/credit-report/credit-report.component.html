@@ -105,7 +105,7 @@
                   <div class="calendarBox">
                     <div class="col-lg-8 col-md-8 col-sm-12 m-auto">
                       <div class="year justify-content-center gap-4">
-                        <span *ngFor="let year of year" [ngClass]="{ 'active': selectedYear === year }" (click)="selectYear(year)">{{ year }}</span>
+                        <span *ngFor="let year of previousYears" [ngClass]="{ 'active': selectedYear === year }" (click)="selectYear(year)">{{ year }}</span>
                       </div>
                       <ul class="monthView">
                         <li *ngFor="let month of month" [ngClass]="{ 'active': isSelectedMonth(month) }">{{ month }}</li>
@@ -335,7 +335,7 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="calendarBox">
                 <div class="year">
-                  <span *ngFor="let year of year" [ngClass]="{ 'active': selectedYear === year }" (click)="selectYear(year)">{{ year }}</span>
+                  <span *ngFor="let year of previousYears" [ngClass]="{ 'active': selectedYear === year }" (click)="selectYear(year)">{{ year }}</span>
                 </div>
                 <ul class="monthView">
                   <li *ngFor="let month of month" [ngClass]="{ 'active': isSelectedMonth(month) }">{{ month }}</li>

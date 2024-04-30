@@ -107,6 +107,12 @@ export class ReportsComponent {
     this.getFaq();
     this.getChartsData();
     this.postForReport();
+    const url = this.router.url;
+    if (url.includes('/report')) {
+      this.reportsData = reportPageJson
+    }else{
+      this.navigateToSampleReportWithParams()
+    }
     this.navigateToSampleReportWithParams()
   
   }

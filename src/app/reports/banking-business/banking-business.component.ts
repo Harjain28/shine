@@ -124,6 +124,8 @@ export class BankingBusinessComponent {
   bhImageIcon: any;
   abbImgageIcon: any;
   dtrImgageIcon: any;
+  unsecuredRatioPercent: any;
+  securedRatioPercent: any;
 
   constructor() {}
   customOptions4: OwlOptions = {
@@ -186,11 +188,12 @@ export class BankingBusinessComponent {
     this.monthly_expenses = this.banking_history?.monthly_expenses;
     this.turnoverLineData = this.graphData?.turnover;
     this.businessLinedata = this.graphData?.abb;
-    this.securedUnsecuredRatioData =
-      reportPageJson?.report?.creditReport?.securedUnsecuredRatio;
+    this.securedUnsecuredRatioData =this.bankingData?.report?.creditReport?.securedUnsecuredRatio;
+    this.unsecuredRatioPercent = (this.securedUnsecuredRatioData?.unsecuredOutstanding*100)/this.turnoverLineData?.sum;
+    this.securedRatioPercent = (this.securedUnsecuredRatioData?.securedOutstanding*100)/this.turnoverLineData?.sum;
     this.aboveMinMonths = this.getMonthsAboveMin(this.graphData);
     
-  
+    
 
     this.ratiosecured = {
       byAmount: [
@@ -590,6 +593,10 @@ export class BankingBusinessComponent {
     } else {
       return roundedTurnover.toString();
     }
+  }
+
+  roundValue(value: number): number {
+    return Math.round(value);
   }
 
   expandBankingBusniess() {

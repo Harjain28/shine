@@ -36,6 +36,7 @@ export class CreditReportComponent {
   @ViewChild('owlCarousel') owlCarousel!: CarouselComponent;
 
   isVisible = false;
+  reportDate: any;
 
   toggleTooltip(): void {
     this.isVisible = !this.isVisible;
@@ -111,6 +112,9 @@ export class CreditReportComponent {
   infoCardLRPText!: string;
   warningText!: string;
   caImgageIcon: any;
+  res: any;
+  previousYears!: any[]
+
    constructor(private dialog: MatDialog, private el:  ElementRef,private router:Router) {}
 
   customOptions4: OwlOptions = {
@@ -162,7 +166,6 @@ export class CreditReportComponent {
   }
 
   ngOnInit(): void {
-
       this.reportsData = this.creditReportsData;
     
 
@@ -171,10 +174,12 @@ export class CreditReportComponent {
     this.loan_repayment_history = this.creditReportData?.loanRepaymentHistory;
 
 
-   
+    this.getPastYears()
+
 
     this.year = this.extractYears(this.loan_repayment_history?.missedPayments);
-    this.selectedYear = this.year[0];
+    this.selectedYear = this.previousYears[0];
+    console.log(this.previousYears[0] ,"qq")
 
     this.default_analysis = this.loan_repayment_history?.defaultAnalysis;
 
@@ -202,8 +207,8 @@ for (const key in this.default_analysis.defaultHistory) {
     }
 }
 
-this.currStage= this.reportsData?.currentStage
-this.potStage = this.reportsData?.potentialStage
+this.currStage= this.reportsData?.report?.currentStage
+this.potStage = this.reportsData?.report?.potentialStage
 
 
 
@@ -263,6 +268,20 @@ this.potStage = this.reportsData?.potentialStage
   
     return { color, text };
   }
+
+
+  getPastYears(){
+    this.reportDate = this.reportsData?.report?.reportDate;
+    const year = new Date(this.reportDate).getFullYear();
+        this.previousYears = [];
+    for (let i = 0; i <= 3; i++) {
+        this.previousYears.push(year - i);
+    }
+    this.previousYears.reverse();
+    
+  }
+
+
 
   getInsights() {
     const creditreportInsights = this.reportsData?.insights?.creditReport;
@@ -432,6 +451,8 @@ this.warningText = cardViewText;
 
   }
 
+
+
   concatenateInsights(insightsArray: any) {
     return insightsArray.reduce(
         (result: any, insight: any) => {
@@ -504,6 +525,7 @@ this.warningText = cardViewText;
     }
   }
 
+
   extractYears(payments: any[]): number[] {
     const yearsSet = new Set<number>();
     payments.forEach((payment) => {
@@ -511,7 +533,7 @@ this.warningText = cardViewText;
         yearsSet.add(payment.year);
       }
     });
-    return Array.from(yearsSet);
+    return Array.from(yearsSet).sort((a, b) => a - b);
   }
 
   selectYear(year: number): void {
@@ -520,8 +542,7 @@ this.warningText = cardViewText;
 
   isSelectedMonth(month: string): boolean {
     const index = this.month.indexOf(month) + 1;
-    return this.loan_repayment_history?.missedPayments.some(
-      (payment: { year: number | undefined; month: number }): any =>
+    return this.loan_repayment_history?.missedPayments.some((payment: { year: number | undefined; month: number }): any =>
         payment.year === this.selectedYear && payment.month === index
     );
   }
