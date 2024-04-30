@@ -42,7 +42,9 @@
                     justify-content: center;
 
                     span{
-                        font-size: 40px !important;
+                        font-size: 30px !important;
+                        width: 100%;
+                        display: block;
                     }
                 }
             }
@@ -68,4 +70,51 @@
 
 .banksBox.flex-wrap h3 {
     font-size: 14px !important;
+}
+::ng-deep{
+    .no-checkbox{
+
+        &.mat-mdc-checkbox-checked {
+
+            .mdc-checkbox__background {
+                background-color: #FF7B24 !important;
+            }
+        }
+    }
+}
+
+::ng-deep{
+    .yes-checkbox{
+
+        &.mat-mdc-checkbox-checked {
+
+            .mdc-checkbox__background {
+                background-color: var(--main2) !important;
+            }
+        }
+    }
+}
+
+::ng-deep{
+    .green-checkbox{
+
+        &.mat-mdc-checkbox-checked {
+
+            .mdc-checkbox__background {
+                background-color: var(--main2) !important;
+            }
+        }
+    }
+}
+
+::ng-deep{
+    .red-checkbox{
+
+        &.mat-mdc-checkbox-checked {
+
+            .mdc-checkbox__background {
+                background-color: #ec1111 !important;
+            }
+        }
+    }
 }

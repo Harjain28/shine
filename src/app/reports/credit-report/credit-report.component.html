@@ -234,8 +234,8 @@
                           <h3>{{LoanReplacementExpanded?.otherAnalysis?.suitFiledEver?.header}}</h3>
                     
                             <div class="checkBox">
-                              <mat-checkbox [checked]="other_analysis.suitFiledEver" class="yes-checkbox"  disabled>Yes</mat-checkbox>
-                              <mat-checkbox [checked]="!other_analysis.suitFiledEvers" class="yes-checkbox"  disabled>No</mat-checkbox>
+                              <mat-checkbox [checked]="other_analysis.suitFiledEver" class="red-checkbox"  disabled>Yes</mat-checkbox>
+                              <mat-checkbox [checked]="!other_analysis.suitFiledEvers" class="green-checkbox"  disabled>No</mat-checkbox>
                             </div>
                         
                           <div class="banksBox flex-wrap" *ngIf="suitFiledEver?.bullets && suitFiledEver?.bullets.length > 0">
