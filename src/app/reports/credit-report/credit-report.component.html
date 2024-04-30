@@ -18,7 +18,7 @@
                   </defs>
                   <path fill="none" stroke="url(#gradient1)" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
                     <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 100)'" x1="10" y1="100" x2="100" y2="100" stroke="#707070" stroke-width="3"></line>
-                    <text class="topText" x="100" y="80" text-anchor="middle">{{ angle }}</text>
+                    <text class=""  [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 100)'" x1="10" y1="100" x2="100" y2="100" text-anchor="middle">{{ angle }}</text>
           
                     <text class="leftText" x="30" y="130" text-anchor="middle">{{ minAngle }}</text>
                     
@@ -56,7 +56,7 @@
                       <div class="numberText">
                         <p *ngIf="creditReportData?.businessRiskRemark">Yes</p>
                         <p *ngIf="!creditReportData?.businessRiskRemark">No</p>
-                        <span>Remarks</span>
+                        <!-- <span>Remarks</span> -->
                       </div>
                     </div>
                   </div>
@@ -245,7 +245,7 @@
                             
                             </ul>
                           </div>
-                          <div class="banksBox flex-wrap" *ngIf="!suitFiledEver?.bullets && suitFiledEver?.bullets.length < 0 && suitFiledEver?.description">
+                          <div class="banksBox flex-wrap">
                             <ul>
                               <li>
                                 <span></span>
@@ -262,7 +262,7 @@
                           <h4>{{LoanReplacementExpanded?.summary?.header}}</h4>
                           <div class="summaryContent">
                             <ul>
-                              <li *ngFor = "let bullets of bullets">
+                              <li *ngFor = "let bullets of summary?.bullets">
                                 <span></span>
                                 {{bullets}}
                               </li>
@@ -299,9 +299,8 @@
                 </linearGradient>
             </defs>
             <path fill="none" stroke="url(#gradient)" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
-              <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 100)'" x1="10" y1="100" x2="100" y2="100" stroke="#707070" stroke-width="3"></line>
-              <text class="top" [attr.transform]="'rotate(' + (180 - calculateRotation(angle)) + ', 100, 100)'" x="100" y="10" text-anchor="middle">{{ angle }}</text>
-              
+              <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 100)'" x1="5" y1="100" x2="100" y2="100" stroke="#707070" stroke-width="3"></line>
+              <text class="top" [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 100)'" x="0" y="100"  text-anchor="middle">{{ angle }}</text>
               <text class="leftText" x="30" y="130" text-anchor="middle">{{ minAngle }}</text>
               
               <text class="rightText" x="170" y="130" text-anchor="middle">{{ maxAngle }}</text>
@@ -358,24 +357,18 @@
                   <p>
                     {{infoCardLRP?.description}}
                   </p>
-                  <div [ngSwitch]="infoCardLRPText">
-                    <p *ngSwitchCase="'Needs Attention'">
-                      <span [style.color]="infoCardLRPColor">
-                        <mat-icon>warning</mat-icon>
-                        {{ infoCardLRPText }}
-                      </span>
-                    </p>
-                    <p *ngSwitchCase="'Good Job!'">
-                      <span [style.color]="infoCardLRPColor">
-                        {{ infoCardLRPText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
-                      </span>
-                    </p>
-                    <p *ngSwitchCase="'Improvement'">
-                      <span [style.color]="infoCardLRPColor">
-                        {{ infoCardLRPText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
-                      </span>
-                    </p>
-                  </div>
+                  <P>
+                  <span [style.color]="infoCardLRPColor">
+                    <mat-icon *ngIf ="infoCardLRP?.class === 'negative'">warning</mat-icon>
+                    {{ infoCardLRP?.warning }}
+                    <span *ngIf ="infoCardLRP?.class === 'positive'">
+                    <img src="./assets/LandingPage/goodWork.svg" alt="">
+                  </span>
+                  </span>
+               
+
+                  </P>
+
                 </div>
               </div>
             </div>
@@ -437,24 +430,16 @@
                   <p>
                     {{cardView?.description}}
                   </p>
-                  <div [ngSwitch]="warningText">
-                    <p *ngSwitchCase="'Needs Attention'">
-                      <span [style.color]="warningColor">
-                        <mat-icon>warning</mat-icon>
-                        {{ warningText }}
-                      </span>
-                    </p>
-                    <p *ngSwitchCase="'Good Job!'">
-                      <span [style.color]="warningColor">
-                        {{ warningText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
-                      </span>
-                    </p>
-                    <p *ngSwitchCase="'Improvement'">
-                      <span [style.color]="warningColor">
-                        {{ warningText }} <img src="./assets/LandingPage/goodWork.svg" alt="">
-                      </span>
-                    </p>
-                  </div>
+
+                <p>
+                <span [style.color]="warningColor">
+                  <mat-icon *ngIf ="cardView?.class === 'negative'">warning</mat-icon>
+                  {{ cardView?.warning }}
+                  <span *ngIf ="cardView?.class === 'positive'">
+                  <img src="./assets/LandingPage/goodWork.svg" alt="">
+                </span>
+                </span>
+                <P>
                 </div>
               </div>
             </div>
@@ -477,7 +462,7 @@
                 <div class="numberText">
                   <p *ngIf="creditReportData?.businessRiskRemark">Yes</p>
                   <p *ngIf="!creditReportData?.businessRiskRemark">No</p>
-                  <span>Remarks</span>
+                  <!-- <span>Remarks</span> -->
                 </div>
               </div>
             </div>
@@ -513,7 +498,7 @@
                 <div class="numberText">
                   <p *ngIf="creditReportData?.businessRiskRemark">Yes</p>
                   <p *ngIf="!creditReportData?.businessRiskRemark">No</p>
-                  <span>Remarks</span>
+                  <!-- <span>Remarks</span> -->
                 </div>
               </div>
             </div>
@@ -599,6 +584,7 @@
                 <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
                   <div class="defaultHistory">
                     <h3>{{credit_analysis_card_Expanded?.credit_ratio_analysis?.business_turnover_analysis?.header}}</h3>
+                    <h3> {{securedUnsecuredRatio?.header}}</h3>
                     <ul class="numberBox d-flex">
                       <li>
                         Secured
@@ -606,7 +592,7 @@
                       </li>
                       <li>
                         Unsecured
-                        <span class="mb-0 mt-3">{{roundValue(securedUnsecuredRatioData?.unsecuredToTurnoverRatio * 100)}}%</span>
+                        <span class="mb-0 mt-3">{{roundValue(securedUnsecuredRatioData?.ratio * 100)}}%</span>
                       </li>
                     </ul>
 

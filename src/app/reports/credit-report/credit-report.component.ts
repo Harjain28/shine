@@ -248,25 +248,22 @@ this.potStage = this.reportsData?.report?.potentialStage
     return Math.round(value);
   }
 
-  private setColorAndText(classValue: string): { color: string, text: string } {
+  private setColorAndText(classValue: string): { color: string } {
     let color: string;
     let text: string;
   
     switch (classValue.trim()) {
       case "negative":
         color = "#ec1111"; // Red
-        text = "Needs Attention";
         break;
       case "positive":
         color = "var(--main2)"; // Green
-        text = "Good Job!";
         break;
       default:
         color = "#FF7B24"; // Orange
-        text = "Improvement";
     }
   
-    return { color, text };
+    return { color };
   }
 
 
@@ -290,15 +287,16 @@ this.potStage = this.reportsData?.report?.potentialStage
 
     loanRepaymentHistory?.summary.forEach((item: any) => {
       if (item?.bullets !== null && item?.bullets.length > 0) {
-        this.bullets = item?.bullets;
         if (item?.class !== null) {
           if (item.class === "negative") {
             this.imgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
+          } else if (item?.class === "positive") {
+            this.caImgageIcon = "./assets/LandingPage/smileImg.svg";
           } else {
-            this.imgageIcon = "./assets/LandingPage/smileImg.svg";
+            this.caImgageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
           }
         } else {
-          this.imgageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
+          this.caImgageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
         }
       } 
     });
@@ -326,11 +324,11 @@ this.potStage = this.reportsData?.report?.potentialStage
         (item: { condition_status: any }) => item.condition_status
       )
     );
+      console.log(this.infoCardLRP ,"infoCardLRP");
 
     const infoCardLRPClass = this.infoCardLRP?.class;
-const { color: infoCardLRPColor, text: infoCardLRPText } = this.setColorAndText(infoCardLRPClass);
+const { color: infoCardLRPColor } = this.setColorAndText(infoCardLRPClass);
 this.infoCardLRPColor = infoCardLRPColor;
-this.infoCardLRPText = infoCardLRPText;
 
     this.defaulthistoryText = this.concatenateInsights(
       defaultAnalysis?.defaultHistory.filter(
@@ -369,9 +367,8 @@ this.infoCardLRPText = infoCardLRPText;
     );
 
     const cardViewClass = this.cardView?.class;
-const { color: cardViewColor, text: cardViewText } = this.setColorAndText(cardViewClass);
+const { color: cardViewColor} = this.setColorAndText(cardViewClass);
 this.warningColor = cardViewColor;
-this.warningText = cardViewText;
 
     console.log(this.cardView,"ee")
     
@@ -412,12 +409,13 @@ this.warningText = cardViewText;
 
     credit_analysis?.credit_debt_analysis_summary.forEach((item: any) => {
       if (item?.bullets !== null && item?.bullets.length > 0) {
-        this.bullets = item?.bullets;
         if (item?.class !== null) {
           if (item.class === "negative") {
             this.caImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
-          } else {
+          } else if (item?.class === "positive") {
             this.caImgageIcon = "./assets/LandingPage/smileImg.svg";
+          } else {
+            this.caImgageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
           }
         } else {
           this.caImgageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
@@ -458,30 +456,30 @@ this.warningText = cardViewText;
         (result: any, insight: any) => {
             if (insight.class === "negative") {
                 if (insight.header !== null && insight.header !== undefined) {
-                    result.header = insight.header + ' ';
+                    result.header = insight.header;
                 }
                 if (insight.subheader !== null && insight.subheader !== undefined) {
-                    result.subheader = insight.subheader + ' ';
+                    result.subheader = insight.subheader;
                 }
                 if (insight.warning !== null && insight.warning !== undefined) {
-                    result.warning = insight.warning + ' ';
+                    result.warning = insight.warning;
                 }
                 if (insight.class !== null && insight.class !== undefined) {
-                  result.class = insight.class + ' ';
+                  result.class = insight.class;
               }
             }
             else {
                 if (!result.header && insight.header !== null && insight.header !== undefined) {
-                    result.header = insight.header + ' ';
+                    result.header = insight.header;
                 }
                 if (!result.subheader && insight.subheader !== null && insight.subheader !== undefined) {
-                    result.subheader = insight.subheader + ' ';
+                    result.subheader = insight.subheader;
                 }
                 if (!result.warning && insight.warning !== null && insight.warning !== undefined) {
-                    result.warning = insight.warning + ' ';
+                    result.warning = insight.warning;
                 }
                 if (insight.class !== null && insight.class !== undefined) {
-                  result.class = insight.class + ' ';
+                  result.class = insight.class;
               }
             }
             
