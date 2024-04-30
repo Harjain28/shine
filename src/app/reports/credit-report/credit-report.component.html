@@ -54,8 +54,7 @@
                         </p>
                       </div>
                       <div class="numberText">
-                        <p *ngIf="creditReportData?.businessRiskRemark">Yes</p>
-                        <p *ngIf="!creditReportData?.businessRiskRemark">No</p>
+                        <p [ngStyle]="{'color': creditReportData?.businessRiskRemark ? '#FF7B24' : 'var(--main2)'}">{{creditReportData?.businessRiskRemark ? 'Yes' : 'No'}}</p>
                         <!-- <span>Remarks</span> -->
                       </div>
                     </div>
@@ -69,7 +68,7 @@
                         </p>
                       </div>
                       <div class="numberText">
-                        <p>{{creditReportData?.creditEnquiry}}</p>
+                        <p [ngStyle]="{'color': creditReportData?.creditEnquiry > 10 ? '#ec1111' : 'var(--main2)'}">{{creditReportData?.creditEnquiry}}</p>
                         <span>Credit Enquiry</span>
                       </div>
                     </div>
@@ -219,7 +218,7 @@
                               </li>
                             </ul>
                           </div>
-                          <div class="banksBox" *ngIf="!topBanks?.bullets && topBanks?.description">
+                          <div class="banksBox" *ngIf="topBanks?.description">
                             <ul>
                               <li>
                                 <span></span>
@@ -235,7 +234,7 @@
                     
                             <div class="checkBox">
                               <mat-checkbox [checked]="other_analysis.suitFiledEver" class="red-checkbox"  disabled>Yes</mat-checkbox>
-                              <mat-checkbox [checked]="!other_analysis.suitFiledEvers" class="green-checkbox"  disabled>No</mat-checkbox>
+                              <mat-checkbox [checked]="!other_analysis.suitFiledEver" class="green-checkbox"  disabled>No</mat-checkbox>
                             </div>
                         
                           <div class="banksBox flex-wrap" *ngIf="suitFiledEver?.bullets && suitFiledEver?.bullets.length > 0">
@@ -462,8 +461,7 @@
                   </p>
                 </div>
                 <div class="numberText d-flex align-items-center">
-                  <p *ngIf="creditReportData?.businessRiskRemark">Yes</p>
-                  <p *ngIf="!creditReportData?.businessRiskRemark">No</p>
+                  <p [ngStyle]="{'color': creditReportData?.businessRiskRemark ? '#FF7B24' : 'var(--main2)',}">{{creditReportData?.businessRiskRemark ? 'Yes' : 'No'}}</p>
                   <!-- <span>Remarks</span> -->
                 </div>
               </div>
@@ -477,7 +475,7 @@
                   </p>
                 </div>
                 <div class="numberText">
-                  <p>{{creditReportData?.creditEnquiry}}</p>
+                  <p [ngStyle]="{'color': creditReportData?.creditEnquiry > 10 ? '#ec1111' : 'var(--main2)'}">{{creditReportData?.creditEnquiry}}</p>
                   <span>Credit Enquiry</span>
                 </div>
               </div>
@@ -498,9 +496,8 @@
                   </p>
                 </div>
                 <div class="numberText d-flex align-items-center">
-                  <p *ngIf="creditReportData?.businessRiskRemark">Yes</p>
-                  <p *ngIf="!creditReportData?.businessRiskRemark">No</p>
-                  <!-- <span>Remarks</span> -->
+                  <p [ngStyle]="{'color': creditReportData?.businessRiskRemark ? '#FF7B24' : 'var(--main2)',}">{{creditReportData?.businessRiskRemark ? 'Yes' : 'No'}}</p>
+                        <!-- <span>Remarks</span> -->
                 </div>
               </div>
             </div>
@@ -513,10 +510,9 @@
                   </p>
                 </div>
                 <div class="numberText">
-                  <p>{{creditReportData?.creditEnquiry}}</p>
+                  <p [ngStyle]="{'color': creditReportData?.creditEnquiry > 10 ? '#ec1111' : 'var(--main2)'}">{{creditReportData?.creditEnquiry}}</p>
                   <span>Credit Enquiry</span>
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -701,7 +697,9 @@
                     <h3>{{credit_analysis_card_Expanded?.other_analysis?.credit_card_utilization?.header}}</h3>
                     <div class="checkBox">
                       <h5>{{credit_analysis_card_Expanded?.other_analysis?.credit_card_utilization?.labels}}</h5>
-                      <button>Yes</button>
+                      <button [ngStyle]="{'background-color': other_analysis.creditCardUtilizationExceeding ? '#ec1111' : 'var(--main2)', 'color': 'white'}">
+                        {{ other_analysis.creditCardUtilizationExceeding ? 'Yes' : 'No' }}
+                      </button>
                     </div>
                     <div class="banksBox flex-wrap d-block text-center">
                       <h3>{{creditCardUtilization?.header}}</h3>
@@ -710,13 +708,17 @@
                       </p>
                     </div>
                   </div>
+
+                
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-12 mb-3">
                   <div class="otherAnalysis">
                     <h3>{{credit_analysis_card_Expanded?.other_analysis?.small_loans?.header}}</h3>
                     <div class="checkBox">
                       <h5>{{credit_analysis_card_Expanded?.other_analysis?.small_loans?.labels}}</h5>
-                      <button style="background-color: #ec1111;">No</button>
+                      <button [ngStyle]="{'background-color': other_analysis.smallLoansExceeding ? '#ec1111' : 'var(--main2)', 'color': 'white'}">
+                        {{ other_analysis.smallLoansExceeding ? 'Yes' : 'No' }}
+                      </button>
                     </div>
                     <div class="banksBox flex-wrap d-block text-center">
                       <h3>{{smallLoans?.header}}</h3>
@@ -782,7 +784,7 @@
                   </p>
                 </div>
                 <div class="numberText">
-                  <p>{{creditReportData?.creditEnquiry}}</p>
+                  <p [ngStyle]="{'color': creditReportData?.creditEnquiry > 10 ? '#ec1111' : 'var(--main2)'}">{{creditReportData?.creditEnquiry}}</p>
                   <span>Credit Enquiry</span>
                 </div>
               </div>
