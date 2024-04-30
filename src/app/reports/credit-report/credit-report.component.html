@@ -144,7 +144,7 @@
                               <ng-container *ngFor="let item of defaultHistoryItems; let i= index">
                                 <li>
                                   {{default_analysis_labels[i]}}
-                                  <span [ngClass]="item.value ? 'YesColor' : 'NoColor'">{{ item.value ? 'YES' : 'NO' }}</span>
+                                  <span [ngClass]="item.value ? 'NoColor' : 'YesColor'">{{ item.value ? 'YES' : 'NO' }}</span>
                                 </li>
                               </ng-container>
                             </div>
@@ -207,8 +207,9 @@
                         <div class="otherAnalysis">
                           <h3>{{LoanReplacementExpanded?.otherAnalysis?.topBanks?.header}}</h3>
                           <div class="checkBox">
-                            <mat-checkbox [checked]="other_analysis.topBanks" disabled>Yes</mat-checkbox>
-                            <mat-checkbox [checked]="!other_analysis.topBanks" disabled>No</mat-checkbox>
+                            <mat-checkbox [checked]="other_analysis.topBanks" disabled class="yes-checkbox">Yes</mat-checkbox>
+                            <mat-checkbox [checked]="!other_analysis.topBanks" disabled class="no-checkbox">No</mat-checkbox>
+                                                  
                           </div>
                           <div class="banksBox" *ngIf="topBanks?.bullets && topBanks?.bullets.length > 0">
                             <ul>
@@ -233,8 +234,8 @@
                           <h3>{{LoanReplacementExpanded?.otherAnalysis?.suitFiledEver?.header}}</h3>
                     
                             <div class="checkBox">
-                              <mat-checkbox [checked]="other_analysis.suitFiledEver" disabled>Yes</mat-checkbox>
-                              <mat-checkbox [checked]="!other_analysis.suitFiledEvers" disabled>No</mat-checkbox>
+                              <mat-checkbox [checked]="other_analysis.suitFiledEver" class="yes-checkbox"  disabled>Yes</mat-checkbox>
+                              <mat-checkbox [checked]="!other_analysis.suitFiledEvers" class="yes-checkbox"  disabled>No</mat-checkbox>
                             </div>
                         
                           <div class="banksBox flex-wrap" *ngIf="suitFiledEver?.bullets && suitFiledEver?.bullets.length > 0">
@@ -589,11 +590,12 @@
                     <ul class="numberBox d-flex">
                       <li>
                         Unsecured
-                        <span class="mb-0 mt-3">{{roundValue(securedUnsecuredRatioData?.securedToTurnoverRatio*100)}}%</span>
+                        <span class="mb-0 mt-3">{{roundValue(securedUnsecuredRatioData?.ratio * 100)}}%</span>
+                       
                       </li>
                       <li>
                         Secured
-                        <span class="mb-0 mt-3">{{roundValue(securedUnsecuredRatioData?.ratio * 100)}}%</span>
+                        <span class="mb-0 mt-3">{{roundValue(securedUnsecuredRatioData?.securedToTurnoverRatio*100)}}%</span>
                       </li>
                     </ul>
 

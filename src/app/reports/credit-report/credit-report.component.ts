@@ -218,7 +218,7 @@ this.potStage = this.reportsData?.report?.potentialStage
     this.credit_analysis = this.creditReportData?.creditAnalysis;
     this.credit_analysis = Object.assign({}, this.credit_analysis, {
       colorDots: ['#C3E128', '#12ba9b', '#EC1111', '#ff7b24', '#6a2fc2', '#3f51b5', '#11c897', '#d32ec3'],
-      deptCompColors: ['#C3E128', '#12ba9b']
+      deptCompColors: [ '#12ba9b','#C3E128']
 
     });
     console.log(this.credit_analysis,'hhhh')
@@ -227,16 +227,17 @@ this.potStage = this.reportsData?.report?.potentialStage
     
       this.ratiosecured = {
         byAmount: [
+          {
+            name: 'unsecured',
+            value: this.securedUnsecuredRatioData?.unsecuredOutstanding || 0,
+        },
             {
                 name: 'secured',
                 value: this.securedUnsecuredRatioData?.securedOutstanding || 0,
-            },
-            {
-                name: 'unsecured',
-                value: this.securedUnsecuredRatioData?.unsecuredOutstanding || 0,
             }
+            
         ],
-        colorDots: ['#C3E128', '#12ba9b']
+        colorDots: ['#C3E128' ,'#12ba9b']
 
 
     };

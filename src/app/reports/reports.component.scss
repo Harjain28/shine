@@ -860,6 +860,7 @@
                     justify-content: center;
                     gap: 20px;
                     align-items: center;
+                    
 
                     h5 {
                         font-size: 14px;
@@ -907,7 +908,7 @@
                         .mat-mdc-checkbox-checked {
 
                             .mdc-checkbox__background {
-                                background-color: var(--main2);
+                                // background-color: var(--main2);
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
