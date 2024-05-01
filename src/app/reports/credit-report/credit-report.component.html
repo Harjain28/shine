@@ -108,7 +108,8 @@
                       </div>
                       <ul class="monthView">
                         <li *ngFor="let month of month; let i = index"
-                            [ngClass]="{'active': isSelectedMonth(month),'blur': i >= currentMonthIndex}">{{ month }}</li>
+                            [ngClass]="{'active': isSelectedMonth(month),'blur':  i > currentMonthIndex && selectedYear === currentYear}">{{ month }}
+                          </li>
                     </ul>
                       <div class="missingPayment">
                         {{ loan_repayment_history?.missedPayments.length }} Missing Payments
@@ -339,8 +340,9 @@
                   <span *ngFor="let year of previousYears" [ngClass]="{ 'active': selectedYear === year }" (click)="selectYear(year)">{{ year }}</span>
                 </div>
                 <ul class="monthView">
-                  <li *ngFor="let month of month;let i = index" [ngClass]="{'active': isSelectedMonth(month), 'blur': !isSelectedMonth(month) && i >= currentMonthIndex}">{{ month }}</li>
-              </ul>
+                  <li *ngFor="let month of month; let i = index"
+                  [ngClass]="{'active': isSelectedMonth(month),'blur':  i > currentMonthIndex && selectedYear === currentYear}">{{ month }}
+                </li>              </ul>
                 <div class="missingPayment">
                   {{ loan_repayment_history?.missedPayments.length }} Missing Payments
                 </div>

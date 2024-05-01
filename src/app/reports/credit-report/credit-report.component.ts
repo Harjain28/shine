@@ -37,6 +37,7 @@ export class CreditReportComponent {
 
   isVisible = false;
   reportDate: any;
+  cc!: boolean;
 
   toggleTooltip(): void {
     this.isVisible = !this.isVisible;
@@ -114,7 +115,9 @@ export class CreditReportComponent {
   caImgageIcon: any;
   res: any;
   previousYears!: any[]
-  currentMonthIndex: number = new Date().getMonth();
+  currentMonthIndex: number = new Date(). getMonth() ;
+  currentYear: number = new Date().getFullYear();
+
 
 
    constructor(private dialog: MatDialog, private el:  ElementRef,private router:Router) {}
@@ -169,7 +172,7 @@ export class CreditReportComponent {
 
   ngOnInit(): void {
       this.reportsData = this.creditReportsData;
-    
+    console.log(this.currentYear,"kkk")
 
     this.creditReportData = this.reportsData?.report?.creditReport;
     this.angle = this.creditReportData?.bureauScore?.score;
@@ -547,6 +550,7 @@ this.warningColor = cardViewColor;
         payment.year === this.selectedYear && payment.month === index
     );
   }
+
   // Function to calculate the rotation of the needle
   calculateRotation(angle: number): number {
     return angle / 5;

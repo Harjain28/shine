@@ -49,11 +49,23 @@ export class DoughnutComponent {
         data: donutDataValues,
         backgroundColor: donutColors,
         borderWidth: 0,
+
       },
       {
         data: donutDataValues,
-        backgroundColor: donutColors,
+        backgroundColor: [
+          '#a5c91e', 
+          '#0e9b7c', 
+          '#b90d0d', 
+          '#e3621c', 
+          '#5b249d', 
+          '#364599', 
+          '#0fad87', 
+          '#b527b6'  
+        ],
         borderWidth: 0,
+        
+
       }],
     };
 
