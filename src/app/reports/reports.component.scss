@@ -64,7 +64,11 @@
 
             img{
                 width: auto;
-                height: 40px;
+                height: 20px;
+                position: absolute;
+                top: 20px;
+                left: 50%;
+                transform: translate(-50%, 0%);            
             }
 
             .content{
@@ -2506,6 +2510,38 @@
         }
     }
 }
+
+.progress-containerRound {
+    position: relative;
+    width: 100px;
+    height: 100px;
+
+    .combined-spinner {
+        width: 60px !important;
+        height: 60px !important;
+        
+        ::ng-deep{
+    
+            .mdc-circular-progress__determinate-container{
+    
+                .mdc-circular-progress__determinate-circle-graphic{
+                    border-radius: 50px;
+                    stroke: var(--main2) !important;
+                }
+            }
+            
+            &.mat-mdc-progress-spinner{
+                .mdc-circular-progress__indeterminate-circle-graphic{
+                    stroke: var(--main2) !important;
+                }
+            }
+    
+            .mdc-circular-progress__indeterminate-circle-graphic{
+                stroke: var(--main2) !important;
+            }
+        }
+      }
+  }  
 
 .probabilityLoan {
 

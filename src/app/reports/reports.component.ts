@@ -25,6 +25,7 @@ import { poorBureauJSON } from '../JsonFiles/poor_bureau';
 import { vpoorBureauJSON } from '../JsonFiles/v_poor_bureau';
 import { NoBureauComponent } from './no-bureau/no-bureau.component';
 import { NoGstComponent } from './no-gst/no-gst.component';
+import { MaterialModule } from '../material.module';
 
 @Component({
   selector: 'app-reports',
@@ -39,6 +40,7 @@ import { NoGstComponent } from './no-gst/no-gst.component';
     FaqComponent,
     NoBureauComponent,
     NoGstComponent,
+    MaterialModule,
   ],
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.scss'],
@@ -94,6 +96,7 @@ export class ReportsComponent {
   mobileNo: any;
   sampleData: any;
   isShowNoBureau: boolean = false;
+  progressValue: number = 50;
 
   constructor(private api: ApiService, private cdr: ChangeDetectorRef,private router: Router) {}
 
@@ -116,6 +119,10 @@ export class ReportsComponent {
     }
     this.navigateToSampleReportWithParams()
   
+  }
+
+  changeProgress(value: number) {
+    this.progressValue = value;
   }
 
   ngAfterViewInit(): void {
