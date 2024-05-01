@@ -493,6 +493,7 @@
                         background-color: var(--main1);
                         color: #fff;
                     }
+                    
                 }
             }
 
@@ -527,6 +528,13 @@
                         border-color: #FF7B24;
                         color: #fff;
                     }
+                    &.blur {
+                        border-color: #E2E2E2;
+                        color: #E2E2E2;
+                    }
+                    &.default-color {
+                        color: var(--main2);
+                      }
                 }
             }
 

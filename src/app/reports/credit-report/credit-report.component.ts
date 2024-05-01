@@ -114,6 +114,8 @@ export class CreditReportComponent {
   caImgageIcon: any;
   res: any;
   previousYears!: any[]
+  currentMonthIndex: number = new Date().getMonth();
+
 
    constructor(private dialog: MatDialog, private el:  ElementRef,private router:Router) {}
 
