@@ -64,7 +64,11 @@
               <p>Preparing you for the perfect business loan</p>
       
               <div class="boxOne">
-                <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plane.png" alt="">
+                <div class="progress-containerRound">
+                  <mat-progress-spinner [value]="progressValue" mode="determinate" strokeWidth="8" class="combined-spinner"></mat-progress-spinner>
+                  <img class="iconSpiner" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plane.png" alt="">
+                </div>
+                
                 <div class="content">
                   <h5>Your Potential</h5>
                   <small>Take action to improve loan potential</small>
