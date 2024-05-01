@@ -1,0 +1,41 @@
+ul.bankingListLegend {
+    padding-left: 0px;
+    list-style: none;
+    margin-bottom: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+
+    li {
+        color: #3F3F3F;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+        font-family: Poppins !important;
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 8px;
+        text-align: left;
+        justify-content: center;
+        padding-bottom: 5px;
+
+        span {
+            min-width: 15px;
+            min-height: 15px;
+            background-color: #fff !important;
+            display: flex !important;
+            border-radius: 50px !important;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgb(18, 186, 155);
+
+            span {
+                min-width: 8px;
+                min-height: 8px;
+                background-color: rgb(18, 186, 155) !important;
+            }
+        }
+    }
+}
