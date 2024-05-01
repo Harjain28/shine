@@ -9,8 +9,8 @@ ul.bankingListLegend {
 
     li {
         color: #3F3F3F;
-        font-size: 12px;
-        font-weight: 500;
+        font-size: 12px !important;
+        font-weight: 500 !important;
         line-height: 16px;
         font-family: Poppins !important;
         display: flex;
@@ -30,6 +30,7 @@ ul.bankingListLegend {
             align-items: center;
             justify-content: center;
             border: 1px solid rgb(18, 186, 155);
+            position: initial !important;
 
             span {
                 min-width: 8px;
@@ -37,5 +38,12 @@ ul.bankingListLegend {
                 background-color: rgb(18, 186, 155) !important;
             }
         }
+    }
+}
+
+.valatilityBox{
+
+    &.active{
+        border: 1.3px solid  #12BA9B !important;
     }
 }

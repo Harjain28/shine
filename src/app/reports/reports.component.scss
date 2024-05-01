@@ -1603,7 +1603,7 @@
         }
 
         .defaultContent {
-            background-color: #fafafa;
+            background-color: #F3F3F3;
             padding: 8px 0px;
             border-radius: 10px;
             margin-top: 30px;
@@ -1626,10 +1626,6 @@
             text-align: center;
             margin-top: 15px;
             height: 100%;
-
-            &:hover{
-                border-color: var(--main2);
-            }
 
             &.backgrundColor {
                 background-color: var(--main1);
@@ -1787,7 +1783,7 @@
 
                 span {
                     display: flex;
-                    align-items: flex-start;
+                    align-items: center;
                     gap: 3px;
                     font-size: 14px;
                     font-weight: 600;

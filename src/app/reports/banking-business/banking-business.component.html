@@ -19,7 +19,7 @@
           <div class="col-lg-8 col-md-8 col-sm-12 m-auto mb-5">
             <h3>{{affordability_section?.business_turnover_expanded?.header}}</h3>
             <p>{{affordability_section?.business_turnover_expanded?.subheader}}</p>
-            <div class="chart chart1 chartLine">
+            <div class="chart chart1 chartLine justify-content-center">
               <app-mixed5 [MixedJSONData5]="mixedData5"></app-mixed5>
 
               <!-- <app-mixed3 [MixedJSONData3]="mixedData3"></app-mixed3> -->
@@ -62,7 +62,7 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="valatilityBox">
+              <div class="valatilityBox active">
                 <h3>{{affordability_section?.business_turnover_expanded?.volatility_analysis?.lenders_perspective?.header}}</h3>
                 <ul>
                   <li *ngFor = "let bullet of volitility_lenders_perspective?.bullets">
@@ -120,7 +120,7 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="valatilityBox">
+              <div class="valatilityBox active">
                 <h3>{{affordability_section?.business_turnover_expanded?.quarterly_dip?.lenders_perspective?.header}}</h3>
                 <ul>
                   <li *ngFor="let bullet of turnover_lenders_perspective?.bullets">
@@ -251,7 +251,7 @@
           <div class="col-lg-8 col-md-8 col-sm-12 m-auto mb-5">
             <h3>{{affordability_section?.bank_balance_expanded?.header}}</h3>
             <p>{{affordability_section?.bank_balance_expanded?.subheader}}</p>
-            <div class="chart chart1 chartLine">
+            <div class="chart chart1 chartLine justify-content-center">
               <app-mixed3 [MixedJSONData3]="mixedData3"></app-mixed3>
             </div>
             <ul class="bankingListLegend">
@@ -290,7 +290,7 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="valatilityBox">
+              <div class="valatilityBox active">
                 <h3>{{affordability_section?.bank_balance_expanded?.volatility_analysis?.lenders_perspective?.header}}</h3>
                 <ul>
                   <li *ngFor="let bullet of bank_balance_lenders_perspective?.bullets">
@@ -332,7 +332,7 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="valatilityBox">
+              <div class="valatilityBox active">
                 <h3>{{affordability_section?.bank_balance_expanded?.minimum_balance?.lenders_perspective?.header}}</h3>
                 <ul>
                   <li *ngFor="let bullet of minimum_balance_lenders_perspective?.bullets">
