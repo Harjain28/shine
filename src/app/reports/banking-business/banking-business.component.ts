@@ -267,25 +267,21 @@ export class BankingBusinessComponent {
     console.log(cashFlowArray, 'kkk');
   }
 
-  private setColorAndText(classValue: string): { color: string, text: string } {
+  private setColorAndText(classValue: string): { color: string } {
     let color: string;
-    let text: string;
   
     switch (classValue.trim()) {
       case "negative":
         color = "#ec1111"; // Red
-        text = "Needs Attention";
         break;
       case "positive":
         color = "var(--main2)"; // Green
-        text = "Good Job!";
         break;
       default:
         color = "#FF7B24"; // Orange
-        text = "Improvement";
     }
   
-    return { color, text };
+    return { color };
   }
 
   getInsights() {
@@ -310,9 +306,8 @@ export class BankingBusinessComponent {
       )
     );
     const dipClass = this.dip?.class;
-    const { color: dipColor, text: dipText } = this.setColorAndText(dipClass);
+    const { color: dipColor} = this.setColorAndText(dipClass);
     this.dipColor = dipColor;
-    this.dipText = dipText;
 
 
 
@@ -355,9 +350,9 @@ export class BankingBusinessComponent {
     );
 
     const cardViewClass = this.card_view?.class;
-    const { color: cardViewColor, text: cardViewText } = this.setColorAndText(cardViewClass);
+    const { color: cardViewColor } = this.setColorAndText(cardViewClass);
     this.cvColor = cardViewColor;
-    this.cvText = cardViewText;
+    
 
     this.abbcardView = this.concatenateInsights(
       abb?.card_view.filter(
@@ -365,9 +360,10 @@ export class BankingBusinessComponent {
       )
     );
     const abbcardViewClass = this.abbcardView?.class;
-    const { color: abbColor, text: abbText } = this.setColorAndText(abbcardViewClass);
+    const { color: abbColor } = this.setColorAndText(abbcardViewClass);
     this.abbColor = abbColor;
-    this.abbText = abbText;
+
+    console.log(this.abbcardView?.warning,"ff2")
 
     this.bank_balance_observation = this.concatenateInsights(
       abb?.volatility_observation.filter(
@@ -421,9 +417,8 @@ export class BankingBusinessComponent {
     );
 
     const dcardViewClass = this.dcard_view?.class;
-    const { color: dcColor, text: dcText } = this.setColorAndText(dcardViewClass);
+    const { color: dcColor } = this.setColorAndText(dcardViewClass);
     this.dcColor = dcColor;
-    this.dcText = dcText;
 
     this.debt_to_revenue_ratio_lenders_perspective = this.concatenateInsights(
       debt_to_revenue_ratio?.debt_to_revenue_ratio_lenders_perspective.filter(
@@ -460,9 +455,8 @@ export class BankingBusinessComponent {
     );
 
     const cheque_bouncesClass = this.cheque_bounces?.class;
-    const { color: cbColor, text: cbText } = this.setColorAndText(cheque_bouncesClass);
+    const { color: cbColor } = this.setColorAndText(cheque_bouncesClass);
     this.cbColor = cbColor;
-    this.cbText = cbText;
 
 
     this.cashflow = this.concatenateInsights(
@@ -472,66 +466,68 @@ export class BankingBusinessComponent {
     );
 
     const cashflowClass = this.cashflow?.class;
-    const { color: cfColor, text: cfText } = this.setColorAndText(cashflowClass);
+    const { color: cfColor } = this.setColorAndText(cashflowClass);
     this.cfColor = cfColor;
-    this.cfText = cfText;
 
   }
 
   concatenateInsights(insightsArray: any) {
     return insightsArray.reduce(
-        (result: any, insight: any) => {
-            if (insight.class === "negative") {
-                if (insight.header !== null && insight.header !== undefined) {
-                    result.header = insight.header + ' ';
-                }
-                if (insight.subheader !== null && insight.subheader !== undefined) {
-                    result.subheader = insight.subheader + ' ';
-                }
-                if (insight.warning !== null && insight.warning !== undefined) {
-                    result.warning = insight.warning + ' ';
-                }
-                if (insight.class !== null && insight.class !== undefined) {
-                  result.class = insight.class + ' ';
-              }
-            } else {
-                if (!result.header && insight.header !== null && insight.header !== undefined) {
-                    result.header = insight.header + ' ';
-                }
-                if (!result.subheader && insight.subheader !== null && insight.subheader !== undefined) {
-                    result.subheader = insight.subheader + ' ';
-                }
-                if (!result.warning && insight.warning !== null && insight.warning !== undefined) {
-                    result.warning = insight.warning + ' ';
-                }
-                if (insight.class !== null && insight.class !== undefined) {
-                  result.class = insight.class + ' ';
-              }
-            }
-            
-            if (insight.description !== null && insight.description !== undefined) {
-                result.description += insight.description + ' ';
-            }
-            if (insight.bullets !== null && insight.bullets !== undefined) {
-                result.bullets.push(...insight.bullets);
-            }
-            if (insight.type !== null && insight.type !== undefined) {
-                result.type += insight.type + ' ';
-            }
-          
-            return result;
-        },
-        {
-            header: '',
-            subheader: '',
-            description: '',
-            bullets: [],
-            class: '',
-            type: '',
-            warning: '',
+      (result: any, insight: any) => {
+        if (insight.class === "negative") {
+          if (insight.header !== null && insight.header !== undefined) {
+            result.header = insight.header;
+          }
+          if (insight.subheader !== null && insight.subheader !== undefined) {
+            result.subheader = insight.subheader;
+          }
+          if (insight.warning !== null && insight.warning !== undefined) {
+            result.warning = insight.warning;
+          }
+          if (insight.class !== null && insight.class !== undefined) {
+            result.class = insight.class;
+          }
         }
+        else {
+          if (!result.header && insight.header !== null && insight.header !== undefined) {
+            result.header = insight.header;
+          }
+          if (!result.subheader && insight.subheader !== null && insight.subheader !== undefined) {
+            result.subheader = insight.subheader;
+          }
+          if (!result.warning && insight.warning !== null && insight.warning !== undefined) {
+            result.warning = insight.warning;
+          }
+          if (insight.class !== null && insight.class !== undefined) {
+            result.class = insight.class;
+          }
+        }
+  
+        if (insight.description !== null && insight.description !== undefined) {
+          result.description += insight.description + ' ';
+        }
+        if (insight.bullets !== null && insight.bullets !== undefined) {
+          result.bullets.push(...insight.bullets);
+        }
+        if (insight.type !== null && insight.type !== undefined) {
+          result.type += insight.type + ' ';
+        }
+  
+        return result;
+      },
+      {
+        header: '',
+        subheader: '',
+        description: '',
+        bullets: [],
+        class: '',
+        type: '',
+        warning: '',
+      }
     );
-}
+  }
+
+
 
   getMonthsAboveMin(graphData: any) {
     console.log(graphData, 'graphData');

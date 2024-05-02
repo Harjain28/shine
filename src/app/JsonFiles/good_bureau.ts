@@ -4,7 +4,7 @@ export const goodBureauJSON =
   "report": {
     "creditReport": {
       "bureauScore": {
-        "score": 761
+              "score": 761
       },
       "loanRepaymentHistory": {
         "missedPayments": [

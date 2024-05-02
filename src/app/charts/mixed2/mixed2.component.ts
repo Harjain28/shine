@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import Chart, { ChartData, RadialTickOptions } from 'chart.js/auto';
+import Chart, { ChartData,RadialTickOptions, TooltipItem } from 'chart.js/auto';
 
 @Component({
   selector: 'app-mixed2',
@@ -35,13 +35,11 @@ export class Mixed2Component {
     this.turnoverLineData = this.MixedJSONData2?.turnoverLineData;
 
     const dataValues = [...this.mixedValue1];
-
-  
-
-    const sortedValues = dataValues.slice().sort((a, b) => b - a);
-    const backgroundColorsMixed = dataValues.map(value => this.getColor(value, sortedValues));
+    
+    const backgroundColorsMixed = dataValues.map(value => this.getColor(value));
 
     const { lowSd, mean, highSd } = this.turnoverLineData;
+    console.log(mean,"aaa")
 
 
 
@@ -52,7 +50,7 @@ export class Mixed2Component {
           // label: 'Horizontal Line Dataset',
           type: 'line',
           data: Array.from({ length: 6 }, () => ({ x: 0, y: mean })),
-          borderColor: 'green',
+          borderColor: '#ff6202',
           borderWidth: 1,
           fill: false,
           pointStyle:"line"
@@ -61,7 +59,7 @@ export class Mixed2Component {
           // label: 'Horizontal Line Dataset',
           type: 'line',
           data: Array.from({ length: 6 }, () => ({ x: 0, y: lowSd })),
-          borderColor: 'yellow',
+          borderColor: 'red',
           borderWidth: 1,
           fill: false,
           pointStyle:"line"
@@ -70,7 +68,7 @@ export class Mixed2Component {
           // label: 'Horizontal Line Dataset',
           type: 'line',
           data: Array.from({ length: 6 }, () => ({ x: 0, y: highSd })),
-          borderColor: 'red',
+          borderColor: 'green',
           borderWidth: 1,
           fill: false,
           pointStyle:"line"
@@ -91,6 +89,7 @@ export class Mixed2Component {
       data: chartData2,
       options: {
         plugins: {
+          
           legend: {
             display: false, // Set to false to hide the legend
           },
@@ -144,16 +143,18 @@ export class Mixed2Component {
   }
 
 
- getColor(value:any, sortedValues:any) {
-    const index = sortedValues.indexOf(value);
-    if (index === 0) {
-        return '#400993'; // First value color
-    } else if (index > 0 && index <= 2) {
-        return '#6A2FC2'; // Second and third value color
-    } else if (index > 2 && index <= 4) {
-        return '#A070E8'; // Fourth and fifth value color
+ getColor(value:any) {
+  this.turnoverLineData = this.MixedJSONData2?.turnoverLineData;
+  const { lowSd, mean, highSd } = this.turnoverLineData;
+
+  if (value >= highSd) {
+        return '#01ad00'; // green
+    } else  if (value >= mean && value <= highSd) {
+        return '#006a39'; // dark green
+    } else if (value >= lowSd && value <= mean) {
+        return '#ff6202'; // orange
     } else {
-        return '#9E77D6'; // Rest of the values color
+        return '#ff2424'; // Red
     }
 }
 

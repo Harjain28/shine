@@ -173,18 +173,16 @@ export class Mixed4Component {
 
   getMixedColor(value: number, sortedValues:any) {
     const index = sortedValues.indexOf(value);
-    if(index === 0){
-      return '#12BA9B'
-    }
-    else if (index > 0 && index <= 2) {
-      return '#6A2FC2'; 
+    if (index > 0 && index <= 2) {
+      return '#01ad00'; // green
     } else if (index > 2 && index <= 4) {
-      return '#C3E128'; 
+      return '#006a39'; // dark green
     } else if (index > 4 && index <= 6) {
-      return '#FF7B24'; 
+      return '#ff6202'; // orange
     } else {
-      // Default color if value does not fall into any range
-      return '#EC1111'; // Black color (you can change it to any default color)
+      return '#ff2424'; // Red
     }
   }
+
+  
 }

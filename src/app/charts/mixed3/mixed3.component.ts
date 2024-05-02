@@ -61,8 +61,7 @@ export class Mixed3Component {
 
     this.businessLinedata = this.MixedJSONData3?.businessLinedata;
 
-    const sortedValues = dataValues.slice().sort((a, b) => b - a);
-    const backgroundColorsMixed = dataValues.map(value => this.getMixedColor(value, sortedValues));
+    const backgroundColorsMixed = dataValues.map(value => this.getColor(value));
 
     const { lowSd, mean, highSd, min } = this.businessLinedata;
 
@@ -77,7 +76,7 @@ export class Mixed3Component {
           // label: 'Horizontal Line Dataset',
           type: 'line',
           data: Array.from({ length: 12 }, () => ({ x: 0, y: mean })),
-          borderColor: 'green',
+          borderColor: '#ff6202',
           borderWidth: 1,
           fill: false,
           pointStyle:"line"
@@ -86,7 +85,7 @@ export class Mixed3Component {
           // label: 'Horizontal Line Dataset',
           type: 'line',
           data: Array.from({ length: 12 }, () => ({ x: 0, y: lowSd })),
-          borderColor: 'yellow',
+          borderColor: 'red',
           borderWidth: 1,
           fill: false,
           pointStyle:"line"
@@ -95,7 +94,7 @@ export class Mixed3Component {
           // label: 'Horizontal Line Dataset',
           type: 'line',
           data: Array.from({ length: 12 }, () => ({ x: 0, y: highSd })),
-          borderColor: 'red',
+          borderColor: 'green',
           borderWidth: 1,
           fill: false,
           pointStyle:"line"
@@ -165,21 +164,19 @@ export class Mixed3Component {
    
   }
 
-  getMixedColor(value: number, sortedValues:any) {
-    const index = sortedValues.indexOf(value);
-    if(index === 0){
-      return '#12BA9B'
-    }
-    else if (index > 0 && index <= 2) {
-      return '#6A2FC2'; 
-    } else if (index > 2 && index <= 4) {
-      return '#C3E128'; 
-    } else if (index > 4 && index <= 6) {
-      return '#FF7B24'; 
-    } else {
-      // Default color if value does not fall into any range
-      return '#EC1111'; // Black color (you can change it to any default color)
-    }
+  getColor(value:any) {
+    this.businessLinedata = this.MixedJSONData3?.businessLinedata;
+    const { lowSd, mean, highSd, min } = this.businessLinedata;
+
+    if (value >= highSd) {
+          return '#01ad00'; // green
+      } else  if (value >= mean && value <= highSd) {
+          return '#006a39'; // dark green
+      } else if (value >= lowSd && value <= mean) {
+          return '#ff6202'; // orange
+      } else {
+          return '#ff2424'; // Red
+      }
   }
 
 }
