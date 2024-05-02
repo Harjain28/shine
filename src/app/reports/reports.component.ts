@@ -96,7 +96,7 @@ export class ReportsComponent {
   mobileNo: any;
   sampleData: any;
   isShowNoBureau: boolean = false;
-  progressValue: number = 50;
+  progressValue: number = 80;
 
   constructor(private api: ApiService, private cdr: ChangeDetectorRef,private router: Router) {}
 

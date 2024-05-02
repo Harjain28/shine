@@ -551,6 +551,10 @@ this.warningColor = cardViewColor;
     );
   }
 
+  isCurrentYearAndPastMonth(index: number): boolean {
+    const currentYear = new Date().getFullYear();
+    return currentYear === this.selectedYear && index >= this.currentMonthIndex;
+}
   // Function to calculate the rotation of the needle
   calculateRotation(angle: number): number {
     return angle / 5;

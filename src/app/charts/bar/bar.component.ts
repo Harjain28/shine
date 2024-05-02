@@ -109,13 +109,13 @@ export class BarComponent {
   getColor(value: number, sortedValues:any) {
     const index = sortedValues.indexOf(value);
     if (index > 0 && index <= 2) {
-      return '#00977a'; // green
+      return '#ff2424 '; // green
     } else if (index > 2 && index <= 4) {
       return '#00c9a3'; // dark green
     } else if (index > 4 && index <= 6) {
       return '#ff6202'; // orange
     } else {
-      return '#ff2424'; // Red
+      return '#00977a'; // Red
     }
   
 }
