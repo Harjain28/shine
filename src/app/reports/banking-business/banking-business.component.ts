@@ -502,7 +502,7 @@ export class BankingBusinessComponent {
             result.warning = insight.warning;
           }
           if (insight.class !== null && insight.class !== undefined) {
-            // result.class = insight.class;
+             result.class = insight.class;
           }
         }
   

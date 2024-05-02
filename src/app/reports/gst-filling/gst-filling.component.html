@@ -40,7 +40,7 @@
                     <li *ngFor="let month of monthArray;let i = index" [ngClass]="{'active': isSelectedMonth(month), 'blur': !isSelectedMonth(month) && i >= monthArray.indexOf(monthName)}">{{ month }}</li>
                   </ul>
                   <div class="missingPayment">
-                    {{missedGstFilings?.header}}
+                    {{totalUniqueMonths}} Missed Filings
                   </div>
                   <p>{{missedGstFilings?.subheader}}</p>
                 </div>
