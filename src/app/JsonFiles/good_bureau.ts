@@ -375,7 +375,7 @@ export const goodBureauJSON =
           "period": "2023-12-01T00:00:00"
         },
         {
-          "month": "112023",
+          "month": "102023",
           "filingDate": "2024-01-24T00:00:00",
           "dueDate": "2024-01-21T00:00:00",
           "period": "2023-11-01T00:00:00"

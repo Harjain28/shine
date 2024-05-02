@@ -174,15 +174,16 @@ export class Mixed4Component {
   getMixedColor(value: number, sortedValues:any) {
     const index = sortedValues.indexOf(value);
     if (index > 0 && index <= 2) {
-      return '#01ad00'; // green
+      return '#00977a'; // green
     } else if (index > 2 && index <= 4) {
-      return '#006a39'; // dark green
+      return '#00c9a3'; // dark green
     } else if (index > 4 && index <= 6) {
       return '#ff6202'; // orange
     } else {
       return '#ff2424'; // Red
     }
-  }
+  
+}
 
   
 }

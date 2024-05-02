@@ -76,7 +76,7 @@ export class Mixed3Component {
           // label: 'Horizontal Line Dataset',
           type: 'line',
           data: Array.from({ length: 12 }, () => ({ x: 0, y: mean })),
-          borderColor: '#ff6202',
+          borderColor: '#FF7B24',
           borderWidth: 1,
           fill: false,
           pointStyle:"line"
@@ -85,7 +85,7 @@ export class Mixed3Component {
           // label: 'Horizontal Line Dataset',
           type: 'line',
           data: Array.from({ length: 12 }, () => ({ x: 0, y: lowSd })),
-          borderColor: 'red',
+          borderColor: '#EC1111',
           borderWidth: 1,
           fill: false,
           pointStyle:"line"
@@ -94,7 +94,7 @@ export class Mixed3Component {
           // label: 'Horizontal Line Dataset',
           type: 'line',
           data: Array.from({ length: 12 }, () => ({ x: 0, y: highSd })),
-          borderColor: 'green',
+          borderColor: '#12BA9B',
           borderWidth: 1,
           fill: false,
           pointStyle:"line"
@@ -169,14 +169,14 @@ export class Mixed3Component {
     const { lowSd, mean, highSd, min } = this.businessLinedata;
 
     if (value >= highSd) {
-          return '#01ad00'; // green
-      } else  if (value >= mean && value <= highSd) {
-          return '#006a39'; // dark green
-      } else if (value >= lowSd && value <= mean) {
-          return '#ff6202'; // orange
-      } else {
-          return '#ff2424'; // Red
-      }
+      return '#00977a'; // green
+  } else  if (value >= mean && value <= highSd) {
+      return '#00c9a3'; // dark green
+  } else if (value >= lowSd && value <= mean) {
+      return '#ff6202'; // orange
+  } else {
+      return '#ff2424'; // Red
   }
+}
 
 }

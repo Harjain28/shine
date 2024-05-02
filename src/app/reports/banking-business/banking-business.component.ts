@@ -415,6 +415,9 @@ export class BankingBusinessComponent {
         (item: { condition_status: any }) => item.condition_status
       )
     );
+    console.log(this.dcard_view,"fff")
+
+    console.log(this.dcard_view.warning,"fff")
 
     const dcardViewClass = this.dcard_view?.class;
     const { color: dcColor } = this.setColorAndText(dcardViewClass);
@@ -499,7 +502,7 @@ export class BankingBusinessComponent {
             result.warning = insight.warning;
           }
           if (insight.class !== null && insight.class !== undefined) {
-            result.class = insight.class;
+            // result.class = insight.class;
           }
         }
   

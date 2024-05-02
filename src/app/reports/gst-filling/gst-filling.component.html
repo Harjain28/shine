@@ -37,7 +37,7 @@
                 <div class="calendarBox">
                   <h3>{{gstSectionHeadings?.gst_filing_card?.header}}</h3>
                   <ul>
-                    <li *ngFor="let month of monthArray;let i = index" [ngClass]="{'active': isSelectedMonth(month), 'blur': !isSelectedMonth(month) && i >= monthArray.indexOf(currentMonth)}">{{ month }}</li>
+                    <li *ngFor="let month of monthArray;let i = index" [ngClass]="{'active': isSelectedMonth(month), 'blur': !isSelectedMonth(month) && i >= monthArray.indexOf(monthName)}">{{ month }}</li>
                   </ul>
                   <div class="missingPayment">
                     {{missedGstFilings?.header}}

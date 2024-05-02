@@ -45,8 +45,15 @@ export class GstFillingComponent {
   monthArray!: string[];
   warningColor!: string;
   warningText!: string;
+  reportDate: any;
+  reportMonth!: number;
+  monthName!: string;
+  reportDateCombined!: string;
 
-
+  monthNumberToString: { [key: number]: string } = 
+  {1: "JAN",2: "FEB",3: "MAR",4: "APR",5: "MAY",6: "JUN",7: "JUL",8: "AUG",9: "SEP",10: "OCT",11: "NOV",12: "DEC"};
+  res!: { month: string; }[];
+  
 
 
   constructor() {
@@ -80,19 +87,42 @@ export class GstFillingComponent {
     } else {
       this.warningColor = "#FF7B24"  //green
     }
-    console.log(this.info_card, "fff")
-
     this.gst_section = reportStatciData;
     this.gstSectionHeadings = this.gst_section?.gst_section;
-
-    const currentDate = new Date();
-
-    this.monthArray = this.calculateMonths(currentDate.getMonth(), 7);
-    console.log(this.monthArray, "kkk")
-
-
+    this.get_GstFillingData_Of_6_Months();
   }
 
+
+
+  get_GstFillingData_Of_6_Months(){
+    this.reportDate = this.gstData?.report?.reportDate;
+    const date = new Date(this.reportDate);
+
+    this.reportMonth = (date.getMonth() + 1)
+
+    this.monthName = this.getMonthName(this.reportMonth);
+
+    this.monthArray = this.calculateMonths(this.reportMonth, 7);
+    console.log(this.monthArray, "kk")
+  
+
+
+
+    const inputArray: string[] = [];
+    for (const filing of this.gstDetails?.missedGstFilings) {
+      inputArray.push(filing.month);
+    }
+
+    const outputArray: { month: string }[] = [];
+    
+    for (let i = 0; i < inputArray.length; i++) {
+      const monthNumber = Number(inputArray[i].slice(0, 2));
+      const monthAbbreviation = this.monthNumberToString[monthNumber];
+      outputArray.push({ month: monthAbbreviation });
+    }
+    this.res = outputArray
+  }
+    
   private getMonthName(monthIndex: number): string {
     const months: string[] = [
       'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
@@ -100,7 +130,6 @@ export class GstFillingComponent {
     ];
     return months[monthIndex];
   }
-  currentMonth: string = this.getMonthName(new Date().getMonth());
 
   currentMonthIndex: number = new Date().getMonth();
 
@@ -118,9 +147,6 @@ calculateMonths(startMonth: number, numberOfMonths: number): string[] {
   months.reverse();
 
   return months;
-
-
-
 }
 
 concatenateInsights(insightsArray: any) {
@@ -181,8 +207,7 @@ concatenateInsights(insightsArray: any) {
 
 
 isSelectedMonth(month: string): boolean {
-  const index = this.months.indexOf(month) + 1;
-  return this.gstDetails?.missedGstFilings.some((payment: { month: number; }): any => payment.month === index);
+  return this.res.some((payment: { month: any; }): any => payment.month === month);
 }
 
 
