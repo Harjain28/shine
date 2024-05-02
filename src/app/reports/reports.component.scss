@@ -75,20 +75,33 @@
 
                 h5{
                     color: #3F3F3F;
-                    font-size: 18px;
-                    margin-bottom: 3px;
+                    font-size: 16px;
+                    margin-bottom: 2px;
                     font-weight: 600;
                     font-family: Poppins !important;
                 }
 
                 small{
                     color: #3F3F3F;
-                    font-size: 16px;
-                    margin-bottom: 3px;
+                    font-size: 13px;
+                    margin-bottom: 2px;
                     font-weight: 500;
                     font-family: Poppins !important;
+                    line-height: 14px;
+                }
+
+                span{
+                    font-weight: 700;
+                    justify-content: flex-start;
+                    color: var(--main1);
+                    font-size: 15px;
                 }
             }
+        }
+
+        .topBorder {
+            border-top: 1px solid #E2E2E2;
+            padding-top: 15px;
         }
 
         .boxTwo {
@@ -1948,7 +1961,7 @@
             align-items: flex-end;
             justify-content: space-between;
             margin-bottom: 10px;
-            margin-top: -20px;
+            margin-top: 0px;
 
             span {
                 font-size: 50px;
@@ -3261,11 +3274,6 @@
                 gap: 15px;
                 background: #FBFFDE;
                 margin-bottom: 17px;
-    
-                img{
-                    width: auto;
-                    height: 40px;
-                }
     
                 .content{
     

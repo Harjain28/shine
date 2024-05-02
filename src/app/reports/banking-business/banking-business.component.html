@@ -199,17 +199,37 @@
             <div class="plus" (click)="expandBankingBlanceBlock()">
               <span>+</span>
             </div>
-            <div class="col-lg-8 col-mg-10 col-sm-12 m-auto">
+            <div class="col-lg-10 col-mg-10 col-sm-12 m-auto">
               <h3>{{affordability_section?.bank_balance_card?.header}}</h3>
               <p>{{affordability_section?.bank_balance_card?.subheader}}</p>
 
               <div class="row mt-4">
-                <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                <div class="col-lg-7 col-md-7 col-sm-12 mb-3">
                   <div class="chart chart1 chartLine">
+                    <ul class="bankingListLegend d-block">
+                      <li>
+                        <span>
+                          <span></span>
+                        </span>
+                        Legend Title 1
+                      </li>
+                      <li>
+                        <span>
+                          <span></span>
+                        </span>
+                        Legend Title 2
+                      </li>
+                      <li>
+                        <span>
+                          <span></span>
+                        </span>
+                        Legend Title 3
+                      </li>
+                    </ul>
                     <app-mixed [MixedJSONData]="mixedData"></app-mixed>
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                <div class="col-lg-5 col-md-5 col-sm-12 mb-3">
                   <div class="downwardBox h-100">
                     <img src="./assets/LandingPage/themeInformation.svg" alt="">
                     <div class="downwardContent">

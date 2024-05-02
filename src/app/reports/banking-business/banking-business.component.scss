@@ -47,3 +47,11 @@ ul.bankingListLegend {
         border: 1.3px solid  #12BA9B !important;
     }
 }
+
+@media (max-width: 767px) {
+
+    ul.bankingListLegend {
+        gap: 10px !important;
+        justify-content: center !important;
+    }
+}
