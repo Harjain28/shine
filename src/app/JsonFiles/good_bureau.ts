@@ -4,7 +4,7 @@ export const goodBureauJSON =
   "report": {
     "creditReport": {
       "bureauScore": {
-              "score": 761
+        "score": 761
       },
       "loanRepaymentHistory": {
         "missedPayments": [
@@ -308,7 +308,7 @@ export const goodBureauJSON =
           "suitFiledEver": false,
           "creditCardUtilization": 0,
           "creditCardUtilizationExceeding": false,
-          "smallLoans": 23,
+          "smallLoans": 21,
           "smallLoansExceeding": true
         }
       },
@@ -371,22 +371,26 @@ export const goodBureauJSON =
         {
           "month": "122023",
           "filingDate": "2024-01-24T00:00:00",
-          "dueDate": "2024-01-21T00:00:00"
+          "dueDate": "2024-01-21T00:00:00",
+          "period": "2023-12-01T00:00:00"
         },
         {
           "month": "112023",
           "filingDate": "2024-01-24T00:00:00",
-          "dueDate": "2024-01-21T00:00:00"
+          "dueDate": "2024-01-21T00:00:00",
+          "period": "2023-11-01T00:00:00"
         },
         {
           "month": "122023",
           "filingDate": "2024-01-18T00:00:00",
-          "dueDate": "2023-12-21T00:00:00"
+          "dueDate": "2023-12-21T00:00:00",
+          "period": "2023-12-01T00:00:00"
         },
         {
           "month": "112023",
           "filingDate": "2024-01-18T00:00:00",
-          "dueDate": "2023-12-21T00:00:00"
+          "dueDate": "2023-12-21T00:00:00",
+          "period": "2023-11-01T00:00:00"
         }
       ]
     },
@@ -397,84 +401,84 @@ export const goodBureauJSON =
             "month": "Apr-23",
             "turnover": 29201,
             "creditCount": 4,
-            "averageBalance": 5360580.52,
+            "averageBalance": 726221.05,
             "cashflow": -168853.55
           },
           {
             "month": "May-23",
             "turnover": 163911,
             "creditCount": 7,
-            "averageBalance": 5360580.52,
+            "averageBalance": 508698.68,
             "cashflow": -112869.43
           },
           {
             "month": "Jun-23",
             "turnover": 403919,
             "creditCount": 14,
-            "averageBalance": 5360580.52,
+            "averageBalance": 510007.29,
             "cashflow": 193211.52
           },
           {
             "month": "Jul-23",
             "turnover": 343303,
             "creditCount": 11,
-            "averageBalance": 5360580.52,
+            "averageBalance": 563853.73,
             "cashflow": -324552.73
           },
           {
             "month": "Aug-23",
             "turnover": 331513.1,
             "creditCount": 22,
-            "averageBalance": 5360580.52,
+            "averageBalance": 406979.9,
             "cashflow": -174414.51
           },
           {
             "month": "Sep-23",
             "turnover": 250115.6,
             "creditCount": 10,
-            "averageBalance": 5360580.52,
+            "averageBalance": 402359.3,
             "cashflow": -19863.57
           },
           {
             "month": "Oct-23",
             "turnover": 132432.5,
             "creditCount": 8,
-            "averageBalance": 5360580.52,
+            "averageBalance": 257952.97,
             "cashflow": -236995.54
           },
           {
             "month": "Nov-23",
             "turnover": 257244.82,
             "creditCount": 6,
-            "averageBalance": 5360580.52,
+            "averageBalance": 40362.37,
             "cashflow": 18024.82
           },
           {
             "month": "Dec-23",
             "turnover": 1756942.09,
             "creditCount": 17,
-            "averageBalance": 5360580.52,
+            "averageBalance": 528168.21,
             "cashflow": 1026389.18
           },
           {
             "month": "Jan-24",
             "turnover": 187253,
             "creditCount": 6,
-            "averageBalance": 5360580.52,
+            "averageBalance": 723903.8,
             "cashflow": -794722.2
           },
           {
             "month": "Feb-24",
             "turnover": 19205.3,
             "creditCount": 5,
-            "averageBalance": 5360580.52,
+            "averageBalance": 456064.85,
             "cashflow": -259379.75
           },
           {
             "month": "Mar-24",
             "turnover": 8003.11,
             "creditCount": 3,
-            "averageBalance": 5360580.52,
+            "averageBalance": 236008.37,
             "cashflow": -218709.3
           }
         ],
@@ -482,42 +486,42 @@ export const goodBureauJSON =
           "month": "Q1",
           "turnover": 597031,
           "creditCount": 25,
-          "averageBalance": 5360580.52,
+          "averageBalance": 581642.34,
           "cashflow": -88511.46
         },
         "q2": {
           "month": "Q2",
           "turnover": 924931.7,
           "creditCount": 43,
-          "averageBalance": 5360580.52,
+          "averageBalance": 457730.9766666667,
           "cashflow": -518830.81
         },
         "q3": {
           "month": "Q3",
           "turnover": 2146619.41,
           "creditCount": 31,
-          "averageBalance": 5360580.52,
+          "averageBalance": 275494.51666666666,
           "cashflow": 807418.46
         },
         "q4": {
           "month": "Q4",
           "turnover": 214461.41,
           "creditCount": 14,
-          "averageBalance": 5360580.52,
+          "averageBalance": 471992.34,
           "cashflow": -1272811.25
         },
         "h1": {
           "month": "H1",
           "turnover": 1521962.7,
           "creditCount": 68,
-          "averageBalance": 5360580.52,
+          "averageBalance": 519686.6583333333,
           "cashflow": -607342.27
         },
         "h2": {
           "month": "H2",
           "turnover": 2361080.82,
           "creditCount": 45,
-          "averageBalance": 5360580.52,
+          "averageBalance": 373743.42833333334,
           "cashflow": -465392.79
         },
         "turnover": {
@@ -531,13 +535,13 @@ export const goodBureauJSON =
           "belowMinCount": 3
         },
         "abb": {
-          "stdev": 0,
-          "mean": 5360580.52,
-          "lowSd": 5360580.52,
-          "highSd": 5360580.52,
-          "cv": 0,
+          "stdev": 189724.764389154,
+          "mean": 446715.04333333333,
+          "lowSd": 256990.27894417933,
+          "highSd": 636439.8077224874,
+          "cv": 0.4247109364695912,
           "min": 10000,
-          "sum": 64326966.24,
+          "sum": 5360580.52,
           "belowMinCount": 0
         },
         "cashflow": {
@@ -586,14 +590,14 @@ export const goodBureauJSON =
       ]
     },
     "propertyOwned": false,
-    "score": 304,
-    "currentStage": 3,
-    "potentialStage": 4,
+    "score": 272,
+    "currentStage": 2,
+    "potentialStage": 3,
     "bankingSummary": {
-      "critical": 1,
-      "medium": 2,
+      "critical": 2,
+      "medium": 1,
       "positive": 3,
-      "summary": "You have a strong turnover and well-managed banking balance. Continue to monitor and maintain this stability to attract favourable loan terms."
+      "summary": "Your robust turnover and stability are commendable. Address the fluctuation in maintaining minimum balances to ensure financial resilience and reliability."
     },
     "bureauSummary": {
       "critical": 1,
@@ -605,7 +609,7 @@ export const goodBureauJSON =
       "critical": 1,
       "medium": 0,
       "positive": 0,
-      "summary": "If there are more than two filing delays in six months, it indicates a significant issue with financial discipline, which could be a red flag for lenders."
+      "summary": "If your business has not engaged in GST filing because it's new or doesn't meet the threshold, ensure you know the conditions and obligations for GST compliance as your business grows. This forward-looking approach will demonstrate financial foresight to potential lenders."
     },
     "reportDate": "2024-03-01T00:00:00"
   },
@@ -774,7 +778,7 @@ export const goodBureauJSON =
               "condition": null,
               "header": null,
               "subheader": null,
-              "description": "You can do better! Improve your standing with the lenders by implementing the steps recommended. You are currently at 3 and may be able to reach 4 in the next 3 months and get closer to your ideal loan.",
+              "description": "You can do better! Improve your standing with the lenders by implementing the steps recommended. You are currently at 2 and may be able to reach 3 in the next 3 months and get closer to your ideal loan.",
               "bullets": null,
               "class": "negative",
               "type": null,
@@ -1683,6 +1687,18 @@ export const goodBureauJSON =
           {
             "condition": null,
             "header": null,
+            "subheader": "Your ABB is Unstable",
+            "description": "Your average banking balance during the last 6 months has been unstable.",
+            "bullets": null,
+            "class": "negative",
+            "type": null,
+            "warning": null,
+            "condition_status": true,
+            "emoji": null
+          },
+          {
+            "condition": null,
+            "header": null,
             "subheader": null,
             "description": null,
             "bullets": null,
@@ -1690,18 +1706,6 @@ export const goodBureauJSON =
             "type": null,
             "warning": null,
             "condition_status": false,
-            "emoji": null
-          },
-          {
-            "condition": null,
-            "header": null,
-            "subheader": "Your ABB is Stable",
-            "description": "Your average banking balance has remained stable over the last 12 months.",
-            "bullets": null,
-            "class": "stable",
-            "type": null,
-            "warning": null,
-            "condition_status": true,
             "emoji": null
           }
         ],
@@ -1723,11 +1727,14 @@ export const goodBureauJSON =
             "header": null,
             "subheader": null,
             "description": null,
-            "bullets": null,
-            "class": null,
+            "bullets": [
+              "Your ABB is fluctuating and is on a declining trajectory. Lenders see this as risky, making it harder to get a loan.",
+              "Prioritize maintaining a stable and growing ABB at least 6 months before loan application."
+            ],
+            "class": "negative",
             "type": null,
             "warning": null,
-            "condition_status": false,
+            "condition_status": true,
             "emoji": null
           },
           {
@@ -1735,14 +1742,11 @@ export const goodBureauJSON =
             "header": null,
             "subheader": null,
             "description": null,
-            "bullets": [
-              "Your stable Average Banking Balance (ABB) is a significant advantage",
-              "Aim to maintain a consistent ABB for at least 6 months prior to applying for a loan to qualify for better terms."
-            ],
-            "class": "stable",
+            "bullets": null,
+            "class": null,
             "type": null,
             "warning": null,
-            "condition_status": true,
+            "condition_status": false,
             "emoji": null
           }
         ],
@@ -1823,11 +1827,15 @@ export const goodBureauJSON =
             "header": null,
             "subheader": null,
             "description": null,
-            "bullets": null,
-            "class": null,
+            "bullets": [
+              "Your ABB is fluctuating. Try to maintain a stable balance for the next 3 months if you anticipate needing a loan.",
+              "Encourage your clients to pay, or look for other revenue generating streams to stablize your ABB.",
+              "Your ABB is important for your EMI. Lenders use it to determine how much you can borrow. They usually multiply it by 2 to 4. So, if your ABB is higher, you can borrow more."
+            ],
+            "class": "Negative Case",
             "type": null,
             "warning": null,
-            "condition_status": false,
+            "condition_status": true,
             "emoji": {
               "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png",
               "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Sad-Smiley-Mobile.png"
@@ -1838,15 +1846,11 @@ export const goodBureauJSON =
             "header": null,
             "subheader": null,
             "description": null,
-            "bullets": [
-              "Congrats on maintaining a consistent ABB, demonstrating strong finanacial management.",
-              "A stable ABB is viewed positively by lenders and improves your loan options.",
-              "Lenders use your ABB to determine how much you can borrow. They usually multiply it by 2 to 4. So, if your ABB is higher, you can borrow more."
-            ],
-            "class": "Stable Case",
+            "bullets": null,
+            "class": null,
             "type": null,
             "warning": null,
-            "condition_status": true,
+            "condition_status": false,
             "emoji": {
               "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png",
               "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Stable-Smiley-Mobile.png"
