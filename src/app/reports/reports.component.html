@@ -65,13 +65,13 @@
       
               <div class="boxOne">
                 <div class="progress-containerRound">
-                  <mat-progress-spinner [value]="progressValue" mode="determinate" strokeWidth="8" class="combined-spinner"></mat-progress-spinner>
+                  <mat-progress-spinner [value]="progressValue" [color]="potentialColor" mode="determinate" strokeWidth="8" class="combined-spinner"></mat-progress-spinner>
                   <img class="iconSpiner" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plane.png" alt="">
                 </div>
                 
                 <div class="content">
                   <h5>Your Potential</h5>
-                  <span>Level 3</span>
+                  <span [style.color]="potentialColor">Level {{level}}</span>
                   <small>Take action to improve loan potential</small>
                 </div>
               </div>

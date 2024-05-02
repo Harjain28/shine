@@ -191,7 +191,7 @@ export class BankingBusinessComponent {
     this.securedUnsecuredRatioData =this.bankingData?.report?.creditReport?.securedUnsecuredRatio;
     this.unsecuredRatioPercent = (this.securedUnsecuredRatioData?.unsecuredOutstanding*100)/this.turnoverLineData?.sum;
     this.securedRatioPercent = (this.securedUnsecuredRatioData?.securedOutstanding*100)/this.turnoverLineData?.sum;
-    this.aboveMinMonths = this.getMonthsAboveMin(this.graphData);
+   // this.aboveMinMonths = this.getMonthsAboveMin(this.graphData);
     
     
 
@@ -363,7 +363,7 @@ export class BankingBusinessComponent {
     const { color: abbColor } = this.setColorAndText(abbcardViewClass);
     this.abbColor = abbColor;
 
-    console.log(this.abbcardView?.warning,"ff2")
+    console.log(this.abbcardView,"ff2")
 
     this.bank_balance_observation = this.concatenateInsights(
       abb?.volatility_observation.filter(
@@ -532,19 +532,19 @@ export class BankingBusinessComponent {
 
 
 
-  getMonthsAboveMin(graphData: any) {
-    console.log(graphData, 'graphData');
+  getMonthsAboveMin(month: string):boolean {
     const aboveMinMonths: string[] = [];
     const minBalance = this.businessLinedata?.min;
-    for (let i = 0; i < graphData.monthly.length; i++) {
-      if (graphData.monthly[i]?.averageBalance > minBalance) {
-        aboveMinMonths.push(graphData.monthly[i]?.month);
+    for (let i = 0; i < this.graphData.monthly.length; i++) {
+      if (this.graphData.monthly[i]?.averageBalance > 600000) {
+        aboveMinMonths.push(this.graphData.monthly[i]?.month);
       }
     }
-    this.formatAboveMinMonths(aboveMinMonths);
-    return aboveMinMonths;
-    
-  }
+    const extractedMonths: string[] = aboveMinMonths.map(month => month.split('-')[0]);
+
+  return extractedMonths.includes(month);
+
+}
 
   formatAboveMinMonths(aboveMinMonths:any) {
     this.months = [];
@@ -559,7 +559,7 @@ export class BankingBusinessComponent {
 
       // Convert the month to its full name and append the year
       const monthWithYear =  monthStr + '-' + fullYear;
-      this.monthsWithYear.push(monthWithYear);
+    return  this.monthsWithYear.push(monthWithYear);
     }
   }
   formatMonth(month: any) {

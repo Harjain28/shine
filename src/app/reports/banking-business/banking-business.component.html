@@ -224,7 +224,7 @@
                   <div class="downwardBox h-100">
                     <img src="./assets/LandingPage/themeInformation.svg" alt="">
                     <div class="downwardContent">
-                      <h4>Declining Balance</h4>
+                      <h4>{{abbcardView?.header}}</h4>
                       <p>{{abbcardView?.description}}</p>
 
                       <p>
@@ -317,9 +317,7 @@
                     <div class="qtrBox scrollMonth">
                       <div class="qtrList">
                         <ul>
-                          <li *ngFor="let month of monthNames.slice(0,6)">{{month}}</li>
-                          <li class="active" >JUL</li>
-                          <li *ngFor="let month of monthNames.slice(7,12)">{{month}}</li>
+                          <li *ngFor="let month of monthNames"  [ngClass]="{ 'active': getMonthsAboveMin(month) }">{{month}}</li>
                         </ul>
                       </div>
                       
@@ -387,7 +385,7 @@
                 <div class="downwardBox">
                   <img src="./assets/LandingPage/themeInformation.svg" alt="">
                   <div class="downwardContent">
-                    <h4>Downward Trend</h4>
+                    <h4>{{card_view?.header}}</h4>
                     <p>{{card_view?.description}}</p>
 
                     <p>
@@ -426,7 +424,7 @@
           <div class="downwardBox">
             <img src="./assets/LandingPage/themeInformation.svg" alt="">
             <div class="downwardContent">
-              <h4>Downward Trend</h4>
+              <h4>{{card_view?.header}}</h4>
               <p>{{card_view?.description}}</p>
 
               <p>
@@ -478,7 +476,7 @@
           <div class="downwardBox">
             <img src="./assets/LandingPage/themeInformation.svg" alt="">
             <div class="downwardContent">
-              <h4>{{card_view?.header}}</h4>
+              <h4>{{abbcardView?.header}}</h4>
               <p>{{abbcardView?.description}}</p>
 
               <p>
@@ -916,8 +914,8 @@
             <ng-template carouselSlide>
               <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="businessTurnover h-100" style="margin: 10px;">
-                  <h3>Cashflow Stability</h3>
-                  <p>Lorem Ipsum is simply dummy text of the printin</p>
+                  <h3>{{cashflow_section?.cashflow_stability_card?.header}}</h3>
+                  <p>{{cashflow_section?.cashflow_stability_card?.subheader}}</p>
         
                   <div class="row">
                     <div class="col-lg-6">
@@ -940,12 +938,17 @@
                       <div class="downwardBox">
                         <img src="./assets/LandingPage/themeInformation.svg" alt="">
                         <div class="downwardContent">
-                          <h4>Negative Cashflow Observed</h4>
-                          <p>A decreasing trend in average balance, signaling financial distress.</p>
-                          <span>
-                            Good Job!
-                            <img src="./assets/LandingPage/goodWork.svg" alt="">
-                          </span>
+                          <h4>{{cashflow?.header}}</h4>
+                           <p>{{cashflow?.description}}</p>
+                           <p>
+                            <span [style.color]="cfColor">
+                              <mat-icon *ngIf ="cashflow?.class === 'negative' && cashflow?.warning">warning</mat-icon>
+                              {{ cashflow?.warning }}
+                              <span *ngIf ="cashflow?.class === 'positive' && cashflow?.warning">
+                              <img src="./assets/LandingPage/goodWork.svg" alt="">
+                            </span>
+                            </span>
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -957,8 +960,8 @@
             <ng-template carouselSlide>
               <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="businessTurnover h-100" style="margin: 10px;">
-                  <h3>Monthly Running Expenses</h3>
-                  <p>Lorem Ipsum is simply dummy text of the printin</p>
+                  <h3>{{cashflow_section?.monthly_expenses_card?.header}}</h3>
+                    <p>{{cashflow_section?.monthly_expenses_card?.subheader}}</p>
         
                   <div class="row">
                     <div class="col-lg-12">
@@ -977,7 +980,7 @@
                       <div class="downwardBox">
                         <img src="./assets/LandingPage/themeInformation.svg" alt="">
                         <div class="downwardContent">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                          <p>{{cashflow_section?.monthly_expenses_card?.description}}</p>
                         </div>
                       </div>
                     </div>

@@ -97,6 +97,9 @@ export class ReportsComponent {
   sampleData: any;
   isShowNoBureau: boolean = false;
   progressValue: number = 80;
+  level: any;
+  levelArray: any;
+  potentialColor: any;
 
   constructor(private api: ApiService, private cdr: ChangeDetectorRef,private router: Router) {}
 
@@ -180,6 +183,38 @@ export class ReportsComponent {
     const compareStage = this.headerSection?.background.find(
       (image: { stage: any }) => image.stage === this.reportsData?.report?.currentStage
     );
+
+    this.levelArray = [  
+      {
+          "stage": 1,
+          "color": "#ff7a24"
+      },
+      {
+          "stage": 2,
+          "color": "#221460"
+      },
+      {
+          "stage": 3,
+          "color": "#6e2ec4"
+      },
+      {
+          "stage": 4,
+          "color": "#c5e522"
+      },
+      {
+          "stage": 5,
+          "color": "#15b89a"
+      }
+    ]
+
+    const compare = this.levelArray.find(
+      (res: { stage: any }) => res.stage === compareStage.stage
+    );
+
+    if(compare){
+      this.potentialColor = compare.color;
+      this.level = compare.stage;
+    }
     if (compareStage) {
       this.imgUrlDesktop = compareStage.desktop;
       this.imgUrlMobile = compareStage.mobile_content;
