@@ -548,16 +548,19 @@
 
                 <ul class="d-blockList">
                   <li style="border-bottom: 1px solid #E2E2E2;">
+                    <div class="d-flex gap-2">
                     <span style="border: 1px solid #6A2FC2;"><span style="background-color: #6A2FC2;"></span></span>
-                    Turnover : <b>Rs. {{turnoverLineData?.sum}}</b>
+                    Turnover :</div> <b>Rs. {{turnoverLineData?.sum}}</b>
                   </li>
                   <li>
+                    <div class="d-flex gap-2">
                     <span style="border: 1px solid #12BA9B;"><span style="background-color: #12BA9B;"></span></span>
-                    Secured Loan : <b>Rs. {{securedUnsecuredRatioData?.securedOutstanding }} ({{roundValue(securedRatioPercent)}}%)</b>
+                    Secured Loan : </div> <b>Rs. {{securedUnsecuredRatioData?.securedOutstanding }} ({{roundValue(securedRatioPercent)}}%)</b>
                   </li>
                   <li>
+                    <div class="d-flex gap-2">
                     <span style="border: 1px solid #C3E128;"><span style="background-color: #C3E128;"></span></span>
-                    Unecured Loan: <b>Rs. {{securedUnsecuredRatioData?.unsecuredOutstanding}} ({{roundValue(unsecuredRatioPercent)}}%)</b>
+                    Unecured Loan: </div> <b>Rs. {{securedUnsecuredRatioData?.unsecuredOutstanding}} ({{roundValue(unsecuredRatioPercent)}}%)</b>
                   </li>
                 </ul>
 
@@ -839,7 +842,7 @@
 
           <div class="row">
             <div class="col-lg-6">
-              <div class="chart chart1 chartLine">
+              <div class="chart chart1 chartLine justify-content-center">
                 <app-histogram [HistogramJSONData]="histogramData"></app-histogram>
 
                 <ul class="d-flex gap-5 mt-4 justify-content-center">
