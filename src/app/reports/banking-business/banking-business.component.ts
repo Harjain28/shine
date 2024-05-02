@@ -536,7 +536,7 @@ export class BankingBusinessComponent {
     const aboveMinMonths: string[] = [];
     const minBalance = this.businessLinedata?.min;
     for (let i = 0; i < this.graphData.monthly.length; i++) {
-      if (this.graphData.monthly[i]?.averageBalance > 600000) {
+      if (this.graphData.monthly[i]?.averageBalance > minBalance) {
         aboveMinMonths.push(this.graphData.monthly[i]?.month);
       }
     }
