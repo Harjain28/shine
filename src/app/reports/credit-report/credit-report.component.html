@@ -24,10 +24,10 @@
                     
                     <text class="rightText" x="170" y="130" text-anchor="middle">{{ maxAngle }}</text>
                 </svg>
-                
+
                 </div>
                 <div class="buttonJob">
-                  <button class="btn" (click)="openPopup()">
+                  <button class="btn" [ngStyle]="{ 'color': bsColor, 'border-color': bsColor }"  (click)="openPopup()">
                     {{bureauScoreInsights?.header}}
                   </button>
                 </div>
@@ -312,7 +312,7 @@
           </div>
           <div class="buttonJob">
             <!-- <button class="btn" (click)="openPopup()">Your Bureau Score</button> -->
-            <button class="btn" > {{bureauScoreInsights?.header}}</button>
+            <button class="btn" [ngStyle]="{ 'color': bsColor, 'border-color': bsColor }"  > {{bureauScoreInsights?.header}}</button>
             
           </div>
           <p>

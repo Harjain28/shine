@@ -126,6 +126,9 @@ export class BankingBusinessComponent {
   dtrImgageIcon: any;
   unsecuredRatioPercent: any;
   securedRatioPercent: any;
+  volatilityColor: any;
+  count_VolColor: any;
+  voColor: any;
 
   constructor() {}
   customOptions4: OwlOptions = {
@@ -185,7 +188,10 @@ export class BankingBusinessComponent {
   getBankingHistory() {
     this.graphData = this.bankingData?.report?.bankingHistory?.graphData;
 
-    this.monthly_expenses = this.banking_history?.monthly_expenses;
+    this.banking_history = this.bankingData?.report?.bankingHistory;
+
+    this.monthly_expenses = this.banking_history?.monthlyExpenses;
+    console.log(this.monthly_expenses,"uu")
     this.turnoverLineData = this.graphData?.turnover;
     this.businessLinedata = this.graphData?.abb;
     this.securedUnsecuredRatioData =this.bankingData?.report?.creditReport?.securedUnsecuredRatio;
@@ -295,6 +301,11 @@ export class BankingBusinessComponent {
         (item: { condition_status: boolean }) => item.condition_status === true
       )
     );
+    const volatilityClass = this.volatility?.class;
+    const { color: volatilityColor} = this.setColorAndText(volatilityClass);
+    this.volatilityColor = volatilityColor;
+
+
     this.volitility_lenders_perspective = this.concatenateInsights(
       creditreportInsights?.volitility_lenders_perspective.filter(
         (item: { condition_status: boolean }) => item.condition_status
@@ -321,6 +332,12 @@ export class BankingBusinessComponent {
         (item: { condition_status: any }) => item.condition_status
       )
     );
+    const count_volatilityClass = this.count_volatility?.class;
+    const { color: count_VolColor} = this.setColorAndText(count_volatilityClass);
+    this.count_VolColor = count_VolColor;
+    console.log(this.count_volatility,"ff2")
+
+
     this.bankingHistory_summary = this.concatenateInsights(
       creditreportInsights?.bankingHistory_summary.filter(
         (item: { condition_status: any }) => item.condition_status
@@ -370,6 +387,12 @@ export class BankingBusinessComponent {
         (item: { condition_status: any }) => item.condition_status
       )
     );
+
+    const bank_balance_observationClass = this.bank_balance_observation?.class;
+    const { color: voColor } = this.setColorAndText(bank_balance_observationClass);
+    this.voColor = voColor;
+
+    console.log(this.bank_balance_observation,"fft")
 
     this.bank_balance_lenders_perspective = this.concatenateInsights(
       abb?.volatility_lenders_perspective.filter(

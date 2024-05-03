@@ -38,6 +38,7 @@ export class CreditReportComponent {
   isVisible = false;
   reportDate: any;
   cc!: boolean;
+  bsColor: any;
 
   toggleTooltip(): void {
     this.isVisible = !this.isVisible;
@@ -325,6 +326,13 @@ this.potStage = this.reportsData?.report?.potentialStage
         (item: { condition_status: boolean }) => item.condition_status
       )
     );
+
+    const bureauScoreClass = this.bureauScoreInsights?.class;
+    const { color: bsColor } = this.setColorAndText(bureauScoreClass);
+    this.bsColor = bsColor;
+    console.log(this.bureauScoreInsights?.class ,"fft");
+
+
     this.infoCardLRP = this.concatenateInsights(
       loanRepaymentHistory?.infoCard.filter(
         (item: { condition_status: any }) => item.condition_status

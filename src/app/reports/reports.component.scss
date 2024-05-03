@@ -1850,6 +1850,39 @@
                     }
                 }
 
+                .qtrList2{
+                    margin-bottom: 20px;
+
+                    ul {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        flex-wrap: wrap;
+
+                        li {
+                            padding: 8px 22px;
+                            border: 1px solid #CECECE;
+                            min-width: 44px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 8px;
+                            font-size: 12px;
+                            text-transform: uppercase;
+                            min-width: 80px;
+                            max-width: 80px;
+
+                            &.active {
+                                background-color: #FF7B24;
+                                color: #fff;
+                                font-size: 12px;
+                                
+                            }
+                        }
+
+                    }
+                }
+
                 ul {
                     li {
                         span {
@@ -3725,6 +3758,9 @@
                     margin-bottom: 8px;
 
                     .qtrList{
+                        margin-bottom: 10px;
+                    }
+                    .qtrList2{
                         margin-bottom: 10px;
                     }
                 }
