@@ -31,7 +31,7 @@ export class HistogramComponent {
 
     const histogramDataValues = [...this.histogramValues]; 
     const histogramLabels = Array.from({ length: histogramDataValues.length }, () => ''); 
-    const backgroundColors = histogramDataValues.map(value => (value < 0 ? 'red' : 'green'));
+    const backgroundColors = histogramDataValues.map(value => (value < 0 ? '#EC1111' : '#12BA9B'));
 
     const histogramChartData: ChartData = {
       labels: histogramLabels,

@@ -43,6 +43,8 @@ export class MixedComponent {
     const backgroundColorsMixed = dataValues.map(value => this.getColor(value));
 
     const { lowSd, mean, highSd } = this.businessLinedata;
+    const adjustedLowSd = lowSd < 0 ? null : lowSd;
+
 
 
     const chartData2: ChartData = {
@@ -60,7 +62,7 @@ export class MixedComponent {
         {
           // label: 'Horizontal Line Dataset',
           type: 'line',
-          data: Array.from({ length: 6 }, () => ({ x: 0, y: lowSd })),
+          data: Array.from({ length: 6 }, () => ({ x: 0, y: adjustedLowSd })),
           borderColor: '#EC1111',
           borderWidth: 1,
           fill: false,

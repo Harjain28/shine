@@ -60,6 +60,8 @@ export class Mixed5Component {
     this.turnoverLineData = this.MixedJSONData5?.turnoverLineData;
 
     const { lowSd, mean, highSd } = this.turnoverLineData;
+    const adjustedLowSd = lowSd < 0 ? null : lowSd;
+
 
 
     const chartData5: ChartData = {
@@ -77,7 +79,7 @@ export class Mixed5Component {
         {
           // label: 'Horizontal Line Dataset',
           type: 'line',
-          data: Array.from({ length: 12 }, () => ({ x: 0, y: lowSd })),
+          data: Array.from({ length: 12 }, () => ({ x: 0, y: adjustedLowSd })),
           borderColor: '#EC1111',
           borderWidth: 1,
           fill: false,

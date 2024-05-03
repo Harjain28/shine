@@ -40,9 +40,9 @@
                     <li *ngFor="let month of monthArray;let i = index" [ngClass]="{'active': isSelectedMonth(month), 'blur': !isSelectedMonth(month) && i >= monthArray.indexOf(monthName)}">{{ month }}</li>
                   </ul>
                   <div class="missingPayment">
-                    {{totalUniqueMonths}} Missed Filings
+                    {{missedGstFilings?.header}}
                   </div>
-                  <p>You seem to have missed filing your GST {{totalUniqueMonths}} times in the past 6 months . This will impact on your loan options. File on time and accurately to improve your loan options.</p>
+                  <p>{{missedGstFilings?.subheader}}</p>
                 </div>
               </div>
   

@@ -24,7 +24,7 @@
 
               <!-- <app-mixed3 [MixedJSONData3]="mixedData3"></app-mixed3> -->
             </div>
-            <ul class="bankingListLegend">
+            <!-- <ul class="bankingListLegend">
               <li>
                 <span>
                   <span></span>
@@ -43,7 +43,7 @@
                 </span>
                 Legend Title 3
               </li>
-            </ul>
+            </ul> -->
             <p>{{affordability_section?.business_turnover_expanded?.description}}</p>
           </div>
           <div class="defaultContent">
@@ -132,7 +132,7 @@
                 <div class="chart chart1 chartLine">
                   <app-mixed4 [MixedJSONData4]="mixedData4"></app-mixed4>
                 </div>
-                <ul class="bankingListLegend">
+                <!-- <ul class="bankingListLegend">
                   <li>
                     <span>
                       <span></span>
@@ -151,7 +151,7 @@
                     </span>
                     Legend Title 3
                   </li>
-                </ul>
+                </ul> -->
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
               </div>
             </div>
@@ -197,7 +197,7 @@
               <div class="row mt-4">
                 <div class="col-lg-7 col-md-7 col-sm-12 mb-3">
                   <div class="chart chart1 chartLine">
-                    <ul class="bankingListLegend d-block">
+                    <!-- <ul class="bankingListLegend d-block">
                       <li>
                         <span>
                           <span></span>
@@ -216,7 +216,7 @@
                         </span>
                         Legend Title 3
                       </li>
-                    </ul>
+                    </ul> -->
                     <app-mixed [MixedJSONData]="mixedData"></app-mixed>
                   </div>
                 </div>
@@ -256,7 +256,7 @@
             <div class="chart chart1 chartLine justify-content-center">
               <app-mixed3 [MixedJSONData3]="mixedData3"></app-mixed3>
             </div>
-            <ul class="bankingListLegend">
+            <!-- <ul class="bankingListLegend">
               <li>
                 <span>
                   <span></span>
@@ -275,7 +275,7 @@
                 </span>
                 Legend Title 3
               </li>
-            </ul>
+            </ul> -->
             <p>{{affordability_section?.bank_balance_expanded?.description}}</p>
           </div>
           <div class="defaultContent">
@@ -317,7 +317,7 @@
                     <div class="qtrBox scrollMonth">
                       <div class="qtrList">
                         <ul>
-                          <li *ngFor="let month of monthNames"  [ngClass]="{ 'active': getMonthsAboveMin(month) }">{{month}}</li>
+                          <li *ngFor="let month of monthNames"  [ngClass]="{ 'active': !getMonthsAboveMin(month) }">{{month}}</li>
                         </ul>
                       </div>
                       
@@ -452,7 +452,7 @@
             <app-mixed [MixedJSONData]="mixedData"></app-mixed>
           </div>
 
-          <ul class="listStyle">
+          <!-- <ul class="listStyle">
             <li>
               <span>
                 <span></span>
@@ -471,7 +471,7 @@
               </span>
               Legend Title 3
             </li>
-          </ul>
+          </ul> -->
 
           <div class="downwardBox">
             <img src="./assets/LandingPage/themeInformation.svg" alt="">

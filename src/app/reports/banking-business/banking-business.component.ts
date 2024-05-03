@@ -291,13 +291,13 @@ export class BankingBusinessComponent {
   }
 
   getInsights() {
-    const creditreportInsights = this.bankingData?.insights?.bankingHistory;
+    const bankingReportsInsights = this.bankingData?.insights?.bankingHistory;
 
-    const abb = creditreportInsights?.abb;
-    const debt_to_revenue_ratio = creditreportInsights?.debt_to_revenue_ratio;
+    const abb = bankingReportsInsights?.abb;
+    const debt_to_revenue_ratio = bankingReportsInsights?.debt_to_revenue_ratio;
 
     this.volatility = this.concatenateInsights(
-      creditreportInsights?.volatility.filter(
+      bankingReportsInsights?.volatility.filter(
         (item: { condition_status: boolean }) => item.condition_status === true
       )
     );
@@ -307,12 +307,12 @@ export class BankingBusinessComponent {
 
 
     this.volitility_lenders_perspective = this.concatenateInsights(
-      creditreportInsights?.volitility_lenders_perspective.filter(
+      bankingReportsInsights?.volitility_lenders_perspective.filter(
         (item: { condition_status: boolean }) => item.condition_status
       )
     );
     this.dip = this.concatenateInsights(
-      creditreportInsights?.dip.filter(
+      bankingReportsInsights?.dip.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
@@ -323,12 +323,12 @@ export class BankingBusinessComponent {
 
 
     this.turnover_lenders_perspective = this.concatenateInsights(
-      creditreportInsights?.turnover_lenders_perspective.filter(
+      bankingReportsInsights?.turnover_lenders_perspective.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
     this.count_volatility = this.concatenateInsights(
-      creditreportInsights?.count_volatility.filter(
+      bankingReportsInsights?.count_volatility.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
@@ -339,29 +339,27 @@ export class BankingBusinessComponent {
 
 
     this.bankingHistory_summary = this.concatenateInsights(
-      creditreportInsights?.bankingHistory_summary.filter(
+      bankingReportsInsights?.bankingHistory_summary.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
 
-    creditreportInsights?.bankingHistory_summary.forEach((item: any) => {
-      if (item?.bullets !== null && item?.bullets.length > 0) {
-        if (item?.class !== null) {
-          if (item.class === "negative") {
+    const bhFilteredData = bankingReportsInsights?.bankingHistory_summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
+        if (bhFilteredData[0]?.class !== null) {
+          if (bhFilteredData[0].class === "negative") {
             this.bhImageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
-          } else {
+          } if(bhFilteredData[0].class === "positive") {
             this.bhImageIcon = "./assets/LandingPage/smileImg.svg";
+          }if(bhFilteredData[0].class === "stable") {
+            this.bhImageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
           }
         } else {
-          this.bhImageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
+          this.bhImageIcon = " ";
         }
-      } 
-    });
 
-    //abb balance
 
     this.card_view = this.concatenateInsights(
-      creditreportInsights?.card_view.filter(
+      bankingReportsInsights?.card_view.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
@@ -419,19 +417,18 @@ export class BankingBusinessComponent {
       )
     );
 
-    abb?.abb_summary.forEach((item: any) => {
-      if (item?.bullets !== null && item?.bullets.length > 0) {
-        if (item?.class !== null) {
-          if (item.class === "negative") {
+    const abbFilteredData = abb?.abb_summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
+        if (abbFilteredData[0]?.class !== null) {
+          if (abbFilteredData[0].class === "negative") {
             this.abbImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
-          } else {
+          } if(abbFilteredData[0].class === "positive") {
             this.abbImgageIcon = "./assets/LandingPage/smileImg.svg";
+          }if(abbFilteredData[0].class === "stable") {
+            this.abbImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
           }
         } else {
-          this.abbImgageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
+          this.abbImgageIcon = " ";
         }
-      } 
-    });
 
     this.dcard_view = this.concatenateInsights(
       debt_to_revenue_ratio?.card_view.filter(
@@ -454,28 +451,27 @@ export class BankingBusinessComponent {
 
 
     this.debt_to_revenue_summary = this.concatenateInsights(
-      creditreportInsights?.debt_to_revenue_summary.filter(
+      bankingReportsInsights?.debt_to_revenue_summary.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
 
-    creditreportInsights?.debt_to_revenue_summary.forEach((item: any) => {
-      if (item?.bullets !== null && item?.bullets.length > 0) {
-        if (item?.class !== null) {
-          if (item.class === "negative") {
-            this.dtrImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
-          } else {
-            this.dtrImgageIcon = "./assets/LandingPage/smileImg.svg";
-          }
-        } else {
-          this.dtrImgageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
-        }
-      } 
-    });
+    const debt_to_revenueFilteredData = bankingReportsInsights?.debt_to_revenue_summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
+    if (debt_to_revenueFilteredData[0]?.class !== null) {
+      if (debt_to_revenueFilteredData[0].class === "negative") {
+        this.dtrImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
+      } if(debt_to_revenueFilteredData[0].class === "positive") {
+        this.dtrImgageIcon = "./assets/LandingPage/smileImg.svg";
+      }if(debt_to_revenueFilteredData[0].class === "stable") {
+        this.dtrImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
+      }
+    } else {
+      this.dtrImgageIcon = " ";
+    }
 
 
     this.cheque_bounces = this.concatenateInsights(
-      creditreportInsights?.cheque_bounces.filter(
+      bankingReportsInsights?.cheque_bounces.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
@@ -486,7 +482,7 @@ export class BankingBusinessComponent {
 
 
     this.cashflow = this.concatenateInsights(
-      creditreportInsights?.cashflow.filter(
+      bankingReportsInsights?.cashflow.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );

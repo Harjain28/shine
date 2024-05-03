@@ -39,6 +39,8 @@ export class Mixed2Component {
     const backgroundColorsMixed = dataValues.map(value => this.getColor(value));
 
     const { lowSd, mean, highSd } = this.turnoverLineData;
+    const adjustedLowSd = lowSd < 0 ? null : lowSd;
+
     console.log(mean,"aaa")
 
 
@@ -58,7 +60,7 @@ export class Mixed2Component {
         {
           // label: 'Horizontal Line Dataset',
           type: 'line',
-          data: Array.from({ length: 6 }, () => ({ x: 0, y: lowSd })),
+          data: Array.from({ length: 6 }, () => ({ x: 0, y: adjustedLowSd })),
           borderColor: '#EC1111',
           borderWidth: 1,
           fill: false,

@@ -65,60 +65,23 @@ export class Mixed4Component {
     console.log(sortedValues,"sss2")
     const backgroundColorsMixed = dataValues.map(value => this.getMixedColor(value, sortedValues));
 
+    const value = 2;
 
 
 
     const chartData4: ChartData = {
       labels: [...this.mixedValue2],
       datasets: [ 
-      //   {
-      //   // label: 'Horizontal Line Dataset',
-      //   type: 'line',
-      //   data: [{ x: this.mixedLineValue1[0].x, y: this.mixedLineValue1[0].y }, 
-      //   { x: this.mixedLineValue1[1].x, y: this.mixedLineValue1[1].y },
-      //   { x: this.mixedLineValue1[2].x, y: this.mixedLineValue1[2].y }, 
-      //   { x: this.mixedLineValue1[3].x, y: this.mixedLineValue1[3].y },
-      //   { x: this.mixedLineValue1[4].x, y: this.mixedLineValue1[4].y }, 
-      //   { x: this.mixedLineValue1[5].x, y: this.mixedLineValue1[5].y }],
-      //   borderColor: 'green',
-      //   borderWidth: 1,
-      //   fill: false,
-      //   pointStyle:"line"
-      // },
-      // {
-      //   // label: 'Horizontal Line Dataset',
-      //   type: 'line',
-      //   data: [{ x: this.mixedLineValue2[0].x, y: this.mixedLineValue2[0].y }, 
-      //   { x: this.mixedLineValue2[1].x, y: this.mixedLineValue2[1].y },
-      //   { x: this.mixedLineValue2[2].x, y: this.mixedLineValue2[2].y }, 
-      //   { x: this.mixedLineValue2[3].x, y: this.mixedLineValue2[3].y },
-      //   { x: this.mixedLineValue2[4].x, y: this.mixedLineValue2[4].y }, 
-      //   { x: this.mixedLineValue2[5].x, y: this.mixedLineValue2[5].y }], 
-      //   borderColor: 'yellow',
-      //   borderWidth: 1,
-      //   fill: false,
-      //   pointStyle:"line"
-        
-      // },
-      // {
-      //   // label: 'Horizontal Line Dataset',
-      //   type: 'line',
-      //   data: [{ x: this.mixedLineValue3[0].x, y: this.mixedLineValue3[0].y }, 
-      //   { x: this.mixedLineValue3[1].x, y: this.mixedLineValue3[1].y },
-      //   { x: this.mixedLineValue3[2].x, y: this.mixedLineValue3[2].y }, 
-      //   { x: this.mixedLineValue3[3].x, y: this.mixedLineValue3[3].y },
-      //   { x: this.mixedLineValue3[4].x, y: this.mixedLineValue3[4].y }, 
-      //   { x: this.mixedLineValue3[5].x, y: this.mixedLineValue3[5].y }], 
-      //   borderColor: 'red',
-      //   borderWidth: 1,
-      //   fill: false,
-      //   pointStyle:"line"
+        {
+          type: 'line',
+          data: Array.from({ length: 12 }, () => ({ x: 0, y: value })),
+          borderColor: '#EC1111',
+          borderWidth: 1,
+          fill: false,
+          pointStyle:"line"
 
-        
-        
-      // },
+        },
       {
-        // label: 'Bar Dataset',
         type: 'bar',
         data: dataValues ,
         backgroundColor: backgroundColorsMixed,

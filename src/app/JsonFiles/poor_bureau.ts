@@ -1836,7 +1836,7 @@ export const poorBureauJSON =
               "Encourage your clients to pay, or look for other revenue generating streams to stablize your ABB.",
               "Your ABB is important for your EMI. Lenders use it to determine how much you can borrow. They usually multiply it by 2 to 4. So, if your ABB is higher, you can borrow more."
             ],
-            "class": "Negative Case",
+            "class": "negative",
             "type": null,
             "warning": null,
             "condition_status": true,

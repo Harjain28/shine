@@ -39,6 +39,8 @@ export class CreditReportComponent {
   reportDate: any;
   cc!: boolean;
   bsColor: any;
+  lrhImgageIcon: any;
+  caImgageIcon: any;
 
   toggleTooltip(): void {
     this.isVisible = !this.isVisible;
@@ -113,7 +115,6 @@ export class CreditReportComponent {
   infoCardLRPColor!: string;
   infoCardLRPText!: string;
   warningText!: string;
-  caImgageIcon: any;
   res: any;
   previousYears!: any[]
   currentMonthIndex: number = new Date(). getMonth() ;
@@ -292,21 +293,18 @@ this.potStage = this.reportsData?.report?.potentialStage
     const loanRepaymentHistory = creditreportInsights?.loanRepaymentHistory;
 
 
-    loanRepaymentHistory?.summary.forEach((item: any) => {
-      if (item?.bullets !== null && item?.bullets.length > 0) {
-        if (item?.class !== null) {
-          if (item.class === "negative") {
-            this.imgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
-          } else if (item?.class === "positive") {
-            this.caImgageIcon = "./assets/LandingPage/smileImg.svg";
-          } else {
-            this.caImgageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
-          }
-        } else {
-          this.caImgageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
-        }
-      } 
-    });
+    const summaryFilteredData = loanRepaymentHistory?.summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
+    if (summaryFilteredData[0]?.class !== null) {
+      if (summaryFilteredData[0].class === "negative") {
+        this.lrhImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
+      } if(summaryFilteredData[0].class === "positive") {
+        this.lrhImgageIcon = "./assets/LandingPage/smileImg.svg";
+      }if(summaryFilteredData[0].class === "stable") {
+        this.lrhImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
+      }
+    } else {
+      this.lrhImgageIcon = " ";
+    }
     
 
     
@@ -421,23 +419,19 @@ this.warningColor = cardViewColor;
       )
     );
 
-    credit_analysis?.credit_debt_analysis_summary.forEach((item: any) => {
-      if (item?.bullets !== null && item?.bullets.length > 0) {
-        if (item?.class !== null) {
-          if (item.class === "negative") {
-            this.caImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
-          } else if (item?.class === "positive") {
-            this.caImgageIcon = "./assets/LandingPage/smileImg.svg";
-          } else {
-            this.caImgageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
-          }
-        } else {
-          this.caImgageIcon =   "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
-        }
-      } 
-    });
+    const credit_analysisFilteredData = credit_analysis?.credit_debt_analysis_summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
+    if (credit_analysisFilteredData[0]?.class !== null) {
+      if (credit_analysisFilteredData[0].class === "negative") {
+        this.caImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
+      } if(credit_analysisFilteredData[0].class === "positive") {
+        this.caImgageIcon = "./assets/LandingPage/smileImg.svg";
+      }if(credit_analysisFilteredData[0].class === "stable") {
+        this.caImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
+      }
+    } else {
+      this.caImgageIcon = " ";
+    }
 
-    console.log(this.caImgageIcon,"ees")
 
     this.creditEnquiry = this.concatenateInsights(
       credit_analysis?.creditEnquiry.filter(
