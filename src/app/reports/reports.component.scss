@@ -362,9 +362,9 @@
             span {
                 color: #fff;
                 font-weight: normal;
-                font-size: 13px;
+                font-size: 12px;
                 font-family: Poppins !important;
-                line-height: 18px;
+                line-height: 15px;
             }
         }
     }
@@ -592,14 +592,14 @@
 
             .defaultHistory {
                 padding: 18px 16px;
-                border: 1px solid #E8E8E8;
+                border: 1.3px solid #b9b9b9;
                 border-radius: 10px;
                 background-color: #fff;
                 text-align: center;
                 margin-top: 15px;
                 height: 100%;
 
-                &:hover {
+                &.active {
                     border-color: var(--main2);
                 }
 
@@ -623,7 +623,7 @@
 
                     .historyList {
                         overflow: hidden;
-                        height: 220px;
+                        height: 240px;
                         overflow-x: hidden;
                         overflow-y: auto;
 
@@ -687,7 +687,7 @@
                         list-style: none;
                         margin-bottom: 0px;
                         overflow: hidden;
-                        height: 120px;
+                        height: 100px;
                         overflow-x: hidden;
                         overflow-y: auto;
 
@@ -820,7 +820,7 @@
                 }
 
                 .stabilityBox {
-                    margin-top: 24px;
+                    margin-top: 4px;
 
                     p {
                         font-size: 14px;
@@ -837,7 +837,7 @@
 
                 .box {
                     margin-top: 22px;
-                    border: 1px solid #E8E8E8;
+                    border: 1.3px solid #b9b9b9;
                     border-radius: 10px;
                     padding: 10px 12px;
                     background-color: #fff;
@@ -861,12 +861,16 @@
 
             .otherAnalysis {
                 padding: 16px 16px;
-                border: 1px solid #E8E8E8;
+                border: 1.3px solid #b9b9b9;
                 border-radius: 10px;
                 background-color: #fff;
                 text-align: center;
                 margin-top: 15px;
                 height: 100%;
+
+                &.active {
+                    border-color: var(--main2);
+                }
 
                 h3 {
                     display: flex;
@@ -970,7 +974,7 @@
 
                 .banksBox {
                     margin-top: 12px;
-                    border: 1px solid #E8E8E8;
+                    border: 1.3px solid #b9b9b9;
                     border-radius: 10px;
                     padding: 14px 14px;
                     background-color: #fff;
@@ -1415,6 +1419,8 @@
                         background-color: #FF7B24;
                         border-color: #FF7B24;
                         color: #fff;
+                        box-shadow: 0px 1px 10px #00000040;
+                        transform: scale(1.1);
                     }
 
                     &.blur {
@@ -1441,7 +1447,7 @@
                 color: #3F3F3F;
                 line-height: 16px;
                 text-align: center;
-                padding: 0px 40px;
+                padding: 0px 12px;
             }
         }
 
@@ -1645,7 +1651,7 @@
 
         .valatilityBox {
             padding: 24px;
-            border: 1px solid #E8E8E8;
+            border: 1.3px solid #b9b9b9;
             border-radius: 10px;
             background-color: #fff;
             text-align: center;
@@ -2348,7 +2354,7 @@
         }
 
         .howBox {
-            border: 1px solid #E8E8E8;
+            border: 1.3px solid #b9b9b9;
             border-radius: 10px;
             padding: 15px 20px;
             background-color: #fff;
@@ -3055,7 +3061,7 @@
     }
 
     .downwardBox {
-        border: 1px solid #e8e8e8;
+        border: 1.3px solid #b9b9b9;
         border-radius: 10px;
         padding: 24px 18px;
         display: flex;
@@ -4141,7 +4147,7 @@
             }
 
             .howBox {
-                border: 1px solid #E8E8E8;
+                border: 1.3px solid #b9b9b9;
                 border-radius: 10px;
                 padding: 15px 20px;
                 background-color: #fff;
