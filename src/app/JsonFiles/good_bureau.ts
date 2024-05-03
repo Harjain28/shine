@@ -591,7 +591,7 @@ export const goodBureauJSON =
     },
     "propertyOwned": false,
     "score": 272,
-    "currentStage": 2,
+    "currentStage": 1,
     "potentialStage": 3,
     "bankingSummary": {
       "critical": 2,
@@ -1532,7 +1532,7 @@ export const goodBureauJSON =
       "count_volatility": [
         {
           "condition": null,
-          "header": "Revenue Mix: Good ",
+          "header": "Revenue Mix: Good",
           "subheader": null,
           "description": "Your business has high credit count. This means you are generating revenue from different sources and are not reliant on a few customers.",
           "bullets": null,
@@ -1623,7 +1623,7 @@ export const goodBureauJSON =
           "description": null,
           "bullets": [
             "It seems your turnover has dropped by over 50% in Q3 or Q4 compared to the last quarter, suggesting unstable cash flow and possibly declining business, which lenders may view negatively.",
-            " It's advisable to focus on maintaining a stable or growing turnover strategy to enhance lender confidence."
+            "It's advisable to focus on maintaining a stable or growing turnover strategy to enhance lender confidence."
           ],
           "class": "negative",
           "type": null,
@@ -1832,7 +1832,7 @@ export const goodBureauJSON =
               "Encourage your clients to pay, or look for other revenue generating streams to stablize your ABB.",
               "Your ABB is important for your EMI. Lenders use it to determine how much you can borrow. They usually multiply it by 2 to 4. So, if your ABB is higher, you can borrow more."
             ],
-            "class": "Negative Case",
+            "class": "negative",
             "type": null,
             "warning": null,
             "condition_status": true,

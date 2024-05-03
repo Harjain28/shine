@@ -2577,18 +2577,18 @@
     
                 .mdc-circular-progress__determinate-circle-graphic{
                     border-radius: 50px;
-                    stroke: var(--main2) !important;
+                    // stroke: var(--main2) !important;
                 }
             }
             
             &.mat-mdc-progress-spinner{
                 .mdc-circular-progress__indeterminate-circle-graphic{
-                    stroke: var(--main2) !important;
+                    // stroke: var(--main2) !important;
                 }
             }
     
             .mdc-circular-progress__indeterminate-circle-graphic{
-                stroke: var(--main2) !important;
+                // stroke: var(--main2) !important;
             }
         }
       }

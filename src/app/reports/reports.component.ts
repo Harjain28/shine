@@ -96,12 +96,12 @@ export class ReportsComponent {
   mobileNo: any;
   sampleData: any;
   isShowNoBureau: boolean = false;
-  progressValue: number = 80;
+  progressValue: number = 0;
   level: any;
   levelArray: any;
   potentialColor: any;
 
-  constructor(private api: ApiService, private cdr: ChangeDetectorRef,private router: Router) {}
+  constructor(private api: ApiService, private cdr: ChangeDetectorRef,private router: Router,) {}
 
   ngOnInit(): void {
     this.requestData = localStorage.getItem("reqData")
@@ -117,15 +117,10 @@ export class ReportsComponent {
     const url = this.router.url;
     if (url.includes('/report')) {
       this.reportsData = reportPageJson
-    }else{
+    } else{
       this.navigateToSampleReportWithParams()
     }
     this.navigateToSampleReportWithParams()
-  
-  }
-
-  changeProgress(value: number) {
-    this.progressValue = value;
   }
 
   ngAfterViewInit(): void {
@@ -176,9 +171,9 @@ export class ReportsComponent {
 
     const { bankingSummary, bureauSummary, gstSummary } = this.reportsData?.report;
     this.criticalTotal =
-      bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
+      bankingSummary.positive + bureauSummary.positive + gstSummary.positive;
     this.mediumTotal =
-      bankingSummary.medium + bureauSummary.medium + gstSummary.medium;
+      bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
 
     const compareStage = this.headerSection?.background.find(
       (image: { stage: any }) => image.stage === this.reportsData?.report?.currentStage
@@ -212,6 +207,7 @@ export class ReportsComponent {
     );
 
     if(compare){
+      this.progressValue = (compare.stage/5)*100;
       this.potentialColor = compare.color;
       this.level = compare.stage;
     }
