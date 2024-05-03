@@ -553,11 +553,7 @@ export class BankingBusinessComponent {
       const [monthStr, yearStr] = aboveMinMonths[i].split('-');
       const year = parseInt(yearStr);
       const fullYear = year < 50 ? 2000 + year : 1900 + year;
-
-      // Push the month to the months array
       this.months.push(monthStr.toUpperCase());
-
-      // Convert the month to its full name and append the year
       const monthWithYear =  monthStr + '-' + fullYear;
     return  this.monthsWithYear.push(monthWithYear);
     }
