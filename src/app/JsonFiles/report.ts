@@ -1578,7 +1578,7 @@ export const reportPageJson =
             "Continue maintaining stability to showcase growth to lenders.",
             "Maintaining or enhancing this growth can solidify your position for credit opportunities."
           ],
-          "class": "positive",
+          "class": "negative",
           "type": null,
           "warning": null,
           "condition_status": true,
