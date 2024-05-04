@@ -100,6 +100,21 @@ export class Mixed4Component {
           legend: {
             display: false, // Set to false to hide the legend
           },
+          tooltip: {
+            callbacks: {
+              label: function (context: any) {
+                let label = context.dataset.label || '';
+  
+                if (label) {
+                  label += ': ';
+                }
+                if (context.parsed.y !== null) {
+                  label += new Intl.NumberFormat('en-IN').format(context.parsed.y);
+                }
+                return label;
+              }
+            },
+          },
         },
         scales: {
           x: {

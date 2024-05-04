@@ -134,15 +134,15 @@ export class Form1Component implements OnInit {
             this.router.navigate(['/in/otp']);
             this.isSubmit = true;
           } else          
-            this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
+            // this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
           
             this.isSubmit = false;
           
         },
         error: error => {
-          this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
+          // this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
           // Handle any errors 
-          this.isSubmit = false;
+          // this.isSubmit = false;
         },
         complete: () => {
           ('Request complete');

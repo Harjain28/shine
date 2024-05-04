@@ -20,13 +20,67 @@ export class Mixed5Component {
   mixedValue1: any;
   mixedValue2: any;
   turnoverLineData: any;
+  options:any;
 
   constructor(    private breakpointObserver: BreakpointObserver,
     ){}
 
   ngOnInit(): void {
 
-   
+    this.options = {
+      animation: true,
+      scaleLabel: function (label: any) {
+        return '$' + label.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      },
+      plugins: {
+        legend: {
+          display: false, // Set to false to hide the legend
+        },
+        tooltip: {
+          callbacks: {
+            label: function (context: any) {
+              let label = context.dataset.label || '';
+
+              if (label) {
+                label += ': ';
+              }
+              if (context.parsed.y !== null) {
+                label += new Intl.NumberFormat('en-IN').format(context.parsed.y);
+              }
+              return label;
+            }
+          },
+        },
+      },
+      scales: {
+        x: {
+          grid: {
+            display: false,
+          },
+        },
+        y: {
+          grid: {
+            display: false,
+          },
+          beginAtZero: true,
+          ticks: {
+            callback: function (value: any, index: any, values: any) {
+              const roundedTurnover = Math.round(value);
+              if (roundedTurnover >= 10000000) {
+                return (roundedTurnover / 10000000).toFixed(0) + ' Cr';
+              } else if (roundedTurnover >= 100000) {
+                return (roundedTurnover / 100000).toFixed(0) + ' L';
+              } else if (roundedTurnover >= 1000) {
+                return (roundedTurnover / 1000).toFixed(0) + ' K';
+              } else {
+                return roundedTurnover.toString();
+              }
+            },
+          } as RadialTickOptions,
+        },
+      },
+    
+    }
   }
 
   ngAfterViewInit(): void {
@@ -108,40 +162,7 @@ export class Mixed5Component {
     this.chart5 = new Chart(this.chartCanvas5.nativeElement, {
       type: 'bar',
       data: chartData5,
-      options: {
-        plugins: {
-          legend: {
-            display: false, // Set to false to hide the legend
-          },
-        },
-        scales: {
-          x: {
-            grid: {
-              display: false,
-            },
-          },
-          y: {
-            grid: {
-              display: false,
-            },
-            beginAtZero: true,
-            ticks: {
-              callback: function (value: any, index: any, values: any) {
-                const roundedTurnover = Math.round(value);
-                if (roundedTurnover >= 10000000) {
-                  return (roundedTurnover / 10000000).toFixed(0) + ' Cr';
-                } else if (roundedTurnover >= 100000) {
-                  return (roundedTurnover / 100000).toFixed(0) + ' L';
-                } else if (roundedTurnover >= 1000) {
-                  return (roundedTurnover / 1000).toFixed(0) + ' K';
-                } else {
-                  return roundedTurnover.toString();
-                }
-              },
-            } as RadialTickOptions,
-          },
-        },
-      },
+      options: this.options
     });
   }
 
