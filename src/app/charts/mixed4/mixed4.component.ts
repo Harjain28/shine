@@ -62,7 +62,7 @@ export class Mixed4Component {
   
 
     const sortedValues = dataValues.slice().sort((a, b) => b - a);
-    console.log(sortedValues,"sss2")
+    console.log(dataValues,"sss2")
     const backgroundColorsMixed = dataValues.map(value => this.getMixedColor(value, sortedValues));
 
     const value = 2;
@@ -138,16 +138,21 @@ export class Mixed4Component {
   getMixedColor(value: number, sortedValues:any) {
     const index = sortedValues.indexOf(value);
     console.log(index,"sss")
-    if (index >= 0  && index <= 1) {
-      return '#00977a'; // green
-    }  else if (index >= 2 && index <= 5) {
-      return '#00c9a3'; // dark green
-    }else  if (index >=6 && index <= 9) {
-      return '#ff6202'; // orange
-    } else {
+    if (value <= 2) {
       return '#ff2424'; // Red
-    }
+  }
   
+  switch(true) {
+      case index >= 0 && index <= 1:
+          return '#00977a'; // Green
+      case index >= 2 && index <= 5:
+          return '#00c9a3'; // Dark green
+      case index >= 6 && index <= 9:
+          return '#ff6202'; // Orange
+      default:
+          return '#ff6202'; // Orange
+  }
+
 }
 
   

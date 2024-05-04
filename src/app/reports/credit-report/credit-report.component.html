@@ -327,8 +327,8 @@
       </div>
 
       <div class="col-lg-8 col-md-8 col-sm-12 mb-4" *ngIf="!expandSection">
-        <div class="loanHistory" (click)="expand()">
-          <div class="plus">
+        <div class="loanHistory" >
+          <div class="plus" (click)="expand()">
             <span>+</span>
           </div>
           <h3 class="title">{{CR_Data?.loanRepaymentHistory_card?.header}}</h3>
@@ -384,8 +384,8 @@
 
       <div class="col-lg-8 col-md-8 col-sm-12 mb-4"  *ngIf="!expandCurrentCreditSection"
       >
-        <div class="loanHistory currentCredit" (click)="expandCurrentCredit()">
-          <div class="plus">
+        <div class="loanHistory currentCredit" >
+          <div class="plus" (click)="expandCurrentCredit()">
             <span>+</span>
           </div>
           <h3 class="title">{{credit_analysis_card?.header}}</h3>
@@ -512,7 +512,6 @@
                 </div>
                 <div class="numberText">
                   <p [ngStyle]="{'color': creditReportData?.creditEnquiry > 10 ? '#ec1111' : 'var(--main2)'}">{{creditReportData?.creditEnquiry}}</p>
-                  <span>Credit Enquiry</span>
                 </div>
             </div>
           </div>

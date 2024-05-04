@@ -49,13 +49,20 @@ export class BarComponent {
     console.log(sortedValues,"qqq2  ")
 
     const backgroundColors = dataValues.map(value => this.getColor(value,sortedValues));
-
-
-
+    const value = 2;
 
     const chartData3: ChartData = {
       labels: [...this.barLabels],
-      datasets: [{
+      datasets: [
+        {
+        type: 'line',
+        data: Array.from({ length: 12 }, () => ({ x: 0, y: value })),
+        borderColor: '#EC1111',
+        borderWidth: 1,
+        fill: false,
+        pointStyle:"line"
+
+      },{
         type: 'bar',
         data: dataValues,
         backgroundColor: backgroundColors,
@@ -110,15 +117,23 @@ export class BarComponent {
   getColor(value: number, sortedValues:any) {
     const index = sortedValues.indexOf(value);
     console.log(index,"qqq")
-    if (index === 0 ) {
-      return '#00977a'; // green
-    }  else if (index >= 1 && index <= 2) {
-      return '#00c9a3'; // dark green
-    }else  if (index >=3 && index <= 4) {
-      return '#ff6202'; // orange
-    } else {
+    if (value <= 2) {
       return '#ff2424'; // Red
-    }
+  } else {
+      switch(index) {
+          case 0:
+              return '#00977a'; // Green
+          case 1:
+          case 2:
+              return '#00c9a3'; // Dark green
+          case 3:
+          case 4:
+              return '#ff6202'; // Orange
+          default:
+              return '#ff6202'; // Orange
+      }
+  }
+  
   
 
 }

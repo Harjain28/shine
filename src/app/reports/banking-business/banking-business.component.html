@@ -152,7 +152,7 @@
                     Legend Title 3
                   </li>
                 </ul> -->
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                <p>{{affordability_section?.business_turnover_expanded?.credit_count?.description}}</p>
               </div>
             </div>
             <div class="col-lg-6">
@@ -186,8 +186,8 @@
           </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 mt-4" *ngIf="expandBusinessSection">
-          <div class="businessTurnover" (click)="expandBankingBlanceBlock()">
-            <div class="plus">
+          <div class="businessTurnover" >
+            <div class="plus" (click)="expandBankingBlanceBlock()">
               <span>+</span>
             </div>
             <div class="col-lg-10 col-mg-10 col-sm-12 m-auto">
@@ -364,8 +364,8 @@
         </div>
 
         <div class="col-lg-12 col-md-12 col-sm-12 mt-4" *ngIf="expandBalanceSection">
-          <div class="businessTurnover h-100" (click)="expandBusinessSectionBlock()">
-            <div class="plus">
+          <div class="businessTurnover h-100" >
+            <div class="plus" (click)="expandBusinessSectionBlock()">
               <span>+</span>
             </div>
             <h3>{{affordability_section?.business_turnover_card?.header}}</h3>
@@ -407,8 +407,8 @@
       </div>
 
       <div class="col-lg-8 col-md-8 col-sm-12 mt-4" *ngIf="BusinessSectionBlock">
-        <div class="businessTurnover h-100"  (click)="expandBankingBusniess()">
-          <div class="plus">
+        <div class="businessTurnover h-100"  >
+          <div class="plus" (click)="expandBankingBusniess()">
             <span>+</span>
           </div>
           <h3>{{affordability_section?.business_turnover_card?.header}}</h3>
@@ -441,8 +441,8 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12 mt-4" *ngIf="balanceSectionBlock">
-        <div class="businessTurnover h-100" (click)="expandBankingBalance()">
-          <div class="plus">
+        <div class="businessTurnover h-100" >
+          <div class="plus" (click)="expandBankingBalance()">
             <span>+</span>
           </div>
           <h3>{{affordability_section?.bank_balance_card?.header}}</h3>
@@ -634,8 +634,8 @@
       </div>
 
       <div class="col-lg-8 col-md-8 col-sm-12 mhidden" *ngIf="!expandDebtRatioSection">
-        <div class="businessTurnover h-100" (click)="expandDebtRatioBlock()">
-          <div class="plus">
+        <div class="businessTurnover h-100" >
+          <div class="plus" (click)="expandDebtRatioBlock()">
             <span>+</span>
           </div>
           <h3>{{risk_section?.debt_turnover_card?.header}}</h3>
@@ -725,8 +725,8 @@
           <ng-container>
             <ng-template carouselSlide>
               <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="!expandDebtRatioSection">
-                <div class="businessTurnover h-100" style="margin: 10px; min-height: 780px;" (click)="expandDebtRatioBlock()">
-                  <div class="plus">
+                <div class="businessTurnover h-100" style="margin: 10px; min-height: 780px;" >
+                  <div class="plus" (click)="expandDebtRatioBlock()">
                     <span>+</span>
                   </div>
                   <h3>{{risk_section?.debt_turnover_card?.header}}</h3>
