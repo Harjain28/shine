@@ -129,6 +129,7 @@ export class BankingBusinessComponent {
   volatilityColor: any;
   count_VolColor: any;
   voColor: any;
+  summaryIcon: any;
 
   constructor() {}
   customOptions4: OwlOptions = {
@@ -290,6 +291,28 @@ export class BankingBusinessComponent {
     return { color };
   }
 
+  setSummaryIcon(data: any) {
+    if (data?.class !== null) {
+      switch (data?.class) {
+        case 'negative':
+          this.summaryIcon = 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png';
+          break;
+        case 'positive':
+          this.summaryIcon = './assets/LandingPage/smileImg.svg';
+          break;
+        case 'stable':
+          this.summaryIcon = 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png';
+          break;
+        default:
+          this.summaryIcon = '';
+      }
+    } else {
+      this.summaryIcon = '';
+    }
+    return this.summaryIcon;
+  }
+  
+
   getInsights() {
     const bankingReportsInsights = this.bankingData?.insights?.bankingHistory;
 
@@ -345,17 +368,7 @@ export class BankingBusinessComponent {
     );
 
     const bhFilteredData = bankingReportsInsights?.bankingHistory_summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
-        if (bhFilteredData[0]?.class !== null) {
-          if (bhFilteredData[0].class === "negative") {
-            this.bhImageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
-          } if(bhFilteredData[0].class === "positive") {
-            this.bhImageIcon = "./assets/LandingPage/smileImg.svg";
-          }if(bhFilteredData[0].class === "stable") {
-            this.bhImageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
-          }
-        } else {
-          this.bhImageIcon = " ";
-        }
+        this.bhImageIcon = this.setSummaryIcon(bhFilteredData[0]);
 
 
     this.card_view = this.concatenateInsights(
@@ -418,17 +431,7 @@ export class BankingBusinessComponent {
     );
 
     const abbFilteredData = abb?.abb_summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
-        if (abbFilteredData[0]?.class !== null) {
-          if (abbFilteredData[0].class === "negative") {
-            this.abbImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
-          } if(abbFilteredData[0].class === "positive") {
-            this.abbImgageIcon = "./assets/LandingPage/smileImg.svg";
-          }if(abbFilteredData[0].class === "stable") {
-            this.abbImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
-          }
-        } else {
-          this.abbImgageIcon = " ";
-        }
+    this.abbImgageIcon = this.setSummaryIcon(abbFilteredData[0]);
 
     this.dcard_view = this.concatenateInsights(
       debt_to_revenue_ratio?.card_view.filter(
@@ -457,17 +460,7 @@ export class BankingBusinessComponent {
     );
 
     const debt_to_revenueFilteredData = bankingReportsInsights?.debt_to_revenue_summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
-    if (debt_to_revenueFilteredData[0]?.class !== null) {
-      if (debt_to_revenueFilteredData[0].class === "negative") {
-        this.dtrImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
-      } if(debt_to_revenueFilteredData[0].class === "positive") {
-        this.dtrImgageIcon = "./assets/LandingPage/smileImg.svg";
-      }if(debt_to_revenueFilteredData[0].class === "stable") {
-        this.dtrImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
-      }
-    } else {
-      this.dtrImgageIcon = " ";
-    }
+    this.dtrImgageIcon = this.setSummaryIcon(debt_to_revenueFilteredData[0]);
 
 
     this.cheque_bounces = this.concatenateInsights(

@@ -44,7 +44,8 @@ export class DoughnutComponent {
     const donutColors = [...this.doughtnutColor];
 
    
-    const donutChartData: ChartData = {
+    const donutChartData: ChartData = {  
+
       datasets: [{
         data: donutDataValues,
         backgroundColor: donutColors,
@@ -77,7 +78,8 @@ export class DoughnutComponent {
           arc: {
             borderWidth: 0, // Hide borders between segments
           }
-        }
+        },
+        
       }
     });
   }

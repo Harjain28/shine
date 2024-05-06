@@ -41,6 +41,7 @@ export class CreditReportComponent {
   bsColor: any;
   lrhImgageIcon: any;
   caImgageIcon: any;
+  summaryIcon: any;
 
   toggleTooltip(): void {
     this.isVisible = !this.isVisible;
@@ -286,6 +287,27 @@ this.potStage = this.reportsData?.report?.potentialStage
     
   }
 
+  setSummaryIcon(data: any) {
+    if (data?.class !== null) {
+      switch (data?.class) {
+        case 'negative':
+          this.summaryIcon = 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png';
+          break;
+        case 'positive':
+          this.summaryIcon = './assets/LandingPage/smileImg.svg';
+          break;
+        case 'stable':
+          this.summaryIcon = 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png';
+          break;
+        default:
+          this.summaryIcon = '';
+      }
+    } else {
+      this.summaryIcon = '';
+    }
+    return this.summaryIcon;
+  }
+
 
 
   getInsights() {
@@ -294,17 +316,7 @@ this.potStage = this.reportsData?.report?.potentialStage
 
 
     const summaryFilteredData = loanRepaymentHistory?.summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
-    if (summaryFilteredData[0]?.class !== null) {
-      if (summaryFilteredData[0].class === "negative") {
-        this.lrhImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
-      } if(summaryFilteredData[0].class === "positive") {
-        this.lrhImgageIcon = "./assets/LandingPage/smileImg.svg";
-      }if(summaryFilteredData[0].class === "stable") {
-        this.lrhImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
-      }
-    } else {
-      this.lrhImgageIcon = " ";
-    }
+    this.lrhImgageIcon =this.setSummaryIcon(summaryFilteredData[0]);
     
 
     
@@ -420,17 +432,7 @@ this.warningColor = cardViewColor;
     );
 
     const credit_analysisFilteredData = credit_analysis?.credit_debt_analysis_summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
-    if (credit_analysisFilteredData[0]?.class !== null) {
-      if (credit_analysisFilteredData[0].class === "negative") {
-        this.caImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png";
-      } if(credit_analysisFilteredData[0].class === "positive") {
-        this.caImgageIcon = "./assets/LandingPage/smileImg.svg";
-      }if(credit_analysisFilteredData[0].class === "stable") {
-        this.caImgageIcon = "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png";
-      }
-    } else {
-      this.caImgageIcon = " ";
-    }
+    this.caImgageIcon = this.setSummaryIcon(credit_analysisFilteredData[0]);
 
 
     this.creditEnquiry = this.concatenateInsights(
