@@ -48,14 +48,14 @@
   
               <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="multiBox" *ngIf="info_card">
-                  <img src="./assets/LandingPage/whiteInformation.svg" alt="">
+                  <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png" alt="">
                   <div class="textContent">
                     <h3>{{info_card.header}}</h3>
                     <p>{{info_card?.description}}
                     </p>
                     <p>
                     <span [style.color]="warningColor">
-                      <mat-icon *ngIf ="info_card?.class === 'negative'">warning</mat-icon>
+                      <img *ngIf ="info_card?.class === 'negative'" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/alert.png" alt="">
                       {{ info_card?.warning }}
                       <span *ngIf ="info_card?.class === 'positive'">
                       <img src="./assets/LandingPage/goodWork.svg" alt="">

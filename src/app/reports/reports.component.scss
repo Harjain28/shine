@@ -31,7 +31,7 @@
         padding: 15px 22px 15px;
         position: absolute;
         right: -120px;
-        width: 320px;
+        width: 290px;
         top: -65px;
         transform: translate(0%, -100%);
 
@@ -88,7 +88,8 @@
                     margin-bottom: 2px;
                     font-weight: 400;
                     font-family: Poppins !important;
-                    line-height: 12px;
+                    line-height: 18px;
+                    display: block;
                 }
 
                 span{
@@ -96,6 +97,7 @@
                     justify-content: flex-start;
                     color: var(--main1);
                     font-size: 13px;
+                    margin-bottom: 4px;
                 }
             }
         }
@@ -268,7 +270,7 @@
         box-shadow: 0px 3px 10px #272D3B24;
         border-radius: 20px;
         background-color: #fff;
-        padding: 29px 30px;
+        padding: 29px 30px 20px;
         height: 100%;
         position: relative;
 
@@ -387,7 +389,7 @@
     .loanHistory {
         box-shadow: 0px 3px 10px rgba(39, 45, 59, 0.1411764706);
         border-radius: 20px;
-        padding: 29px 31px;
+        padding: 29px 31px 12px;
         background-color: #fff;
         height: 100%;
         position: relative;
@@ -618,7 +620,7 @@
             }
 
             .defaultHistory {
-                padding: 18px 16px;
+                padding: 18px 16px 4px;
                 border: 1.3px solid #b9b9b9;
                 border-radius: 10px;
                 background-color: #fff;
@@ -885,7 +887,7 @@
             }
 
             .otherAnalysis {
-                padding: 16px 16px;
+                padding: 16px 16px 4px;
                 border: 1.3px solid #b9b9b9;
                 border-radius: 10px;
                 background-color: #fff;
@@ -1591,7 +1593,7 @@
     .businessTurnover {
         box-shadow: 0px 3px 10px #272D3B24;
         border-radius: 20px;
-        padding: 30px 24px 24px;
+        padding: 30px 24px 20px;
         height: auto;
         position: relative;
 
@@ -1668,7 +1670,7 @@
         }
 
         .valatilityBox {
-            padding: 24px;
+            padding: 24px 24px 10px;
             border: 1.3px solid #b9b9b9;
             border-radius: 10px;
             background-color: #fff;
