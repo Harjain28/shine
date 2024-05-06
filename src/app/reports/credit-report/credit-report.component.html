@@ -9,21 +9,21 @@
               <div class="scoreBox">
                 <h3>{{CR_Data?.bureau_score_card?.header}}</h3>
                 <div class="scoreChart text-center">
-                  <svg width="200">
-                    <defs>
-                      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" style="stop-color:#C3E128;stop-opacity:1" />
-                          <stop offset="100%" style="stop-color:#12BA9B;stop-opacity:1" />
-                      </linearGradient>
-                  </defs>
-                  <path fill="none" stroke="url(#gradient)" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
-                    <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 100)'" x1="5" y1="100" x2="100" y2="100" stroke="#707070" stroke-width="3"></line>
-                    <text class="top" [attr.transform]="'rotate(' + (calculateRotation(angle) + 180) + ', 100, 100)'" x="210" y="105" text-anchor="middle">{{ angle }}</text>
-                    <text class="leftText" x="30" y="130" text-anchor="middle">{{ minAngle }}</text>
-                    
-                    <text class="rightText" x="170" y="130" text-anchor="middle">{{ maxAngle }}</text>
-                </svg>
-
+                        <svg width="200">
+              <defs>
+                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#C3E128;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#12BA9B;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <path fill="none" stroke="url(#gradient1)" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
+              <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 100)'" x1="5" y1="100" x2="100" y2="100" stroke="#707070" stroke-width="3"></line>
+              <text class="top" [attr.transform]="'rotate(' + (calculateRotation(angle) + 180) + ', 100, 100)'" x="210" y="105" text-anchor="middle">{{ angle }}</text>
+              <text class="leftText" x="30" y="130" text-anchor="middle">{{ minAngle }}</text>
+              
+              <text class="rightText" x="170" y="130" text-anchor="middle">{{ maxAngle }}</text>
+          </svg>
+    
                 </div>
                 <div class="buttonJob">
                   <button class="btn" [ngStyle]="{ 'color': bsColor, 'border-color': bsColor }"  (click)="openPopup()">
