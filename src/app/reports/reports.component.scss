@@ -9,8 +9,9 @@
 
         img {
             width: 100%;
-            height: auto;
+            height: 610px;
             padding: 40px 0px 0px;
+            object-fit: cover;
         }
 
         &.backgroundMobile{
@@ -36,7 +37,7 @@
 
 
         h3{
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
             margin-bottom: 2px;
             font-family: Poppins !important;
@@ -44,7 +45,7 @@
         }
 
         p{
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 400;
             margin-bottom: 5px;
             font-family: Poppins !important;
@@ -75,26 +76,26 @@
 
                 h5{
                     color: #3F3F3F;
-                    font-size: 16px;
+                    font-size: 13px;
                     margin-bottom: 2px;
-                    font-weight: 600;
+                    font-weight: 700;
                     font-family: Poppins !important;
                 }
 
                 small{
                     color: #3F3F3F;
-                    font-size: 13px;
+                    font-size: 12px;
                     margin-bottom: 2px;
-                    font-weight: 500;
+                    font-weight: 400;
                     font-family: Poppins !important;
-                    line-height: 14px;
+                    line-height: 12px;
                 }
 
                 span{
                     font-weight: 700;
                     justify-content: flex-start;
                     color: var(--main1);
-                    font-size: 15px;
+                    font-size: 13px;
                 }
             }
         }
@@ -117,15 +118,15 @@
             h5{
                 margin-bottom: 0px;
                 color: #3F3F3F;
-                font-size: 34px;
-                font-weight: 600;
+                font-size: 36px;
+                font-weight: 500;
             }
 
             small{
                 color: #3F3F3F;
-                font-size: 16px;
+                font-size: 12px;
                 margin-bottom: 3px;
-                font-weight: 500;
+                font-weight: 400;
                 font-family: Poppins !important;
             }
         }
@@ -144,15 +145,15 @@
             h5{
                 margin-bottom: 0px;
                 color: #3F3F3F;
-                font-size: 34px;
-                font-weight: 600;
+                font-size: 36px;
+                font-weight: 500;
             }
 
             small{
                 color: #3F3F3F;
-                font-size: 16px;
+                font-size: 12px;
                 margin-bottom: 3px;
-                font-weight: 500;
+                font-weight: 400;
                 font-family: Poppins !important;
             }
         }
@@ -160,8 +161,8 @@
         span{
             display: flex;
             justify-content: flex-end;
-            color: #b1b1b1;
-            font-size: 14px;
+            color: #AFAFAF;
+            font-size: 10px;
             font-weight: normal;
         }
     }
@@ -170,9 +171,17 @@
 
         h1 {
             color: #3f3f3f;
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 600;
             margin-bottom: 13px;
+            font-family: "Be Vietnam Pro" !important;
+        }
+
+        p {
+            color: #3f3f3f;
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 10px;
             font-family: Poppins !important;
         }
 
@@ -263,6 +272,10 @@
         height: 100%;
         position: relative;
 
+        &:hover{
+            box-shadow: 0px 3px 30px #272D3B66;
+        }
+
         h3 {
             font-size: 18px;
             font-weight: 600;
@@ -276,7 +289,7 @@
             display: flex;
             justify-content: center;
             position: relative;
-            padding-top: 10px;
+            padding-top: 20px;
 
             svg {
                 overflow: visible;
@@ -301,7 +314,8 @@
                 }
 
                 .top{
-                    font-weight: 700;
+                    font-weight: 600;
+                    font-size: 13px;
                 }
 
                 .rightText {
@@ -320,8 +334,8 @@
         }
 
         .buttonJob {
-            margin-top: 20px;
-            margin-bottom: 18px;
+            margin-top: -20px;
+            margin-bottom: 8px;
             text-align: center;
 
             .btn {
@@ -341,7 +355,7 @@
             font-size: 12px;
             font-family: Poppins !important;
             line-height: 16px;
-            margin-bottom: 18px;
+            margin-bottom: 8px;
             text-align: center;
         }
 
@@ -364,18 +378,40 @@
                 font-weight: normal;
                 font-size: 12px;
                 font-family: Poppins !important;
-                line-height: 15px;
+                line-height: 18px;
+                display: block;
             }
         }
     }
 
     .loanHistory {
-        box-shadow: 0px 3px 30px #272D3B66;
+        box-shadow: 0px 3px 10px rgba(39, 45, 59, 0.1411764706);
         border-radius: 20px;
         padding: 29px 31px;
         background-color: #fff;
         height: 100%;
         position: relative;
+
+        &:hover{
+            box-shadow: 0px 3px 30px #272D3B66;
+
+            .plus {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+    
+                span {
+                    
+                    .hoverShow{
+                        display: block;
+                    }
+
+                    .hoverhide{
+                        display: none;
+                    }
+                }
+            }
+        }
 
         .minus {
             position: absolute;
@@ -403,23 +439,14 @@
             right: 20px;
 
             span {
-                width: 22px;
-                height: 22px;
-                background-color: #fff;
-                border: 1px solid var(--main1);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 6px;
-                color: var(--main1);
-                font-size: 18px;
-                font-weight: 600;
-                cursor: pointer;
+                
+                .hoverShow{
+                    display: none;
+                }
             }
         }
 
         &.currentCredit {
-            box-shadow: 0px 3px 10px #272D3B24;
 
             .creditContent {
 
@@ -500,7 +527,7 @@
                     font-size: 14px;
                     font-weight: 500;
                     font-family: Poppins !important;
-                    padding: 6px 22px;
+                    padding: 6px 14px;
                     margin-bottom: 10px;
                     border: 1px solid #CECECE;
                     border-radius: 8px;
@@ -680,14 +707,12 @@
                         height: 130px !important;
                     }
 
-
-
                     ul {
                         padding-left: 0px;
                         list-style: none;
                         margin-bottom: 0px;
                         overflow: hidden;
-                        height: 100px;
+                        height: 90px;
                         overflow-x: hidden;
                         overflow-y: auto;
 
@@ -1134,7 +1159,7 @@
     .numberBox {
         box-shadow: 0px 3px 10px #272D3B24;
         border-radius: 20px;
-        padding: 20px 18px;
+        padding: 17px 18px;
         background-color: var(--main1);
         display: flex;
         align-items: center;
@@ -1533,7 +1558,7 @@
 
         p {
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 400;
             margin-bottom: 0px;
             font-family: Poppins !important;
             color: #3F3F3F;
@@ -1570,44 +1595,37 @@
         height: auto;
         position: relative;
 
+        &:hover{
+            box-shadow: 0px 3px 30px #272D3B66;
+
+            .plus {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+    
+                span {
+                    
+                    .hoverShow{
+                        display: block;
+                    }
+
+                    .hoverhide{
+                        display: none;
+                    }
+                }
+            }
+        }
+
         .plus {
             position: absolute;
             top: 20px;
             right: 20px;
 
             span {
-                width: 22px;
-                height: 22px;
-                background-color: #fff;
-                border: 1px solid var(--main1);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 6px;
-                color: var(--main1);
-                font-size: 18px;
-                font-weight: 600;
-                cursor: pointer;
-            }
-        }
-
-        .minus {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-
-            span {
-                width: 22px;
-                height: 22px;
-                background-color: var(--main1);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 6px;
-                color: #fff;
-                font-size: 18px;
-                font-weight: 600;
-                cursor: pointer;
+                
+                .hoverShow{
+                    display: none;
+                }
             }
         }
 
@@ -1625,7 +1643,7 @@
         p {
             font-size: 13px;
             font-weight: 400;
-            margin-bottom: 12px;
+            margin-bottom: 6px;
             font-family: Poppins !important;
             color: #3F3F3F;
             line-height: 20px;
@@ -1744,7 +1762,7 @@
                     text-align: left;
                     font-family: Poppins !important;
                     font-size: 14px;
-                    padding-bottom: 4px;
+                    padding-bottom: 0px;
 
                     span {
                         width: 8px;
@@ -1920,11 +1938,12 @@
         }
 
         .chart {
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 20px;
             flex-wrap: wrap;
+            justify-content: space-between;
 
             canvas {
                 width: 44% !important;
@@ -2224,7 +2243,7 @@
                 p {
                     font-size: 13px;
                     font-weight: normal;
-                    margin-bottom: 4px;
+                    margin-bottom: 6px;
                     font-family: Poppins !important;
                     color: #3F3F3F;
                     line-height: 16px;
@@ -2419,7 +2438,7 @@
 
                     img {
                         width: auto;
-                        height: 22px;
+                        height: auto;
                     }
 
                     .smileImg {
@@ -2576,27 +2595,6 @@
     .combined-spinner {
         width: 60px !important;
         height: 60px !important;
-        
-        ::ng-deep{
-    
-            .mdc-circular-progress__determinate-container{
-    
-                .mdc-circular-progress__determinate-circle-graphic{
-                    border-radius: 50px;
-                    // stroke: var(--main2) !important;
-                }
-            }
-            
-            &.mat-mdc-progress-spinner{
-                .mdc-circular-progress__indeterminate-circle-graphic{
-                    // stroke: var(--main2) !important;
-                }
-            }
-    
-            .mdc-circular-progress__indeterminate-circle-graphic{
-                // stroke: var(--main2) !important;
-            }
-        }
       }
   }  
 

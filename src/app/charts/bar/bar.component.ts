@@ -33,7 +33,7 @@ export class BarComponent {
   ngAfterViewInit(): void {
     
     const canvas = this.chartCanvas3.nativeElement as HTMLCanvasElement;
-    canvas.width = 250; 
+    canvas.width = 270; 
     canvas.height = 130; 
     this.mixedChart();
   }

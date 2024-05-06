@@ -9,20 +9,20 @@
               <div class="scoreBox">
                 <h3>{{CR_Data?.bureau_score_card?.header}}</h3>
                 <div class="scoreChart text-center">
-                        <svg width="200">
-              <defs>
-                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#C3E128;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#12BA9B;stop-opacity:1" />
-                </linearGradient>
-            </defs>
-            <path fill="none" stroke="url(#gradient1)" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
-              <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 100)'" x1="5" y1="100" x2="100" y2="100" stroke="#707070" stroke-width="3"></line>
-              <text class="top" [attr.transform]="'rotate(' + (calculateRotation(angle) + 180) + ', 100, 100)'" x="210" y="105" text-anchor="middle">{{ angle }}</text>
-              <text class="leftText" x="30" y="130" text-anchor="middle">{{ minAngle }}</text>
-              
-              <text class="rightText" x="170" y="130" text-anchor="middle">{{ maxAngle }}</text>
-          </svg>
+                  <svg width="120" height="120">
+                    <defs>
+                      <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#C3E128;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#12BA9B;stop-opacity:1" />
+                      </linearGradient>
+                    </defs>
+                    <path fill="none" stroke="url(#gradient1)" stroke-width="10"  d="M12 50 A50 50 0 1 1 120 50"></path>
+                  <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 70, 70)'" x1="2" y1="100" x2="75" y2="100" stroke="#707070" stroke-width="3"></line>
+                  <text class="top" [attr.transform]="'rotate(' + (calculateRotation(angle) + 180) + ', 50, 50)'" x="150" y="50" text-anchor="middle">{{ angle }}</text>
+                  <text class="leftText"  x="15" y="80"text-anchor="middle">{{ minAngle }}</text>
+                  
+                  <text class="rightText" x="120" y="80" text-anchor="middle">{{ maxAngle }}</text>
+              </svg>
     
                 </div>
                 <div class="buttonJob">
@@ -44,7 +44,7 @@
             <ng-template carouselSlide>
               <div class="heightBox">
                 <div class="row">
-                  <div class="col-lg-12 mb-4">
+                  <div class="col-lg-12 mb-3">
                     <div class="numberBox">
                       <div class="content">
                         <h3>{{CR_Data?.business_remarks_card?.header}}</h3>
@@ -93,8 +93,11 @@
         <div class="row">
           <div class="col-lg-12 mb-4">
             <div class="loanHistory">
-              <div class="minus" (click)="minimize()">
-                <span>-</span>
+              <div class="plus" (click)="minimize()">
+                <span>
+                  <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Minus_normal.png" alt="">
+                  <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/minus_hover.png" alt="">
+                </span>
               </div>
               <h3 class="title">{{CR_Data?.loanRepaymentHistory_card?.header}}</h3>
               <div class="row">
@@ -292,21 +295,20 @@
         <div class="scoreBox">
           <h3>{{CR_Data?.bureau_score_card?.header}}</h3>
           <div class="scoreChart text-center">
-            <svg width="200">
+            <svg width="120" height="120">
               <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#C3E128;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#12BA9B;stop-opacity:1" />
+                  <stop offset="0%" style="stop-color:#C3E128;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#12BA9B;stop-opacity:1" />
                 </linearGradient>
-            </defs>
-            <path fill="none" stroke="url(#gradient)" stroke-width="10" d="M20 100 A80 80 0 1 1 180 100"></path>
-              <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 100)'" x1="5" y1="100" x2="100" y2="100" stroke="#707070" stroke-width="3"></line>
-              <text class="top" [attr.transform]="'rotate(' + (calculateRotation(angle) + 180) + ', 100, 100)'" x="210" y="105" text-anchor="middle">{{ angle }}</text>
-              <text class="leftText" x="30" y="130" text-anchor="middle">{{ minAngle }}</text>
-              
-              <text class="rightText" x="170" y="130" text-anchor="middle">{{ maxAngle }}</text>
-          </svg>
-    
+              </defs>
+              <path fill="none" stroke="url(#gradient)" stroke-width="10"  d="M12 50 A50 50 0 1 1 120 50"></path>
+            <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 70, 70)'" x1="2" y1="100" x2="75" y2="100" stroke="#707070" stroke-width="3"></line>
+            <text class="top" [attr.transform]="'rotate(' + (calculateRotation(angle) + 180) + ', 50, 50)'" x="150" y="50" text-anchor="middle">{{ angle }}</text>
+            <text class="leftText"  x="15" y="80"text-anchor="middle">{{ minAngle }}</text>
+            
+            <text class="rightText" x="120" y="80" text-anchor="middle">{{ maxAngle }}</text>
+        </svg>
           </div>
           <div class="buttonJob">
             <!-- <button class="btn" (click)="openPopup()">Your Bureau Score</button> -->
@@ -326,9 +328,12 @@
       </div>
 
       <div class="col-lg-8 col-md-8 col-sm-12 mb-4" *ngIf="!expandSection">
-        <div class="loanHistory" >
-          <div class="plus" (click)="expand()">
-            <span>+</span>
+        <div class="loanHistory" style="cursor: pointer;" (click)="expand()">
+          <div class="plus">
+            <span>
+              <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_normal.png" alt="">
+              <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_hover.png" alt="">
+            </span>
           </div>
           <h3 class="title">{{CR_Data?.loanRepaymentHistory_card?.header}}</h3>
           <div class="row">
@@ -361,7 +366,7 @@
                   </p>
                   <P>
                   <span [style.color]="infoCardLRPColor">
-                    <mat-icon *ngIf ="infoCardLRP?.class === 'negative'">warning</mat-icon>
+                    <img *ngIf ="infoCardLRP?.class === 'negative'" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/alert.png" alt="">
                     {{ infoCardLRP?.warning }}
                     <span *ngIf ="infoCardLRP?.class === 'positive'">
                     <img src="./assets/LandingPage/goodWork.svg" alt="">
@@ -383,9 +388,12 @@
 
       <div class="col-lg-8 col-md-8 col-sm-12 mb-4"  *ngIf="!expandCurrentCreditSection"
       >
-        <div class="loanHistory currentCredit" >
-          <div class="plus" (click)="expandCurrentCredit()">
-            <span>+</span>
+        <div class="loanHistory currentCredit" style="cursor: pointer;" (click)="expandCurrentCredit()">
+          <div class="plus">
+            <span>
+              <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_normal.png" alt="">
+              <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_hover.png" alt="">
+            </span>
           </div>
           <h3 class="title">{{credit_analysis_card?.header}}</h3>
           <div class="row">
@@ -529,8 +537,11 @@
     <!-- Current DEBT Expend -->
     <div class="col-lg-12 mb-4" *ngIf="expandCurrentCreditSection">
       <div class="loanHistory">
-        <div class="minus" (click)="minimizeCurrentCredit()">
-          <span>-</span>
+        <div class="plus" (click)="minimizeCurrentCredit()">
+          <span>
+            <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Minus_normal.png" alt="">
+            <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/minus_hover.png" alt="">
+          </span>
         </div>
         <h3 class="title mb-2">{{credit_analysis_card_Expanded?.header}}</h3> 
         <p class="text-center mb-3">
@@ -650,7 +661,7 @@
                   <div class="businessTurnover2 h-100">
                     <h3>{{credit_analysis_card_Expanded?.product_type_analysis?.ratio_credit_mix?.header}}</h3>
 
-                    <div class="row mt-5">
+                    <div class="row mt-4">
                       <div class="col-lg-6">
                         <div class="scoreProgress progressBarColor">
                           <ul class="lineColor">

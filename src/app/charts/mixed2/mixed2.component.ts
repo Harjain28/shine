@@ -23,7 +23,7 @@ export class Mixed2Component {
 
   ngAfterViewInit(): void {
     const canvas = this.chartCanvas.nativeElement as HTMLCanvasElement;
-    canvas.width = 300;
+    canvas.width = 270;
     canvas.height = 130;
     this.mixedChart();
   }

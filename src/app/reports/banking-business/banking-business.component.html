@@ -13,8 +13,11 @@
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12" style="transition: .5s;" *ngIf="expandBusinessSection">
         <div class="businessTurnover mb-3">
-          <div class="minus" (click)="minimizeBusinessBanking()">
-            <span>-</span>
+          <div class="plus" (click)="minimizeBusinessBanking()">
+            <span>
+              <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Minus_normal.png" alt="">
+              <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/minus_hover.png" alt="">
+            </span>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-12 m-auto mb-5">
             <h3>{{affordability_section?.business_turnover_expanded?.header}}</h3>
@@ -247,8 +250,11 @@
 
       <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="expandBalanceSection">
         <div class="businessTurnover mb-3">
-          <div class="minus" (click)="minimizeBankingBalance()">
-            <span>-</span>
+          <div class="plus" (click)="minimizeBankingBalance()">
+            <span>
+              <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Minus_normal.png" alt="">
+              <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/minus_hover.png" alt="">
+            </span>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-12 m-auto mb-5">
             <h3>{{affordability_section?.bank_balance_expanded?.header}}</h3>
@@ -407,24 +413,27 @@
       </div>
 
       <div class="col-lg-8 col-md-8 col-sm-12 mt-4" *ngIf="BusinessSectionBlock">
-        <div class="businessTurnover h-100"  >
-          <div class="plus" (click)="expandBankingBusniess()">
-            <span>+</span>
+        <div class="businessTurnover h-100"  style="cursor: pointer;"  (click)="expandBankingBusniess()">
+          <div class="plus">
+            <span>
+              <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_normal.png" alt="">
+              <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_hover.png" alt="">
+            </span>
           </div>
           <h3>{{affordability_section?.business_turnover_card?.header}}</h3>
             <p>{{affordability_section?.business_turnover_card?.subheader}}</p>
 
-          <div class="chart chartLine">
+          <div class="chart chartLine mt-4">
             <app-mixed2 [MixedJSONData2]="mixedData2"></app-mixed2>
 
             <app-bar [barJSONData]="barData"></app-bar>
           </div>
-          <p>{{affordability_section?.business_turnover_card?.description}}</p>
+          <p class="mt-3">{{affordability_section?.business_turnover_card?.description}}</p>
           
-          <div class="downwardBox">
+          <div class="downwardBox mt-4">
             <img src="./assets/LandingPage/themeInformation.svg" alt="">
             <div class="downwardContent">
-              <h4>{{card_view?.header}}</h4>
+              <h4>Downward Trend</h4>
               <p>{{card_view?.description}}</p>
 
               <p>
@@ -441,9 +450,12 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12 mt-4" *ngIf="balanceSectionBlock">
-        <div class="businessTurnover h-100" >
-          <div class="plus" (click)="expandBankingBalance()">
-            <span>+</span>
+        <div class="businessTurnover h-100"  style="cursor: pointer;" (click)="expandBankingBalance()">
+          <div class="plus">
+            <span>
+              <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_normal.png" alt="">
+              <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_hover.png" alt="">
+            </span>
           </div>
           <h3>{{affordability_section?.bank_balance_card?.header}}</h3>
           <p>{{affordability_section?.bank_balance_card?.subheader}}</p>
@@ -507,8 +519,11 @@
 
       <div class="col-lg-12 col-md-12 col-sm-12 mb-5" *ngIf="expandDebtRatioSection">
         <div class="businessTurnover">
-          <div class="minus" (click)="mnimizeDebtRatioBlock()">
-            <span>-</span>
+          <div class="plus" (click)="mnimizeDebtRatioBlock()">
+            <span>
+              <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Minus_normal.png" alt="">
+              <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/minus_hover.png" alt="">
+            </span>
           </div>
           <h3>{{risk_section?.debt_turnover_expanded?.header}}</h3>
           <p>{{risk_section?.debt_turnover_expanded?.subheader}}</p>
@@ -634,9 +649,12 @@
       </div>
 
       <div class="col-lg-8 col-md-8 col-sm-12 mhidden" *ngIf="!expandDebtRatioSection">
-        <div class="businessTurnover h-100" >
-          <div class="plus" (click)="expandDebtRatioBlock()">
-            <span>+</span>
+        <div class="businessTurnover h-100"  style="cursor: pointer;" (click)="expandDebtRatioBlock()">
+          <div class="plus">
+            <span>
+              <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_normal.png" alt="">
+              <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_hover.png" alt="">
+          </span> 
           </div>
           <h3>{{risk_section?.debt_turnover_card?.header}}</h3>
           <p>{{risk_section?.debt_turnover_card?.subheader}}</p>
@@ -664,7 +682,7 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="downwardBox">
+              <div class="downwardBox ">
                 <img src="./assets/LandingPage/themeInformation.svg" alt="">
                 <div class="downwardContent">
                   <h4>{{dcard_view?.header}}</h4>
