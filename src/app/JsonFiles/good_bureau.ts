@@ -612,6 +612,7 @@ export const goodBureauJSON =
       "summary": "If your business has not engaged in GST filing because it's new or doesn't meet the threshold, ensure you know the conditions and obligations for GST compliance as your business grows. This forward-looking approach will demonstrate financial foresight to potential lenders."
     },
     "reportDate": "2024-03-01T00:00:00",
+    
     "loanProbability": [
       {
         "lender": "Aditya Birla Finance Ltd",
@@ -699,6 +700,7 @@ export const goodBureauJSON =
         "potentialProbability": 0.2
       }
     ]
+
   },
   "insights": {
     "creditReport": {
@@ -710,7 +712,7 @@ export const goodBureauJSON =
           "description": "Your credit score is high and puts you in a good position to get the best rates in the market.",
           "bullets": null,
           "class": "positive",
-          "type": null, 
+          "type": null,
           "warning": null,
           "condition_status": true,
           "emoji": null

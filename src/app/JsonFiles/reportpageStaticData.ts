@@ -34,7 +34,48 @@ export const reportStatciData =
                 "mobile_bg": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/Fold_1_Mobile_bg.jpg",
                 "mobile_content": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/step5-mobile.png"
             }
+        ],
+        "Key_Insights_box": {
+            "header":"Key Insights",
+            "subheader":"What You Need to Do",
+            "infocard_header":"Your Potential",
+            "positive_description":"Positive factors observed",
+            "critical_description":"Critical issues to act on",
+            "Key_Insights": [
+            {
+            "stage":"1",
+            "stage_title":"Level 1",
+            "stage_description":"Not eligible today - take action!",
+            "stage_icon":"https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/plane1.svg"
+            },
+            {
+            "stage":"2",
+            "stage_title":"Level 2",
+            "stage_description":"Starting the journey to your dream loan.",
+            "stage_icon":"https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/plane2.svg"
+            },
+            {
+            "stage":"3",
+            "stage_title":"Level 3",
+            "stage_description":"Your profile needs more work to achieve loan eligibility.",
+            "stage_icon":"https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/plane3.svg"
+            },
+            {
+            "stage":"4",
+            "stage_title":"Level 4",
+            "stage_description":"So close! 75% chance of getting loan offer!",
+            "stage_icon":"https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/plane4.svg"
+            },
+            {
+            "stage":"5",
+            "stage_title":"Level 5",
+            "stage_description":"99% loan eligibility achieved! Apply today!",
+            "stage_icon":"https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/plane5.svg"
+            },
+          
         ]
+        }
+        
     },
     "credit_report_section": {
         "header": "Your Credit Report",
