@@ -134,12 +134,12 @@ export class BankingBusinessComponent {
   constructor() {}
   customOptions4: OwlOptions = {
     loop: false,
-    rewind: true,
+    rewind: false,
     dots: true,
     autoplay: false,
     navSpeed: 300,
-    nav: false,
-    margin: 10,
+    nav: true,
+    margin: 8,
     mouseDrag: false,
     touchDrag: true,
 
@@ -147,8 +147,8 @@ export class BankingBusinessComponent {
     autoplaySpeed: 1500,
     // navText: ["", ""],
     navText: [
-      "<img class='navTxtImg' src='./assets/images/homeImage/left-arrow.svg'>",
-      "<img class='navTxtImg' src='./assets/images/homeImage/right-arrow.svg'>",
+      "<span><img class='navTxtImg' src='./assets/images/homeImage/left-arrow.svg'> 1 more</span>",
+      "<span> 1 more <img class='navTxtImg' src='./assets/images/homeImage/right-arrow.svg'></span>",
     ],
     responsive: {
       0: {

@@ -62,20 +62,22 @@ export class ActionsRequiredComponent {
 
   customOptions4: OwlOptions = {
     loop: false,
-  rewind: true,
-   dots: true,
-   autoplay: false,
-   navSpeed: 300,
-   nav: false,
-   margin:10,
-   mouseDrag: false,
-   touchDrag: true,
+    rewind: false,
+    dots: true,
+    autoplay: false,
+    navSpeed: 300,
+    nav: true,
+    margin: 8,
+    mouseDrag: false,
+    touchDrag: true,
 
-
-   autoplayTimeout:8000,
-   autoplaySpeed: 1500,
-   // navText: ["", ""],
-   navText: ["<img class='navTxtImg' src='./assets/images/homeImage/left-arrow.svg'>", "<img class='navTxtImg' src='./assets/images/homeImage/right-arrow.svg'>"],
+    autoplayTimeout: 8000,
+    autoplaySpeed: 1500,
+    // navText: ["", ""],
+    navText: [
+      "<span><img class='navTxtImg' src='./assets/images/homeImage/left-arrow.svg'> 1 more</span>",
+      "<span> 1 more <img class='navTxtImg' src='./assets/images/homeImage/right-arrow.svg'></span>",
+    ],
    responsive: {
      0: {
        items: 1,

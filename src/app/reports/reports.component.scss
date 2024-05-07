@@ -3269,6 +3269,13 @@
     .topBannerHeader {
         padding: 50px 0px 0px;
 
+        .backgroundImg {
+
+            img {
+                height: 100%;
+            }
+        }
+
         .bannerText {
 
             h1 {
@@ -3285,7 +3292,6 @@
         .boxRight {
             position: relative;
             right: 0px;
-            width: 100%;
             top: 0px;
             transform: translate(0%, 0%);
             margin: -80px auto 0px;
@@ -3418,7 +3424,7 @@
             margin: 10px;
 
             .numberBox {
-                padding: 40px 24px;
+                padding: 15px 24px;
                 height: 220px;
 
                 .content {
@@ -3789,6 +3795,7 @@
                 align-items: center;
                 gap: 20px;
                 flex-wrap: wrap;
+                justify-content: center;
 
                 canvas {
                     width: 44% !important;

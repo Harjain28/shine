@@ -1,0 +1,64 @@
+::ng-deep{
+
+    .owl-nav{
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: -10px !important;
+
+        .owl-prev{
+            background-color: transparent !important;
+            font-size: 18px !important;
+            font-weight: 600;
+            color: var(--main1) !important;
+            border: none;
+            margin: 0px !important;
+            display: flex !important;
+            align-items: center;
+
+            &.disabled{
+                opacity: 0;
+            }
+
+            span{
+                display: flex;
+                align-items: center;
+
+            }
+
+            img{
+                width: 8px;
+                filter: invert(22%) sepia(47%) saturate(4666%) hue-rotate(257deg) brightness(-39%) contrast(94%);
+                margin-right: 8px;
+            }
+        }
+
+        .owl-next{
+            background-color: transparent !important;
+            font-size: 18px !important;
+            font-weight: 600;
+            color: var(--main1) !important;
+            border: none;
+            margin: 0px !important;
+            display: flex !important;
+            align-items: center;
+
+            &.disabled{
+                opacity: 0;
+            }
+
+            span{
+                display: flex;
+                align-items: center;
+
+            }
+
+            img{
+                width: 8px;
+                filter: invert(22%) sepia(47%) saturate(4666%) hue-rotate(257deg) brightness(-39%) contrast(94%);
+                margin-left: 8px;
+            }
+        }
+    }
+}
