@@ -117,7 +117,7 @@
 </div>
 
 
-<form id="paymentForm" *ngIf="showForm" method="post" action="https://pa-preprod.1pay.in/payment/payprocessorV2">
+<form id="paymentForm" *ngIf="showForm" method="post" [action]="paymentGUrl">
   <input type="hidden" name="merchantId" [value]="reqData?.merchantId">
   <input type="hidden" name="reqData" [value]="reqData?.reqData">
   <!-- <button type="submit">Pay Now</button> -->
