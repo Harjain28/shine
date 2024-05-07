@@ -118,3 +118,26 @@
         }
     }
 }
+
+
+@media (max-width: 767px) {
+
+    .businessTurnover2{
+
+        .scoreProgress{
+
+            ul{
+
+                li{
+
+                    span{
+                        
+                        mat-progress-bar {
+                            width: 65px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
