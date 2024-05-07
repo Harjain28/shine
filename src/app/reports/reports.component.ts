@@ -26,6 +26,8 @@ import { vpoorBureauJSON } from '../JsonFiles/v_poor_bureau';
 import { NoBureauComponent } from './no-bureau/no-bureau.component';
 import { NoGstComponent } from './no-gst/no-gst.component';
 import { MaterialModule } from '../material.module';
+import { nogstJSON } from '../JsonFiles/nogst';
+
 
 @Component({
   selector: 'app-reports',
@@ -159,7 +161,9 @@ export class ReportsComponent {
       this.reportsData = poorBureauJSON;
     } else if (fileName === 'vpoor_bureau.json') {
       this.reportsData = vpoorBureauJSON;
-    }  else {
+    } else if (fileName === 'nogst.json') {
+      this.reportsData === nogstJSON;
+    } else {
       this.reportsData = reportPageJson;
     }
 

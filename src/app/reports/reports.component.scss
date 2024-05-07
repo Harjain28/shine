@@ -14,7 +14,7 @@
             object-fit: cover;
         }
 
-        &.backgroundMobile{
+        &.backgroundMobile {
             background-image: url(https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/Fold_1_Mobile_bg.jpg);
             background-repeat: no-repeat;
             background-size: cover;
@@ -36,7 +36,7 @@
         transform: translate(0%, -100%);
 
 
-        h3{
+        h3 {
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 2px;
@@ -44,16 +44,16 @@
             color: #3f3f3f;
         }
 
-        p{
+        p {
             font-size: 13px;
             font-weight: 400;
             margin-bottom: 5px;
             font-family: Poppins !important;
             color: #939090;
-            line-height: 22px;        
+            line-height: 22px;
         }
-        
-        .boxOne{
+
+        .boxOne {
             border: 1px solid #C3E128;
             border-radius: 10px;
             padding: 7px 14px;
@@ -63,18 +63,18 @@
             background: #FBFFDE;
             margin-bottom: 17px;
 
-            img{
+            img {
                 width: auto;
                 height: 20px;
                 position: absolute;
                 top: 20px;
                 left: 50%;
-                transform: translate(-50%, 0%);            
+                transform: translate(-50%, 0%);
             }
 
-            .content{
+            .content {
 
-                h5{
+                h5 {
                     color: #3F3F3F;
                     font-size: 13px;
                     margin-bottom: 2px;
@@ -82,7 +82,7 @@
                     font-family: Poppins !important;
                 }
 
-                small{
+                small {
                     color: #3F3F3F;
                     font-size: 12px;
                     margin-bottom: 2px;
@@ -92,7 +92,7 @@
                     display: block;
                 }
 
-                span{
+                span {
                     font-weight: 700;
                     justify-content: flex-start;
                     color: var(--main1);
@@ -117,14 +117,14 @@
             margin-bottom: 10px;
             background: #FFF4EE;
 
-            h5{
+            h5 {
                 margin-bottom: 0px;
                 color: #3F3F3F;
                 font-size: 36px;
                 font-weight: 500;
             }
 
-            small{
+            small {
                 color: #3F3F3F;
                 font-size: 12px;
                 margin-bottom: 3px;
@@ -133,7 +133,7 @@
             }
         }
 
-        
+
         .boxThree {
             border: 1px solid #6A2FC2;
             border-radius: 10px;
@@ -144,14 +144,14 @@
             margin-bottom: 10px;
             background: #F8F3FF;
 
-            h5{
+            h5 {
                 margin-bottom: 0px;
                 color: #3F3F3F;
                 font-size: 36px;
                 font-weight: 500;
             }
 
-            small{
+            small {
                 color: #3F3F3F;
                 font-size: 12px;
                 margin-bottom: 3px;
@@ -160,7 +160,7 @@
             }
         }
 
-        span{
+        span {
             display: flex;
             justify-content: flex-end;
             color: #AFAFAF;
@@ -274,7 +274,7 @@
         height: 100%;
         position: relative;
 
-        &:hover{
+        &:hover {
             box-shadow: 0px 3px 30px #272D3B66;
         }
 
@@ -315,7 +315,7 @@
                     color: #3F3F3F;
                 }
 
-                .top{
+                .top {
                     font-weight: 600;
                     font-size: 13px;
                 }
@@ -394,21 +394,21 @@
         height: 100%;
         position: relative;
 
-        &:hover{
+        &:hover {
             box-shadow: 0px 3px 30px #272D3B66;
 
             .plus {
                 position: absolute;
                 top: 20px;
                 right: 20px;
-    
+
                 span {
-                    
-                    .hoverShow{
+
+                    .hoverShow {
                         display: block;
                     }
 
-                    .hoverhide{
+                    .hoverhide {
                         display: none;
                     }
                 }
@@ -441,8 +441,8 @@
             right: 20px;
 
             span {
-                
-                .hoverShow{
+
+                .hoverShow {
                     display: none;
                 }
             }
@@ -508,7 +508,7 @@
 
         .title {
             font-size: 18px;
-            font-weight: 600;    
+            font-weight: 600;
             width: max-content;
             margin: 0 auto 20px;
             color: #3F3F3F;
@@ -539,7 +539,7 @@
                         background-color: var(--main1);
                         color: #fff;
                     }
-                    
+
                 }
             }
 
@@ -574,13 +574,15 @@
                         border-color: #FF7B24;
                         color: #fff;
                     }
+
                     &.blur {
                         border-color: #E2E2E2;
                         color: #E2E2E2;
                     }
+
                     &.default-color {
                         color: var(--main2);
-                      }
+                    }
                 }
             }
 
@@ -666,7 +668,7 @@
                             display: block;
                             padding-left: 20px;
                             font-size: 14px;
-                            font-weight: 400;                        
+                            font-weight: 400;
 
                             span {
                                 width: 10px;
@@ -916,7 +918,7 @@
                     justify-content: center;
                     gap: 20px;
                     align-items: center;
-                    
+
 
                     h5 {
                         font-size: 14px;
@@ -1103,7 +1105,7 @@
                         display: flex;
                         justify-content: center;
 
-                        img{
+                        img {
                             width: auto;
                             height: 110px;
                         }
@@ -1597,21 +1599,21 @@
         height: auto;
         position: relative;
 
-        &:hover{
+        &:hover {
             box-shadow: 0px 3px 30px #272D3B66;
 
             .plus {
                 position: absolute;
                 top: 20px;
                 right: 20px;
-    
+
                 span {
-                    
-                    .hoverShow{
+
+                    .hoverShow {
                         display: block;
                     }
 
-                    .hoverhide{
+                    .hoverhide {
                         display: none;
                     }
                 }
@@ -1624,8 +1626,8 @@
             right: 20px;
 
             span {
-                
-                .hoverShow{
+
+                .hoverShow {
                     display: none;
                 }
             }
@@ -1863,20 +1865,20 @@
                             font-size: 12px;
                             text-transform: uppercase;
                             min-width: 71px;
-                                max-width: 71px;
+                            max-width: 71px;
 
                             &.active {
                                 background-color: #FF7B24;
                                 color: #fff;
                                 font-size: 12px;
-                                
+
                             }
                         }
 
                     }
                 }
 
-                .qtrList2{
+                .qtrList2 {
                     margin-bottom: 20px;
 
                     ul {
@@ -1902,7 +1904,7 @@
                                 background-color: #FF7B24;
                                 color: #fff;
                                 font-size: 12px;
-                                
+
                             }
                         }
 
@@ -2317,7 +2319,7 @@
                     display: flex;
                     justify-content: center;
 
-                    img{
+                    img {
                         width: auto;
                         height: 110px;
                     }
@@ -2447,7 +2449,7 @@
                         display: flex;
                         justify-content: center;
 
-                        img{
+                        img {
                             width: auto;
                             height: 110px;
                         }
@@ -2596,8 +2598,37 @@
     .combined-spinner {
         width: 60px !important;
         height: 60px !important;
-      }
-  }  
+    }
+}
+
+.ProgressSpinner {
+    position: relative;
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    .combined-spinner {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .iconSpiner {
+        position: absolute;
+        top: 20px;
+        width: 28px;
+        left: 5px;
+        transform: translate(50px, 20px);
+
+        b {
+            font-size: 11px;
+            transform: translate(7px, 0px);
+        }
+    }
+
+}
 
 .probabilityLoan {
 
@@ -2691,6 +2722,8 @@
                             img {
                                 width: 54px;
                             }
+
+                           
                         }
 
                         .logo {
@@ -3295,26 +3328,26 @@
             top: 0px;
             transform: translate(0%, 0%);
             margin: -80px auto 0px;
-    
-    
-            h3{
+
+
+            h3 {
                 font-size: 20px;
                 font-weight: 600;
                 margin-bottom: 2px;
                 font-family: Poppins !important;
                 color: #3f3f3f;
             }
-    
-            p{
+
+            p {
                 font-size: 14px;
                 font-weight: 400;
                 margin-bottom: 5px;
                 font-family: Poppins !important;
                 color: #939090;
-                line-height: 22px;        
+                line-height: 22px;
             }
-            
-            .boxOne{
+
+            .boxOne {
                 border: 1px solid #C3E128;
                 border-radius: 10px;
                 padding: 7px 14px;
@@ -3323,18 +3356,18 @@
                 gap: 15px;
                 background: #FBFFDE;
                 margin-bottom: 17px;
-    
-                .content{
-    
-                    h5{
+
+                .content {
+
+                    h5 {
                         color: #3F3F3F;
                         font-size: 18px;
                         margin-bottom: 3px;
                         font-weight: 600;
                         font-family: Poppins !important;
                     }
-    
-                    small{
+
+                    small {
                         color: #3F3F3F;
                         font-size: 16px;
                         margin-bottom: 3px;
@@ -3343,7 +3376,7 @@
                     }
                 }
             }
-    
+
             .boxTwo {
                 border: 1px solid #FF7B24;
                 border-radius: 10px;
@@ -3353,15 +3386,15 @@
                 gap: 15px;
                 margin-bottom: 10px;
                 background: #FFF4EE;
-    
-                h5{
+
+                h5 {
                     margin-bottom: 0px;
                     color: #3F3F3F;
                     font-size: 34px;
                     font-weight: 600;
                 }
-    
-                small{
+
+                small {
                     color: #3F3F3F;
                     font-size: 16px;
                     margin-bottom: 3px;
@@ -3369,8 +3402,8 @@
                     font-family: Poppins !important;
                 }
             }
-    
-            
+
+
             .boxThree {
                 border: 1px solid #6A2FC2;
                 border-radius: 10px;
@@ -3380,15 +3413,15 @@
                 gap: 15px;
                 margin-bottom: 10px;
                 background: #F8F3FF;
-    
-                h5{
+
+                h5 {
                     margin-bottom: 0px;
                     color: #3F3F3F;
                     font-size: 34px;
                     font-weight: 600;
                 }
-    
-                small{
+
+                small {
                     color: #3F3F3F;
                     font-size: 16px;
                     margin-bottom: 3px;
@@ -3396,8 +3429,8 @@
                     font-family: Poppins !important;
                 }
             }
-    
-            span{
+
+            span {
                 display: flex;
                 justify-content: flex-end;
                 color: #b1b1b1;
@@ -3568,7 +3601,7 @@
                             display: flex;
                             justify-content: center;
 
-                            img{
+                            img {
                                 width: auto;
                                 height: 110px;
                             }
@@ -3598,12 +3631,12 @@
                 margin-top: 10px;
             }
 
-            .calendarBox{
+            .calendarBox {
 
-                .year{
+                .year {
                     gap: 8px !important;
 
-                    span{
+                    span {
                         font-size: 12px;
                         padding: 6px 16px;
                     }
@@ -3765,24 +3798,25 @@
                 height: auto;
                 padding: 24px 12px !important;
 
-                .qtrBox{
+                .qtrBox {
                     margin-bottom: 8px;
 
-                    .qtrList{
+                    .qtrList {
                         margin-bottom: 10px;
                     }
-                    .qtrList2{
+
+                    .qtrList2 {
                         margin-bottom: 10px;
                     }
                 }
 
-                .contentQtr{
+                .contentQtr {
                     margin-top: 18px;
                 }
 
                 .checkBox {
 
-                    button{
+                    button {
                         padding: 3px 8px;
                         font-size: 14px;
                     }
@@ -3869,7 +3903,8 @@
                     }
                 }
             }
-            .mobileAlign{
+
+            .mobileAlign {
                 display: block !important;
 
                 .chequeBounces {
@@ -4068,10 +4103,10 @@
             .summaryBox {
                 margin-top: 20px;
 
-                .summaryContent{
+                .summaryContent {
                     display: block;
 
-                    .smileImg{
+                    .smileImg {
                         display: flex;
                         justify-content: center;
                     }

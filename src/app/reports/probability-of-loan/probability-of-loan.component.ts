@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -6,16 +6,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { MaterialModule } from 'src/app/material.module';
 
 @Component({
   selector: 'app-probability-of-loan',
   standalone: true,
-  imports: [CommonModule,MatProgressBarModule,MatExpansionModule,MatFormFieldModule,MatCheckboxModule,MatIconModule,CarouselModule],
+  imports: [CommonModule,MatProgressBarModule,MaterialModule,MatExpansionModule,MatFormFieldModule,MatCheckboxModule,MatIconModule,CarouselModule],
   templateUrl: './probability-of-loan.component.html',
   styleUrls: ['./probability-of-loan.component.scss','../reports.component.scss']
 })
 export class ProbabilityOfLoanComponent {
 
+  @Input() probOfLoanData: any;
   visibleOffers!: boolean;
 
   customOptions4: OwlOptions = {
@@ -49,12 +51,19 @@ export class ProbabilityOfLoanComponent {
      },
    },
  };
+  data: any;
+  currProbData: any;
 
 
   constructor(){
 
   }
 
+  ngOnInit(): void{
+    this.data = this.probOfLoanData;
+    this.currProbData = this.data?.report?.loanProbability;
+    console.log(this.currProbData.length,"kkk")
+  }
   
   moreOffers(){
     this.visibleOffers = true;

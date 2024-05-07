@@ -1,429 +1,329 @@
 <div class="probabilityLoan section_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 m-auto">
-          <div class="title">
-            <h2><span>Your Current Probability of Getting a Loan</span></h2>
-            <p class="col-md-8 col-sm-12 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-          </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 m-auto">
+        <div class="title">
+          <h2><span>Your Current Probability of Getting a Loan</span></h2>
+          <p class="col-md-8 col-sm-12 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         </div>
-  
-        <div class="col-lg-12 col-md-12">
-          <div class="tableLoan table-responsive mhidden">
-            <table>
-              <thead>
-                <ng-container>
-                  <tr>
-                    <th>Lenders</th>
-                    <th>Max Offerings (INR)</th>
-                    <th style="background-color: var(--main1);">Current Potential</th>
-                    <th style="background-color: var(--main2);">Future Potential</th>
-                  </tr>
-                </ng-container>
-              </thead>
-              <tbody>
-                <ng-container>
-                  <tr>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <img class="logo" src="./assets/LandingPage/icici.png" alt="">
-                    </td>
-                    <td style="border-right: 1px solid #e9e9e9;">75,00,000 <br> 18%</td>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <span style="color: #6A2FC2;">Loan : <b>45,00,000</b> </span>
-                      <span style="color: #6A2FC2;">ROI : <b>23%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableChart.svg" alt="">
-                      </div>
-                    </td>
-                    <td>
-                      <span style="color: #12BA9B;">Loan : <b>75,00,000</b> </span>
-                      <span style="color: #12BA9B;">ROI : <b>18%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableCharGreen.svg" alt="">
-                      </div>
-                    </td>
-                  </tr>
-  
-                  <tr>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <img class="logo" src="./assets/LandingPage/icici.png" alt="">
-                    </td>
-                    <td style="border-right: 1px solid #e9e9e9;">75,00,000 <br> 18%</td>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <span style="color: #6A2FC2;">Loan : <b>45,00,000</b> </span>
-                      <span style="color: #6A2FC2;">ROI : <b>23%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableChart.svg" alt="">
-                      </div>
-                    </td>
-                    <td>
-                      <span style="color: #12BA9B;">Loan : <b>75,00,000</b> </span>
-                      <span style="color: #12BA9B;">ROI : <b>18%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableCharGreen.svg" alt="">
-                      </div>
-                    </td>
-                  </tr>
-  
-                  <tr>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <img class="logo" src="./assets/LandingPage/icici.png" alt="">
-                    </td>
-                    <td style="border-right: 1px solid #e9e9e9;">75,00,000 <br> 18%</td>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <span style="color: #6A2FC2;">Loan : <b>45,00,000</b> </span>
-                      <span style="color: #6A2FC2;">ROI : <b>23%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableChart.svg" alt="">
-                      </div>
-                    </td>
-                    <td>
-                      <span style="color: #12BA9B;">Loan : <b>75,00,000</b> </span>
-                      <span style="color: #12BA9B;">ROI : <b>18%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableCharGreen.svg" alt="">
-                      </div>
-                    </td>
-                  </tr>
-  
-                  <tr>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <img class="logo" src="./assets/LandingPage/icici.png" alt="">
-                    </td>
-                    <td style="border-right: 1px solid #e9e9e9;">75,00,000 <br> 18%</td>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <span style="color: #6A2FC2;">Loan : <b>45,00,000</b> </span>
-                      <span style="color: #6A2FC2;">ROI : <b>23%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableChart.svg" alt="">
-                      </div>
-                    </td>
-                    <td>
-                      <span style="color: #12BA9B;">Loan : <b>75,00,000</b> </span>
-                      <span style="color: #12BA9B;">ROI : <b>18%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableCharGreen.svg" alt="">
-                      </div>
-                    </td>
-                  </tr>
-                </ng-container>
-  
-                <ng-container *ngIf="visibleOffers">
-                  <tr>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <img class="logo" src="./assets/LandingPage/icici.png" alt="">
-                    </td>
-                    <td style="border-right: 1px solid #e9e9e9;">75,00,000 <br> 18%</td>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <span style="color: #6A2FC2;">Loan : <b>45,00,000</b> </span>
-                      <span style="color: #6A2FC2;">ROI : <b>23%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableChart.svg" alt="">
-                      </div>
-                    </td>
-                    <td>
-                      <span style="color: #12BA9B;">Loan : <b>75,00,000</b> </span>
-                      <span style="color: #12BA9B;">ROI : <b>18%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableCharGreen.svg" alt="">
-                      </div>
-                    </td>
-                  </tr>
-  
-                  <tr>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <img class="logo" src="./assets/LandingPage/icici.png" alt="">
-                    </td>
-                    <td style="border-right: 1px solid #e9e9e9;">75,00,000 <br> 18%</td>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <span style="color: #6A2FC2;">Loan : <b>45,00,000</b> </span>
-                      <span style="color: #6A2FC2;">ROI : <b>23%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableChart.svg" alt="">
-                      </div>
-                    </td>
-                    <td>
-                      <span style="color: #12BA9B;">Loan : <b>75,00,000</b> </span>
-                      <span style="color: #12BA9B;">ROI : <b>18%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableCharGreen.svg" alt="">
-                      </div>
-                    </td>
-                  </tr>
-  
-                  <tr>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <img class="logo" src="./assets/LandingPage/icici.png" alt="">
-                    </td>
-                    <td style="border-right: 1px solid #e9e9e9;">75,00,000 <br> 18%</td>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <span style="color: #6A2FC2;">Loan : <b>45,00,000</b> </span>
-                      <span style="color: #6A2FC2;">ROI : <b>23%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableChart.svg" alt="">
-                      </div>
-                    </td>
-                    <td>
-                      <span style="color: #12BA9B;">Loan : <b>75,00,000</b> </span>
-                      <span style="color: #12BA9B;">ROI : <b>18%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableCharGreen.svg" alt="">
-                      </div>
-                    </td>
-                  </tr>
-  
-                  <tr>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <img class="logo" src="./assets/LandingPage/icici.png" alt="">
-                    </td>
-                    <td style="border-right: 1px solid #e9e9e9;">75,00,000 <br> 18%</td>
-                    <td style="border-right: 1px solid #e9e9e9;">
-                      <span style="color: #6A2FC2;">Loan : <b>45,00,000</b> </span>
-                      <span style="color: #6A2FC2;">ROI : <b>23%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableChart.svg" alt="">
-                      </div>
-                    </td>
-                    <td>
-                      <span style="color: #12BA9B;">Loan : <b>75,00,000</b> </span>
-                      <span style="color: #12BA9B;">ROI : <b>18%</b></span>
-                      <div class="chartImg">
-                        <img src="./assets/LandingPage/tableCharGreen.svg" alt="">
-                      </div>
-                    </td>
-                  </tr>
-                </ng-container>
-  
-              </tbody>
-            </table>
-          </div>
-  
-          <div class="tableSilder dhidden">
-            <owl-carousel-o [options]="customOptions4">
+      </div>
+
+      <div class="col-lg-12 col-md-12">
+        <div class="tableLoan table-responsive mhidden">
+          <table>
+            <thead>
               <ng-container>
-                <ng-template carouselSlide>
-                  <div class="tableBox">
-                    <img src="./assets/LandingPage/icici.png" alt="">
-                    <ul>
-                      <li>Max Offerings (INR)</li>
-                      <li>
-                        <span>Loan :</span>
-                        <span><b>75,00,000</b></span>
-                      </li>
-                      <li>
-                        <span>ROI :</span>
-                        <span><b>18%</b></span>
-                      </li>
-                    </ul>
-  
-                    <ul class="themeColor1">
-                      <li>Current Potential</li>
-                      <li>
-                        <span>Loan :</span>
-                        <span><b>45,00,000</b></span>
-                      </li>
-                      <li>
-                        <span>ROI :</span>
-                        <span><b>23%</b></span>
-                      </li>
-                    </ul>
-  
-                    <ul class="themeColor2">
-                      <li>Future Potential</li>
-                      <li>
-                        <span>Loan :</span>
-                        <span><b>75,00,000</b></span>
-                      </li>
-                      <li>
-                        <span>ROI :</span>
-                        <span><b>18%</b></span>
-                      </li>
-                    </ul>
-  
-                    <img class="chart" src="./assets/LandingPage/tableChart.svg" alt="">
-                  </div>
-                </ng-template>
-  
-                <ng-template carouselSlide>
-                  <div class="tableBox">
-                    <img src="./assets/LandingPage/icici.png" alt="">
-                    <ul>
-                      <li>Max Offerings (INR)</li>
-                      <li>
-                        <span>Loan :</span>
-                        <span><b>75,00,000</b></span>
-                      </li>
-                      <li>
-                        <span>ROI :</span>
-                        <span><b>18%</b></span>
-                      </li>
-                    </ul>
-  
-                    <ul class="themeColor1">
-                      <li>Current Potential</li>
-                      <li>
-                        <span>Loan :</span>
-                        <span><b>45,00,000</b></span>
-                      </li>
-                      <li>
-                        <span>ROI :</span>
-                        <span><b>23%</b></span>
-                      </li>
-                    </ul>
-  
-                    <ul class="themeColor2">
-                      <li>Future Potential</li>
-                      <li>
-                        <span>Loan :</span>
-                        <span><b>75,00,000</b></span>
-                      </li>
-                      <li>
-                        <span>ROI :</span>
-                        <span><b>18%</b></span>
-                      </li>
-                    </ul>
-  
-                    <img class="chart" src="./assets/LandingPage/tableChart.svg" alt="">
-                  </div>
-                </ng-template>
-  
-                <ng-template carouselSlide>
-                  <div class="tableBox">
-                    <img src="./assets/LandingPage/icici.png" alt="">
-                    <ul>
-                      <li>Max Offerings (INR)</li>
-                      <li>
-                        <span>Loan :</span>
-                        <span><b>75,00,000</b></span>
-                      </li>
-                      <li>
-                        <span>ROI :</span>
-                        <span><b>18%</b></span>
-                      </li>
-                    </ul>
-  
-                    <ul class="themeColor1">
-                      <li>Current Potential</li>
-                      <li>
-                        <span>Loan :</span>
-                        <span><b>45,00,000</b></span>
-                      </li>
-                      <li>
-                        <span>ROI :</span>
-                        <span><b>23%</b></span>
-                      </li>
-                    </ul>
-  
-                    <ul class="themeColor2">
-                      <li>Future Potential</li>
-                      <li>
-                        <span>Loan :</span>
-                        <span><b>75,00,000</b></span>
-                      </li>
-                      <li>
-                        <span>ROI :</span>
-                        <span><b>18%</b></span>
-                      </li>
-                    </ul>
-  
-                    <img class="chart" src="./assets/LandingPage/tableChart.svg" alt="">
-                  </div>
-                </ng-template>
-  
-                <ng-template carouselSlide>
-                  <div class="tableBox">
-                    <img src="./assets/LandingPage/icici.png" alt="">
-                    <ul>
-                      <li>Max Offerings (INR)</li>
-                      <li>
-                        <span>Loan :</span>
-                        <span><b>75,00,000</b></span>
-                      </li>
-                      <li>
-                        <span>ROI :</span>
-                        <span><b>18%</b></span>
-                      </li>
-                    </ul>
-  
-                    <ul class="themeColor1">
-                      <li>Current Potential</li>
-                      <li>
-                        <span>Loan :</span>
-                        <span><b>45,00,000</b></span>
-                      </li>
-                      <li>
-                        <span>ROI :</span>
-                        <span><b>23%</b></span>
-                      </li>
-                    </ul>
-  
-                    <ul class="themeColor2">
-                      <li>Future Potential</li>
-                      <li>
-                        <span>Loan :</span>
-                        <span><b>75,00,000</b></span>
-                      </li>
-                      <li>
-                        <span>ROI :</span>
-                        <span><b>18%</b></span>
-                      </li>
-                    </ul>
-  
-                    <img class="chart" src="./assets/LandingPage/tableChart.svg" alt="">
-                  </div>
-                </ng-template>
-  
-                <ng-template carouselSlide>
-                  <div class="tableBox">
-                    <img src="./assets/LandingPage/icici.png" alt="">
-                    <ul>
-                      <li>Max Offerings (INR)</li>
-                      <li>
-                        <span>Loan :</span>
-                        <span><b>75,00,000</b></span>
-                      </li>
-                      <li>
-                        <span>ROI :</span>
-                        <span><b>18%</b></span>
-                      </li>
-                    </ul>
-  
-                    <ul class="themeColor1">
-                      <li>Current Potential</li>
-                      <li>
-                        <span>Loan :</span>
-                        <span><b>45,00,000</b></span>
-                      </li>
-                      <li>
-                        <span>ROI :</span>
-                        <span><b>23%</b></span>
-                      </li>
-                    </ul>
-  
-                    <ul class="themeColor2">
-                      <li>Future Potential</li>
-                      <li>
-                        <span>Loan :</span>
-                        <span><b>75,00,000</b></span>
-                      </li>
-                      <li>
-                        <span>ROI :</span>
-                        <span><b>18%</b></span>
-                      </li>
-                    </ul>
-  
-                    <img class="chart" src="./assets/LandingPage/tableChart.svg" alt="">
-                  </div>
-                </ng-template>
+                <tr>
+                  <th>Lenders</th>
+                  <th>Max Offerings (INR)</th>
+                  <th style="background-color: var(--main1);">Current Potential</th>
+                  <th style="background-color: var(--main2);">Future Potential</th>
+                </tr>
               </ng-container>
-            </owl-carousel-o>
-          </div>
-  
-          <div class="moreAffers">
-            <button class="btn" *ngIf="!visibleOffers" (click)="moreOffers()">12 more affers</button>
-          </div>
+            </thead>
+            <tbody>
+              <ng-container>
+                <tr *ngFor="let data of currProbData.slice(0,4)">
+                  <td style="border-right: 1px solid #e9e9e9;">
+                    {{data.lender}}
+                  </td>
+                  <td style="border-right: 1px solid #e9e9e9;">75,00,000 <br> 18%</td>
+                  <td style="border-right: 1px solid #e9e9e9;">
+                    <span style="color: #6A2FC2;">Loan : <b>45,00,000</b> </span>
+                    <span style="color: #6A2FC2;">ROI : <b>{{data.currentProbability*100}}%</b></span>
+                    <div class="chartImg">
+
+
+                      <div class="ProgressSpinner">
+                        <mat-progress-spinner [value]="data.currentProbability*100" mode="determinate" strokeWidth="8"
+                          class="combined-spinner">
+                        </mat-progress-spinner>
+                        <span class="iconSpiner" style="color: #000000;"> <b>{{data.currentProbability*100}}%</b></span>
+                      </div>
+
+                    </div>
+                  </td>
+                  <td>
+                    <span style="color: #12BA9B;">Loan : <b>75,00,000</b> </span>
+                    <span style="color: #12BA9B;">ROI : <b>{{data.potentialProbability*100}}%</b></span>
+                    <div class="chartImg">
+                      <div class="ProgressSpinner">
+                        <mat-progress-spinner [value]="data.potentialProbability*100" mode="determinate" strokeWidth="8"
+                          class="combined-spinner">
+                        </mat-progress-spinner>
+                        <span class="iconSpiner" style="color: #000000;">
+                          <b>{{data.potentialProbability*100}}%</b></span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </ng-container>
+
+              <ng-container *ngIf="visibleOffers">
+                <tr *ngFor="let data of currProbData.slice(4,currProbData.length)">
+                  <td style="border-right: 1px solid #e9e9e9;">
+                    {{data.lender}}
+                  </td>
+                  <td style="border-right: 1px solid #e9e9e9;">75,00,000 <br> 18%</td>
+                  <td style="border-right: 1px solid #e9e9e9;">
+                    <span style="color: #6A2FC2;">Loan : <b>45,00,000</b> </span>
+                    <span style="color: #6A2FC2;">ROI : <b>{{data.currentProbability*100}}%</b></span>
+                    <div class="chartImg">
+                      <div class="ProgressSpinner">
+                        <mat-progress-spinner [value]="data.currentProbability*100" mode="determinate" strokeWidth="8"
+                          class="combined-spinner">
+                        </mat-progress-spinner>
+                        <span class="iconSpiner" style="color: #000000;"> <b>{{data.currentProbability*100}}%</b></span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span style="color: #12BA9B;">Loan : <b>75,00,000</b> </span>
+                    <span style="color: #12BA9B;">ROI : <b>{{data.potentialProbability*100}}%</b></span>
+                    <div class="chartImg">
+                      <div class="ProgressSpinner">
+                        <mat-progress-spinner [value]="data.potentialProbability*100" mode="determinate" strokeWidth="8"
+                          class="combined-spinner">
+                        </mat-progress-spinner>
+                        <span class="iconSpiner" style="color: #000000;">
+                          <b>{{data.potentialProbability*100}}%</b></span>
+                      </div>
+                    </div>
+
+                  </td>
+                </tr>
+              </ng-container>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tableSilder dhidden">
+          <owl-carousel-o [options]="customOptions4">
+            <ng-container>
+              <ng-template carouselSlide>
+                <div class="tableBox">
+                  <img src="./assets/LandingPage/icici.png" alt="">
+                  <ul>
+                    <li>Max Offerings (INR)</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor1">
+                    <li>Current Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>45,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>23%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor2">
+                    <li>Future Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <img class="chart" src="./assets/LandingPage/tableChart.svg" alt="">
+                </div>
+              </ng-template>
+
+              <ng-template carouselSlide>
+                <div class="tableBox">
+                  <img src="./assets/LandingPage/icici.png" alt="">
+                  <ul>
+                    <li>Max Offerings (INR)</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor1">
+                    <li>Current Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>45,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>23%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor2">
+                    <li>Future Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <img class="chart" src="./assets/LandingPage/tableChart.svg" alt="">
+                </div>
+              </ng-template>
+
+              <ng-template carouselSlide>
+                <div class="tableBox">
+                  <img src="./assets/LandingPage/icici.png" alt="">
+                  <ul>
+                    <li>Max Offerings (INR)</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor1">
+                    <li>Current Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>45,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>23%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor2">
+                    <li>Future Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <img class="chart" src="./assets/LandingPage/tableChart.svg" alt="">
+                </div>
+              </ng-template>
+
+              <ng-template carouselSlide>
+                <div class="tableBox">
+                  <img src="./assets/LandingPage/icici.png" alt="">
+                  <ul>
+                    <li>Max Offerings (INR)</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor1">
+                    <li>Current Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>45,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>23%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor2">
+                    <li>Future Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <img class="chart" src="./assets/LandingPage/tableChart.svg" alt="">
+                </div>
+              </ng-template>
+
+              <ng-template carouselSlide>
+                <div class="tableBox">
+                  <img src="./assets/LandingPage/icici.png" alt="">
+                  <ul>
+                    <li>Max Offerings (INR)</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor1">
+                    <li>Current Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>45,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>23%</b></span>
+                    </li>
+                  </ul>
+
+                  <ul class="themeColor2">
+                    <li>Future Potential</li>
+                    <li>
+                      <span>Loan :</span>
+                      <span><b>75,00,000</b></span>
+                    </li>
+                    <li>
+                      <span>ROI :</span>
+                      <span><b>18%</b></span>
+                    </li>
+                  </ul>
+
+                  <img class="chart" src="./assets/LandingPage/tableChart.svg" alt="">
+                </div>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+        </div>
+
+        <div class="moreAffers">
+          <button class="btn" *ngIf="!visibleOffers" (click)="moreOffers()">12 more offers</button>
         </div>
       </div>
     </div>
   </div>
+</div>

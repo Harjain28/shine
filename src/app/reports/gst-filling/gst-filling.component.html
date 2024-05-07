@@ -1,5 +1,5 @@
 <div class="gstFilings section_padding" *ngIf = "gstDetails">
-    <div class="container">
+    <div class="container" *ngIf = "!showGstComponent">
       <div class="row">
         <div class="col-lg-12">
           <div class="title">
@@ -70,4 +70,6 @@
         </div>
       </div>
     </div>
+    <app-no-gst *ngIf = "showGstComponent"></app-no-gst>
   </div>
+

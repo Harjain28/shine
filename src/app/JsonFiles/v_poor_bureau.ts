@@ -639,7 +639,94 @@ export const vpoorBureauJSON =
       "positive": 0,
       "summary": "If there are more than two filing delays in six months, it indicates a significant issue with financial discipline, which could be a red flag for lenders."
     },
-    "reportDate": "2024-03-01T00:00:00"
+    "reportDate": "2024-03-01T00:00:00",
+    "loanProbability": [
+      {
+        "lender": "Aditya Birla Finance Ltd",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "Protium",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "CreditSaison",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "Lendingkart",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "Fairassets Technologies India Private Limited",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "Indifi",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "Flexiloans",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "Bajaj Finance",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "Tata Capital",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "LTFS",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "Deutsche Bank",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "Poonawalla Fincorp",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "NeoGrowth",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "Ambit Finvest",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "Godrej Finance Limited",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "KreditBee",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      },
+      {
+        "lender": "IIFL",
+        "currentProbability": 0.1,
+        "potentialProbability": 0.2
+      }
+    ]
   },
   "insights": {
     "creditReport": {

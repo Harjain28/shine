@@ -8,11 +8,12 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { reportPageJson } from 'src/app/JsonFiles/report';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
+import { NoGstComponent } from '../no-gst/no-gst.component';
 
 @Component({
   selector: 'app-gst-filling',
   standalone: true,
-  imports: [CommonModule, MatProgressBarModule, MatExpansionModule, MatFormFieldModule, MatCheckboxModule, MatIconModule, CarouselModule],
+  imports: [CommonModule, MatProgressBarModule,NoGstComponent, MatExpansionModule, MatFormFieldModule, MatCheckboxModule, MatIconModule, CarouselModule],
   templateUrl: './gst-filling.component.html',
   styleUrls: ['./gst-filling.component.scss', '../reports.component.scss']
 })
@@ -54,6 +55,8 @@ export class GstFillingComponent {
   {1: "JAN",2: "FEB",3: "MAR",4: "APR",5: "MAY",6: "JUN",7: "JUL",8: "AUG",9: "SEP",10: "OCT",11: "NOV",12: "DEC"};
   res!: { month: string; }[];
   totalUniqueMonths!: number;
+  showGstComponent!: boolean;
+  gstNumber: any;
   
 
 
@@ -63,6 +66,11 @@ export class GstFillingComponent {
 
   ngOnInit(): void {
     this.gstDetails = this.gstData?.report?.gstHistory;
+    
+    this.gstNumber = this.gstDetails?.gstNumber;
+    if(!this.gstNumber){
+    this.showGstComponent = true
+    }
 
 
     this.month = this.gstDetails?.missedGstFilings?.month;

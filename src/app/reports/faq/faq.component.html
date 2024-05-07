@@ -14,7 +14,10 @@
                     <h3>{{data.Question}}</h3>
                   </mat-panel-title>
                 </mat-expansion-panel-header>
-                <p>{{data.Answer}} </p>
+                <p *ngIf="data.Answer">{{data.Answer}} </p>
+                <div *ngIf="!data.Answer">
+                <p *ngFor="let bullet of data.bullets">{{bullet}} </p>
+              </div>
               </mat-expansion-panel>
             </mat-accordion>
   
