@@ -151,31 +151,32 @@ export class ReportsComponent {
 
     this.levelArray = [  
       {
-          "stage": 1,
+          "stage": "1",
           "color": "#ff7a24"
       },
       {
-          "stage": 2,
+          "stage": "2",
           "color": "#221460"
       },
       {
-          "stage": 3,
+          "stage": "3",
           "color": "#6e2ec4"
       },
       {
-          "stage": 4,
+          "stage": "4",
           "color": "#c5e522"
       },
       {
-          "stage": 5,
+          "stage": "5",
           "color": "#15b89a"
       }
     ]
 
     const compare = this.levelArray.find(
-      (res: { stage: any }) => res.stage === compareStage.stage
+      (res: { stage: any }) => res.stage === this.Key_Insights_box.stage
     );
 
+    console.log(compare,"tat")
     if(compare){
       this.progressValue = (compare.stage/5)*100;
       this.potentialColor = compare.color;
