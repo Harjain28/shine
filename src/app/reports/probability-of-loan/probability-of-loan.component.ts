@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { MaterialModule } from 'src/app/material.module';
+import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 
 @Component({
   selector: 'app-probability-of-loan',
@@ -53,7 +54,8 @@ export class ProbabilityOfLoanComponent {
  };
   data: any;
   currProbData: any;
-
+  probabilityData: any[] = [];
+  staticData: any;
 
   constructor(){
 
@@ -61,8 +63,20 @@ export class ProbabilityOfLoanComponent {
 
   ngOnInit(): void{
     this.data = this.probOfLoanData;
+    this.staticData = reportStatciData?.lenders;
     this.currProbData = this.data?.report?.loanProbability;
-    console.log(this.currProbData.length,"kkk")
+
+  this.staticData.forEach((item1: { key: string; }) => {
+    const matchingItem = this.currProbData.find((item2: { lender: string; }) => item1.key === item2.lender);
+    if (matchingItem) {
+        this.probabilityData.push({
+            ...item1,
+            ...matchingItem
+        });
+    }
+});
+  console.log(this.probabilityData,"ttt");
+
   }
   
   moreOffers(){

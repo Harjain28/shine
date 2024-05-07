@@ -606,7 +606,94 @@ export const noGSTJSON =
         "positive": 0,
         "summary": "If there are more than two filing delays in six months, it indicates a significant issue with financial discipline, which could be a red flag for lenders."
       },
-      "reportDate": "2024-03-01T00:00:00"
+      "reportDate": "2024-03-01T00:00:00",
+      "loanProbability": [
+        {
+          "lender": "ABFL STUL",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "Protium",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "Credit Saison",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "Lendingkart",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "Faircent",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "Indifi",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "Flexiloans",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "Bajaj",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "Tata",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "LTFS",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "DB",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "Poonawala",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "Neogrowth",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "Ambit",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "Godrej",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "KreditBee",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        },
+        {
+          "lender": "IIFL",
+          "currentProbability": 0.1,
+          "potentialProbability": 0.2
+        }
+      ]
     },
     "insights": {
       "creditReport": {

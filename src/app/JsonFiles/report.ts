@@ -623,7 +623,7 @@ export const reportPageJson =
     "reportDate": "2024-03-01T00:00:00",
     "loanProbability": [
       {
-        "lender": "Aditya Birla Finance Ltd",
+        "lender": "ABFL STUL",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
@@ -633,7 +633,7 @@ export const reportPageJson =
         "potentialProbability": 0.2
       },
       {
-        "lender": "CreditSaison",
+        "lender": "Credit Saison",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
@@ -643,7 +643,7 @@ export const reportPageJson =
         "potentialProbability": 0.2
       },
       {
-        "lender": "Fairassets Technologies India Private Limited",
+        "lender": "Faircent",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
@@ -658,12 +658,12 @@ export const reportPageJson =
         "potentialProbability": 0.2
       },
       {
-        "lender": "Bajaj Finance",
+        "lender": "Bajaj",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
       {
-        "lender": "Tata Capital",
+        "lender": "Tata",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
@@ -673,22 +673,22 @@ export const reportPageJson =
         "potentialProbability": 0.2
       },
       {
-        "lender": "Deutsche Bank",
+        "lender": "DB",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
       {
-        "lender": "Poonawalla Fincorp",
+        "lender": "Poonawala",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
       {
-        "lender": "NeoGrowth",
+        "lender": "Neogrowth",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
       {
-        "lender": "Ambit Finvest",
+        "lender": "Ambit",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },

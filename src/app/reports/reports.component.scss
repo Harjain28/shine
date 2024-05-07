@@ -58,18 +58,17 @@
             border-radius: 10px;
             padding: 7px 14px;
             display: flex;
-            align-items: center;
+            align-items: baseline;
             gap: 15px;
             background: #FBFFDE;
             margin-bottom: 17px;
 
             img {
                 width: auto;
-                height: 20px;
+                height: 51px;
                 position: absolute;
-                top: 20px;
-                left: 50%;
-                transform: translate(-50%, 0%);
+                top: 0px;
+                left: 0;
             }
 
             .content {
@@ -2473,7 +2472,7 @@
 
                     li {
                         position: relative;
-                        padding: 0px 20px 8px;
+                        padding: 1px 5px 8px 16px;
                         font-size: 14px;
                         font-weight: 500;
                         margin-bottom: 0px;
@@ -2723,7 +2722,7 @@
                                 width: 54px;
                             }
 
-                           
+
                         }
 
                         .logo {

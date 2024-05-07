@@ -19,7 +19,7 @@ import { Router } from '@angular/router';
 })
 export class ActionsRequiredComponent {
 
-  @Input() sampleReportsData : any;
+  @Input() ActionReqReportsData : any;
   summary_section:any;
   summary_section_Data: any;
   reportsData: any;
@@ -29,6 +29,9 @@ export class ActionsRequiredComponent {
   imgUrlDesktop: any;
   imgUrlMobile: any;
   rankingSection: any;
+  banking: any;
+  bureau: any;
+  gst: any;
   constructor(private router: Router){
 
   }
@@ -40,7 +43,12 @@ export class ActionsRequiredComponent {
 
 
 
-      this.reportsData = this.sampleReportsData?.report;
+      this.reportsData = this.ActionReqReportsData?.report;
+
+      this.banking = this.reportsData?.bankingSummary;
+      this.bureau = this.reportsData?.bureauSummary;
+      this.gst = this.reportsData?.gstSummary;
+
     
 
 

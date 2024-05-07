@@ -330,7 +330,7 @@ export const reportStatciData =
         "subheader": "Based on your credit, GST, and banking assessment, we've identified what you can do to improve your creditworthiness.",
         "ranking_card": {
             "header": "Your Current Standing",
-            "infocardd_header": "How to Improve",
+            "infocard_header": "How to Improve",
             "infocard_body": "Apply the measures we recommend to improve your level and increase your loan prospects in 3-6 months.",
             "ranking_images": [
                 {
@@ -429,7 +429,7 @@ export const reportStatciData =
         "description": "Oktober6 Insight Private Limited, its affiliates and their respective employees, directors and officers (\"CreditEnable\") hereby state that this analytics report (\"Report\") has been generated basis the information which you, the user, have provided to us and/or credit information received from the credit insights company (for which you have provided your informed consent). CreditEnable makes no representation or warranty, expressed or implied, as to the accuracy, timeliness, completeness, merchantability or fitness for any particular purpose of any information and, or, analysis contained in the Report. Your use of our platform, product, features, applications and software; and our issuance of this Report is not to be construed as a guarantee of the fact that a financing facility shall be granted to you by a third party/lender (irrespective of whether you act on the recommendations/observations contained in this Report). CreditEnable does not guarantee the approval of any loan application. The information provided in the Report is for informational purposes only. The insights, forecasts, and opinions contained in this Report about your likelihood of receiving financing facilities from lender(s) are based solely on the past data that we have obtained and proprietary algorithms/processes which we utilize; and CreditEnable is not liable for any inaccuracy in/shortcomings of the same. CreditEnable is not responsible for the approval of loan applications. You are notified that the grant of financing facilities is at the sole discretion of the lenders and CreditEnable shall not be liable for the approval or rejection of your loan application."
     },
     "lenders": [
-        {"name": "Aditya Birla Finance Limited",
+        {"name": "Aditya Birla Finance Ltd",
         "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/adityabirla.jpg",
         "current_roi": 0.21,
         "current_max_loan": 700000,

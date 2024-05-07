@@ -27,7 +27,6 @@ import { NoBureauComponent } from './no-bureau/no-bureau.component';
 import { NoGstComponent } from './no-gst/no-gst.component';
 import { MaterialModule } from '../material.module';
 import { noGSTJSON } from '../JsonFiles/no_gst';
-import { nogstJSON } from '../JsonFiles/nogst';
 
 @Component({
   selector: 'app-reports',
@@ -103,6 +102,7 @@ export class ReportsComponent {
   levelArray: any;
   potentialColor: any;
   isShowNoGST: boolean = false;
+  Key_Insights_box: any;
 
   constructor(private api: ApiService, private cdr: ChangeDetectorRef,private router: Router,) {}
 
@@ -123,7 +123,66 @@ export class ReportsComponent {
     } else{
       this.navigateToSampleReportWithParams()
     }
-    this.navigateToSampleReportWithParams()
+
+    this.headerSection = reportStatciData?.header_section;
+    this.disclaimer = reportStatciData?.disclaimer?.description;
+
+    const { bankingSummary, bureauSummary, gstSummary } = this.reportsData?.report;
+    this.criticalTotal =
+      bankingSummary.positive + bureauSummary.positive + gstSummary.positive;
+    this.mediumTotal =
+      bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
+
+    const compareStage = this.headerSection?.background.find(
+      (image: { stage: any }) => image.stage === this.reportsData?.report?.currentStage
+    );
+
+    if (compareStage) {
+      this.imgUrlDesktop = compareStage.desktop;
+      this.imgUrlMobile = compareStage.mobile_content;
+    }
+
+    this.Key_Insights_box = this.headerSection?.Key_Insights_box?.Key_Insights.find(
+      (image: { stage: any }) => image.stage === this.reportsData?.report?.potentialStage.toString()
+    );
+
+    console.log(this.Key_Insights_box,"ttt")
+
+
+    this.levelArray = [  
+      {
+          "stage": 1,
+          "color": "#ff7a24"
+      },
+      {
+          "stage": 2,
+          "color": "#221460"
+      },
+      {
+          "stage": 3,
+          "color": "#6e2ec4"
+      },
+      {
+          "stage": 4,
+          "color": "#c5e522"
+      },
+      {
+          "stage": 5,
+          "color": "#15b89a"
+      }
+    ]
+
+    const compare = this.levelArray.find(
+      (res: { stage: any }) => res.stage === compareStage.stage
+    );
+
+    if(compare){
+      this.progressValue = (compare.stage/5)*100;
+      this.potentialColor = compare.color;
+      this.level = compare.stage;
+    }
+    
+
   }
 
   ngAfterViewInit(): void {
@@ -169,57 +228,8 @@ export class ReportsComponent {
     }
 
     console.log(this.reportsData,"klkl")
-    this.sampleData = this.reportsData;
 
-    this.headerSection = reportStatciData?.header_section;
-    this.disclaimer = reportStatciData?.disclaimer?.description;
-
-    const { bankingSummary, bureauSummary, gstSummary } = this.reportsData?.report;
-    this.criticalTotal =
-      bankingSummary.positive + bureauSummary.positive + gstSummary.positive;
-    this.mediumTotal =
-      bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
-
-    const compareStage = this.headerSection?.background.find(
-      (image: { stage: any }) => image.stage === this.reportsData?.report?.currentStage
-    );
-
-    this.levelArray = [  
-      {
-          "stage": 1,
-          "color": "#ff7a24"
-      },
-      {
-          "stage": 2,
-          "color": "#221460"
-      },
-      {
-          "stage": 3,
-          "color": "#6e2ec4"
-      },
-      {
-          "stage": 4,
-          "color": "#c5e522"
-      },
-      {
-          "stage": 5,
-          "color": "#15b89a"
-      }
-    ]
-
-    const compare = this.levelArray.find(
-      (res: { stage: any }) => res.stage === compareStage.stage
-    );
-
-    if(compare){
-      this.progressValue = (compare.stage/5)*100;
-      this.potentialColor = compare.color;
-      this.level = compare.stage;
-    }
-    if (compareStage) {
-      this.imgUrlDesktop = compareStage.desktop;
-      this.imgUrlMobile = compareStage.mobile_content;
-    }
+   
 
     // this.router.navigate(['/in/sample_report'], { queryParams: queryParams });
 

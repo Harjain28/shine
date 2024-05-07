@@ -15,9 +15,8 @@
               <div class="howBox">
                 <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png" alt="">
                 <div class="content">
-                  <h5>How to Improve</h5>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s,</p>
+                  <h5>{{summary_section_Data?.ranking_card?.infocard_header}}</h5>
+                  <p>{{summary_section_Data?.ranking_card?.infocard_body}}</p>
                 </div>
               </div>
             </div>
@@ -34,12 +33,12 @@
                 </div>
                 <ul>
                   <li>
-                    <span style="background-color: #EC1111;"></span>
-                    2 High Impact Issue
+                    <span style="background-color: var(--main2);"></span>
+                    {{bureau?.positive}} Positive factors observed
                   </li>
                   <li>
-                    <span style="background-color: #FF7B24;"></span>
-                    2 Medium Impact Issue
+                    <span style="background-color: #EC1111;"></span>
+                    {{bureau?.medium}} Critical issues to act on
                   </li>
                 </ul>
               </div>
@@ -50,12 +49,12 @@
                 </div>
                 <ul>
                   <li>
-                    <span style="background-color: #EC1111;"></span>
-                    6 High Impact Issue
+                    <span style="background-color: var(--main2);"></span>
+                    {{banking?.positive}} Positive factors observed
                   </li>
                   <li>
-                    <span style="background-color: #FF7B24;"></span>
-                    2 Medium Impact Issue
+                    <span style="background-color: #EC1111;"></span>
+                    {{banking?.medium}} Critical issues to act on
                   </li>
                 </ul>
               </div>
@@ -66,12 +65,12 @@
                 </div>
                 <ul>
                   <li>
-                    <span style="background-color: #EC1111;"></span>
-                    1 High Impact Issue
+                    <span style="background-color: var(--main2);"></span>
+                    {{gst?.positive}} Positive factors observed
                   </li>
                   <li>
-                    <span style="background-color: #FF7B24;"></span>
-                    2 Medium Impact Issue
+                    <span style="background-color: #EC1111;"></span>
+                    {{gst?.medium}} Critical issues to act on
                   </li>
                 </ul>
               </div>
@@ -122,12 +121,12 @@
                         </div>
                         <ul>
                           <li>
-                            <span style="background-color: #EC1111;"></span>
-                            2 High Impact Issue
+                            <span style="background-color: var(--main2);"></span>
+                            {{bureau?.positive}} Positive factors observed
                           </li>
                           <li>
-                            <span style="background-color: #FF7B24;"></span>
-                            2 Medium Impact Issue
+                            <span style="background-color: #EC1111;"></span>
+                            {{bureau?.medium}} Critical issues to act on
                           </li>
                         </ul>
                       </div>
@@ -138,12 +137,12 @@
                         </div>
                         <ul>
                           <li>
-                            <span style="background-color: #EC1111;"></span>
-                            6 High Impact Issue
+                            <span style="background-color: var(--main2);"></span>
+                            {{banking?.positive}} Positive factors observed
                           </li>
                           <li>
-                            <span style="background-color: #FF7B24;"></span>
-                            2 Medium Impact Issue
+                            <span style="background-color: #EC1111;"></span>
+                            {{banking?.medium}} Critical issues to act on
                           </li>
                         </ul>
                       </div>
@@ -154,12 +153,12 @@
                         </div>
                         <ul>
                           <li>
-                            <span style="background-color: #EC1111;"></span>
-                            1 High Impact Issue
+                            <span style="background-color: var(--main2);"></span>
+                            {{gst?.positive}} Positive factors observed
                           </li>
                           <li>
-                            <span style="background-color: #FF7B24;"></span>
-                            2 Medium Impact Issue
+                            <span style="background-color: #EC1111;"></span>
+                            {{gst?.medium}} Critical issues to act on
                           </li>
                         </ul>
                       </div>

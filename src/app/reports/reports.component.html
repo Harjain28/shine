@@ -60,29 +60,28 @@
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="boxRight">
-              <h3>Your Key Takeaway</h3>
-              <p>Preparing you for the perfect business loan</p>
+              <h3>{{headerSection?.Key_Insights_box?.header}}</h3>
+              <p>{{headerSection?.Key_Insights_box?.subheader}}</p>
       
               <div class="boxOne">
                 <div class="progress-containerRound">
-                  <mat-progress-spinner [value]="progressValue" [color]="potentialColor" mode="determinate" strokeWidth="8" class="combined-spinner"></mat-progress-spinner>
-                  <img class="iconSpiner" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plane.png" alt="">
+                  <img class="iconSpiner" src={{Key_Insights_box?.stage_icon}} alt="">
                 </div>
                 
                 <div class="content">
-                  <h5>Your Potential</h5>
+                  <h5>{{headerSection?.Key_Insights_box?.infocard_header}}</h5>
                   <span [style.color]="potentialColor">Level {{this.reportsData?.report?.potentialStage}}</span>
-                  <small>Take action to improve loan potential</small>
+                  <small>{{Key_Insights_box?.stage_description}}</small>
                 </div>
               </div>
               <div class="topBorder">
                 <div class="boxTwo">
                     <h5>{{criticalTotal}}</h5>
-                    <small>critical issues to address today</small>
+                    <small>{{headerSection?.Key_Insights_box?.positive_description}}</small>
                 </div>
                 <div class="boxThree">
                   <h5>{{mediumTotal}}</h5>
-                  <small>critical issues to address today</small>
+                  <small>{{headerSection?.Key_Insights_box?.critical_description}}</small>
                 </div>
               </div>
       
@@ -136,7 +135,7 @@
   <!-- BankingBalance-Section End -->
 
   <!-- ActionImprove-Section Start -->
-  <app-actions-required [sampleReportsData] = "sampleData"></app-actions-required>
+  <app-actions-required [ActionReqReportsData] = "reportsData"></app-actions-required>
   <!-- ActionImprove-Section End -->
 
   <!-- ProbabilityLoan-Section Start -->
