@@ -693,7 +693,7 @@ export const reportPageJson =
         "potentialProbability": 0.2
       },
       {
-        "lender": "Godrej Finance Limited",
+        "lender": "Godrej",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },

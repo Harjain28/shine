@@ -393,112 +393,128 @@ export const reportStatciData =
         "current_roi": 0.21,
         "current_max_loan": 700000,
         "potential_roi": 0.18,
-        "potential_max_loan": 1000000 
+        "potential_max_loan": 1000000,
+        "key": "ABFL STUL"
         },
         {"name": "Protium",
-        "logo": "",
+        "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/protium.jpg",
         "current_roi": 0.21,
         "current_max_loan": 3500000,
         "potential_roi": 0.18,
-        "potential_max_loan": 5000000
+        "potential_max_loan": 5000000,
+        "key": "Protium"
         },
         {"name": "Credit Saison",
         "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/creditsaison.jpg",
         "current_roi": 0.24,
         "current_max_loan": 70000,
         "potential_roi": 0.19,
-        "potential_max_loan":100000 
+        "potential_max_loan":100000,
+        "key": "Credit Saison"
         },
         {"name": "Lendingkart",
         "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/lendingkart.jpg",
         "current_roi": 0.25,
         "current_max_loan": 2450000,
         "potential_roi": 0.19,
-        "potential_max_loan": 3500000
+        "potential_max_loan": 3500000,
+        "key": "Lendingkart"
         },
         {"name": "Faircent",
         "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/faircent.jpg",
         "current_roi": 0.26,
         "current_max_loan": 700000,
         "potential_roi": 0.25,
-        "potential_max_loan": 1000000
+        "potential_max_loan": 1000000,
+        "key": "Faircent"
         },
         {"name": "Indifi",
         "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/indifi.jpg",
         "current_roi": 0.23,
         "current_max_loan": 2100000,
         "potential_roi": 0.19,
-        "potential_max_loan": 3000000 
+        "potential_max_loan": 3000000,
+        "key": "Indifi"
         },
         {"name": "Flexiloans",
         "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/flexiloans.jpg",
         "current_roi": 0.23,
         "current_max_loan": 2100000,
         "potential_roi": 0.18,
-        "potential_max_loan": 3000000 
+        "potential_max_loan": 3000000,
+        "key": "Flexiloans" 
         },
         {"name": "Bajaj Finserv",
         "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/bajaj.jpg",
         "current_roi": 0.19,
         "current_max_loan": 5250000,
         "potential_roi": 0.16,
-        "potential_max_loan": 7500000
+        "potential_max_loan": 7500000,
+        "key": "Bajaj"
         },
         {"name": "Tata Capital",
         "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/tatacapital.jpg",
         "current_roi": 0.21,
         "current_max_loan": 5250000,
         "potential_roi": 0.18,
-        "potential_max_loan": 7500000
+        "potential_max_loan": 7500000,
+        "key": "Tata"
         },
         {"name": "LTFS",
         "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/lt_finance.jpg",
         "current_roi": 0.21,
         "current_max_loan": 3500000,
         "potential_roi": 0.18,
-        "potential_max_loan": 5000000
+        "potential_max_loan": 5000000,
+        "key": "LTFS"
         },
         {"name": "Deutsche Bank",
         "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/db.jpg",
         "current_roi": 0.16,
         "current_max_loan": 7000000,
         "potential_roi": 0.15,
-        "potential_max_loan": 10000000
+        "potential_max_loan": 10000000,
+        "key": "DB"
         },
         {"name": "Poonawalla Fincorp",
         "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/poonawalla.jpg",
         "current_roi": 0.22,
         "current_max_loan": 3500000,
         "potential_roi": 0.18,
-        "potential_max_loan": 5000000
+        "potential_max_loan": 5000000,
+        "key": "Poonawala"
         },
         {"name": "Neogrowth Credit",
         "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/neogrowth.jpg",
         "current_roi": 0.30,
         "current_max_loan": 5250000,
         "potential_roi": 0.18,
-        "potential_max_loan": 7500000
+        "potential_max_loan": 7500000,
+        "key": "Neogrowth"
         },
         {"name": "Ambit",
         "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/ambit.jpg",
         "current_roi": 0.22,
         "current_max_loan": 3500000,
         "potential_roi": 0.18,
-        "potential_max_loan": 5000000
+        "potential_max_loan": 5000000,
+        "key": "Ambit"
         },
         {"name": "Godrej Capital",
-        "logo": "",
+        "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/godrej-cap.jpg",
         "current_roi": 0.22,
         "current_max_loan": 3500000,
         "potential_roi": 0.18,
-        "potential_max_loan": 5000000
+        "potential_max_loan": 5000000,
+        "key": "Godrej"
         },
         {"name": "IIFL",
         "logo": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/lenders/iifl.jpg",
         "current_roi": 0.22,
         "current_max_loan": 3500000,
         "potential_roi": 0.18,
-        "potential_max_loan": 5000000
+        "potential_max_loan": 5000000,
+        "key": "IIFL"
         },
     ]
 }
