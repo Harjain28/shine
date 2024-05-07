@@ -26,8 +26,8 @@ import { vpoorBureauJSON } from '../JsonFiles/v_poor_bureau';
 import { NoBureauComponent } from './no-bureau/no-bureau.component';
 import { NoGstComponent } from './no-gst/no-gst.component';
 import { MaterialModule } from '../material.module';
+import { noGSTJSON } from '../JsonFiles/no_gst';
 import { nogstJSON } from '../JsonFiles/nogst';
-
 
 @Component({
   selector: 'app-reports',
@@ -102,6 +102,7 @@ export class ReportsComponent {
   level: any;
   levelArray: any;
   potentialColor: any;
+  isShowNoGST: boolean = false;
 
   constructor(private api: ApiService, private cdr: ChangeDetectorRef,private router: Router,) {}
 
@@ -156,13 +157,13 @@ export class ReportsComponent {
     } else if (fileName === 'no_bureau.json') {
       this.reportsData = noBureauJSON;
       this.isShowNoBureau = true;
-
     } else if (fileName === 'poor_bureau.json') {
       this.reportsData = poorBureauJSON;
+    }  else if (fileName === 'no_gst.json') {
+      this.reportsData = noGSTJSON;
+      this.isShowNoGST = true;
     } else if (fileName === 'vpoor_bureau.json') {
       this.reportsData = vpoorBureauJSON;
-    } else if (fileName === 'nogst.json') {
-      this.reportsData === nogstJSON;
     } else {
       this.reportsData = reportPageJson;
     }

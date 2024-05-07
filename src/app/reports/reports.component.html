@@ -119,7 +119,14 @@
   </div>
 
   <!-- GST-Filings-Section Start -->
-  <app-gst-filling [gstData]="reportsData"></app-gst-filling>
+  <ng-container *ngIf="!isShowNoGST">
+    <app-gst-filling [gstData]="reportsData"></app-gst-filling>
+  </ng-container>
+    <!-- Two-plus-Section End -->
+  <ng-container *ngIf="isShowNoGST">
+   <app-no-gst></app-no-gst>
+  </ng-container>
+
   <!-- GST-Filings-Section End -->
 
   <!-- <app-no-gst></app-no-gst> -->
