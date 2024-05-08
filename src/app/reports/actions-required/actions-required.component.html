@@ -1,209 +1,216 @@
 <div class="actionImprove section_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10 col-md-12 m-auto">
-          <div class="text">
-            <h3>{{summary_section_Data?.header}}</h3>
-            <p>{{summary_section_Data?.subheader}}</p>
-          </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-md-12 m-auto">
+        <div class="text">
+          <h3>{{summary_section_Data?.header}}</h3>
+          <p>{{summary_section_Data?.subheader}}</p>
         </div>
-        <div class="col-lg-5 col-md-5 col-sm-12 mb-3 mhidden">
-          <div class="improveBox">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-              <h3>{{summary_section_Data?.ranking_card?.header}}</h3>
-              <img class="numberImg" src={{imgUrlDesktop}} alt="">
-              <div class="howBox">
-                <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png" alt="">
-                <div class="content">
-                  <h5>{{summary_section_Data?.ranking_card?.infocard_header}}</h5>
-                  <p>{{summary_section_Data?.ranking_card?.infocard_body}}</p>
-                </div>
+      </div>
+      <div class="col-lg-5 col-md-5 col-sm-12 mb-3 mhidden">
+        <div class="improveBox">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <h3>{{summary_section_Data?.ranking_card?.header}}</h3>
+            <img class="numberImg" src={{imgUrlDesktop}} alt="">
+            <div class="howBox">
+              <img
+                src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png"
+                alt="">
+              <div class="content">
+                <h5>{{summary_section_Data?.ranking_card?.infocard_header}}</h5>
+                <p>{{summary_section_Data?.ranking_card?.infocard_body}}</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-7 col-md-7 col-sm-12 mb-3 mhidden">
-          <div class="improveBox">
-            <h3>{{summary_section_Data?.summary?.header}}</h3>
-            <div class="summaryBox">
-              <div class="box">
-                <div class="summaryContent">
-                  <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/credit_score.png" alt="">
-                  <span>{{summary_section_Data?.summary?.bureau_card?.header}}</span>
-                </div>
-                <ul>
-                  <li>
-                    <span style="background-color: var(--main2);"></span>
-                    {{bureau?.positive}} Positive factors observed
-                  </li>
-                  <li>
-                    <span style="background-color: #EC1111;"></span>
-                    {{bureau?.medium}} Critical issues to act on
-                  </li>
-                </ul>
+      </div>
+      <div class="col-lg-7 col-md-7 col-sm-12 mb-3 mhidden">
+        <div class="improveBox">
+          <h3>{{summary_section_Data?.summary?.header}}</h3>
+          <div class="summaryBox">
+            <div class="box">
+              <div class="summaryContent">
+                <img
+                  src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/credit_score.png"
+                  alt="">
+                <span>{{summary_section_Data?.summary?.bureau_card?.header}}</span>
               </div>
-              <div class="box">
-                <div class="summaryContent">
-                  <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/banking_blue.png" alt="">
-                  <span>{{summary_section_Data?.summary?.banking_card?.header}}</span>
-                </div>
-                <ul>
-                  <li>
-                    <span style="background-color: var(--main2);"></span>
-                    {{banking?.positive}} Positive factors observed
-                  </li>
-                  <li>
-                    <span style="background-color: #EC1111;"></span>
-                    {{banking?.medium}} Critical issues to act on
-                  </li>
-                </ul>
-              </div>
-              <div class="box">
-                <div class="summaryContent">
-                  <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/gst.png" alt="">
-                  <span>{{summary_section_Data?.summary?.gst_card?.header}}</span>
-                </div>
-                <ul>
-                  <li>
-                    <span style="background-color: var(--main2);"></span>
-                    {{gst?.positive}} Positive factors observed
-                  </li>
-                  <li>
-                    <span style="background-color: #EC1111;"></span>
-                    {{gst?.medium}} Critical issues to act on
-                  </li>
-                </ul>
-              </div>
-  
-             
+              <ul>
+                <li>
+                  <span style="background-color: var(--main2);"></span>
+                  {{bureau?.positive}} Positive factors observed
+                </li>
+                <li>
+                  <span style="background-color: #EC1111;"></span>
+                  {{bureau?.medium}} Critical issues to act on
+                </li>
+              </ul>
             </div>
+            <div class="box">
+              <div class="summaryContent">
+                <img
+                  src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/banking_blue.png"
+                  alt="">
+                <span>{{summary_section_Data?.summary?.banking_card?.header}}</span>
+              </div>
+              <ul>
+                <li>
+                  <span style="background-color: var(--main2);"></span>
+                  {{banking?.positive}} Positive factors observed
+                </li>
+                <li>
+                  <span style="background-color: #EC1111;"></span>
+                  {{banking?.medium}} Critical issues to act on
+                </li>
+              </ul>
+            </div>
+            <div class="box">
+              <div class="summaryContent">
+                <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/gst.png"
+                  alt="">
+                <span>{{summary_section_Data?.summary?.gst_card?.header}}</span>
+              </div>
+              <ul>
+                <li>
+                  <span style="background-color: var(--main2);"></span>
+                  {{gst?.positive}} Positive factors observed
+                </li>
+                <li>
+                  <span style="background-color: #EC1111;"></span>
+                  {{gst?.medium}} Critical issues to act on
+                </li>
+              </ul>
+            </div>
+
+
           </div>
         </div>
+      </div>
 
-        <div class="mobileSilderView dhidden">
-          <owl-carousel-o [options]="customOptions4">
-            <ng-container>
-              <ng-template carouselSlide>
-                <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
-                  <div class="improveBox" style="margin: 10px;">
-                    <!-- <div class="plus">
+      <div class="mobileSilderView dhidden">
+        <owl-carousel-o [options]="customOptions4">
+          <ng-container>
+            <ng-template carouselSlide>
+              <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
+                <div class="improveBox" style="margin: 10px;">
+                  <!-- <div class="plus">
                       <span>+</span>
                     </div> -->
 
-                    <div class="col-lg-11 col-md-12 col-sm-12">
-                      <h3>{{summary_section_Data?.ranking_card?.header}}</h3>
-                      <img class="numberImg" src="{{imgUrlMobile}}" alt="">
-                      <div class="howBox">
-                        <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png" alt="">
-                        <div class="content">
-                          <h5>How to Improve</h5>
-                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,</p>
-                        </div>
+                  <div class="col-lg-11 col-md-12 col-sm-12">
+                    <h3>{{summary_section_Data?.ranking_card?.header}}</h3>
+                    <img class="numberImg" src="{{imgUrlMobile}}" alt="">
+                    <div class="howBox">
+                      <img
+                        src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png"
+                        alt="">
+                      <div class="content">
+                        <h5>{{summary_section_Data?.ranking_card?.infocard_header}}</h5>
+                        <p>{{summary_section_Data?.ranking_card?.infocard_body}}</p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </ng-template>
-              
-              <ng-template carouselSlide>
-                <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
-                  <div class="improveBox" style="margin: 10px;">
-                    <h3>{{summary_section_Data?.summary?.header}}</h3>
-                    <!-- <div class="plus">
+              </div>
+            </ng-template>
+
+            <ng-template carouselSlide>
+              <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
+                <div class="improveBox" style="margin: 10px;">
+                  <h3>{{summary_section_Data?.summary?.header}}</h3>
+                  <!-- <div class="plus">
                       <span>+</span>
                     </div> -->
-                    <div class="summaryBox">
-                      <div class="box">
-                        <div class="summaryContent">
-                          <img src="./assets/LandingPage/Bureau.svg" alt="">
-                          <span>{{summary_section_Data?.summary?.bureau_card?.header}}</span>
-                        </div>
-                        <ul>
-                          <li>
-                            <span style="background-color: var(--main2);"></span>
-                            {{bureau?.positive}} Positive factors observed
-                          </li>
-                          <li>
-                            <span style="background-color: #EC1111;"></span>
-                            {{bureau?.medium}} Critical issues to act on
-                          </li>
-                        </ul>
+                  <div class="summaryBox">
+                    <div class="box">
+                      <div class="summaryContent">
+                        <img src="./assets/LandingPage/Bureau.svg" alt="">
+                        <span>{{summary_section_Data?.summary?.bureau_card?.header}}</span>
                       </div>
-                      <div class="box">
-                        <div class="summaryContent">
-                          <img src="./assets/LandingPage/Banking.svg" alt="">
-                          <span>{{summary_section_Data?.summary?.banking_card?.header}}</span>
-                        </div>
-                        <ul>
-                          <li>
-                            <span style="background-color: var(--main2);"></span>
-                            {{banking?.positive}} Positive factors observed
-                          </li>
-                          <li>
-                            <span style="background-color: #EC1111;"></span>
-                            {{banking?.medium}} Critical issues to act on
-                          </li>
-                        </ul>
+                      <ul>
+                        <li>
+                          <span style="background-color: var(--main2);"></span>
+                          {{bureau?.positive}} Positive factors observed
+                        </li>
+                        <li>
+                          <span style="background-color: #EC1111;"></span>
+                          {{bureau?.medium}} Critical issues to act on
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="box">
+                      <div class="summaryContent">
+                        <img src="./assets/LandingPage/Banking.svg" alt="">
+                        <span>{{summary_section_Data?.summary?.banking_card?.header}}</span>
                       </div>
-                      <div class="box">
-                        <div class="summaryContent">
-                          <img src="./assets/LandingPage/gsticon.svg" alt="">
-                          <span>{{summary_section_Data?.summary?.gst_card?.header}}</span>
-                        </div>
-                        <ul>
-                          <li>
-                            <span style="background-color: var(--main2);"></span>
-                            {{gst?.positive}} Positive factors observed
-                          </li>
-                          <li>
-                            <span style="background-color: #EC1111;"></span>
-                            {{gst?.medium}} Critical issues to act on
-                          </li>
-                        </ul>
+                      <ul>
+                        <li>
+                          <span style="background-color: var(--main2);"></span>
+                          {{banking?.positive}} Positive factors observed
+                        </li>
+                        <li>
+                          <span style="background-color: #EC1111;"></span>
+                          {{banking?.medium}} Critical issues to act on
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="box">
+                      <div class="summaryContent">
+                        <img src="./assets/LandingPage/gsticon.svg" alt="">
+                        <span>{{summary_section_Data?.summary?.gst_card?.header}}</span>
                       </div>
-          
-                      <div class="plusBox mhidden">
-                        <b>+</b>
-                        <span>VIEW DETAILS</span>
-                      </div>
+                      <ul>
+                        <li>
+                          <span style="background-color: var(--main2);"></span>
+                          {{gst?.positive}} Positive factors observed
+                        </li>
+                        <li>
+                          <span style="background-color: #EC1111;"></span>
+                          {{gst?.medium}} Critical issues to act on
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="plusBox mhidden">
+                      <b>+</b>
+                      <span>VIEW DETAILS</span>
                     </div>
                   </div>
                 </div>
-              </ng-template>
-            </ng-container>
-          </owl-carousel-o>
-        </div>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
 
-        <div class="col-lg-12 col-md-12 col-sm-12 mb-3 mt-3">
-          <div class="overollScore">
-            <h2>Tips to Improve Your Overall Score</h2>
-            <div class="row boxRight">
-              <div class="col-lg-4 col-md-6 col-sm-12 mb-3 border-right">
-                <div class="overallBox">
-                  <img src="../../assets/LandingPage/01Bureau.svg" alt="">
-                  <div class="text">
-                    <h5>{{summary_section_Data?.tips_card?.bureau_card?.header}}</h5>
-                    <p>{{bureauSummary}}</p>
-                  </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 mb-3 mt-3">
+        <div class="overollScore">
+          <h2>Tips to Improve Your Overall Score</h2>
+          <div class="row boxRight">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-3 border-right">
+              <div class="overallBox">
+                <img src="../../assets/LandingPage/01Bureau.svg" alt="">
+                <div class="text">
+                  <h5>{{summary_section_Data?.tips_card?.bureau_card?.header}}</h5>
+                  <p>{{bureauSummary}}</p>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-6 col-sm-12 mb-3 border-right">
-                <div class="overallBox">
-                  <img src="../../assets/LandingPage/02Banking.svg" alt="">
-                  <div class="text">
-                    <h5>{{summary_section_Data?.tips_card?.banking_card?.header}}</h5>
-                    <p>{{bankingSummary}}</p>
-                  </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-3 border-right">
+              <div class="overallBox">
+                <img src="../../assets/LandingPage/02Banking.svg" alt="">
+                <div class="text">
+                  <h5>{{summary_section_Data?.tips_card?.banking_card?.header}}</h5>
+                  <p>{{bankingSummary}}</p>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-6 col-sm-12 mb-3 border-right">
-                <div class="overallBox">
-                  <img src="../../assets/LandingPage/03gsticon.svg" alt="">
-                  <div class="text">
-                    <h5>{{summary_section_Data?.tips_card?.gst_card?.header}}</h5>
-                    <p>{{gstSummary}}</p>
-                  </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-3 border-right">
+              <div class="overallBox">
+                <img src="../../assets/LandingPage/03gsticon.svg" alt="">
+                <div class="text">
+                  <h5>{{summary_section_Data?.tips_card?.gst_card?.header}}</h5>
+                  <p>{{gstSummary}}</p>
                 </div>
               </div>
             </div>
@@ -212,3 +219,4 @@
       </div>
     </div>
   </div>
+</div>

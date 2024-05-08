@@ -54,6 +54,9 @@ export class PaymentComponent {
   fName: any;
   lName: any;
   email: any;
+  isInvalidCoupon: boolean = false;
+  code: any;
+
 
 
   constructor(
@@ -106,26 +109,36 @@ export class PaymentComponent {
       this.discountSection = false;
       this.calGST = ((this.filteredData?.Price)*18)/100;
       this.total = parseInt(this.filteredData?.Price) + this.calGST;
+      this.code = "";
+    }
+
+    couponCode() {
+      const params = { ...this.paramsObject.params };
+      this.api.getwithHeader(`api/Remediation/PaymentCouponCheck?couponCode=${this.couponInput}`, params)
+        .subscribe({
+          next: (res: any) => {
+            if (res?.success === true) {
+              this.discountSection = true;
+              this.code = this.couponInput;
+              console.log(this.code,"kkk")
+              if (res.hasOwnProperty('percent') || res.hasOwnProperty('flatPrice')) {
+                this.isInvalidCoupon = false;
+                this.discountPrice = res.percent ? (this.filteredData.Price * res.percent) / 100 : res.flatPrice;
+                this.calGST = ((this.filteredData.Price - this.discountPrice) * 18) / 100;
+                this.total = parseInt(this.filteredData.Price) + this.calGST - this.discountPrice;
+                console.log(this.total);
+              }
+            }
+          },
+          error: (error: any) => {
+            this.isInvalidCoupon = true;
+          }
+        });
     }
     
-    couponCode(){
-      this.discountSection = true;
-      if(this.couponInput === this.couponValue1){
-        this.discountPrice =100;
-        this.calGST = ((this.filteredData?.Price - this.discountPrice)*18)/100;
-
-        this.total = parseInt(this.filteredData?.Price) + this.calGST - this.discountPrice;
-      }
-      if(this.couponInput === this.couponValue2){
-        this.discountPrice =200;
-        this.calGST = ((this.filteredData?.Price - this.discountPrice)*18)/100;
-        this.total = parseInt(this.filteredData?.Price) + this.calGST - this.discountPrice;
-
-      }
-    }
 
     onInputChange(): void {
-      this.isButtonDisabled = (this.couponInput.trim() !== this.couponValue1) && (this.couponInput.trim() !== this.couponValue2);
+      this.isButtonDisabled = !this.couponInput.trim();
     }
   
 
@@ -170,7 +183,7 @@ export class PaymentComponent {
     requestData['custMobile'] = this.mobile;
     requestData['custMail'] = this.email;
     requestData['returnUrl'] = 'https://borrowerportal-staging.creditenable.com/api/Remediation/PGResponse';
-
+    requestData['couponCode'] = this.code;
 
     const params = { ...this.paramsObject.params };
     this.api

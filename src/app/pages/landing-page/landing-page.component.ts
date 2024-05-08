@@ -189,7 +189,7 @@ export class LandingPageComponent {
     this.state.removeItem();
  //   this.localStorage.removeSomeItem();
     this.breakpointObserver
-    .observe(['(min-width: 500px)'])
+    .observe(['(min-width: 600px)'])
     .subscribe((state: BreakpointState) => {
       if (state.matches) {
         this.showDesktop = true;

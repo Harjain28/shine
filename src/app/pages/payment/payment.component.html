@@ -41,28 +41,30 @@
             </li>
             <li *ngIf = "!discountSection">
               <span>
-                <div class="from-control">
-                  <input type="text" placeholder="Enter Coupon Code" [(ngModel)]="couponInput" (input)="onInputChange()">
+                <div class="from-control" [ngClass]="{ 'invalid-coupon': isInvalidCoupon  }">
+                  <input type="text" [ngClass]="{ 'invalid-coupon': isInvalidCoupon }" placeholder="Enter Coupon Code" [(ngModel)]="couponInput" (input)="onInputChange()" >
                   <button class="btn" [disabled]="isButtonDisabled" (click)="couponCode()">Apply</button>
                 </div>
+                <div *ngIf="isInvalidCoupon" class="error-text">Invalid coupon</div>
+
               </span>
             </li>
             <li *ngIf = "discountSection">
-              <span>Discount Offer (<span>Sample Copoun Applied</span>) <button class="btn cancel" (click)="cancelCoupon()"><img src="./assets/LandingPage/crossIcon.svg" alt=""></button></span>
+              <span>Discount Offer (<span>Coupon Code Applied</span>) <button class="btn cancel" (click)="cancelCoupon()"><img src="./assets/LandingPage/crossIcon.svg" alt=""></button></span>
               <span><b class="color">₹{{discountPrice}}</b></span>
             </li>
             
             <li *ngIf= "state !== 'Maharashtra'">
               <span>GST</span>
-              <span><b>₹{{calGST}}</b></span>
+              <span><b>₹{{calGST | number:'1.2-2'}}</b></span>
             </li>
             <li  *ngIf= "state === 'Maharashtra'">
               <span>CGST</span>
-              <span><b>₹{{calGST/2}}</b></span>
+              <span><b>₹{{calGST/2 | number:'1.2-2'}}</b></span>
             </li>
             <li  *ngIf= "state === 'Maharashtra'">
               <span>SGST</span>
-              <span><b>₹{{calGST/2}}</b></span>
+              <span><b>₹{{calGST/2 | number:'1.2-2'}}</b></span>
             </li>
             <li>
               <span>Total Payable Amount</span>

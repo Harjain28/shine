@@ -34,7 +34,7 @@ export class Mixed3Component {
   ngAfterViewInit(): void {
   
     this.breakpointObserver
-    .observe(['(min-width: 400px)'])
+    .observe(['(min-width: 600px)'])
     .subscribe((state: BreakpointState) => {
       if (state.matches) {
         const canvas = this.chartCanvas3.nativeElement as HTMLCanvasElement;
@@ -43,7 +43,7 @@ export class Mixed3Component {
         
       } else {
         const canvas = this.chartCanvas3.nativeElement as HTMLCanvasElement;
-        canvas.width = 309; 
+        canvas.width = 270; 
         canvas.height = 206; 
       }
     });

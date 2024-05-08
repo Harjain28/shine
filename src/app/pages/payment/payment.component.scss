@@ -56,6 +56,17 @@
 //     border-color: black;
 // }
 
+
+.invalid-coupon {
+  background-color: #FFCECE !important;
+  border: 1px solid #FFCECE !important;
+}
+
+.error-text {
+  color: red;
+  font-size: 12px; /* Adjust font size as needed */
+}
+
 .headerBackground{
   background-color: var(--main1);
   width: 100%;
@@ -186,6 +197,7 @@
               border: 1px solid #B5B5B5;
               border-radius: 11px;
               padding: 4px 6px;
+            
 
               input{
                 margin: 0px;
