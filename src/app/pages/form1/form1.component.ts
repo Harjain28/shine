@@ -129,7 +129,7 @@ export class Form1Component implements OnInit {
       this.showValidatePANError = true;
     }
 
-    if (this.form1.valid) { 
+    if (this.form1.valid && this.validatePAN && this.validatePin) { 
     this.api.post(`api/Remediation/GetOTP`, requestData, params).subscribe({ next: (res: any) => {
           if (res.success) {
 
