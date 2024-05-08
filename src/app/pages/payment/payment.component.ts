@@ -123,7 +123,7 @@ export class PaymentComponent {
               console.log(this.code,"kkk")
               if (res.hasOwnProperty('percent') || res.hasOwnProperty('flatPrice')) {
                 this.isInvalidCoupon = false;
-                this.discountPrice = res.percent ? (this.filteredData.Price * res.percent) / 100 : res.flatPrice;
+                this.discountPrice = res?.percent ? (this.filteredData.Price * res?.percent) / 100 : res?.flatPrice;
                 this.calGST = ((this.filteredData.Price - this.discountPrice) * 18) / 100;
                 this.total = parseInt(this.filteredData.Price) + this.calGST - this.discountPrice;
                 console.log(this.total);
