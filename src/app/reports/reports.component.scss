@@ -1853,6 +1853,7 @@
                         gap: 5px;
                         flex-wrap: wrap;
                         margin-top: -10px;
+                        height: auto;
 
                         li {
                             padding: 6px 22px;
@@ -3336,6 +3337,20 @@
 
 
 @media (max-width: 767px) {
+
+    .poweredBy {
+    
+        .powerLogo {
+            display: block;
+    
+            span {
+                display: block;
+                margin: 0px;
+            }
+        }
+    }
+
+
     .topBannerHeader {
         padding: 50px 0px 0px;
 
@@ -3660,6 +3675,15 @@
                             }
                         }
                     }
+
+                    .currentChart{
+
+                        ul{
+                            li{
+                                width: 40%;
+                            }
+                        }
+                    }
                 }
             }
 
@@ -3676,6 +3700,19 @@
                     span {
                         font-size: 12px;
                         padding: 6px 16px;
+                    }
+                }
+            }
+
+            .creditContent{
+
+                .currentChart{
+
+                    ul{
+
+                        li{
+                            width: 40%;
+                        }
                     }
                 }
             }
@@ -3727,7 +3764,7 @@
                 }
 
                 ul {
-                    width: 100%;
+                    width: 80%;
                     margin: 0 auto 10px;
                 }
             }
@@ -4175,6 +4212,11 @@
             padding: 24px;
             height: 100%;
             position: relative;
+
+            .numberImg{
+                width: 100%;
+                margin: 40px auto 10px;
+            }
 
             .plus {
                 position: absolute;

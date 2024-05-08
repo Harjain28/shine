@@ -751,7 +751,10 @@
               <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="!expandDebtRatioSection">
                 <div class="businessTurnover h-100" style="margin: 10px; min-height: 780px;" >
                   <div class="plus" (click)="expandDebtRatioBlock()">
-                    <span>+</span>
+                    <span>
+                      <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_normal.png" alt="">
+                      <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_hover.png" alt="">
+                    </span>
                   </div>
                   <h3>{{risk_section?.debt_turnover_card?.header}}</h3>
           <p>{{risk_section?.debt_turnover_card?.subheader}}</p>
