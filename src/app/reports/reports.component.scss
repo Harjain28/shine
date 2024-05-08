@@ -1826,7 +1826,7 @@
                 &.scrollMonth {
 
                     ul {
-                        height: 100px;
+                        height: 130px;
 
                         &::-webkit-scrollbar {
                             display: none;
@@ -1852,8 +1852,7 @@
                         align-items: center;
                         gap: 5px;
                         flex-wrap: wrap;
-                        margin-top: -10px;
-                        height: auto;
+                        overflow: scroll;
 
                         li {
                             padding: 6px 22px;
@@ -3654,8 +3653,8 @@
                             justify-content: center;
 
                             img {
-                                width: auto;
-                                height: 110px;
+                                width: 110px;
+                                height: auto;
                             }
                         }
                     }
@@ -3680,7 +3679,7 @@
 
                         ul{
                             li{
-                                width: 40%;
+                                width: 50%;
                             }
                         }
                     }
@@ -3711,7 +3710,7 @@
                     ul{
 
                         li{
-                            width: 40%;
+                            width: 50% !important;
                         }
                     }
                 }
@@ -4183,6 +4182,11 @@
                     .smileImg {
                         display: flex;
                         justify-content: center;
+
+                        img{
+                            width: 110px;
+                            height: auto;
+                        }
                     }
                 }
             }
