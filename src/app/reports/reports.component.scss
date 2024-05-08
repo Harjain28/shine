@@ -1852,9 +1852,10 @@
                         align-items: center;
                         gap: 5px;
                         flex-wrap: wrap;
+                        margin-top: -10px;
 
                         li {
-                            padding: 8px 22px;
+                            padding: 6px 22px;
                             border: 1px solid #CECECE;
                             min-width: 44px;
                             display: flex;
@@ -2608,6 +2609,43 @@
     display: flex;
     align-items: center;
     justify-content: end;
+
+    .mat-mdc-progress-spinner {
+        --mdc-circular-progress-active-indicator-color: #6a2fc2;
+    }
+
+    .combined-spinner {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .iconSpiner {
+        position: absolute;
+        top: 20px;
+        width: 28px;
+        left: 5px;
+        transform: translate(50px, 20px);
+
+        b {
+            font-size: 11px;
+            transform: translate(7px, 0px);
+        }
+    }
+
+}
+
+.ProgressSpinner2 {
+    position: relative;
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    .mat-mdc-progress-spinner {
+        --mdc-circular-progress-active-indicator-color: #12ba9b;
+    }
 
     .combined-spinner {
         width: 60px !important;

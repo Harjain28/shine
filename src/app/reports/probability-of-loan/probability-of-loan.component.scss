@@ -1,0 +1,28 @@
+.mProgressSpinner {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+
+    .valueSpan {
+        color: #000000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+
+    }
+
+    .spinner{
+        position: relative;
+        .mat-mdc-progress-spinner {
+            --mdc-circular-progress-active-indicator-color: #6a2fc2;
+        }
+    }
+    .spinner2{
+        position: relative;
+        .mat-mdc-progress-spinner {
+            --mdc-circular-progress-active-indicator-color: #12ba9b;
+        }
+    }
+}
+

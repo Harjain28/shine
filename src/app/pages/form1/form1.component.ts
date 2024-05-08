@@ -12,6 +12,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { Location } from "@angular/common";
+
 
 @Component({
   selector: 'app-form1',
@@ -36,7 +38,7 @@ export class Form1Component implements OnInit {
 
 
 
-  constructor(private route: ActivatedRoute, public eventService: EventService, public router: Router, private api: ApiService ){
+  constructor(private route: ActivatedRoute,public location: Location, public eventService: EventService, public router: Router, private api: ApiService ){
     this.route.queryParamMap.subscribe((params) => {
       this.paramsObject = { ...params };
     });
@@ -57,7 +59,7 @@ export class Form1Component implements OnInit {
       phoneNumber: new FormControl("", [Validators.required,Validators.pattern("^[6-9]\\d{9}$"),Validators.maxLength(10),]),
       emailId: new FormControl("", {validators: [Validators.required,Validators.pattern("^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$"),],updateOn: "blur",}),
       pincode: new FormControl("", [Validators.required]),
-      busninessName: new FormControl("", [Validators.required,Validators.pattern("^[a-zA-Z &]+$"),]),
+      busninessName: new FormControl("", [Validators.required]),
       businessTurnover: new FormControl("", [Validators.required]),
       propertyOwnership: new FormControl("", [Validators.required]),
       businessPan: new FormControl("", [Validators.required]),
@@ -143,10 +145,18 @@ export class Form1Component implements OnInit {
           // this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
           // Handle any errors 
           // this.isSubmit = false;
+          if(error.errors.Pincode){
+            this.showValidatepinError = true;
+          }
+          if(error.errors.BusinessPan){
+          this.showValidatePANError = true;
+          }
+           this.isSubmit = false;
+
+
         },
         complete: () => {
           ('Request complete');
-          this.isSubmit = false;
         }
       });
       }
@@ -173,13 +183,19 @@ export class Form1Component implements OnInit {
       )
         .subscribe({
           next: (res: any) => {
+            if (res.valid == true) {
+
             if (typeof res === "boolean") {
               this.validatePAN = res;
             }
             if (res && typeof res === "object" && "valid" in res) {
               this.validatePAN = res.valid;
             }
-          },
+          }else{
+            this.validatePAN = false;
+              this.showValidatePANError = true;
+          }
+        },
           error: (error:any) => {
             this.validatePAN = true;
           },

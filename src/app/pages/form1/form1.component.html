@@ -134,8 +134,8 @@
 
 
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"
-                      [ngClass]="(form1.controls['pincode'].touched &&
-                                      form1.controls['pincode'].hasError('required')) || showValidatepinError  ? 'isvaliderror' :  ''">
+                      [ngClass]="form1.controls['pincode'].touched &&
+                                      form1.controls['pincode'].hasError('required') || showValidatepinError  ? 'isvaliderror' :  ''">
                       <mat-form-field appearance="fill">
                         <mat-label>Pin Code</mat-label>
                         <input matInput (keypress)="eventService.numberOnly($event, 'mobile')" formControlName="pincode"
