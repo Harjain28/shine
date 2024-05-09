@@ -64,7 +64,7 @@
 
 .error-text {
   color: red;
-  font-size: 12px; /* Adjust font size as needed */
+  font-size: 12px;
 }
 
 .headerBackground{
@@ -133,7 +133,6 @@
 
     p{
       font-size: 14px;
-      font-weight: 500;
       line-height: 22px;
       font-family: Poppins !important;
       color: #3f3f3f;
@@ -249,6 +248,39 @@
         color: #fff;
         font-family: Poppins !important;
       }
+    }
+
+    .alertBox{
+        border: 1px solid #E2E2E2;
+        border-radius: 10px;
+        padding: 12px 22px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 44px;
+
+        img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .downwardContent {
+
+           
+            p {
+                font-size: 13px;
+                font-weight: normal;
+                margin-bottom: 6px;
+                font-family: Poppins !important;
+                color: #3F3F3F;
+                line-height: 18px;
+                text-align: left;
+                padding: 0px 0px;
+            }
+
+            
+        }
+    
     }
   }
 
@@ -438,6 +470,38 @@
           }
         }
       }
+      .alertBox{
+        border: 1px solid #E2E2E2;
+        border-radius: 10px;
+        padding: 12px 22px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 44px;
+
+        img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .downwardContent {
+
+           
+            p {
+                font-size: 13px;
+                font-weight: normal;
+                margin-bottom: 6px;
+                font-family: Poppins !important;
+                color: #3F3F3F;
+                line-height: 18px;
+                text-align: left;
+                padding: 0px 0px;
+            }
+
+            
+        }
+    
+    }
     }
   
     .paymentPlan{

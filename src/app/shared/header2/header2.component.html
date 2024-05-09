@@ -98,8 +98,8 @@
                                 </div> -->
                                 <div class="nav-item"
                                     (mouseleave)="closeDropdown()">
-                                    <a [class.active]="router.url ==='/in/sectors'" class="nav-link dropdown-toggle"
-                                        data-bs-toggle="dropdown">Pricing
+                                    <a [class.active]="router.url ==='/in/pricing_group'" class="nav-link dropdown-toggle"
+                                        data-bs-toggle="dropdown" (click)="goToPricing()">Pricing
                                     </a>
                                 </div>
                                 <!-- <div class="nav-item"

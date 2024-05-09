@@ -32,34 +32,57 @@ export class LandingPageComponent {
     touchDrag: true,
     dots: true,
     autoplay: true,
-    navSpeed: 300,
     nav: false,
     margin: 10,
 
-    autoplayTimeout: 8000,
-    autoplaySpeed: 1500,
+    autoplayTimeout: 2000,
+    autoplaySpeed: 2000,
     // navText: ["", ""],
     // navText: ["<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>", "<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>"],
     responsive: {
       0: {
         items: 1,
-        skip_validateItems: true,
       },
       400: {
         items: 1,
-        skip_validateItems: true,
       },
       740: {
         items: 1,
-        skip_validateItems: true,
       },
       940: {
         items: 1,
-        skip_validateItems: true,
       },
     },
   };
 
+  customOptionKeys1: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: true,
+    dots: true,
+    autoplay: true,
+    nav: false,
+    margin: 10,
+
+    autoplayTimeout: 2000,
+    autoplaySpeed: 2000,
+    // navText: ["", ""],
+    // navText: ["<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>", "<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>"],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 1,
+      },
+      740: {
+        items: 1,
+      },
+      940: {
+        items: 1,
+      },
+    },
+  };
   customOptionTable: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -112,10 +135,12 @@ export class LandingPageComponent {
       0: {
         items: 1.1,
         skip_validateItems: true,
+        loop: true,
       },
       400: {
         items: 1.2,
         skip_validateItems: true,
+        loop: true,
       },
       740: {
         items: 2,

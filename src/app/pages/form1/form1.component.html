@@ -10,18 +10,15 @@
             <p class="pb-3 text-center text-white">Please fill in the details below to complete your registration.</p>
 
             <h1>Personal Details</h1>
-            <h3>Enter your information to create an account</h3>
+            <h3 style="font-weight: lighter;">Enter your information to create an account</h3>
 
             <div class="formSelect">
               <div class="example-container">
                 <form [formGroup]="form1">
-                  <div class="row">
-
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" [ngClass]="form1.controls['title'].touched &&
+                  <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12" [ngClass]="form1.controls['title'].touched &&
                                       form1.controls['title'].hasError('required')  ? 'isvaliderror' :  ''">
                       <mat-form-field appearance="fill">
-                        <mat-label>Salutation/Title</mat-label>
-                        <mat-select formControlName='title' placeholder="">
+                        <mat-select formControlName='title' placeholder="Mr.">
                           <mat-option value="Mr.">Mr.</mat-option>
                           <mat-option value="Ms.">Ms.</mat-option>
                           <mat-option value="Mrs.">Mrs.</mat-option>
@@ -36,6 +33,9 @@
                         Please complete this mandatory field.
                       </div>
                     </div>
+                  <div class="row">
+
+                    
 
 
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" [ngClass]=" form1.controls['firstName'].touched &&

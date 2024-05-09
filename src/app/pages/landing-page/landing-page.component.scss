@@ -350,7 +350,7 @@
     }
 
     .thisPlanSection{
-        background-image: url(../../../assets/LandingPage/blueLineBackground.png);
+     //   background-image: url(../../../assets/LandingPage/blueLineBackground.png);
         background-repeat: no-repeat;
         background-size: cover;
         width: 100%;
@@ -362,7 +362,7 @@
             margin-bottom: 28px;
 
             h3{
-                color: #fff;
+                color: #000000;
                 font-size: 30px;
                 line-height: 37px;
                 font-weight: 700;
@@ -371,7 +371,7 @@
             }
 
             p{
-                color: #fff;
+                color: #000000;
                 font-size: 14px;
                 line-height: 22px;
                 font-weight: normal;
@@ -382,11 +382,25 @@
 
         .planSilder{
 
+
+
             .box{
                 padding: 18px 30px;
                 background-color: #fff;
                 border-radius: 20px;
                 height: 560px;
+                border-width: 1px;
+                border-style: solid;
+
+                &.box1{
+                    border-color: #C3E128;
+                }
+                &.box2{
+                    border-color: var(--main1);
+                }
+                &.box3{
+                    border-color: var(--main2);
+                }
 
                 .userImg{
                     width: auto;
@@ -546,20 +560,23 @@
                 margin-bottom: 15px;
 
                 li {
-                    text-transform: uppercase;
                     color: #3F3F3F;
                     font-size: 14px;
                     line-height: 22px;
-                    font-weight: 600;
                     font-family: Poppins !important;
                     padding: 18px 30px 18px;
                     height: 100%;
                     width: -webkit-fill-available;
 
 
-                    &:nth-of-type(2) {
-                        background-color: #41C8AF20;
+                    &:nth-of-type(1) {
+                        font-weight: 600;
                     }
+                    &:nth-of-type(2) {
+                        color: #ffffff;
+                        background-color: #12BA9B;
+                    }
+                    
                 }
             }
         }
@@ -708,6 +725,7 @@
                 align-items: center;
                 justify-content: center;
                 margin: 0px auto 18px;
+                cursor: auto;
             }
 
             h3 {
@@ -810,6 +828,7 @@
         .yourRankingSilder {
 
             .improveBox {
+                width: 100%;
                 
                 img{
                     width: 100%;
@@ -821,7 +840,7 @@
                 background-color: var(--main1);
                 padding: 22px 30px;
                 border-radius: 10px;
-                margin-left: 20px;
+              //  margin-left: 20px;
 
                 &::before {
                     position: absolute;
@@ -1031,10 +1050,13 @@
                             flex-wrap: wrap;
 
                             &:nth-child(2){ 
-                                background-color: #41c8af20;
+                                background-color: #12BA9B;
                                 
                                 span{
-                                    color: var(--main2);
+                                    color: #ffffff;
+                                }
+                                p{
+                                    color: #ffffff;
                                 }
                             }
 

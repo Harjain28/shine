@@ -76,6 +76,18 @@
             <button class="btn" (click)="getForPaymentMethod()">Proceed to Payment</button>
           </div>
 
+          <div class="alertBox">
+              <img src="../../../assets/images/homeImage/alertBoxIcon.svg" alt="">
+              <div class="downwardContent">
+
+                <p>You will need to submit your 12-months Bank Statements of your Current or Savings Account to start the analysis.
+                  <br>Don't worry, we have an easy upload process.
+                </p>
+                
+              </div>
+            
+          </div>
+
           <div class="paymentBtn"  *ngIf="transactionFailed">
             <button class="btn" (click)="getForPaymentMethod()">Retry Payment</button>
           </div>
@@ -95,7 +107,7 @@
             <li>
               <span>Mobile Number</span>
               :
-              <span>91+ {{mobile}}</span>
+              <span>+91 {{mobile}}</span>
             </li>
             <li>
               <span>Company Name</span>

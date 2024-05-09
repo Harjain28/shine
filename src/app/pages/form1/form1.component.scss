@@ -100,6 +100,7 @@
                     }
                 }
             }
+            
 
             .checkBox {
                 margin-top: 29px;
@@ -167,6 +168,9 @@
                             }
                         }
                     }
+
+                   
+
                 }
             }
 
@@ -174,6 +178,7 @@
                 align-items: center;
                 display: flex;
                 justify-content: space-between;
+                gap: 10px;
 
                 a {
                     color: #12ba9b !important;
@@ -305,6 +310,12 @@
                         border-radius: 6px;
                         font-family: 'Poppins' !important;
                         position: relative;
+
+                        .mat-mdc-form-field-infix{
+                            .mat-mdc-floating-label{
+                                font-family: 'Poppins' !important;
+                            }
+                        }
                         
 
                         input {
@@ -336,6 +347,7 @@
                                 color: #818181;
                                 font-size: 16px !important;
                                 font-weight: 400;
+                                
 
                                 .mat-placeholder-required {
                                     display: none;

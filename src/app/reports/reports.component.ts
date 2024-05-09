@@ -176,12 +176,13 @@ export class ReportsComponent {
       (res: { stage: any }) => res.stage === this.Key_Insights_box.stage
     );
 
-    console.log(compare,"tat")
+    console.log(compare.stage,"tat")
     if(compare){
       this.progressValue = (compare.stage/5)*100;
       this.potentialColor = compare.color;
-      this.level = compare.stage;
     }
+    this.level = this.reportsData?.report?.potentialStage;
+
     
 
   }

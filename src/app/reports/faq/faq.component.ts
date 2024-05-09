@@ -25,10 +25,11 @@ export class FaqComponent {
       bullets: res?.bullets
     }));
 
-
-
-
-    
+    this.faqs = this.faqsData?.map((res: { Question: any; Answer: any; bullets: any;}) =>({
+      Question: res?.Question,
+      Answer: res?.Answer,
+      bullets: res?.bullets
+    }));
   }
 
 }

@@ -350,6 +350,23 @@
     }
 }
 
+.otpGap {
+
+    ng-otp-input {
+        font-family: 'Poppins' !important;
+
+
+        ::ng-deep {
+            .otp-input {
+                width: 40px !important;
+                height: 40px !important;
+
+            }
+        
+        }
+    }
+}
+
 @media (max-width: 767px) {
     .v2checksection {
 
@@ -460,13 +477,16 @@
     .otpGap {
 
         ng-otp-input {
+            font-family: 'Poppins' !important;
+
 
             ::ng-deep {
-
                 .otp-input {
                     width: 40px !important;
                     height: 40px !important;
+
                 }
+            
             }
         }
     }

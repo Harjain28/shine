@@ -8,23 +8,15 @@
     <h3>{{popupData}}</h3>
 
     <ul >
-        <li>
+        <li *ngFor="let data of filteredValues?.Pop_up_copy">
             <img src="./assets/LandingPage/checkStar.svg" alt="">
-            {{filteredValues?.Pop_up_copy[0]}}
+            {{data}}
         </li>
-        <li>
-            <img src="./assets/LandingPage/checkStar.svg" alt="">
-            {{filteredValues?.Pop_up_copy[1]}}        </li>
-        <li>
-            <img src="./assets/LandingPage/checkStar.svg" alt="">
-            {{filteredValues?.Pop_up_copy[2]}}        </li>
-        <li>
-            <img src="./assets/LandingPage/checkStar.svg" alt="">
-            {{filteredValues?.Pop_up_copy[3]}}        </li>
+        
     </ul>
 
     <div class="modalIcon">
-        <img src="https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg" alt="">
+        <img src={{filteredValues?.Icon}} alt="">
     </div>
   </div>
 </div>

@@ -18,14 +18,10 @@
                     <div class="colorBox">
                       {{Shinebanner.Header2.Text}}
                     </div>
-                    <p>
+                    <p *ngFor="let data of Shinebanner?.Subheader">
                       <img src="./assets/LandingPage/checkStar.svg" alt="">
-                      {{Shinebanner.Subheader[0]}}
+                      {{data}}
 
-                    </p>
-                    <p>
-                      <img src="./assets/LandingPage/checkStar.svg" alt="">
-                      {{Shinebanner.Subheader[1]}}
                     </p>
 
                     <div class="pricingBtn">
@@ -48,6 +44,72 @@
 
   <div class="twoSectionMarge section_padding_top" style="background-image: url(./assets/LandingPage/rightDesign.png);">
 
+    <div class="thisPlanSection">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 col-sm-12 m-auto">
+            <div class="content">
+              <h3>{{WhoisShineForSection?.Headline1}}</h3>
+              <p>{{WhoisShineForSection?.Description}}</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="planSilder">
+              <owl-carousel-o [options]="customOptionPlan">
+                <ng-container>
+                  <ng-template carouselSlide>
+                      <div class="box box1">
+                        <img class="userImg" src="./assets/LandingPage/BiginnerImg.svg" alt="">
+                        <h3>{{WhoisShineForSection?.Beginners_Feature?.Beginners_Title}}</h3>
+                        <p>{{WhoisShineForSection?.Beginners_Feature?.Summary}}</p>
+  
+                        <ul>
+                          <li *ngFor="let data of WhoisShineForSection?.Beginners_Feature?.Beginners_Details">
+                            <img src="./assets/LandingPage/checkStar.svg" alt="">
+                            {{data}}
+                          </li>
+                         
+                        </ul>
+                      </div>
+                  </ng-template>
+                  <ng-template carouselSlide>
+                      <div class="box box2">
+                        <img class="userImg" src="./assets/LandingPage/IntermediateImg.svg" alt="">
+                        <h3>{{WhoisShineForSection?.Intermediate_Feature?.Intermediate_Feature}}</h3>
+                        <p>{{WhoisShineForSection?.Intermediate_Feature?.Summary}}</p>
+  
+                        <ul>
+                          <li *ngFor="let data of WhoisShineForSection?.Intermediate_Feature?.Intermediate_Details">
+                            <img src="./assets/LandingPage/checkStar.svg" alt="">
+                            {{data}}
+                          </li>
+                         
+                        </ul>
+                      </div>
+                  </ng-template>
+                  <ng-template carouselSlide>
+                      <div class="box box3">
+                        <img class="userImg" src="./assets/LandingPage/ExpertImg.svg" alt="">
+                        <h3>{{WhoisShineForSection?.Expert_Feature?.Expert_Feature}}</h3>
+                        <p>{{WhoisShineForSection?.Expert_Feature?.Summary}}</p>
+  
+                        <ul>
+                          <li *ngFor="let data of WhoisShineForSection?.Expert_Feature?.Expert_Details">
+                            <img src="./assets/LandingPage/checkStar.svg" alt="">
+                            {{data}}
+                          </li>
+                         
+                        </ul>
+                      </div>
+                  </ng-template>
+                </ng-container>
+              </owl-carousel-o>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="betterLoanOpportunties">
       <div class="container">
         <div class="row align-items-center boxColor">
@@ -64,7 +126,7 @@
                 <p>{{AnalyseSection?.Bureau_Feature?.Bureau_Details}}</p>
               </div>
               <div class="boxIcon">
-                <img src="./assets/LandingPage/homeIconW.svg" alt="">
+                <img src={{AnalyseSection?.Bureau_Feature?.Vector_Background?.Character_image}} alt="">
               </div>
             </div>
           </div>
@@ -75,7 +137,7 @@
                 <p>{{AnalyseSection?.Banking_Feature?.Banking_Details}}</p>
               </div>
               <div class="boxIcon">
-                <img src="./assets/LandingPage/homeIconW.svg" alt="">
+                <img src={{AnalyseSection?.Banking_Feature?.Vector_Background?.Character_image}} alt="">
               </div>
             </div>
           </div>
@@ -86,7 +148,7 @@
                 <p>{{AnalyseSection?.GST_Feature?.GST_Details}}</p>
               </div>
               <div class="boxIcon">
-                <img src="./assets/LandingPage/searchIconB.svg" alt="">
+                <img src={{AnalyseSection?.GST_Feature?.Vector_Background?.Character_image}} alt="">
               </div>
             </div>
           </div>
@@ -106,7 +168,7 @@
           <div class="col-lg-8 col-md-12 col-sm-12 mb-3">
             <div class="laptopSilder">
               <img class="laptopView" src="./assets/LandingPage/laptop.png" alt="">
-              <owl-carousel-o [options]="customOptionKeys">
+              <owl-carousel-o [options]="customOptionKeys1">
                 <ng-container>
                   <ng-template carouselSlide>
                     <div class="setSilder">
@@ -165,72 +227,7 @@
     </div>
   </div>
 
-  <div class="thisPlanSection">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 col-sm-12 m-auto">
-          <div class="content">
-            <h3>{{WhoisShineForSection?.Headline1}}</h3>
-            <p>{{WhoisShineForSection?.Description}}</p>
-          </div>
-        </div>
-        
-        <div class="col-lg-12 col-md-12 col-sm-12">
-          <div class="planSilder">
-            <owl-carousel-o [options]="customOptionPlan">
-              <ng-container>
-                <ng-template carouselSlide>
-                    <div class="box">
-                      <img class="userImg" src="./assets/LandingPage/BiginnerImg.svg" alt="">
-                      <h3>{{WhoisShineForSection?.Beginners_Feature?.Beginners_Title}}</h3>
-                      <p>{{WhoisShineForSection?.Beginners_Feature?.Summary}}</p>
-
-                      <ul>
-                        <li *ngFor="let data of WhoisShineForSection?.Beginners_Feature?.Beginners_Details">
-                          <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          {{data}}
-                        </li>
-                       
-                      </ul>
-                    </div>
-                </ng-template>
-                <ng-template carouselSlide>
-                    <div class="box">
-                      <img class="userImg" src="./assets/LandingPage/IntermediateImg.svg" alt="">
-                      <h3>{{WhoisShineForSection?.Intermediate_Feature?.Intermediate_Feature}}</h3>
-                      <p>{{WhoisShineForSection?.Intermediate_Feature?.Summary}}</p>
-
-                      <ul>
-                        <li *ngFor="let data of WhoisShineForSection?.Intermediate_Feature?.Intermediate_Details">
-                          <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          {{data}}
-                        </li>
-                       
-                      </ul>
-                    </div>
-                </ng-template>
-                <ng-template carouselSlide>
-                    <div class="box">
-                      <img class="userImg" src="./assets/LandingPage/ExpertImg.svg" alt="">
-                      <h3>{{WhoisShineForSection?.Expert_Feature?.Expert_Feature}}</h3>
-                      <p>{{WhoisShineForSection?.Expert_Feature?.Summary}}</p>
-
-                      <ul>
-                        <li *ngFor="let data of WhoisShineForSection?.Expert_Feature?.Expert_Details">
-                          <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          {{data}}
-                        </li>
-                       
-                      </ul>
-                    </div>
-                </ng-template>
-              </ng-container>
-            </owl-carousel-o>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
   <div class="advantagesShine">
     <div class="container">
@@ -261,19 +258,19 @@
                     <ul>
                       <li>
                         <div>
-                          <span>{{shine_comparison?.headerText[0]}}</span>
-                          <p >{{texts?.item[0]}}</p>
+                          <span style="font-size: 17px;">{{shine_comparison?.headerText[0]}}</span>
+                          <p style="font-weight: 700;" >{{texts?.item[0]}}</p>
                         </div>
                       </li>
                       <li>
                         <div>
-                          <span>{{shine_comparison?.headerText[1]}}</span>
+                          <span style="font-size: 17px;">{{shine_comparison?.headerText[1]}}</span>
                           <p >{{texts?.item[1]}}</p>
                         </div>
                       </li>
                       <li>
                         <div>
-                          <span>{{shine_comparison?.headerText[2]}}</span>
+                          <span style="font-size: 17px;">{{shine_comparison?.headerText[2]}}</span>
                           <p >{{texts?.item[2]}}</p>
                         </div>
                       </li>
@@ -327,8 +324,8 @@
   <div class="BusinessLoanOption">
     <div class="container">
       <div class="col-xl-10 col-lg-12 col-md-12 col-sm-12 m-auto">
-        <div class="content">
-          <button class="btn">
+        <div class="content" >
+          <button class="btn" >
             Deep Dive
           </button>
           <h3>{{ShineFeaturesSection?.Header}}</h3>

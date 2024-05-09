@@ -40,7 +40,9 @@
                             <span *ngIf="item.includes('Yes')">
                                 <img src="./assets/LandingPage/yescheck.svg" alt="">
                             </span>
-                            <span *ngIf="item.includes('No')"></span>
+                            <span style="display: flex; justify-content: center;" 
+                            *ngIf="item.includes('No')">X</span>
+                            
                         </ng-container>
                     </li>
                    
@@ -91,8 +93,8 @@
                                         <span *ngIf="item.includes('Yes')">
                                             <img src="./assets/LandingPage/yescheck.svg" alt="">
                                         </span>
-                                        <span *ngIf="item.includes('No')"></span>
-                                </ng-container>
+                                        <span style="display: flex; justify-content: center;" 
+                                        *ngIf="item.includes('No')">X</span>                                </ng-container>
                             </p>
                         </li>
 
@@ -116,7 +118,7 @@
                     <p>{{WhatisShineSection?.Subhead}}</p>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
+            <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="shineList">
                     <ul>
                         <li>{{WhatisShineSection?.Body_Section[0]}}</li>
@@ -124,7 +126,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
+            <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="shineList">
                     <ul>
                         <li>{{WhatisShineSection?.Body_Section[2]}}</li>
