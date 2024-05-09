@@ -102,7 +102,6 @@ export class Pricing1Component {
     ((res: {Count: any; Icon: any; Product_copy: any; }) =>({
       icon: res?.Icon,
       productCopy: res?.Product_copy,
-      count: res?.Count
     }))
     
     
