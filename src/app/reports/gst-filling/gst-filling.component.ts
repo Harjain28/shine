@@ -58,7 +58,7 @@ export class GstFillingComponent {
   showGstComponent!: boolean;
   gstNumber: any;
   
-
+  turnover:any;
 
   constructor() {
 
@@ -72,6 +72,7 @@ export class GstFillingComponent {
     this.showGstComponent = true
     }
 
+    this.turnover = this.gstData?.report?.bankingHistory?.graphData?.turnover?.sum;
 
     this.month = this.gstDetails?.missedGstFilings?.month;
 

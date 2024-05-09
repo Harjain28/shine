@@ -1,300 +1,17 @@
-export const goodBureauJSON = 
-
-{
+export const goodBureauJSON = {
   "report": {
     "creditReport": {
       "bureauScore": {
-        "score": 761
+        "score": 832
       },
       "loanRepaymentHistory": {
-        "missedPayments": [
-          {
-            "year": 2023,
-            "month": 8,
-            "monthName": "Aug",
-            "date": "2023-08-01T00:00:00",
-            "dpDs": 33,
-            "maxDPD": 0
-          },
-          {
-            "year": 2023,
-            "month": 7,
-            "monthName": "Jul",
-            "date": "2023-07-01T00:00:00",
-            "dpDs": 29,
-            "maxDPD": 0
-          },
-          {
-            "year": 2023,
-            "month": 6,
-            "monthName": "Jun",
-            "date": "2023-06-01T00:00:00",
-            "dpDs": 26,
-            "maxDPD": 0
-          },
-          {
-            "year": 2023,
-            "month": 5,
-            "monthName": "May",
-            "date": "2023-05-01T00:00:00",
-            "dpDs": 25,
-            "maxDPD": 0
-          },
-          {
-            "year": 2023,
-            "month": 4,
-            "monthName": "Apr",
-            "date": "2023-04-01T00:00:00",
-            "dpDs": 28,
-            "maxDPD": 0
-          },
-          {
-            "year": 2023,
-            "month": 3,
-            "monthName": "Mar",
-            "date": "2023-03-01T00:00:00",
-            "dpDs": 24,
-            "maxDPD": 0
-          },
-          {
-            "year": 2023,
-            "month": 2,
-            "monthName": "Feb",
-            "date": "2023-02-01T00:00:00",
-            "dpDs": 22,
-            "maxDPD": 0
-          },
-          {
-            "year": 2023,
-            "month": 1,
-            "monthName": "Jan",
-            "date": "2023-01-01T00:00:00",
-            "dpDs": 20,
-            "maxDPD": 0
-          },
-          {
-            "year": 2022,
-            "month": 12,
-            "monthName": "Dec",
-            "date": "2022-12-01T00:00:00",
-            "dpDs": 15,
-            "maxDPD": 0
-          },
-          {
-            "year": 2022,
-            "month": 11,
-            "monthName": "Nov",
-            "date": "2022-11-01T00:00:00",
-            "dpDs": 15,
-            "maxDPD": 0
-          },
-          {
-            "year": 2022,
-            "month": 10,
-            "monthName": "Oct",
-            "date": "2022-10-01T00:00:00",
-            "dpDs": 15,
-            "maxDPD": 0
-          },
-          {
-            "year": 2022,
-            "month": 9,
-            "monthName": "Sep",
-            "date": "2022-09-01T00:00:00",
-            "dpDs": 13,
-            "maxDPD": 0
-          },
-          {
-            "year": 2022,
-            "month": 8,
-            "monthName": "Aug",
-            "date": "2022-08-01T00:00:00",
-            "dpDs": 10,
-            "maxDPD": 0
-          },
-          {
-            "year": 2022,
-            "month": 7,
-            "monthName": "Jul",
-            "date": "2022-07-01T00:00:00",
-            "dpDs": 14,
-            "maxDPD": 0
-          },
-          {
-            "year": 2022,
-            "month": 6,
-            "monthName": "Jun",
-            "date": "2022-06-01T00:00:00",
-            "dpDs": 11,
-            "maxDPD": 0
-          },
-          {
-            "year": 2022,
-            "month": 5,
-            "monthName": "May",
-            "date": "2022-05-01T00:00:00",
-            "dpDs": 14,
-            "maxDPD": 0
-          },
-          {
-            "year": 2022,
-            "month": 4,
-            "monthName": "Apr",
-            "date": "2022-04-01T00:00:00",
-            "dpDs": 9,
-            "maxDPD": 0
-          },
-          {
-            "year": 2022,
-            "month": 3,
-            "monthName": "Mar",
-            "date": "2022-03-01T00:00:00",
-            "dpDs": 9,
-            "maxDPD": 0
-          },
-          {
-            "year": 2022,
-            "month": 2,
-            "monthName": "Feb",
-            "date": "2022-02-01T00:00:00",
-            "dpDs": 9,
-            "maxDPD": 0
-          },
-          {
-            "year": 2022,
-            "month": 1,
-            "monthName": "Jan",
-            "date": "2022-01-01T00:00:00",
-            "dpDs": 8,
-            "maxDPD": 0
-          },
-          {
-            "year": 2021,
-            "month": 12,
-            "monthName": "Dec",
-            "date": "2021-12-01T00:00:00",
-            "dpDs": 3,
-            "maxDPD": 0
-          },
-          {
-            "year": 2021,
-            "month": 11,
-            "monthName": "Nov",
-            "date": "2021-11-01T00:00:00",
-            "dpDs": 3,
-            "maxDPD": 0
-          },
-          {
-            "year": 2021,
-            "month": 10,
-            "monthName": "Oct",
-            "date": "2021-10-01T00:00:00",
-            "dpDs": 3,
-            "maxDPD": 0
-          },
-          {
-            "year": 2021,
-            "month": 9,
-            "monthName": "Sep",
-            "date": "2021-09-01T00:00:00",
-            "dpDs": 1,
-            "maxDPD": 0
-          },
-          {
-            "year": 2021,
-            "month": 8,
-            "monthName": "Aug",
-            "date": "2021-08-01T00:00:00",
-            "dpDs": 1,
-            "maxDPD": 0
-          },
-          {
-            "year": 2021,
-            "month": 7,
-            "monthName": "Jul",
-            "date": "2021-07-01T00:00:00",
-            "dpDs": 1,
-            "maxDPD": 0
-          },
-          {
-            "year": 2021,
-            "month": 6,
-            "monthName": "Jun",
-            "date": "2021-06-01T00:00:00",
-            "dpDs": 1,
-            "maxDPD": 0
-          },
-          {
-            "year": 2024,
-            "month": 3,
-            "monthName": "Mar",
-            "date": "2024-03-01T00:00:00",
-            "dpDs": 9,
-            "maxDPD": 0
-          },
-          {
-            "year": 2024,
-            "month": 2,
-            "monthName": "Feb",
-            "date": "2024-02-01T00:00:00",
-            "dpDs": 32,
-            "maxDPD": 0
-          },
-          {
-            "year": 2024,
-            "month": 1,
-            "monthName": "Jan",
-            "date": "2024-01-01T00:00:00",
-            "dpDs": 33,
-            "maxDPD": 0
-          },
-          {
-            "year": 2023,
-            "month": 12,
-            "monthName": "Dec",
-            "date": "2023-12-01T00:00:00",
-            "dpDs": 31,
-            "maxDPD": 0
-          },
-          {
-            "year": 2023,
-            "month": 11,
-            "monthName": "Nov",
-            "date": "2023-11-01T00:00:00",
-            "dpDs": 30,
-            "maxDPD": 0
-          },
-          {
-            "year": 2023,
-            "month": 10,
-            "monthName": "Oct",
-            "date": "2023-10-01T00:00:00",
-            "dpDs": 26,
-            "maxDPD": 0
-          },
-          {
-            "year": 2023,
-            "month": 9,
-            "monthName": "Sep",
-            "date": "2023-09-01T00:00:00",
-            "dpDs": 31,
-            "maxDPD": 0
-          },
-          {
-            "year": 2024,
-            "month": 4,
-            "monthName": "Apr",
-            "date": "2024-04-01T00:00:00",
-            "dpDs": 2,
-            "maxDPD": 0
-          }
-        ],
+        "missedPayments": [],
         "defaultAnalysis": {
           "defaultHistory": {
-            "recentDefault": true,
-            "defaultEver": true,
+            "recentDefault": false,
+            "defaultEver": false,
             "thirtyDaysDelayed": false,
-            "last12MDPD": true,
+            "last12MDPD": false,
             "delayedSeverity": false,
             "overdueExceedsThreshold": false
           },
@@ -304,95 +21,47 @@ export const goodBureauJSON =
           }
         },
         "otherAnalysis": {
-          "topBanks": true,
+          "topBanks": false,
           "suitFiledEver": false,
           "creditCardUtilization": 0,
           "creditCardUtilizationExceeding": false,
-          "smallLoans": 21,
-          "smallLoansExceeding": true
+          "smallLoans": 2,
+          "smallLoansExceeding": false
         }
       },
       "creditAnalysis": {
         "byAmount": [
           {
-            "name": "Credit card",
-            "value": 312266
-          },
-          {
-            "name": "Personal loan",
-            "value": 835644
-          },
-          {
-            "name": "Gold loan",
-            "value": 101098
-          },
-          {
-            "name": "Business Loan - Unsecured",
-            "value": 208391
+            "name": "Consumer loan",
+            "value": 4370
           }
         ],
         "byCount": [
           {
-            "name": "Credit card",
-            "value": 4
-          },
-          {
-            "name": "Personal loan",
-            "value": 12
-          },
-          {
-            "name": "Gold loan",
-            "value": 3
-          },
-          {
-            "name": "Business Loan - Unsecured",
-            "value": 3
+            "name": "Consumer loan",
+            "value": 1
           }
         ],
-        "hasCreditCard": true
+        "hasCreditCard": false
       },
       "businessRiskRemark": true,
       "creditEnquiry": 3,
-      "bureauVintage": 169,
+      "bureauVintage": 26,
+      "dateOfBirth": "1993-04-10T00:00:00Z",
       "securedUnsecuredRatio": {
         "securedOutstanding": 0,
-        "unsecuredOutstanding": 1044035,
+        "unsecuredOutstanding": 4370,
         "ratio": 1,
         "securedToTurnoverRatio": 0,
-        "unsecuredToTurnoverRatio": 0.2688702803928399
+        "unsecuredToTurnoverRatio": 0.0011254058775009557
       }
     },
     "gstHistory": {
-      "gstNumber": "19BDJPK1311F1ZW",
-      "companyName": "KAR ENTERPRISE",
+      "gstNumber": "27AADPV6007D1ZU",
+      "companyName": "PRECITECH WEIGHING SYSTEMS",
       "turnoverAsPerGst": "NA",
       "currentGstStatus": "Active",
-      "missedGstFilings": [
-        {
-          "month": "122023",
-          "filingDate": "2024-01-24T00:00:00",
-          "dueDate": "2024-01-21T00:00:00",
-          "period": "2023-12-01T00:00:00"
-        },
-        {
-          "month": "102023",
-          "filingDate": "2024-01-24T00:00:00",
-          "dueDate": "2024-01-21T00:00:00",
-          "period": "2023-11-01T00:00:00"
-        },
-        {
-          "month": "122023",
-          "filingDate": "2024-01-18T00:00:00",
-          "dueDate": "2023-12-21T00:00:00",
-          "period": "2023-12-01T00:00:00"
-        },
-        {
-          "month": "112023",
-          "filingDate": "2024-01-18T00:00:00",
-          "dueDate": "2023-12-21T00:00:00",
-          "period": "2023-11-01T00:00:00"
-        }
-      ]
+      "missedGstFilings": []
     },
     "bankingHistory": {
       "graphData": {
@@ -590,20 +259,20 @@ export const goodBureauJSON =
       ]
     },
     "propertyOwned": false,
-    "score": 272,
-    "currentStage": 1,
-    "potentialStage": 3,
+    "score": 323,
+    "currentStage": 3,
+    "potentialStage": 4,
     "bankingSummary": {
       "critical": 2,
-      "medium": 1,
-      "positive": 3,
+      "medium": 0,
+      "positive": 4,
       "summary": "Your robust turnover and stability are commendable. Address the fluctuation in maintaining minimum balances to ensure financial resilience and reliability."
     },
     "bureauSummary": {
       "critical": 1,
       "medium": 1,
       "positive": 3,
-      "summary": "Your credit report shows recent defaults and an imbalanced credit mix, which may worry lenders. Take immediate action to address the defaults."
+      "summary": "Your credit record is clean, but the imbalanced product mix could be improved. Consider diversifying your credit types to enhance your financial stability and attractiveness to lenders."
     },
     "gstSummary": {
       "critical": 1,
@@ -611,11 +280,30 @@ export const goodBureauJSON =
       "positive": 0,
       "summary": "If your business has not engaged in GST filing because it's new or doesn't meet the threshold, ensure you know the conditions and obligations for GST compliance as your business grows. This forward-looking approach will demonstrate financial foresight to potential lenders."
     },
-    "reportDate": "2024-03-01T00:00:00",
-    
+    "reportDate": "2024-03-31T00:00:00",
     "loanProbability": [
       {
-        "lender": "ABFL STUL",
+        "lender": "Lendingkart",
+        "currentProbability": 0.7,
+        "potentialProbability": 0.8
+      },
+      {
+        "lender": "Indifi",
+        "currentProbability": 0.7,
+        "potentialProbability": 0.8
+      },
+      {
+        "lender": "Flexiloans",
+        "currentProbability": 0.7,
+        "potentialProbability": 0.8
+      },
+      {
+        "lender": "KreditBee",
+        "currentProbability": 0.7,
+        "potentialProbability": 0.8
+      },
+      {
+        "lender": "Aditya Birla Finance Ltd",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
@@ -625,37 +313,22 @@ export const goodBureauJSON =
         "potentialProbability": 0.2
       },
       {
-        "lender": "Credit Saison",
+        "lender": "CreditSaison",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
       {
-        "lender": "Lendingkart",
+        "lender": "Fairassets Technologies India Private Limited",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
       {
-        "lender": "Faircent",
+        "lender": "Bajaj Finance",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
       {
-        "lender": "Indifi",
-        "currentProbability": 0.1,
-        "potentialProbability": 0.2
-      },
-      {
-        "lender": "Flexiloans",
-        "currentProbability": 0.1,
-        "potentialProbability": 0.2
-      },
-      {
-        "lender": "Bajaj",
-        "currentProbability": 0.1,
-        "potentialProbability": 0.2
-      },
-      {
-        "lender": "Tata",
+        "lender": "Tata Capital",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
@@ -665,32 +338,27 @@ export const goodBureauJSON =
         "potentialProbability": 0.2
       },
       {
-        "lender": "DB",
+        "lender": "Deutsche Bank",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
       {
-        "lender": "Poonawala",
+        "lender": "Poonawalla Fincorp",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
       {
-        "lender": "Neogrowth",
+        "lender": "NeoGrowth",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
       {
-        "lender": "Ambit",
+        "lender": "Ambit Finvest",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
       {
-        "lender": "Godrej",
-        "currentProbability": 0.1,
-        "potentialProbability": 0.2
-      },
-      {
-        "lender": "KreditBee",
+        "lender": "Godrej Finance Limited",
         "currentProbability": 0.1,
         "potentialProbability": 0.2
       },
@@ -700,7 +368,6 @@ export const goodBureauJSON =
         "potentialProbability": 0.2
       }
     ]
-
   },
   "insights": {
     "creditReport": {
@@ -770,38 +437,38 @@ export const goodBureauJSON =
         "infoCard": [
           {
             "condition": null,
-            "header": "Payment Irregularity!",
+            "header": null,
             "subheader": null,
-            "description": "Your repayment history shows financial instability, prioritise catching up on payments and engaging with your existing lenders to discuss potential options.",
+            "description": null,
             "bullets": null,
-            "class": "negative",
+            "class": null,
             "type": null,
-            "warning": "Needs Attention!",
+            "warning": null,
+            "condition_status": false,
+            "emoji": null
+          },
+          {
+            "condition": null,
+            "header": null,
+            "subheader": null,
+            "description": null,
+            "bullets": null,
+            "class": null,
+            "type": null,
+            "warning": null,
+            "condition_status": false,
+            "emoji": null
+          },
+          {
+            "condition": null,
+            "header": "Regular Payments!",
+            "subheader": null,
+            "description": "Congratulations on your flawless payment record, showcasing financial discipline that appeals to lenders, establishing a strong credit foundation for favourable loan terms.",
+            "bullets": null,
+            "class": "positive",
+            "type": null,
+            "warning": "Good Job!",
             "condition_status": true,
-            "emoji": null
-          },
-          {
-            "condition": null,
-            "header": null,
-            "subheader": null,
-            "description": null,
-            "bullets": null,
-            "class": null,
-            "type": null,
-            "warning": null,
-            "condition_status": false,
-            "emoji": null
-          },
-          {
-            "condition": null,
-            "header": null,
-            "subheader": null,
-            "description": null,
-            "bullets": null,
-            "class": null,
-            "type": null,
-            "warning": null,
-            "condition_status": false,
             "emoji": null
           }
         ],
@@ -811,91 +478,7 @@ export const goodBureauJSON =
               "condition": null,
               "header": null,
               "subheader": null,
-              "description": null,
-              "bullets": null,
-              "class": null,
-              "type": null,
-              "warning": null,
-              "condition_status": false,
-              "emoji": null
-            },
-            {
-              "condition": null,
-              "header": null,
-              "subheader": null,
-              "description": "Looks like you've been late on some EMI payments. This brings down your creditworthiness, making it harder to get a loan.",
-              "bullets": null,
-              "class": "negative",
-              "type": null,
-              "warning": null,
-              "condition_status": true,
-              "emoji": null
-            }
-          ],
-          "solutions": [
-            {
-              "condition": null,
-              "header": "Your repayment history indicates some past issues, which may lead lenders to perceive your business as risky.",
-              "subheader": null,
-              "description": null,
-              "bullets": [
-                "Set up auto-repayments or reminders.",
-                "Avoid taking new high-interest loans for the next 6-9 months to improve your situation.",
-                "If difficulties continue, talk to your lender(s). Ask about other repayment options like daily/weekly EMI instead of monthly."
-              ],
-              "class": "negative",
-              "type": null,
-              "warning": null,
-              "condition_status": true,
-              "emoji": null
-            },
-            {
-              "condition": null,
-              "header": null,
-              "subheader": null,
-              "description": null,
-              "bullets": null,
-              "class": null,
-              "type": null,
-              "warning": null,
-              "condition_status": false,
-              "emoji": null
-            }
-          ],
-          "impact": [
-            {
-              "condition": null,
-              "header": null,
-              "subheader": null,
-              "description": "You can do better! Improve your standing with the lenders by implementing the steps recommended. You are currently at 2 and may be able to reach 3 in the next 3 months and get closer to your ideal loan.",
-              "bullets": null,
-              "class": "negative",
-              "type": null,
-              "warning": null,
-              "condition_status": true,
-              "emoji": null
-            },
-            {
-              "condition": null,
-              "header": null,
-              "subheader": null,
-              "description": null,
-              "bullets": null,
-              "class": null,
-              "type": null,
-              "warning": null,
-              "condition_status": false,
-              "emoji": null
-            }
-          ]
-        },
-        "otherAnalysis": {
-          "topBanks": [
-            {
-              "condition": null,
-              "header": null,
-              "subheader": null,
-              "description": "Banks maintain stringent lending standards. Obtaining a loan from a bank signifies your strong financial standing. Consistently paying on time will further bolster your profile with new lenders.",
+              "description": "Fantastic job! You've been making your EMI payments regularly and on time! This boosts your creditworthiness for a loan.",
               "bullets": null,
               "class": "positive",
               "type": null,
@@ -913,6 +496,94 @@ export const goodBureauJSON =
               "type": null,
               "warning": null,
               "condition_status": false,
+              "emoji": null
+            }
+          ],
+          "solutions": [
+            {
+              "condition": null,
+              "header": null,
+              "subheader": null,
+              "description": null,
+              "bullets": null,
+              "class": null,
+              "type": null,
+              "warning": null,
+              "condition_status": false,
+              "emoji": null
+            },
+            {
+              "condition": null,
+              "header": "Congratulations! You've been repaying your loans on time. Lenders see this as a big positive",
+              "subheader": null,
+              "description": null,
+              "bullets": [
+                "Maintain timely repayments to uphold a strong credit profile.",
+                "Regularly review your credit report to ensure it's accurate and free from errors.",
+                "Utilise auto-payments and reminders to minimise the risk of defaults whenever feasible."
+              ],
+              "class": "positive",
+              "type": null,
+              "warning": null,
+              "condition_status": true,
+              "emoji": null
+            }
+          ],
+          "impact": [
+            {
+              "condition": null,
+              "header": null,
+              "subheader": null,
+              "description": null,
+              "bullets": null,
+              "class": null,
+              "type": null,
+              "warning": null,
+              "condition_status": false,
+              "emoji": null
+            },
+            {
+              "condition": null,
+              "header": null,
+              "subheader": null,
+              "description": "Congratulations! Continue to maintain your credit health and you'll be eligible for better loan terms and ROIs. You are currently at 3 and can advance to 4 with your strong track record.",
+              "bullets": null,
+              "class": "positive",
+              "type": null,
+              "warning": null,
+              "condition_status": true,
+              "emoji": null
+            }
+          ]
+        },
+        "otherAnalysis": {
+          "topBanks": [
+            {
+              "condition": null,
+              "header": null,
+              "subheader": null,
+              "description": null,
+              "bullets": null,
+              "class": null,
+              "type": null,
+              "warning": null,
+              "condition_status": false,
+              "emoji": null
+            },
+            {
+              "condition": null,
+              "header": null,
+              "subheader": null,
+              "description": null,
+              "bullets": [
+                "You are currently not borrowing from a bank.",
+                "While borrowing from an NBFC and repaying on time builds your credit profile, securing a loan from a bank boosts lender confidence and reduces interest rates.",
+                "You can also enquire with your existing banking partner to check your eligibility."
+              ],
+              "class": "negative",
+              "type": null,
+              "warning": null,
+              "condition_status": true,
               "emoji": null
             }
           ],
@@ -948,31 +619,12 @@ export const goodBureauJSON =
             "condition": null,
             "header": null,
             "subheader": null,
-            "description": "In cases of legal suits, resolving these disputes and working towards financial stability is key. Legal counsel can provide pathways to recovery.",
-            "bullets": null,
-            "class": "negative",
-            "type": null,
-            "warning": null,
-            "condition_status": true,
-            "emoji": {
-              "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png",
-              "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Sad-Smiley-Mobile.png"
-            }
-          },
-          {
-            "condition": null,
-            "header": null,
-            "subheader": null,
             "description": null,
-            "bullets": [
-              "Your repayment history signals financial instability that could deter lenders from approving you for a loan.",
-              "Focus on creating a solid plan to catch up on overdue payments and engage with lenders about possible solutions.",
-              "Consistent improvement in these areas can gradually rebuild your creditworthiness and improve your chances of getting a loan."
-            ],
-            "class": "negative",
+            "bullets": null,
+            "class": null,
             "type": null,
             "warning": null,
-            "condition_status": true,
+            "condition_status": false,
             "emoji": {
               "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png",
               "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Sad-Smiley-Mobile.png"
@@ -988,6 +640,25 @@ export const goodBureauJSON =
             "type": null,
             "warning": null,
             "condition_status": false,
+            "emoji": {
+              "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png",
+              "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Sad-Smiley-Mobile.png"
+            }
+          },
+          {
+            "condition": null,
+            "header": null,
+            "subheader": null,
+            "description": null,
+            "bullets": [
+              "Congratulations on maintaining a flawless payment record with no defaults!",
+              "Your demonstrated financial discipline enhances your appeal to lenders because they see this as an indication of your reliability in meeting financial obligations.",
+              "Your repayment history provides a strong foundation for your creditworthiness, potentially leading to more favourable loan terms and interest rates."
+            ],
+            "class": "positive",
+            "type": null,
+            "warning": null,
+            "condition_status": true,
             "emoji": {
               "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/summary_smily.png",
               "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Positive-Smiley-Mobile.png"
@@ -1152,18 +823,6 @@ export const goodBureauJSON =
         "variety_of_active_loans": [
           {
             "condition": null,
-            "header": " Diverse Credit Portfolio",
-            "subheader": null,
-            "description": "A variety of active loan types indicates a well-rounded financial history and experience in managing different credit forms.",
-            "bullets": null,
-            "class": "positive",
-            "type": null,
-            "warning": null,
-            "condition_status": true,
-            "emoji": null
-          },
-          {
-            "condition": null,
             "header": null,
             "subheader": null,
             "description": null,
@@ -1172,6 +831,18 @@ export const goodBureauJSON =
             "type": null,
             "warning": null,
             "condition_status": false,
+            "emoji": null
+          },
+          {
+            "condition": null,
+            "header": " Opportunity for Diversification",
+            "subheader": null,
+            "description": "Limited diversity in loan types may suggest a narrow credit experience. Consider adding different types of loans to your portfolio.",
+            "bullets": null,
+            "class": "negative",
+            "type": null,
+            "warning": null,
+            "condition_status": true,
             "emoji": null
           }
         ],
@@ -1190,18 +861,6 @@ export const goodBureauJSON =
           },
           {
             "condition": null,
-            "header": "Optimal Credit Utilisation",
-            "subheader": null,
-            "description": "Utilisation rates below 60% are typically seen as responsible credit management, positively affecting your credit score and lender confidence.",
-            "bullets": null,
-            "class": "positive",
-            "type": null,
-            "warning": null,
-            "condition_status": true,
-            "emoji": null
-          },
-          {
-            "condition": null,
             "header": null,
             "subheader": null,
             "description": null,
@@ -1210,24 +869,24 @@ export const goodBureauJSON =
             "type": null,
             "warning": null,
             "condition_status": false,
+            "emoji": null
+          },
+          {
+            "condition": null,
+            "header": "No Active Credit Cards",
+            "subheader": null,
+            "description": "Looks like you don't have any active credit cards!. Having a credit card builds your credit history and offers financial flexibility that helps in financial growth.",
+            "bullets": null,
+            "class": "neutral",
+            "type": null,
+            "warning": null,
+            "condition_status": true,
             "emoji": null
           }
         ],
         "smallLoans": [
           {
             "condition": null,
-            "header": "Consider Consolidation",
-            "subheader": null,
-            "description": "Having multiple new small loans indicates financial mismanagement and a potential need for consolidation to reduce overall interest burdens.",
-            "bullets": null,
-            "class": "negative",
-            "type": null,
-            "warning": null,
-            "condition_status": true,
-            "emoji": null
-          },
-          {
-            "condition": null,
             "header": null,
             "subheader": null,
             "description": null,
@@ -1236,6 +895,18 @@ export const goodBureauJSON =
             "type": null,
             "warning": null,
             "condition_status": false,
+            "emoji": null
+          },
+          {
+            "condition": null,
+            "header": "Strategic Credit Management",
+            "subheader": null,
+            "description": "Borrowing a limited number of small loans within your means demonstrates prudent financial strategy, provided you acquire five or fewer loans.",
+            "bullets": null,
+            "class": "positive",
+            "type": null,
+            "warning": null,
+            "condition_status": true,
             "emoji": null
           }
         ],
@@ -1383,6 +1054,18 @@ export const goodBureauJSON =
       "missedGstFilings": [
         {
           "condition": null,
+          "header": "0 Missed Filings",
+          "subheader": "Great job! You've kept up with your GST obligations! Lenders view this as a sign of financial responsibility.",
+          "description": null,
+          "bullets": null,
+          "class": "positive",
+          "type": null,
+          "warning": null,
+          "condition_status": true,
+          "emoji": null
+        },
+        {
+          "condition": null,
           "header": null,
           "subheader": null,
           "description": null,
@@ -1391,56 +1074,44 @@ export const goodBureauJSON =
           "type": null,
           "warning": null,
           "condition_status": false,
-          "emoji": null
-        },
-        {
-          "condition": null,
-          "header": "4 Missed Filings ",
-          "subheader": "You seem to have missed filing your GST 4 times in the past 6 months . This will impact on your loan options. File on time and accurately to improve your loan options.",
-          "description": null,
-          "bullets": null,
-          "class": "negative",
-          "type": null,
-          "warning": null,
-          "condition_status": true,
           "emoji": null
         }
       ],
       "info_card": [
         {
           "condition": null,
-          "header": " Missed GST Filing & Low Compliance",
+          "header": null,
           "subheader": null,
-          "description": "More than 2 missed filings shows lender the lack of discipline in repayment, reducing creditworthiness. Consistent filings for 6 months before applying, can improve  prospects.",
+          "description": null,
           "bullets": null,
-          "class": "negative",
+          "class": null,
           "type": null,
-          "warning": "Needs Attention",
+          "warning": null,
+          "condition_status": false,
+          "emoji": null
+        },
+        {
+          "condition": null,
+          "header": null,
+          "subheader": null,
+          "description": null,
+          "bullets": null,
+          "class": null,
+          "type": null,
+          "warning": null,
+          "condition_status": false,
+          "emoji": null
+        },
+        {
+          "condition": null,
+          "header": "No Missed GST Filing & High Compliance",
+          "subheader": null,
+          "description": "Maintaining statutory compliance showcases better financial health improving loan opportunities.",
+          "bullets": null,
+          "class": "positive",
+          "type": null,
+          "warning": "Good Job!",
           "condition_status": true,
-          "emoji": null
-        },
-        {
-          "condition": null,
-          "header": null,
-          "subheader": null,
-          "description": null,
-          "bullets": null,
-          "class": null,
-          "type": null,
-          "warning": null,
-          "condition_status": false,
-          "emoji": null
-        },
-        {
-          "condition": null,
-          "header": null,
-          "subheader": null,
-          "description": null,
-          "bullets": null,
-          "class": null,
-          "type": null,
-          "warning": null,
-          "condition_status": false,
           "emoji": null
         }
       ]
@@ -1621,7 +1292,7 @@ export const goodBureauJSON =
       "count_volatility": [
         {
           "condition": null,
-          "header": "Revenue Mix: Good",
+          "header": "Revenue Mix: Good ",
           "subheader": null,
           "description": "Your business has high credit count. This means you are generating revenue from different sources and are not reliant on a few customers.",
           "bullets": null,
@@ -1712,7 +1383,7 @@ export const goodBureauJSON =
           "description": null,
           "bullets": [
             "It seems your turnover has dropped by over 50% in Q3 or Q4 compared to the last quarter, suggesting unstable cash flow and possibly declining business, which lenders may view negatively.",
-            "It's advisable to focus on maintaining a stable or growing turnover strategy to enhance lender confidence."
+            " It's advisable to focus on maintaining a stable or growing turnover strategy to enhance lender confidence."
           ],
           "class": "negative",
           "type": null,
@@ -1921,7 +1592,7 @@ export const goodBureauJSON =
               "Encourage your clients to pay, or look for other revenue generating streams to stablize your ABB.",
               "Your ABB is important for your EMI. Lenders use it to determine how much you can borrow. They usually multiply it by 2 to 4. So, if your ABB is higher, you can borrow more."
             ],
-            "class": "negative",
+            "class": "Negative Case",
             "type": null,
             "warning": null,
             "condition_status": true,
@@ -1996,6 +1667,18 @@ export const goodBureauJSON =
         "card_view": [
           {
             "condition": null,
+            "header": "Good Debt Management",
+            "subheader": null,
+            "description": "A lower ratio means you are not over-leveraged. If unsecured debt is below 10% then you may be eligible to take more unsecured loans.",
+            "bullets": null,
+            "class": "positive",
+            "type": null,
+            "warning": "Good job!",
+            "condition_status": true,
+            "emoji": null
+          },
+          {
+            "condition": null,
             "header": null,
             "subheader": null,
             "description": null,
@@ -2004,18 +1687,6 @@ export const goodBureauJSON =
             "type": null,
             "warning": null,
             "condition_status": false,
-            "emoji": null
-          },
-          {
-            "condition": null,
-            "header": "Needs Better Management",
-            "subheader": null,
-            "description": "Your business may be too dependent on unsecured debt. You likely won’t be eligible for more unsecured debt. Try and pay off your debt quickly and ensure timeliness of payments. ",
-            "bullets": null,
-            "class": "negative",
-            "type": null,
-            "warning": "Needs Improvement",
-            "condition_status": true,
             "emoji": null
           },
           {
@@ -2049,11 +1720,15 @@ export const goodBureauJSON =
             "header": null,
             "subheader": null,
             "description": null,
-            "bullets": null,
-            "class": null,
+            "bullets": [
+              "Your debt-to-turnover ratio is 25% or lower.",
+              "With a debt-to-turnover ratio of <10%, you have room to take on more unsecured loans.",
+              "Lenders perceive you as sound and stable, resulting in favourable loan terms."
+            ],
+            "class": "positive",
             "type": null,
             "warning": null,
-            "condition_status": false,
+            "condition_status": true,
             "emoji": null
           },
           {
@@ -2061,14 +1736,11 @@ export const goodBureauJSON =
             "header": null,
             "subheader": null,
             "description": null,
-            "bullets": [
-              "Your unsecured debt is >25%. Do a financial review to avoid stress on your cashflow.",
-              "If possible, convert some unsecured debt into secured, to reduce the risk in lending to you and lower ROIs for you."
-            ],
-            "class": "negative",
+            "bullets": null,
+            "class": null,
             "type": null,
             "warning": null,
-            "condition_status": true,
+            "condition_status": false,
             "emoji": null
           },
           {
@@ -2107,11 +1779,15 @@ export const goodBureauJSON =
           "header": null,
           "subheader": null,
           "description": null,
-          "bullets": null,
-          "class": null,
+          "bullets": [
+            "You're doing an excellent job of managing your unsecured debts in proportion to your turnover.",
+            "You may be eligible to take more unsecured loans.",
+            "Monitor these often, ensuring any changes in debt or turnover don't negatively impact your loan prospects."
+          ],
+          "class": "positive",
           "type": null,
           "warning": null,
-          "condition_status": false,
+          "condition_status": true,
           "emoji": {
             "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/summary_smily.png",
             "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Positive-Smiley-Mobile.png"
@@ -2122,15 +1798,11 @@ export const goodBureauJSON =
           "header": null,
           "subheader": null,
           "description": null,
-          "bullets": [
-            "Your unsecured debt is too high.",
-            "Focus on revenue growth. Explore higher-margin products, enhance sales strategies, or consolidate high-interest debts for more manageable loans.",
-            "This will reduce financial stress & make you a more eligible borrower."
-          ],
-          "class": "negative",
+          "bullets": null,
+          "class": null,
           "type": null,
           "warning": null,
-          "condition_status": true,
+          "condition_status": false,
           "emoji": {
             "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png",
             "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Sad-Smiley-Mobile.png"

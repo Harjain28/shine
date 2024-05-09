@@ -4,8 +4,7 @@
       <div class="col-lg-12 col-md-12 m-auto">
         <div class="title">
           <h2><span>Your Current Probability of Getting a Loan</span></h2>
-          <p class="col-md-8 col-sm-12 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+          <p class="col-md-8 col-sm-12 m-auto">Check your chances of securing a loan from numerous lenders and understand how our advice can significantly improve your odds.</p>
         </div>
       </div>
 
@@ -227,7 +226,7 @@
         </div>
 
         <div class="moreAffers">
-          <button class="btn" *ngIf="!visibleOffers" (click)="moreOffers()">12 more offers</button>
+          <button class="btn" *ngIf="!visibleOffers" (click)="moreOffers()">{{probabilityData.length - 4}} more offers</button>
         </div>
       </div>
     </div>

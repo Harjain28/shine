@@ -8,6 +8,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { EventService } from 'src/app/services/event.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-payment',
@@ -182,7 +183,7 @@ export class PaymentComponent {
     requestData['amount'] = '2.00';
     requestData['custMobile'] = this.mobile;
     requestData['custMail'] = this.email;
-    requestData['returnUrl'] = 'https://borrowerportal-staging.creditenable.com/api/Remediation/PGResponse';
+    requestData['returnUrl'] = `${environment.BASE_API_ENDPOINT}api/Remediation/PGResponse`;
     requestData['couponCode'] = this.code;
 
     const params = { ...this.paramsObject.params };

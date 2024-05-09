@@ -289,6 +289,8 @@ this.potStage = this.reportsData?.report?.potentialStage
 
   setSummaryIcon(data: any) {
     if (data?.class !== null) {
+      console.log("setting class");
+      console.log(data?.class);
       switch (data?.class) {
         case 'negative':
           this.summaryIcon = 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png';

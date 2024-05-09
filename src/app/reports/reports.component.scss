@@ -3532,6 +3532,7 @@
         .btn {
 
             &.moreBtn {
+                display: none!important;
                 padding: 0px;
                 display: flex;
                 align-items: center;
@@ -3779,6 +3780,7 @@
         position: relative;
 
         .moreBtn {
+            display: none!important;
             padding: 0px;
             display: flex;
             align-items: center;
