@@ -68,7 +68,7 @@ export class ApiService {
  }
 
  getwithHeader(path: string, params: HttpParams = new HttpParams()) {
-  
+  this.TOKEN = localStorage.getItem("token");  
   this.httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

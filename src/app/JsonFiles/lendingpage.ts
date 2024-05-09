@@ -43,11 +43,12 @@ export const shineLendingPageJSON = {
       Intermediate_Feature: 'Intermediate',
       Intermediate_Details:[
       'Business vintage 4-5 years', 
+      'GST registered',
       'Successfully obtained at least one loan',
       'Looking for better loan terms and offers',  
       
        ],
-       Summary: 'A personalised programme for your business that helps you manage your finances better, track your progress over time and get your next business loan at the best terms.', 
+       Summary: 'A personalised programme that helps you manage business finances better, track your progress, and get your next business loan at the best terms.', 
         Vector_Background: {
       Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/intermediate.png',
     },
@@ -57,12 +58,11 @@ export const shineLendingPageJSON = {
       Expert_Details:[
       'Business vintage > 5 years', 
       'GST registered',
-      'Already have a portfolio of loans.', 
+      'Seeking tailored financial advice on existing portfolio.', 
       'Seeking better loan options and ROIs', 
-      'Searching for the best multi-funding options', 
-      'Seeking tailored financial advice',  
+      'Searching for the best multi-funding options',  
        ],
-       Summary: 'A personalised programme for your business that gives you access to essential financial insights to improve fiscal management and unlock multi-funding loan opportunities at the best terms.', 
+       Summary: 'A personalised programme that gives you access to financial insights to improve fiscal management and unlock multi-funding loans at the best terms.', 
         Vector_Background: {
       Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/expert.png',
     },
@@ -73,8 +73,8 @@ export const shineLendingPageJSON = {
   },
 
   Analyse_Section: {
-    Headline1: 'What stands between you and better loan opportunities?',
-    Headline2: 'you and better loan opportunities?',
+    Headline1: 'What Stands Between',
+    Headline2: 'You and Better Loan Opportunities?',
     Description:
       'The only tool revealing how lenders will assess your business for a loan based on your Bureau, GST, & banking data.',
     Bureau_Feature: {
@@ -114,7 +114,7 @@ export const shineLendingPageJSON = {
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Credit%20analysis.png',
       Mobile:
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Credit%20analysis.png',
-      imageText: 'Increase Loan Possibility!',
+      imageText: 'Data-Enabled Advantage',
     },
     Background1: {
       Desktop:
@@ -219,7 +219,7 @@ export const shineLendingPageJSON = {
   },
 
   Shine_Features_Section: {
-    Header: 'Dive Deep: Comprehensive Financial Assessment and Advice Tailored to your Business.',
+    Header: 'Comprehensive Financial Assessment and Advice Tailored to Your Business',
     Subheader:
       'Experience a new level of financial understanding about your business with detailed reviews of your credit report, GST and banking, that personalised advice to help you improve your ability to access affordable finance.',
     CTA_Text: 'Get Pricing',
@@ -343,7 +343,7 @@ export const shineLendingPageJSON = {
     ],
   },
   Summary_Section: {
-    Header: 'Guaranteed Loan Success Starts Here.',
+    Header: 'Guaranteed Loan Success Starts Here',
     Subheader:
       'Follow our tailor-made financial recommendations for a guaranteed shot at loan approval.',
     CTA_Text: 'Check Pricing',
