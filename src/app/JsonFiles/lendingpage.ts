@@ -28,44 +28,44 @@ export const shineLendingPageJSON = {
       'Whether you’re just starting out and have never had a loan before, or you are an experienced business looking for improved loan opportunities – Shine has something for every SME!',
     Beginners_Feature: {
       Beginners_Title: 'Beginners',
-      Beginners_Details: [
-        'Have never taken a loan',
-        'Don’t know how to go about getting a loan or if you will even be eligible',
-        'Want to take the be in control of your financing options.',
-
-      ],
-      Summary: 'Get answers to all the above along with a personalised plan for how to improve and get your first business loan.',
-      Vector_Background: {
-        Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/biginner.png',
-      },
+      Beginners_Details:[
+      'Have never taken a loan',
+      'Don’t know how to go about getting a loan or if you will even be eligible',
+      'Want to take the be in control of your financing options.',
+   
+       ],
+       Summary: 'Get answers to all the above along with a personalised plan for how to improve and get your first business loan.', 
+        Vector_Background: {
+      Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/biginner.png',
+    },
     },
     Intermediate_Feature: {
       Intermediate_Feature: 'Intermediate',
-      Intermediate_Details: [
-        'Business vintage 4-5 years',
-        'GST registered',
-        'Successfully obtained at least one loan',
-        'Looking for better loan terms and offers',
-
-      ],
-      Summary: 'A personalised programme that helps you manage business finances better, track your progress, and get your next business loan at the best terms.',
-      Vector_Background: {
-        Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/intermediate.png',
-      },
+      Intermediate_Details:[
+      'Business vintage 4-5 years', 
+      'GST registered',
+      'Successfully obtained at least one loan',
+      'Looking for better loan terms and offers',  
+      
+       ],
+       Summary: 'A personalised programme that helps you manage business finances better, track your progress, and get your next business loan at the best terms.', 
+        Vector_Background: {
+      Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/intermediate.png',
+    },
     },
     Expert_Feature: {
       Expert_Feature: 'Expert',
-      Expert_Details: [
-        'Business vintage > 5 years',
-        'GST registered',
-        'Seeking tailored financial advice on existing portfolio.',
-        'Seeking better loan options and ROIs',
-        'Searching for the best multi-funding options',
-      ],
-      Summary: 'A personalised programme that gives you access to financial insights to improve fiscal management and unlock multi-funding loans at the best terms.',
-      Vector_Background: {
-        Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/expert.png',
-      },
+      Expert_Details:[
+      'Business vintage > 5 years', 
+      'GST registered',
+      'Seeking tailored financial advice on existing portfolio', 
+      'Seeking better loan options and ROIs', 
+      'Searching for the best multi-funding options',  
+       ],
+       Summary: 'A personalised programme that gives you access to financial insights to improve fiscal management and unlock multi-funding loans at the best terms.', 
+        Vector_Background: {
+      Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/expert.png',
+    },
     },
 
     CTA_Text: 'Get Pricing',
@@ -81,25 +81,25 @@ export const shineLendingPageJSON = {
       Bureau_Title: 'Bureau Analysis',
       Bureau_Details:
         'Discover what lenders like and don’t like about your business based on the patterns in your Bureau report. Gain an edge with insights for credit optimisation, elevating your profile to unlock lending opportunities.',
-      Vector_Background: {
-        Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/credit_score.png',
-      },
+         Vector_Background: {
+      Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/bureau.png',
+    },
     },
     GST_Feature: {
       GST_Title: 'GST Analysis',
       GST_Details:
         "See how lenders interpret your business’s financial health based on your GST filings and how they impact your loan prospects.",
-      Vector_Background: {
-        Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/GST.png',
-      },
+         Vector_Background: {
+      Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/GST.png',
+    },
     },
     Banking_Feature: {
       Banking_Title: 'Banking Analysis',
       Banking_Details:
         'Uncover trends in your banking history, evaluating like lenders do. Understand how to optimise transactions and manage balances to  present a compelling case for loan eligibility and favourable terms which lenders can’t ignore.',
-      Vector_Background: {
-        Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/banking_big.svg',
-      },
+         Vector_Background: {
+      Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/banking.png',
+    },
     },
     CTA_Text: 'Get Pricing',
     CTA_Link: '/in/check-eligibility',
@@ -109,24 +109,34 @@ export const shineLendingPageJSON = {
     Headline: 'Transform Finance: ',
     Headline2: "See What Others Don't!",
     Body: 'Gain deep financial insights to swiftly adjust for better loan eligibility. Be empowered to accelerate your growth. Join the future-focused financial revolution!',
-    Background: [
-      {
-        Desktop: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_count.png',
-        Mobile:  'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_count.png',
-        imageText: 'Customised Financial Analysis',
-      }, 
-      {
-        Desktop: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_mix.png',
-        Mobile:  'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_mix.png',
-        imageText: 'Unmatched Lender Insights',
-      },
-       {
-        Desktop: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Probablity.png',
-        Mobile:  'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Probablity.png',
-        imageText: 'Increase Loan Possibility!',
-      },
-
-    ],
+    Background: {
+      Desktop:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Credit%20analysis.png',
+      Mobile:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Credit%20analysis.png',
+      imageText: 'Data-Enabled Advantage',
+    },
+    Background1: {
+      Desktop:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_count.png',
+      Mobile:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_count.png',
+      imageText: 'Customised Financial Analysis',
+    },
+    Background2: {
+      Desktop:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_mix.png',
+      Mobile:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_mix.png',
+      imageText: 'Unmatched Lender Insights',
+    },
+    Background3: {
+      Desktop:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Probablity.png',
+      Mobile:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Probablity.png',
+      imageText: 'Increase Loan Possibility!',
+    },
     CTA_Text: 'Enrol Today',
     CTA_Link: '/in/check-eligibility',
   },
@@ -136,43 +146,43 @@ export const shineLendingPageJSON = {
     Subtitle:
       'Get on the path to the right business funding with a comprehensive assessment.',
 
-    headerText: [
-      'Parameter', 'Shine', 'Others'
+    headerText:[
+      'Parameter', 'Shine' , 'Others'
     ],
-    col: [
-      {
+    col: [ 
+       {
         Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/loan_big.svg',
-        item: [
-          'Depth of Analysis',
-          'Get an in-depth analysis of your Credit, Banking, and GST data with targeted improvement strategies.',
-          'Pay for superficial information about your credit that are already in your free credit report.',
-        ]
-      },
-      {
+         item: [
+           'Depth of Analysis',
+            'Get an in-depth analysis of your Credit, Banking, and GST data with targeted improvement strategies.',
+            'Pay for superficial information about your credit that are already in your free credit report.',
+         ]
+       },
+       {
         Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/other/High%20conversion%20rate.svg',
-        item: [
-          'Affordability',
-          'Most affordable report on the market for a 360° assessment of your business to turn around your loan prospects within 3-6 months.',
-          'Pay 3x more to get a partial analysis of your  financial story which may or may not improve your loan prospects.',
-        ]
-      },
-      {
+         item: [
+           'Affordability',
+           'Most affordable report on the market for a 360° assessment of your business to turn around your loan prospects within 3-6 months.',
+           'Pay 3x more to get a partial analysis of your  financial story which may or may not improve your loan prospects.',
+         ]
+       },
+       {
         Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/rupees_big.png',
-        item: [
-          'Clarity & Simplicity',
-          'Clear and easy to understand analysis , breaking down complex financial terms while offering high-impact solutions.',
-          'Complicated and confusing to understand lingo leaving you more confused with no clear solutions to achieve your loan.',
-        ]
-      },
-      {
+         item: [
+           'Clarity & Simplicity',
+           'Clear and easy to understand analysis , breaking down complex financial terms while offering high-impact solutions.',
+           'Complicated and confusing to understand lingo leaving you more confused with no clear solutions to achieve your loan.',
+         ]
+       },
+       {
         Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/calendar_Big.png',
-        item: [
-          'Growth Tracking',
-          'Get the data-driven edge to track your Quarter-on-Quarter progress and get closer to your dream funding.',
-          'Get a one-time snapshot of your credit health to assess your creditworthiness.',
-        ]
-      },
-    ],
+         item: [
+           'Growth Tracking',
+           'Get the data-driven edge to track your Quarter-on-Quarter progress and get closer to your dream funding.',
+           'Get a one-time snapshot of your credit health to assess your creditworthiness.',
+         ]
+       },
+      ],
     CTA_Text: 'Get Pricing',
     CTA_Link: '/in/check-eligibility',
   },
@@ -184,7 +194,7 @@ export const shineLendingPageJSON = {
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/help_banner_desktop.jpg',
       Mobile:
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/help_banner_mobile.jpg',
-
+      
     },
     Parameter: [
       {
@@ -224,7 +234,7 @@ export const shineLendingPageJSON = {
         Product_copy: 'BUREAU SCORE',
         Pop_up_copy: [
           'Your bureau score is a number calculated by the credit bureaus. It shows if you are creditworthy.',
-          'The 4 credit bureaus including Experian are authorized by RBI, to prepare your credit report.',
+          'The 4 credit bureaus including Experian are authorised by RBI, to prepare your credit report.',
           'A higher score improves your chances of getting loans at competitive interest rates.',
         ],
       },
@@ -341,24 +351,24 @@ export const shineLendingPageJSON = {
     Banner: [
       {
         Desktop:
-          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/ranking.png',
+          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/summary.jpg',
         Mobile:
-          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/ranking.png',
-        imageText: 'Increase Loan Possibility!',
+          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/summary-mobile.jpg',
+        imageText: 'Current Credit Evaluation',
       },
       {
         Desktop:
-          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/ratio.png',
+          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/tips.jpg',
         Mobile:
-          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/ratio.png',
-        imageText: 'Customized Financial Analysis',
+          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/tips_mobile.jpg',
+        imageText: 'Pathways to Improvement',
       },
       {
         Desktop:
-          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/running_expences_desktop.png',
+          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/comparision_table.jpg',
         Mobile:
-          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/running_expences_desktop.png',
-        imageText: 'Unmatched Lender Insights',
+          'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/comparision_table-mobile.jpg',
+        imageText: 'Route to Loan Success',
       },
     ],
   },
@@ -379,7 +389,7 @@ export const shineLendingPageJSON = {
         Loan_Amount: '55L',
         Rating: [1, 2, 3, 4, 5],
         Details:
-          "CreditEnable's expertise in business loans helped us at a critical time! We had a major growth opportunity we would have missed out on because our bank was going to take weeks to release our funds but then CreditEnable stepped in, and we got the money in just two days! It was amazing! Their personalized and professional approach really helped us out!",
+          "CreditEnable's expertise in business loans helped us at a critical time! We had a major growth opportunity we would have missed out on because our bank was going to take weeks to release our funds but then CreditEnable stepped in, and we got the money in just two days! It was amazing! Their personalised and professional approach really helped us out!",
       },
       {
         Borrower_Image: {
@@ -465,7 +475,7 @@ export const shineLendingPageJSON = {
         Question:
           'What benefits does Shine offer me?',
         Answer: null,
-        bullets: [
+        bullets:[
           'We know your credit score is important when a lender is making their decision to lend to you. But what about the rest? ',
           'There a many other data points, like your regulatory compliance, the health of your financials, and your current debts, that also influence their decisions.',
           'Shine is the only tool in the market that uses your credit bureau profile, GST filing history, and business financials to give you a 360° assessment of how your business is doing and what you need to do to become eligible for your dream funding.',
@@ -489,7 +499,7 @@ export const shineLendingPageJSON = {
         Answer:
           'Your creditworthiness is not something that can be improved overnight. It requires targeted action and precise decisions to increase your score incrementally. That is why it can take anywhere between 3-6 months to see meaningful change in your credit report.',
       },
-      {
+            {
         Question:
           'How do I interpret the recommendations made in my Shine Report?',
         Answer:

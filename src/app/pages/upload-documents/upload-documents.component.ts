@@ -126,10 +126,6 @@ export class UploadDocumentsComponent {
         
   }
 
-
-
-
-
   netBankinglink(){
     this.isSubmit = true;
     const defaultparams = {
