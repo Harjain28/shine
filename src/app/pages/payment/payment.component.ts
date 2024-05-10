@@ -1,7 +1,7 @@
 
 import { shinePricingPageJSON } from 'src/app/JsonFiles/pricing';
 import { Component } from '@angular/core';
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule, DatePipe, Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -67,7 +67,8 @@ export class PaymentComponent {
     private http: HttpClient,
     private datePipe: DatePipe,
     private event: EventService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) {
     this.route.queryParamMap.subscribe((params) => {
       this.paramsObject = { ...params };
@@ -166,7 +167,7 @@ export class PaymentComponent {
     }
 
     back(){
-      this.router.navigate(['in/otp'])
+      this.location.back();
     }
 
     sliced(){

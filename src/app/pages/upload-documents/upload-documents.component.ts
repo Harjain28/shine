@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Inject, PLATFORM_ID } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,10 +9,8 @@ import { EventService } from 'src/app/services/event.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
-import { MatDialog } from '@angular/material/dialog';
-import { Location } from "@angular/common";
-import { DomSanitizer } from '@angular/platform-browser';
-import { HttpClient } from '@angular/common/http';
+import { Subscription, take, timer } from 'rxjs';
+
 @Component({
   selector: 'app-upload-documents',
   standalone: true,
@@ -21,6 +19,37 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./upload-documents.component.scss']
 })
 export class UploadDocumentsComponent {
+  currentIndex = 0;
+
+  @ViewChild('progressContainer', { static: false }) progressContainer:
+    | ElementRef
+    | undefined;
+  @ViewChild('progressBar', { static: false }) progressBar:
+    | ElementRef
+    | undefined;
+  @ViewChild('progressText', { static: false }) progressText:
+    | ElementRef
+    | undefined;
+  businessLoanJson: any;
+  faqs: any;
+  creditReportJson: any;
+  CRData: any;
+  ChartsData: any;
+  progressCount!: Subscription;
+  istimers!: boolean;
+  ncjcount: number = 60;
+  tick = 1000;
+
+  progress = 0;
+  progressInterval: any;
+  loaderContent: any = [
+    'Over 300,000 SMEs have confidently chosen us as their trusted financing ally!',
+    'All eligible SMEs experience significantly higher loan approval rates when they apply through us!',
+    'Almost 70% of SMEs coming from your city receive their first offer within a week of document submission with us!',
+    'We are able to negotiate better rates for 90% of borrowers from your sector!!!!!!!!!.',
+    'If you own property, you may be eligible for a Loan Against Property which has 50% lower EMIs.',
+  ];
+
 
 
   @Inject(PLATFORM_ID) private platformId!: Object
@@ -43,16 +72,14 @@ export class UploadDocumentsComponent {
   mobileNo: any;
   isSubmit!: boolean;
   isUploadSubmit!: boolean;
-
+  isPerfios: boolean = true;
+  timeout: any;
+  interval: any;
  
   constructor(private api: ApiService,
       private route: ActivatedRoute,
       public eventService: EventService,
-      private dialog: MatDialog,
-      private location: Location,  
       private cdr: ChangeDetectorRef,
-      private sanitizer: DomSanitizer,
-      private http: HttpClient,
 
 
       public router: Router) {
@@ -87,14 +114,20 @@ export class UploadDocumentsComponent {
   }
 
   ngAfterViewInit(): void {
-   // this.isBrowser = isPlatformBrowser(this.platformId);
+    // this.isBrowser = isPlatformBrowser(this.platformId);
+    this.counters();
+    setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.loaderContent.length;
+    }, 5000);
+    this.progressInterval = setInterval(() => {
+      this.updateProgress();
+    }, 1000);
 
     this.cdr.detectChanges();
   }
 
-  callPerfiosCallback(id:any){
-    setInterval(() => {
-      const params = { ...this.paramsObject.params };
+  perfios(id:any){
+    const params = { ...this.paramsObject.params };
         const formData = new FormData();
         formData.append("PerfiosTransactionId", id);
         formData.append("ClientTransactionId", " ");
@@ -107,22 +140,43 @@ export class UploadDocumentsComponent {
           .subscribe({
             next: (res: any) => {
                if (res) {
-                    this.showEligible = true;  
-                    this.router.navigate(['/in/report'])   
-
+                clearTimeout(this.timeout);
+                clearInterval(this.interval);
+                this.showEligible = false;
+                this.router.navigate(['/in/report'])
                 }
                
                },
             error: error => {
-    
               // this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
             },
             complete: () => {
               ('Request complete');
             }
           });
-    
-        }, 15000); 
+  }
+
+  callPerfiosCallback(id:any){
+
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    console.log(urlSearchParams.get('uploaded') );
+
+    if(urlSearchParams.get('uploaded') === "true"){
+
+      this.showEligible = true;
+      this.timeout = setTimeout(() => {
+        clearInterval(this.interval);
+        this.showEligible = false;
+        this.api.alertOk("There seems to be an issue in parsing your bank statements. We request you to please try again. Please ensure that if you choose to upload the bank statements, they are not password protected", "");
+      }, 2*60*1000);
+  
+      this.interval = setInterval(() => {
+        this.perfios(id)
+          }, 15000); 
+
+    }
+
+   
         
   }
 
@@ -217,6 +271,56 @@ export class UploadDocumentsComponent {
     
   }
 
+
+  counters() {
+    this.ncjcount = 60;
+    this.progressCount = timer(0, this.tick)
+      .pipe(take(this.ncjcount))
+      .subscribe(() => {
+        --this.ncjcount;
+        if (this.ncjcount === 0) {
+          this.istimers = false;
+          this.progressCount.unsubscribe();
+        }
+      });
+  }
+  transform(value: number): string {
+    const minutes: number = Math.floor(value / 60);
+    return (
+      ('00' + minutes).slice(-2) +
+      ':' +
+      ('00' + Math.floor(value - minutes * 60)).slice(-2)
+    );
+  }
+
+  updateProgress() {
+    this.progress += 1;
+
+    if (this.progressBar && this.progressBar.nativeElement) {
+      this.progressBar.nativeElement.style.transform = `rotate(${
+        this.progress * 3.6
+      }deg)`;
+    }
+
+    if (this.progressText && this.progressText.nativeElement) {
+      this.progressText.nativeElement.innerText = `${this.progress}%`;
+    }
+
+    if (this.progress % 1 === 0) {
+      const a = document.createElement('div');
+      a.style.cssText = `position: absolute; width: 3px; height: 100%; border-top: 65px solid #12BA9B; left: 49%; top: 0%; transform: rotate(${
+        this.progress * 3.6
+      }deg);`;
+
+      if (this.progressContainer && this.progressContainer.nativeElement) {
+        this.progressContainer.nativeElement.appendChild(a);
+      }
+    }
+
+    if (this.progress >= 100) {
+      clearInterval(this.progressInterval);
+    }
+  }
   
 
  
