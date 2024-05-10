@@ -109,34 +109,36 @@ export const shineLendingPageJSON = {
     Headline: 'Transform Finance: ',
     Headline2: "See What Others Don't!",
     Body: 'Gain deep financial insights to swiftly adjust for better loan eligibility. Be empowered to accelerate your growth. Join the future-focused financial revolution!',
-    Background: {
-      Desktop:
+    Background: [
+      {
+       Desktop:
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Credit%20analysis.png',
       Mobile:
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Credit%20analysis.png',
       imageText: 'Data-Enabled Advantage',
     },
-    Background1: {
+{
       Desktop:
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_count.png',
       Mobile:
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_count.png',
       imageText: 'Customised Financial Analysis',
     },
-    Background2: {
+    {
       Desktop:
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_mix.png',
       Mobile:
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_mix.png',
       imageText: 'Unmatched Lender Insights',
     },
-    Background3: {
+    {
       Desktop:
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Probablity.png',
       Mobile:
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Probablity.png',
       imageText: 'Increase Loan Possibility!',
     },
+  ],
     CTA_Text: 'Enrol Today',
     CTA_Link: '/in/check-eligibility',
   },
