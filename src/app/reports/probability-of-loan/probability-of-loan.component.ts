@@ -75,7 +75,6 @@ export class ProbabilityOfLoanComponent {
         });
     }
 });
-  console.log(this.probabilityData,"ttt");
 
   }
   

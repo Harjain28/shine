@@ -171,55 +171,19 @@
             <div class="laptopSilder">
               <img class="laptopView" src="./assets/LandingPage/laptop.png" alt="">
               <owl-carousel-o [options]="customOptionKeys1">
-                <ng-container>
+                <ng-container *ngFor="let data of WhatToExpectSection?.Background">
                   <ng-template carouselSlide>
                     <div class="setSilder">
                       <div class="textSilder">
                         <img src="./assets/LandingPage/checkStar.svg" alt="">
-                        <span>{{WhatToExpectSection?.Background?.imageText}}</span>
+                        <span>{{data?.imageText}}</span>
                       </div>
                       <div class="laptopAnderImg">
-                        <img src="./assets/LandingPage/laptopAnder.png" alt="">
+                        <img src={{data?.Desktop}} alt="">
                       </div>
                     </div>
                   </ng-template>
-                  <ng-template carouselSlide>
-                    <div class="setSilder">
-                      <div class="textSilder">
-                        <img src="./assets/LandingPage/checkStar.svg" alt="">
-                        <span>{{WhatToExpectSection?.Background1?.imageText}}</span>
-                      </div>
-                      <div class="laptopAnderImg">
-                        <img src="./assets/LandingPage/laptopAnder.png" alt="">
-                      </div>
-                    </div>
-                    </ng-template>
-
-                    <ng-template carouselSlide>
-                      <div class="setSilder">
-                        <div class="textSilder">
-                          <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          <span>{{WhatToExpectSection?.Background2?.imageText}}</span>
-                        </div>
-                        <div class="laptopAnderImg">
-                          <img src="./assets/LandingPage/laptopAnder.png" alt="">
-                        </div>
-                      </div>
-                    </ng-template>
-
-                    <ng-template carouselSlide>
-                      <div class="setSilder">
-                        <div class="textSilder">
-                          <img src="./assets/LandingPage/checkStar.svg" alt="">
-                          <span>{{WhatToExpectSection?.Background3?.imageText}}</span>
-                        </div>
-                        <div class="laptopAnderImg">
-                          <img src="./assets/LandingPage/laptopAnder.png" alt="">
-                        </div>
-                      </div>
-                    </ng-template>
-                    =======
-                    >>>>>>> Stashed changes
+                 
                 </ng-container>
               </owl-carousel-o>
             </div>

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { BehaviorSubject, Observable, Subject } from "rxjs";
+import {  Observable, Subject } from "rxjs";
 import { LocalStorageService } from "./local-storage.service";
 
 @Injectable({

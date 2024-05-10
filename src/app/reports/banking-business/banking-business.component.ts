@@ -13,7 +13,6 @@ import { MixedComponent } from 'src/app/charts/mixed/mixed.component';
 import { HistogramComponent } from 'src/app/charts/histogram/histogram.component';
 import { PieComponent } from 'src/app/charts/pie/pie.component';
 import { BarComponent } from 'src/app/charts/bar/bar.component';
-import { reportPageJson } from 'src/app/JsonFiles/report';
 import { Mixed5Component } from 'src/app/charts/mixed5/mixed5.component';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 
@@ -192,7 +191,6 @@ export class BankingBusinessComponent {
     this.banking_history = this.bankingData?.report?.bankingHistory;
 
     this.monthly_expenses = this.banking_history?.monthlyExpenses;
-    console.log(this.monthly_expenses,"uu")
     this.turnoverLineData = this.graphData?.turnover;
     this.businessLinedata = this.graphData?.abb;
     this.securedUnsecuredRatioData =this.bankingData?.report?.creditReport?.securedUnsecuredRatio;
@@ -271,7 +269,6 @@ export class BankingBusinessComponent {
     this.mixedData4 = resultObject;
     this.mixedData5 = resultObject;
 
-    console.log(cashFlowArray, 'kkk');
   }
 
   private setColorAndText(classValue: string): { color: string } {
@@ -358,7 +355,6 @@ export class BankingBusinessComponent {
     const count_volatilityClass = this.count_volatility?.class;
     const { color: count_VolColor} = this.setColorAndText(count_volatilityClass);
     this.count_VolColor = count_VolColor;
-    console.log(this.count_volatility,"ff2")
 
 
     this.bankingHistory_summary = this.concatenateInsights(
@@ -391,7 +387,6 @@ export class BankingBusinessComponent {
     const { color: abbColor } = this.setColorAndText(abbcardViewClass);
     this.abbColor = abbColor;
 
-    console.log(this.abbcardView,"ff2")
 
     this.bank_balance_observation = this.concatenateInsights(
       abb?.volatility_observation.filter(
@@ -403,7 +398,6 @@ export class BankingBusinessComponent {
     const { color: voColor } = this.setColorAndText(bank_balance_observationClass);
     this.voColor = voColor;
 
-    console.log(this.bank_balance_observation,"fft")
 
     this.bank_balance_lenders_perspective = this.concatenateInsights(
       abb?.volatility_lenders_perspective.filter(
@@ -438,9 +432,7 @@ export class BankingBusinessComponent {
         (item: { condition_status: any }) => item.condition_status
       )
     );
-    console.log(this.dcard_view,"fff")
 
-    console.log(this.dcard_view.warning,"fff")
 
     const dcardViewClass = this.dcard_view?.class;
     const { color: dcColor } = this.setColorAndText(dcardViewClass);

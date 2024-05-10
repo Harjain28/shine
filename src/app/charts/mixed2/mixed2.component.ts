@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import Chart, { ChartData,RadialTickOptions, TooltipItem } from 'chart.js/auto';
+import Chart, { ChartData,RadialTickOptions } from 'chart.js/auto';
 
 @Component({
   selector: 'app-mixed2',
@@ -41,7 +41,6 @@ export class Mixed2Component {
     const { lowSd, mean, highSd } = this.turnoverLineData;
     const adjustedLowSd = lowSd < 0 ? null : lowSd;
 
-    console.log(mean,"aaa")
 
 
 

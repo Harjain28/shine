@@ -18,18 +18,17 @@ export class FaqComponent {
     this.getFAQ();    
   }
 
-  getFAQ(){
-    this.faqs = this.faqsData?.points?.map((res: { bullets: any; question: any; answer: any; }) =>({
+  getFAQ() {
+    this.faqs = this.faqsData?.points?.map((res: { bullets: any; question: any; answer: any; }) => ({
       Question: res?.question,
       Answer: res?.answer,
       bullets: res?.bullets
-    }));
-
-    this.faqs = this.faqsData?.map((res: { Question: any; Answer: any; bullets: any;}) =>({
+    })) || this.faqsData?.map((res: { Question: any; Answer: any; bullets: any; }) => ({
       Question: res?.Question,
       Answer: res?.Answer,
       bullets: res?.bullets
     }));
   }
+  
 
 }

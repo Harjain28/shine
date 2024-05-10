@@ -1,6 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component,  OnInit } from '@angular/core';
+import { CommonModule, Location } from '@angular/common';
+import {  FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { EventService } from 'src/app/services/event.service';
 import { BehaviorSubject, Subscription, take, timer } from 'rxjs';
@@ -10,6 +10,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Buffer } from "buffer";
+
 
 
 @Component({
@@ -76,7 +77,8 @@ export class OtpComponent implements OnInit{
     public eventService: EventService,
     public router: Router,
     private route: ActivatedRoute,
-    private api: ApiService){
+    private api: ApiService,
+    private location: Location){
       this.route.queryParamMap.subscribe((params) => {
         this.paramsObject = { ...params };
       });
@@ -130,6 +132,7 @@ export class OtpComponent implements OnInit{
             // const stateData = Buffer.from(res.token).toString("base64");
             localStorage.setItem("token",res?.token);
             this.router.navigate(['/in/confirm_order']);
+            this.isOtpSubmit = true;
 
           } else {
             this.api.alert("Please add valid information", "error");
@@ -149,6 +152,10 @@ export class OtpComponent implements OnInit{
       // this.otpVerify.markAllAsTouched();
       this.isOtpSubmit = false;
     }
+  }
+
+  back(){
+    this.location.back();
   }
 
 

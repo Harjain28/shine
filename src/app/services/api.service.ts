@@ -2,8 +2,6 @@ import {  Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { EventService } from './event.service';
-// import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../environments/environment';

@@ -14,11 +14,11 @@
             <p>Last 12 months' bank statements required</p>
 
             <div class="uploadBtn">
-              <button class="btn" (click)="netBankinglink()">
+              <button class="btn" [disabled]="isSubmit" (click)="netBankinglink()">
                 <img src="../../../assets/LandingPage/netBankingIcon.svg" alt="">
                   By Net Banking
               </button>
-              <button class="btn" (click)="uploadDocumentLink()">
+              <button class="btn" [disabled]="isUploadSubmit" (click)="uploadDocumentLink()">
                 <img src="../../../assets/LandingPage/laptopIcon.svg" alt="">
                   Upload
               </button>

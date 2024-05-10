@@ -1,11 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BehaviorSubject, Subscription, interval, take, timer } from "rxjs";
+import {  Subscription,  take, timer } from "rxjs";
 import { Location } from "@angular/common";
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { ApiService } from 'src/app/services/api.service';
 import { EventService } from 'src/app/services/event.service';
-import { Buffer } from "buffer";
 
 
 @Component({

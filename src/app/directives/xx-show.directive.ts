@@ -1,4 +1,4 @@
-import { Directive, Input, OnInit, ViewContainerRef, TemplateRef, ElementRef, HostListener } from '@angular/core';
+import { Directive,  OnInit, ViewContainerRef, TemplateRef, ElementRef } from '@angular/core';
 // import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @Directive({

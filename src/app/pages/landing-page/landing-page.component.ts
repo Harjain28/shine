@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { EventService } from 'src/app/services/event.service';
-import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import {  ChangeDetectorRef, Component, Inject,  PLATFORM_ID } from "@angular/core";
+import {  Router } from "@angular/router";
 import { LocalStorageService } from "src/app/services/local-storage.service";
 import { BreakpointObserver, BreakpointState } from "@angular/cdk/layout";
 import { isPlatformBrowser } from "@angular/common";
@@ -260,6 +260,7 @@ openPopup(data:any){
     this.Shinebanner = this.businessLoanJson?.Shine_Banner;
     this.AnalyseSection = this.businessLoanJson?.Analyse_Section;
     this.WhatToExpectSection = this.businessLoanJson?.What_To_Expect_Section;
+    console.log(this.WhatToExpectSection?.Background,"hh")
     this.shine_comparison = this.businessLoanJson?.Shine_Comparison_Section;
     this.HowShineWillHelpSection = this.businessLoanJson?.How_Shine_Will_Help_Section;
     this.Parameter = this.HowShineWillHelpSection?.Parameter.map((res: {Parameter: any; Icon: any; }) =>({

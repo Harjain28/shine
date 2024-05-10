@@ -10,9 +10,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import {  CarouselComponent, CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { MatDialog } from '@angular/material/dialog';
 import { CreditJourneyPopupComponent } from 'src/app/modal/credit-journey-popup/credit-journey-popup.component';
-import { reportPageJson } from 'src/app/JsonFiles/report';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
-import { RoundPipe } from 'src/app/pipe/round.pipe';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-credit-report',
@@ -175,7 +173,6 @@ export class CreditReportComponent {
 
   ngOnInit(): void {
       this.reportsData = this.creditReportsData;
-    console.log(this.currentYear,"kkk")
 
     this.creditReportData = this.reportsData?.report?.creditReport;
     this.angle = this.creditReportData?.bureauScore?.score;
@@ -187,7 +184,6 @@ export class CreditReportComponent {
 
     this.year = this.extractYears(this.loan_repayment_history?.missedPayments);
     this.selectedYear = this.previousYears[0];
-    console.log(this.previousYears[0] ,"qq")
 
     this.default_analysis = this.loan_repayment_history?.defaultAnalysis;
 
@@ -229,7 +225,6 @@ this.potStage = this.reportsData?.report?.potentialStage
       deptCompColors: [ '#12ba9b','#C3E128']
 
     });
-    console.log(this.credit_analysis,'hhhh')
     this.securedUnsecuredRatioData =
       this.creditReportData?.securedUnsecuredRatio;
     
@@ -289,8 +284,6 @@ this.potStage = this.reportsData?.report?.potentialStage
 
   setSummaryIcon(data: any) {
     if (data?.class !== null) {
-      console.log("setting class");
-      console.log(data?.class);
       switch (data?.class) {
         case 'negative':
           this.summaryIcon = 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png';
@@ -342,7 +335,6 @@ this.potStage = this.reportsData?.report?.potentialStage
     const bureauScoreClass = this.bureauScoreInsights?.class;
     const { color: bsColor } = this.setColorAndText(bureauScoreClass);
     this.bsColor = bsColor;
-    console.log(this.bureauScoreInsights?.class ,"fft");
 
 
     this.infoCardLRP = this.concatenateInsights(
@@ -350,7 +342,6 @@ this.potStage = this.reportsData?.report?.potentialStage
         (item: { condition_status: any }) => item.condition_status
       )
     );
-      console.log(this.infoCardLRP ,"infoCardLRP");
 
     const infoCardLRPClass = this.infoCardLRP?.class;
 const { color: infoCardLRPColor } = this.setColorAndText(infoCardLRPClass);
@@ -396,7 +387,6 @@ this.infoCardLRPColor = infoCardLRPColor;
 const { color: cardViewColor} = this.setColorAndText(cardViewClass);
 this.warningColor = cardViewColor;
 
-    console.log(this.cardView,"ee")
     
     
     this.securedUnsecuredRatio = this.concatenateInsights(
@@ -449,9 +439,6 @@ this.warningColor = cardViewColor;
       )
     );
 
-    console.log(credit_analysis, 'credit_analysis');
-    // console.log(this.summary, 'summary');
-    // console.log(this.suitFiledEver, 'suitFiledEver');
 
     this.reportStaticData = reportStatciData;
     this.CR_Data = this.reportStaticData?.credit_report_section;

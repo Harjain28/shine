@@ -1,6 +1,4 @@
-import { Route, Routes } from '@angular/router';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { AuthGuard } from '../guard/auth.gaurd';
+import { Route } from '@angular/router';
 
 export default[
     {

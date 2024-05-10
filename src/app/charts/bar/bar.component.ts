@@ -46,7 +46,6 @@ export class BarComponent {
     const dataValues = [...this.barvalues]; 
 
     const sortedValues = dataValues.slice().sort((a, b) => b - a);
-    console.log(sortedValues,"qqq2  ")
 
     const backgroundColors = dataValues.map(value => this.getColor(value,sortedValues));
     const value = 2;
@@ -131,7 +130,6 @@ export class BarComponent {
 
   getColor(value: number, sortedValues:any) {
     const index = sortedValues.indexOf(value);
-    console.log(index,"qqq")
     if (value <= 2) {
       return '#ff2424'; // Red
   } else {

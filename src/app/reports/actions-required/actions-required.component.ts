@@ -7,7 +7,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
-import { reportPageJson } from 'src/app/JsonFiles/report';
 import { Router } from '@angular/router';
 
 @Component({

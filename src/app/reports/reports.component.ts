@@ -12,7 +12,6 @@ import { GstFillingComponent } from './gst-filling/gst-filling.component';
 import { BankingBusinessComponent } from './banking-business/banking-business.component';
 import { ActionsRequiredComponent } from './actions-required/actions-required.component';
 import { ProbabilityOfLoanComponent } from './probability-of-loan/probability-of-loan.component';
-import { shineLendingPageJSON } from '../JsonFiles/lendingpage';
 import { ChartsJsonData } from '../JsonFiles/ChartJSONData';
 import { Subscription, take, timer } from 'rxjs';
 import { reportStatciData } from '../JsonFiles/reportpageStaticData';
@@ -146,7 +145,6 @@ export class ReportsComponent {
       (image: { stage: any }) => image.stage === this.reportsData?.report?.potentialStage.toString()
     );
 
-    console.log(this.Key_Insights_box,"ttt")
 
 
     this.levelArray = [  
@@ -176,7 +174,6 @@ export class ReportsComponent {
       (res: { stage: any }) => res.stage === this.Key_Insights_box.stage
     );
 
-    console.log(compare.stage,"tat")
     if(compare){
       this.progressValue = (compare.stage/5)*100;
       this.potentialColor = compare.color;
@@ -229,7 +226,6 @@ export class ReportsComponent {
       this.reportsData = reportPageJson;
     }
 
-    console.log(this.reportsData,"klkl")
 
    
 
@@ -262,7 +258,7 @@ export class ReportsComponent {
   // }
 
   postForReport() {
-    this.showEligible = false;
+    this.showEligible = true;
       let requestData: any = {}; 
       requestData["mobile"] = this.mobileNo;
       //  const params = { ...this.paramsObject.params };
@@ -270,13 +266,12 @@ export class ReportsComponent {
               next: (res: any) => {
                 if (res) {
                   this.showEligible = true;
-                  console.log(res);
                   this.reportsData = res;
                  
                 }
               },
               error: error => {
-                this.showEligible = true;
+                this.showEligible = false;
               },
               complete: () => {
                // ('Request complete');

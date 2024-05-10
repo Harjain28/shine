@@ -2,7 +2,6 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Chart, { ChartData, RadialTickOptions } from 'chart.js/auto';
 import { BreakpointObserver, BreakpointState } from "@angular/cdk/layout";
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-mixed5',

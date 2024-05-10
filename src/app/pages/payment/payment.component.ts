@@ -1,6 +1,6 @@
 
 import { shinePricingPageJSON } from 'src/app/JsonFiles/pricing';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
@@ -57,6 +57,7 @@ export class PaymentComponent {
   email: any;
   isInvalidCoupon: boolean = false;
   code: any;
+  isSubmit!: boolean;
 
 
 
@@ -121,13 +122,11 @@ export class PaymentComponent {
             if (res?.success === true) {
               this.discountSection = true;
               this.code = this.couponInput;
-              console.log(this.code,"kkk")
               if (res.hasOwnProperty('percent') || res.hasOwnProperty('flatPrice')) {
                 this.isInvalidCoupon = false;
                 this.discountPrice = res?.percent ? (this.filteredData.Price * res?.percent) / 100 : res?.flatPrice;
                 this.calGST = ((this.filteredData.Price - this.discountPrice) * 18) / 100;
                 this.total = parseInt(this.filteredData.Price) + this.calGST - this.discountPrice;
-                console.log(this.total);
               }
             }
           },
@@ -179,6 +178,7 @@ export class PaymentComponent {
     }
 
   getForPaymentMethod() {
+    this.isSubmit = true;
     let requestData: any = {};
     requestData['amount'] = '2.00';
     requestData['custMobile'] = this.mobile;
@@ -192,6 +192,7 @@ export class PaymentComponent {
       .subscribe({
         next: (res: any) => {
           this.reqData = res;
+          this.isSubmit = true;
           this.paymentGUrl = res.url;
           if (res?.url) {
             this.showForm = true;
@@ -201,6 +202,7 @@ export class PaymentComponent {
           }
         },
         error: (error: HttpErrorResponse) => {
+          this.isSubmit = false;
           if (error.status === 401) {
             this.router.navigate(['in/register'])
           }

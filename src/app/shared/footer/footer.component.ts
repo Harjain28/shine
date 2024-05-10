@@ -1,6 +1,5 @@
-import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import {  AfterViewInit, Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import {   Component, Inject,  PLATFORM_ID } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import {  ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { EventService } from 'src/app/services/event.service';

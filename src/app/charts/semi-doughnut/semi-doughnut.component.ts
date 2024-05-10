@@ -1,6 +1,6 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef,  ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import Chart, { ChartData, registerables } from 'chart.js/auto';
+import Chart, {  registerables } from 'chart.js/auto';
 
 @Component({
   selector: 'app-semi-doughnut',

@@ -1,7 +1,6 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Chart, { ChartData } from 'chart.js/auto';
-import { ChartsJsonData } from 'src/app/JsonFiles/ChartJSONData';
 
 
 @Component({

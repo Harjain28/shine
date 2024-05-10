@@ -1,9 +1,6 @@
-// ModuleWithProviders
-import { NgModule, ModuleWithProviders } from "@angular/core";
-// MAT_DATE_LOCALE, MAT_LABEL_GLOBAL_OPTIONS
+import { NgModule } from "@angular/core";
 import { MatNativeDateModule } from "@angular/material/core";
 
-// import { MatIconRegistry } from '@angular/material/icon';
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatButtonModule } from "@angular/material/button";
@@ -39,7 +36,6 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatTreeModule } from "@angular/material/tree";
 import { MatBottomSheetModule } from "@angular/material/bottom-sheet";
 import { MatDividerModule } from "@angular/material/divider";
-import { ChunkpipeDirective } from './pipe/chunkpipe.directive';
 
 
 

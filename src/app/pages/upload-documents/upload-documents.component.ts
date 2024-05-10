@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, Inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MaterialModule } from 'src/app/material.module';
@@ -10,11 +10,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialog } from '@angular/material/dialog';
-import { EligibilityPopupComponent } from 'src/app/modal/eligibility-popup/eligibility-popup.component';
-import {  ElementRef,  ViewChild } from '@angular/core';
-import {  Subscription,  flatMap,  take, timer } from "rxjs";
 import { Location } from "@angular/common";
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-upload-documents',
@@ -44,6 +41,8 @@ export class UploadDocumentsComponent {
   requestData: any;
   parsedData: any;
   mobileNo: any;
+  isSubmit!: boolean;
+  isUploadSubmit!: boolean;
 
  
   constructor(private api: ApiService,
@@ -132,6 +131,7 @@ export class UploadDocumentsComponent {
 
 
   netBankinglink(){
+    this.isSubmit = true;
     const defaultparams = {
       mobile: this.mobileNo,
       callbackEnum: 0,
@@ -143,12 +143,15 @@ export class UploadDocumentsComponent {
       )
       .subscribe({
         next: (res: any) => {
-          
+          this.isSubmit = true;
+
           localStorage.setItem("transID",res?.transactionId)
         this.iframeUrl = res?.url;
         window.location.href = this.iframeUrl;
         },
         error: (error:any) => {
+          this.isSubmit = false;
+
         },
         complete: () => {
         //  ("Request complete");
@@ -157,6 +160,7 @@ export class UploadDocumentsComponent {
   }
 
   uploadDocumentLink(){
+    this.isUploadSubmit = true;
     const defaultparams = {
       mobile: this.mobileNo,
       callbackEnum: 0,
@@ -169,12 +173,15 @@ export class UploadDocumentsComponent {
       )
       .subscribe({
         next: (res: any) => {
+          this.isUploadSubmit = true;
 
           localStorage.setItem("transID",res?.transactionId);
            window.location.href = res?.url;
          
         },
         error: (error:any) => {
+          this.isUploadSubmit = false;
+
         },
         complete: () => {
         //  ("Request complete");

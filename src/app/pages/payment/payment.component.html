@@ -73,7 +73,7 @@
           </ul>
 
           <div class="paymentBtn"  *ngIf="!transactionFailed">
-            <button class="btn" (click)="getForPaymentMethod()">Proceed to Payment</button>
+            <button class="btn" [disabled]="isSubmit" (click)="getForPaymentMethod()">Proceed to Payment</button>
           </div>
 
           <div class="alertBox">
@@ -89,7 +89,7 @@
           </div>
 
           <div class="paymentBtn"  *ngIf="transactionFailed">
-            <button class="btn" (click)="getForPaymentMethod()">Retry Payment</button>
+            <button class="btn" [disabled]="isSubmit" (click)="getForPaymentMethod()">Retry Payment</button>
           </div>
          
         </div>

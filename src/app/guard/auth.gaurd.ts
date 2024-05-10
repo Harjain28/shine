@@ -1,9 +1,5 @@
-import { HostListener, Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { EventService } from '../services/event.service';
-import { StorageService } from '../services/storage.service';
-import { Location } from '@angular/common';
+import {  Injectable } from '@angular/core';
+import {  ActivatedRouteSnapshot, RouterStateSnapshot,  Router } from '@angular/router';
 
 
 

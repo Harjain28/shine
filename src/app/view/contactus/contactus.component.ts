@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { UrlService } from 'src/app/services/url.service';

@@ -6,7 +6,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { reportPageJson } from 'src/app/JsonFiles/report';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 import { NoGstComponent } from '../no-gst/no-gst.component';
 
@@ -113,7 +112,6 @@ export class GstFillingComponent {
     this.monthName = this.getMonthName(this.reportMonth);
 
     this.monthArray = this.calculateMonths(this.reportMonth, 7);
-    console.log(this.monthArray, "kk")
   
 
 

@@ -4,8 +4,7 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
-  HttpResponse,
-  HttpHeaders
+  HttpResponse
 } from '@angular/common/http';
 import { Observable, Observer } from 'rxjs';
 import { EventService } from '../services/event.service';
