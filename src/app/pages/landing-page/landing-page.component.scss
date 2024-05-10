@@ -1317,6 +1317,10 @@
             padding: 40px 0px;
             background-image: none !important;
 
+            &::before{
+                display: none;
+            }
+
             .content {
                 margin-bottom: 15px;
 

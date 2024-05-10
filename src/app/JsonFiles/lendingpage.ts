@@ -1,7 +1,7 @@
 export const shineLendingPageJSON = {
   Shine_Banner: {
     Header1: {
-      Text: 'Welcome to SHINE',
+      Text: 'Welcome to Shine',
     },
     Header2: {
       Text: 'Identify Issues. Improve Your Credit Profile. Secure Capital.',
