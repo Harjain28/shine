@@ -84,6 +84,20 @@
     backdrop-filter: blur(5px);
 }
 
+::ng-deep{
+
+    mat-dialog-container{
+
+
+        .mdc-dialog__container{
+
+            .mdc-dialog__surface{
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
 @media (max-width: 767px) {
 
     .modalbureauNumber{

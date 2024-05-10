@@ -61,45 +61,39 @@
                       <div class="box box1">
                         <img class="userImg" src="./assets/LandingPage/BiginnerImg.svg" alt="">
                         <h3>{{WhoisShineForSection?.Beginners_Feature?.Beginners_Title}}</h3>
-                        <p>{{WhoisShineForSection?.Beginners_Feature?.Summary}}</p>
-  
                         <ul>
                           <li *ngFor="let data of WhoisShineForSection?.Beginners_Feature?.Beginners_Details">
                             <img src="./assets/LandingPage/checkStar.svg" alt="">
                             {{data}}
                           </li>
-                         
                         </ul>
+                        <p>{{WhoisShineForSection?.Beginners_Feature?.Summary}}</p>
                       </div>
                   </ng-template>
                   <ng-template carouselSlide>
                       <div class="box box2">
                         <img class="userImg" src="./assets/LandingPage/IntermediateImg.svg" alt="">
-                        <h3>{{WhoisShineForSection?.Intermediate_Feature?.Intermediate_Feature}}</h3>
-                        <p>{{WhoisShineForSection?.Intermediate_Feature?.Summary}}</p>
-  
+                        <h3>{{WhoisShineForSection?.Intermediate_Feature?.Intermediate_Feature}}</h3>  
                         <ul>
                           <li *ngFor="let data of WhoisShineForSection?.Intermediate_Feature?.Intermediate_Details">
                             <img src="./assets/LandingPage/checkStar.svg" alt="">
                             {{data}}
                           </li>
-                         
                         </ul>
+                        <p>{{WhoisShineForSection?.Intermediate_Feature?.Summary}}</p>
                       </div>
                   </ng-template>
                   <ng-template carouselSlide>
                       <div class="box box3">
                         <img class="userImg" src="./assets/LandingPage/ExpertImg.svg" alt="">
-                        <h3>{{WhoisShineForSection?.Expert_Feature?.Expert_Feature}}</h3>
-                        <p>{{WhoisShineForSection?.Expert_Feature?.Summary}}</p>
-  
+                        <h3>{{WhoisShineForSection?.Expert_Feature?.Expert_Feature}}</h3>  
                         <ul>
                           <li *ngFor="let data of WhoisShineForSection?.Expert_Feature?.Expert_Details">
                             <img src="./assets/LandingPage/checkStar.svg" alt="">
                             {{data}}
                           </li>
-                         
                         </ul>
+                        <p>{{WhoisShineForSection?.Expert_Feature?.Summary}}</p>
                       </div>
                   </ng-template>
                 </ng-container>
