@@ -7,6 +7,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { shinePricingPageJSON } from 'src/app/JsonFiles/pricing';
 import { MatDialog } from '@angular/material/dialog';
 import { SampleReportsFormComponent } from 'src/app/modal/sample-reports-form/sample-reports-form.component';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -28,7 +29,7 @@ export class Pricing2Component {
   total: any;
   cuttedPrice: any;
 
-  constructor(private dialog: MatDialog ){
+  constructor(private dialog: MatDialog, private router: Router ){
     this.getPricingData();
 
   }
@@ -64,6 +65,13 @@ export class Pricing2Component {
       count: res?.Count
     }))
     
+
+  }
+
+  goToRegister(text:any){
+    localStorage.setItem("text",text);
+
+    this.router.navigate(['/in/register'])
 
   }
 

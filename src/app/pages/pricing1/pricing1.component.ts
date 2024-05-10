@@ -84,7 +84,7 @@ export class Pricing1Component {
      });
    }
 
-  goToPayment(text:any){
+  goToRegister(text:any){
     localStorage.setItem("text",text);
 
     this.router.navigate(['/in/register'])
