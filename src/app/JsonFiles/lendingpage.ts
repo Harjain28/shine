@@ -124,13 +124,13 @@ export const shineLendingPageJSON = {
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_count.png',
       imageText: 'Customised Financial Analysis',
     },
-    // {
-    //   Desktop:
-    //     'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_mix.png',
-    //   Mobile:
-    //     'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_mix.png',
-    //   imageText: 'Unmatched Lender Insights',
-    // },
+    {
+      Desktop:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_mix.png',
+      Mobile:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/credit_mix.png',
+      imageText: 'Unmatched Lender Insights',
+    },
     {
       Desktop:
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/screeshot/Probablity.png',

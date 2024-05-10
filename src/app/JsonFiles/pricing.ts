@@ -29,7 +29,7 @@ export const shinePricingPageJSON = {
       },
       {
         item: [
-          'Early warning indicators for creditworthiness issues',
+          'Early warning signs of credit risk',
            'Yes',
            'Yes',
         ]
@@ -50,21 +50,21 @@ export const shinePricingPageJSON = {
       },
       {
         item: [
-          'Personalized Strategies to Improve Loan Prospects',
+          'Tailored plans for loan success',
            'Yes',
            'Yes',
         ]
       },
       {
         item: [
-          'Customized Insights into 15+ Lender Fits',
+          'Personalised guidance on 15+ lender matches',
            'Yes',
            'Yes',
         ]
       },
       {
         item: [
-          'Access to Educational Content on Best Borrowing Practices',
+          'Insights on optimal borrowing practices',
            'No',
            'Yes',
         ]
@@ -111,11 +111,11 @@ export const shinePricingPageJSON = {
         item: [
           'Comprehensive Financial Overview',
           'Experian Credit Report Analysis',
-          'Early warning indicators for creditworthiness issues',
+          'Early warning signs of credit risk',
           'GST Filing Analysis',
           'Comprehensive Banking Assessment',
-          'Personalized Strategies to Improve Loan Prospects',
-          'Customized Insights into 15+ Lender Fits'
+          'Tailored plans for loan success',
+          'Personalised guidance on 15+ lender matches'
         ]
       },
       {
@@ -124,12 +124,12 @@ export const shinePricingPageJSON = {
         item: [
               'Comprehensive Financial Overview',
               'Experian Credit Report Analysis',
-              'Early warning indicators for creditworthiness issues',
+              'Early warning signs of credit risk',
               'GST Filing Analysis',
               'Comprehensive Banking Assessment',
-              'Personalized Strategies to Improve Loan Prospects',
-              'Customized Insights into 15+ Lender Fits',
-              'Access to Educational Content on Best Borrowing Practices',
+              'Tailored plans for loan success',
+              'Personalised guidance on 15+ lender matches',
+              'Insights on optimal borrowing practices',
              'Monthly Performance Tracking',
              'Access to Credit Counsellor',
              'Debt Consolidation Advisory ',
@@ -144,12 +144,12 @@ export const shinePricingPageJSON = {
   
   What_is_Shine_Section: {
     Header: 'What is Shine?',
-    Subhead: 'Are you tired of unfavourable loan terms? Let SHINE bridge the gap between frustration and dream loans.',
+    Subhead: 'Are you tired of unfavourable loan terms? Let Shine bridge the gap between frustration and dream loans.',
     Body_Section: [
       'Our expertise demystifies lending, fighting for your dreams.',
-      'Worrying about your credit score or cashflows? SHINE assesses like a lender, providing detailed insights.',
-      'Get a personalized assessment and solutions to improve credit and loan prospects in about 3-6 months.',
-      'Trust SHINE to illuminate your path to business success, offering clarity and empowerment.',
+      'Worrying about your credit score or cashflows? Shine assesses like a lender, providing detailed insights.',
+      'Get a personalised assessment and solutions to improve credit and loan prospects in about 3-6 months.',
+      'Trust Shine to illuminate your path to business success, offering clarity and empowerment.',
     ],
     CTA_body: 'Need More Information?',
     CTA_Text: 'View Sample Report',
@@ -160,24 +160,24 @@ export const shinePricingPageJSON = {
     Header: 'How Does Shine Help Me?',
     Feature_Tiles: [
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
-        Product_copy: 'Leading Low-Cost Product',
-      },
-      {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/pricing/insight.png',
         Product_copy: 'Clear & Simple Insights',
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/pricing/low_cost.png',
+        Product_copy: 'Leading Low-Cost Product',
+      },
+      {
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/pricing/data_driven.png',
         Product_copy: 'Data-Driven Edge',
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
-        Product_copy: 'Customized Financial Strategies',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/pricing/market_expert.png',
+        Product_copy: 'Unmatched Market Knowledge',
       },
       {
-        Icon: 'https://dzzu957mxv8q0.cloudfront.net/images/website/home/secure_loan.svg',
-        Product_copy: 'Unmatched Market Knowledge',
+        Icon: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/pricing/customised.png',
+        Product_copy: 'Customised Financial Strategies',
       },     
     ],
   },
