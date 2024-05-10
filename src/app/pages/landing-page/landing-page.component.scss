@@ -107,6 +107,10 @@
 
         .betterLoanOpportunties {
             padding-bottom: 60px;
+            padding-top: 60px;
+            background-color: #F3F3F370;
+            z-index: -1;
+            position: relative;
 
             .boxColor {
 
@@ -218,128 +222,127 @@
                 }
             }
         }
+    }
 
-        .transformFinance {
-            background-color: #F3F3F3;
-            padding: 65px 0px;
-            z-index: -2;
+    .transformFinance {
+        padding: 65px 0px;
+        z-index: -2;
+        position: relative;
+
+        .rightContent {
             position: relative;
+            z-index: 9;
 
-            .rightContent {
-                position: relative;
-                z-index: 9;
+            h3 {
+                color: #3f3f3f;
+                font-size: 30px;
+                line-height: 37px;
+                font-weight: 700;
+                font-family: 'Be Vietnam Pro' !important;
+                margin-bottom: 14px;
 
-                h3 {
-                    color: #3f3f3f;
-                    font-size: 30px;
-                    line-height: 37px;
-                    font-weight: 700;
-                    font-family: 'Be Vietnam Pro' !important;
-                    margin-bottom: 14px;
-
-                    span {
-                        color: var(--main1);
-                        display: block;
-                    }
-                }
-
-                p {
-                    color: #3f3f3f;
-                    font-size: 16px;
-                    line-height: 22px;
-                    font-weight: normal;
-                    font-family: Poppins !important;
-                    margin-bottom: 2px;
-
+                span {
+                    color: var(--main1);
+                    display: block;
                 }
             }
 
-            .laptopSilder {
+            p {
+                color: #3f3f3f;
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: normal;
+                font-family: Poppins !important;
+                margin-bottom: 2px;
+
+            }
+        }
+
+        .laptopSilder {
+            position: relative;
+            overflow: hidden;
+            z-index: 900;
+
+            .textSilder {
+                box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1019607843);
+                border: 1px solid #12BA9B;
+                border-radius: 10px;
+                padding: 6px 16px;
+                text-align: center;
                 position: relative;
-                overflow: hidden;
-                z-index: 900;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: -moz-fit-content;
+                width: fit-content;
+                top: -250px;
+                z-index: 99999;
+                background: #fff;
+                left: 20px;
 
-                .textSilder {
-                    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1019607843);
-                    border: 1px solid #12BA9B;
-                    border-radius: 10px;
-                    padding: 6px 16px;
-                    text-align: center;
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: -moz-fit-content;
-                    width: fit-content;
-                    top: -250px;
-                    z-index: 99999;
-                    background: #fff;
-                    left: 20px;
-
-                    img {
-                        width: 32px;
-                        height: 32px;
-                        position: absolute;
-                        z-index: 999;
-                        left: -20px;
-                    }
-
-                    span {
-                        font-size: 16px;
-                        line-height: 22px;
-                        color: var(--main2);
-                        font-weight: 600;
-                        font-family: Poppins !important;
-                    }
-                }
-
-                .laptopView {
-                    width: 480px;
-                    display: flex;
-                    margin: 0px 0px 0px auto;
-                }
-
-                .laptopAnderImg {
+                img {
+                    width: 32px;
+                    height: 32px;
                     position: absolute;
-                    top: -35px;
-                    left: 80%;
-                    transform: translate(100%, -100%);
                     z-index: 999;
-
-                    img {
-                        height: 225px;
-                        width: auto;
-                        margin: auto;
-                    }
+                    left: -20px;
                 }
 
-                owl-carousel-o {
+                span {
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: var(--main2);
+                    font-weight: 600;
+                    font-family: Poppins !important;
+                }
+            }
 
-                    ::ng-deep {
+            .laptopView {
+                width: 480px;
+                display: flex;
+                margin: 0px 0px 0px auto;
+            }
 
-                        .owl-carousel {
+            .laptopAnderImg {
+                position: absolute;
+                top: -35px;
+                left: 80%;
+                transform: translate(100%, -100%);
+                z-index: 999;
 
-                            .owl-stage-outer {
-                                overflow: visible;
-                            }
+                img {
+                    height: 225px;
+                    width: auto;
+                    margin: auto;
+                }
+            }
+
+            owl-carousel-o {
+
+                ::ng-deep {
+
+                    .owl-carousel {
+
+                        .owl-stage-outer {
+                            overflow: visible;
                         }
+                    }
 
-                        .owl-dots {
+                    .owl-dots {
 
-                            .owl-dot {
+                        .owl-dot {
 
-                                &.active {
+                            &.active {
 
-                                    span {
-                                        background: var(--main2);
-                                    }
+                                span {
+                                    background: var(--main2);
                                 }
+                            }
 
-                                &:hover {
+                            &:hover {
 
-                                    span {
-                                        background: var(--main2);
-                                    }
+                                span {
+                                    background: var(--main2);
                                 }
                             }
                         }
@@ -488,6 +491,7 @@
 
     .advantagesShine {
         padding: 60px 0px 60px;
+        background-color: #F3F3F370;
 
         .content {
             text-align: center;
@@ -582,21 +586,29 @@
         }
     }
 
+    .leftSideDesign{
+        background-repeat: no-repeat;
+        background-position: left;
+    }
+
     .shineHelp {
         padding: 60px 0px;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
+        overflow: hidden;
 
         &::before {
             content: "";
             position: absolute;
             top: 0px;
-            left: 0px;
+            right: 0px;
             height: 100%;
             background-image: url(../../../assets/LandingPage/leftDesign.png);
             background-repeat: no-repeat;
             width: 300px;
+            background-position: right;
+            rotate: 180deg;
         }
 
         .content {
@@ -800,6 +812,12 @@
 
     .guaranteedLoan {
         padding: 60px 0px;
+        background-repeat: no-repeat;
+        background-position: right;
+        margin-top: -10px;
+        margin-bottom: -10px;
+        position: relative;
+        z-index: -1;
 
         .content {
             text-align: center;
@@ -922,6 +940,7 @@
 
             .betterLoanOpportunties {
                 padding-bottom: 30px;
+                padding-top: 30px;
 
                 .boxContent {
 
@@ -955,64 +974,63 @@
                     }
                 }
             }
+        }
 
+        .transformFinance {
+            padding: 42px 0px 0px;
 
-            .transformFinance {
-                padding: 42px 0px 0px;
+            .rightContent {
+                text-align: center;
 
-                .rightContent {
-                    text-align: center;
+                h3 {
+                    font-size: 22px;
+                    line-height: 27px;
+                    font-weight: 600;
+                }
 
-                    h3 {
-                        font-size: 22px;
-                        line-height: 27px;
-                        font-weight: 600;
+                p {
+                    font-size: 14px;
+                    line-height: 20px;
+
+                }
+            }
+
+            .laptopSilder {
+                padding-top: 30px;
+
+                .textSilder {
+                    top: -190px;
+                    left: 50%;
+                    transform: translate(-47%, -50%);
+
+                    img {
+                        width: 32px;
+                        height: 32px;
+                        position: absolute;
+                        z-index: 999;
+                        left: -20px;
                     }
 
-                    p {
-                        font-size: 14px;
-                        line-height: 20px;
-
+                    span {
+                        font-size: 16px;
+                        line-height: 22px;
+                        color: var(--main2);
+                        font-weight: 600;
+                        font-family: Poppins !important;
                     }
                 }
 
-                .laptopSilder {
-                    padding-top: 30px;
+                .laptopView {
+                    width: 100%;
+                }
 
-                    .textSilder {
-                        top: -190px;
-                        left: 50%;
-                        transform: translate(-47%, -50%);
+                .laptopAnderImg {
+                    top: -50%;
+                    left: 48%;
+                    transform: translate(100%, -100%);
 
-                        img {
-                            width: 32px;
-                            height: 32px;
-                            position: absolute;
-                            z-index: 999;
-                            left: -20px;
-                        }
-
-                        span {
-                            font-size: 16px;
-                            line-height: 22px;
-                            color: var(--main2);
-                            font-weight: 600;
-                            font-family: Poppins !important;
-                        }
-                    }
-
-                    .laptopView {
-                        width: 100%;
-                    }
-
-                    .laptopAnderImg {
-                        top: -50%;
-                        left: 48%;
-                        transform: translate(100%, -100%);
-
-                        img {
-                            height: 160px;
-                        }
+                    img {
+                        height: 160px;
                     }
                 }
             }

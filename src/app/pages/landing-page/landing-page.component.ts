@@ -31,7 +31,7 @@ export class LandingPageComponent {
     mouseDrag: false,
     touchDrag: true,
     dots: true,
-    autoplay: true,
+    autoplay: false,
     nav: false,
     margin: 10,
 
