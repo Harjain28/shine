@@ -29,7 +29,7 @@ export const shinePricingPageJSON = {
       },
       {
         item: [
-          'Early warning signs of credit risk',
+          'Early Warning Signs of Credit Risk',
            'Yes',
            'Yes',
         ]
@@ -50,21 +50,21 @@ export const shinePricingPageJSON = {
       },
       {
         item: [
-          'Tailored plans for loan success',
+          'Tailored Plans for Loan Success',
            'Yes',
            'Yes',
         ]
       },
       {
         item: [
-          'Personalised guidance on 15+ lender matches',
+          'Custom Advice on 15+ Lender Matches',
            'Yes',
            'Yes',
         ]
       },
       {
         item: [
-          'Insights on optimal borrowing practices',
+          'Access to Top Borrowing Tips',
            'No',
            'Yes',
         ]
@@ -111,11 +111,11 @@ export const shinePricingPageJSON = {
         item: [
           'Comprehensive Financial Overview',
           'Experian Credit Report Analysis',
-          'Early warning signs of credit risk',
+          'Early Warning Signs of Credit Risk',
           'GST Filing Analysis',
           'Comprehensive Banking Assessment',
-          'Tailored plans for loan success',
-          'Personalised guidance on 15+ lender matches'
+          'Tailored Plans for Loan Success',
+          'Custom Advice on 15+ Lender Matches'
         ]
       },
       {
@@ -124,12 +124,12 @@ export const shinePricingPageJSON = {
         item: [
               'Comprehensive Financial Overview',
               'Experian Credit Report Analysis',
-              'Early warning signs of credit risk',
+              'Early Warning Signs of Credit Risk',
               'GST Filing Analysis',
               'Comprehensive Banking Assessment',
-              'Tailored plans for loan success',
-              'Personalised guidance on 15+ lender matches',
-              'Insights on optimal borrowing practices',
+              'Tailored Plans for Loan Success',
+              'Custom Advice on 15+ Lender Matches',
+             'Access to Top Borrowing Tips',
              'Monthly Performance Tracking',
              'Access to Credit Counsellor',
              'Debt Consolidation Advisory ',

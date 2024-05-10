@@ -1,10 +1,23 @@
-import { ChangeDetectorRef, Component, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  Inject,
+  PLATFORM_ID,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MaterialModule } from 'src/app/material.module';
 import { MatIconModule } from '@angular/material/icon';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { EventService } from 'src/app/services/event.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
@@ -14,9 +27,18 @@ import { Subscription, take, timer } from 'rxjs';
 @Component({
   selector: 'app-upload-documents',
   standalone: true,
-  imports: [CommonModule,MaterialModule,MatIconModule,ReactiveFormsModule, MatFormFieldModule, FormsModule,MatOptionModule,MatInputModule],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatOptionModule,
+    MatInputModule,
+  ],
   templateUrl: './upload-documents.component.html',
-  styleUrls: ['./upload-documents.component.scss']
+  styleUrls: ['./upload-documents.component.scss'],
 })
 export class UploadDocumentsComponent {
   currentIndex = 0;
@@ -50,10 +72,7 @@ export class UploadDocumentsComponent {
     'If you own property, you may be eligible for a Loan Against Property which has 50% lower EMIs.',
   ];
 
-
-
-  @Inject(PLATFORM_ID) private platformId!: Object
-
+  @Inject(PLATFORM_ID) private platformId!: Object;
 
   paramsObject: any;
   iframeUrl!: string;
@@ -61,7 +80,7 @@ export class UploadDocumentsComponent {
   dealId: any;
 
   form2!: FormGroup;
-  showValidatePANError!: boolean ;
+  showValidatePANError!: boolean;
   showEligible: boolean = false;
   isBrowser: boolean = false;
   confirmUrl: any;
@@ -75,42 +94,38 @@ export class UploadDocumentsComponent {
   isPerfios: boolean = true;
   timeout: any;
   interval: any;
- 
-  constructor(private api: ApiService,
-      private route: ActivatedRoute,
-      public eventService: EventService,
-      private cdr: ChangeDetectorRef,
 
+  constructor(
+    private api: ApiService,
+    private route: ActivatedRoute,
+    public eventService: EventService,
+    private cdr: ChangeDetectorRef,
 
-      public router: Router) {
+    public router: Router
+  ) {
     this.route.params.subscribe((params) => {
-      this.dealId = params["id"];
+      this.dealId = params['id'];
     });
 
     this.route.queryParamMap.subscribe((params) => {
       this.paramsObject = { ...params };
     });
-   
-   }
+  }
 
   ngOnInit(): void {
-
     this.form();
 
     // this.isChecked = this.api.isDocumentChecked;
 
-    this.requestData = localStorage.getItem("reqData");
-      this.parsedData = JSON.parse(this.requestData);
+    this.requestData = localStorage.getItem('reqData');
+    this.parsedData = JSON.parse(this.requestData);
 
-      if(this.parsedData){
-        this.mobileNo = this.parsedData.mobile;
-      }
+    if (this.parsedData) {
+      this.mobileNo = this.parsedData.mobile;
+    }
 
-    this.transID =localStorage.getItem("transID");
-      if(this.transID){
-      this.callPerfiosCallback(this.transID);
-      }
-  
+    this.transID = localStorage.getItem('transID');
+    this.callPerfiosCallback(this.transID);
   }
 
   ngAfterViewInit(): void {
@@ -126,90 +141,82 @@ export class UploadDocumentsComponent {
     this.cdr.detectChanges();
   }
 
-  perfios(id:any){
+  perfios(id: any) {
     const params = { ...this.paramsObject.params };
-        const formData = new FormData();
-        formData.append("PerfiosTransactionId", id);
-        formData.append("ClientTransactionId", " ");
-        formData.append("Status", " ")
-        formData.append("ErrorCode", " ");
-        formData.append("ErrorMessage", " ");
-    
-       
-        this.api.postForPerfiosCallback(`api/Remediation/PerfiosCallback`, formData, params)
-          .subscribe({
-            next: (res: any) => {
-               if (res) {
-                clearTimeout(this.timeout);
-                clearInterval(this.interval);
-                this.showEligible = false;
-                this.router.navigate(['/in/report'])
-                }
-               
-               },
-            error: error => {
-              // this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
-            },
-            complete: () => {
-              ('Request complete');
-            }
-          });
+    const formData = new FormData();
+    formData.append('PerfiosTransactionId', id);
+    formData.append('ClientTransactionId', ' ');
+    formData.append('Status', ' ');
+    formData.append('ErrorCode', ' ');
+    formData.append('ErrorMessage', ' ');
+
+    this.api
+      .postForPerfiosCallback(
+        `api/Remediation/PerfiosCallback`,
+        formData,
+        params
+      )
+      .subscribe({
+        next: (res: any) => {
+          if (res) {
+            clearTimeout(this.timeout);
+            clearInterval(this.interval);
+            this.showEligible = false;
+            this.router.navigate(['/in/report']);
+          }
+        },
+        error: (error) => {
+          // this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
+        },
+        complete: () => {
+          ('Request complete');
+        },
+      });
   }
 
-  callPerfiosCallback(id:any){
-
+  callPerfiosCallback(id: any) {
     const urlSearchParams = new URLSearchParams(window.location.search);
-    console.log(urlSearchParams.get('uploaded') );
-
-    if(urlSearchParams.get('uploaded') === "true"){
-
+    if (urlSearchParams.get('uploaded') === 'true') {
       this.showEligible = true;
       this.timeout = setTimeout(() => {
         clearInterval(this.interval);
         this.showEligible = false;
-        this.api.alertOk("There seems to be an issue in parsing your bank statements. We request you to please try again. Please ensure that if you choose to upload the bank statements, they are not password protected", "");
-      }, 2*60*1000);
-  
+        this.api.alertOk(
+          'There seems to be an issue in parsing your bank statements. We request you to please try again. Please ensure that if you choose to upload the bank statements, they are not password protected',
+          ''
+        );
+      }, 200);
       this.interval = setInterval(() => {
-        this.perfios(id)
-          }, 15000); 
-
+        this.perfios(id);
+      }, 15000);
     }
-
-   
-        
   }
 
-  netBankinglink(){
+  netBankinglink() {
     this.isSubmit = true;
     const defaultparams = {
       mobile: this.mobileNo,
       callbackEnum: 0,
     };
     const params = { ...defaultparams, ...this.paramsObject.params };
-    this.api.remediation(
-        `api/Remediation/NetBankingLink`,
-        params
-      )
-      .subscribe({
-        next: (res: any) => {
-          this.isSubmit = true;
+    this.api.remediation(`api/Remediation/NetBankingLink`, params).subscribe({
+      next: (res: any) => {
+        this.isSubmit = true;
 
-          localStorage.setItem("transID",res?.transactionId)
+        localStorage.setItem('transID', res?.transactionId);
         this.iframeUrl = res?.url;
         window.location.href = this.iframeUrl;
-        },
-        error: (error:any) => {
-          this.isSubmit = false;
-
-        },
-        complete: () => {
+      },
+      error: (error: any) => {
+        this.isSubmit = false;
+      },
+      complete: () => {
         //  ("Request complete");
-        },
-      });
+      },
+    });
   }
 
-  uploadDocumentLink(){
+  uploadDocumentLink() {
     this.isUploadSubmit = true;
     const defaultparams = {
       mobile: this.mobileNo,
@@ -217,60 +224,45 @@ export class UploadDocumentsComponent {
     };
     const params = { ...defaultparams, ...this.paramsObject.params };
     this.api
-      .remediation(
-        `api/Remediation/UploadDocumentLink`,
-        params
-      )
+      .remediation(`api/Remediation/UploadDocumentLink`, params)
       .subscribe({
         next: (res: any) => {
           this.isUploadSubmit = true;
 
-          localStorage.setItem("transID",res?.transactionId);
-           window.location.href = res?.url;
-         
+          localStorage.setItem('transID', res?.transactionId);
+          window.location.href = res?.url;
         },
-        error: (error:any) => {
+        error: (error: any) => {
           this.isUploadSubmit = false;
-
         },
         complete: () => {
-        //  ("Request complete");
+          //  ("Request complete");
         },
       });
   }
 
-
   form() {
     this.form2 = new FormGroup({
-       
-      personalPan: new FormControl("", [Validators.required]),
-      businessPan: new FormControl("", [Validators.required]),
-      businessConstitutuion: new FormControl("", [Validators.required]),
+      personalPan: new FormControl('', [Validators.required]),
+      businessPan: new FormControl('', [Validators.required]),
+      businessConstitutuion: new FormControl('', [Validators.required]),
     });
   }
 
-
-  
-  onFileSelected(event:any) {
+  onFileSelected(event: any) {
     const params = { ...this.paramsObject.params };
     const inputElement = event.target as HTMLInputElement;
     if (inputElement.files && inputElement.files.length > 0) {
       const file = inputElement.files[0];
-    
-    //  this.api.uploadDocument(this.sharedData ,'Bank_Statement', params, file);
+
+      //  this.api.uploadDocument(this.sharedData ,'Bank_Statement', params, file);
     }
 
-      inputElement.value = '';
-      this.uploadDocumentLink();
+    inputElement.value = '';
+    this.uploadDocumentLink();
   }
 
-
-  
-  submitBankStatement() {
-
-    
-  }
-
+  submitBankStatement() {}
 
   counters() {
     this.ncjcount = 60;
@@ -321,10 +313,4 @@ export class UploadDocumentsComponent {
       clearInterval(this.progressInterval);
     }
   }
-  
-
- 
-
- 
-
 }
