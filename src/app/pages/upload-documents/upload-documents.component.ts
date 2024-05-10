@@ -94,6 +94,7 @@ export class UploadDocumentsComponent {
   isPerfios: boolean = true;
   timeout: any;
   interval: any;
+  uploadedParams: any;
 
   constructor(
     private api: ApiService,
@@ -105,6 +106,10 @@ export class UploadDocumentsComponent {
   ) {
     this.route.params.subscribe((params) => {
       this.dealId = params['id'];
+    });
+
+    this.route.queryParams.subscribe(params => {
+      this.uploadedParams = params["uploaded"]
     });
 
     this.route.queryParamMap.subscribe((params) => {
@@ -124,8 +129,24 @@ export class UploadDocumentsComponent {
       this.mobileNo = this.parsedData.mobile;
     }
 
-    this.transID = localStorage.getItem('transID');
-    this.callPerfiosCallback(this.transID);
+    this.transID =localStorage.getItem("transID");
+
+    
+   
+      this.callPerfiosCallback(this.transID);
+
+      if(this.uploadedParams === "true"){
+        this.showEligible = true;
+        this.timeout = setTimeout(() => {
+          clearInterval(this.interval);
+          this.showEligible = false;
+          this.api.alertOk("There seems to be an issue in parsing your bank statements. We request you to please try again. Please ensure that if you choose to upload the bank statements, they are not password protected", "");
+          this.router.navigate(['/in/bank_statement'])
+        }, 120000);
+      }else{
+        this.router.navigate(['/in/bank_statement'])
+      }
+      
   }
 
   ngAfterViewInit(): void {
@@ -141,55 +162,41 @@ export class UploadDocumentsComponent {
     this.cdr.detectChanges();
   }
 
-  perfios(id: any) {
-    const params = { ...this.paramsObject.params };
-    const formData = new FormData();
-    formData.append('PerfiosTransactionId', id);
-    formData.append('ClientTransactionId', ' ');
-    formData.append('Status', ' ');
-    formData.append('ErrorCode', ' ');
-    formData.append('ErrorMessage', ' ');
 
-    this.api
-      .postForPerfiosCallback(
-        `api/Remediation/PerfiosCallback`,
-        formData,
-        params
-      )
-      .subscribe({
-        next: (res: any) => {
-          if (res) {
-            clearTimeout(this.timeout);
-            clearInterval(this.interval);
-            this.showEligible = false;
-            this.router.navigate(['/in/report']);
-          }
-        },
-        error: (error) => {
-          // this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
-        },
-        complete: () => {
-          ('Request complete');
-        },
-      });
-  }
 
-  callPerfiosCallback(id: any) {
-    const urlSearchParams = new URLSearchParams(window.location.search);
-    if (urlSearchParams.get('uploaded') === 'true') {
-      this.showEligible = true;
-      this.timeout = setTimeout(() => {
-        clearInterval(this.interval);
-        this.showEligible = false;
-        this.api.alertOk(
-          'There seems to be an issue in parsing your bank statements. We request you to please try again. Please ensure that if you choose to upload the bank statements, they are not password protected',
-          ''
-        );
-      }, 200);
+  callPerfiosCallback(id:any){
+ 
       this.interval = setInterval(() => {
-        this.perfios(id);
-      }, 15000);
-    }
+        
+        const params = { ...this.paramsObject.params };
+        const formData = new FormData();
+        formData.append("PerfiosTransactionId", id);
+        formData.append("ClientTransactionId", " ");
+        formData.append("Status", " ")
+        formData.append("ErrorCode", " ");
+        formData.append("ErrorMessage", " ");
+    
+       
+        this.api.postForPerfiosCallback(`api/Remediation/PerfiosCallback`, formData, params)
+          .subscribe({
+            next: (res: any) => {
+               if (res) {
+                clearTimeout(this.timeout);
+                clearInterval(this.interval);
+                this.showEligible = false;
+                this.router.navigate(['/in/report'])
+                }
+               
+               },
+            error: error => {
+              // this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
+            },
+            complete: () => {
+              ('Request complete');
+            }
+          });
+        
+        }, 15000);
   }
 
   netBankinglink() {
