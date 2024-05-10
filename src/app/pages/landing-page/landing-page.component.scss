@@ -318,6 +318,8 @@
             }
 
             owl-carousel-o {
+                position: relative;
+                z-index: 99;
 
                 ::ng-deep {
 
@@ -892,6 +894,10 @@
 
     .forSMEComponent {
 
+        .leftSideDesign{
+            background-image: none !important;
+        }
+
         .SecuredBusinessLoan {
 
             .homeSlider {
@@ -1230,6 +1236,7 @@
 
         .guaranteedLoan {
             padding: 40px 0px;
+            background-image: none !important;
 
             .content {
                 margin-bottom: 15px;

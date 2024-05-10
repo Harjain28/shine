@@ -28,10 +28,8 @@ export class LandingPageComponent {
 
   customOptionKeys: OwlOptions = {
     loop: true,
-    mouseDrag: false,
-    touchDrag: true,
     dots: true,
-    autoplay: false,
+    autoplay: true,
     nav: false,
     margin: 10,
 
@@ -89,12 +87,12 @@ export class LandingPageComponent {
     touchDrag: true,
     dots: true,
     autoplay: true,
-    navSpeed: 300,
+    navSpeed: 100,
     nav: false,
     margin: 10,
 
-    autoplayTimeout: 8000,
-    autoplaySpeed: 1500,
+    autoplayTimeout: 1000,
+    autoplaySpeed: 1000,
     // navText: ["", ""],
     // navText: ["<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>", "<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>"],
     responsive: {
