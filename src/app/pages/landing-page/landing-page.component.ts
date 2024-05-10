@@ -81,6 +81,7 @@ export class LandingPageComponent {
       },
     },
   };
+  
   customOptionTable: OwlOptions = {
     loop: true,
     mouseDrag: false,

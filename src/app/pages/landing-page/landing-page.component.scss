@@ -1,5 +1,3 @@
-.forSMEComponent {
-
     .SecuredBusinessLoan {
         position: relative;
 
@@ -256,12 +254,42 @@
                 margin-bottom: 2px;
 
             }
+
+            .pricingBtn{
+                margin-top: 32px;
+
+                .btn{
+                    background-color: var(--main2);
+                    border-radius: 23px;
+                    padding: 10px 26px;
+                    color: #fff;
+                    font-size: 16px;
+                    font-family: Poppins !important;
+                    font-weight: 500;
+                    line-height: 22px;
+                }
+            }
         }
 
         .laptopSilder {
             position: relative;
-            overflow: hidden;
+            // overflow: hidden;
             z-index: 900;
+            right: -50px;
+
+            &::before{
+                position: absolute;
+                content: "";
+                top: 0px;
+                left: 50%;
+                transform: translate(-50%, 0%);
+                width: 85%;
+                height: 100%;
+                background-image: url(../../../assets/LandingPage/laptop.png);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                z-index: -3;
+            }
 
             .textSilder {
                 box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1019607843);
@@ -269,57 +297,43 @@
                 border-radius: 10px;
                 padding: 6px 16px;
                 text-align: center;
-                position: relative;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 width: -moz-fit-content;
                 width: fit-content;
-                top: -250px;
-                z-index: 99999;
                 background: #fff;
-                left: 20px;
+                position: relative;
+                top: 29px;
+                left: -30px;
 
                 img {
-                    width: 32px;
-                    height: 32px;
+                    width: 26px;
+                    height: 26px;
                     position: absolute;
                     z-index: 999;
-                    left: -20px;
+                    left: -12px;
                 }
 
                 span {
-                    font-size: 16px;
+                    font-size: 13px;
                     line-height: 22px;
                     color: var(--main2);
                     font-weight: 600;
                     font-family: Poppins !important;
+                    margin-left: 4px;          
                 }
             }
 
-            .laptopView {
-                width: 480px;
-                display: flex;
-                margin: 0px 0px 0px auto;
-            }
-
             .laptopAnderImg {
-                position: absolute;
-                top: -35px;
-                left: 80%;
-                transform: translate(100%, -100%);
-                z-index: 999;
-
                 img {
-                    height: 225px;
-                    width: auto;
-                    margin: auto;
+                    width: 100% !important;
+                    height: 250px;
+                    object-fit: contain;
                 }
             }
 
             owl-carousel-o {
-                position: relative;
-                z-index: 99;
 
                 ::ng-deep {
 
@@ -331,6 +345,9 @@
                     }
 
                     .owl-dots {
+                        margin-top: 60px;
+                        position: relative;
+                        z-index: 999;
 
                         .owl-dot {
 
@@ -589,8 +606,21 @@
     }
 
     .leftSideDesign{
-        background-repeat: no-repeat;
-        background-position: left;
+        position: relative;
+        overflow: hidden;
+
+        &::before{
+            position: absolute;
+            content: "";
+            left: 0px;
+            top: 0px;
+            background-position: left;
+            background-repeat: no-repeat;
+            background-image: url(../../../assets/LandingPage/leftSideImg.svg);
+            width: 100%;
+            height: 78%;
+            z-index: -2;
+        }
     }
 
     .shineHelp {
@@ -814,12 +844,25 @@
 
     .guaranteedLoan {
         padding: 60px 0px;
-        background-repeat: no-repeat;
-        background-position: right;
+        position: relative;
+        z-index: 1;
         margin-top: -10px;
         margin-bottom: -10px;
-        position: relative;
-        z-index: -1;
+        overflow: hidden;
+
+        &::before{
+            position: absolute;
+            content: "";
+            background-image: url(../../../assets/LandingPage/LoanDesginImg.svg);
+            background-repeat: no-repeat;
+            width: 400px;
+            background-position: right;
+            height: 100%;
+            z-index: -1;
+            right: 0px;
+            top: 0px;
+
+        }
 
         .content {
             text-align: center;
@@ -860,7 +903,7 @@
                 background-color: var(--main1);
                 padding: 22px 30px;
                 border-radius: 10px;
-              //  margin-left: 20px;
+                margin-left: 2px;
 
                 &::before {
                     position: absolute;
@@ -884,18 +927,37 @@
                     margin: 2px 0px;
                 }
             }
+
+            owl-carousel-o {
+
+                ::ng-deep {
+
+                    .owl-dots {
+
+                        .owl-dot {
+
+                            &.active {
+
+                                span {
+                                    background: var(--main2);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
-}
 
 
 
 @media (max-width: 767px) {
 
-    .forSMEComponent {
-
         .leftSideDesign{
-            background-image: none !important;
+
+            &::before{
+                display: none;
+            }
         }
 
         .SecuredBusinessLoan {
@@ -1003,40 +1065,55 @@
 
             .laptopSilder {
                 padding-top: 30px;
+                right: 0px;
+                margin-top: 20px;
+
+                &::before{
+                    width: 100%;
+                }
 
                 .textSilder {
-                    top: -190px;
+                    top: -45px;
                     left: 50%;
-                    transform: translate(-47%, -50%);
-
+                    transform: translate(-50%, 0%);
+    
                     img {
-                        width: 32px;
-                        height: 32px;
+                        width: 26px;
+                        height: 26px;
                         position: absolute;
                         z-index: 999;
-                        left: -20px;
+                        left: -12px;
                     }
-
+    
                     span {
-                        font-size: 16px;
+                        font-size: 13px;
                         line-height: 22px;
                         color: var(--main2);
                         font-weight: 600;
                         font-family: Poppins !important;
+                        margin-left: 4px;          
+                    }
+                }
+    
+                .laptopAnderImg {
+                    img {
+                        width: auto !important;
+                        height: 160px;
+                        object-fit: contain;
+                        position: relative;
+                        top: -40px;
+                        left: 50%;
+                        transform: translate(100%, 0%);
                     }
                 }
 
-                .laptopView {
-                    width: 100%;
-                }
+                owl-carousel-o {
 
-                .laptopAnderImg {
-                    top: -50%;
-                    left: 48%;
-                    transform: translate(100%, -100%);
-
-                    img {
-                        height: 160px;
+                    ::ng-deep {
+    
+                        .owl-dots {
+                            margin-top: 0px;
+                        }
                     }
                 }
             }
@@ -1268,7 +1345,6 @@
                 }
             }
         }
-    }
 }
 
 
