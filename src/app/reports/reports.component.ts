@@ -272,7 +272,7 @@ export class ReportsComponent {
               next: (res: any) => {
                 if (res) {
                   this.showEligible = false;
-                  this.reportsData = res;
+                  // this.reportsData = res;
                  
                 }
               },

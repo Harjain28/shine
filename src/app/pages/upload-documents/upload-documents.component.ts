@@ -139,10 +139,9 @@ export class UploadDocumentsComponent {
       }
     });
     
-   
-      this.callPerfiosCallback(this.transID);
 
       if(this.uploadedParams === "true"){
+        this.callPerfiosCallback(this.transID);
         this.showEligible = true;
         this.api.reportApi();
         this.timeout = setTimeout(() => {
@@ -202,7 +201,7 @@ export class UploadDocumentsComponent {
  
       this.interval = setInterval(() => {
         
-        const params = { ...this.paramsObject.params };
+        const params = {  };
         const formData = new FormData();
         formData.append("PerfiosTransactionId", id);
         formData.append("ClientTransactionId", " ");
