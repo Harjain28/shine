@@ -3216,6 +3216,100 @@
     }
 }
 
+.v2checksection{
+    width: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    padding-top: 75px;
+    padding-bottom: 75px;
+
+    .blueBack{
+        filter: blur(30px);
+        -webkit-filter: blur(30px);
+        background-color: #ffffff;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0px;
+    }
+
+    .topContent{
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: normal;
+            margin-bottom: 25px;
+            color: #3F3F3F;
+            font-family: Poppins !important;
+            text-align: center;
+            position: relative;
+    }
+
+    .v2checkBox{
+        position: relative;
+        z-index: 2;
+        background-color: var(--main1);
+        padding: 36px 65px;
+        border-radius: 10px;
+
+        .from{
+
+            h1{
+                font-size: 22px;
+                font-weight: 700 !important;
+                margin-bottom: 5px;
+                color: #FFFFFF;
+                font-family: "Be Vietnam Pro" !important;
+                text-align: center;
+            }
+
+            p{
+                font-size: 14px;
+                line-height: 22px;
+                font-weight: normal;
+                margin-bottom: 25px;
+                color: #E2E2E2;
+                font-family: Poppins !important;
+                text-align: center;
+            }
+
+            .uploadBtn{
+
+                .btn{
+                    padding: 10px 20px;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    background-color: #fff;
+                    border: 1px solid #E7E6EF;
+                    border-radius: 6px;
+                    height: 43px;
+                    justify-content: center;
+                    letter-spacing: 0.32px;
+                    color: #3F3F3F;
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 25px;
+                    font-family: Poppins !important;
+                    width: 100%;
+                    margin-bottom: 20px;
+
+                    img{
+                        width: auto;
+                        height: 22px;
+                    }
+                }
+
+                p{
+                    margin-bottom: 0px;
+                    margin-top: 10px;
+                }
+            }
+        }
+
+    }
+}
+
 .progress-wrapper {
     display: flex;
     justify-content: center;

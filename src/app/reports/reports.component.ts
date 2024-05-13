@@ -113,9 +113,15 @@ export class ReportsComponent {
     this.mobileNo = this.parsedData.mobile;
     }
 
+    this.api.postReportsApiObservable().subscribe((trigger: any) => {
+      if (trigger) {
+        this.postForReport();
+      }
+    });
+
     this.getFaq();
     this.getChartsData();
-    this.postForReport();
+    this.api.reportApi();
     const url = this.router.url;
     if (url.includes('/report')) {
       this.reportsData = reportPageJson
@@ -265,13 +271,12 @@ export class ReportsComponent {
           this.api.postForReport(`api/Remediation/Report`,requestData ) .subscribe({
               next: (res: any) => {
                 if (res) {
-                  this.showEligible = true;
+                  this.showEligible = false;
                   this.reportsData = res;
                  
                 }
               },
               error: error => {
-                this.showEligible = false;
               },
               complete: () => {
                // ('Request complete');

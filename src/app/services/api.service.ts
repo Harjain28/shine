@@ -1,6 +1,6 @@
 import {  Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { throwError } from 'rxjs';
+import { BehaviorSubject, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
@@ -25,6 +25,8 @@ export class ApiService {
 
   shared:  any = [];
   API_URL: string;
+  private reportsApiData = new BehaviorSubject<boolean>(false);
+
 
   constructor(
     private http: HttpClient,
@@ -42,6 +44,19 @@ export class ApiService {
     this.API_URL = environment.BASE_API_ENDPOINT;
     this.TOKEN = localStorage.getItem("token");   
   }
+
+  reportApi() {
+    this.reportsApiData.next(true);
+  }
+
+  postReportsApiObservable() {
+    return this.reportsApiData.asObservable();
+  }
+
+  postReportApi(requestData: any) {
+    return this.http.post('api/Remediation/Report', requestData);
+  }
+
 
 
 

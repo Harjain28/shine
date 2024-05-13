@@ -30,6 +30,9 @@ export class AuthGuard  {
       return false; 
     }
 
+    if (!this.pageUrls.includes(state.url)) {
+       this.router.parseUrl('/page-not-found'); 
+    }
    
 
     return true; 

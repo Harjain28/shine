@@ -95,6 +95,8 @@ export class UploadDocumentsComponent {
   timeout: any;
   interval: any;
   uploadedParams: any;
+  reportsData: any;
+  showEligibleReport: boolean =false;
 
   constructor(
     private api: ApiService,
@@ -131,12 +133,18 @@ export class UploadDocumentsComponent {
 
     this.transID =localStorage.getItem("transID");
 
+    this.api.postReportsApiObservable().subscribe((trigger: any) => {
+      if (trigger) {
+        this.postForReport();
+      }
+    });
     
    
       this.callPerfiosCallback(this.transID);
 
       if(this.uploadedParams === "true"){
         this.showEligible = true;
+        this.api.reportApi();
         this.timeout = setTimeout(() => {
           clearInterval(this.interval);
           this.showEligible = false;
@@ -160,6 +168,32 @@ export class UploadDocumentsComponent {
     }, 1000);
 
     this.cdr.detectChanges();
+  }
+
+
+
+  postForReport() {
+    this.showEligibleReport = true;
+      let requestData: any = {}; 
+      requestData["mobile"] = this.mobileNo;
+      //  const params = { ...this.paramsObject.params };
+          this.api.postForReport(`api/Remediation/Report`,requestData ) .subscribe({
+              next: (res: any) => {
+                if (res) {
+                  this.showEligibleReport = true;
+                  this.reportsData = res;
+                 
+                }
+              },
+              error: error => {
+                this.showEligibleReport = false;
+                console.log("dhb")
+              },
+              complete: () => {
+               // ('Request complete');
+              }
+            });
+      
   }
 
 
@@ -189,6 +223,8 @@ export class UploadDocumentsComponent {
                
                },
             error: error => {
+              this.router.navigate(['/in/report'])
+
               // this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
             },
             complete: () => {

@@ -8,7 +8,8 @@
                         <h2>Oops!</h2>
                         <p>This isn't the road to affordable loans. Let's guide you back to <br> <b>'Dream Big, Borrow Smart'</b>.</p>
                         <div class="ButtonNow">
-                            <a (click)="homepage()">Go to Home Page <mat-icon>keyboard_arrow_right</mat-icon></a>
+                            <a *ngIf="!urlService.isGlobal" [routerLink]="['/in']">Go to Home Page <mat-icon>keyboard_arrow_right</mat-icon></a>
+                            <a *ngIf="urlService.isGlobal" [routerLink]="['/']">Go to Home Page <mat-icon>keyboard_arrow_right</mat-icon></a>
                         </div>
                     </div>
                 </div>
