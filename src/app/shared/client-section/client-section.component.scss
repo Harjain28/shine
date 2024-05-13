@@ -1,0 +1,227 @@
+.transformFinance {
+    padding: 65px 0px;
+    z-index: 99;
+    position: relative;
+
+    .rightContent {
+        position: relative;
+        z-index: 9;
+
+        h3 {
+            color: #3f3f3f;
+            font-size: 30px;
+            line-height: 37px;
+            font-weight: 700;
+            font-family: 'Be Vietnam Pro' !important;
+            margin-bottom: 14px;
+
+            span {
+                color: var(--main1);
+                display: block;
+            }
+        }
+
+        p {
+            color: #3f3f3f;
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: normal;
+            font-family: Poppins !important;
+            margin-bottom: 2px;
+
+        }
+
+        .pricingBtn{
+            margin-top: 32px;
+
+            .btn{
+                background-color: var(--main2);
+                border-radius: 23px;
+                padding: 10px 26px;
+                color: #fff;
+                font-size: 16px;
+                font-family: Poppins !important;
+                font-weight: 500;
+                line-height: 22px;
+            }
+        }
+    }
+
+    .laptopSilder {
+        position: relative;
+        // overflow: hidden;
+        z-index: 900;
+        right: -50px;
+
+        &::before{
+            position: absolute;
+            content: "";
+            top: 0px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            width: 85%;
+            height: 100%;
+            background-image: url(../../../assets/LandingPage/laptop.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            z-index: -3;
+        }
+
+        .textSilder {
+            box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1019607843);
+            border: 1px solid #12BA9B;
+            border-radius: 10px;
+            padding: 6px 16px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: -moz-fit-content;
+            width: fit-content;
+            background: #fff;
+            position: relative;
+            top: 29px;
+            left: -30px;
+
+            img {
+                width: 26px;
+                height: 26px;
+                position: absolute;
+                z-index: 999;
+                left: -12px;
+            }
+
+            span {
+                font-size: 13px;
+                line-height: 22px;
+                color: var(--main2);
+                font-weight: 600;
+                font-family: Poppins !important;
+                margin-left: 4px;          
+            }
+        }
+
+        .laptopAnderImg {
+            img {
+                width: 100% !important;
+                height: 250px;
+                object-fit: contain;
+            }
+        }
+
+        owl-carousel-o {
+
+            ::ng-deep {
+
+                .owl-carousel {
+
+                    .owl-stage-outer {
+                        overflow: visible;
+                    }
+                }
+
+                .owl-dots {
+                    margin-top: 60px;
+                    position: relative;
+                    z-index: 999;
+
+                    .owl-dot {
+
+                        &.active {
+
+                            span {
+                                background: var(--main2);
+                            }
+                        }
+
+                        &:hover {
+
+                            span {
+                                background: var(--main2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .transformFinance {
+        padding: 42px 0px 0px;
+
+        .rightContent {
+            text-align: center;
+
+            h3 {
+                font-size: 22px;
+                line-height: 27px;
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 20px;
+
+            }
+        }
+
+        .laptopSilder {
+            padding-top: 30px;
+            right: 0px;
+            margin-top: 20px;
+
+            &::before{
+                width: 100%;
+            }
+
+            .textSilder {
+                top: -45px;
+                left: 50%;
+                transform: translate(-50%, 0%);
+
+                img {
+                    width: 26px;
+                    height: 26px;
+                    position: absolute;
+                    z-index: 999;
+                    left: -12px;
+                }
+
+                span {
+                    font-size: 13px;
+                    line-height: 22px;
+                    color: var(--main2);
+                    font-weight: 600;
+                    font-family: Poppins !important;
+                    margin-left: 4px;          
+                }
+            }
+
+            .laptopAnderImg {
+                img {
+                    width: auto !important;
+                    height: 160px;
+                    object-fit: contain;
+                    position: relative;
+                    top: -40px;
+                    left: 50%;
+                    transform: translate(100%, 0%);
+                }
+            }
+
+            owl-carousel-o {
+
+                ::ng-deep {
+
+                    .owl-dots {
+                        margin-top: 0px;
+                    }
+                }
+            }
+        }
+    }
+}

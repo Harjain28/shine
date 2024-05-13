@@ -12,6 +12,7 @@ import { TestimonialComponent } from 'src/app/shared/testimonial/testimonial.com
 import { shineLendingPageJSON } from '../../JsonFiles/lendingpage';
 import { PopupCopyComponent } from 'src/app/modal/popup-copy/popup-copy.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ClientSectionComponent } from 'src/app/shared/client-section/client-section.component';
 
 
 
@@ -19,7 +20,7 @@ import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule,LazyLoadImageModule,CarouselModule,FaqComponent,TestimonialComponent,LazyLoadImageModule],
+  imports: [CommonModule,LazyLoadImageModule,CarouselModule,FaqComponent,TestimonialComponent,LazyLoadImageModule,ClientSectionComponent],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
@@ -28,35 +29,6 @@ export class LandingPageComponent {
 
   customOptionKeys: OwlOptions = {
     loop: true,
-    dots: true,
-    autoplay: true,
-    nav: false,
-    margin: 10,
-
-    autoplayTimeout: 2000,
-    autoplaySpeed: 2000,
-    // navText: ["", ""],
-    // navText: ["<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>", "<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>"],
-    responsive: {
-      0: {
-        items: 1,
-      },
-      400: {
-        items: 1,
-      },
-      740: {
-        items: 1,
-      },
-      940: {
-        items: 1,
-      },
-    },
-  };
-
-  customOptionKeys1: OwlOptions = {
-    loop: true,
-    mouseDrag: false,
-    touchDrag: true,
     dots: true,
     autoplay: true,
     nav: false,

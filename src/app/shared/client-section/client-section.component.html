@@ -1,0 +1,42 @@
+<div class="transformFinance">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
+          <div class="rightContent">
+            <h3>{{WhatToExpectSection?.Headline}} <span> {{WhatToExpectSection?.Headline2}}</span></h3>
+            <p>{{WhatToExpectSection?.Body}}</p>
+
+            <div class="pricingBtn mhidden">
+              <button class="btn" (click)="goToPlans()">Check Pricing</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-12 col-sm-12 mb-3 overflow-hidden">
+          <div class="laptopSilder">
+            <!-- <img class="laptopView" src="./assets/LandingPage/laptop.png" alt=""> -->
+            <owl-carousel-o [options]="customOptionKeys1">
+              <ng-container *ngFor="let data of WhatToExpectSection?.Background">
+                <ng-template carouselSlide>
+                  <div class="setSilder">
+                    <div class="textSilder">
+                      <img src="./assets/LandingPage/checkStar.svg" alt="">
+                      <span>{{data?.imageText}}</span>
+                    </div>
+                    <div class="laptopAnderImg">
+                      <img class="mhidden" src={{data?.Desktop}} alt="">
+                      <img class="dhidden" src={{data?.Mobile}} alt="">
+                    </div>
+                  </div>
+                </ng-template>
+              </ng-container>
+            </owl-carousel-o>
+          </div>
+          <div class="rightContent dhidden">
+            <div class="pricingBtn ">
+              <button class="btn" (click)="goToPlans()">Check Pricing</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
