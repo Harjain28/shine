@@ -115,7 +115,7 @@ export class ReportsComponent {
 
     this.api.postReportsApiObservable().subscribe((trigger: any) => {
       if (trigger) {
-      //  this.postForReport();
+       this.postForReport();
       }
     });
 
@@ -264,14 +264,14 @@ export class ReportsComponent {
   // }
 
   postForReport() {
-    this.showEligible = true;
+    // this.showEligible = true;
       let requestData: any = {}; 
       requestData["mobile"] = this.mobileNo;
       //  const params = { ...this.paramsObject.params };
           this.api.postForReport(`api/Remediation/Report`,requestData ) .subscribe({
               next: (res: any) => {
                 if (res) {
-                  this.showEligible = false;
+                  // this.showEligible = false;
                   // this.reportsData = res;
                  
                 }
