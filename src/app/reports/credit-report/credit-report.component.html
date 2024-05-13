@@ -403,8 +403,8 @@
                   ></app-doughnut>
                   <ul>
                     <li *ngFor="let loan of ratiosecured?.byAmount; let i = index">
-                      <span [style.border]="'1px solid ' + colorDots[i % colorDots.length]">
-                        <span [style.background-color]="colorDots[i % colorDots.length]"></span>
+                      <span [style.border]="'1px solid ' + deptCompColors[i % deptCompColors.length]">
+                        <span [style.background-color]="deptCompColors[i % deptCompColors.length]"></span>
                       </span>
                       {{ loan.name }}
                     </li>
@@ -564,8 +564,8 @@
                       ></app-doughnut>
                       <ul>
                         <li *ngFor="let loan of ratiosecured?.byAmount; let i = index">
-                          <span [style.border]="'1px solid ' + colorDots[i % colorDots.length]">
-                            <span [style.background-color]="colorDots[i % colorDots.length]"></span>
+                          <span [style.border]="'1px solid ' + deptCompColors[i % deptCompColors.length]">
+                            <span [style.background-color]="deptCompColors[i % deptCompColors.length]"></span>
                           </span>
                           {{ loan.name }}
                         </li>
@@ -663,15 +663,14 @@
                       <div class="col-lg-6">
                         <div class="scoreProgress progressBarColor">
                           <ul class="lineColor">
-                            <li class="colorChnage" *ngFor="let data of credit_analysis?.byCount">
+                            <li class="colorChnage" *ngFor="let data of credit_analysis?.byCount; let i = index">
                               <span>{{data?.name}}</span>
-                              <span>
-                                <mat-progress-bar
-                                  mode="determinate"
-                                  value="90"
-                                ></mat-progress-bar>
-                                {{data?.value}}</span
-                              >
+                                  <div class="progress-bar-container">
+                                    <div class="progress-bar" style="width: 90%;" [style.background-color]="colorDots[i]"></div> 
+                                  </div>
+                                  
+                                  {{data?.value}}
+                                
                             </li>
                            
                           </ul>

@@ -20,6 +20,7 @@ export class DoughnutComponent {
   doughtValues: any;
   doughtnutColor:any;
   colorDots: any;
+  darkerShadeColor: any;
 
   ngOnInit():void{
 
@@ -37,10 +38,12 @@ export class DoughnutComponent {
     this.doughtValues = this.doughtnutJSONData?.byAmount;
     
     this.doughtnutColor = this.doughtnutJSONData?.colorDots;
+    this.darkerShadeColor = this.doughtnutJSONData?.darkerShadeColor;
 
 
     const donutDataValues = [...this.doughtValues]; 
     const donutColors = [...this.doughtnutColor];
+    const donutDarkerShadeColor = [...this.darkerShadeColor]
 
    
     const donutChartData: ChartData = {  
@@ -53,16 +56,7 @@ export class DoughnutComponent {
       },
       {
         data: donutDataValues,
-        backgroundColor: [
-          '#a5c91e', 
-          '#0e9b7c', 
-          '#b90d0d', 
-          '#e3621c', 
-          '#5b249d', 
-          '#364599', 
-          '#0fad87', 
-          '#b527b6'  
-        ],
+        backgroundColor: donutDarkerShadeColor,
         borderWidth: 0,
         
 

@@ -101,7 +101,9 @@ export class CreditReportComponent {
   LoanReplacementExpanded: any;
   credit_analysis_card: any;
   credit_analysis_card_Expanded: any;
-  colorDots: string[] = ['#C3E128', '#12ba9b', '#EC1111', '#ff7b24', '#6a2fc2', '#3f51b5', '#11c897', '#d32ec3'];
+  colorDots: string[] = ['#211261', '#6A2FC2', '#AD6EEA', '#12BA9B', '#56D6B7', '#C3E028', '#E2E2E2', '#3F3F3F', '#FF7B24', '#EC1111'];
+  deptCompColors: string[] = [ '#C3E128', '#12ba9b']
+
   currStage: any;
   potStage: any;
   imgageIcon: any;
@@ -219,12 +221,12 @@ this.potStage = this.reportsData?.report?.potentialStage
 
 
   
-    this.credit_analysis = this.creditReportData?.creditAnalysis;
-    this.credit_analysis = Object.assign({}, this.credit_analysis, {
-      colorDots: ['#C3E128', '#12ba9b', '#EC1111', '#ff7b24', '#6a2fc2', '#3f51b5', '#11c897', '#d32ec3'],
-      deptCompColors: [ '#12ba9b','#C3E128']
+this.credit_analysis = {
+  ...this.creditReportData?.creditAnalysis,
+  colorDots: ['#211261', '#6A2FC2', '#AD6EEA', '#12BA9B', '#56D6B7', '#C3E028', '#E2E2E2', '#3F3F3F', '#FF7B24', '#EC1111'],
+  darkerShadeColor: ['#160c47','#4d1a99','#7a42c6','#0a7a56','#347d8a','#8b9c1d','#b8b8b8', '#222222','#cc6518','#9c0b0b']
+};
 
-    });
     this.securedUnsecuredRatioData =
       this.creditReportData?.securedUnsecuredRatio;
     
@@ -240,8 +242,8 @@ this.potStage = this.reportsData?.report?.potentialStage
             }
             
         ],
-        colorDots: ['#C3E128' ,'#12ba9b']
-
+        colorDots: ['#C3E128' ,'#12ba9b'],
+        darkerShadeColor: ['#a5c91e', '#0e9b7c']
 
     };
 

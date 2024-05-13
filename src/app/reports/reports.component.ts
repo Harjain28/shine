@@ -115,7 +115,7 @@ export class ReportsComponent {
 
     this.api.postReportsApiObservable().subscribe((trigger: any) => {
       if (trigger) {
-        this.postForReport();
+      //  this.postForReport();
       }
     });
 

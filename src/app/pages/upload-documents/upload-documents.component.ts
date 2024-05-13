@@ -139,9 +139,11 @@ export class UploadDocumentsComponent {
       }
     });
     
+   
 
-      if(this.uploadedParams === "true"){
+      if(this.uploadedParams){
         this.callPerfiosCallback(this.transID);
+
         this.showEligible = true;
         this.api.reportApi();
         this.timeout = setTimeout(() => {
@@ -186,6 +188,7 @@ export class UploadDocumentsComponent {
               },
               error: error => {
                 this.showEligibleReport = false;
+                this.router.navigate(['/in/bank_statement'])
                 console.log("dhb")
               },
               complete: () => {
@@ -198,10 +201,10 @@ export class UploadDocumentsComponent {
 
 
   callPerfiosCallback(id:any){
- 
+
       this.interval = setInterval(() => {
         
-        const params = {  };
+        const params = { ...this.paramsObject.params };
         const formData = new FormData();
         formData.append("PerfiosTransactionId", id);
         formData.append("ClientTransactionId", " ");
@@ -222,8 +225,6 @@ export class UploadDocumentsComponent {
                
                },
             error: error => {
-              this.router.navigate(['/in/report'])
-
               // this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
             },
             complete: () => {
