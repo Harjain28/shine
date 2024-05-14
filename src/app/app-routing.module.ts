@@ -5,6 +5,7 @@ import { ReportsComponent } from './reports/reports.component';
 import { RefundPolicyComponent } from './view/refund-policy/refund-policy.component';
 import { ContactusComponent } from './view/contactus/contactus.component';
 import {  PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { AuthGuard } from './guard/auth.gaurd';
 
 const routes: Routes = [
      
@@ -16,12 +17,12 @@ const routes: Routes = [
 
 
   {
-    path:'in' , component: PagesComponent,
+    path:'in' , component: PagesComponent, canActivate: [AuthGuard],
     loadChildren:() =>import('./pages/pages.routes')
   },
 
   {
-    path:'in/report', 
+    path:'in/report', canActivate: [AuthGuard],
     component: ReportsComponent   
   },
 
