@@ -4,7 +4,7 @@ import { PagesComponent } from './pages/pages.component';
 import { ReportsComponent } from './reports/reports.component';
 import { RefundPolicyComponent } from './view/refund-policy/refund-policy.component';
 import { ContactusComponent } from './view/contactus/contactus.component';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import {  PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
      
@@ -13,6 +13,8 @@ const routes: Routes = [
     redirectTo: 'in',  
     pathMatch: 'full'
   },
+
+
   {
     path:'in' , component: PagesComponent,
     loadChildren:() =>import('./pages/pages.routes')
@@ -37,6 +39,8 @@ const routes: Routes = [
     path:'in/contact-us', 
     component: ContactusComponent   
   },
+  { path: '**', pathMatch: 'full',  component: PageNotFoundComponent },
+
   {
     path: "page-not-found",
     component: PageNotFoundComponent,
