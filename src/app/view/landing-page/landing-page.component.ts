@@ -216,29 +216,6 @@ export class LandingPageComponent {
     localStorage.setItem("popupData", data);
     this.openDialog();
   }
-
-  goToPlans() {
-    if (this.WhoisShineForSection?.CTA_Link) {
-      window.location.href = this.Shinebanner?.CTA_Link;
-    } else if (this.WhoisShineForSection?.CTA_Link) {
-      window.location.href = this.WhoisShineForSection?.CTA_Link;
-    }
-    else if (this.WhoisShineForSection?.CTA_Link) {
-      window.location.href = this.AnalyseSection?.CTA_Link;
-    }
-    else if (this.WhoisShineForSection?.CTA_Link) {
-      window.location.href = this.shine_comparison?.CTA_Link;
-    }
-    else if (this.WhoisShineForSection?.CTA_Link) {
-      window.location.href = this.HowShineWillHelpSection?.CTA_Link;
-    }
-    else if (this.WhoisShineForSection?.CTA_Link) {
-      window.location.href = this.ShineFeaturesSection?.CTA_Link;
-    }
-    else  {
-      window.location.href = this.summarySection?.CTA_Link;
-    }
-  }
   showAboutClass(body: any) {
     this.moreContent = body;
     this.readMore = true;

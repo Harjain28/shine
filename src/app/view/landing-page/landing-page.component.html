@@ -24,14 +24,14 @@
                     </p>
 
                     <div class="pricingBtn">
-                      <button class="btn" (click)="goToPlans()">{{Shinebanner?.CTA_Text}}</button>
+                      <a class="btn" [href]="Shinebanner?.CTA_Link">{{Shinebanner?.CTA_Text}}</a>
                     </div>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="imgBanner">
-                    <video autoplay loop muted>
-                      <source class="w-100" src="{{Shinebanner?.Background?.Content}}" type="video/webm"></video>
+                    <video autoplay loop>
+                      <source class="w-100" [src]="Shinebanner?.Background?.Content" type="video/webm"></video>
                   </div>
 
                 </div>
@@ -106,7 +106,7 @@
 
           <div class="col-lg-12">
             <div class="featureBtn">
-              <button class="btn" (click)="goToPlans()">{{WhoisShineForSection?.CTA_Text}}</button>
+              <a class="btn"  [href]="WhoisShineForSection?.CTA_Link">{{WhoisShineForSection?.CTA_Text}}</a>
             </div>
           </div>
         </div>
@@ -156,7 +156,7 @@
           </div>
           <div class="col-lg-12">
             <div class="featureBtn">
-              <button class="btn" (click)="goToPlans()">{{AnalyseSection?.CTA_Text}}</button>
+              <a class="btn"  [href]="AnalyseSection?.CTA_Link">{{AnalyseSection?.CTA_Text}}</a>
             </div>
           </div>
         </div>
@@ -222,7 +222,7 @@
 
             <div class="col-lg-12">
               <div class="featureBtn">
-                <button class="btn" (click)="goToPlans()">{{shine_comparison?.CTA_Text}}</button>
+                <a class="btn"  [href]="shine_comparison?.CTA_Link">{{shine_comparison?.CTA_Text}}</a>
               </div>
             </div>
 
@@ -257,7 +257,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="contentBtn">
               <p>{{HowShineWillHelpSection?.Body_Section[0]}} <br> {{HowShineWillHelpSection?.Body_Section[1]}}</p>
-              <button class="btn" (click)="goToPlans()">{{HowShineWillHelpSection?.CTA_Text}}</button>
+              <a class="btn"  [href]="HowShineWillHelpSection?.CTA_Link">{{HowShineWillHelpSection?.CTA_Text}}</a>
             </div>
           </div>
         </div>
@@ -294,7 +294,7 @@
       </div>
       <div class="col-lg-12">
         <div class="featureBtn">
-          <button class="btn" (click)="goToPlans()">{{ShineFeaturesSection?.CTA_Text}}</button>
+          <a class="btn"  [href]="ShineFeaturesSection?.CTA_Link">{{ShineFeaturesSection?.CTA_Text}}</a>
         </div>
       </div>
     </div>
@@ -336,7 +336,7 @@
     </div>
     <div class="col-lg-12">
       <div class="featureBtn">
-        <button class="btn" (click)="goToPlans()">{{summarySection?.CTA_Text}}</button>
+        <a class="btn"  [href]="summarySection?.CTA_Link">{{summarySection?.CTA_Text}}</a>
       </div>
     </div>
   </div>

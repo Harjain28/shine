@@ -61,8 +61,7 @@ export const shineLendingPageJSON = {
       'Business vintage > 5 years', 
       'GST registered',
       'Seeking tailored financial advice on existing portfolio', 
-      'Seeking better loan options and ROIs', 
-      'Searching for the best multi-funding options',  
+      'Exploring improved loan options, ROIs & multi-funding options',  
        ],
        Summary: 'A personalised programme that gives you access to financial insights to improve fiscal management and unlock multi-funding loans at the best terms.', 
         Vector_Background: {
