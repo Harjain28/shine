@@ -26,6 +26,7 @@ import { NoBureauComponent } from './no-bureau/no-bureau.component';
 import { NoGstComponent } from './no-gst/no-gst.component';
 import { MaterialModule } from '../material.module';
 import { noGSTJSON } from '../JsonFiles/no_gst';
+import { reportPageResponseJson } from '../JsonFiles/reponse';
 
 @Component({
   selector: 'app-reports',
@@ -102,20 +103,22 @@ export class ReportsComponent {
   potentialColor: any;
   isShowNoGST: boolean = false;
   Key_Insights_box: any;
+  gstDetails: any;
+  bureauScore: any;
 
-  constructor(private api: ApiService, private cdr: ChangeDetectorRef,private router: Router,) {}
+  constructor(private api: ApiService, private cdr: ChangeDetectorRef, private router: Router,) { }
 
   ngOnInit(): void {
     this.requestData = localStorage.getItem("reqData")
     this.parsedData = JSON.parse(this.requestData);
 
-    if(this.parsedData){
-    this.mobileNo = this.parsedData.mobile;
+    if (this.parsedData) {
+      this.mobileNo = this.parsedData.mobile;
     }
 
     this.api.postReportsApiObservable().subscribe((trigger: any) => {
       if (trigger) {
-       this.postForReport();
+        this.postForReport();
       }
     });
 
@@ -125,7 +128,15 @@ export class ReportsComponent {
     const url = this.router.url;
     if (url.includes('/report')) {
       this.reportsData = reportPageJson
-    } else{
+      this.gstDetails = this.reportsData?.report?.gstHistory;
+      if (!this.gstDetails) {
+        this.isShowNoGST = true;
+      }
+      this.bureauScore = this.reportsData?.report?.creditReport?.bureauScore?.score;
+      if(!this.bureauScore){
+        this.isShowNoBureau = true;
+      }
+    } else {
       this.navigateToSampleReportWithParams()
     }
 
@@ -153,26 +164,26 @@ export class ReportsComponent {
 
 
 
-    this.levelArray = [  
+    this.levelArray = [
       {
-          "stage": "1",
-          "color": "#ff7a24"
+        "stage": "1",
+        "color": "#ff7a24"
       },
       {
-          "stage": "2",
-          "color": "#221460"
+        "stage": "2",
+        "color": "#221460"
       },
       {
-          "stage": "3",
-          "color": "#6e2ec4"
+        "stage": "3",
+        "color": "#6e2ec4"
       },
       {
-          "stage": "4",
-          "color": "#c5e522"
+        "stage": "4",
+        "color": "#c5e522"
       },
       {
-          "stage": "5",
-          "color": "#15b89a"
+        "stage": "5",
+        "color": "#15b89a"
       }
     ]
 
@@ -180,13 +191,13 @@ export class ReportsComponent {
       (res: { stage: any }) => res.stage === this.Key_Insights_box.stage
     );
 
-    if(compare){
-      this.progressValue = (compare.stage/5)*100;
+    if (compare) {
+      this.progressValue = (compare.stage / 5) * 100;
       this.potentialColor = compare.color;
     }
     this.level = this.reportsData?.report?.potentialStage;
 
-    
+
 
   }
 
@@ -210,7 +221,7 @@ export class ReportsComponent {
   navigateToSampleReportWithParams() {
     const fileName = this.router.parseUrl(this.router.url).queryParams['name'];
     const queryParams = {
-      name: fileName 
+      name: fileName
     };
 
     if (fileName === 'good_bureau.json') {
@@ -220,20 +231,28 @@ export class ReportsComponent {
 
     } else if (fileName === 'no_bureau.json') {
       this.reportsData = noBureauJSON;
-      this.isShowNoBureau = true;
     } else if (fileName === 'poor_bureau.json') {
       this.reportsData = poorBureauJSON;
-    }  else if (fileName === 'no_gst.json') {
+    } else if (fileName === 'no_gst.json') {
       this.reportsData = noGSTJSON;
-      this.isShowNoGST = true;
     } else if (fileName === 'vpoor_bureau.json') {
       this.reportsData = vpoorBureauJSON;
     } else {
       this.reportsData = reportPageJson;
     }
 
+    this.gstDetails = this.reportsData?.report?.gstHistory;
+    if (!this.gstDetails) {
+      this.isShowNoGST = true;
+    }
 
-   
+    this.bureauScore = this.reportsData?.report?.creditReport?.bureauScore?.score;
+    if(!this.bureauScore){
+      this.isShowNoBureau = true;
+    }
+
+
+
 
     // this.router.navigate(['/in/sample_report'], { queryParams: queryParams });
 
@@ -243,7 +262,7 @@ export class ReportsComponent {
   // getHeaderSectionData() {
   //   this.reportStaticData = reportStatciData;
   //   this.reportsData = reportPageJson?.report;
-    
+
 
   //   this.headerSection = reportStatciData?.header_section;
   //   this.disclaimer = reportStatciData?.disclaimer?.description;
@@ -265,27 +284,27 @@ export class ReportsComponent {
 
   postForReport() {
     // this.showEligible = true;
-      let requestData: any = {}; 
-      requestData["mobile"] = this.mobileNo;
-      //  const params = { ...this.paramsObject.params };
-          this.api.postForReport(`api/Remediation/Report`,requestData ) .subscribe({
-              next: (res: any) => {
-                if (res) {
-                  // this.showEligible = false;
-                  // this.reportsData = res;
-                 
-                }
-              },
-              error: error => {
-              },
-              complete: () => {
-               // ('Request complete');
-              }
-            });
-      
+    let requestData: any = {};
+    requestData["mobile"] = this.mobileNo;
+    //  const params = { ...this.paramsObject.params };
+    this.api.postForReport(`api/Remediation/Report`, requestData).subscribe({
+      next: (res: any) => {
+        if (res) {
+          // this.showEligible = false;
+          // this.reportsData = res;
+
+        }
+      },
+      error: error => {
+      },
+      complete: () => {
+        // ('Request complete');
+      }
+    });
+
   }
 
- 
+
   getFaq() {
     this.businessLoanJson = reportStatciData;
     this.faqs = this.businessLoanJson?.faq_section;
@@ -316,9 +335,8 @@ export class ReportsComponent {
     this.progress += 1;
 
     if (this.progressBar && this.progressBar.nativeElement) {
-      this.progressBar.nativeElement.style.transform = `rotate(${
-        this.progress * 3.6
-      }deg)`;
+      this.progressBar.nativeElement.style.transform = `rotate(${this.progress * 3.6
+        }deg)`;
     }
 
     if (this.progressText && this.progressText.nativeElement) {
@@ -327,9 +345,8 @@ export class ReportsComponent {
 
     if (this.progress % 1 === 0) {
       const a = document.createElement('div');
-      a.style.cssText = `position: absolute; width: 3px; height: 100%; border-top: 65px solid #12BA9B; left: 49%; top: 0%; transform: rotate(${
-        this.progress * 3.6
-      }deg);`;
+      a.style.cssText = `position: absolute; width: 3px; height: 100%; border-top: 65px solid #12BA9B; left: 49%; top: 0%; transform: rotate(${this.progress * 3.6
+        }deg);`;
 
       if (this.progressContainer && this.progressContainer.nativeElement) {
         this.progressContainer.nativeElement.appendChild(a);

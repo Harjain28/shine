@@ -186,16 +186,29 @@ export class BankingBusinessComponent {
   }
 
   getBankingHistory() {
+    if(this.bankingData?.report?.bankingHistory?.graphData){
     this.graphData = this.bankingData?.report?.bankingHistory?.graphData;
+    }
 
     this.banking_history = this.bankingData?.report?.bankingHistory;
 
+    if(this.banking_history?.monthlyExpenses){
     this.monthly_expenses = this.banking_history?.monthlyExpenses;
+    }
+    if(this.graphData?.turnover){
     this.turnoverLineData = this.graphData?.turnover;
+    }
+
+    if(this.graphData?.abb){
     this.businessLinedata = this.graphData?.abb;
+    }
+
+    if(this.bankingData?.report?.creditReport?.securedUnsecuredRatio){
     this.securedUnsecuredRatioData =this.bankingData?.report?.creditReport?.securedUnsecuredRatio;
+    
     this.unsecuredRatioPercent = (this.securedUnsecuredRatioData?.unsecuredOutstanding*100)/this.turnoverLineData?.sum;
     this.securedRatioPercent = (this.securedUnsecuredRatioData?.securedOutstanding*100)/this.turnoverLineData?.sum;
+    }
    // this.aboveMinMonths = this.getMonthsAboveMin(this.graphData);
     
     
@@ -272,25 +285,36 @@ export class BankingBusinessComponent {
   }
 
   private setColorAndText(classValue: string): { color: string } {
+    const colorRegex = /(negative|positive)/i;
+    const match = classValue.trim().match(colorRegex);
+  
     let color: string;
   
-    switch (classValue.trim()) {
-      case "negative":
-        color = "#ec1111"; // Red
-        break;
-      case "positive":
-        color = "var(--main2)"; // Green
-        break;
-      default:
-        color = "#FF7B24"; // Orange
+    if (match) {
+      switch (match[0].toLowerCase()) {
+        case "negative":
+          color = "#ec1111"; // Red
+          break;
+        case "positive":
+          color = "var(--main2)"; // Green
+          break;
+        default:
+          color = "#FF7B24"; // Orange
+      }
+    } else {
+      color = "#FF7B24"; // Default to Orange if no match
     }
   
     return { color };
   }
+  
 
   setSummaryIcon(data: any) {
-    if (data?.class !== null) {
-      switch (data?.class) {
+    const classRegex = /(negative|positive|stable)/i;
+    const match = data?.class.match(classRegex);
+    
+    if (match) {
+      switch (match[0].toLowerCase()) {
         case 'negative':
           this.summaryIcon = 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png';
           break;
@@ -306,8 +330,10 @@ export class BankingBusinessComponent {
     } else {
       this.summaryIcon = '';
     }
+    
     return this.summaryIcon;
   }
+  
   
 
   getInsights() {
@@ -316,161 +342,205 @@ export class BankingBusinessComponent {
     const abb = bankingReportsInsights?.abb;
     const debt_to_revenue_ratio = bankingReportsInsights?.debt_to_revenue_ratio;
 
+    if(bankingReportsInsights?.volatility){
     this.volatility = this.concatenateInsights(
       bankingReportsInsights?.volatility.filter(
         (item: { condition_status: boolean }) => item.condition_status === true
       )
     );
+  }
+  
     const volatilityClass = this.volatility?.class;
     const { color: volatilityColor} = this.setColorAndText(volatilityClass);
     this.volatilityColor = volatilityColor;
 
 
+    if(bankingReportsInsights?.volitility_lenders_perspective){
     this.volitility_lenders_perspective = this.concatenateInsights(
       bankingReportsInsights?.volitility_lenders_perspective.filter(
         (item: { condition_status: boolean }) => item.condition_status
       )
     );
+  }
+
+  if(bankingReportsInsights?.dip){
     this.dip = this.concatenateInsights(
       bankingReportsInsights?.dip.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
     const dipClass = this.dip?.class;
     const { color: dipColor} = this.setColorAndText(dipClass);
     this.dipColor = dipColor;
 
 
 
+    if(bankingReportsInsights?.turnover_lenders_perspective){
     this.turnover_lenders_perspective = this.concatenateInsights(
       bankingReportsInsights?.turnover_lenders_perspective.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
+
+  if(bankingReportsInsights?.count_volatility){
     this.count_volatility = this.concatenateInsights(
       bankingReportsInsights?.count_volatility.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
+
     const count_volatilityClass = this.count_volatility?.class;
     const { color: count_VolColor} = this.setColorAndText(count_volatilityClass);
     this.count_VolColor = count_VolColor;
 
 
+    if(bankingReportsInsights?.bankingHistory_summary){
     this.bankingHistory_summary = this.concatenateInsights(
       bankingReportsInsights?.bankingHistory_summary.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
 
     const bhFilteredData = bankingReportsInsights?.bankingHistory_summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
         this.bhImageIcon = this.setSummaryIcon(bhFilteredData[0]);
 
 
+        if(bankingReportsInsights?.card_view){
     this.card_view = this.concatenateInsights(
       bankingReportsInsights?.card_view.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
 
     const cardViewClass = this.card_view?.class;
     const { color: cardViewColor } = this.setColorAndText(cardViewClass);
     this.cvColor = cardViewColor;
     
 
+    if(abb?.card_view){
     this.abbcardView = this.concatenateInsights(
       abb?.card_view.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
     const abbcardViewClass = this.abbcardView?.class;
     const { color: abbColor } = this.setColorAndText(abbcardViewClass);
     this.abbColor = abbColor;
 
 
+    if(abb?.volatility_observation){
     this.bank_balance_observation = this.concatenateInsights(
       abb?.volatility_observation.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
 
     const bank_balance_observationClass = this.bank_balance_observation?.class;
     const { color: voColor } = this.setColorAndText(bank_balance_observationClass);
     this.voColor = voColor;
 
 
+    if(abb?.volatility_lenders_perspective){
     this.bank_balance_lenders_perspective = this.concatenateInsights(
       abb?.volatility_lenders_perspective.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
+
+  if(abb?.minimum_balance){
     this.minimum_balance = this.concatenateInsights(
       abb?.minimum_balance.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
 
+  if(abb?.minimum_balance_lenders_perspective){
     this.minimum_balance_lenders_perspective = this.concatenateInsights(
       abb?.minimum_balance_lenders_perspective.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
 
 
-
+  if(abb?.abb_summary){
     this.abb_summary = this.concatenateInsights(
       abb?.abb_summary.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
 
     const abbFilteredData = abb?.abb_summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
     this.abbImgageIcon = this.setSummaryIcon(abbFilteredData[0]);
+    console.log(abbFilteredData,"jj")
 
+
+    if(debt_to_revenue_ratio?.card_view){
     this.dcard_view = this.concatenateInsights(
       debt_to_revenue_ratio?.card_view.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
 
 
     const dcardViewClass = this.dcard_view?.class;
     const { color: dcColor } = this.setColorAndText(dcardViewClass);
     this.dcColor = dcColor;
 
+
+    if(debt_to_revenue_ratio?.debt_to_revenue_ratio_lenders_perspective){
     this.debt_to_revenue_ratio_lenders_perspective = this.concatenateInsights(
       debt_to_revenue_ratio?.debt_to_revenue_ratio_lenders_perspective.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
 
 
+  if(bankingReportsInsights?.debt_to_revenue_summary){
     this.debt_to_revenue_summary = this.concatenateInsights(
       bankingReportsInsights?.debt_to_revenue_summary.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
 
     const debt_to_revenueFilteredData = bankingReportsInsights?.debt_to_revenue_summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
     this.dtrImgageIcon = this.setSummaryIcon(debt_to_revenueFilteredData[0]);
 
 
+    
+    if(bankingReportsInsights?.cheque_bounces){
     this.cheque_bounces = this.concatenateInsights(
       bankingReportsInsights?.cheque_bounces.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
-
+  }
     const cheque_bouncesClass = this.cheque_bounces?.class;
     const { color: cbColor } = this.setColorAndText(cheque_bouncesClass);
     this.cbColor = cbColor;
 
 
+
+    if(bankingReportsInsights?.cashflow){
     this.cashflow = this.concatenateInsights(
       bankingReportsInsights?.cashflow.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
 
     const cashflowClass = this.cashflow?.class;
     const { color: cfColor } = this.setColorAndText(cashflowClass);

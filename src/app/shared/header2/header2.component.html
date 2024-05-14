@@ -48,8 +48,8 @@
                         </div> -->
 
                         <div class="nav-item"
-                            (mouseleave)="closeDropdown()" [class.active]="router.url ==='/in/contact-us'">
-                            <a href="in/contact-us" class="nav-link dropdown-toggle"
+                            (mouseleave)="closeDropdown()" >
+                            <a [class.active]="router.url ==='/in/contact-us'" class="nav-link dropdown-toggle" (click)="goToContact()"
                                 >Contact Us
                             </a>
                         </div>
@@ -110,25 +110,10 @@
                                 </div> -->
                                 <div class="nav-item dropdown hoverEffect" (mouseenter)="openDropdown()"
                             (mouseleave)="closeDropdown()">
-                            <a class="nav-item nav-link">About Us
-                                <img src="./assets/images/homeImage/topheaderIcon.svg" alt="" />
+                            <a class="nav-item nav-link" [class.active]="router.url ==='/in/contact-us'"  (click)="goToContact()">Contact Us
+                               
                             </a>
-                            <div class="DropDownSet" [hidden]="!showNav">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="dropDownHeader">
-                                            <a class="dropdown-item"
-                                                href="assets/images/pdf/CreditEnable_Privacy_Policy_2023.pdf"
-                                                target="_blank">Privacy Policy
-                                            </a>
-                                            <a class="dropdown-item"
-                                                href="assets/images/pdf/CreditEnable_Privacy_Policy_2023.pdf"
-                                                target="_blank">Privacy Policy
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
                             </div>
 

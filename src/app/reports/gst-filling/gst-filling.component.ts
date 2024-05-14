@@ -77,17 +77,23 @@ export class GstFillingComponent {
 
     const gstInsights = this.gstData.insights?.gstHistory;
 
+
+
+    if(gstInsights?.missedGstFilings){
     this.missedGstFilings = this.concatenateInsights(
       gstInsights?.missedGstFilings.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
 
+  if(gstInsights?.info_card){
     this.info_card = this.concatenateInsights(
       gstInsights?.info_card.filter(
         (item: { condition_status: any }) => item.condition_status
       )
     );
+  }
 
     if (this.info_card?.class === "negative") {
       this.warningColor = "#ec1111"  //red
@@ -117,9 +123,12 @@ export class GstFillingComponent {
 
 
     const inputArray: string[] = [];
+
+    if(this.gstDetails?.missedGstFilings){
     for (const filing of this.gstDetails?.missedGstFilings) {
       inputArray.push(filing.month);
     }
+  }
 
     const outputArray: { month: string }[] = [];
     

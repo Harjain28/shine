@@ -269,6 +269,10 @@ export class Header2Component {
     this.router.navigate(['/in/pricing_group'])
   }
 
+  goToContact(){
+    this.router.navigate(['/in/contact-us'])
+  }
+
   goToAbout(){
     window.location.href = 'https://www.creditenable.com/in/about-creditenable';
   }
