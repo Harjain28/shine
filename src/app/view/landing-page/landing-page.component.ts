@@ -13,6 +13,7 @@ import { shineLendingPageJSON } from '../../JsonFiles/lendingpage';
 import { PopupCopyComponent } from 'src/app/modal/popup-copy/popup-copy.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ClientSectionComponent } from 'src/app/shared/client-section/client-section.component';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 
 
@@ -25,6 +26,7 @@ import { ClientSectionComponent } from 'src/app/shared/client-section/client-sec
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent {
+  @ViewChild('videoPlayer') videoPlayer: ElementRef | undefined;
   openAccording: boolean = false;
 
   customOptionKeys: OwlOptions = {
@@ -169,7 +171,9 @@ export class LandingPageComponent {
   summarySection: any;
   shine_comparison: any;
   WhoisShineForSection: any;
-  @ViewChild('videoPlayer') videoPlayer: ElementRef | undefined;
+  isUserInteracted: boolean = false;
+
+ 
   constructor(
     public eventService: EventService,
     public router: Router,
@@ -178,13 +182,14 @@ export class LandingPageComponent {
     private cdr: ChangeDetectorRef,
     private state: LocalStorageService,
     private breakpointObserver: BreakpointObserver,
+    private elementRef: ElementRef,
     private renderer: Renderer2,
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {
 
   }
   ngOnInit(): void {
-    this.playVideo();
+  
     this.state.removeItem();
     //   this.localStorage.removeSomeItem();
     this.breakpointObserver
@@ -201,22 +206,24 @@ export class LandingPageComponent {
     this.getBusinessLoanData();
   
   }
-
-  playVideo() {
+  playVideo(): void {
     if (this.videoPlayer && this.videoPlayer.nativeElement) {
-      this.videoPlayer.nativeElement.play().catch((error: any) => {
-        console.error('Failed to play video:', error);
-      });
+      const video = this.videoPlayer.nativeElement as HTMLVideoElement;
+      video.play();
+    } else {
+      console.error('Video element not found or not initialized.');
     }
   }
 
   ngAfterViewInit(): void {
-    this.renderer.listen(this.videoPlayer?.nativeElement, 'loadedmetadata', () => {
+    document.addEventListener('click', () => {
+      this.isUserInteracted = true;
       this.playVideo();
-    });
+    }, { once: true });
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.cdr.detectChanges();
   }
+  
 
   openDialog() {
     // this.getBorrowerInformation();
@@ -241,7 +248,6 @@ export class LandingPageComponent {
     this.businessLoanJson = shineLendingPageJSON;
 
     this.Shinebanner = this.businessLoanJson?.Shine_Banner;
-    this.playVideo();
     this.AnalyseSection = this.businessLoanJson?.Analyse_Section;
     this.WhatToExpectSection = this.businessLoanJson?.What_To_Expect_Section;
     this.shine_comparison = this.businessLoanJson?.Shine_Comparison_Section;

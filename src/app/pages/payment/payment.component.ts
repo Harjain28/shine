@@ -97,11 +97,7 @@ export class PaymentComponent {
         this.companyName = this.parsedData.businessName.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase());
         this.email = this.parsedData.email;
       }
-
-
       this.state = localStorage.getItem("state");
-
-
       this.Headertext = localStorage.getItem("text");
       this.getConfirmPaymentJson();  
 
@@ -111,7 +107,8 @@ export class PaymentComponent {
     cancelCoupon(){
       this.discountSection = false;
       this.calGST = ((this.filteredData?.Price)*18)/100;
-      this.total = parseInt(this.filteredData?.Price) + this.calGST;
+      const totalPrice = parseFloat(this.filteredData?.Price) + this.calGST;
+      this.total = totalPrice.toFixed(2);
       this.code = "";
     }
 
@@ -127,7 +124,8 @@ export class PaymentComponent {
                 this.isInvalidCoupon = false;
                 this.discountPrice = res?.percent ? (this.filteredData.Price * res?.percent) / 100 : res?.flatPrice;
                 this.calGST = ((this.filteredData.Price - this.discountPrice) * 18) / 100;
-                this.total = parseInt(this.filteredData.Price) + this.calGST - this.discountPrice;
+                const totalPrice = parseFloat(this.filteredData?.Price) + this.calGST - this.discountPrice;
+                this.total = totalPrice.toFixed(2);
               }
             }
           },
@@ -157,12 +155,13 @@ export class PaymentComponent {
       }
       else{
         this.per_text = "year"
-        this.cuttedPrice = '₹4999'
+        this.cuttedPrice = '₹1999'
 
       }
 
       this.calGST = ((this.filteredData?.Price)*18)/100;
-      this.total = parseInt(this.filteredData?.Price) + this.calGST;
+      const totalPrice = parseFloat(this.filteredData?.Price) + this.calGST;
+      this.total = totalPrice.toFixed(2);
 
     }
 
