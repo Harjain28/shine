@@ -42,18 +42,20 @@ export class ClientSectionComponent {
       },
     },
   };
+  shineBanner: any;
 
   constructor(
     public router: Router,
   ){}
 
   goToPlans(){
-    this.router.navigate(['/in/pricing_group'])
+    window.location.href=this.shineBanner?.CTA_Link;
    }
 
   ngOnInit(): void {
     this.businessLoanJson = shineLendingPageJSON; 
     this.WhatToExpectSection = this.businessLoanJson?.What_To_Expect_Section;
+    this.shineBanner = this.businessLoanJson?.Shine_Banner;
 
 
   }

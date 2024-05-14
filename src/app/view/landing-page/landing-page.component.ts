@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { EventService } from 'src/app/services/event.service';
-import {  ChangeDetectorRef, Component, Inject,  PLATFORM_ID } from "@angular/core";
-import {  Router } from "@angular/router";
+import { ChangeDetectorRef, Component, Inject, PLATFORM_ID } from "@angular/core";
+import { Router, RouterModule } from "@angular/router";
 import { LocalStorageService } from "src/app/services/local-storage.service";
 import { BreakpointObserver, BreakpointState } from "@angular/cdk/layout";
 import { isPlatformBrowser } from "@angular/common";
@@ -20,7 +20,7 @@ import { ClientSectionComponent } from 'src/app/shared/client-section/client-sec
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule,LazyLoadImageModule,CarouselModule,FaqComponent,TestimonialComponent,LazyLoadImageModule,ClientSectionComponent],
+  imports: [CommonModule, RouterModule, LazyLoadImageModule, CarouselModule, FaqComponent, TestimonialComponent, LazyLoadImageModule, ClientSectionComponent],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
@@ -53,7 +53,7 @@ export class LandingPageComponent {
       },
     },
   };
-  
+
   customOptionTable: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -125,7 +125,7 @@ export class LandingPageComponent {
   };
 
   smeProduct: any;
-  smeProductPage: any  = {};
+  smeProductPage: any = {};
   productPageType: string = 'smeproduct';
   SecuredProductBannerData: any;
   Shine_Features_Section: any;
@@ -146,7 +146,7 @@ export class LandingPageComponent {
   productSubTitle: any;
   SMEProductmetaDataFromJSON: any;
   moreContent: any;
-  aaa:any;
+  aaa: any;
   readMore: boolean = false;
   Key_Stats_Section: any;
   show: boolean = false;
@@ -178,48 +178,67 @@ export class LandingPageComponent {
     private breakpointObserver: BreakpointObserver,
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {
-      
+
   }
   ngOnInit(): void {
 
     this.state.removeItem();
- //   this.localStorage.removeSomeItem();
+    //   this.localStorage.removeSomeItem();
     this.breakpointObserver
-    .observe(['(min-width: 600px)'])
-    .subscribe((state: BreakpointState) => {
-      if (state.matches) {
-        this.showDesktop = true;
-      } else {
-        this.showDesktop = false;
-      }
-    });
+      .observe(['(min-width: 600px)'])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.showDesktop = true;
+        } else {
+          this.showDesktop = false;
+        }
+      });
     //this.MSMEPageMetaData = metaData?.MSMEpageMetaData;
-    this.eventService?.addmetaTag(this.MSMEPageMetaData?.title , this.MSMEPageMetaData?.description , this.MSMEPageMetaData?.keywords);
+    this.eventService?.addmetaTag(this.MSMEPageMetaData?.title, this.MSMEPageMetaData?.description, this.MSMEPageMetaData?.keywords);
     this.getBusinessLoanData();
 
   }
 
-  ngAfterViewInit(): void {  
-    this.isBrowser = isPlatformBrowser(this.platformId); 
+  ngAfterViewInit(): void {
+    this.isBrowser = isPlatformBrowser(this.platformId);
     this.cdr.detectChanges();
- }
+  }
 
- openDialog(){
-  // this.getBorrowerInformation();
-  const dialogRef = this.dialog.open(PopupCopyComponent, {
-    width: 'auto',
-    height: 'auto',
-  });
-}
+  openDialog() {
+    // this.getBorrowerInformation();
+    const dialogRef = this.dialog.open(PopupCopyComponent, {
+      width: 'auto',
+      height: 'auto',
+    });
+  }
 
-openPopup(data:any){
-  localStorage.setItem("popupData",data);
-  this.openDialog();
-}
+  openPopup(data: any) {
+    localStorage.setItem("popupData", data);
+    this.openDialog();
+  }
 
- goToPlans(){
-  this.router.navigate(['/in/pricing_group'])
- }
+  goToPlans() {
+    if (this.WhoisShineForSection?.CTA_Link) {
+      window.location.href = this.Shinebanner?.CTA_Link;
+    } else if (this.WhoisShineForSection?.CTA_Link) {
+      window.location.href = this.WhoisShineForSection?.CTA_Link;
+    }
+    else if (this.WhoisShineForSection?.CTA_Link) {
+      window.location.href = this.AnalyseSection?.CTA_Link;
+    }
+    else if (this.WhoisShineForSection?.CTA_Link) {
+      window.location.href = this.shine_comparison?.CTA_Link;
+    }
+    else if (this.WhoisShineForSection?.CTA_Link) {
+      window.location.href = this.HowShineWillHelpSection?.CTA_Link;
+    }
+    else if (this.WhoisShineForSection?.CTA_Link) {
+      window.location.href = this.ShineFeaturesSection?.CTA_Link;
+    }
+    else  {
+      window.location.href = this.summarySection?.CTA_Link;
+    }
+  }
   showAboutClass(body: any) {
     this.moreContent = body;
     this.readMore = true;
@@ -227,21 +246,22 @@ openPopup(data:any){
 
 
 
-  getBusinessLoanData(){
+  getBusinessLoanData() {
     this.businessLoanJson = shineLendingPageJSON;
 
     this.Shinebanner = this.businessLoanJson?.Shine_Banner;
+    console.log(this.Shinebanner?.Background.Content, "hh")
     this.AnalyseSection = this.businessLoanJson?.Analyse_Section;
     this.WhatToExpectSection = this.businessLoanJson?.What_To_Expect_Section;
-    console.log(this.WhatToExpectSection?.Background,"hh")
+    console.log(this.WhatToExpectSection?.Background, "hh")
     this.shine_comparison = this.businessLoanJson?.Shine_Comparison_Section;
     this.HowShineWillHelpSection = this.businessLoanJson?.How_Shine_Will_Help_Section;
-    this.Parameter = this.HowShineWillHelpSection?.Parameter.map((res: {Parameter: any; Icon: any; }) =>({
-      icon : res?.Icon,
+    this.Parameter = this.HowShineWillHelpSection?.Parameter.map((res: { Parameter: any; Icon: any; }) => ({
+      icon: res?.Icon,
       parameter: res?.Parameter
     }));
     this.ShineFeaturesSection = this.businessLoanJson?.Shine_Features_Section;
-    this.ProductTiles = this.ShineFeaturesSection?.Product_Tiles.map((res: {Pop_up_copy: any; Icon: any; Product_copy: any; })=>({
+    this.ProductTiles = this.ShineFeaturesSection?.Product_Tiles.map((res: { Pop_up_copy: any; Icon: any; Product_copy: any; }) => ({
       icon: res?.Icon,
       productCopy: res?.Product_copy,
       popupCopy: res?.Pop_up_copy

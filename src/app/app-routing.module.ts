@@ -6,6 +6,7 @@ import { RefundPolicyComponent } from './view/refund-policy/refund-policy.compon
 import { ContactusComponent } from './view/contactus/contactus.component';
 import {  PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AuthGuard } from './guard/auth.gaurd';
+import { ViewComponent } from './view/view.component';
 
 const routes: Routes = [
      
@@ -17,12 +18,18 @@ const routes: Routes = [
 
 
   {
-    path:'in' , component: PagesComponent,
+    path:'' , component: ViewComponent,
+    loadChildren:() =>import('./view/view.routes')
+  },
+  {
+    path:'in' , component: PagesComponent, 
     loadChildren:() =>import('./pages/pages.routes')
   },
 
+ 
+
   {
-    path:'in/report',
+    path:'in/report', 
     component: ReportsComponent   
   },
 

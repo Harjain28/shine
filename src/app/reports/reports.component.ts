@@ -295,9 +295,8 @@ export class ReportsComponent {
         if (res) {
           this.showEligible = false;
           this.reportsData = res;
-          if (res) {
             this.getReportData(this.reportsData);
-          }
+          
         }
       },
       error: error => {

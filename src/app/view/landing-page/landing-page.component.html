@@ -3,9 +3,9 @@
       <div class="homeSlider">
         <div class="silderSlide">
           <img *ngIf="showDesktop" class="image mhidden"
-            src="./assets/LandingPage/background.png" />
+          src={{Shinebanner?.Background?.Desktop_bg}} />
           <img *ngIf="!showDesktop" class="image dhidden"
-            src="./assets/LandingPage/background.png" />
+            src={{Shinebanner?.Background?.Mobile_bg}} />
           <div class="silderText mobileResponsive">
             <div class="container">
               <div class="row align-items-center position-relative">
@@ -24,14 +24,16 @@
                     </p>
 
                     <div class="pricingBtn">
-                      <button class="btn" (click)="goToPlans()">Check Pricing</button>
+                      <button class="btn" (click)="goToPlans()">{{Shinebanner?.CTA_Text}}</button>
                     </div>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="imgBanner">
-                    <img class="w-100" [src]="Shinebanner?.Background?.Desktop" alt="">
+                    <video autoplay loop muted>
+                      <source class="w-100" src="{{Shinebanner?.Background?.Content}}" type="video/webm"></video>
                   </div>
+
                 </div>
               </div>
             </div>
@@ -59,7 +61,7 @@
                 <ng-container>
                   <ng-template carouselSlide>
                       <div class="box box1">
-                        <img class="userImg" src="./assets/LandingPage/BiginnerImg.svg" alt="">
+                        <img class="userImg" src={{WhoisShineForSection?.Beginners_Feature?.Vector_Background?.Character_image}} alt="">
                         <h3>{{WhoisShineForSection?.Beginners_Feature?.Beginners_Title}}</h3>
                         <ul>
                           <li *ngFor="let data of WhoisShineForSection?.Beginners_Feature?.Beginners_Details">
@@ -72,7 +74,7 @@
                   </ng-template>
                   <ng-template carouselSlide>
                       <div class="box box2">
-                        <img class="userImg" src="./assets/LandingPage/IntermediateImg.svg" alt="">
+                        <img class="userImg" src={{WhoisShineForSection?.Intermediate_Feature?.Vector_Background?.Character_image}} alt="">
                         <h3>{{WhoisShineForSection?.Intermediate_Feature?.Intermediate_Feature}}</h3>  
                         <ul>
                           <li *ngFor="let data of WhoisShineForSection?.Intermediate_Feature?.Intermediate_Details">
@@ -85,7 +87,7 @@
                   </ng-template>
                   <ng-template carouselSlide>
                       <div class="box box3">
-                        <img class="userImg" src="./assets/LandingPage/ExpertImg.svg" alt="">
+                        <img class="userImg" src={{WhoisShineForSection?.Expert_Feature?.Vector_Background?.Character_image}} alt="">
                         <h3>{{WhoisShineForSection?.Expert_Feature?.Expert_Feature}}</h3>  
                         <ul>
                           <li *ngFor="let data of WhoisShineForSection?.Expert_Feature?.Expert_Details">
@@ -94,10 +96,17 @@
                           </li>
                         </ul>
                         <p>{{WhoisShineForSection?.Expert_Feature?.Summary}}</p>
+                        
                       </div>
                   </ng-template>
                 </ng-container>
               </owl-carousel-o>
+            </div>
+          </div>
+
+          <div class="col-lg-12">
+            <div class="featureBtn">
+              <button class="btn" (click)="goToPlans()">{{WhoisShineForSection?.CTA_Text}}</button>
             </div>
           </div>
         </div>
@@ -143,6 +152,11 @@
               <div class="boxIcon">
                 <img src={{AnalyseSection?.GST_Feature?.Vector_Background?.Character_image}} alt="">
               </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="featureBtn">
+              <button class="btn" (click)="goToPlans()">{{AnalyseSection?.CTA_Text}}</button>
             </div>
           </div>
         </div>
@@ -206,6 +220,12 @@
               </owl-carousel-o>
             </div>
 
+            <div class="col-lg-12">
+              <div class="featureBtn">
+                <button class="btn" (click)="goToPlans()">{{shine_comparison?.CTA_Text}}</button>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -237,7 +257,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="contentBtn">
               <p>{{HowShineWillHelpSection?.Body_Section[0]}} <br> {{HowShineWillHelpSection?.Body_Section[1]}}</p>
-              <button class="btn" (click)="goToPlans()">Check Pricing</button>
+              <button class="btn" (click)="goToPlans()">{{HowShineWillHelpSection?.CTA_Text}}</button>
             </div>
           </div>
         </div>
@@ -249,12 +269,13 @@
     <div class="container">
       <div class="col-xl-10 col-lg-12 col-md-12 col-sm-12 m-auto">
         <div class="content" >
-          <button class="btn" >
+          <!-- <button class="btn" >
             Deep Dive
-          </button>
+          </button> -->
           <h3>{{ShineFeaturesSection?.Header}}</h3>
           <p>{{ShineFeaturesSection?.Subheader}}</p>
         </div>
+        
       </div>
       <div class="row row-cols-5">
         <div class="col" *ngFor="let data of ProductTiles">
@@ -269,6 +290,11 @@
           <div class="boxImg">
             <img src="./assets/LandingPage/boxImg.png" alt="">
           </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="featureBtn">
+          <button class="btn" (click)="goToPlans()">{{ShineFeaturesSection?.CTA_Text}}</button>
         </div>
       </div>
     </div>
@@ -306,6 +332,11 @@
             </owl-carousel-o>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="featureBtn">
+        <button class="btn" (click)="goToPlans()">{{summarySection?.CTA_Text}}</button>
       </div>
     </div>
   </div>

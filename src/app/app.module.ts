@@ -15,6 +15,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ShineHeaderComponent } from './shared/shine-header/shine-header.component';
 import { Header2Component } from './shared/header2/header2.component';
 import { RoundPipe } from './pipe/round.pipe';
+import { ViewComponent } from './view/view.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { RoundPipe } from './pipe/round.pipe';
     ShineHeaderComponent,
     HttpClientModule,
     CarouselModule,
-    MatDialogModule
+    MatDialogModule,
+    ViewComponent
   ],
   providers: [DatePipe],
   exports: [

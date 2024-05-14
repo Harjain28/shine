@@ -1,9 +1,7 @@
 import { Route } from '@angular/router';
 
 export default[
-    {
-        path: '' , loadComponent:() => import('./landing-page/landing-page.component').then(c=>c.LandingPageComponent)
-    },
+    
     {
         path: 'register', loadComponent:() => import('./form1/form1.component').then(c=>c.Form1Component)
     },
@@ -22,9 +20,7 @@ export default[
     {
         path: 'pricing_group', loadComponent:() => import('./pricing1/pricing1.component').then(c=>c.Pricing1Component)
     },
-    {
-        path: 'pricing_annual', loadComponent:() => import('./pricing2/pricing2.component').then(c=>c.Pricing2Component)
-    },
+    
     {
         path: 'payment_status', loadComponent:() => import('./payment-status/payment-status.component').then(c=>c.PaymentStatusComponent)
     },

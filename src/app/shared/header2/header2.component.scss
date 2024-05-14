@@ -4,6 +4,16 @@
     top: -5px;
 }
 
+.backgroundHeader {
+    width: 100%;
+    height: 90px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: var(--main1);
+    z-index: 1;
+}
+
 /* Add this style in your component's CSS file */
   .mat-dialog {
     background: none;
