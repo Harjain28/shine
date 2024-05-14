@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { EventService } from 'src/app/services/event.service';
-import { ChangeDetectorRef, Component, Inject, PLATFORM_ID } from "@angular/core";
+import { ChangeDetectorRef, Component, ElementRef, Inject, PLATFORM_ID, Renderer2, ViewChild } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
 import { LocalStorageService } from "src/app/services/local-storage.service";
 import { BreakpointObserver, BreakpointState } from "@angular/cdk/layout";
@@ -123,6 +123,7 @@ export class LandingPageComponent {
       },
     },
   };
+  
 
   smeProduct: any;
   smeProductPage: any = {};
@@ -168,6 +169,7 @@ export class LandingPageComponent {
   summarySection: any;
   shine_comparison: any;
   WhoisShineForSection: any;
+  @ViewChild('videoPlayer') videoPlayer: ElementRef | undefined;
   constructor(
     public eventService: EventService,
     public router: Router,
@@ -176,12 +178,13 @@ export class LandingPageComponent {
     private cdr: ChangeDetectorRef,
     private state: LocalStorageService,
     private breakpointObserver: BreakpointObserver,
+    private renderer: Renderer2,
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {
 
   }
   ngOnInit(): void {
-
+    this.playVideo();
     this.state.removeItem();
     //   this.localStorage.removeSomeItem();
     this.breakpointObserver
@@ -196,10 +199,21 @@ export class LandingPageComponent {
     //this.MSMEPageMetaData = metaData?.MSMEpageMetaData;
     this.eventService?.addmetaTag(this.MSMEPageMetaData?.title, this.MSMEPageMetaData?.description, this.MSMEPageMetaData?.keywords);
     this.getBusinessLoanData();
+  
+  }
 
+  playVideo() {
+    if (this.videoPlayer && this.videoPlayer.nativeElement) {
+      this.videoPlayer.nativeElement.play().catch((error: any) => {
+        console.error('Failed to play video:', error);
+      });
+    }
   }
 
   ngAfterViewInit(): void {
+    this.renderer.listen(this.videoPlayer?.nativeElement, 'loadedmetadata', () => {
+      this.playVideo();
+    });
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.cdr.detectChanges();
   }
@@ -227,10 +241,9 @@ export class LandingPageComponent {
     this.businessLoanJson = shineLendingPageJSON;
 
     this.Shinebanner = this.businessLoanJson?.Shine_Banner;
-    console.log(this.Shinebanner?.Background.Content, "hh")
+    this.playVideo();
     this.AnalyseSection = this.businessLoanJson?.Analyse_Section;
     this.WhatToExpectSection = this.businessLoanJson?.What_To_Expect_Section;
-    console.log(this.WhatToExpectSection?.Background, "hh")
     this.shine_comparison = this.businessLoanJson?.Shine_Comparison_Section;
     this.HowShineWillHelpSection = this.businessLoanJson?.How_Shine_Will_Help_Section;
     this.Parameter = this.HowShineWillHelpSection?.Parameter.map((res: { Parameter: any; Icon: any; }) => ({

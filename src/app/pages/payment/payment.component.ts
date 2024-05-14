@@ -181,7 +181,7 @@ export class PaymentComponent {
   getForPaymentMethod() {
     this.isSubmit = true;
     let requestData: any = {};
-    requestData['amount'] = '2.00';
+    requestData['amount'] = this.total;
     requestData['custMobile'] = this.mobile;
     requestData['custMail'] = this.email;
     requestData['returnUrl'] = `${environment.BASE_API_ENDPOINT}api/Remediation/PGResponse`;
