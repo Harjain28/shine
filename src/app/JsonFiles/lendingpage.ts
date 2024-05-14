@@ -1,7 +1,7 @@
 export const shineLendingPageJSON = {
   Shine_Banner: {
     Header1: {
-      Text: 'Welcome to Shine',
+      Text: 'Welcome to SHINE',
     },
     Header2: {
       Text: 'Identify Issues. Improve Your Credit Profile. Secure Capital.',
@@ -12,14 +12,16 @@ export const shineLendingPageJSON = {
       "Take Action: Steps to boost loan eligibility affordably.",
     ],
     Background: {
-      Desktop:
-        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens.png',
-      Mobile:
-        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens_mobile.png',
+      Desktop_bg:
+       'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/landing_banner_03_desktop.jpg',
+      Mobile_bg:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/landing_banner_03_mobile.jpg',
+      Content:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/Landing%20Page%20Video.webm',    
     },
 
     CTA_Text: 'Enrol Now',
-    CTA_Link: '/in/check-eligibility',
+    CTA_Link: 'https://shine.creditenable.com/in/pricing_annual',
   },
 
   Who_is_Shine_For_Section: {
@@ -69,7 +71,7 @@ export const shineLendingPageJSON = {
     },
 
     CTA_Text: 'Get Pricing',
-    CTA_Link: '/in/check-eligibility',
+    CTA_Link: 'https://shine.creditenable.com/in/pricing_annual',
   },
 
   Analyse_Section: {
@@ -102,7 +104,7 @@ export const shineLendingPageJSON = {
     },
     },
     CTA_Text: 'Get Pricing',
-    CTA_Link: '/in/check-eligibility',
+    CTA_Link: 'https://shine.creditenable.com/in/pricing_annual',
   },
 
   What_To_Expect_Section: {
@@ -140,7 +142,7 @@ export const shineLendingPageJSON = {
     },
   ],
     CTA_Text: 'Enrol Today',
-    CTA_Link: '/in/check-eligibility',
+    CTA_Link: 'https://shine.creditenable.com/in/pricing_annual',
   },
 
   Shine_Comparison_Section: {
@@ -186,7 +188,7 @@ export const shineLendingPageJSON = {
        },
       ],
     CTA_Text: 'Get Pricing',
-    CTA_Link: '/in/check-eligibility',
+    CTA_Link: 'https://shine.creditenable.com/in/pricing_annual',
   },
   How_Shine_Will_Help_Section: {
     Header: 'How Shine Will Help Your Loan Prospects',
@@ -217,7 +219,7 @@ export const shineLendingPageJSON = {
       'Make the strategic changes we recommend and be loan ready in 3-6 months.',
     ],
     CTA_Text: 'Enrol Today',
-    CTA_Link: '/in/check-eligibility',
+    CTA_Link: 'https://shine.creditenable.com/in/pricing_annual',
   },
 
   Shine_Features_Section: {
@@ -225,7 +227,7 @@ export const shineLendingPageJSON = {
     Subheader:
       'Experience a new level of financial understanding about your business with detailed reviews of your credit report, GST and banking, that personalised advice to help you improve your ability to access affordable finance.',
     CTA_Text: 'Get Pricing',
-    CTA_Link: '/in/check-eligibility',
+    CTA_Link: 'https://shine.creditenable.com/in/pricing_annual',
     Image: {
       Desktop:
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/banner_analysis.jpg',
@@ -349,7 +351,7 @@ export const shineLendingPageJSON = {
     Subheader:
       'Follow our tailor-made financial recommendations for a guaranteed shot at loan approval.',
     CTA_Text: 'Check Pricing',
-    CTA_Link: '/in/check-eligibility',
+    CTA_Link: 'https://shine.creditenable.com/in/pricing_annual',
     Banner: [
       {
         Desktop:
