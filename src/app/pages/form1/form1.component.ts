@@ -29,9 +29,12 @@ export class Form1Component implements OnInit {
   errorVisible = false;
   validatePin!: boolean;
   validatePAN!: boolean;
+  error: any; // Define error property here
+
 
   unformattedX: string = ''; 
   formattedX!: string; 
+  showBusniessNameError!: boolean;
 
 
 
@@ -148,7 +151,11 @@ export class Form1Component implements OnInit {
           if(error.errors.BusinessPan){
           this.showValidatePANError = true;
           }
-          this.api.alert(error.errors.BusinessName ,'error');
+          if(error.errors.BusinessName){
+            this.error = error.errors.BusinessName;
+            this.showBusniessNameError = true;
+
+          }
            this.isSubmit = false;
 
 

@@ -14,7 +14,7 @@
             <div class="formSelect">
               <div class="example-container">
                 <form [formGroup]="form1">
-                  <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12" [ngClass]="form1.controls['title'].touched &&
+                  <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-5" [ngClass]="form1.controls['title'].touched &&
                                       form1.controls['title'].hasError('required')  ? 'isvaliderror' :  ''">
                       <mat-form-field appearance="fill">
                         <mat-select formControlName='title' placeholder="Mr.">
@@ -156,7 +156,7 @@
 
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" [ngClass]=" form1.controls['busninessName'].touched &&
                                         form1.controls['busninessName'].hasError('required') ||  (form1.controls['busninessName'].dirty || form1.controls['busninessName'].touched) &&
-                                        form1.controls['busninessName'].hasError('pattern') ? 'isvaliderror' :  ''">
+                                        form1.controls['busninessName'].hasError('pattern') || showBusniessNameError ? 'isvaliderror' :  ''">
                       <mat-form-field appearance="fill">
                         <mat-label>Business Name</mat-label>
                         <input matInput formControlName='busninessName' placeholder="">
@@ -168,11 +168,10 @@
                         Please complete this mandatory field.
                       </div>
 
-                      <div class="error mb-2" *ngIf="
-                                          form1.controls['busninessName'].dirty &&
-                                          form1.controls['busninessName'].hasError('pattern')
-                                        ">
-                        Please add valid information
+                     
+
+                      <div class="error mb-2" *ngIf=" !form1.controls['pincode'].hasError('required') && showBusniessNameError">
+                         {{ error }}
                       </div>
                     </div>
 
