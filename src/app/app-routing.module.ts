@@ -17,12 +17,12 @@ const routes: Routes = [
 
 
   {
-    path:'in' , component: PagesComponent, canActivate: [AuthGuard],
+    path:'in' , component: PagesComponent,
     loadChildren:() =>import('./pages/pages.routes')
   },
 
   {
-    path:'in/report', canActivate: [AuthGuard],
+    path:'in/report',
     component: ReportsComponent   
   },
 

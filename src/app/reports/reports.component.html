@@ -1,6 +1,6 @@
 <!-- Top-Banner-Section Start -->
 
-<ng-container>
+<ng-container  *ngIf="!showEligible">
   <!-- <div class="topBannerHeader">
   <div class="container">
     <div class="row align-items-center">
@@ -160,7 +160,7 @@
 
 </ng-container>
 
-<div class="v2checksection progressBaar" *ngIf="showEligible">
+<div class="v2checksection progressBaar" *ngIf="showEligible && router.url.includes('/report')">
   <div class="blueBack"></div>
   <div class="container mobilePd">
       <div class="row">

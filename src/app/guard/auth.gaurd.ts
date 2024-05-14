@@ -24,8 +24,7 @@ export class AuthGuard  {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     
-    if (this.pageUrls.includes(state.url) ) {
-      
+    if (this.pageUrls.includes(state.url) ) {   
       this.router.navigateByUrl('/in');
       return false; 
     }

@@ -24,6 +24,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { Subscription, take, timer } from 'rxjs';
 
+
 @Component({
   selector: 'app-upload-documents',
   standalone: true,
@@ -141,9 +142,11 @@ export class UploadDocumentsComponent {
     
    
 
-      if(this.uploadedParams){
+      if(this.uploadedParams === "true"){
         this.callPerfiosCallback(this.transID);
-
+        this.interval = setInterval(() => {
+          this.callPerfiosCallback(this.transID);
+         },10000)
         this.showEligible = true;
         this.api.reportApi();
         this.timeout = setTimeout(() => {
@@ -152,7 +155,7 @@ export class UploadDocumentsComponent {
           this.api.alertOk("There seems to be an issue in parsing your bank statements. We request you to please try again. Please ensure that if you choose to upload the bank statements, they are not password protected", "");
           this.router.navigate(['/in/bank_statement'])
         }, 120000);
-      }else{
+      } else{
         this.router.navigate(['/in/bank_statement'])
       }
       
@@ -200,10 +203,7 @@ export class UploadDocumentsComponent {
 
 
 
-  callPerfiosCallback(id:any){
-
-      this.interval = setInterval(() => {
-        
+  callPerfiosCallback(id:any){        
         const params = { ...this.paramsObject.params };
         const formData = new FormData();
         formData.append("PerfiosTransactionId", id);
@@ -232,7 +232,7 @@ export class UploadDocumentsComponent {
             }
           });
         
-        }, 15000);
+
   }
 
   netBankinglink() {

@@ -106,7 +106,7 @@ export class ReportsComponent {
   gstDetails: any;
   bureauScore: any;
 
-  constructor(private api: ApiService, private cdr: ChangeDetectorRef, private router: Router,) { }
+  constructor(private api: ApiService, private cdr: ChangeDetectorRef, public router: Router,) { }
 
   ngOnInit(): void {
     this.requestData = localStorage.getItem("reqData")
@@ -115,91 +115,93 @@ export class ReportsComponent {
     if (this.parsedData) {
       this.mobileNo = this.parsedData.mobile;
     }
-
-    this.api.postReportsApiObservable().subscribe((trigger: any) => {
-      if (trigger) {
-        this.postForReport();
-      }
-    });
-
     this.getFaq();
-    this.getChartsData();
-    this.api.reportApi();
+    // this.api.reportApi();
     const url = this.router.url;
     if (url.includes('/report')) {
-      this.reportsData = reportPageJson
-      this.gstDetails = this.reportsData?.report?.gstHistory;
-      if (!this.gstDetails) {
-        this.isShowNoGST = true;
-      }
-      this.bureauScore = this.reportsData?.report?.creditReport?.bureauScore?.score;
-      if(!this.bureauScore){
-        this.isShowNoBureau = true;
-      }
+      this.postForReport();
+      // this.api.postReportsApiObservable().subscribe((trigger: any) => {
+      //   if (trigger) {
+         
+      //   }
+      // });
+      // this.reportsData = this.reportData;
+    
     } else {
-      this.navigateToSampleReportWithParams()
+      this.navigateToSampleReportWithParams();
     }
-
-    this.headerSection = reportStatciData?.header_section;
-    this.disclaimer = reportStatciData?.disclaimer?.description;
-
-    const { bankingSummary, bureauSummary, gstSummary } = this.reportsData?.report;
-    this.criticalTotal =
-      bankingSummary.positive + bureauSummary.positive + gstSummary.positive;
-    this.mediumTotal =
-      bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
-
-    const compareStage = this.headerSection?.background.find(
-      (image: { stage: any }) => image.stage === this.reportsData?.report?.currentStage
-    );
-
-    if (compareStage) {
-      this.imgUrlDesktop = compareStage.desktop;
-      this.imgUrlMobile = compareStage.mobile_content;
-    }
-
-    this.Key_Insights_box = this.headerSection?.Key_Insights_box?.Key_Insights.find(
-      (image: { stage: any }) => image.stage === this.reportsData?.report?.potentialStage.toString()
-    );
-
-
-
-    this.levelArray = [
-      {
-        "stage": "1",
-        "color": "#ff7a24"
-      },
-      {
-        "stage": "2",
-        "color": "#221460"
-      },
-      {
-        "stage": "3",
-        "color": "#6e2ec4"
-      },
-      {
-        "stage": "4",
-        "color": "#c5e522"
-      },
-      {
-        "stage": "5",
-        "color": "#15b89a"
-      }
-    ]
-
-    const compare = this.levelArray.find(
-      (res: { stage: any }) => res.stage === this.Key_Insights_box.stage
-    );
-
-    if (compare) {
-      this.progressValue = (compare.stage / 5) * 100;
-      this.potentialColor = compare.color;
-    }
-    this.level = this.reportsData?.report?.potentialStage;
-
-
-
   }
+
+  getReportData(reportData:any) {
+    this.showEligible = false;
+    this.gstDetails = reportData?.report?.gstHistory;
+    if (!this.gstDetails) {
+      this.isShowNoGST = true;
+    }
+    this.bureauScore = reportData?.report?.creditReport?.bureauScore?.score;
+    if(!this.bureauScore){
+      this.isShowNoBureau = true;
+    }
+ 
+  this.headerSection = reportStatciData?.header_section;
+  this.disclaimer = reportStatciData?.disclaimer?.description;
+
+  const { bankingSummary, bureauSummary, gstSummary } = reportData?.report;
+  this.criticalTotal =
+    bankingSummary.positive + bureauSummary.positive + gstSummary.positive;
+  this.mediumTotal =
+    bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
+
+  const compareStage = this.headerSection?.background.find(
+    (image: { stage: any }) => image.stage === reportData?.report?.currentStage
+  );
+
+  if (compareStage) {
+    this.imgUrlDesktop = compareStage.desktop;
+    this.imgUrlMobile = compareStage.mobile_content;
+  }
+
+  this.Key_Insights_box = this.headerSection?.Key_Insights_box?.Key_Insights.find(
+    (image: { stage: any }) => image.stage === reportData?.report?.potentialStage.toString()
+  );
+
+
+
+  this.levelArray = [
+    {
+      "stage": "1",
+      "color": "#ff7a24"
+    },
+    {
+      "stage": "2",
+      "color": "#221460"
+    },
+    {
+      "stage": "3",
+      "color": "#6e2ec4"
+    },
+    {
+      "stage": "4",
+      "color": "#c5e522"
+    },
+    {
+      "stage": "5",
+      "color": "#15b89a"
+    }
+  ]
+
+  const compare = this.levelArray.find(
+    (res: { stage: any }) => res.stage === this.Key_Insights_box.stage
+  );
+
+  if (compare) {
+    this.progressValue = (compare.stage / 5) * 100;
+    this.potentialColor = compare.color;
+  }
+  this.level = reportData?.report?.potentialStage;
+
+  
+}
 
   ngAfterViewInit(): void {
     // this.isBrowser = isPlatformBrowser(this.platformId);
@@ -238,8 +240,9 @@ export class ReportsComponent {
     } else if (fileName === 'vpoor_bureau.json') {
       this.reportsData = vpoorBureauJSON;
     } else {
-      this.reportsData = reportPageJson;
+      this.reportsData = this.reportData;
     }
+    this.getReportData(this.reportsData);
 
     this.gstDetails = this.reportsData?.report?.gstHistory;
     if (!this.gstDetails) {
@@ -283,19 +286,22 @@ export class ReportsComponent {
   // }
 
   postForReport() {
-    // this.showEligible = true;
+    this.showEligible = true;
     let requestData: any = {};
     requestData["mobile"] = this.mobileNo;
     //  const params = { ...this.paramsObject.params };
     this.api.postForReport(`api/Remediation/Report`, requestData).subscribe({
       next: (res: any) => {
         if (res) {
-          // this.showEligible = false;
-          // this.reportsData = res;
-
+          this.showEligible = false;
+          this.reportsData = res;
+          if (res) {
+            this.getReportData(this.reportsData);
+          }
         }
       },
       error: error => {
+        this.showEligible = true;
       },
       complete: () => {
         // ('Request complete');
