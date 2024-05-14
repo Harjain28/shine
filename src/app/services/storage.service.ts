@@ -38,13 +38,13 @@ export class StorageService {
   // getStagingId() {
   //   return this.state.get("stagingJourneyId");
   // }
-  // getToken() {
-  //   return localStorage.getItem("token");
-  // }
+  getToken() {
+    return localStorage.getItem("token");
+  }
 
-  // isToken() {
-  //   return this.getToken() !== null;
-  // }
+  isToken() {
+    return this.getToken() !== null;
+  }
 
   // isLoggednIn() {
   //   return this.getStagingId() !== null;

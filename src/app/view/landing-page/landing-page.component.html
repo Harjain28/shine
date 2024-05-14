@@ -30,13 +30,12 @@
                 </div>
                 <div class="col-lg-6 mobile0">
                   <div class="imgBanner">
-                    <video #videoPlayer width="640" height="360"  autoplay loop>
+                    <!-- <video #videoPlayer width="640" height="360"  autoplay loop>
                       <source class="w-100"  [src]="Shinebanner?.Background?.Content" type="video/webm">
+                    </video> -->
+                    <video #videoPlayer autoplay muted loop (load)="playVideo()" onloadedmetadata="this.muted = true" >
+                      <source [src]="Shinebanner?.Background?.Content" type="video/webm">
                     </video>
-                      <!-- <video #videoPlayer width="640" height="360" loop autoplay muted>
-                        <source class="w-100" [src]="Shinebanner?.Background?.Content" type="video/webm">
-                      </video>
-                     -->
                   </div>
 
                 </div>

@@ -10,6 +10,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Buffer } from "buffer";
+import { NavigationService } from 'src/app/services/navigation.service';
 
 
 
@@ -77,6 +78,7 @@ export class OtpComponent implements OnInit{
     public eventService: EventService,
     public router: Router,
     private route: ActivatedRoute,
+    private navigationService:NavigationService,
     private api: ApiService,
     private location: Location){
       this.route.queryParamMap.subscribe((params) => {
@@ -131,6 +133,7 @@ export class OtpComponent implements OnInit{
           if (res.success == true) {
             // const stateData = Buffer.from(res.token).toString("base64");
             localStorage.setItem("token",res?.token);
+            this.navigationService.setLinkClicked(true);
             this.router.navigate(['/in/confirm_order']);
             this.isOtpSubmit = true;
 

@@ -10,6 +10,7 @@ import { MaterialModule } from 'src/app/material.module';
 import { MatIconModule } from '@angular/material/icon';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-header2',
@@ -236,7 +237,8 @@ export class Header2Component {
   isLoginShow: any;
   isLoggedin!: boolean;
   editEventSubscription!: Subscription;
-  constructor(public router: Router ,private state : LocalStorageService, private storage : StorageService, @Inject(DOCUMENT) private document: Document, private route: ActivatedRoute ,public dialog: MatDialog, public urlService: UrlService)  {
+  
+  constructor(public router: Router, private navigationService:NavigationService ,private state : LocalStorageService, private storage : StorageService, @Inject(DOCUMENT) private document: Document, private route: ActivatedRoute ,public dialog: MatDialog, public urlService: UrlService)  {
 
   }
 
@@ -265,10 +267,12 @@ export class Header2Component {
     window.location.href = 'https://www.creditenable.com/in/sme-business-loan/secured-business-loan';
   }
   
-  goToPricing(){
-    this.router.navigate(['/in/pricing_group'])
+  goToPricing(isLinkClicked: boolean): void {
+    this.navigationService.setLinkClicked(isLinkClicked);
+    this.router.navigate(['/in/pricing_group']);
   }
-
+  
+  
   goToContact(){
     this.router.navigate(['/in/contact-us'])
   }

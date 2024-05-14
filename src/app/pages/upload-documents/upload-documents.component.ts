@@ -23,6 +23,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { Subscription, take, timer } from 'rxjs';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 
 @Component({
@@ -101,6 +102,7 @@ export class UploadDocumentsComponent {
 
   constructor(
     private api: ApiService,
+    private navigationService:NavigationService,
     private route: ActivatedRoute,
     public eventService: EventService,
     private cdr: ChangeDetectorRef,
@@ -191,6 +193,7 @@ export class UploadDocumentsComponent {
               },
               error: error => {
                 this.showEligibleReport = false;
+                this.navigationService.setLinkClicked(true);
                 this.router.navigate(['/in/bank_statement'])
                 console.log("dhb")
               },
@@ -220,6 +223,7 @@ export class UploadDocumentsComponent {
                 clearTimeout(this.timeout);
                 clearInterval(this.interval);
                 this.showEligible = false;
+                this.navigationService.setLinkClicked(true);
                 this.router.navigate(['/in/report'])
                 }
                

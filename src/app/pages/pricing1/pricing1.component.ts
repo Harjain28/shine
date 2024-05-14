@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { SampleReportsFormComponent } from 'src/app/modal/sample-reports-form/sample-reports-form.component';
 import { MatDialog } from '@angular/material/dialog';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-pricing1',
@@ -28,7 +29,7 @@ export class Pricing1Component {
 
   @Output() dataEvent = new EventEmitter<any>();
 
-  constructor(public router: Router, private state: LocalStorageService,private dialog:MatDialog){
+  constructor(public router: Router,private navigationService: NavigationService, private state: LocalStorageService,private dialog:MatDialog){
 
   }
 
@@ -84,9 +85,9 @@ export class Pricing1Component {
      });
    }
 
-  goToRegister(text:any){
+  goToRegister(text:any, isLinkClicked:boolean){
     localStorage.setItem("text",text);
-
+    this.navigationService.setLinkClicked(isLinkClicked);
     this.router.navigate(['/in/register'])
 
   }

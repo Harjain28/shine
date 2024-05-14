@@ -16,13 +16,14 @@ const routes: Routes = [
     pathMatch: 'full'
   },
 
-
   {
-    path:'' , component: ViewComponent,
-    loadChildren:() =>import('./view/view.routes')
+    path: '', 
+    component: ViewComponent, 
+    loadChildren: () => import('./view/view.routes')
   },
   {
     path:'in' , component: PagesComponent, 
+    canActivate: [AuthGuard],
     loadChildren:() =>import('./pages/pages.routes')
   },
 
@@ -30,6 +31,7 @@ const routes: Routes = [
 
   {
     path:'in/report', 
+    canActivate: [AuthGuard],
     component: ReportsComponent   
   },
 

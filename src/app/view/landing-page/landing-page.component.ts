@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { EventService } from 'src/app/services/event.service';
-import { ChangeDetectorRef, Component, ElementRef, Inject, PLATFORM_ID, Renderer2, ViewChild } from "@angular/core";
+import { ChangeDetectorRef, Component, ElementRef, HostListener, Inject, PLATFORM_ID, Renderer2, ViewChild } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
 import { LocalStorageService } from "src/app/services/local-storage.service";
 import { BreakpointObserver, BreakpointState } from "@angular/cdk/layout";
@@ -188,6 +188,11 @@ export class LandingPageComponent {
   ) {
 
   }
+   @HostListener("window:load", ["$event"])
+  checkScroll() {
+   this.playVideo();
+  }
+
   ngOnInit(): void {
   
     this.state.removeItem();

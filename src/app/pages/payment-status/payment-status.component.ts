@@ -5,6 +5,7 @@ import { StatusPopupComponent } from 'src/app/modal/status-popup/status-popup.co
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { EventService } from 'src/app/services/event.service';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-payment-status',
@@ -19,7 +20,7 @@ export class PaymentStatusComponent {
   dialogRef: MatDialogRef<StatusPopupComponent> | undefined;
   defaultparams: any;
 
-  constructor(private dialog: MatDialog, private router: Router, private api: ApiService, private route: ActivatedRoute, private event: EventService){
+  constructor(private dialog: MatDialog, private router: Router, private navigationService: NavigationService, private api: ApiService, private route: ActivatedRoute, private event: EventService){
     this.route.queryParamMap.subscribe((params) => {
       this.paramsObject = { ...params };
       this.confirmPayment();
@@ -61,10 +62,12 @@ export class PaymentStatusComponent {
              this.api.alert(res?.resp_message, "error");
              this.closeBureauDialog();
              this.event.updatePaymentStatus(true);
+             this.navigationService.setLinkClicked(true);
              this.router.navigate(['/in/confirm_order'], { replaceUrl: true });
           } else {
             this.api.alert('Please upload documents', "success");
             this.closeBureauDialog();
+            this.navigationService.setLinkClicked(true);
           this.router.navigate(['/in/bank_statement'],{ replaceUrl: true });
           }
           

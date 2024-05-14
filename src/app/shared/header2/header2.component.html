@@ -4,7 +4,7 @@
     [ngClass]="!sticky ?  'HeaderStart' :  'headerscroll'">
     <nav class="navbar navbar-expand-lg navbar-light HeaderSet mhidden">
         <div class="container align-items-end">
-            <a [routerLink]="['/in']" queryParamsHandling="preserve" class="navbar-brand"><img class="logoImg"
+            <a [routerLink]="['/in']"  queryParamsHandling="preserve" class="navbar-brand"><img class="logoImg"
                     src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Shine_Logo.svg" /></a>
             <button type="button" class="navbar-toggler bg-white" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
@@ -37,8 +37,8 @@
                         </div> -->
                         <div class="nav-item"
                             (mouseleave)="closeDropdown()">
-                            <a [class.active]="router.url ==='/in/pricing_group'" class="nav-link dropdown-toggle"
-                                data-bs-toggle="dropdown" style="cursor: pointer;" (click)="goToPricing()">Pricing
+                            <a [class.active]="router.url ==='/in/pricing_group'"  class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown" style="cursor: pointer;" (click)="goToPricing(true)">Pricing
                             </a>
                         </div>
 <!-- 
@@ -101,7 +101,7 @@
                                 <div class="nav-item"
                                     (mouseleave)="closeDropdown()">
                                     <a [class.active]="router.url ==='/in/pricing_group'" class="nav-link dropdown-toggle"
-                                        data-bs-toggle="dropdown" (click)="goToPricing()">Pricing
+                                        data-bs-toggle="dropdown" (click)="goToPricing(true)">Pricing
                                     </a>
                                 </div>
                                 <!-- <div class="nav-item"
@@ -131,65 +131,3 @@
     </nav>
 </div>
 
-<div *ngIf="urlService.isGlobal" class="HeaderStart mobileResponsive indicators"
-    [ngClass]="!sticky ?  'HeaderStart' :  'headerscroll'">
-    <nav class="navbar navbar-expand-lg navbar-light HeaderSet mhidden">
-        <div class="container align-items-end">
-            <a [routerLink]="['/']" queryParamsHandling="preserve" class="navbar-brand"><img class="logoImg"
-                    src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Shine_Logo.svg" /></a>
-            <button type="button" class="navbar-toggler bg-white" data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="dhidden menuNumber">
-                <a href="tel:+44 2037453371" class="dropdown-item mobileNumber">
-                    <mat-icon> phone</mat-icon> +44 2037453371</a>
-            </div>
-            <div class="collapse navbar-collapse mobileSide" id="navbarCollapse">
-                <div class="navbar-nav ms-auto HeaderMenu">
-                    <div class="mhidden">
-                        <a href="tel:+44 2037453371" class="dropdown-item container mobileNumber">
-                            <mat-icon> phone</mat-icon> +44 2037453371</a>
-                    </div>
-                    <div class="numberMenu">
-                        <div class="mobileTop dhidden">
-                            <div class="d-flex">
-                                <a href="tel:+44 2037453371" class="dropdown-item container mobileNumber">
-                                    <mat-icon> phone</mat-icon> +44 2037453371</a>
-                                <!-- <a class="nav-item nav-link loginBtn"
-                  >Login</a
-                > -->
-                            </div>
-                        </div>
-                        <div class="nav-item  dropdown hoverEffect">
-                            <a [class.active]="router.url ==='/lenders'" class="nav-link" [routerLink]="['/lenders']"
-                                queryParamsHandling="preserve" data-bs-toggle="dropdown">Lenders
-                                <!-- <img src="./assets/images/homeIcon/topheaderIcon.svg" alt="" /> -->
-                            </a>
-                        </div>
-                        <div class="nav-item dropdown hoverEffect">
-                            <a [class.active]="router.url ==='/about-us'" class="nav-link dropdown-toggle"
-                                data-bs-toggle="dropdown" [routerLink]="['/about-us']"
-                                queryParamsHandling="preserve">About Us
-                                <!-- <img src="./assets/images/homeIcon/topheaderIcon.svg" alt="" /> -->
-                            </a>
-
-                        </div>
-
-                        <div class="nav-item dropdown hoverEffect">
-                            <a [class.active]="router.url ==='/contact'" class="nav-link dropdown-toggle"
-                                data-bs-toggle="dropdown" [routerLink]="['/contact']"
-                                queryParamsHandling="preserve">Contact
-                                <!-- <img src="./assets/images/homeIcon/topheaderIcon.svg" alt="" /> -->
-                            </a>
-                        </div>
-
-                        <!-- <div class="mobileTop mhidden">
-                            <a [routerLink]="['']" class="nav-item nav-link loginBtn">Login</a>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-</div>

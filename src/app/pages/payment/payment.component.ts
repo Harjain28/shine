@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { EventService } from 'src/app/services/event.service';
 import { environment } from 'src/environments/environment';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-payment',
@@ -68,6 +69,7 @@ export class PaymentComponent {
     private datePipe: DatePipe,
     private event: EventService,
     private route: ActivatedRoute,
+    private navigationService:NavigationService,
     private location: Location
   ) {
     this.route.queryParamMap.subscribe((params) => {
@@ -173,9 +175,6 @@ export class PaymentComponent {
       this.slicedData = true;
     }
 
-    paymentURL(){
-      this.router.navigate(['in/selection'])
-    }
 
   getForPaymentMethod() {
     this.isSubmit = true;
@@ -194,6 +193,7 @@ export class PaymentComponent {
           this.reqData = res;
           this.isSubmit = true;
           this.paymentGUrl = res.url;
+          this.navigationService.setLinkClicked(true);
           if (res?.url) {
             this.showForm = true;
             setTimeout(() => {

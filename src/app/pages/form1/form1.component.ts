@@ -10,6 +10,7 @@ import { EventService } from 'src/app/services/event.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Location } from "@angular/common";
+import { NavigationService } from 'src/app/services/navigation.service';
 
 
 @Component({
@@ -38,7 +39,7 @@ export class Form1Component implements OnInit {
 
 
 
-  constructor(private route: ActivatedRoute,public location: Location, public eventService: EventService, public router: Router, private api: ApiService ){
+  constructor(private route: ActivatedRoute,public location: Location,private navigationService: NavigationService, public eventService: EventService, public router: Router, private api: ApiService ){
     this.route.queryParamMap.subscribe((params) => {
       this.paramsObject = { ...params };
     });
@@ -64,9 +65,6 @@ export class Form1Component implements OnInit {
       propertyOwnership: new FormControl("", [Validators.required]),
       businessPan: new FormControl("", [Validators.required]),
       businessVintage: new FormControl("", [Validators.required]),
-
-
-
       });
   }
 
@@ -132,18 +130,14 @@ export class Form1Component implements OnInit {
     if (this.form1.valid && this.validatePAN && this.validatePin) { 
     this.api.post(`api/Remediation/GetOTP`, requestData, params).subscribe({ next: (res: any) => {
           if (res.success) {
-
+            this.navigationService.setLinkClicked(true);
             this.router.navigate(['/in/otp']);
-            this.isSubmit = true;
+             this.isSubmit = true;
           } else          
-            // this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
-          
             this.isSubmit = false;
           
         },
         error: error => {
-          // this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
-          // Handle any errors 
           // this.isSubmit = false;
           if(error.errors.Pincode){
             this.showValidatepinError = true;

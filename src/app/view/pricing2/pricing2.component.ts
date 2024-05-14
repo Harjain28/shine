@@ -8,6 +8,7 @@ import { shinePricingPageJSON } from 'src/app/JsonFiles/pricing';
 import { MatDialog } from '@angular/material/dialog';
 import { SampleReportsFormComponent } from 'src/app/modal/sample-reports-form/sample-reports-form.component';
 import { Router } from '@angular/router';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class Pricing2Component {
   total: any;
   cuttedPrice: any;
 
-  constructor(private dialog: MatDialog, private router: Router ){
+  constructor(private dialog: MatDialog, private router: Router, private navigationService:NavigationService ){
     this.getPricingData();
 
   }
@@ -68,9 +69,9 @@ export class Pricing2Component {
 
   }
 
-  goToRegister(text:any){
+  goToRegister(text:any, isLinkClicked:boolean){
     localStorage.setItem("text",text);
-
+    this.navigationService.setLinkClicked(isLinkClicked);
     this.router.navigate(['/in/register'])
 
   }
