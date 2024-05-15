@@ -79,6 +79,7 @@ export class ReloginComponent {
   showThumbLabel: boolean = false;
   requestData:any ={};
   loader!: boolean;
+  isSubmit: boolean  = false;
 
   constructor(public eventService: EventService,public router: Router,
     private route: ActivatedRoute,
@@ -105,6 +106,8 @@ export class ReloginComponent {
    }
 
    loginBtn(){
+    if (this.viewForm.valid) {
+    this.isSubmit = true;
     this.loader = true;
     const defaultparams:any = {
       mobile: this.viewForm.value.phoneNumber,
@@ -118,17 +121,16 @@ export class ReloginComponent {
     this.api.postForLogin(`api/Remediation/ReloginOTP`, requestData ,defaultparams).subscribe({
       next: (res: any) => {
         if (res.success === true) {
+          this.isSubmit = true;
           this.loader = false;
           // if(res?.lastReportId !== null){
           //   sessionStorage.setItem("lastReportId",res?.lastReportId);
           //   this.router.navigate(['/in/otp'])
           // }
-
-
-
         } 
       },
       error: (error) => {    
+        this.isSubmit = false;
         this.loader = false;
 
       },
@@ -136,7 +138,7 @@ export class ReloginComponent {
        // ("Request complete");
       },
     });
-
+  }
   }
 
 

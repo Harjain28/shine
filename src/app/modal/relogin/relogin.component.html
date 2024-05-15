@@ -45,7 +45,7 @@
             
 
           <div class="ButtonNow">
-            <button  (click)="loginBtn()">Next
+            <button [disabled]="isSubmit"  (click)="loginBtn()">Next
               <mat-icon>keyboard_arrow_right</mat-icon></button>
           </div>
           
