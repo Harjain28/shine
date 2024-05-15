@@ -1,5 +1,5 @@
 
-<div class="modalOpen" >
+<div class="modalOpen" *ngIf="!loader">
     <div class="blueBack"></div>
     <div class="modalBox">
 
@@ -52,6 +52,17 @@
         </div>
     </div>
   </div>
+
+  <div class="loaderOpen" *ngIf="loader" >
+    <div class="modalBox">
+        <div class="Box">
+            <div class="loader"></div>
+
+            <p>Loading</p>
+           
+        </div>
+    </div>
+</div>
          
 
   

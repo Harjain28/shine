@@ -16,15 +16,15 @@ import { NgOtpInputModule } from 'ng-otp-input';
 import { MatSliderModule } from '@angular/material/slider';
 
 @Component({
-  selector: 'app-enter-mobile',
+  selector: 'app-relogin',
   standalone: true,
   imports: [CommonModule,ReactiveFormsModule, MatFormFieldModule, 
     FormsModule,MatIconModule,MatOptionModule,MaterialModule,MatInputModule,
     MatIconModule,NgOtpInputModule,FormsModule,ReactiveFormsModule, MatSliderModule],
-    templateUrl: './enter-mobile.component.html',
-    styleUrls: ['./enter-mobile.component.scss']
+    templateUrl: './relogin.component.html',
+    styleUrls: ['./relogin.component.scss']
 })
-export class EnterMobileComponent {
+export class ReloginComponent {
 
   viewForm!: FormGroup;
   isOTPShow: boolean = false;
@@ -83,7 +83,7 @@ export class EnterMobileComponent {
   constructor(public eventService: EventService,public router: Router,
     private route: ActivatedRoute,
     private api: ApiService,
-    public dialogRef: MatDialogRef<EnterMobileComponent>,
+    public dialogRef: MatDialogRef<ReloginComponent>,
   ) { 
     this.route.queryParamMap.subscribe((params) => {
       this.paramsObject = { ...params };
@@ -105,6 +105,7 @@ export class EnterMobileComponent {
    }
 
    loginBtn(){
+    this.loader = true;
     const defaultparams:any = {
       mobile: this.viewForm.value.phoneNumber,
       forceGenerate: false,
@@ -117,16 +118,18 @@ export class EnterMobileComponent {
     this.api.postForLogin(`api/Remediation/ReloginOTP`, requestData ,defaultparams).subscribe({
       next: (res: any) => {
         if (res.success === true) {
+          this.loader = false;
           if(res?.lastReportId !== null){
-            // sessionStorage.setItem("lastReportId",res?.lastReportId);
-            // this.router.navigate(['/in/otp'])
+            sessionStorage.setItem("lastReportId",res?.lastReportId);
+            this.router.navigate(['/in/otp'])
           }
+
 
 
         } 
       },
       error: (error) => {    
-        
+        this.loader = false;
 
       },
       complete: () => {
