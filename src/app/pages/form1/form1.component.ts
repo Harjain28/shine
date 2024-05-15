@@ -54,7 +54,7 @@ export class Form1Component implements OnInit {
    form() {
     this.form1 = new FormGroup({
 
-      title: new FormControl("", [Validators.required]),
+      title: new FormControl("Mr.", [Validators.required]),
       firstName: new FormControl("", [Validators.required,Validators.pattern("^[a-zA-Z ]+$"),]),
       lastName: new FormControl("", [Validators.required,Validators.pattern("^[a-zA-Z ]+$"),]),
       phoneNumber: new FormControl("", [Validators.required,Validators.pattern("^[6-9]\\d{9}$"),Validators.maxLength(10),]),
