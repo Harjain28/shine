@@ -119,10 +119,10 @@ export class ReloginComponent {
       next: (res: any) => {
         if (res.success === true) {
           this.loader = false;
-          if(res?.lastReportId !== null){
-            sessionStorage.setItem("lastReportId",res?.lastReportId);
-            this.router.navigate(['/in/otp'])
-          }
+          // if(res?.lastReportId !== null){
+          //   sessionStorage.setItem("lastReportId",res?.lastReportId);
+          //   this.router.navigate(['/in/otp'])
+          // }
 
 
 
