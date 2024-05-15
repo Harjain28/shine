@@ -25,9 +25,9 @@
                             <div class="d-flex">
                                 <a href="tel:+91 84509 67207" class="dropdown-item container mobileNumber">
                                     <mat-icon> phone</mat-icon> +91 84509 67207</a>
-                                <!-- <a class="nav-item nav-link loginBtn"
+                                <a class="nav-item nav-link loginBtn"
                   >Login</a
-                > -->
+                >
                             </div>
                         </div>
                         <!-- <div class=" hoverEffect">
@@ -56,9 +56,9 @@
                             </a>
                         </div>
 
-                        <!-- <div class="mobileTop mhidden">
-                            <a class="nav-item nav-link loginBtn">Login</a>
-                        </div> -->
+                        <div class="mobileTop mhidden">
+                            <a class="nav-item nav-link loginBtn" (click)="loginBtn()">Login</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,9 +121,9 @@
 
                         </div>
 
-                        <!-- <div class="mobileTop mhidden">
+                        <div class="mobileTop mhidden">
                             <a [routerLink]="['']" class="nav-item nav-link loginBtn">Login</a>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -131,3 +131,13 @@
     </nav>
 </div>
 
+<div class="modalOpen" *ngIf="loader" >
+    <div class="modalBox">
+        <div class="Box">
+            <div class="loader"></div>
+
+            <p>Loading</p>
+           
+        </div>
+    </div>
+</div>

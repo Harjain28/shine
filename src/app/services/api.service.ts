@@ -178,6 +178,16 @@ postForReport(path: string, body: object = {} , params: HttpParams = new HttpPar
   return this.http.post(`${this.API_URL}${path}`,  body, {headers: posthttpOptions.headers , params}).pipe(catchError(this.formatErrors));
 }
 
+postForLogin(path: string, body: object = {} , params: HttpParams = new HttpParams()){
+  const posthttpOptions = {
+    headers: new HttpHeaders({
+      'accept': '*',
+      'Content-Type': 'application/json',
+    })
+  };    
+  return this.http.post(`${this.API_URL}${path}`,  body, {headers: posthttpOptions.headers , params}).pipe(catchError(this.formatErrors));
+}
+
 postMethod(path: string, body: object = {} , params: HttpParams = new HttpParams()) {
   
   const posthttpOptions = {

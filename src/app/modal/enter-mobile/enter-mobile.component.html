@@ -1,0 +1,60 @@
+
+<div class="modalOpen" >
+    <div class="blueBack"></div>
+    <div class="modalBox">
+
+        <div class="Box">     
+            
+            <div class="container" (click)="cancel()">
+                <mat-icon class="cross-icon text-white" style="cursor: pointer;">cancel</mat-icon>
+              </div>
+              
+              <h3>Enter Mobile No.</h3>
+
+
+            <form [formGroup]="viewForm">
+                <div class="row">
+
+                  
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" [ngClass]=" viewForm.controls['phoneNumber'].touched &&
+                                      viewForm.controls['phoneNumber'].hasError('required') ||  (viewForm.controls['phoneNumber'].dirty || viewForm.controls['phoneNumber'].touched) &&
+                                      viewForm.controls['phoneNumber'].hasError('pattern') ? 'isvaliderror' :  ''">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Mobile number </mat-label>
+                      <input matInput maxlength="10" (keypress)="eventService.numberOnly($event, 'phoneNumber')"
+                        formControlName='phoneNumber' placeholder="">
+                    </mat-form-field>
+
+                    <div class="error mb-2" *ngIf="
+                                          viewForm.controls['phoneNumber'].touched &&
+                                          viewForm.controls['phoneNumber'].hasError('required')
+                                        ">
+                      Please complete this mandatory field.
+                    </div>
+
+                    <div class="error mb-2" *ngIf="
+                                        viewForm.controls['phoneNumber'].dirty &&
+                                        viewForm.controls['phoneNumber'].hasError('pattern')
+                                      ">
+                      Please add valid information
+                    </div>
+                  </div>
+
+                </div>
+              </form>
+            
+
+          <div class="ButtonNow">
+            <button  (click)="loginBtn()">Next
+              <mat-icon>keyboard_arrow_right</mat-icon></button>
+          </div>
+          
+        </div>
+    </div>
+  </div>
+         
+
+  
+
+                
+            

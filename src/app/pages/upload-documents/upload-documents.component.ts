@@ -195,7 +195,6 @@ export class UploadDocumentsComponent {
                 this.showEligibleReport = false;
                 this.navigationService.setLinkClicked(true);
                 this.router.navigate(['/in/bank_statement'])
-                console.log("dhb")
               },
               complete: () => {
                // ('Request complete');
@@ -224,7 +223,11 @@ export class UploadDocumentsComponent {
                 clearInterval(this.interval);
                 this.showEligible = false;
                 this.navigationService.setLinkClicked(true);
-                this.router.navigate(['/in/report'])
+
+                const id = sessionStorage.getItem("userId")
+                if(id){
+                this.router.navigate(['/in/report', id])
+                }
                 }
                
                },

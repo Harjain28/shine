@@ -187,6 +187,7 @@ export class LandingPageComponent {
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {
 
+    
   }
    @HostListener("window:load", ["$event"])
   checkScroll() {
@@ -194,6 +195,7 @@ export class LandingPageComponent {
   }
 
   ngOnInit(): void {
+    
   
     this.state.removeItem();
     //   this.localStorage.removeSomeItem();

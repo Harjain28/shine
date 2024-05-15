@@ -482,7 +482,6 @@ export class BankingBusinessComponent {
 
     const abbFilteredData = abb?.abb_summary.filter((item: { condition_status: boolean; }) => item.condition_status === true);
     this.abbImgageIcon = this.setSummaryIcon(abbFilteredData[0]);
-    console.log(abbFilteredData,"jj")
 
 
     if(debt_to_revenue_ratio?.card_view){

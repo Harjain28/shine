@@ -11,6 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { ApiService } from 'src/app/services/api.service';
+import { EnterMobileComponent } from 'src/app/modal/enter-mobile/enter-mobile.component';
 
 @Component({
   selector: 'app-header2',
@@ -237,8 +239,13 @@ export class Header2Component {
   isLoginShow: any;
   isLoggedin!: boolean;
   editEventSubscription!: Subscription;
-  
-  constructor(public router: Router, private navigationService:NavigationService ,private state : LocalStorageService, private storage : StorageService, @Inject(DOCUMENT) private document: Document, private route: ActivatedRoute ,public dialog: MatDialog, public urlService: UrlService)  {
+  loader!: boolean;
+  paramsObject: any;
+
+  constructor(public router: Router, private api: ApiService,private navigationService:NavigationService ,private state : LocalStorageService, private storage : StorageService, @Inject(DOCUMENT) private document: Document, private route: ActivatedRoute ,public dialog: MatDialog, public urlService: UrlService)  {
+    this.route.queryParamMap.subscribe((params) => {
+      this.paramsObject = { ...params };
+    });
 
   }
 
@@ -284,6 +291,19 @@ export class Header2Component {
   goToPravicy(){
     window.location.href = 'https://www.creditenable.com/assets/images/pdf/CreditEnable_Privacy_Policy_2023.pdf';
   }
+
+  loginBtn(){
+    this.loader = true; // Show loader
+    setTimeout(() => {
+      this.loader = false; // Hide loader after 2 seconds
+      const dialogRef = this.dialog.open(EnterMobileComponent, {
+        width: '320px',
+        height: 'auto',
+      });
+    }, 1500);
+  }
+
+
 
   openDropdown() {
     this.showNav = true;
