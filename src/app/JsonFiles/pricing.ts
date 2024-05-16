@@ -120,7 +120,7 @@ export const shinePricingPageJSON = {
       },
       {
         Headertext: 'Annual',
-        Price: '999',
+        Price: '1',
         item: [
               'Comprehensive Financial Overview',
               'Experian Credit Report Analysis',

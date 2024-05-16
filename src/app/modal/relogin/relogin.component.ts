@@ -157,6 +157,8 @@ export class ReloginComponent {
                 this.router.navigate(['in/pricing_annual']);
               } else if (res?.paid) {
                 this.router.navigate(['in/bank_statement']);
+              } else {
+                this.router.navigate(['in/pricing_annual']);
               }
             }
           },

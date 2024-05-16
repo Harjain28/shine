@@ -135,13 +135,13 @@ export class OtpComponent implements OnInit{
       this.api.post(`api/Remediation/ValidateLogin`, requestData, params).subscribe({
         next: (res: any) => {
           if (res.success == true) {
+            localStorage.setItem("token",res?.token);
+            this.navigationService.setLinkClicked(true);
             if (this.userData) {
               if (this.userData?.lastReportId && this.userData?.lastReportId !== null) {
                 this.router.navigate(['/in/report', res?.userId]);
               } 
             } else {
-              localStorage.setItem("token",res?.token);
-              this.navigationService.setLinkClicked(true);
               this.router.navigate(['/in/confirm_order']);
               this.isOtpSubmit = true;
               sessionStorage.setItem("userId",res?.userId);
@@ -266,38 +266,74 @@ export class OtpComponent implements OnInit{
        
        this.istimer = true;
        this.isResend = true;
-       const defaultparams = {
+
+       const defaultreLoginparams = {
+        mobile: this.mobileNo,
         forceGenerate: false,
          resend: true,
-        //  workflowName: ""
+     
+         
        };
-       const params = { ...defaultparams, ...this.paramsObject.params };
-       this.api.postMethod(`api/Remediation/GetOTP`, this.requestData, params).subscribe({
-         next: (res: any) => {
-           if (res.success == true) {
-            const stateData = Buffer.from(res.token).toString("base64");
-
-             this.isOtpSubmit = false;
-
-
-           } else {
-             this.istimer = false;
-             this.isResend = false;
-             this.api.alert("try again", "error");
-             this.isOtpSubmit = false;
-           }
-         },
-         error: (error) => {
-           this.istimer = false;
-           this.countDown.unsubscribe();
-           this.isResend = false;
-           this.api.alert("try again", "error");
-           this.isOtpSubmit = false;
-         },
-         complete: () => {
-          // ("Request complete");
-         },
-       });
+       const reloginParams = { ...defaultreLoginparams, ...this.paramsObject.params };
+       if (this.userData) {
+        const data = {};
+        this.api
+        .postForLogin(`api/Remediation/ReloginOTP`, data, reloginParams)
+        .subscribe({
+          next: (res: any) => {
+            if (res.success) {
+              this.isOtpSubmit = false;
+              sessionStorage.setItem('reloginUpdates', JSON.stringify(res));
+            } else {
+              this.istimer = false;
+              this.isResend = false;
+              this.api.alert("try again", "error");
+              this.isOtpSubmit = false;
+            }
+          },
+          error: (error) => {
+            this.istimer = false;
+            this.countDown.unsubscribe();
+            this.isResend = false;
+            this.api.alert("try again", "error");
+            this.isOtpSubmit = false;
+          },
+          complete: () => {
+            // ("Request complete");
+          },
+        });
+       } else {
+        const defaultparams = {
+          forceGenerate: false,
+           resend: true,
+          //  workflowName: ""
+         };
+         const params = { ...defaultparams, ...this.paramsObject.params };
+        this.api.postMethod(`api/Remediation/GetOTP`, this.requestData, params).subscribe({
+          next: (res: any) => {
+            if (res.success) {
+             const stateData = Buffer.from(res.token).toString("base64");
+               this.isOtpSubmit = false;
+            } else {
+              this.istimer = false;
+              this.isResend = false;
+              this.api.alert("try again", "error");
+              this.isOtpSubmit = false;
+            }
+          },
+          error: (error) => {
+            this.istimer = false;
+            this.countDown.unsubscribe();
+            this.isResend = false;
+            this.api.alert("try again", "error");
+            this.isOtpSubmit = false;
+          },
+          complete: () => {
+           // ("Request complete");
+          },
+        });
+       }
+      
      }
    }
 

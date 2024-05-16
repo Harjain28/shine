@@ -25,7 +25,7 @@ export class TestimonialComponent implements OnInit {
 
   customOptions3: OwlOptions = {
      loop: false,
-   rewind: true,
+     rewind: true,
     dots: false,
     autoplay: true,
     nav: true,

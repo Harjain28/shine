@@ -18,13 +18,19 @@ export class ClientSectionComponent {
 
   customOptionKeys1: OwlOptions = {
     loop: true,
+    rewind: true,
     dots: true,
     autoplay: true,
+    navSpeed: 100,
     nav: false,
     margin: 10,
+    items: 1,
+   autoWidth:true,
+   mouseDrag: true,
+   touchDrag: true,
 
-    autoplayTimeout: 2000,
-    autoplaySpeed: 2000,
+   autoplayTimeout:4000,
+   autoplaySpeed: 1500,
     // navText: ["", ""],
     // navText: ["<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>", "<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>"],
     responsive: {

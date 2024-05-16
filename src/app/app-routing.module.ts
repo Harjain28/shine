@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PagesComponent } from './pages/pages.component';
 import { ReportsComponent } from './reports/reports.component';
-import { RefundPolicyComponent } from './view/refund-policy/refund-policy.component';
-import { ContactusComponent } from './view/contactus/contactus.component';
 import {  PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AuthGuard } from './guard/auth.gaurd';
 import { ViewComponent } from './view/view.component';
@@ -37,20 +35,6 @@ const routes: Routes = [
     component: ReportsComponent   
   },
 
-  {
-    path:'in/sample_report', 
-    component: ReportsComponent   
-  },
-  
-  {
-    path:'in/refund-policy', 
-    component: RefundPolicyComponent   
-  },
-
-  {
-    path:'in/contact-us', 
-    component: ContactusComponent   
-  },
   { path: '**', pathMatch: 'full',  component: PageNotFoundComponent },
 
   {
