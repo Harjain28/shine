@@ -21,6 +21,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { MatSliderModule } from '@angular/material/slider';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { OtpService } from 'src/app/services/otp.service';
 
 @Component({
   selector: 'app-relogin',
@@ -105,6 +106,7 @@ export class ReloginComponent {
     private route: ActivatedRoute,
     private api: ApiService,
     private navigationService: NavigationService,
+    private otpService: OtpService,
     public dialogRef: MatDialogRef<ReloginComponent>
   ) {
     this.route.queryParamMap.subscribe((params) => {
@@ -152,6 +154,7 @@ export class ReloginComponent {
               this.navigationService.setLinkClicked(true);
               this.closeDialoge();
               if (res?.lastReportId && res?.lastReportId !== null) {
+                this.fetchOtp();
                 this.router.navigate(['/in/otp']);
               } else if (res?.newUser) {
                 this.router.navigate(['in/pricing_annual']);
@@ -171,6 +174,16 @@ export class ReloginComponent {
           },
         });
     }
+  }
+
+  fetchOtp(): void {
+    this.otpService.fetchOtp(15000)
+      .then(otp => {
+        console.log('OTP:', otp);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   closeDialoge(): void {
