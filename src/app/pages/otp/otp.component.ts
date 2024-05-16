@@ -1,16 +1,17 @@
-import { Component,  OnInit } from '@angular/core';
+import { Component,  OnInit, ViewChild } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import {  FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { EventService } from 'src/app/services/event.service';
 import { BehaviorSubject, Subscription, take, timer } from 'rxjs';
 import { Config } from "ng-otp-input/lib/models/config";
-import { NgOtpInputModule } from 'ng-otp-input';
+import { NgOtpInputComponent, NgOtpInputModule } from 'ng-otp-input';
 import { MatSliderModule } from '@angular/material/slider';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Buffer } from "buffer";
 import { NavigationService } from 'src/app/services/navigation.service';
+import { OtpService } from 'src/app/services/otp.service';
 
 
 
@@ -75,12 +76,15 @@ export class OtpComponent implements OnInit{
   parsedData: any;
   mobileNo: any;
   userData: any;
+  // @ViewChild('ngOtpInput') ngOtpInputRef:any;
+  @ViewChild('ngmobileOtpInput', { static: false })ngOtpInput!: NgOtpInputComponent;
   constructor(
     public eventService: EventService,
     public router: Router,
     private route: ActivatedRoute,
     private navigationService:NavigationService,
     private api: ApiService,
+    private otpService:OtpService,
     private location: Location){
       this.route.queryParamMap.subscribe((params) => {
         this.paramsObject = { ...params };
@@ -98,8 +102,29 @@ export class OtpComponent implements OnInit{
       if(this.parsedData){
       this.mobileNo = this.parsedData.mobile;
       }
+      
+ 
+      
     }
-   
+
+    ngAfterViewInit(): void {
+    this.fetchOtp();
+     
+    }
+    
+    fetchOtp(): void {
+      this.otpService.fetchOtp(15000) 
+        .then(otp => {
+          setTimeout(() => {
+            this.ngOtpInput.setValue(+otp);
+            }, 200);
+          this.onOtpChange(otp);
+          console.log('OTP:', otp);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
 
   otpVerifyForm() {
     this.otpVerify = new FormGroup({
@@ -137,10 +162,8 @@ export class OtpComponent implements OnInit{
           if (res.success == true) {
             localStorage.setItem("token",res?.token);
             this.navigationService.setLinkClicked(true);
-            if (this.userData) {
-              if (this.userData?.lastReportId && this.userData?.lastReportId !== null) {
+            if (this.userData && this.userData?.lastReportId) {
                 this.router.navigate(['/in/report', res?.userId]);
-              } 
             } else {
               this.router.navigate(['/in/confirm_order']);
               this.isOtpSubmit = true;

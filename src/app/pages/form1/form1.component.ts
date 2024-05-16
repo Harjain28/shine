@@ -105,7 +105,7 @@ export class Form1Component implements OnInit {
     requestData["lastName"] =  formValue.lastName.toUpperCase();
     requestData["businessName"] =  formValue.busninessName;
     requestData["pincode"] =  formValue.pincode;
-    requestData["businessPan"] =  formValue.businessPan;
+    requestData["businessPan"] =  formValue.businessPan.toUpperCase();
     requestData["propertyOwnership"] =  formValue.propertyOwnership;
     requestData["turnover"] =  this.unformattedX;
     requestData["businessVintage"] =  formValue.businessVintage;
