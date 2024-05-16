@@ -27,13 +27,13 @@
                 </div>
   
                 <div class="ButtonNow pushable">
-                  <button [disabled]="isOtpSubmit" (click)="submitOtp()">Next
+                  <button class="otp" [disabled]="isOtpSubmit"   (click)="submitOtp()">Next
                     <mat-icon>keyboard_arrow_right</mat-icon></button>
                 </div>
                 <div class="resend">
                   <span *ngIf = "istimer"> {{transform(counter)}}</span>
   
-                  <a class="" [ngClass]="isResend ? 'btnFocus' : 'btn'" (click)="resendOtp()">Resend <mat-icon>refresh</mat-icon></a>
+                  <a class="resend_otp" [ngClass]="isResend ? 'btnFocus' : 'btn'" (click)="resendOtp()">Resend <mat-icon>refresh</mat-icon></a>
                 </div>
                 <hr class="borderBottom" />
                 <div class="checkBox">

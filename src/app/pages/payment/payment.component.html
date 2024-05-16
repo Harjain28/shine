@@ -89,7 +89,7 @@
           </div>
 
           <div class="paymentBtn"  *ngIf="transactionFailed">
-            <button class="btn" [disabled]="isSubmit" (click)="getForPaymentMethod()">Retry Payment</button>
+            <button class="btn confirm_order" [disabled]="isSubmit" (click)="getForPaymentMethod()">Retry Payment</button>
           </div>
          
         </div>

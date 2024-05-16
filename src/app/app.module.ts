@@ -21,7 +21,7 @@ import { ViewComponent } from './view/view.component';
 @NgModule({
   declarations: [
     AppComponent,
-    RoundPipe
+    RoundPipe,
   ],
   imports: [
     CommonModule,
@@ -38,6 +38,7 @@ import { ViewComponent } from './view/view.component';
     HttpClientModule,
     CarouselModule,
     MatDialogModule,
+
     ViewComponent
   ],
   providers: [DatePipe],

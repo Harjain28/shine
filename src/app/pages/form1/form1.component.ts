@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Location } from "@angular/common";
 import { NavigationService } from 'src/app/services/navigation.service';
+import { OtpService } from 'src/app/services/otp.service';
 
 
 @Component({
@@ -39,7 +40,7 @@ export class Form1Component implements OnInit {
 
 
 
-  constructor(private route: ActivatedRoute,public location: Location,private navigationService: NavigationService, public eventService: EventService, public router: Router, private api: ApiService ){
+  constructor(private route: ActivatedRoute,public location: Location,private navigationService: NavigationService, public eventService: EventService, public router: Router, private api: ApiService, private otpService: OtpService ){
     this.route.queryParamMap.subscribe((params) => {
       this.paramsObject = { ...params };
     });
@@ -131,6 +132,7 @@ export class Form1Component implements OnInit {
     this.api.post(`api/Remediation/GetOTP`, requestData, params).subscribe({ next: (res: any) => {
           if (res.success) {
             this.navigationService.setLinkClicked(true);
+            this.fetchOtp();
             this.router.navigate(['/in/otp']);
              this.isSubmit = true;
           } else          
@@ -166,6 +168,16 @@ export class Form1Component implements OnInit {
         
         this.isSubmit = false;
       }
+  }
+
+  fetchOtp(): void {
+    this.otpService.fetchOtp(15000)
+      .then(otp => {
+        console.log('OTP:', otp);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   validatePanNumber() {
