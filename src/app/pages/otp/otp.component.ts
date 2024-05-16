@@ -74,6 +74,7 @@ export class OtpComponent implements OnInit{
   requestData:any ={};
   parsedData: any;
   mobileNo: any;
+  userData: any;
   constructor(
     public eventService: EventService,
     public router: Router,
@@ -90,7 +91,10 @@ export class OtpComponent implements OnInit{
       this.otpVerifyForm();
       this.requestData = localStorage.getItem("reqData")
       this.parsedData = JSON.parse(this.requestData);
-
+      const reloginUserData = sessionStorage.getItem("reloginUpdates");
+      if (reloginUserData) {
+        this.userData = JSON.parse(reloginUserData);
+      }
       if(this.parsedData){
       this.mobileNo = this.parsedData.mobile;
       }
@@ -131,15 +135,17 @@ export class OtpComponent implements OnInit{
       this.api.post(`api/Remediation/ValidateLogin`, requestData, params).subscribe({
         next: (res: any) => {
           if (res.success == true) {
-            // const stateData = Buffer.from(res.token).toString("base64");
-            localStorage.setItem("token",res?.token);
-            this.navigationService.setLinkClicked(true);
-            this.router.navigate(['/in/confirm_order']);
-            this.isOtpSubmit = true;
-            sessionStorage.setItem("userId",res?.userId);
-
-          
-
+            if (this.userData) {
+              if (this.userData?.lastReportId && this.userData?.lastReportId !== null) {
+                this.router.navigate(['/in/report', res?.userId]);
+              } 
+            } else {
+              localStorage.setItem("token",res?.token);
+              this.navigationService.setLinkClicked(true);
+              this.router.navigate(['/in/confirm_order']);
+              this.isOtpSubmit = true;
+              sessionStorage.setItem("userId",res?.userId);
+            }
           } else {
             this.api.alert("Please add valid information", "error");
             this.isOtpSubmit = false;
@@ -263,7 +269,7 @@ export class OtpComponent implements OnInit{
        const defaultparams = {
         forceGenerate: false,
          resend: true,
-         workflowName: ""
+        //  workflowName: ""
        };
        const params = { ...defaultparams, ...this.paramsObject.params };
        this.api.postMethod(`api/Remediation/GetOTP`, this.requestData, params).subscribe({

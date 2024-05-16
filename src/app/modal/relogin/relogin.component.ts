@@ -1,31 +1,49 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogRef } from '@angular/material/dialog';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MaterialModule } from 'src/app/material.module';
 import { EventService } from 'src/app/services/event.service';
-import { Config } from "ng-otp-input/lib/models/config";
+import { Config } from 'ng-otp-input/lib/models/config';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject, Subscription, take, timer } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { MatSliderModule } from '@angular/material/slider';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-relogin',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule, MatFormFieldModule, 
-    FormsModule,MatIconModule,MatOptionModule,MaterialModule,MatInputModule,
-    MatIconModule,NgOtpInputModule,FormsModule,ReactiveFormsModule, MatSliderModule],
-    templateUrl: './relogin.component.html',
-    styleUrls: ['./relogin.component.scss']
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatIconModule,
+    MatOptionModule,
+    MaterialModule,
+    MatInputModule,
+    MatIconModule,
+    NgOtpInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSliderModule,
+  ],
+  templateUrl: './relogin.component.html',
+  styleUrls: ['./relogin.component.scss'],
 })
 export class ReloginComponent {
-
   viewForm!: FormGroup;
   isOTPShow: boolean = false;
   percentage: number = 0;
@@ -34,7 +52,7 @@ export class ReloginComponent {
   );
   circumference!: number;
   offset!: number;
-  lendersData: any; 
+  lendersData: any;
   phoneOtp: any;
   otpVerify!: FormGroup;
   formsValue: any;
@@ -55,9 +73,9 @@ export class ReloginComponent {
   API_URL: any;
   otpValue!: string;
   otpCode: any;
-   isOtpBox: boolean = true;
+  isOtpBox: boolean = true;
   businesstypes: any;
-  isResend: boolean = false; 
+  isResend: boolean = false;
   ncjData: any;
   showEligible: boolean = false;
   customDialogClass!: string;
@@ -67,84 +85,93 @@ export class ReloginComponent {
     length: 6,
     isPasswordInput: false,
     disableAutoFocus: false,
-    placeholder: "",
+    placeholder: '',
     inputStyles: {
-      width: "45px",
-      height: "45px",
-      "font-size": "18px",
+      width: '45px',
+      height: '45px',
+      'font-size': '18px',
     },
   };
 
   score: any;
   showThumbLabel: boolean = false;
-  requestData:any ={};
+  requestData: any = {};
   loader!: boolean;
-  isSubmit: boolean  = false;
+  isSubmit: boolean = false;
 
-  constructor(public eventService: EventService,public router: Router,
+  constructor(
+    public eventService: EventService,
+    public router: Router,
     private route: ActivatedRoute,
     private api: ApiService,
-    public dialogRef: MatDialogRef<ReloginComponent>,
-  ) { 
+    private navigationService: NavigationService,
+    public dialogRef: MatDialogRef<ReloginComponent>
+  ) {
     this.route.queryParamMap.subscribe((params) => {
       this.paramsObject = { ...params };
     });
   }
 
   ngOnInit(): void {
-    
-
     this.viewForm = new FormGroup({
-      phoneNumber: new FormControl("", [Validators.required,Validators.pattern("^[6-9]\\d{9}$"),Validators.maxLength(10),]),
-       });
-   }
-   
-  
-
-   cancel(){
-    this.closeDialoge();
-   }
-
-   loginBtn(){
-    if (this.viewForm.valid) {
-    this.isSubmit = true;
-    this.loader = true;
-    const defaultparams:any = {
-      mobile: this.viewForm.value.phoneNumber,
-      forceGenerate: false,
-      resend: false,
-      workflowName: ""
-    };
-    const requestData = {};
-    const params = { ...defaultparams };
-
-    this.api.postForLogin(`api/Remediation/ReloginOTP`, requestData ,defaultparams).subscribe({
-      next: (res: any) => {
-        if (res.success === true) {
-          this.isSubmit = true;
-          this.loader = false;
-          // if(res?.lastReportId !== null){
-          //   sessionStorage.setItem("lastReportId",res?.lastReportId);
-          //   this.router.navigate(['/in/otp'])
-          // }
-        } 
-      },
-      error: (error) => {    
-        this.isSubmit = false;
-        this.loader = false;
-
-      },
-      complete: () => {
-       // ("Request complete");
-      },
+      phoneNumber: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[6-9]\\d{9}$'),
+        Validators.maxLength(10),
+      ]),
     });
   }
+
+  cancel() {
+    this.closeDialoge();
   }
 
+  reLoginProcess() {
+    if (this.viewForm.valid) {
+      this.isSubmit = true;
+      this.loader = true;
+      const defaultparams: any = {
+        mobile: this.viewForm.value.phoneNumber,
+        forceGenerate: false,
+        resend: false,
+        workflowName: '',
+      };
+      const requestData = {};
+      const params = { ...defaultparams };
 
+      this.api
+        .postForLogin(`api/Remediation/ReloginOTP`, requestData, defaultparams)
+        .subscribe({
+          next: (res: any) => {
+            if (res) {
+              this.isSubmit = true;
+              this.loader = false;
+              const data = { mobile: this.viewForm.value.phoneNumber };
+              localStorage.setItem('reqData', JSON.stringify(data));
+              sessionStorage.setItem('reloginUpdates', JSON.stringify(res));
+              this.navigationService.setLinkClicked(true);
+              this.closeDialoge();
+              if (res?.lastReportId && res?.lastReportId !== null) {
+                this.router.navigate(['/in/otp']);
+              } else if (res?.newUser) {
+                this.router.navigate(['in/pricing_annual']);
+              } else if (res?.paid) {
+                this.router.navigate(['in/bank_statement']);
+              }
+            }
+          },
+          error: (error) => {
+            this.isSubmit = false;
+            this.loader = false;
+          },
+          complete: () => {
+            // ("Request complete");
+          },
+        });
+    }
+  }
 
   closeDialoge(): void {
     this.dialogRef.close();
   }
-
 }

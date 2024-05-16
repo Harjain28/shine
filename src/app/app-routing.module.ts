@@ -26,11 +26,13 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     loadChildren:() =>import('./pages/pages.routes')
   },
-
- 
-
+  // {
+  //   path:'in/report', 
+  //   canActivate: [AuthGuard],
+  //   component: ReportsComponent   
+  // },
   {
-    path:'in/report', 
+    path:'in/report/:id', 
     canActivate: [AuthGuard],
     component: ReportsComponent   
   },

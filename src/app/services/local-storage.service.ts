@@ -15,7 +15,7 @@ export class LocalStorageService {
   removeItem() {
     localStorage.removeItem('reqData');
     localStorage.removeItem('popupData');
-    
+     sessionStorage.removeItem('reloginUpdates');
      localStorage.removeItem('text');
      localStorage.removeItem('isV3');
      localStorage.removeItem('userMobileNumber');

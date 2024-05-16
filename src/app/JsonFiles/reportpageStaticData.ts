@@ -115,7 +115,7 @@ export const reportStatciData =
                         "description": "Any Days Past Due (DPDs) listed on your credit report within the last 12 months."
                     },
                     {
-                        "lable": "30+ Late Payments (12 Months)",
+                        "lable": "30+ Days Late Payments (12 Months)",
                         "description": "More than 30 Days Past Due (DPDs) recorded on your credit report in the last 12 months."
                     },
                     {
@@ -199,7 +199,7 @@ export const reportStatciData =
         "analysis_lables": [
             "GST Number",
             "Company Name",
-            "Self-Declared Annual Turnover",
+            "Banking Turnover",
             "Current GST Status"
         ],
         "gst_filing_card": {
@@ -308,7 +308,8 @@ export const reportStatciData =
             "cheque_bounces_card": {
                 "header": "Cheque Bounces",
                 "subheader": "How often the cheques you've issued were returned unpaid. This shows your financial discipline.",
-                "icon": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/product_Screens_mobile.png"
+                "icon_mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/cheque.png",
+                "icon_desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/cheque_big.png"
             }
         },
         "cashflow_section": {

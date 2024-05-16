@@ -45,7 +45,7 @@
             
 
           <div class="ButtonNow">
-            <button [disabled]="isSubmit"  (click)="loginBtn()">Next
+            <button [disabled]="isSubmit"  (click)="reLoginProcess()">Next
               <mat-icon>keyboard_arrow_right</mat-icon></button>
           </div>
           
@@ -53,7 +53,7 @@
     </div>
   </div>
 
-  <div class="loaderOpen" *ngIf="loader" >
+  <div class="loaderOpen" *ngIf="loader">
     <div class="modalBox">
         <div class="Box">
             <div class="loader"></div>
