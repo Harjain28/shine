@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { GTMService } from './services/gtm.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ export class AppComponent {
   title = 'shine';
 
   constructor(
-    public router: Router, ){}
+    public router: Router,private gtm: GTMService ){
+      this.gtm.addGTMScript();
+    }
 
   isShineHeaderVisible(): boolean {
     return this.router.url.includes('report') 

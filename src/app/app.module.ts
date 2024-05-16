@@ -16,6 +16,7 @@ import { ShineHeaderComponent } from './shared/shine-header/shine-header.compone
 import { Header2Component } from './shared/header2/header2.component';
 import { RoundPipe } from './pipe/round.pipe';
 import { ViewComponent } from './view/view.component';
+import { GTMService } from './services/gtm.service';
 
 
 @NgModule({
@@ -38,10 +39,9 @@ import { ViewComponent } from './view/view.component';
     HttpClientModule,
     CarouselModule,
     MatDialogModule,
-
     ViewComponent
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, GTMService],
   exports: [
   ],
   bootstrap: [AppComponent]
