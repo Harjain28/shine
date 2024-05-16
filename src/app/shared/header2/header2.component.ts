@@ -288,7 +288,7 @@ export class Header2Component {
   }
 
   goToPravicy(){
-    window.location.href = 'https://www.creditenable.com/assets/images/pdf/CreditEnable_Privacy_Policy_2023.pdf';
+    window.location.href = 'https://www.creditenable.com/assets/images/pdf/CreditEnable_Privacy_Policy_2024.pdf';
   }
 
   loginBtn(){

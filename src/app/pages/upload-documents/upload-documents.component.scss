@@ -17,7 +17,7 @@
     .blueBack{
         filter: blur(30px);
         -webkit-filter: blur(30px);
-        background-color: #ffffff;
+       // background-color: #ffffff;
         position: absolute;
         height: 100%;
         width: 100%;
@@ -97,7 +97,44 @@
             }
         }
 
+      
+
     }
+
+    .alertBox{
+        border: 1px solid #E2E2E2;
+        border-radius: 10px;
+        padding: 12px 22px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 44px;
+    
+        img {
+            width: 16px;
+            height: 16px;
+        }
+    
+        .downwardContent {
+    
+           
+            p {
+                font-size: 13px;
+                font-weight: normal;
+                margin-bottom: 0px;
+                font-family: Poppins !important;
+                color: #3F3F3F;
+                line-height: 18px;
+                text-align: left;
+                padding: 0px 0px;
+            }
+    
+            
+        }
+    
+    }
+
+
 }
 
 .modalOpen {
@@ -200,6 +237,8 @@
         }
     }
 }
+
+
 
 .progress-wrapper {
     display: flex;

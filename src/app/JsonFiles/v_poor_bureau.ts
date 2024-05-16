@@ -559,7 +559,7 @@ export const vpoorBureauJSON =
           "highSd": 773655.369129461,
           "cv": 1.3908731338539135,
           "min": 100000,
-          "sum": 3883043.52,
+          "sum": 399883043.52,
           "belowMinCount": 3
         },
         "abb": {

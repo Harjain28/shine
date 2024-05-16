@@ -91,7 +91,7 @@ export class LandingPageComponent {
   };
 
   customOptionPlan: OwlOptions = {
-    loop: false,
+    loop: true,
     mouseDrag: false,
     touchDrag: true,
     dots: true,
