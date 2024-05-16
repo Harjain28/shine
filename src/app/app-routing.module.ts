@@ -21,7 +21,6 @@ const routes: Routes = [
   },
   {
     path:'in' , component: PagesComponent, 
-    canActivate: [AuthGuard],
     loadChildren:() =>import('./pages/pages.routes')
   },
   // {

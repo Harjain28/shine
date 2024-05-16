@@ -76,6 +76,10 @@
             <button class="btn" [disabled]="isSubmit" (click)="getForPaymentMethod()">Proceed to Payment</button>
           </div>
 
+          <div class="paymentBtn"  *ngIf="transactionFailed">
+            <button class="btn" [disabled]="isSubmit" (click)="getForPaymentMethod()">Retry Payment</button>
+          </div>
+
           <div class="alertBox">
               <img src="../../../assets/images/homeImage/alertBoxIcon.svg" alt="">
               <div class="downwardContent">
@@ -88,9 +92,7 @@
             
           </div>
 
-          <div class="paymentBtn"  *ngIf="transactionFailed">
-            <button class="btn confirm_order" [disabled]="isSubmit" (click)="getForPaymentMethod()">Retry Payment</button>
-          </div>
+          
          
         </div>
       </div>
