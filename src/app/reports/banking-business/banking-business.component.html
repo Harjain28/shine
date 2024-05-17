@@ -162,7 +162,7 @@
               <div class="valatilityBox backgrundColor">
                 <h3>{{affordability_section?.business_turnover_expanded?.credit_count?.observations?.header}}</h3>
                 <div class="checkBox">
-                  <!-- <h5>Revenue Mix:</h5>   -->
+                  <h5>Revenue Mix:</h5>  
                   <button [ngStyle]="{ 'background-color': count_VolColor}">{{count_volatility?.header}}</button>
                 </div>
                 <p>{{count_volatility?.description}}</p>
@@ -437,9 +437,10 @@
           <p class="mt-3">{{affordability_section?.business_turnover_card?.description}}</p>
           
           <div class="downwardBox mt-4">
-            <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png" alt="">
+            <img *ngIf="card_view?.header" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png" alt="">
             <div class="downwardContent">
-              <h4>Downward Trend</h4>
+              <!-- <h4>Downward Trend</h4> -->
+              <p>{{card_view?.header}}</p>
               <p>{{card_view?.description}}</p>
 
               <p>

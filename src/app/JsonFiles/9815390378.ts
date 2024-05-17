@@ -1821,7 +1821,7 @@ export const cust5Json =
             "bullets": [
               "Your debt-to-turnover ratio on your secured loans is <60%.",
               "If it is <25%, you may be eligible to take more secured debt. ",
-              "Maintain this ratio to keep up your eligibility for better loan options.   "
+              "Maintain this ratio to keep up your eligibility for better loan options."
             ],
             "class": "positive",
             "type": null,
