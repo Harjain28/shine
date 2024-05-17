@@ -152,7 +152,7 @@ postForPayment(path: string, body: object = {} , params: HttpParams = new HttpPa
   }
 
   patch(path: any, body: object = {} , params: any) {
-    
+    this.TOKEN = localStorage.getItem("token");   
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -166,8 +166,7 @@ postForPayment(path: string, body: object = {} , params: HttpParams = new HttpPa
 
 
 postForReport(path: string, body: object = {} , params: HttpParams = new HttpParams()) {
-  
-  
+  this.TOKEN = localStorage.getItem("token");   
   const posthttpOptions = {
     headers: new HttpHeaders({
       'accept': '*',
@@ -189,7 +188,7 @@ postForLogin(path: string, body: object = {} , params: HttpParams = new HttpPara
 }
 
 postMethod(path: string, body: object = {} , params: HttpParams = new HttpParams()) {
-  
+  this.TOKEN = localStorage.getItem("token");   
   const posthttpOptions = {
     headers: new HttpHeaders({
       'accept': '*',

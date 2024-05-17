@@ -330,7 +330,7 @@ export class ReportsComponent {
   }
 
   counters() {
-    this.ncjcount = 60;
+    this.ncjcount = 90;
     this.progressCount = timer(0, this.tick)
       .pipe(take(this.ncjcount))
       .subscribe(() => {

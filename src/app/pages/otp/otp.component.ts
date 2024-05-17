@@ -161,6 +161,7 @@ export class OtpComponent implements OnInit{
         next: (res: any) => {
           if (res.success == true) {
             localStorage.setItem("token",res?.token);
+            localStorage.setItem("reqData", JSON.stringify(res?.userInfo));
             this.navigationService.setLinkClicked(true);
             if (this.userData && this.userData?.lastReportId) {
                 this.router.navigate(['/in/report', res?.userId]);

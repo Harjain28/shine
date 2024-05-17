@@ -3,6 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  // Host_Url: "https://shine.creditenable.com/",
+  // website_url: "https://shine.creditenable.com",
+  // BASE_API_ENDPOINT: 'https://borrowerportal.creditenable.com/',
+  // APPLICATION_BASE_POST_ELIGIBILITY_URL: 'https://borrowerportal.creditenable.com/api/',
+  // BASE_API_ELIGIBILITY_URL_ENDPOINT: 'https://borrowerportal.creditenable.com/api/',
+  //   production: true,
+  //   enableGTM: true
   Host_Url: "https://staging.creditenable.com/",
   website_url: "https://staging.creditenable.com",
   BASE_API_ENDPOINT: 'https://borrowerportal-staging.creditenable.com/',
