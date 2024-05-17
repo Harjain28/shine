@@ -9,7 +9,7 @@ export const environment = {
   APPLICATION_BASE_POST_ELIGIBILITY_URL: 'https://borrowerportal-staging.creditenable.com/api/',
   BASE_API_ELIGIBILITY_URL_ENDPOINT: 'https://borrowerportal-staging.creditenable.com/api/',
   production: false,
-
+  enableGTM: true,
 };
 
 /*
