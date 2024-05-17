@@ -27,6 +27,11 @@ import { NoGstComponent } from './no-gst/no-gst.component';
 import { MaterialModule } from '../material.module';
 import { noGSTJSON } from '../JsonFiles/no_gst';
 import { reportPageResponseJson } from '../JsonFiles/reponse';
+import { cust1Json } from '../JsonFiles/7001163340';
+import { cust2Json } from '../JsonFiles/7549539134';
+import { cust3Json } from '../JsonFiles/7638099486';
+import { cust4Json } from '../JsonFiles/8320026598';
+import { cust5Json } from '../JsonFiles/9815390378';
 
 @Component({
   selector: 'app-reports',
@@ -228,9 +233,18 @@ export class ReportsComponent {
 
     if (fileName === 'good_bureau.json') {
       this.reportsData = goodBureauJSON;
+    } else if (fileName === '7001163340.json') {
+      this.reportsData = cust1Json;
+    } else if (fileName === '7549539134.json') {
+      this.reportsData = cust2Json;
+    }  else if (fileName === '7638099486.json') {
+      this.reportsData = cust3Json;
+    }  else if (fileName === '8320026598.json') {
+      this.reportsData = cust4Json;
+    } else if (fileName === '9815390378.json') {
+      this.reportsData = cust5Json;
     } else if (fileName === 'avg_bureau.json') {
       this.reportsData = avgBureauJSON;
-
     } else if (fileName === 'no_bureau.json') {
       this.reportsData = noBureauJSON;
     } else if (fileName === 'poor_bureau.json') {

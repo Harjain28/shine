@@ -29,6 +29,11 @@ const routes: Routes = [
   //   component: ReportsComponent   
   // },
   {
+    path:'in/sample_report', 
+    canActivate: [AuthGuard],
+    component: ReportsComponent   
+  },
+  {
     path:'in/report/:id', 
     canActivate: [AuthGuard],
     component: ReportsComponent   

@@ -33,8 +33,10 @@ server.use(compression())
 // global['window'] = mock.getWindow();
 
 //localstorage is not defined for ssr 
-   global['localStorage'] = localStorage;
-
+  
+ global['localStorage'] = localStorage;
+ global['sessionStorage'] = sessionStorage;
+   
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
   server.engine('html', ngExpressEngine({
     bootstrap: AppServerModule,
