@@ -1,5 +1,5 @@
 <div class="bankingHistory section_padding">
-  <div class="container">
+  <div class="container" #scrollTargetSection>
     <div class="row ">
       <div class="col-lg-12">
         <div class="title">
@@ -11,7 +11,7 @@
           <p>{{affordability_section?.subheader}}</p>
         </div>
       </div>
-      <div class="col-lg-12 col-md-12 col-sm-12" style="transition: .5s;" *ngIf="expandBusinessSection" #scrollTargetSection>
+      <div class="col-lg-12 col-md-12 col-sm-12" style="transition: .5s;" *ngIf="expandBusinessSection" >
         <div class="businessTurnover mb-3">
           <div class="plus" (click)="minimizeBusinessBanking()">
             <span>
@@ -162,7 +162,7 @@
               <div class="valatilityBox backgrundColor">
                 <h3>{{affordability_section?.business_turnover_expanded?.credit_count?.observations?.header}}</h3>
                 <div class="checkBox">
-                  <h5>Revenue Mix:</h5>  
+                  <!-- <h5>Revenue Mix:</h5>   -->
                   <button [ngStyle]="{ 'background-color': count_VolColor}">{{count_volatility?.header}}</button>
                 </div>
                 <p>{{count_volatility?.description}}</p>
@@ -437,10 +437,9 @@
           <p class="mt-3">{{affordability_section?.business_turnover_card?.description}}</p>
           
           <div class="downwardBox mt-4">
-            <img *ngIf="card_view?.header" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png" alt="">
+            <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png" alt="">
             <div class="downwardContent">
-              <!-- <h4>Downward Trend</h4> -->
-              <p>{{card_view?.header}}</p>
+              <h4>Downward Trend</h4>
               <p>{{card_view?.description}}</p>
 
               <p>
@@ -524,7 +523,7 @@
         </div>
       </div>
 
-      <div class="col-lg-12 col-md-12 col-sm-12 mb-5" *ngIf="expandDebtRatioSection" #scrollTargetSection>
+      <div class="col-lg-12 col-md-12 col-sm-12 mb-5" *ngIf="expandDebtRatioSection" #scrollTargetSection2>
         <div class="businessTurnover">
           <div class="plus" (click)="mnimizeDebtRatioBlock()">
             <span>
