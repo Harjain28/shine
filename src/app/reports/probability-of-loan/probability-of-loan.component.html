@@ -45,8 +45,8 @@
                     </div>
                   </td>
                   <td>
-                    <span style="color: #12BA9B;">Loan : <b>{{data.potential_max_loan.toLocaleString('en-IN')}}</b>
-                    </span>
+                    <!-- <span style="color: #12BA9B;">Loan : <b>{{data.potential_max_loan.toLocaleString('en-IN')}}</b>
+                    </span> -->
                     <span style="color: #12BA9B;">ROI : <b>{{data.potential_roi*100}}%</b></span>
                     <div class="chartImg">
                       <div class="ProgressSpinner2">
@@ -109,19 +109,6 @@
             <ng-container>
               <ng-template carouselSlide *ngFor="let data of probabilityData.slice(0,5)">
                 <div class="tableBox">
-                  <img src={{data.logo}} alt="">
-                  <ul>
-                    <li>Max Offerings (INR)</li>
-                    <li>
-                      <span>Loan :</span>
-                      <span><b>75,00,000</b></span>
-                    </li>
-                    <li>
-                      <span>ROI :</span>
-                      <span><b>18%</b></span>
-                    </li>
-                  </ul>
-
                   <ul class="themeColor1">
                     <li>Current Potential</li>
                     <li>
@@ -167,18 +154,7 @@
             <ng-container *ngIf="visibleOffers">
               <ng-template carouselSlide *ngFor="let data of probabilityData.slice(5,probabilityData.length)">
                 <div class="tableBox">
-                  <img src={{data.logo}} alt="">
-                  <ul>
-                    <li>Max Offerings (INR)</li>
-                    <li>
-                      <span>Loan :</span>
-                      <span><b>75,00,000</b></span>
-                    </li>
-                    <li>
-                      <span>ROI :</span>
-                      <span><b>18%</b></span>
-                    </li>
-                  </ul>
+
 
                   <ul class="themeColor1">
                     <li>Current Potential</li>

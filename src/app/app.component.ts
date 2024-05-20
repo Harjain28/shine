@@ -24,8 +24,8 @@ export class AppComponent {
     return !this.router.url.includes('report') || !this.storage.isToken();
   }
 
-  isHeader2Visible(): boolean {
-    return  !this.router.url.includes('sample_report') || !this.storage.isToken();
+  isHeader2Visible() {
+    return  !this.router.url.includes('report') || !this.storage.isToken();
   }
 
 
