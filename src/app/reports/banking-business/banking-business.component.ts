@@ -203,7 +203,7 @@ export class BankingBusinessComponent {
     this.banking_history = this.bankingData?.report?.bankingHistory;
 
     if(this.banking_history?.monthlyExpenses){
-    this.monthly_expenses = this.banking_history?.monthlyExpenses;
+    this.monthly_expenses = this.banking_history?.monthlyExpenses.sort((a: { value: number; }, b: { value: number; }) => b.value - a.value);
     }
     if(this.graphData?.turnover){
     this.turnoverLineData = this.graphData?.turnover;

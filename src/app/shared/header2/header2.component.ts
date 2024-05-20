@@ -292,10 +292,7 @@ export class Header2Component {
   }
 
   loginBtn(){
-      const dialogRef = this.dialog.open(ReloginComponent, {
-        width: '320px',
-        height: 'auto',
-      });
+      this.router.navigate(['in/login'])
   }
 
 

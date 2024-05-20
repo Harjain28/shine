@@ -32,6 +32,7 @@ import { cust2Json } from '../JsonFiles/7549539134';
 import { cust3Json } from '../JsonFiles/7638099486';
 import { cust4Json } from '../JsonFiles/8320026598';
 import { cust5Json } from '../JsonFiles/9815390378';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-reports',
@@ -111,9 +112,13 @@ export class ReportsComponent {
   gstDetails: any;
   bureauScore: any;
 
-  constructor(private api: ApiService, private cdr: ChangeDetectorRef, public router: Router,) { }
+  constructor(private api: ApiService, private cdr: ChangeDetectorRef, public router: Router,private storage: StorageService) { }
 
   ngOnInit(): void {
+    // if(!this.storage.isToken())
+    //   {
+    //     this.router.navigate(['/in'])
+    //   }
     this.requestData = localStorage.getItem("reqData")
     this.parsedData = JSON.parse(this.requestData);
 
@@ -314,7 +319,7 @@ export class ReportsComponent {
         }
       },
       error: error => {
-        this.showEligible = true;
+        this.router.navigate(['/error']);
       },
       complete: () => {
         // ('Request complete');

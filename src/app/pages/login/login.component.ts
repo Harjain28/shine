@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import {
   FormControl,
   FormGroup,
@@ -22,9 +22,10 @@ import { NgOtpInputModule } from 'ng-otp-input';
 import { MatSliderModule } from '@angular/material/slider';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { OtpService } from 'src/app/services/otp.service';
+import { ReloginComponent } from 'src/app/modal/relogin/relogin.component';
 
 @Component({
-  selector: 'app-relogin',
+  selector: 'app-login',
   standalone: true,
   imports: [
     CommonModule,
@@ -40,11 +41,12 @@ import { OtpService } from 'src/app/services/otp.service';
     FormsModule,
     ReactiveFormsModule,
     MatSliderModule,
+    MatDialogModule
   ],
-  templateUrl: './relogin.component.html',
-  styleUrls: ['./relogin.component.scss'],
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
-export class ReloginComponent {
+export class LoginComponent {
   viewForm!: FormGroup;
   isOTPShow: boolean = false;
   percentage: number = 0;
@@ -107,7 +109,8 @@ export class ReloginComponent {
     private api: ApiService,
     private navigationService: NavigationService,
     private otpService: OtpService,
-    public dialogRef: MatDialogRef<ReloginComponent>
+   // public dialogRef: MatDialogRef<ReloginComponent>,
+    public dialog: MatDialog
   ) {
     this.route.queryParamMap.subscribe((params) => {
       this.paramsObject = { ...params };
@@ -115,6 +118,10 @@ export class ReloginComponent {
   }
 
   ngOnInit(): void {
+    const dialogRef = this.dialog.open(ReloginComponent, {
+      width: '320px',
+      height: 'auto',
+    });
     this.viewForm = new FormGroup({
       phoneNumber: new FormControl('', [
         Validators.required,
@@ -125,10 +132,7 @@ export class ReloginComponent {
   }
 
   cancel() {
-
-    this.closeDialoge();
     this.router.navigate(['/in'])
-
   }
 
   reLoginProcess() {
@@ -155,7 +159,7 @@ export class ReloginComponent {
               localStorage.setItem('reqData', JSON.stringify(data));
               sessionStorage.setItem('reloginUpdates', JSON.stringify(res));
               this.navigationService.setLinkClicked(true);
-              this.closeDialoge();
+            //  this.closeDialoge();
               if (res?.lastReportId && res?.lastReportId !== null) {
                 this.fetchOtp();
                 this.router.navigate(['/in/otp']);
@@ -190,6 +194,6 @@ export class ReloginComponent {
   }
 
   closeDialoge(): void {
-    this.dialogRef.close();
+   // this.dialogRef.close();
   }
 }
