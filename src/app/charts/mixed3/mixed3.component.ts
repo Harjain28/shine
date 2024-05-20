@@ -101,16 +101,7 @@ export class Mixed3Component {
           pointStyle:"line"
 
         },
-        {
-          // label: 'Horizontal Line Dataset',
-          type: 'line',
-          data: Array.from({ length: 12 }, () => ({ x: 0, y: min })),
-          borderColor: 'gray',
-          borderWidth: 1,
-          fill: false,
-          pointStyle:"line"
-
-        },
+        
       {
         // label: 'Bar Dataset',
         type: 'bar',

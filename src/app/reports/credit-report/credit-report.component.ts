@@ -32,6 +32,8 @@ import { Router } from '@angular/router';
 export class CreditReportComponent {
   @Input() creditReportsData: any;
   @ViewChild('owlCarousel') owlCarousel!: CarouselComponent;
+  @ViewChild('scrollTargetSection') scrollTargetSection!: ElementRef;
+
 
   isVisible = false;
   reportDate: any;
@@ -40,6 +42,7 @@ export class CreditReportComponent {
   lrhImgageIcon: any;
   caImgageIcon: any;
   summaryIcon: any;
+  mergedByName: any = [];
 
   toggleTooltip(): void {
     this.isVisible = !this.isVisible;
@@ -120,6 +123,9 @@ export class CreditReportComponent {
   previousYears!: any[]
   currentMonthIndex: number = new Date().getMonth();
   currentYear: number = new Date().getFullYear();
+  monthNames: string[] = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+  byCount!: any[];
+
 
 
 
@@ -138,7 +144,6 @@ export class CreditReportComponent {
 
     autoplayTimeout: 8000,
     autoplaySpeed: 1500,
-    // navText: ["", ""],
     navText: [
       "<span><img class='navTxtImg' src='./assets/images/homeImage/left-arrow.svg'> 1 more</span>",
       "<span> 1 more <img class='navTxtImg' src='./assets/images/homeImage/right-arrow.svg'></span>",
@@ -162,7 +167,6 @@ export class CreditReportComponent {
 
 
   openDialog() {
-    // this.getBorrowerInformation();
     const dialogRef = this.dialog.open(CreditJourneyPopupComponent, {
       width: 'auto',
       height: 'auto',
@@ -227,12 +231,22 @@ export class CreditReportComponent {
 
 
     if(this.creditReportData?.creditAnalysis){
+     this.byCount = this.creditReportData?.creditAnalysis?.byCount.sort((a: { value: number; }, b: { value: number; }) => b.value - a.value),
+     this.mergedByName = this.byCount.map(byCountItem => {
+      const byAmountItem =  this.creditReportData?.creditAnalysis.byAmount.find((byAmountItem: { name: any; }) => byAmountItem.name === byCountItem.name);
+      return {
+        ...byAmountItem,
+        countValue: byCountItem.value
+      };
+    });
+    console.log(this.mergedByName, "mergedByName")
     this.credit_analysis = {
-      ...this.creditReportData?.creditAnalysis,
+      byAmount: this.mergedByName,
       colorDots: ['#211261', '#6A2FC2', '#AD6EEA', '#12BA9B', '#56D6B7', '#C3E028', '#E2E2E2', '#3F3F3F', '#FF7B24', '#EC1111'],
-      darkerShadeColor: ['#160c47', '#4d1a99', '#7a42c6', '#0a7a56', '#347d8a', '#8b9c1d', '#b8b8b8', '#222222', '#cc6518', '#9c0b0b']
+      darkerShadeColor: ['#160c47', '#4d1a99', '#7a42c6', '#0a7a56', '#347d8a', '#8b9c1d', '#b8b8b8', '#222222', '#cc6518', '#9c0b0b'],
     };
   }
+  console.log(this.creditReportData?.creditAnalysis,"jj")
 
     this.securedUnsecuredRatioData =
       this.creditReportData?.securedUnsecuredRatio;
@@ -280,7 +294,7 @@ export class CreditReportComponent {
           color = "#FF7B24"; // Orange
       }
     } else {
-      color = "#FF7B24"; // Default to Orange if no match
+      color = "#FF7B24"; // Orange
     }
   
     return { color };
@@ -295,9 +309,9 @@ export class CreditReportComponent {
     for (let i = 0; i <= 3; i++) {
       this.previousYears.push(year - i);
     }
-    // this.previousYears.reverse();
 
   }
+
 
  setSummaryIcon(data: any) {
     const classRegex = /(negative|positive|stable)/i;
@@ -585,7 +599,7 @@ export class CreditReportComponent {
       case 'Personal Loan':
         return '#211261';
       default:
-        return '#000000'; // Default color
+        return '#000000'; 
     }
   }
 
@@ -604,23 +618,49 @@ export class CreditReportComponent {
     this.selectedYear = year;
   }
 
+  getLast36Months() {
+    const result = [];
+    
+    this.reportDate = this.reportsData?.report?.reportDate;
+    const currentDate = new Date(this.reportDate);
+  
+    for (let i = 0; i <= 36; i++) {
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth();
+  
+      result.push({ monthName: this.monthNames[month], monthIndex: month + 1, year: year });
+  
+      currentDate.setMonth(month - 1);
+    }
+  
+    return result.reverse();
+  }
+  
+
+  isMonth(month: string, year: number): boolean {
+    return this.getLast36Months().some(m => m.monthName === month && m.year === year);
+}
+
   isSelectedMonth(month: string): boolean {
-    const index = this.month.indexOf(month) + 1;
-    return this.loan_repayment_history?.missedPayments.some((payment: { year: number | undefined; month: number }): any =>
-      payment.year === this.selectedYear && payment.month === index
-    );
+    const last36Months = this.getLast36Months();
+    const foundMonth = last36Months.find(m => m.monthName === month);
+    if (foundMonth) {
+      return this.loan_repayment_history?.missedPayments.some((payment: { year: number; month: number }) =>
+        payment.year === this.selectedYear && payment.month === foundMonth.monthIndex
+      );
+    }
+    return false;
   }
 
-  isCurrentYearAndPastMonth(index: number): boolean {
-    const currentYear = new Date().getFullYear();
-    return currentYear === this.selectedYear && index >= this.currentMonthIndex;
-  }
-  // Function to calculate the rotation of the needle
+
   calculateRotation(angle: number): number {
     return angle / 5;
   }
 
   expand() {
+    if (this.scrollTargetSection) {
+      this.scrollTargetSection.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     this.expandSection = true;
     this.expandBlocks = true;
 
@@ -635,6 +675,9 @@ export class CreditReportComponent {
   }
 
   expandCurrentCredit() {
+    if (this.scrollTargetSection) {
+      this.scrollTargetSection.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     if (this.expandSection == true) {
       this.expandSection = false;
       this.expandCurrentCreditSection = true;

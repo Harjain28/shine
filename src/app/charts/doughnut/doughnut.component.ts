@@ -36,6 +36,10 @@ export class DoughnutComponent {
 
   private createDonutChart():void{
     this.doughtValues = this.doughtnutJSONData?.byAmount;
+
+    console.log(this.doughtValues,"jj")
+    
+    
     
     this.doughtnutColor = this.doughtnutJSONData?.colorDots;
     this.darkerShadeColor = this.doughtnutJSONData?.darkerShadeColor;

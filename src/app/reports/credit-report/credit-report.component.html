@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="mobileSilder dhidden">
-        <owl-carousel-o [options]="customOptions4" >
+        <owl-carousel-o [options]="customOptions4">
           <ng-container>
             <ng-template carouselSlide>
               <div class="scoreBox">
@@ -16,17 +16,19 @@
                         <stop offset="100%" style="stop-color:#12BA9B;stop-opacity:1" />
                       </linearGradient>
                     </defs>
-                    <path fill="none" stroke="url(#gradient1)" stroke-width="10"  d="M12 50 A50 50 0 1 1 120 50"></path>
-                  <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 70, 70)'" x1="2" y1="100" x2="75" y2="100" stroke="#707070" stroke-width="3"></line>
-                  <text class="top" [attr.transform]="'rotate(' + (calculateRotation(angle) + 180) + ', 50, 50)'" x="150" y="50" text-anchor="middle">{{ angle }}</text>
-                  <text class="leftText"  x="15" y="80"text-anchor="middle">{{ minAngle }}</text>
-                  
-                  <text class="rightText" x="120" y="80" text-anchor="middle">{{ maxAngle }}</text>
-              </svg>
-    
+                    <path fill="none" stroke="url(#gradient1)" stroke-width="10" d="M12 50 A50 50 0 1 1 120 50"></path>
+                    <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 70, 70)'" x1="2" y1="100" x2="75"
+                      y2="100" stroke="#707070" stroke-width="3"></line>
+                    <text class="top" [attr.transform]="'rotate(' + (calculateRotation(angle) + 180) + ', 50, 50)'"
+                      x="150" y="50" text-anchor="middle">{{ angle }}</text>
+                    <text class="leftText" x="15" y="80" text-anchor="middle">{{ minAngle }}</text>
+
+                    <text class="rightText" x="120" y="80" text-anchor="middle">{{ maxAngle }}</text>
+                  </svg>
+
                 </div>
                 <div class="buttonJob">
-                  <button class="btn" [ngStyle]="{ 'color': bsColor, 'border-color': bsColor }"  (click)="openPopup()">
+                  <button class="btn" [ngStyle]="{ 'color': bsColor, 'border-color': bsColor }" (click)="openPopup()">
                     {{bureauScoreInsights?.header}}
                   </button>
                 </div>
@@ -34,10 +36,10 @@
                   {{bureauScoreInsights?.description}}
                 </p>
                 <div class="box">
-                  <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_white.png" alt="" />
-                  <span
-                    >{{CR_Data?.bureau_score_card?.description}}</span
-                  >
+                  <img
+                    src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_white.png"
+                    alt="" />
+                  <span>{{CR_Data?.bureau_score_card?.description}}</span>
                 </div>
               </div>
             </ng-template>
@@ -53,7 +55,8 @@
                         </p>
                       </div>
                       <div class="numberText">
-                        <p [ngStyle]="{'color': creditReportData?.businessRiskRemark ? '#FF7B24' : 'var(--main2)'}">{{creditReportData?.businessRiskRemark ? 'Yes' : 'No'}}</p>
+                        <p [ngStyle]="{'color': creditReportData?.businessRiskRemark ? '#FF7B24' : 'var(--main2)'}">
+                          {{creditReportData?.businessRiskRemark ? 'Yes' : 'No'}}</p>
                         <!-- <span>Remarks</span> -->
                       </div>
                     </div>
@@ -67,7 +70,8 @@
                         </p>
                       </div>
                       <div class="numberText">
-                        <p [ngStyle]="{'color': creditReportData?.creditEnquiry > 10 ? '#ec1111' : 'var(--main2)'}">{{creditReportData?.creditEnquiry}}</p>
+                        <p [ngStyle]="{'color': creditReportData?.creditEnquiry > 10 ? '#ec1111' : 'var(--main2)'}">
+                          {{creditReportData?.creditEnquiry}}</p>
                       </div>
                     </div>
                   </div>
@@ -76,7 +80,7 @@
             </ng-template>
           </ng-container>
         </owl-carousel-o>
-       
+
       </div>
 
       <div class="col-lg-12">
@@ -85,196 +89,209 @@
           <p>{{CR_Data?.subheader}}</p>
         </div>
       </div>
-      
-      <div class="container">
-        <ng-container *ngIf="expandSection">
-        <div class="row">
-          <div class="col-lg-12 mb-4">
-            <div class="loanHistory">
-              <div class="plus" (click)="minimize()">
-                <span>
-                  <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Minus_normal.png" alt="">
-                  <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/minus_hover.png" alt="">
-                </span>
-              </div>
-              <h3 class="title">{{CR_Data?.loanRepaymentHistory_card?.header}}</h3>
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                  <div class="calendarBox">
-                    <div class="col-lg-8 col-md-8 col-sm-12 m-auto">
-                      <div class="year justify-content-center gap-4">
-                        <span *ngFor="let year of previousYears" [ngClass]="{ 'active': selectedYear === year }" (click)="selectYear(year)">{{ year }}</span>
-                      </div>
-                      <ul class="monthView">
-                        <li *ngFor="let month of month; let i = index"
-                            [ngClass]="{'active': isSelectedMonth(month),'blur':  i > currentMonthIndex && selectedYear === currentYear}">{{ month }}
-                          </li>
-                    </ul>
-                      <div class="missingPayment">
-                        {{ loan_repayment_history?.missedPayments.length }} Missing Payments
-                      </div>
-</div>
-                    <div class="defaultContent">
-                      <h3>{{LoanReplacementExpanded?.defaultAnalysis?.header}}</h3>
-                    </div>
 
-                    <div class="row fontOpenSmall">
-                      <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                        <div class="defaultHistory position-relative">
-                          <h3>
-                            {{LoanReplacementExpanded?.defaultAnalysis?.defaultHistory?.header}}
-                            <!-- tooltip.component.html -->
-                            <div class="tooltipShow">
-                              <button (click)="toggleTooltip()">
-                                <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png" alt="Information Icon"/>
-                              </button>
-                              <div class="toolTipContent" *ngIf="isVisible">
-                                <ng-container *ngFor="let data of staticData?.loanRepaymentHistory_expanded?.defaultAnalysis.defaultHistory?.additional_information">
-                                <p >
-                                  <span></span>
-                                  <b>{{data?.lable}}:</b>
-                                  {{data?.description}}
-                                  </p>
+      <div class="container" #scrollTargetSection>
+        <ng-container *ngIf="expandSection" >
+          <div class="row">
+            <div class="col-lg-12 mb-4">
+              <div class="loanHistory">
+                <div class="plus" (click)="minimize()">
+                  <span>
+                    <img class="hoverhide"
+                      src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Minus_normal.png"
+                      alt="">
+                    <img class="hoverShow"
+                      src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/minus_hover.png"
+                      alt="">
+                  </span>
+                </div>
+                <h3 class="title">{{CR_Data?.loanRepaymentHistory_card?.header}}</h3>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="calendarBox">
+                      <div class="col-lg-8 col-md-8 col-sm-12 m-auto">
+                        <div class="year justify-content-center gap-4">
+                          <span *ngFor="let year of previousYears" [ngClass]="{ 'active': selectedYear === year }"
+                            (click)="selectYear(year)">{{ year }}</span>
+                        </div>
+                        <ul class="monthView">
+                          <li *ngFor="let month of monthNames; let i = index" [ngClass]="{'active': isSelectedMonth(month),
+                           'blur': !isMonth(month, selectedYear || 0)}">
+                            {{ month }}
+                          </li>
+                        </ul>
+                        <div class="missingPayment">
+                          {{ loan_repayment_history?.missedPayments.length }} Missing Payments
+                        </div>
+                      </div>
+                      <div class="defaultContent">
+                        <h3>{{LoanReplacementExpanded?.defaultAnalysis?.header}}</h3>
+                      </div>
+
+                      <div class="row fontOpenSmall">
+                        <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                          <div class="defaultHistory position-relative">
+                            <h3>
+                              {{LoanReplacementExpanded?.defaultAnalysis?.defaultHistory?.header}}
+                              <!-- tooltip.component.html -->
+                              <div class="tooltipShow">
+                                <button (click)="toggleTooltip()">
+                                  <img
+                                    src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png"
+                                    alt="Information Icon" />
+                                </button>
+                                <div class="toolTipContent" *ngIf="isVisible">
+                                  <ng-container
+                                    *ngFor="let data of staticData?.loanRepaymentHistory_expanded?.defaultAnalysis.defaultHistory?.additional_information">
+                                    <p>
+                                      <span></span>
+                                      <b>{{data?.lable}}:</b>
+                                      {{data?.description}}
+                                    </p>
+                                  </ng-container>
+                                </div>
+                              </div>
+                            </h3>
+                            <ul class="historyList">
+                              <div *ngIf="default_analysis" class="historyList">
+                                <ng-container *ngFor="let item of defaultHistoryItems; let i= index">
+                                  <li>
+                                    {{default_analysis_labels[i]}}
+                                    <span [ngClass]="item.value ? 'NoColor' : 'YesColor'">{{ item.value ? 'YES' : 'NO'
+                                      }}</span>
+                                  </li>
                                 </ng-container>
                               </div>
+
+
+                            </ul>
+
+                            <div class="box" style="border: 1px solid #6A2FC2; background-color: #FBF8FF;">
+                              <p>
+                                {{defaulthistoryText?.description}}
+                              </p>
                             </div>
-                          </h3>
-                          <ul class="historyList">
-                            <div *ngIf="default_analysis" class="historyList">
-                              <ng-container *ngFor="let item of defaultHistoryItems; let i= index">
-                                <li>
-                                  {{default_analysis_labels[i]}}
-                                  <span [ngClass]="item.value ? 'NoColor' : 'YesColor'">{{ item.value ? 'YES' : 'NO' }}</span>
-                                </li>
-                              </ng-container>
-                            </div>
-                            
-                            
-                          </ul>
-
-                          <div class="box" style="border: 1px solid #6A2FC2; background-color: #FBF8FF;">
+                          </div>
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                          <div class="defaultHistory solutions">
+                            <h3>Solutions</h3>
                             <p>
-                             {{defaulthistoryText?.description}}
+                              {{solutions?.header}}
                             </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                        <div class="defaultHistory solutions">
-                          <h3>Solutions</h3>
-                          <p>
-                           {{solutions?.header}}
-                          </p>
 
-                          <hr>
-                          <ul class="historyList">
-                            <li *ngFor="let bullets of solutions?.bullets">
-                              <span></span>
-                             {{bullets}}
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                        <div class="defaultHistory active">
-                          <h3>Impact</h3>
-                          <ul class="numberBox">
-                            <li>
-                              <span>Your current stage</span>
-                              Level - {{currStage}}
-                            </li>
-                            <li>
-                              <span>Your potential stage</span>
-                              Level - {{potStage}}
-                            </li>
-                          </ul>
-
-                          <div class="box boxBorder">
-                            <p>
-                              {{impact?.description}}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="defaultContent">
-                      <h3>{{LoanReplacementExpanded?.otherAnalysis?.header}}</h3>
-                    </div>
-
-                    <div class="row">
-                      <div *ngIf="other_analysis" class="col-md-8 col-lg-8 col-sm-12 mb-3">
-                        <div class="otherAnalysis">
-                          <h3>{{LoanReplacementExpanded?.otherAnalysis?.topBanks?.header}}</h3>
-                          <div class="checkBox">
-                            <mat-checkbox [checked]="other_analysis.topBanks" disabled class="yes-checkbox">Yes</mat-checkbox>
-                            <mat-checkbox [checked]="!other_analysis.topBanks" disabled class="no-checkbox">No</mat-checkbox>
-                                                  
-                          </div>
-                          <div class="banksBox" *ngIf="topBanks?.bullets && topBanks?.bullets.length > 0">
-                            <ul>
-                              <li *ngFor="let bullets of topBanks?.bullets">
+                            <hr>
+                            <ul class="historyList">
+                              <li *ngFor="let bullets of solutions?.bullets">
                                 <span></span>
-                               {{bullets}}
+                                {{bullets}}
                               </li>
                             </ul>
                           </div>
-                          <div class="banksBox" *ngIf="topBanks?.description">
-                            <ul>
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                          <div class="defaultHistory active">
+                            <h3>Impact</h3>
+                            <ul class="numberBox">
                               <li>
-                                <span></span>
-                               {{topBanks?.description}}
+                                <span>Your current stage</span>
+                                Level - {{currStage}}
+                              </li>
+                              <li>
+                                <span>Your potential stage</span>
+                                Level - {{potStage}}
                               </li>
                             </ul>
+
+                            <div class="box boxBorder">
+                              <p>
+                                {{impact?.description}}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                        <div class="otherAnalysis active">
-                          <h3>{{LoanReplacementExpanded?.otherAnalysis?.suitFiledEver?.header}}</h3>
-                    
+
+                      <div class="defaultContent">
+                        <h3>{{LoanReplacementExpanded?.otherAnalysis?.header}}</h3>
+                      </div>
+
+                      <div class="row">
+                        <div *ngIf="other_analysis" class="col-md-8 col-lg-8 col-sm-12 mb-3">
+                          <div class="otherAnalysis">
+                            <h3>{{LoanReplacementExpanded?.otherAnalysis?.topBanks?.header}}</h3>
                             <div class="checkBox">
-                              <mat-checkbox [checked]="other_analysis.suitFiledEver" class="red-checkbox"  disabled>Yes</mat-checkbox>
-                              <mat-checkbox [checked]="!other_analysis.suitFiledEver" class="green-checkbox"  disabled>No</mat-checkbox>
+                              <mat-checkbox [checked]="other_analysis.topBanks" disabled
+                                class="yes-checkbox">Yes</mat-checkbox>
+                              <mat-checkbox [checked]="!other_analysis.topBanks" disabled
+                                class="no-checkbox">No</mat-checkbox>
+
                             </div>
-                        
-                          <div class="banksBox flex-wrap" *ngIf="suitFiledEver?.bullets && suitFiledEver?.bullets.length > 0">
-                            <ul>
-                              <li  *ngFor="let bullets of suitFiledEver?.bullets">
-                                <span></span>
-                                {{bullets}}
-                              </li>
-                            
-                            </ul>
-                          </div>
-                          <div class="banksBox flex-wrap">
-                            <ul>
-                              <li>
-                                <span></span>
-                                {{suitFiledEver?.description}}
-                              </li>
-                            
-                            </ul>
+                            <div class="banksBox" *ngIf="topBanks?.bullets && topBanks?.bullets.length > 0">
+                              <ul>
+                                <li *ngFor="let bullets of topBanks?.bullets">
+                                  <span></span>
+                                  {{bullets}}
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="banksBox" *ngIf="topBanks?.description">
+                              <ul>
+                                <li>
+                                  <span></span>
+                                  {{topBanks?.description}}
+                                </li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      
-                      <div class="col-md-12 col-lg-12 col-sm-12 mb-3">
-                        <div class="summaryBox" *ngIf="summary">
-                          <h4>{{LoanReplacementExpanded?.summary?.header}}</h4>
-                          <div class="summaryContent">
-                            <ul>
-                              <li *ngFor = "let bullets of summary?.bullets">
-                                <span></span>
-                                {{bullets}}
-                              </li>
-                            </ul>
-                            
-                            <div class="smileImg">
-                              <img
-                                src={{lrhImgageIcon}}
-                                alt=""
-                              />
+                        <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                          <div class="otherAnalysis active">
+                            <h3>{{LoanReplacementExpanded?.otherAnalysis?.suitFiledEver?.header}}</h3>
+
+                            <div class="checkBox">
+                              <mat-checkbox [checked]="other_analysis.suitFiledEver" class="red-checkbox"
+                                disabled>Yes</mat-checkbox>
+                              <mat-checkbox [checked]="!other_analysis.suitFiledEver" class="green-checkbox"
+                                disabled>No</mat-checkbox>
+                            </div>
+
+                            <div class="banksBox flex-wrap"
+                              *ngIf="suitFiledEver?.bullets && suitFiledEver?.bullets.length > 0">
+                              <ul>
+                                <li *ngFor="let bullets of suitFiledEver?.bullets">
+                                  <span></span>
+                                  {{bullets}}
+                                </li>
+
+                              </ul>
+                            </div>
+                            <div class="banksBox flex-wrap">
+                              <ul>
+                                <li>
+                                  <span></span>
+                                  {{suitFiledEver?.description}}
+                                </li>
+
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-12 col-lg-12 col-sm-12 mb-3">
+                          <div class="summaryBox" *ngIf="summary">
+                            <h4>{{LoanReplacementExpanded?.summary?.header}}</h4>
+                            <div class="summaryContent">
+                              <ul>
+                                <li *ngFor="let bullets of summary?.bullets">
+                                  <span></span>
+                                  {{bullets}}
+                                </li>
+                              </ul>
+
+                              <div class="smileImg">
+                                <img src={{lrhImgageIcon}} alt="" />
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -285,8 +302,7 @@
               </div>
             </div>
           </div>
-        </div>
-      </ng-container>
+        </ng-container>
       </div>
 
       <div class="col-lg-4 col-md-4 col-sm-12 mb-4 mhidden">
@@ -300,27 +316,29 @@
                   <stop offset="100%" style="stop-color:#12BA9B;stop-opacity:1" />
                 </linearGradient>
               </defs>
-              <path fill="none" stroke="url(#gradient)" stroke-width="10"  d="M12 50 A50 50 0 1 1 120 50"></path>
-            <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 70, 70)'" x1="2" y1="100" x2="75" y2="100" stroke="#707070" stroke-width="3"></line>
-            <text class="top" [attr.transform]="'rotate(' + (calculateRotation(angle) + 180) + ', 50, 50)'" x="150" y="50" text-anchor="middle">{{ angle }}</text>
-            <text class="leftText"  x="15" y="80"text-anchor="middle">{{ minAngle }}</text>
-            
-            <text class="rightText" x="120" y="80" text-anchor="middle">{{ maxAngle }}</text>
-        </svg>
+              <path fill="none" stroke="url(#gradient)" stroke-width="10" d="M12 50 A50 50 0 1 1 120 50"></path>
+              <line [attr.transform]="'rotate(' + calculateRotation(angle) + ', 70, 70)'" x1="2" y1="100" x2="75"
+                y2="100" stroke="#707070" stroke-width="3"></line>
+              <text class="top" [attr.transform]="'rotate(' + (calculateRotation(angle) + 180) + ', 50, 50)'" x="150"
+                y="50" text-anchor="middle">{{ angle }}</text>
+              <text class="leftText" x="15" y="80" text-anchor="middle">{{ minAngle }}</text>
+
+              <text class="rightText" x="120" y="80" text-anchor="middle">{{ maxAngle }}</text>
+            </svg>
           </div>
           <div class="buttonJob">
             <!-- <button class="btn" (click)="openPopup()">Your Bureau Score</button> -->
-            <button class="btn" [ngStyle]="{ 'color': bsColor, 'border-color': bsColor }"  > {{bureauScoreInsights?.header}}</button>
-            
+            <button class="btn" [ngStyle]="{ 'color': bsColor, 'border-color': bsColor }">
+              {{bureauScoreInsights?.header}}</button>
+
           </div>
           <p>
-           {{bureauScoreInsights?.description}}
+            {{bureauScoreInsights?.description}}
           </p>
           <div class="box">
-            <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_white.png" alt="" />
-            <span
-              >{{CR_Data?.bureau_score_card?.description}}</span
-            >
+            <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_white.png"
+              alt="" />
+            <span>{{CR_Data?.bureau_score_card?.description}}</span>
           </div>
         </div>
       </div>
@@ -329,8 +347,12 @@
         <div class="loanHistory" style="cursor: pointer;" (click)="expand()">
           <div class="plus">
             <span>
-              <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_normal.png" alt="">
-              <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_hover.png" alt="">
+              <img class="hoverhide"
+                src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_normal.png"
+                alt="">
+              <img class="hoverShow"
+                src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_hover.png"
+                alt="">
             </span>
           </div>
           <h3 class="title">{{CR_Data?.loanRepaymentHistory_card?.header}}</h3>
@@ -338,12 +360,15 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="calendarBox">
                 <div class="year">
-                  <span *ngFor="let year of previousYears" [ngClass]="{ 'active': selectedYear === year }" (click)="selectYear(year)">{{ year }}</span>
-                </div>
-                <ul class="monthView">
-                  <li *ngFor="let month of month; let i = index"
-                  [ngClass]="{'active': isSelectedMonth(month),'blur':  i > currentMonthIndex && selectedYear === currentYear}">{{ month }}
-                </li>              </ul>
+                  <span *ngFor="let year of previousYears" [ngClass]="{ 'active': selectedYear === year }"
+                  (click)="selectYear(year)">{{ year }}</span>
+              </div>
+              <ul class="monthView">
+                <li *ngFor="let month of monthNames; let i = index" [ngClass]="{'active': isSelectedMonth(month),
+                 'blur': !isMonth(month, selectedYear || 0) }">
+                  {{ month }}
+                </li>
+              </ul>
                 <div class="missingPayment">
                   {{ loan_repayment_history?.missedPayments.length }} Missing Payments
                 </div>
@@ -352,10 +377,12 @@
                 </p>
               </div>
             </div>
-          
+
             <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="multiBox">
-                <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png" alt="" />
+                <img
+                  src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png"
+                  alt="" />
                 <div class="textContent">
                   <!-- <h3>Multiple Delayed Payments!</h3> -->
                   <h3>{{infoCardLRP?.header}}</h3>
@@ -363,14 +390,16 @@
                     {{infoCardLRP?.description}}
                   </p>
                   <P>
-                  <span [style.color]="infoCardLRPColor">
-                    <img *ngIf ="infoCardLRP?.class === 'negative'" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/alert.png" alt="">
-                    {{ infoCardLRP?.warning }}
-                    <span *ngIf ="infoCardLRP?.class === 'positive'">
-                    <img src="./assets/LandingPage/goodWork.svg" alt="">
-                  </span>
-                  </span>
-               
+                    <span [style.color]="infoCardLRPColor">
+                      <img *ngIf="infoCardLRP?.class === 'negative'"
+                        src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/alert.png"
+                        alt="">
+                      {{ infoCardLRP?.warning }}
+                      <span *ngIf="infoCardLRP?.class === 'positive'">
+                        <img src="./assets/LandingPage/goodWork.svg" alt="">
+                      </span>
+                    </span>
+
 
                   </P>
 
@@ -378,19 +407,22 @@
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
 
-    <!-- Current DEBT -->
+      <!-- Current DEBT -->
 
-      <div class="col-lg-8 col-md-8 col-sm-12 mb-4"  *ngIf="!expandCurrentCreditSection"
-      >
+      <div class="col-lg-8 col-md-8 col-sm-12 mb-4" *ngIf="!expandCurrentCreditSection">
         <div class="loanHistory currentCredit" style="cursor: pointer;" (click)="expandCurrentCredit()">
           <div class="plus">
             <span>
-              <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_normal.png" alt="">
-              <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_hover.png" alt="">
+              <img class="hoverhide"
+                src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_normal.png"
+                alt="">
+              <img class="hoverShow"
+                src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_hover.png"
+                alt="">
             </span>
           </div>
           <h3 class="title">{{credit_analysis_card?.header}}</h3>
@@ -398,9 +430,7 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="creditContent">
                 <div class="currentChart">
-                  <app-doughnut
-                    [doughtnutJSONData]="ratiosecured"
-                  ></app-doughnut>
+                  <app-doughnut [doughtnutJSONData]="ratiosecured"></app-doughnut>
                   <ul>
                     <li *ngFor="let loan of ratiosecured?.byAmount; let i = index">
                       <span [style.border]="'1px solid ' + deptCompColors[i % deptCompColors.length]">
@@ -432,22 +462,26 @@
 
             <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="multiBox">
-                <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png" alt="" />
+                <img
+                  src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png"
+                  alt="" />
                 <div class="textContent">
                   <h3>{{cardView?.header}}</h3>
                   <p>
                     {{cardView?.description}}
                   </p>
 
-                <p>
-                <span [style.color]="warningColor">
-                  <img *ngIf ="cardView?.class === 'negative'" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/alert.png" alt="">
-                  {{ cardView?.warning }}
-                  <span *ngIf ="cardView?.class === 'positive'">
-                  <img src="./assets/LandingPage/goodWork.svg" alt="">
-                </span>
-                </span>
-              </p>
+                  <p>
+                    <span [style.color]="warningColor">
+                      <img *ngIf="cardView?.class === 'negative'"
+                        src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/alert.png"
+                        alt="">
+                      {{ cardView?.warning }}
+                      <span *ngIf="cardView?.class === 'positive'">
+                        <img src="./assets/LandingPage/goodWork.svg" alt="">
+                      </span>
+                    </span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -455,8 +489,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 mb-4 mhidden" *ngIf="!expandBlocks"
-     >
+      <div class="col-lg-4 col-md-4 col-sm-12 mb-4 mhidden" *ngIf="!expandBlocks">
         <div class="heightBox">
           <div class="row">
             <div class="col-lg-12 mb-3">
@@ -468,7 +501,8 @@
                   </p>
                 </div>
                 <div class="numberText d-flex align-items-center">
-                  <p [ngStyle]="{'color': creditReportData?.businessRiskRemark ? '#FF7B24' : 'var(--main2)',}">{{creditReportData?.businessRiskRemark ? 'Yes' : 'No'}}</p>
+                  <p [ngStyle]="{'color': creditReportData?.businessRiskRemark ? '#FF7B24' : 'var(--main2)',}">
+                    {{creditReportData?.businessRiskRemark ? 'Yes' : 'No'}}</p>
                   <!-- <span>Remarks</span> -->
                 </div>
               </div>
@@ -482,7 +516,8 @@
                   </p>
                 </div>
                 <div class="numberText">
-                  <p [ngStyle]="{'color': creditReportData?.creditEnquiry > 10 ? '#ec1111' : 'var(--main2)'}">{{creditReportData?.creditEnquiry}}</p>
+                  <p [ngStyle]="{'color': creditReportData?.creditEnquiry > 10 ? '#ec1111' : 'var(--main2)'}">
+                    {{creditReportData?.creditEnquiry}}</p>
                 </div>
               </div>
             </div>
@@ -502,8 +537,9 @@
                   </p>
                 </div>
                 <div class="numberText d-flex align-items-center">
-                  <p [ngStyle]="{'color': creditReportData?.businessRiskRemark ? '#FF7B24' : 'var(--main2)',}">{{creditReportData?.businessRiskRemark ? 'Yes' : 'No'}}</p>
-                        <!-- <span>Remarks</span> -->
+                  <p [ngStyle]="{'color': creditReportData?.businessRiskRemark ? '#FF7B24' : 'var(--main2)',}">
+                    {{creditReportData?.businessRiskRemark ? 'Yes' : 'No'}}</p>
+                  <!-- <span>Remarks</span> -->
                 </div>
               </div>
             </div>
@@ -516,61 +552,61 @@
                   </p>
                 </div>
                 <div class="numberText">
-                  <p [ngStyle]="{'color': creditReportData?.creditEnquiry > 10 ? '#ec1111' : 'var(--main2)'}">{{creditReportData?.creditEnquiry}}</p>
+                  <p [ngStyle]="{'color': creditReportData?.creditEnquiry > 10 ? '#ec1111' : 'var(--main2)'}">
+                    {{creditReportData?.creditEnquiry}}</p>
                 </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- Credit-Report-Section End -->
+  <!-- Credit-Report-Section End -->
 
-<!-- Two-plus-Section Start -->
-<div class="creditReportSection">
-  <div class="container">
+  <!-- Two-plus-Section Start -->
+  <div class="creditReportSection">
+    <div class="container">
 
 
-    <!-- Current DEBT Expend -->
-    <div class="col-lg-12 mb-4" *ngIf="expandCurrentCreditSection">
-      <div class="loanHistory">
-        <div class="plus" (click)="minimizeCurrentCredit()">
-          <span>
-            <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Minus_normal.png" alt="">
-            <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/minus_hover.png" alt="">
-          </span>
-        </div>
-        <h3 class="title mb-2">{{credit_analysis_card_Expanded?.header}}</h3> 
-        <p class="text-center mb-3">
-          {{credit_analysis_card_Expanded?.subheader}}
-        </p>
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="calendarBox">
-              <div class="defaultContent">
-                <h3>{{credit_analysis_card_Expanded?.credit_ratio_analysis?.header}}</h3>
-              </div>
-              <div class="row fontOpenSmall">
-                <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                  <div
-                    class="defaultHistory"
-                    style="box-shadow: 0px 3px 10px #272d3b24;"
-                  >
-                    <h3>{{credit_analysis_card_Expanded?.credit_ratio_analysis?.ratio_card?.header}}</h3>
-                    <div class="currentChart">
-                      <app-doughnut
-                        [doughtnutJSONData]="ratiosecured"
-                      ></app-doughnut>
-                      <ul>
-                        <li *ngFor="let loan of ratiosecured?.byAmount; let i = index">
-                          <span [style.border]="'1px solid ' + deptCompColors[i % deptCompColors.length]">
-                            <span [style.background-color]="deptCompColors[i % deptCompColors.length]"></span>
-                          </span>
-                          {{ loan.name }}
-                        </li>
-                      </ul>
-                      <!-- <ul>
+      <!-- Current DEBT Expend -->
+      <div class="col-lg-12 mb-4" *ngIf="expandCurrentCreditSection" #scrollTargetSection>
+        <div class="loanHistory">
+          <div class="plus" (click)="minimizeCurrentCredit()">
+            <span>
+              <img class="hoverhide"
+                src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Minus_normal.png"
+                alt="">
+              <img class="hoverShow"
+                src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/minus_hover.png"
+                alt="">
+            </span>
+          </div>
+          <h3 class="title mb-2">{{credit_analysis_card_Expanded?.header}}</h3>
+          <p class="text-center mb-3">
+            {{credit_analysis_card_Expanded?.subheader}}
+          </p>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="calendarBox">
+                <div class="defaultContent">
+                  <h3>{{credit_analysis_card_Expanded?.credit_ratio_analysis?.header}}</h3>
+                </div>
+                <div class="row fontOpenSmall">
+                  <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                    <div class="defaultHistory" style="box-shadow: 0px 3px 10px #272d3b24;">
+                      <h3>{{credit_analysis_card_Expanded?.credit_ratio_analysis?.ratio_card?.header}}</h3>
+                      <div class="currentChart">
+                        <app-doughnut [doughtnutJSONData]="ratiosecured"></app-doughnut>
+                        <ul>
+                          <li *ngFor="let loan of ratiosecured?.byAmount; let i = index">
+                            <span [style.border]="'1px solid ' + deptCompColors[i % deptCompColors.length]">
+                              <span [style.background-color]="deptCompColors[i % deptCompColors.length]"></span>
+                            </span>
+                            {{ loan.name }}
+                          </li>
+                        </ul>
+                        <!-- <ul>
                         <li>
                           <span style="border: 1px solid #12ba9b;"
                             ><span style="background-color: #12ba9b;"></span
@@ -584,169 +620,169 @@
                           Unsecured
                         </li>
                       </ul> -->
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                  <div class="defaultHistory active">
-                    <!-- <h3>{{credit_analysis_card_Expanded?.credit_ratio_analysis?.business_turnover_analysis?.header}}</h3> -->
-                    <h3> {{securedUnsecuredRatio?.header}}</h3>
-                    <ul class="numberBox d-flex">
-                      <li>
-                        Unsecured
-                        <span class="mb-0 mt-3">{{roundValue(securedUnsecuredRatioData?.ratio * 100)}}%</span>
-                       
-                      </li>
-                      <li>
-                        Secured
-                        <span class="mb-0 mt-3">{{roundValue((1 - securedUnsecuredRatioData?.ratio )*100)}}%</span>
-                      </li>
-                    </ul>
-
-                    <div class="stabilityBox">
-                      <p>Lenders’ Perspective</p>
-                    </div>
-
-                    <div class="box boxBorder mt-2">
-                      <p>
-                        {{securedUnsecuredRatio?.description}}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                  <div class="defaultHistory solutions">
-                    <h3>{{credit_analysis_card_Expanded?.credit_ratio_analysis?.solutions?.header}}</h3>
-                    <ul class="historyList">
-                      <li *ngFor="let bullet of solutionsAnalysis?.bullets">
-                        <span></span>
-                        {{bullet}}
-                      </li>
-                    
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="defaultContent">
-                <h3>{{credit_analysis_card_Expanded?.product_type_analysis?.header}}</h3>
-              </div>
-
-              <div class="row">
-                <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
-                  <div  
-                    class="defaultHistory"
-                    style="box-shadow: 0px 3px 10px #272d3b24;"
-                  >
-                    <h3>Ratio Credit Mix</h3>
-                    <div class="currentChart">
-                      <app-doughnut
-                    [doughtnutJSONData]="credit_analysis"
-                  ></app-doughnut>
-                  <ul>
-                    <li *ngFor="let loan of credit_analysis?.byAmount; let i = index">
-                      <span [style.border]="'1px solid ' + colorDots[i % colorDots.length]">
-                        <span [style.background-color]="colorDots[i % colorDots.length]"></span>
-                      </span>
-                      {{ loan.name }}
-                    </li>
-                  </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-8 col-md-8 col-sm-12 mb-3">
-                  <div class="businessTurnover2 h-100">
-                    <h3>{{credit_analysis_card_Expanded?.product_type_analysis?.ratio_credit_mix?.header}}</h3>
-
-                    <div class="row mt-4">
-                      <div class="col-lg-6">
-                        <div class="scoreProgress progressBarColor">
-                          <ul class="lineColor">
-                            <li class="colorChnage" *ngFor="let data of credit_analysis?.byCount; let i = index">
-                              <span>{{data?.name}}</span>
-                                  <div class="progress-bar-container">
-                                    <div class="progress-bar" style="width: 90%;" [style.background-color]="colorDots[i]"></div> 
-                                  </div>
-                                  
-                                  {{data?.value}}
-                                
-                            </li>
-                           
-                          </ul>
-                        </div>
                       </div>
-                      <div class="col-lg-6">
-                        <div class="downwardBox">
-                          <!-- <img
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                    <div class="defaultHistory active">
+                      <!-- <h3>{{credit_analysis_card_Expanded?.credit_ratio_analysis?.business_turnover_analysis?.header}}</h3> -->
+                      <h3> {{securedUnsecuredRatio?.header}}</h3>
+                      <ul class="numberBox d-flex">
+                        <li>
+                          Unsecured
+                          <span class="mb-0 mt-3">{{roundValue(securedUnsecuredRatioData?.ratio * 100)}}%</span>
+
+                        </li>
+                        <li>
+                          Secured
+                          <span class="mb-0 mt-3">{{roundValue((1 - securedUnsecuredRatioData?.ratio )*100)}}%</span>
+                        </li>
+                      </ul>
+
+                      <div class="stabilityBox">
+                        <p>Lenders’ Perspective</p>
+                      </div>
+
+                      <div class="box boxBorder mt-2">
+                        <p>
+                          {{securedUnsecuredRatio?.description}}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                    <div class="defaultHistory solutions">
+                      <h3>{{credit_analysis_card_Expanded?.credit_ratio_analysis?.solutions?.header}}</h3>
+                      <ul class="historyList">
+                        <li *ngFor="let bullet of solutionsAnalysis?.bullets">
+                          <span></span>
+                          {{bullet}}
+                        </li>
+
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="defaultContent">
+                  <h3>{{credit_analysis_card_Expanded?.product_type_analysis?.header}}</h3>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                    <div class="defaultHistory" style="box-shadow: 0px 3px 10px #272d3b24;">
+                      <h3>Ratio Credit Mix</h3>
+                      <div class="currentChart">
+                        <app-doughnut [doughtnutJSONData]="credit_analysis"></app-doughnut>
+                        <ul>
+                          <li *ngFor="let loan of credit_analysis?.byAmount; let i = index">
+                            <span [style.border]="'1px solid ' + colorDots[i % colorDots.length]">
+                              <span [style.background-color]="colorDots[i % colorDots.length]"></span>
+                            </span>
+                            {{ loan.name }}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-8 col-md-8 col-sm-12 mb-3">
+                    <div class="businessTurnover2 h-100">
+                      <h3>{{credit_analysis_card_Expanded?.product_type_analysis?.ratio_credit_mix?.header}}</h3>
+
+                      <div class="row mt-4">
+                        <div class="col-lg-6">
+                          <div class="scoreProgress progressBarColor">
+                            <ul class="lineColor">
+                              <li class="colorChnage" *ngFor="let data of credit_analysis?.byAmount; let i = index">
+                                <span>{{data?.name}}</span>
+                                <div class="progress-bar-container">
+                                  <div class="progress-bar" style="width: 90%;" [style.background-color]="colorDots[i]">
+                                  </div>
+                                </div>
+
+                                {{data?.countValue}}
+
+                              </li>
+
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="downwardBox">
+                            <!-- <img
                             src="./assets/LandingPage/themeInformation.svg"
                             alt=""
                           /> -->
-                          <div class="downwardContent">
-                            <p class="text-center">
-                              {{variety_of_active_loans?.description}}
-                            </p>
+                            <div class="downwardContent">
+                              <p class="text-center">
+                                {{variety_of_active_loans?.description}}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="defaultContent">
-                <h3>{{credit_analysis_card_Expanded?.other_analysis?.header}}</h3>
-              </div>
+                <div class="defaultContent">
+                  <h3>{{credit_analysis_card_Expanded?.other_analysis?.header}}</h3>
+                </div>
 
-              <div class="row">
-                <div class="col-md-6 col-lg-6 col-sm-12 mb-3">
-                  <div class="otherAnalysis">
-                    <h3>{{credit_analysis_card_Expanded?.other_analysis?.credit_card_utilization?.header}}</h3>
-                    <div class="checkBox">
-                      <h5>{{credit_analysis_card_Expanded?.other_analysis?.credit_card_utilization?.labels}}</h5>
-                      <button [ngStyle]="{'background-color': other_analysis.creditCardUtilizationExceeding ? '#ec1111' : 'var(--main2)', 'color': 'white'}">
-                        {{ other_analysis.creditCardUtilizationExceeding ? 'Yes' : 'No' }}
-                      </button>
+                <div class="row">
+                  <div class="col-md-6 col-lg-6 col-sm-12 mb-3">
+                    <div class="otherAnalysis">
+                      <h3>{{credit_analysis_card_Expanded?.other_analysis?.credit_card_utilization?.header}}</h3>
+                      <div class="checkBox">
+                        <h5>{{credit_analysis_card_Expanded?.other_analysis?.credit_card_utilization?.labels}}</h5>
+                        <button
+                          [ngStyle]="{'background-color': other_analysis.creditCardUtilizationExceeding ? '#ec1111' : 'var(--main2)', 'color': 'white'}">
+                          {{ other_analysis.creditCardUtilizationExceeding ? 'Yes' : 'No' }}
+                        </button>
+                      </div>
+                      <div class="banksBox flex-wrap d-block text-center">
+                        <h3>{{creditCardUtilization?.header}}</h3>
+                        <p class="text-center">
+                          {{creditCardUtilization?.description}}
+                        </p>
+                      </div>
                     </div>
-                    <div class="banksBox flex-wrap d-block text-center">
-                      <h3>{{creditCardUtilization?.header}}</h3>
-                      <p class="text-center">
-                        {{creditCardUtilization?.description}}
-                      </p>
+
+
+                  </div>
+                  <div class="col-md-6 col-lg-6 col-sm-12 mb-3">
+                    <div class="otherAnalysis active">
+                      <h3>{{credit_analysis_card_Expanded?.other_analysis?.small_loans?.header}}</h3>
+                      <div class="checkBox">
+                        <h5>{{credit_analysis_card_Expanded?.other_analysis?.small_loans?.labels}}</h5>
+                        <button
+                          [ngStyle]="{'background-color': other_analysis.smallLoansExceeding ? '#ec1111' : 'var(--main2)', 'color': 'white'}">
+                          {{ other_analysis.smallLoansExceeding ? 'Yes' : 'No' }}
+                        </button>
+                      </div>
+                      <div class="banksBox flex-wrap d-block text-center">
+                        <h3>{{smallLoans?.header}}</h3>
+                        <p class="text-center">
+                          {{smallLoans?.description}}
+                        </p>
+                      </div>
                     </div>
                   </div>
-
-                
-                </div>
-                <div class="col-md-6 col-lg-6 col-sm-12 mb-3">
-                  <div class="otherAnalysis active">
-                    <h3>{{credit_analysis_card_Expanded?.other_analysis?.small_loans?.header}}</h3>
-                    <div class="checkBox">
-                      <h5>{{credit_analysis_card_Expanded?.other_analysis?.small_loans?.labels}}</h5>
-                      <button [ngStyle]="{'background-color': other_analysis.smallLoansExceeding ? '#ec1111' : 'var(--main2)', 'color': 'white'}">
-                        {{ other_analysis.smallLoansExceeding ? 'Yes' : 'No' }}
-                      </button>
-                    </div>
-                    <div class="banksBox flex-wrap d-block text-center">
-                      <h3>{{smallLoans?.header}}</h3>
-                      <p class="text-center">
-                        {{smallLoans?.description}}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-12 col-sm-12 mb-3">
-                  <div class="summaryBox">
-                    <h4>{{credit_analysis_card_Expanded?.summary?.header}}</h4>
-                    <div class="summaryContent" *ngIf="credit_debt_analysis_summary?.bullets && credit_debt_analysis_summary?.bullets.length>0">
-                      <ul>
-                        <li *ngFor="let summary of credit_debt_analysis_summary?.bullets">
-                          <span></span>
-                         {{summary}}
-                        </li>
-                      </ul>
-                      <div class="smileImg">
-                        <img src={{caImgageIcon}} alt="" />
+                  <div class="col-md-12 col-lg-12 col-sm-12 mb-3">
+                    <div class="summaryBox">
+                      <h4>{{credit_analysis_card_Expanded?.summary?.header}}</h4>
+                      <div class="summaryContent"
+                        *ngIf="credit_debt_analysis_summary?.bullets && credit_debt_analysis_summary?.bullets.length>0">
+                        <ul>
+                          <li *ngFor="let summary of credit_debt_analysis_summary?.bullets">
+                            <span></span>
+                            {{summary}}
+                          </li>
+                        </ul>
+                        <div class="smileImg">
+                          <img src={{caImgageIcon}} alt="" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -756,41 +792,42 @@
           </div>
         </div>
       </div>
-    </div>
 
 
 
 
 
-    <div class="row mt-4" *ngIf="expandCurrentCreditSection">
-      <div  class="col-lg-12 col-md-12 col-sm-12">
-        <div class="heightBox">
-          <div class="row">
-            <div class="col-lg-6 col-sm-12 mt-4">
-              <div class="numberBox p-4">
-                <div class="content">
-                  <h3>{{CR_Data?.business_remarks_card?.header}}</h3>
-                  <p>
-                    {{creditRemarks?.description}}
-                  </p>
-                </div>
-                <div class="numberText d-flex align-items-center">
-                  <p *ngIf="creditReportData?.businessRiskRemark">Yes</p>
-                  <p *ngIf="!creditReportData?.businessRiskRemark">No</p>
-                  <!-- <span>Remarks</span> -->
+      <div class="row mt-4" *ngIf="expandCurrentCreditSection">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="heightBox">
+            <div class="row">
+              <div class="col-lg-6 col-sm-12 mt-4">
+                <div class="numberBox p-4">
+                  <div class="content">
+                    <h3>{{CR_Data?.business_remarks_card?.header}}</h3>
+                    <p>
+                      {{creditRemarks?.description}}
+                    </p>
+                  </div>
+                  <div class="numberText d-flex align-items-center">
+                    <p *ngIf="creditReportData?.businessRiskRemark">Yes</p>
+                    <p *ngIf="!creditReportData?.businessRiskRemark">No</p>
+                    <!-- <span>Remarks</span> -->
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-6 col-sm-12 mt-4">
-              <div class="numberBox colorChange p-4">
-                <div class="content">
-                  <h3>{{CR_Data?.enquiries_card?.header}}</h3>
-                  <p>
-                    {{creditEnquiry?.description}}
-                  </p>
-                </div>
-                <div class="numberText">
-                  <p [ngStyle]="{'color': creditReportData?.creditEnquiry > 10 ? '#ec1111' : 'var(--main2)'}">{{creditReportData?.creditEnquiry}}</p>
+              <div class="col-lg-6 col-sm-12 mt-4">
+                <div class="numberBox colorChange p-4">
+                  <div class="content">
+                    <h3>{{CR_Data?.enquiries_card?.header}}</h3>
+                    <p>
+                      {{creditEnquiry?.description}}
+                    </p>
+                  </div>
+                  <div class="numberText">
+                    <p [ngStyle]="{'color': creditReportData?.creditEnquiry > 10 ? '#ec1111' : 'var(--main2)'}">
+                      {{creditReportData?.creditEnquiry}}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -799,5 +836,4 @@
       </div>
     </div>
   </div>
-</div>
-<!-- Two-plus-Section End -->
+  <!-- Two-plus-Section End -->

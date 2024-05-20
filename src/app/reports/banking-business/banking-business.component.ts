@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -41,6 +41,9 @@ import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 })
 export class BankingBusinessComponent {
   @Input() bankingBusinessData: any;
+  @ViewChild('scrollTargetSection') scrollTargetSection!: ElementRef;
+  @ViewChild('scrollTargetSection2') scrollTargetSection2!: ElementRef;
+
 
   expandBusinessSection!: boolean;
   expandBalanceSection!: boolean;
@@ -174,6 +177,13 @@ export class BankingBusinessComponent {
 
     this.getInsights();
     this.getBankingSection();
+  }
+
+  scrollToSection() {
+    // Scroll to the target section
+    if (this.scrollTargetSection) {
+      this.scrollTargetSection.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
 
@@ -672,6 +682,9 @@ export class BankingBusinessComponent {
     this.expandBusinessSection = true;
     this.balanceSectionBlock = false;
     this.BusinessSectionBlock = false;
+    if (this.scrollTargetSection) {
+      this.scrollTargetSection.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   minimizeBusinessBanking() {
@@ -686,6 +699,9 @@ export class BankingBusinessComponent {
     this.balanceSectionBlock = false;
     this.expandBusinessSection = false;
     this.BusinessSectionBlock = false;
+    if (this.scrollTargetSection) {
+      this.scrollTargetSection.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   minimizeBankingBalance() {
@@ -697,16 +713,26 @@ export class BankingBusinessComponent {
   expandBankingBlanceBlock() {
     this.expandBusinessSection = false;
     this.expandBalanceSection = true;
+
+    if (this.scrollTargetSection) {
+      this.scrollTargetSection.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   expandBusinessSectionBlock() {
     localStorage.setItem('isExpand', 'true');
     this.expandBalanceSection = false;
     this.expandBusinessSection = true;
+    if (this.scrollTargetSection) {
+      this.scrollTargetSection.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   expandDebtRatioBlock() {
     this.expandDebtRatioSection = true;
+    if (this.scrollTargetSection2) {
+      this.scrollTargetSection2.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   mnimizeDebtRatioBlock() {

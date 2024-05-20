@@ -11,7 +11,7 @@
           <p>{{affordability_section?.subheader}}</p>
         </div>
       </div>
-      <div class="col-lg-12 col-md-12 col-sm-12" style="transition: .5s;" *ngIf="expandBusinessSection">
+      <div class="col-lg-12 col-md-12 col-sm-12" style="transition: .5s;" *ngIf="expandBusinessSection" #scrollTargetSection>
         <div class="businessTurnover mb-3">
           <div class="plus" (click)="minimizeBusinessBanking()">
             <span>
@@ -251,7 +251,7 @@
         </div>
       </div>
 
-      <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="expandBalanceSection">
+      <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="expandBalanceSection" #scrollTargetSection>
         <div class="businessTurnover mb-3">
           <div class="plus" (click)="minimizeBankingBalance()">
             <span>
@@ -524,7 +524,7 @@
         </div>
       </div>
 
-      <div class="col-lg-12 col-md-12 col-sm-12 mb-5" *ngIf="expandDebtRatioSection">
+      <div class="col-lg-12 col-md-12 col-sm-12 mb-5" *ngIf="expandDebtRatioSection" #scrollTargetSection>
         <div class="businessTurnover">
           <div class="plus" (click)="mnimizeDebtRatioBlock()">
             <span>
@@ -628,8 +628,8 @@
               <div class="col-lg-10 m-auto">
                 <div class="d-flex gap-4 align-items-center mobileAlign">
                   <div class="chequeBounces d-block">
-                    <span class="d-flex">{{banking_history?.cheque_bounces}} <small>BOUNCES</small></span>
-                    <img class="d-block" src={{risk_section?.cheque_bounces_card?.icon}} alt="">
+                    <span class="d-flex">{{banking_history?.chequeBounces?.chequeBounces6M}}<small>BOUNCES</small></span>
+                    <img class="d-block" src={{risk_section?.cheque_bounces_card?.icon_desktop}} alt="">
 
                   </div>
                   <div class="downwardBox" style="background-color: #FBF8FF;">
@@ -719,7 +719,7 @@
             <div class="col-lg-12">
               <div class="chequeBounces">
                 <span>{{banking_history?.chequeBounces?.chequeBounces6M}}  <small>BOUNCES</small></span>
-                <img src={{risk_section?.cheque_bounces_card?.icon}} alt="">
+                <img src={{risk_section?.cheque_bounces_card?.icon_desktop}} alt="">
               </div>
             </div>
             <div class="col-lg-12">
@@ -816,7 +816,7 @@
                     <div class="col-lg-12">
                       <div class="chequeBounces">
                         <span>{{banking_history?.chequeBounces?.chequeBounces6M}} <small>BOUNCES</small></span>
-                        <img src={{risk_section?.cheque_bounces_card?.icon}} alt="">
+                        <img src={{risk_section?.cheque_bounces_card?.icon_mobile}} alt="">
         
                       </div>
                     </div>
@@ -1016,3 +1016,4 @@
     </div>
   </div>
 </div>
+
