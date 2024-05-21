@@ -115,10 +115,10 @@ export class ReportsComponent {
   constructor(private api: ApiService, private cdr: ChangeDetectorRef, public router: Router,private storage: StorageService) { }
 
   ngOnInit(): void {
-    if(!this.storage.isToken())
-      {
-        this.router.navigate(['/in'])
-      }
+    // if(!this.storage.isToken())
+    //   {
+    //     this.router.navigate(['/in'])
+    //   }
     this.requestData = localStorage.getItem("reqData")
     this.parsedData = JSON.parse(this.requestData);
 

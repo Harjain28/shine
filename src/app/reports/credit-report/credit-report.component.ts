@@ -12,6 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CreditJourneyPopupComponent } from 'src/app/modal/credit-journey-popup/credit-journey-popup.component';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-credit-report',
   standalone: true,
@@ -121,10 +122,9 @@ export class CreditReportComponent {
   warningText!: string;
   res: any;
   previousYears!: any[]
-  currentMonthIndex: number = new Date().getMonth();
-  currentYear: number = new Date().getFullYear();
   monthNames: string[] = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
   byCount!: any[];
+
 
 
 
@@ -270,6 +270,7 @@ export class CreditReportComponent {
     };
 
     this.getInsights();
+
   }
 
   roundValue(value: number): number {
@@ -304,13 +305,64 @@ export class CreditReportComponent {
 
   getPastYears() {
     this.reportDate = this.reportsData?.report?.reportDate;
-    const year = new Date(this.reportDate).getFullYear();
+    const currentDate = new Date(this.reportDate);
+
+    const year = currentDate.getFullYear();
     this.previousYears = [];
     for (let i = 0; i <= 3; i++) {
       this.previousYears.push(year - i);
     }
-
   }
+
+  extractYears(payments: any[]): number[] {
+    const yearsSet = new Set<number>();
+    payments.forEach((payment) => {
+      if (typeof payment.year === 'number') {
+        yearsSet.add(payment.year);
+      }
+    });
+    return Array.from(yearsSet).sort((a, b) => a - b);
+  }
+
+  selectYear(year: number): void {
+    this.selectedYear = year;
+  }
+
+  getLast36Months() {
+    const result = [];
+    
+    this.reportDate = this.reportsData?.report?.reportDate.slice(0, 7);
+    const currentDate = new Date(this.reportDate);
+  
+    for (let i = 0; i < 36; i++) {
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth();
+  
+      result.push({ monthName: this.monthNames[month], monthIndex: month + 1, year: year });
+  
+      currentDate.setMonth(month - 1);
+    }
+  
+    return result.reverse();
+  }
+  
+
+  isMonth(month: string, year: number): boolean {
+    return this.getLast36Months().some(m => m.monthName === month && m.year === year);
+}
+
+  isSelectedMonth(month: string): boolean {
+    const last36Months = this.getLast36Months();
+    const foundMonth = last36Months.find(m => m.monthName === month);
+    if (foundMonth) {
+      return this.loan_repayment_history?.missedPayments.some((payment: { year: number; month: number }) =>
+        payment.year === this.selectedYear && payment.month === foundMonth.monthIndex
+      );
+    }
+    return false;
+  }
+
+
 
 
  setSummaryIcon(data: any) {
@@ -604,53 +656,7 @@ export class CreditReportComponent {
   }
 
 
-  extractYears(payments: any[]): number[] {
-    const yearsSet = new Set<number>();
-    payments.forEach((payment) => {
-      if (typeof payment.year === 'number') {
-        yearsSet.add(payment.year);
-      }
-    });
-    return Array.from(yearsSet).sort((a, b) => a - b);
-  }
 
-  selectYear(year: number): void {
-    this.selectedYear = year;
-  }
-
-  getLast36Months() {
-    const result = [];
-    
-    this.reportDate = this.reportsData?.report?.reportDate;
-    const currentDate = new Date(this.reportDate);
-  
-    for (let i = 0; i <= 36; i++) {
-      const year = currentDate.getFullYear();
-      const month = currentDate.getMonth();
-  
-      result.push({ monthName: this.monthNames[month], monthIndex: month + 1, year: year });
-  
-      currentDate.setMonth(month - 1);
-    }
-  
-    return result.reverse();
-  }
-  
-
-  isMonth(month: string, year: number): boolean {
-    return this.getLast36Months().some(m => m.monthName === month && m.year === year);
-}
-
-  isSelectedMonth(month: string): boolean {
-    const last36Months = this.getLast36Months();
-    const foundMonth = last36Months.find(m => m.monthName === month);
-    if (foundMonth) {
-      return this.loan_repayment_history?.missedPayments.some((payment: { year: number; month: number }) =>
-        payment.year === this.selectedYear && payment.month === foundMonth.monthIndex
-      );
-    }
-    return false;
-  }
 
 
   calculateRotation(angle: number): number {
