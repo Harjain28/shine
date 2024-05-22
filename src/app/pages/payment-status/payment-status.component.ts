@@ -19,6 +19,7 @@ export class PaymentStatusComponent {
   isDialogShow: boolean = false;
   dialogRef: MatDialogRef<StatusPopupComponent> | undefined;
   defaultparams: any;
+  parsedData: any;
 
   constructor(private dialog: MatDialog, private router: Router, private navigationService: NavigationService, private api: ApiService, private route: ActivatedRoute, private event: EventService){
     this.route.queryParamMap.subscribe((params) => {
@@ -28,6 +29,8 @@ export class PaymentStatusComponent {
   }
 
   ngOnInit(): void{
+   const localData:any = localStorage.getItem("reqData");
+    this.parsedData = JSON.parse(localData);
     if (!this.isDialogShow) {
       this.openBureauDialog();
     }
@@ -49,7 +52,7 @@ export class PaymentStatusComponent {
 
   confirmPayment() {
     this.defaultparams = {
-      mobile: '7976330044',
+      mobile: this.parsedData.mobile,
       payloadString:this.paramsObject.params?.respData 
     };
     // const params = { ...defaultparams };
