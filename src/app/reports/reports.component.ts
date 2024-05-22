@@ -28,11 +28,23 @@ import { MaterialModule } from '../material.module';
 import { noGSTJSON } from '../JsonFiles/no_gst';
 import { reportPageResponseJson } from '../JsonFiles/reponse';
 import { cust1Json } from '../JsonFiles/7001163340';
+import { cust1FixedJson } from '../JsonFiles/7001163340-fixed';
 import { cust2Json } from '../JsonFiles/7549539134';
 import { cust3Json } from '../JsonFiles/7638099486';
 import { cust4Json } from '../JsonFiles/8320026598';
 import { cust5Json } from '../JsonFiles/9815390378';
 import { StorageService } from '../services/storage.service';
+
+import { cust6Json } from '../JsonFiles/7296930323';
+import { cust7Json } from '../JsonFiles/9030368922';
+import { cust8Json } from '../JsonFiles/9727363295';
+import { cust9Json } from '../JsonFiles/9872044515';
+import { cust10Json } from '../JsonFiles/9886775551';
+import { cust11Json } from '../JsonFiles/8746099464';
+import { cust12Json } from '../JsonFiles/9243101552';
+import { cust13Json } from '../JsonFiles/9427043914';
+import { cust14Json } from '../JsonFiles/9880725508';
+import { cust15Json } from '../JsonFiles/9894874420';
 
 @Component({
   selector: 'app-reports',
@@ -240,6 +252,8 @@ export class ReportsComponent {
       this.reportsData = goodBureauJSON;
     } else if (fileName === '7001163340.json') {
       this.reportsData = cust1Json;
+    } else if (fileName === '7001163340-fixed.json') {
+      this.reportsData = cust1FixedJson;
     } else if (fileName === '7549539134.json') {
       this.reportsData = cust2Json;
     }  else if (fileName === '7638099486.json') {
@@ -248,6 +262,26 @@ export class ReportsComponent {
       this.reportsData = cust4Json;
     } else if (fileName === '9815390378.json') {
       this.reportsData = cust5Json;
+    } else if (fileName === '7296930323.json') {
+      this.reportsData = cust6Json;
+    } else if (fileName === '9030368922.json') {
+      this.reportsData = cust7Json;
+    } else if (fileName === '9727363295.json') {
+      this.reportsData = cust8Json;
+    } else if (fileName === '9872044515.json') {
+      this.reportsData = cust9Json;
+    } else if (fileName === '9886775551.json') {
+      this.reportsData = cust10Json;
+    } else if (fileName === '8746099464.json') {
+      this.reportsData = cust11Json;
+    } else if (fileName === '9243101552.json') {
+      this.reportsData = cust12Json;
+    } else if (fileName === '9427043914.json') {
+      this.reportsData = cust13Json;
+    } else if (fileName === '9880725508.json') {
+      this.reportsData = cust14Json;
+    } else if (fileName === '9894874420.json') {
+      this.reportsData = cust15Json;
     } else if (fileName === 'avg_bureau.json') {
       this.reportsData = avgBureauJSON;
     } else if (fileName === 'no_bureau.json') {

@@ -21,11 +21,11 @@ export class AppComponent {
   }
 
   isHeaderVisible(): boolean {
-    return !this.router.url.includes('report') || !this.storage.isToken();
+    return  !this.storage.isToken();
   }
 
-  isHeader2Visible() {
-    return  !this.router.url.includes('report') || !this.storage.isToken();
+  isHeader2Visible(): boolean {
+    return  !this.storage.isToken();
   }
 
 
