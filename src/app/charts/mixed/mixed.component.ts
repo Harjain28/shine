@@ -78,21 +78,6 @@ export class MixedComponent {
           pointStyle:"line"
 
         },
-        {
-          // label: 'Horizontal Line Dataset',
-          type: 'line',
-          data: [{ x: 0, y:this.businessLinedata?.min},
-            { x: 0, y: this.businessLinedata?.min},
-            { x: 0, y: this.businessLinedata?.min },
-            { x: 0, y: this.businessLinedata?.min},
-            { x: 0, y: this.businessLinedata?.min},
-            { x: 0, y: this.businessLinedata?.min }],
-          borderColor: 'gray',
-          borderWidth: 1,
-          fill: false,
-          pointStyle:"line"
-
-        },
       {
         // label: 'Bar Dataset',
         type: 'bar',
