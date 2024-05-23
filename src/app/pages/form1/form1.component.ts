@@ -60,11 +60,11 @@ export class Form1Component implements OnInit {
       lastName: new FormControl("", [Validators.required,Validators.pattern("^[a-zA-Z ]+$"),]),
       phoneNumber: new FormControl("", [Validators.required,Validators.pattern("^[6-9]\\d{9}$"),Validators.maxLength(10),]),
       emailId: new FormControl("", {validators: [Validators.required,Validators.pattern("^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$"),],updateOn: "blur",}),
-      pincode: new FormControl("", [Validators.required]),
+      pincode: new FormControl("", [Validators.required,Validators.maxLength(6), Validators.pattern('^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$')]),
       busninessName: new FormControl("", [Validators.required]),
       businessTurnover: new FormControl("", [Validators.required]),
       propertyOwnership: new FormControl("", [Validators.required]),
-      businessPan: new FormControl("", [Validators.required]),
+      businessPan: new FormControl("", [Validators.required, Validators.pattern('^([A-Z]){5}([0-9]){4}([A-Z]){1}$')]),
       businessVintage: new FormControl("", [Validators.required]),
       });
   }
@@ -89,6 +89,15 @@ export class Form1Component implements OnInit {
     this.formattedX = this.formatNumber(+this.unformattedX);
   }
 
+ isFourthCharP(formValue:any) {
+    let upperCaseString = formValue.businessPan.toUpperCase();
+    if (upperCaseString.length >= 4) {
+        return upperCaseString[3] === 'P';
+    } else {
+        return false;
+    }
+}
+
   getOtpbyPhone() {
     this.isSubmit = true;
     const formValue = this.form1.value;
@@ -109,49 +118,53 @@ export class Form1Component implements OnInit {
     requestData["propertyOwnership"] =  formValue.propertyOwnership;
     requestData["turnover"] =  this.unformattedX;
     requestData["businessVintage"] =  formValue.businessVintage;
-
     localStorage.setItem("reqData",JSON.stringify(requestData));
     localStorage.setItem("title",formValue.title);
+    // if (this.validatePin) {
+    //   this.showValidatepinError = false;
+    // } else {
+    //   this.validatePin = false;
+    //   this.showValidatepinError = true;
+    // }
 
+    // if (this.validatePAN) {
+    //   this.showValidatePANError = false;
+    // } else {
+    //   this.validatePAN = false;
+    //   this.showValidatePANError = true;
+    // }
+    // if (this.form1.valid && this.validatePAN && this.validatePin) { 
 
-    if (this.validatePin) {
-      this.showValidatepinError = false;
-    } else {
-      this.validatePin = false;
-      this.showValidatepinError = true;
-    }
-
-    if (this.validatePAN) {
-      this.showValidatePANError = false;
-    } else {
-      this.validatePAN = false;
-      this.showValidatePANError = true;
-    }
-
-    if (this.form1.valid && this.validatePAN && this.validatePin) { 
+    if (this.form1.valid) { 
     this.api.post(`api/Remediation/GetOTP`, requestData, params).subscribe({ next: (res: any) => {
           if (res.success) {
             this.navigationService.setLinkClicked(true);
             this.fetchOtp();
-            this.router.navigate(['/in/otp']);
-             this.isSubmit = true;
+            let upperCaseString = formValue.businessPan.toUpperCase();
+            if (upperCaseString[3] === 'P') {
+              this.router.navigate(['/in/otp']);
+              this.isSubmit = true;
+            } else {
+              this.api.alert('please use other pan card', 'error');
+              this.isSubmit = false;
+            }    
           } else          
             this.isSubmit = false;
           
         },
         error: error => {
           // this.isSubmit = false;
-          if(error.errors.Pincode){
-            this.showValidatepinError = true;
-          }
-          if(error.errors.BusinessPan){
-          this.showValidatePANError = true;
-          }
-          if(error.errors.BusinessName){
-            this.error = error.errors.BusinessName;
-            this.showBusniessNameError = true;
+          // if(error.errors.Pincode){
+          //   this.showValidatepinError = true;
+          // }
+          // if(error.errors.BusinessPan){
+          // this.showValidatePANError = true;
+          // }
+          // if(error.errors.BusinessName){
+          //   this.error = error.errors.BusinessName;
+          //   this.showBusniessNameError = true;
 
-          }
+          // }
            this.isSubmit = false;
 
 

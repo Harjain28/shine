@@ -29,8 +29,7 @@ export class PaymentStatusComponent {
   }
 
   ngOnInit(): void{
-   const localData:any = localStorage.getItem("reqData");
-    this.parsedData = JSON.parse(localData);
+  
     if (!this.isDialogShow) {
       this.openBureauDialog();
     }
@@ -51,6 +50,9 @@ export class PaymentStatusComponent {
   }
 
   confirmPayment() {
+    const localData:any = localStorage.getItem("reqData");
+    this.parsedData = JSON.parse(localData);
+    if (this.parsedData) {
     this.defaultparams = {
       mobile: this.parsedData.mobile,
       payloadString:this.paramsObject.params?.respData 
@@ -80,6 +82,7 @@ export class PaymentStatusComponent {
           //  ("Request complete");
         },
       });
+    }
   }
 
 

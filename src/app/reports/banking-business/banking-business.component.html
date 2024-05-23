@@ -88,10 +88,17 @@
                   <div class="col-lg-6">
                     <div class="qtrBox">
                       <div class="qtrList2">
-                        <ul>
+                        <!-- <ul>
                           <li>QTR 3</li>
                           <li class="active">QTR 4</li>
-                        </ul>
+                        </ul> -->
+                        <div class="checkBox">
+                          <mat-checkbox [checked]="dip?.class === 'negative'" disabled
+                            class="yes-checkbox">Yes</mat-checkbox>
+                          <mat-checkbox [checked]="dip?.class === 'positive'" disabled
+                            class="no-checkbox">No</mat-checkbox>
+
+                        </div>
                       </div>
                       <p>
                         <span [style.color]="dipColor">

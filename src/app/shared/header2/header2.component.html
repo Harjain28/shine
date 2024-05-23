@@ -25,7 +25,7 @@
                             <div class="d-flex">
                                 <a href="tel:+91 84509 67207" class="dropdown-item container mobileNumber">
                                     <mat-icon> phone</mat-icon> +91 8450967207</a>
-                                <a class="nav-item nav-link loginBtn"
+                                <a class="nav-item nav-link loginBtn"  (click)="loginBtn()"
                   >Login</a
                 >
                             </div>
@@ -86,7 +86,7 @@
                             <div class="d-flex">
                                 <a href="tel:+91 84509 67207" class="dropdown-item container mobileNumber">
                                     <mat-icon> phone</mat-icon> +91 84509 67207</a>
-                                <!-- <a [routerLink]="['']" class="nav-item nav-link loginBtn">Login</a> -->
+                                <a [routerLink]="['']" class="nav-item nav-link loginBtn"  (click)="loginBtn()">Login</a>
                             </div>
                         </div>
                         <div class="headerMenuStart">
@@ -122,7 +122,7 @@
                         </div>
 
                         <div class="mobileTop mhidden">
-                            <a [routerLink]="['']" class="nav-item nav-link loginBtn">Login</a>
+                            <a class="nav-item nav-link loginBtn"  (click)="loginBtn()">Login</a>
                         </div>
                     </div>
                 </div>

@@ -275,7 +275,7 @@ export class Header2Component {
   
   goToPricing(isLinkClicked: boolean): void {
     this.navigationService.setLinkClicked(isLinkClicked);
-    this.router.navigate(['/in/pricing_group']);
+    this.router.navigate(['/in/pricing_annual']);
   }
   
   
