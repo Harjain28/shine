@@ -86,7 +86,8 @@
                             <div class="d-flex">
                                 <a href="tel:+91 84509 67207" class="dropdown-item container mobileNumber">
                                     <mat-icon> phone</mat-icon> +91 84509 67207</a>
-                                <a [routerLink]="['']" class="nav-item nav-link loginBtn"  (click)="loginBtn()">Login</a>
+                                <a  class="nav-item nav-link loginBtn" data-bs-toggle="collapse"
+                                data-bs-target="#navbarCollapse" (click)="loginBtn()">Login</a>
                             </div>
                         </div>
                         <div class="headerMenuStart">
@@ -101,7 +102,8 @@
                                 <div class="nav-item"
                                     (mouseleave)="closeDropdown()">
                                     <a [class.active]="router.url ==='/in/pricing_group'" class="nav-link dropdown-toggle"
-                                        data-bs-toggle="dropdown" (click)="goToPricing(true)">Pricing
+                                        data-bs-toggle="dropdown" data-bs-toggle="collapse"
+                                        data-bs-target="#navbarCollapse" (click)="goToPricing(true)">Pricing
                                     </a>
                                 </div>
                                 <!-- <div class="nav-item"
@@ -112,7 +114,8 @@
                                 </div> -->
                                 <div class="nav-item dropdown hoverEffect" (mouseenter)="openDropdown()"
                             (mouseleave)="closeDropdown()">
-                            <a class="nav-item nav-link" [class.active]="router.url ==='/in/contact-us'"  (click)="goToContact()">Contact Us
+                            <a class="nav-item nav-link"  data-bs-toggle="collapse"
+                            data-bs-target="#navbarCollapse" [class.active]="router.url ==='/in/contact-us'"  (click)="goToContact()">Contact Us
                                
                             </a>
                            

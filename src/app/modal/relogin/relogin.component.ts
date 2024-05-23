@@ -125,10 +125,9 @@ export class ReloginComponent {
   }
 
   cancel() {
-
+    // this.eventService.back();
     this.closeDialoge();
     this.router.navigate(['/in'])
-
   }
 
   reLoginProcess() {

@@ -17,11 +17,8 @@ import { EventService } from 'src/app/services/event.service';
 import { Config } from 'ng-otp-input/lib/models/config';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject, Subscription, take, timer } from 'rxjs';
-import { ApiService } from 'src/app/services/api.service';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { MatSliderModule } from '@angular/material/slider';
-import { NavigationService } from 'src/app/services/navigation.service';
-import { OtpService } from 'src/app/services/otp.service';
 import { ReloginComponent } from 'src/app/modal/relogin/relogin.component';
 
 @Component({

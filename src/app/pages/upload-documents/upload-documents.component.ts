@@ -142,7 +142,6 @@ export class UploadDocumentsComponent {
       }
     });
     
-   
 
       if(this.uploadedParams === "true"){
         this.callPerfiosCallback(this.transID);

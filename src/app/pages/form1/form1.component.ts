@@ -219,11 +219,11 @@ export class Form1Component implements OnInit {
             // if(error.errors.BusinessPan){
             // this.showValidatePANError = true;
             // }
-            // if(error.errors.BusinessName){
-            //   this.error = error.errors.BusinessName;
-            //   this.showBusniessNameError = true;
+            if(error.errors.BusinessName){
+              this.error = error.errors.BusinessName;
+              this.showBusniessNameError = true;
 
-            // }
+            }
             this.isSubmit = false;
           },
           complete: () => {

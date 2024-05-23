@@ -18,6 +18,7 @@ import { RoundPipe } from './pipe/round.pipe';
 import { ViewComponent } from './view/view.component';
 import { GTMService } from './services/gtm.service';
 import { LoaderInterceptor } from './interceptor/interceptor';
+import { ErrorInterceptor } from './interceptor/errorInterceptor';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import { LoaderInterceptor } from './interceptor/interceptor';
     MatDialogModule,
     ViewComponent
   ],
-  providers: [DatePipe, GTMService,  {
+  providers: [DatePipe, GTMService,   { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }, {
     provide: HTTP_INTERCEPTORS,
     useClass: LoaderInterceptor,
     multi: true

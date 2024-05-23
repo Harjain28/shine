@@ -41,8 +41,8 @@ export class LandingPageComponent {
    autoWidth:true,
    mouseDrag: true,
    touchDrag: true,
-   autoplayTimeout:4000,
-   autoplaySpeed: 1500,
+   autoplayTimeout:8000,
+   autoplaySpeed: 2000,
     // navText: ["", ""],
     // navText: ["<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>", "<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>"],
     responsive: {
@@ -74,8 +74,8 @@ export class LandingPageComponent {
    mouseDrag: true,
    touchDrag: true,
 
-   autoplayTimeout:4000,
-   autoplaySpeed: 1500,
+   autoplayTimeout:8000,
+   autoplaySpeed: 2000,
 
     // navText: ["", ""],
     // navText: ["<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>", "<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>"],
@@ -109,8 +109,8 @@ export class LandingPageComponent {
     nav: false,
     margin: 15,
 
-    autoplayTimeout: 4000,
-    autoplaySpeed: 1500,
+    autoplayTimeout: 8000,
+    autoplaySpeed: 2000,
     // navText: ["", ""],
     // navText: ["<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>", "<img class='navTxtImg' src='./assets/images/icons/left-chevron-svgrepo-com.svg'>"],
     responsive: {

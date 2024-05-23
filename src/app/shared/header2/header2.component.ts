@@ -275,15 +275,18 @@ export class Header2Component {
   
   goToPricing(isLinkClicked: boolean): void {
     this.navigationService.setLinkClicked(isLinkClicked);
+    this.removeTogglesidebar();
     this.router.navigate(['/in/pricing_annual']);
   }
   
   
   goToContact(){
+    this.removeTogglesidebar();
     this.router.navigate(['/in/contact-us'])
   }
 
   goToAbout(){
+    this.removeTogglesidebar();
     window.location.href = 'https://www.creditenable.com/in/about-creditenable';
   }
 
@@ -292,6 +295,7 @@ export class Header2Component {
   }
 
   loginBtn(){
+     this.removeTogglesidebar();
       this.router.navigate(['in/login'])
   }
 
