@@ -1746,6 +1746,88 @@
                     font-size: 12px;
                     line-height: 26px;
                 }
+
+                ::ng-deep{
+
+                    .yes-checkbox{
+
+                        &.mat-mdc-checkbox-checked{
+                            
+                            .mdc-checkbox__background{
+                                background-color: #FF7B24 !important;
+                            }
+                        }
+
+                        .mdc-form-field{
+                            
+                            label{
+                                margin-top: 9px;
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: #3F3F3F;
+                                font-family: Poppins !important;
+                            }
+
+                            .mdc-checkbox{
+
+                                .mdc-checkbox__background{
+                                    width: 25px;
+                                    height: 25px;
+                                    border: 1px solid #D8D8D8;
+                                    border-radius: 5px;
+                                    padding: 3px;
+
+                                    svg{
+                                        width: 18px;
+                                        left: 2px;
+                                        top: 2px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                ::ng-deep{
+
+                    .no-checkbox{
+
+                        &.mat-mdc-checkbox-checked{
+                            
+                            .mdc-checkbox__background{
+                                background-color: var(--main2) !important;
+                            }
+                        }
+
+                        .mdc-form-field{
+
+                            label{
+                                margin-top: 9px;
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: #3F3F3F;
+                                font-family: Poppins !important;
+                            }
+
+                            .mdc-checkbox{
+
+                                .mdc-checkbox__background{
+                                    width: 25px;
+                                    height: 25px;
+                                    border: 1px solid #D8D8D8;
+                                    border-radius: 5px;
+                                    padding: 3px;
+
+                                    svg{
+                                        width: 18px;
+                                        left: 2px;
+                                        top: 2px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
             ul {
