@@ -134,7 +134,7 @@ export class UploadDocumentsComponent {
       this.mobileNo = this.parsedData.mobile;
     }
 
-    this.transID =localStorage.getItem("transID");
+    this.transID =localStorage.getItem("");
 
     this.api.postReportsApiObservable().subscribe((trigger: any) => {
       if (trigger) {
@@ -154,7 +154,8 @@ export class UploadDocumentsComponent {
         this.timeout = setTimeout(() => {
           clearInterval(this.interval);
           this.showEligible = false;
-          this.api.alertOk("There seems to be an issue in parsing your bank statements. We request you to please try again. Please ensure that if you choose to upload the bank statements, they are not password protected", "");
+          this.api.alertOk('There seems to be an issue in parsing your bank statements',
+          'We request you to please try again. Please ensure that if you choose to upload the bank statements, they are not password protected', "info");
           this.router.navigate(['/in/bank_statement'])
         }, 120000);
       } else{

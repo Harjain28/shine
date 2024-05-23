@@ -15,7 +15,7 @@
               Enter your information to get started.
             </h3>
 
-            <div class="formSelect">
+            <div class="formSelect" #formSection>
               <div class="example-container">
                 <form [formGroup]="form1">
                   <div
@@ -289,11 +289,10 @@
                       <mat-form-field appearance="fill">
                         <mat-label>Business PAN </mat-label>
                         <input
-                          style="text-transform: uppercase;"
-                          matInput
-                          formControlName="businessPan"
-                          placeholder=""
-                        />
+                        matInput
+                        formControlName="businessPan"
+                        placeholder=""
+                      />
                       </mat-form-field>
                       <div
                         class="error mb-2"

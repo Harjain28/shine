@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PagesComponent } from './pages/pages.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ShineHeaderComponent } from './shared/shine-header/shine-header.component';
@@ -17,6 +17,7 @@ import { Header2Component } from './shared/header2/header2.component';
 import { RoundPipe } from './pipe/round.pipe';
 import { ViewComponent } from './view/view.component';
 import { GTMService } from './services/gtm.service';
+import { LoaderInterceptor } from './interceptor/interceptor';
 
 
 @NgModule({
@@ -41,7 +42,11 @@ import { GTMService } from './services/gtm.service';
     MatDialogModule,
     ViewComponent
   ],
-  providers: [DatePipe, GTMService],
+  providers: [DatePipe, GTMService,  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoaderInterceptor,
+    multi: true
+  }],
   exports: [
   ],
   bootstrap: [AppComponent]

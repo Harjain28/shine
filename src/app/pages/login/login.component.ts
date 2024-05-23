@@ -106,10 +106,6 @@ export class LoginComponent {
     public eventService: EventService,
     public router: Router,
     private route: ActivatedRoute,
-    private api: ApiService,
-    private navigationService: NavigationService,
-    private otpService: OtpService,
-   // public dialogRef: MatDialogRef<ReloginComponent>,
     public dialog: MatDialog
   ) {
     this.route.queryParamMap.subscribe((params) => {
@@ -122,76 +118,8 @@ export class LoginComponent {
       width: '320px',
       height: 'auto',
     });
-    this.viewForm = new FormGroup({
-      phoneNumber: new FormControl('', [
-        Validators.required,
-        Validators.pattern('^[6-9]\\d{9}$'),
-        Validators.maxLength(10),
-      ]),
-    });
   }
 
-  cancel() {
-    this.router.navigate(['/in'])
-  }
-
-  reLoginProcess() {
-    if (this.viewForm.valid) {
-      this.isSubmit = true;
-      this.loader = true;
-      const defaultparams: any = {
-        mobile: this.viewForm.value.phoneNumber,
-        forceGenerate: false,
-        resend: false,
-        workflowName: '',
-      };
-      const requestData = {};
-      const params = { ...defaultparams };
-
-      this.api
-        .postForLogin(`api/Remediation/ReloginOTP`, requestData, defaultparams)
-        .subscribe({
-          next: (res: any) => {
-            if (res) {
-              this.isSubmit = true;
-              this.loader = false;
-              const data = { mobile: this.viewForm.value.phoneNumber };
-              localStorage.setItem('reqData', JSON.stringify(data));
-              sessionStorage.setItem('reloginUpdates', JSON.stringify(res));
-              this.navigationService.setLinkClicked(true);
-            //  this.closeDialoge();
-              if (res?.lastReportId && res?.lastReportId !== null) {
-                this.fetchOtp();
-                this.router.navigate(['/in/otp']);
-              } else if (res?.newUser) {
-                this.router.navigate(['in/pricing_annual']);
-              } else if (res?.paid) {
-                this.router.navigate(['in/bank_statement']);
-              } else {
-                this.router.navigate(['in/pricing_annual']);
-              }
-            }
-          },
-          error: (error) => {
-            this.isSubmit = false;
-            this.loader = false;
-          },
-          complete: () => {
-            // ("Request complete");
-          },
-        });
-    }
-  }
-
-  fetchOtp(): void {
-    this.otpService.fetchOtp(15000)
-      .then(otp => {
-        console.log('OTP:', otp);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
 
   closeDialoge(): void {
    // this.dialogRef.close();

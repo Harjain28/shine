@@ -208,16 +208,23 @@ postMethod(path: string, body: object = {} , params: HttpParams = new HttpParams
     })).pipe(catchError(this.formatErrors));
   }
 
-  alertOk(message: string, type: any) {
+  alertOk(headline: string, body: string, imageUrl: string) {
     return Swal.fire({
-      title: message,
-      icon: type,
+      title: headline,
+      html: body,
+      imageUrl: imageUrl,
+      imageWidth: 100,  // Adjust size as needed
+      imageHeight: 100,  // Adjust size as needed
+      imageAlt: 'Custom image',
       position: 'center',
       showConfirmButton: true,
       width: '600px',
-    })
+      customClass: {
+        title: 'swal2-title-custom',  // Apply custom class to the title
+      },
+    });
   }
-
+  
   alert(message: string, type: any) {
     return Swal.fire({
       title: message,

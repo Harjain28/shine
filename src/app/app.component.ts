@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { GTMService } from './services/gtm.service';
 import { StorageService } from './services/storage.service';
+import { LoaderService } from './services/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,13 @@ import { StorageService } from './services/storage.service';
 })
 export class AppComponent {
   title = 'shine';
-
+ 
   constructor(
-    public router: Router,private gtm: GTMService, private storage:StorageService ){
+    public router: Router,private gtm: GTMService,private loaderService: LoaderService, private storage:StorageService ){
       this.gtm.addGTMScript();
     }
 
+   isLoading$ = this.loaderService.isLoading;
   isShineHeaderVisible(): boolean {
     return this.router.url.includes('report') || this.storage.isToken();
   }
