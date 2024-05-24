@@ -62,18 +62,18 @@ export class PaymentStatusComponent {
       .remediation(`api/Remediation/PaymentConfirmation`, this.defaultparams)
       .subscribe({
         next: (res: any) => {
-          if (res?.trans_status === 'F') {
+          if (res?.trans_status.toUpperCase() === 'OK') {
+            this.api.alert('Please upload documents', "success");
+            this.closeBureauDialog();
+            this.navigationService.setLinkClicked(true);
+            this.router.navigate(['/in/bank_statement'],{ replaceUrl: true });
+          } else {
             this.isDialogShow = true;
              this.api.alert(res?.resp_message, "error");
              this.closeBureauDialog();
              this.event.updatePaymentStatus(true);
              this.navigationService.setLinkClicked(true);
              this.router.navigate(['/in/confirm_order'], { replaceUrl: true });
-          } else {
-            this.api.alert('Please upload documents', "success");
-            this.closeBureauDialog();
-            this.navigationService.setLinkClicked(true);
-          this.router.navigate(['/in/bank_statement'],{ replaceUrl: true });
           }
           
         },

@@ -134,16 +134,15 @@ export class UploadDocumentsComponent {
       this.mobileNo = this.parsedData.mobile;
     }
 
-    this.transID =localStorage.getItem("");
+    this.transID =localStorage.getItem("transID");
 
     this.api.postReportsApiObservable().subscribe((trigger: any) => {
       if (trigger) {
         this.postForReport();
       }
     });
-    
-
-      if(this.uploadedParams === "true"){
+  
+      if(this.uploadedParams === "true" && this.transID){
         this.callPerfiosCallback(this.transID);
         this.interval = setInterval(() => {
           this.callPerfiosCallback(this.transID);

@@ -141,14 +141,7 @@ export class ReportsComponent {
     // this.api.reportApi();
     const url = this.router.url;
     if (url.includes('/report')) {
-      this.postForReport();
-      // this.api.postReportsApiObservable().subscribe((trigger: any) => {
-      //   if (trigger) {
-         
-      //   }
-      // });
-      // this.reportsData = this.reportData;
-    
+      this.postForReport();    
     } else {
       this.navigateToSampleReportWithParams();
     }
@@ -221,8 +214,6 @@ export class ReportsComponent {
     this.potentialColor = compare.color;
   }
   this.level = reportData?.report?.potentialStage;
-
-  
 }
 
   ngAfterViewInit(): void {
@@ -247,54 +238,31 @@ export class ReportsComponent {
     const queryParams = {
       name: fileName
     };
-
-    if (fileName === 'good_bureau.json') {
-      this.reportsData = goodBureauJSON;
-    } else if (fileName === '7001163340.json') {
-      this.reportsData = cust1Json;
-    } else if (fileName === '7001163340-fixed.json') {
-      this.reportsData = cust1FixedJson;
-    } else if (fileName === '7549539134.json') {
-      this.reportsData = cust2Json;
-    }  else if (fileName === '7638099486.json') {
-      this.reportsData = cust3Json;
-    }  else if (fileName === '8320026598.json') {
-      this.reportsData = cust4Json;
-    } else if (fileName === '9815390378.json') {
-      this.reportsData = cust5Json;
-    } else if (fileName === '7296930323.json') {
-      this.reportsData = cust6Json;
-    } else if (fileName === '9030368922.json') {
-      this.reportsData = cust7Json;
-    } else if (fileName === '9727363295.json') {
-      this.reportsData = cust8Json;
-    } else if (fileName === '9872044515.json') {
-      this.reportsData = cust9Json;
-    } else if (fileName === '9886775551.json') {
-      this.reportsData = cust10Json;
-    } else if (fileName === '8746099464.json') {
-      this.reportsData = cust11Json;
-    } else if (fileName === '9243101552.json') {
-      this.reportsData = cust12Json;
-    } else if (fileName === '9427043914.json') {
-      this.reportsData = cust13Json;
-    } else if (fileName === '9880725508.json') {
-      this.reportsData = cust14Json;
-    } else if (fileName === '9894874420.json') {
-      this.reportsData = cust15Json;
-    } else if (fileName === 'avg_bureau.json') {
-      this.reportsData = avgBureauJSON;
-    } else if (fileName === 'no_bureau.json') {
-      this.reportsData = noBureauJSON;
-    } else if (fileName === 'poor_bureau.json') {
-      this.reportsData = poorBureauJSON;
-    } else if (fileName === 'no_gst.json') {
-      this.reportsData = noGSTJSON;
-    } else if (fileName === 'vpoor_bureau.json') {
-      this.reportsData = vpoorBureauJSON;
-    } else {
-      this.reportsData = this.reportData;
-    }
+    const reportsDataMap:any = {
+      'good_bureau.json': goodBureauJSON,
+      '7001163340.json': cust1Json,
+      '7001163340-fixed.json': cust1FixedJson,
+      '7549539134.json': cust2Json,
+      '7638099486.json': cust3Json,
+      '8320026598.json': cust4Json,
+      '9815390378.json': cust5Json,
+      '7296930323.json': cust6Json,
+      '9030368922.json': cust7Json,
+      '9727363295.json': cust8Json,
+      '9872044515.json': cust9Json,
+      '9886775551.json': cust10Json,
+      '8746099464.json': cust11Json,
+      '9243101552.json': cust12Json,
+      '9427043914.json': cust13Json,
+      '9880725508.json': cust14Json,
+      '9894874420.json': cust15Json,
+      'avg_bureau.json': avgBureauJSON,
+      'no_bureau.json': noBureauJSON,
+      'poor_bureau.json': poorBureauJSON,
+      'no_gst.json': noGSTJSON,
+      'vpoor_bureau.json': vpoorBureauJSON
+    };
+    this.reportsData = reportsDataMap[fileName] || this.reportData;
     this.getReportData(this.reportsData);
 
     this.gstDetails = this.reportsData?.report?.gstHistory;
@@ -349,11 +317,10 @@ export class ReportsComponent {
           this.showEligible = false;
           this.reportsData = res;
             this.getReportData(this.reportsData);
-          
         }
       },
       error: error => {
-        // this.router.navigate(['/in']);
+        this.router.navigate(['/in']);
       },
       complete: () => {
         // ('Request complete');
