@@ -100,11 +100,10 @@ export class LandingPageComponent {
   };
 
   customOptionPlan: OwlOptions = {
-    loop: true,
+    loop: false,
     mouseDrag: false,
     touchDrag: true,
     dots: true,
-    autoplay: true,
     navSpeed: 300,
     nav: false,
     margin: 15,
@@ -118,18 +117,21 @@ export class LandingPageComponent {
         items: 1.1,
         skip_validateItems: true,
         loop: true,
+        autoplay: true,
       },
       400: {
         items: 1.2,
         skip_validateItems: true,
         loop: true,
+        autoplay: true,
       },
       740: {
         items: 2,
         skip_validateItems: true,
+        autoplay: true,
       },
       940: {
-        items: 3,
+        items: 4,
         skip_validateItems: true,
       },
     },
