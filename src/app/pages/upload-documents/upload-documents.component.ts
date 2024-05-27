@@ -61,7 +61,7 @@ export class UploadDocumentsComponent {
   ChartsData: any;
   progressCount!: Subscription;
   istimers!: boolean;
-  ncjcount: number = 60;
+  ncjcount: number = 300;
   tick = 1000;
 
   progress = 0;
@@ -124,38 +124,32 @@ export class UploadDocumentsComponent {
 
   ngOnInit(): void {
     this.form();
-
-    // this.isChecked = this.api.isDocumentChecked;
-
     this.requestData = localStorage.getItem('reqData');
     this.parsedData = JSON.parse(this.requestData);
+    this.transID =localStorage.getItem("transID");
 
     if (this.parsedData) {
       this.mobileNo = this.parsedData.mobile;
-    }
-
-    this.transID =localStorage.getItem("transID");
-
+    }  
     this.api.postReportsApiObservable().subscribe((trigger: any) => {
       if (trigger) {
-        this.postForReport();
+        // this.postForReport();
       }
     });
-  
       if(this.uploadedParams === "true" && this.transID){
         this.callPerfiosCallback(this.transID);
         this.interval = setInterval(() => {
           this.callPerfiosCallback(this.transID);
-         },10000)
+         },15000)
         this.showEligible = true;
         this.api.reportApi();
         this.timeout = setTimeout(() => {
           clearInterval(this.interval);
           this.showEligible = false;
           this.api.alertOk('There seems to be an issue in parsing your bank statements',
-          'We request you to please try again. Please ensure that if you choose to upload the bank statements, they are not password protected', "info");
+          'We request you to please try again. Please ensure that if you choose to upload the bank statements, they are not password protected', "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/business_risk_big.svg");
           this.router.navigate(['/in/bank_statement'])
-        }, 120000);
+        }, 180000);
       } else{
         this.router.navigate(['/in/bank_statement'])
       }
@@ -170,7 +164,7 @@ export class UploadDocumentsComponent {
     }, 5000);
     this.progressInterval = setInterval(() => {
       this.updateProgress();
-    }, 1000);
+    }, 2000);
 
     this.cdr.detectChanges();
   }
@@ -213,7 +207,6 @@ export class UploadDocumentsComponent {
         formData.append("ErrorCode", " ");
         formData.append("ErrorMessage", " ");
     
-       
         this.api.postForPerfiosCallback(`api/Remediation/PerfiosCallback`, formData, params)
           .subscribe({
             next: (res: any) => {
@@ -223,12 +216,11 @@ export class UploadDocumentsComponent {
                 this.showEligible = false;
                 this.navigationService.setLinkClicked(true);
 
-                const id = sessionStorage.getItem("userId")
+                const id = localStorage.getItem("userId")
                 if(id){
                 this.router.navigate(['/in/report', id])
                 }
                 }
-               
                },
             error: error => {
               // this.api.alertOk("Oops! You’ve recently used CreditEnable to apply for a business loan. Please try again in a few weeks. Contact us if you need help!", "error");
@@ -314,7 +306,7 @@ export class UploadDocumentsComponent {
   submitBankStatement() {}
 
   counters() {
-    this.ncjcount = 60;
+    this.ncjcount = 300;
     this.progressCount = timer(0, this.tick)
       .pipe(take(this.ncjcount))
       .subscribe(() => {
@@ -325,6 +317,7 @@ export class UploadDocumentsComponent {
         }
       });
   }
+
   transform(value: number): string {
     const minutes: number = Math.floor(value / 60);
     return (

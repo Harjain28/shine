@@ -168,7 +168,7 @@ export class OtpComponent implements OnInit{
             } else {
               this.router.navigate(['/in/confirm_order']);
               this.isOtpSubmit = true;
-              sessionStorage.setItem("userId",res?.userId);
+              localStorage.setItem("userId",res?.userId);
             }
           } else {
             this.api.alert("Please add valid information", "error");
