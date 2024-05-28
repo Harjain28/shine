@@ -45,6 +45,32 @@ import { cust12Json } from '../JsonFiles/9243101552';
 import { cust13Json } from '../JsonFiles/9427043914';
 import { cust14Json } from '../JsonFiles/9880725508';
 import { cust15Json } from '../JsonFiles/9894874420';
+import { cust16Json } from '../JsonFiles/6352416401';
+import { cust17Json } from '../JsonFiles/7002057931';
+import { cust18Json } from '../JsonFiles/7386964691';
+import { cust19Json } from '../JsonFiles/7630960645';
+import { cust20Json } from '../JsonFiles/7755073434';
+import { cust21Json } from '../JsonFiles/7827722922';
+import { cust22Json } from '../JsonFiles/7984372723';
+import { cust23Json } from '../JsonFiles/8002177560';
+import { cust24Json } from '../JsonFiles/8008508500';
+import { cust25Json } from '../JsonFiles/8090799120';
+import { cust26Json } from '../JsonFiles/8250410163';
+import { cust27Json } from '../JsonFiles/8791301338';
+import { cust28Json } from '../JsonFiles/8888265422';
+import { cust29Json } from '../JsonFiles/8977577888';
+import { cust30Json } from '../JsonFiles/9014135897';
+import { cust31Json } from '../JsonFiles/9045532404';
+import { cust32Json } from '../JsonFiles/9423142181';
+import { cust33Json } from '../JsonFiles/9439345525';
+import { cust34Json } from '../JsonFiles/9509612970';
+import { cust35Json } from '../JsonFiles/9609368419';
+import { cust36Json } from '../JsonFiles/9679617825';
+import { cust37Json } from '../JsonFiles/9727198579';
+import { cust38Json } from '../JsonFiles/9810394413';
+import { cust39Json } from '../JsonFiles/9850517709';
+import { cust40Json } from '../JsonFiles/9874673188';
+import { cust41Json } from '../JsonFiles/9972099888';
 
 @Component({
   selector: 'app-reports',
@@ -256,6 +282,34 @@ export class ReportsComponent {
       '9427043914.json': cust13Json,
       '9880725508.json': cust14Json,
       '9894874420.json': cust15Json,
+      '8746099464-fixed.json': cust1FixedJson,
+      '9427043914-fixed.json': cust1FixedJson,
+      '6352416401.json': cust16Json,
+      '7002057931.json': cust17Json,
+      '7386964691.json': cust18Json,
+      '7630960645.json': cust19Json,
+      '7755073434.json': cust20Json,
+      '7827722922.json': cust21Json,
+      '7984372723.json': cust22Json,
+      '8002177560.json': cust23Json,
+      '8008508500.json': cust24Json,
+      '8090799120.json': cust25Json,
+      '8250410163.json': cust26Json,
+      '8791301338.json': cust27Json,
+      '8888265422.json': cust28Json,
+      '8977577888.json': cust29Json,
+      '9014135897.json': cust30Json,
+      '9045532404.json': cust31Json,
+      '9423142181.json': cust32Json,
+      '9439345525.json': cust33Json,
+      '9509612970.json': cust34Json,
+      '9609368419.json': cust35Json,
+      '9679617825.json': cust36Json,
+      '9727198579.json': cust37Json,
+      '9810394413.json': cust38Json,
+      '9850517709.json': cust39Json,
+      '9874673188.json': cust40Json,
+      '9972099888.json': cust41Json,
       'avg_bureau.json': avgBureauJSON,
       'no_bureau.json': noBureauJSON,
       'poor_bureau.json': poorBureauJSON,

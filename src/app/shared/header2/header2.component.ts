@@ -264,19 +264,11 @@ export class Header2Component {
   this.blogUrl = "https://staging.creditenable.com/in/blog/";
   }
 
-  // loginOrNot() {
-  //   this.isLoginShow = this.state.get("stagingJourneyId");
-
-  // }
-
-  goToSME(){
-    window.location.href = 'https://www.creditenable.com/in/sme-business-loan/secured-business-loan';
-  }
   
   goToPricing(isLinkClicked: boolean): void {
     this.navigationService.setLinkClicked(isLinkClicked);
     this.removeTogglesidebar();
-    this.router.navigate(['/in/pricing']);
+    this.router.navigate(['/in/pricing_annual']);
   }
   
   
