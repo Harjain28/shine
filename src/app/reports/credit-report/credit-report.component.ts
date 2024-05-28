@@ -243,7 +243,7 @@ export class CreditReportComponent {
     this.credit_analysis = {
       byAmount: this.mergedByName,
       colorDots: ['#211261', '#6A2FC2', '#AD6EEA', '#12BA9B', '#56D6B7', '#C3E028', '#E2E2E2', '#3F3F3F', '#FF7B24', '#EC1111'],
-      darkerShadeColor: ['#160c47', '#4d1a99', '#7a42c6', '#0a7a56', '#347d8a', '#8b9c1d', '#b8b8b8', '#222222', '#cc6518', '#9c0b0b'],
+      darkerShadeColor: ['#1c0d67','#5a22b3','#8c4fde','#0d9470','#3e97a4','#a3b63a','#d1d1d1','#2b2b2b','#e77421','#b20e0e']
     };
   }
   console.log(this.creditReportData?.creditAnalysis,"jj")
@@ -265,7 +265,7 @@ export class CreditReportComponent {
 
       ],
       colorDots: ['#C3E128', '#12ba9b'],
-      darkerShadeColor: ['#a5c91e', '#0e9b7c']
+      darkerShadeColor: ['#abd214', '#10b18d']
 
     };
 

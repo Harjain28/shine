@@ -76,6 +76,7 @@ export class ProbabilityOfLoanComponent {
     }
 });
 
+
   }
   
   moreOffers(){

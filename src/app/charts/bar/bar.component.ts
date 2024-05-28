@@ -24,8 +24,8 @@ export class BarComponent {
 
   ngOnInit(): void{
 
-      this.barvalues = this.barJSONData?.creditCount.slice(0,6);
-    this.barLabels = this.barJSONData?.months.slice(0,6);
+      this.barvalues = this.barJSONData?.creditCount.slice(6,12);
+    this.barLabels = this.barJSONData?.months.slice(6,12);
 
     
   }

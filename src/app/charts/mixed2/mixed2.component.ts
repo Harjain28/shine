@@ -29,8 +29,8 @@ export class Mixed2Component {
   }
 
   mixedChart(): void {
-    this.mixedValue1 = this.MixedJSONData2?.turnovers.slice(0,6);
-    this.mixedValue2 = this.MixedJSONData2?.months.slice(0,6);
+    this.mixedValue1 = this.MixedJSONData2?.turnovers.slice(6,12);
+    this.mixedValue2 = this.MixedJSONData2?.months.slice(6,12);
     
     this.turnoverLineData = this.MixedJSONData2?.turnoverLineData;
 
