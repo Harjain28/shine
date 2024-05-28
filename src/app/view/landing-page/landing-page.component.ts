@@ -207,6 +207,9 @@ export class LandingPageComponent {
 
   ngOnInit(): void {
     
+    
+
+
   
     this.state.removeItem();
     //   this.localStorage.removeSomeItem();
@@ -222,8 +225,15 @@ export class LandingPageComponent {
     //this.MSMEPageMetaData = metaData?.MSMEpageMetaData;
     this.eventService?.addmetaTag(this.MSMEPageMetaData?.title, this.MSMEPageMetaData?.description, this.MSMEPageMetaData?.keywords);
     this.getBusinessLoanData();
+
+     localStorage.setItem("plan_count",this.getRandomNumber().toString());
   
   }
+
+   getRandomNumber() {
+    return Math.floor(Math.random() * 6) + 1;
+  }
+
   playVideo(): void {
     if (this.videoPlayer && this.videoPlayer.nativeElement) {
       const video = this.videoPlayer.nativeElement as HTMLVideoElement;

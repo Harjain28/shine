@@ -1,0 +1,9 @@
+
+<div *ngIf="planCount !== null">
+    <ng-container *ngIf="planCount >= 1 && planCount <= 3; else showPricing2">
+      <app-pricing1></app-pricing1>
+    </ng-container>
+    <ng-template #showPricing2>
+      <app-pricing2></app-pricing2>
+    </ng-template>
+  </div>

@@ -39,5 +39,8 @@ export default[
     },
     {
         path: 'login', loadComponent:() => import('./login/login.component').then(c=>c.LoginComponent)
+    },
+    {
+        path: 'pricing', canActivate: [AuthGuard], loadComponent:() => import('./pricing-common/pricing-common.component').then(c=>c.PricingCommonComponent)
     }
 ] as Route[]

@@ -239,14 +239,12 @@ export class CreditReportComponent {
         countValue: byCountItem.value
       };
     });
-    console.log(this.mergedByName, "mergedByName")
     this.credit_analysis = {
       byAmount: this.mergedByName,
       colorDots: ['#211261', '#6A2FC2', '#AD6EEA', '#12BA9B', '#56D6B7', '#C3E028', '#E2E2E2', '#3F3F3F', '#FF7B24', '#EC1111'],
       darkerShadeColor: ['#1c0d67','#5a22b3','#8c4fde','#0d9470','#3e97a4','#a3b63a','#d1d1d1','#2b2b2b','#e77421','#b20e0e']
     };
   }
-  console.log(this.creditReportData?.creditAnalysis,"jj")
 
     this.securedUnsecuredRatioData =
       this.creditReportData?.securedUnsecuredRatio;
@@ -664,14 +662,15 @@ export class CreditReportComponent {
   }
 
   expand() {
-    if (this.scrollTargetSection) {
-      this.scrollTargetSection.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+   
     this.expandSection = true;
     this.expandBlocks = true;
 
     if (this.expandCurrentCreditSection == true) {
       this.expandCurrentCreditSection = false;
+    }
+    if (this.scrollTargetSection) {
+      this.scrollTargetSection.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
@@ -681,15 +680,16 @@ export class CreditReportComponent {
   }
 
   expandCurrentCredit() {
-    if (this.scrollTargetSection) {
-      this.scrollTargetSection.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+   
     if (this.expandSection == true) {
       this.expandSection = false;
       this.expandCurrentCreditSection = true;
     } else {
       this.expandCurrentCreditSection = true;
       this.expandBlocks = true;
+    }
+    if (this.scrollTargetSection) {
+      this.scrollTargetSection.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 

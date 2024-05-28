@@ -159,11 +159,11 @@ export class ReloginComponent {
                 this.fetchOtp();
                 this.router.navigate(['/in/otp']);
               } else if (res?.newUser) {
-                this.router.navigate(['in/pricing_annual']);
+                this.router.navigate(['in/pricing']);
               } else if (res?.paid) {
                 this.router.navigate(['in/bank_statement']);
               } else {
-                this.router.navigate(['in/pricing_annual']);
+                this.router.navigate(['in/pricing']);
               }
             }
           },

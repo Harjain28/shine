@@ -276,7 +276,7 @@ export class Header2Component {
   goToPricing(isLinkClicked: boolean): void {
     this.navigationService.setLinkClicked(isLinkClicked);
     this.removeTogglesidebar();
-    this.router.navigate(['/in/pricing_annual']);
+    this.router.navigate(['/in/pricing']);
   }
   
   
