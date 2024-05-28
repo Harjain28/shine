@@ -183,6 +183,8 @@ export class LandingPageComponent {
   shine_comparison: any;
   WhoisShineForSection: any;
   isUserInteracted: boolean = false;
+  pricing_url: any;
+  randomNumber: any;
 
  
   constructor(
@@ -206,11 +208,11 @@ export class LandingPageComponent {
   }
 
   ngOnInit(): void {
-    
-    
+    // localStorage.setItem("plan_count",this.getRandomNumber().toString());
+    const number = 6;
+      localStorage.setItem("plan_count", number.toString());
+    this.setPricingUrl();
 
-
-  
     this.state.removeItem();
     //   this.localStorage.removeSomeItem();
     this.breakpointObserver
@@ -225,14 +227,21 @@ export class LandingPageComponent {
     //this.MSMEPageMetaData = metaData?.MSMEpageMetaData;
     this.eventService?.addmetaTag(this.MSMEPageMetaData?.title, this.MSMEPageMetaData?.description, this.MSMEPageMetaData?.keywords);
     this.getBusinessLoanData();
-
-     localStorage.setItem("plan_count",this.getRandomNumber().toString());
-  
+   
   }
 
-   getRandomNumber() {
-    return Math.floor(Math.random() * 6) + 1;
+  setPricingUrl(): void {
+    this.randomNumber =  localStorage.getItem("plan_count");
+    if (Number(this.randomNumber) <= 3) {
+      this.pricing_url = '/in/pricing_group';
+    } else {
+      this.pricing_url = '/in/pricing_annual';
+    }
   }
+
+  //  getRandomNumber() {
+  //   return Math.floor(Math.random() * 6) + 1;
+  // }
 
   playVideo(): void {
     if (this.videoPlayer && this.videoPlayer.nativeElement) {

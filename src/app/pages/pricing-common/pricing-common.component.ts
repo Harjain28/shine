@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Pricing1Component } from '../pricing1/pricing1.component';
 import { Pricing2Component } from '../pricing2/pricing2.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pricing-common',
@@ -13,7 +14,7 @@ import { Pricing2Component } from '../pricing2/pricing2.component';
 export class PricingCommonComponent {
   planCount: any;
 
-  constructor(){
+  constructor(public router:Router){
 
   }
 

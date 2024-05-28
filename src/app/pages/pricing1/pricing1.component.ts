@@ -28,6 +28,7 @@ export class Pricing1Component {
   featureSection: any;
 
   @Output() dataEvent = new EventEmitter<any>();
+  planCount: any;
 
   constructor(public router: Router,private navigationService: NavigationService, private state: LocalStorageService,private dialog:MatDialog){
 
@@ -68,7 +69,7 @@ export class Pricing1Component {
   };
 
   ngOnInit(): void{
-
+    this.planCount = localStorage.getItem("plan_count");
     this.state.removeItem();
     this.getPricingData();
   }

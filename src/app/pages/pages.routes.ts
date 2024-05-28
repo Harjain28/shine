@@ -19,7 +19,7 @@ export default[
         path: 'bank_statement',   canActivate: [AuthGuard], loadComponent:() => import('./upload-documents/upload-documents.component').then(c=>c.UploadDocumentsComponent)
     },
     {
-        path: 'pricing_group', loadComponent:() => import('./pricing1/pricing1.component').then(c=>c.Pricing1Component)
+        path: 'pricing_group',canActivate: [AuthGuard], loadComponent:() => import('./pricing1/pricing1.component').then(c=>c.Pricing1Component)
     },
     
     {
@@ -40,7 +40,7 @@ export default[
     {
         path: 'login', loadComponent:() => import('./login/login.component').then(c=>c.LoginComponent)
     },
-    {
-        path: 'pricing', canActivate: [AuthGuard], loadComponent:() => import('./pricing-common/pricing-common.component').then(c=>c.PricingCommonComponent)
-    }
+    // {
+    //     path: 'pricing', canActivate: [AuthGuard], loadComponent:() => import('./pricing-common/pricing-common.component').then(c=>c.PricingCommonComponent)
+    // }
 ] as Route[]
