@@ -29,18 +29,33 @@ export class Pricing2Component {
   discountPrice: any;
   total: any;
   cuttedPrice: any;
-
+  randomNumber: any;
+  pricingPlan: any;
+  filteredPrice: any;
   constructor(private dialog: MatDialog, private router: Router, private navigationService:NavigationService ){
     this.getPricingData();
 
   }
 
   ngOnInit(): void{
-    
+    this.randomNumber = localStorage.getItem("plan_count");
+    this.showPricingPlan();
     this.getConfirmPaymentJson();
-   
   }
 
+  showPricingPlan() {
+    const plans:any = {
+      4: { filteredPrice: '3,999', pricingPlan: '2,999' },
+      5: { filteredPrice: '4,999', pricingPlan: '3,999' },
+      6: { filteredPrice: '8,999', pricingPlan: '7,499' },
+      default: { filteredPrice: '3,999', pricingPlan: '2,999' }
+    };
+    const selectedPlan = plans[Number(this.randomNumber)] || plans.default;
+    this.filteredPrice = selectedPlan.filteredPrice;
+    this.pricingPlan = selectedPlan.pricingPlan;
+  }
+
+  
   viewReportsForm(){
    this.openDialog();
   }
@@ -69,12 +84,15 @@ export class Pricing2Component {
 
   }
 
-  goToRegister(text:any, isLinkClicked:boolean){
+  goToRegister(text:any, plan:any, filteredPlan: any, isLinkClicked:boolean){
+    const pricingPlan = plan.replace(/,/g, '');
     localStorage.setItem("text",text);
+    localStorage.setItem("plan",pricingPlan);
+    localStorage.setItem("filteredPlan", filteredPlan);
     this.navigationService.setLinkClicked(isLinkClicked);
     this.router.navigate(['/in/register'])
-
   }
+  
 
   getConfirmPaymentJson(){
     this.filteredData = shinePricingPageJSON?.Confirm_Order_JSON?.OrderText[1];

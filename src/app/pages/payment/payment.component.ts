@@ -59,6 +59,8 @@ export class PaymentComponent {
   isInvalidCoupon: boolean = false;
   code: any;
   isSubmit!: boolean;
+  planPrice: any | null;
+
 
 
 
@@ -90,7 +92,10 @@ export class PaymentComponent {
       this.requestData = localStorage.getItem("reqData");
       this.parsedData = JSON.parse(this.requestData);
       this.title = localStorage.getItem("title");
-
+      this.Headertext = localStorage.getItem("text");
+      this.planPrice =  localStorage.getItem("plan");
+      this.cuttedPrice =  localStorage.getItem("filteredPlan");
+      
       if(this.parsedData){
         this.fName = this.parsedData.firstName.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase());
         this.lName = this.parsedData.lastName.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase());
@@ -100,7 +105,6 @@ export class PaymentComponent {
         this.email = this.parsedData.email;
       }
       this.state = localStorage.getItem("state");
-      this.Headertext = localStorage.getItem("text");
       this.getConfirmPaymentJson();  
 
       
@@ -108,9 +112,11 @@ export class PaymentComponent {
 
     cancelCoupon(){
       this.discountSection = false;
-      this.calGST = ((this.filteredData?.Price)*18)/100;
-      const totalPrice = parseFloat(this.filteredData?.Price) + this.calGST;
+      if (this.planPrice) {
+      this.calGST = ((this.planPrice)*18)/100;
+      const totalPrice = parseFloat(this.planPrice) + this.calGST;
       this.total = totalPrice.toFixed(2);
+      }
       this.code = "";
     }
 
@@ -124,9 +130,9 @@ export class PaymentComponent {
               this.code = this.couponInput;
               if (res.hasOwnProperty('percent') || res.hasOwnProperty('flatPrice')) {
                 this.isInvalidCoupon = false;
-                this.discountPrice = res?.percent ? (this.filteredData.Price * res?.percent) / 100 : res?.flatPrice;
-                this.calGST = ((this.filteredData.Price - this.discountPrice) * 18) / 100;
-                const totalPrice = parseFloat(this.filteredData?.Price) + this.calGST - this.discountPrice;
+                this.discountPrice = res?.percent ? (this.planPrice * res?.percent) / 100 : res?.flatPrice;
+                this.calGST = ((this.planPrice - this.discountPrice) * 18) / 100;
+                const totalPrice = parseFloat(this.planPrice) + this.calGST - this.discountPrice;
                 this.total = totalPrice.toFixed(2);
               }
             }
@@ -153,16 +159,13 @@ export class PaymentComponent {
       if(this.Headertext === "Monthly")
       {
         this.per_text = "month"
-        this.cuttedPrice = '₹1499'
       }
       else{
         this.per_text = "year"
-        this.cuttedPrice = '₹1999'
-
       }
 
-      this.calGST = ((this.filteredData?.Price)*18)/100;
-      const totalPrice = parseFloat(this.filteredData?.Price) + this.calGST;
+      this.calGST = ((this.planPrice)*18)/100;
+      const totalPrice = parseFloat(this.planPrice) + this.calGST;
       this.total = totalPrice.toFixed(2);
 
     }

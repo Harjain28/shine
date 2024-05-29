@@ -36,7 +36,7 @@
           <ul>
             <li>
               <span>Shine {{filteredData?.Headertext}} Plan</span>
-              <span><b>₹{{filteredData?.Price}}</b></span>
+              <span><b>₹{{planPrice}}</b></span>
             </li>
             <li *ngIf = "!discountSection">
               <span>
@@ -121,7 +121,7 @@
             <div class="box">
               <h3>{{filteredData?.Headertext}} Plan</h3>
               <del>{{cuttedPrice}}</del>
-              <span>₹{{filteredData?.Price}} <small>+GST</small></span>
+              <span>₹{{planPrice | number:'':'en-IN'}} <small>+GST</small></span>
               <p>1 report per {{per_text}}</p>
             </div>
           </div>

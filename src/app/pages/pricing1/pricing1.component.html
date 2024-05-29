@@ -16,19 +16,19 @@
                     <div class="pricingBox w-33">
                         <div class="contentBox">
                             <h3>{{pricingHeader?.headerText[1]}} Plan</h3>
-                            <del>₹1499</del>
-                            <span>₹999</span>
+                            <del>₹{{monthlyFilteredPlan}}</del>
+                            <span>₹{{monthlyPlan}}</span>
                             <p>per member, per month</p>
-                            <button class="btn pricing_group"  (click)="goToRegister(pricingHeader?.headerText[1], true)">{{pricingHeader?.CTA_Text}}</button>
+                            <button class="btn pricing_group"  (click)="goToRegister(pricingHeader?.headerText[1], monthlyPlan,monthlyFilteredPlan,true)">{{pricingHeader?.CTA_Text}}</button>
                         </div>
                     </div>
                     <div class="pricingBox w-33">
                         <div class="contentBox">
                             <h3>{{pricingHeader?.headerText[2]}} Plan</h3>
-                            <del>4999</del>
-                            <span>₹3999</span>
+                            <del>₹{{annaulFilteredPlan}}</del>
+                            <span>₹{{annualPlan}}</span>
                             <p>per member, per year</p>
-                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[2], true)">{{pricingHeader?.CTA_Text}}</button>
+                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[2], annualPlan,annaulFilteredPlan, true)">{{pricingHeader?.CTA_Text}}</button>
                         </div>
                         <button class="valueBtn">VALUE FOR MONEY</button>
                     </div>
@@ -49,10 +49,10 @@
                     <li class="button">
                         <span></span>
                         <span>
-                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[1], true)">{{pricingHeader?.CTA_Text}}</button>
+                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[1],monthlyPlan,monthlyFilteredPlan,  true)">{{pricingHeader?.CTA_Text}}</button>
                         </span>
                         <span>
-                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[2], true)">{{pricingHeader?.CTA_Text}}</button>
+                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[2],annualPlan,annaulFilteredPlan, true)">{{pricingHeader?.CTA_Text}}</button>
                         </span>
                     </li>
                 </ul>
@@ -70,17 +70,17 @@
                     <div class="priceBox">
                         <div class="monthView">
                             <h3>{{pricingHeader?.headerText[1]}}</h3>
-                            <del>₹1499</del>
-                            <span>₹999</span>
+                            <del>₹{{monthlyFilteredPlan}}</del>
+                            <span>₹{{monthlyPlan}}</span>
                             <p>per member, per month</p>
-                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[1], true)">{{pricingHeader?.CTA_Text}}</button>
+                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[1],monthlyPlan,monthlyFilteredPlan, true)">{{pricingHeader?.CTA_Text}}</button>
                         </div>
                         <div class="monthView active">
                             <h3>{{pricingHeader?.headerText[2]}}</h3>
-                            <del>4999</del>
-                            <span>₹3999</span>
+                            <del>₹{{annaulFilteredPlan}}</del>
+                            <span>₹{{annualPlan}}</span>
                             <p>per member, per year</p>
-                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[2], true)">{{pricingHeader?.CTA_Text}}</button>
+                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[2],annualPlan, annaulFilteredPlan, true)">{{pricingHeader?.CTA_Text}}</button>
                         </div>
                     </div>
 
@@ -99,8 +99,8 @@
                         </li>
 
                         <div class="button">
-                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[1], true)">{{pricingHeader?.CTA_Text}}</button>
-                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[2], true) ">{{pricingHeader?.CTA_Text}}</button>
+                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[1],monthlyPlan, monthlyFilteredPlan, true)">{{pricingHeader?.CTA_Text}}</button>
+                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[2],annualPlan,annaulFilteredPlan, true) ">{{pricingHeader?.CTA_Text}}</button>
                         </div>
                     </ul>
                 </div>

@@ -14,6 +14,8 @@ import { PopupCopyComponent } from 'src/app/modal/popup-copy/popup-copy.componen
 import { MatDialog } from '@angular/material/dialog';
 import { ClientSectionComponent } from 'src/app/shared/client-section/client-section.component';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { PricingService } from 'src/app/services/random-pricing.service';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 
 
@@ -195,12 +197,12 @@ export class LandingPageComponent {
     private cdr: ChangeDetectorRef,
     private state: LocalStorageService,
     private breakpointObserver: BreakpointObserver,
-    private elementRef: ElementRef,
-    private renderer: Renderer2,
+    private pricingService: PricingService,
+    private navigationService:NavigationService,
+
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {
 
-    
   }
    @HostListener("window:load", ["$event"])
   checkScroll() {
@@ -208,11 +210,7 @@ export class LandingPageComponent {
   }
 
   ngOnInit(): void {
-    // localStorage.setItem("plan_count",this.getRandomNumber().toString());
-    const number = 6;
-      localStorage.setItem("plan_count", number.toString());
-    this.setPricingUrl();
-
+    this.redirectToPricing();
     this.state.removeItem();
     //   this.localStorage.removeSomeItem();
     this.breakpointObserver
@@ -230,18 +228,10 @@ export class LandingPageComponent {
    
   }
 
-  setPricingUrl(): void {
-    this.randomNumber =  localStorage.getItem("plan_count");
-    if (Number(this.randomNumber) <= 3) {
-      this.pricing_url = '/in/pricing_group';
-    } else {
-      this.pricing_url = '/in/pricing_annual';
-    }
+  redirectToPricing(): void {
+    this.navigationService.setLinkClicked(true);
+    this.pricing_url = this.pricingService.getPricingUrl();
   }
-
-  //  getRandomNumber() {
-  //   return Math.floor(Math.random() * 6) + 1;
-  // }
 
   playVideo(): void {
     if (this.videoPlayer && this.videoPlayer.nativeElement) {

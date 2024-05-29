@@ -13,6 +13,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { ApiService } from 'src/app/services/api.service';
 import { ReloginComponent } from 'src/app/modal/relogin/relogin.component';
+import { PricingService } from 'src/app/services/random-pricing.service';
 
 @Component({
   selector: 'app-header2',
@@ -241,7 +242,7 @@ export class Header2Component {
   editEventSubscription!: Subscription;
   paramsObject: any;
 
-  constructor(public router: Router, private api: ApiService,private navigationService:NavigationService ,private state : LocalStorageService, private storage : StorageService, @Inject(DOCUMENT) private document: Document, private route: ActivatedRoute ,public dialog: MatDialog, public urlService: UrlService)  {
+  constructor(public router: Router, private api: ApiService,private pricingService:PricingService ,private navigationService:NavigationService ,private state : LocalStorageService, private storage : StorageService, @Inject(DOCUMENT) private document: Document, private route: ActivatedRoute ,public dialog: MatDialog, public urlService: UrlService)  {
     this.route.queryParamMap.subscribe((params) => {
       this.paramsObject = { ...params };
     });
@@ -268,7 +269,9 @@ export class Header2Component {
   goToPricing(isLinkClicked: boolean): void {
     this.navigationService.setLinkClicked(isLinkClicked);
     this.removeTogglesidebar();
-    this.router.navigate(['/in/pricing_annual']);
+    this.navigationService.setLinkClicked(true);
+    const pricing_url = this.pricingService.getPricingUrl();
+    this.router.navigate([pricing_url]);
   }
   
   
