@@ -2,6 +2,14 @@
 <div class="creditReportSection section_padding">
   <div class="container">
     <div class="row">
+
+      <div class="col-lg-12 padding30 dhidden">
+        <div class="title">
+          <h2><span>{{CR_Data?.header}}</span></h2>
+          <p>{{CR_Data?.subheader}}</p>
+        </div>
+      </div>
+
       <div class="mobileSilder dhidden">
         <owl-carousel-o [options]="customOptions4">
           <ng-container>
@@ -83,7 +91,7 @@
 
       </div>
 
-      <div class="col-lg-12">
+      <div class="col-lg-12 padding30 mhidden">
         <div class="title">
           <h2><span>{{CR_Data?.header}}</span></h2>
           <p>{{CR_Data?.subheader}}</p>
@@ -93,7 +101,7 @@
       <div class="container" #scrollTargetSection>
         <ng-container *ngIf="expandSection" >
           <div class="row">
-            <div class="col-lg-12 mb-4">
+            <div class="col-lg-12 mb-4 padding30 margin15">
               <div class="loanHistory">
                 <div class="plus" (click)="minimize()">
                   <span>
@@ -212,12 +220,12 @@
                         </div>
                       </div>
 
-                      <div class="defaultContent">
+                      <div class="defaultContent mhidden">
                         <h3>{{LoanReplacementExpanded?.otherAnalysis?.header}}</h3>
                       </div>
 
                       <div class="row">
-                        <div *ngIf="other_analysis" class="col-md-8 col-lg-8 col-sm-12 mb-3">
+                        <div *ngIf="other_analysis" class="col-md-8 col-lg-8 col-sm-12">
                           <div class="otherAnalysis">
                             <h3>{{LoanReplacementExpanded?.otherAnalysis?.topBanks?.header}}</h3>
                             <div class="checkBox">
@@ -278,7 +286,7 @@
                           </div>
                         </div>
 
-                        <div class="col-md-12 col-lg-12 col-sm-12 mb-3">
+                        <div class="col-md-12 col-lg-12 col-sm-12">
                           <div class="summaryBox" *ngIf="summary">
                             <h4>{{LoanReplacementExpanded?.summary?.header}}</h4>
                             <div class="summaryContent">
@@ -305,7 +313,7 @@
         </ng-container>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 mb-4 mhidden">
+      <div class="col-lg-4 col-md-4 col-sm-12 mb-4 margin15 padding30 mhidden">
         <div class="scoreBox">
           <h3>{{CR_Data?.bureau_score_card?.header}}</h3>
           <div class="scoreChart text-center">
@@ -343,7 +351,7 @@
         </div>
       </div>
 
-      <div class="col-lg-8 col-md-8 col-sm-12 mb-4" *ngIf="!expandSection">
+      <div class="col-lg-8 col-md-8 col-sm-12 mb-4 margin15 padding30" *ngIf="!expandSection">
         <div class="loanHistory" style="cursor: pointer;" (click)="expand()">
           <div class="plus">
             <span>
@@ -358,7 +366,7 @@
           <h3 class="title">{{CR_Data?.loanRepaymentHistory_card?.header}}</h3>
           <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
-              <div class="calendarBox">
+              <div class="calendarBox ">
                 <div class="year">
                   <span *ngFor="let year of previousYears" [ngClass]="{ 'active': selectedYear === year }"
                   (click)="selectYear(year)">{{ year }}</span>
@@ -413,7 +421,7 @@
 
       <!-- Current DEBT -->
 
-      <div class="col-lg-8 col-md-8 col-sm-12 mb-4" *ngIf="!expandCurrentCreditSection">
+      <div class="col-lg-8 col-md-8 col-sm-12 mb-4 margin15 padding30" *ngIf="!expandCurrentCreditSection">
         <div class="loanHistory currentCredit" style="cursor: pointer;" (click)="expandCurrentCredit()">
           <div class="plus">
             <span>
@@ -489,7 +497,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 mb-4 mhidden" *ngIf="!expandBlocks">
+      <div class="col-lg-4 col-md-4 col-sm-12 mb-4 margin15 mhidden padding30" *ngIf="!expandBlocks">
         <div class="heightBox">
           <div class="row">
             <div class="col-lg-12 mb-3">
@@ -525,7 +533,7 @@
         </div>
       </div>
 
-      <div class="col-lg-12 col-md-12 col-sm-12 mb-4" *ngIf="expandSection">
+      <div class="col-lg-12 col-md-12 col-sm-12 mb-4 margin15 padding30" *ngIf="expandSection">
         <div class="heightBox">
           <div class="row">
             <div class="col-lg-6 col-md-12 mb-4">
@@ -566,11 +574,11 @@
 
   <!-- Two-plus-Section Start -->
   <div class="creditReportSection">
-    <div class="container">
+    <div class="container padding30">
 
 
       <!-- Current DEBT Expend -->
-      <div class="col-lg-12 mb-4" *ngIf="expandCurrentCreditSection" >
+      <div class="col-lg-12 mb-4 margin15" *ngIf="expandCurrentCreditSection" >
         <div class="loanHistory">
           <div class="plus" (click)="minimizeCurrentCredit()">
             <span>
@@ -583,7 +591,7 @@
             </span>
           </div>
           <h3 class="title mb-2">{{credit_analysis_card_Expanded?.header}}</h3>
-          <p class="text-center mb-3">
+          <p class="text-center mb-3 font-Size">
             {{credit_analysis_card_Expanded?.subheader}}
           </p>
           <div class="row">
@@ -674,7 +682,7 @@
                       <h3>Ratio Credit Mix</h3>
                       <div class="currentChart">
                         <app-doughnut [doughtnutJSONData]="credit_analysis"></app-doughnut>
-                        <ul>
+                        <ul class="listSize">
                           <li *ngFor="let loan of credit_analysis?.byAmount; let i = index">
                             <span [style.border]="'1px solid ' + colorDots[i % colorDots.length]">
                               <span [style.background-color]="colorDots[i % colorDots.length]"></span>
@@ -732,7 +740,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-md-6 col-lg-6 col-sm-12 mb-3">
+                  <div class="col-md-6 col-lg-6 col-sm-12">
                     <div class="otherAnalysis">
                       <h3>{{credit_analysis_card_Expanded?.other_analysis?.credit_card_utilization?.header}}</h3>
                       <div class="checkBox">
@@ -752,7 +760,7 @@
 
 
                   </div>
-                  <div class="col-md-6 col-lg-6 col-sm-12 mb-3">
+                  <div class="col-md-6 col-lg-6 col-sm-12">
                     <div class="otherAnalysis active">
                       <h3>{{credit_analysis_card_Expanded?.other_analysis?.small_loans?.header}}</h3>
                       <div class="checkBox">
@@ -770,7 +778,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-12 col-lg-12 col-sm-12 mb-3">
+                  <div class="col-md-12 col-lg-12 col-sm-12">
                     <div class="summaryBox">
                       <h4>{{credit_analysis_card_Expanded?.summary?.header}}</h4>
                       <div class="summaryContent"

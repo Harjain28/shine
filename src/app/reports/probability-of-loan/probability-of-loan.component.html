@@ -109,6 +109,7 @@
             <ng-container>
               <ng-template carouselSlide *ngFor="let data of probabilityData.slice(0,5)">
                 <div class="tableBox">
+                  <img class="logo" src={{data.logo}} alt="">
                   <ul class="themeColor1">
                     <li>Current Potential</li>
                     <!-- <li>
@@ -154,8 +155,7 @@
             <ng-container *ngIf="visibleOffers">
               <ng-template carouselSlide *ngFor="let data of probabilityData.slice(5,probabilityData.length)">
                 <div class="tableBox">
-
-
+                  <img class="logo" src={{data.logo}} alt="">
                   <ul class="themeColor1">
                     <li>Current Potential</li>
                     <!-- <li>

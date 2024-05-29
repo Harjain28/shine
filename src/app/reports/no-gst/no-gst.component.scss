@@ -188,7 +188,7 @@
 
 @media (max-width: 767px) {
     .modalbureauNumber{
-        padding: 10px 10px;
+        padding: 60px 10px;
 
         .title {
             margin-bottom: 20px;
@@ -217,14 +217,26 @@
     
             .gstNumberBox{
                 padding: 15px 20px;
+                margin: 0px 15px;
+
+                .form-group{
+                    display: block;
+                    margin-bottom: 50px;
+    
+                    button{
+                        width: 100%;
+                        margin-top: 10px;
+                    }
+                }
             }
         }
     
         .gstRegistration {
-            padding: 15px 20px;
+            padding: 42px 14px;
     
             .box{
                 padding: 15px;
+                margin: 0px 15px;
             }
         }
     }

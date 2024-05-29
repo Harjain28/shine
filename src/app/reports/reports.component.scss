@@ -18,7 +18,7 @@
             background-image: url(https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/Fold_1_Mobile_bg.jpg);
             background-repeat: no-repeat;
             background-size: cover;
-            background-position: center;
+            // background-position: center;
             padding: 30px 0px;
         }
     }
@@ -28,7 +28,7 @@
         border: 1px solid #E2E2E2;
         border-radius: 20px;
         background: #fff;
-        padding: 15px 22px 15px;
+        padding: 28px 21px 6px;
         position: absolute;
         right: -120px;
         width: 290px;
@@ -42,15 +42,16 @@
             margin-bottom: 2px;
             font-family: Poppins !important;
             color: #3f3f3f;
+            line-height: 22px;
         }
 
         p {
             font-size: 13px;
             font-weight: 400;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
             font-family: Poppins !important;
             color: #939090;
-            line-height: 22px;
+            line-height: 15px;
         }
 
         .boxOne {
@@ -79,6 +80,7 @@
                     margin-bottom: 2px;
                     font-weight: 700;
                     font-family: Poppins !important;
+                    line-height: 15px;
                 }
 
                 small {
@@ -87,7 +89,7 @@
                     margin-bottom: 2px;
                     font-weight: 400;
                     font-family: Poppins !important;
-                    line-height: 18px;
+                    line-height: 15px;
                     display: block;
                 }
 
@@ -97,6 +99,7 @@
                     color: var(--main1);
                     font-size: 13px;
                     margin-bottom: 4px;
+                    line-height: 15px;
                 }
             }
         }
@@ -173,7 +176,7 @@
         h1 {
             color: #3f3f3f;
             font-size: 36px;
-            font-weight: 600;
+            font-weight: 600 !important;
             margin-bottom: 13px;
             font-family: "Be Vietnam Pro" !important;
         }
@@ -519,7 +522,7 @@
             .year {
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: center;
                 margin-bottom: 18px;
                 flex-wrap: wrap;
 
@@ -787,9 +790,9 @@
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            font-size: 12px;
+                            font-size: 10px;
                             font-weight: 600;
-                            min-width: 56px;
+                            min-width: 64px;
                         }
 
                         .YesColor {
@@ -800,9 +803,9 @@
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            font-size: 12px;
+                            font-size: 10px;
                             font-weight: 600;
-                            min-width: 56px;
+                            min-width: 64px;
                         }
                     }
                 }
@@ -881,7 +884,7 @@
                         font-size: 13px;
                         font-weight: normal;
                         margin-bottom: 0px;
-                        line-height: 18px;
+                        line-height: 16px;
                         font-family: Poppins !important;
                     }
                 }
@@ -3514,6 +3517,16 @@
 
 @media (max-width: 767px) {
 
+    .defaultHistory{
+
+        &.solutions{
+
+            .historyList{
+                height: auto !important;
+            }
+        }
+    }
+
     .poweredBy {
     
         .powerLogo {
@@ -3526,21 +3539,45 @@
         }
     }
 
+    .padding30{
+        padding: 0px 30px;
+    }
+
+    .margin18{
+        margin: 0px 18px;
+    }
+
+    .margin15{
+        margin: 15px 0px !important;
+    }
+
 
     .topBannerHeader {
-        padding: 50px 0px 0px;
+        padding: 30px 0px 0px;
 
         .backgroundImg {
 
             img {
-                height: 100%;
+                height: auto;
+                margin-left: -20px;
+            }
+
+            &.backgroundMobile{
+                height: 1155px;
             }
         }
 
         .bannerText {
 
             h1 {
-                font-size: 25px;
+                font-size: 22px;
+                margin-bottom: 4px;
+                line-height: 43px;            
+            }
+
+            p{
+                font-size: 12px;
+                line-height: 16px;
             }
 
             ul {
@@ -3555,116 +3592,8 @@
             right: 0px;
             top: 0px;
             transform: translate(0%, 0%);
-            margin: -80px auto 0px;
-
-
-            h3 {
-                font-size: 20px;
-                font-weight: 600;
-                margin-bottom: 2px;
-                font-family: Poppins !important;
-                color: #3f3f3f;
-            }
-
-            p {
-                font-size: 14px;
-                font-weight: 400;
-                margin-bottom: 5px;
-                font-family: Poppins !important;
-                color: #939090;
-                line-height: 22px;
-            }
-
-            .boxOne {
-                border: 1px solid #C3E128;
-                border-radius: 10px;
-                padding: 7px 14px;
-                display: flex;
-                align-items: center;
-                gap: 15px;
-                background: #FBFFDE;
-                margin-bottom: 17px;
-
-                .content {
-
-                    h5 {
-                        color: #3F3F3F;
-                        font-size: 18px;
-                        margin-bottom: 3px;
-                        font-weight: 600;
-                        font-family: Poppins !important;
-                    }
-
-                    small {
-                        color: #3F3F3F;
-                        font-size: 16px;
-                        margin-bottom: 3px;
-                        font-weight: 500;
-                        font-family: Poppins !important;
-                    }
-                }
-            }
-
-            .boxTwo {
-                border: 1px solid #FF7B24;
-                border-radius: 10px;
-                padding: 6px 14px;
-                display: flex;
-                align-items: center;
-                gap: 15px;
-                margin-bottom: 10px;
-                background: #FFF4EE;
-
-                h5 {
-                    margin-bottom: 0px;
-                    color: #3F3F3F;
-                    font-size: 34px;
-                    font-weight: 600;
-                }
-
-                small {
-                    color: #3F3F3F;
-                    font-size: 16px;
-                    margin-bottom: 3px;
-                    font-weight: 500;
-                    font-family: Poppins !important;
-                }
-            }
-
-
-            .boxThree {
-                border: 1px solid #6A2FC2;
-                border-radius: 10px;
-                padding: 6px 14px;
-                display: flex;
-                align-items: center;
-                gap: 15px;
-                margin-bottom: 10px;
-                background: #F8F3FF;
-
-                h5 {
-                    margin-bottom: 0px;
-                    color: #3F3F3F;
-                    font-size: 34px;
-                    font-weight: 600;
-                }
-
-                small {
-                    color: #3F3F3F;
-                    font-size: 16px;
-                    margin-bottom: 3px;
-                    font-weight: 500;
-                    font-family: Poppins !important;
-                }
-            }
-
-            span {
-                display: flex;
-                justify-content: flex-end;
-                color: #b1b1b1;
-                font-size: 14px;
-                font-weight: normal;
-            }
+            margin: -410px auto 0px;
+            width: 300px;
         }
 
         .bannerImg {
@@ -3682,28 +3611,29 @@
         margin-bottom: 30px;
 
         .heightBox {
-            margin: 10px;
+            margin: 3px 18px;
 
             .numberBox {
-                padding: 15px 24px;
-                height: 220px;
+                padding: 15px 16px;
+                // height: 220px;
 
                 .content {
 
                     h3 {
                         font-size: 18px;
-                        line-height: 26px;
+                        line-height: 22px;
                     }
-                }
 
-                .numberText {
-                    min-height: 190px;
+                    p{
+                        font-size: 13px;
+                        line-height: 18px;
+                    }
                 }
             }
         }
 
         .scoreBox {
-            margin: 10px 10px 20px;
+            margin: 10px 18px 20px;
         }
 
         .btn {
@@ -3757,15 +3687,26 @@
                     padding: 0px;
                 }
             }
+
+            p{
+                line-height: 18px;
+            }
         }
 
         .scoreBox {
-            padding: 15px 15px;
-
-
+            padding: 28px 20px 20px;
 
             h3 {
-                font-size: 15px;
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+
+            p{
+                margin-bottom: 18px;
+            }
+
+            .buttonJob{
+                margin-bottom: 15px;
             }
 
             .box {
@@ -3780,8 +3721,8 @@
             padding: 22px 22px;
 
             .minus {
-                top: 12px;
-                right: 12px;
+                top: 22px;
+                right: 18px;
 
                 span {
                     width: 20px;
@@ -3791,8 +3732,8 @@
             }
 
             .plus {
-                top: 12px;
-                right: 12px;
+                top: 22px;
+                right: 18px;
 
                 span {
                     width: 20px;
@@ -3802,7 +3743,13 @@
             }
 
             .title {
-                font-size: 15px;
+                width: 230px;
+                line-height: 22px;
+            }
+
+            .font-Size{
+                font-size: 14px;
+                line-height: 18px;
             }
 
             .calendarBox {
@@ -3814,13 +3761,22 @@
                     .banksBox {
                         // display: block;
                         flex-wrap: wrap;
+
+                        ul{
+
+                            li{
+                                padding: 7px 0px 3px 20px;
+                                line-height: 16px;
+                            }
+                        }
                     }
                 }
 
                 .summaryBox {
 
                     h4 {
-                        font-size: 15px;
+                        font-size: 16px;
+                        margin-bottom: 17px;
                     }
 
                     .summaryContent {
@@ -3835,6 +3791,13 @@
                                 height: auto;
                             }
                         }
+
+                        ul{
+
+                            li{
+                                line-height: 18px;
+                            }
+                        }
                     }
                 }
 
@@ -3846,21 +3809,30 @@
                         li {
                             min-height: auto;
                             padding: 24px 8px;
-
-                            span {
-                                font-size: 16px;
-                            }
                         }
                     }
 
                     .currentChart{
 
                         ul{
+                            height: auto !important;
+
+                            &.listSize{
+
+                                li{
+                                    width: 50% !important;
+                                }
+                            }
+
                             li{
-                                width: 50%;
+                                width: 35%;
                             }
                         }
                     }
+                }
+
+                .defaultContent{
+                    margin-top: 15px;
                 }
             }
 
@@ -3884,6 +3856,7 @@
             .creditContent{
 
                 .currentChart{
+                    display: flex !important;
 
                     ul{
 
@@ -3931,17 +3904,18 @@
 
             .gstnumberBox {
                 padding: 14px 18px;
+                margin: 0px 30px;
             }
 
             .calendarBox {
-                margin-top: 14px;
+                margin: 14px 30px 0px;
 
                 h3 {
                     font-size: 15px;
                 }
 
                 ul {
-                    width: 80%;
+                    width: 100%;
                     margin: 0 auto 10px;
                 }
             }
@@ -3991,7 +3965,7 @@
     .bankingHistory {
 
         .title {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
 
             &:before {
                 display: none;
@@ -4005,24 +3979,28 @@
                     padding: 0px;
                 }
             }
+
+            p{
+                line-height: 16px !important;
+            }
         }
 
         .affordability {
             margin-bottom: 8px;
 
-            h3 {
-                font-size: 18px;
-            }
+           p{
+            line-height: 18px;
+           }
         }
 
         .businessTurnover {
             padding: 22px 22px;
             height: auto !important;
-            margin-top: 20px;
+            margin-top: -3px;
 
             .minus {
-                top: 12px;
-                right: 12px;
+                top: 22px;
+                right: 18px;
 
                 span {
                     width: 20px;
@@ -4032,8 +4010,8 @@
             }
 
             .plus {
-                top: 12px;
-                right: 12px;
+                top: 22px;
+                right: 18px;
 
                 span {
                     width: 20px;
@@ -4043,7 +4021,7 @@
             }
 
             h3 {
-                padding: 0px 30px;
+                padding: 0px 40px;
             }
 
             .valatilityBox {
@@ -4055,6 +4033,11 @@
 
                     .qtrList {
                         margin-bottom: 10px;
+
+                        ul{
+                            height: auto !important;
+                            justify-content: center;
+                        }
                     }
 
                     .qtrList2 {
@@ -4064,6 +4047,7 @@
 
                 .contentQtr {
                     margin-top: 18px;
+                    height: auto;
                 }
 
                 .checkBox {
@@ -4353,7 +4337,7 @@
             }
 
             .summaryBox {
-                margin-top: 20px;
+                margin-top: 40px;
 
                 .summaryContent {
                     display: block;
@@ -4373,6 +4357,7 @@
 
         p {
             padding: 0px 0px !important;
+            line-height: 16px !important;
         }
 
     }
@@ -4403,8 +4388,8 @@
 
             .plus {
                 position: absolute;
-                top: 20px;
-                right: 20px;
+                top: 22px;
+                right: 18px;
 
                 span {
                     width: 22px;
@@ -4424,8 +4409,8 @@
 
             .minus {
                 position: absolute;
-                top: 20px;
-                right: 20px;
+                top: 22px;
+                right: 18px;
 
                 span {
                     width: 22px;

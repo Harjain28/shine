@@ -38,8 +38,8 @@ export class HistogramComponent {
       datasets: [{
         data: histogramDataValues,
         backgroundColor: backgroundColors, 
-        borderColor: 'rgba(75, 192, 192, 1)', 
-        borderWidth: 1,
+        // borderColor: 'rgba(75, 192, 192, 1)', 
+        // borderWidth: 1,
         
       }]
     };

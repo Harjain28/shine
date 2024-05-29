@@ -43,3 +43,26 @@
         }
     }
 }
+
+@media (max-width: 767px) {
+    .heraderSection{
+
+       .headerNav{
+
+        h5{
+            font-size: 14px;
+        }
+
+        .logoutButton{
+
+            button{
+                font-size: 14px;
+            }
+        }
+       } 
+    }
+
+    .padding30{
+        padding: 0px 30px;
+    }
+}
