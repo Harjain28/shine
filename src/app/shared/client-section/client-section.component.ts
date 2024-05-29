@@ -4,6 +4,8 @@ import { shineLendingPageJSON } from 'src/app/JsonFiles/lendingpage';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { MaterialModule } from 'src/app/material.module';
 import {  Router } from "@angular/router";
+import { PricingService } from 'src/app/services/random-pricing.service';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-client-section',
@@ -49,14 +51,13 @@ export class ClientSectionComponent {
     },
   };
   shineBanner: any;
+  pricing_url: any;
 
   constructor(
-    public router: Router,
+    public router: Router, private pricingService: PricingService, private navigationService:NavigationService
   ){}
 
-  goToPlans(){
-    window.location.href=this.shineBanner?.CTA_Link;
-   }
+ 
 
   ngOnInit(): void {
     this.businessLoanJson = shineLendingPageJSON; 
@@ -65,5 +66,11 @@ export class ClientSectionComponent {
 
 
   }
+
+  goToPlans(){
+    this.navigationService.setLinkClicked(true);
+    this.pricing_url = this.pricingService.getPricingUrl();
+    this.router.navigate([this.pricing_url]);
+ }
 
 }
