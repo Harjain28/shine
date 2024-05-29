@@ -141,6 +141,8 @@ export class ReloginComponent {
   
   reLoginProcess() {
     if (this.viewForm.valid) {
+      const phoneNumber = this.viewForm.get('phoneNumber')?.value;
+      localStorage.setItem('phoneNumber', phoneNumber);
       this.isSubmit = true;
       this.loader = true;
       const defaultparams: any = {

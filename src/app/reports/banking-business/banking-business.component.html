@@ -575,15 +575,15 @@
                 <ul class="d-blockList">
                   <li style="border-bottom: 1px solid #E2E2E2;">
                     <div class="d-flex gap-2"><span style="border: 1px solid #6A2FC2;"><span style="background-color: #6A2FC2;"></span></span>
-                    Turnover : </div> <b>Rs. {{turnoverLineData?.sum}}</b>
+                    Turnover : </div> <b>Rs. {{roundValue(turnoverLineData?.sum).toLocaleString('en-IN')}}</b>
                   </li>
                   <li>
                     <div class="d-flex gap-2"><span style="border: 1px solid #12BA9B;"><span style="background-color: #12BA9B;"></span></span>
-                    Secured Loan : </div> <b>Rs. {{securedUnsecuredRatioData?.securedOutstanding }} ({{roundValue(securedRatioPercent)}}%)</b>
+                    Secured Loan : </div> <b>Rs. {{securedUnsecuredRatioData?.securedOutstanding.toLocaleString('en-IN') }} ({{roundValue(securedRatioPercent)}}%)</b>
                   </li>
                   <li>
                     <div class="d-flex gap-2"><span style="border: 1px solid #C3E128;"><span style="background-color: #C3E128;"></span></span>
-                    Unecured Loan: </div> <b>Rs. {{securedUnsecuredRatioData?.unsecuredOutstanding}} ({{roundValue(unsecuredRatioPercent)}}%)</b>
+                    Unecured Loan: </div> <b>Rs. {{securedUnsecuredRatioData?.unsecuredOutstanding.toLocaleString('en-IN')}} ({{roundValue(unsecuredRatioPercent)}}%)</b>
                   </li>
                 </ul>
 

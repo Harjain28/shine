@@ -76,6 +76,11 @@ export class Form1Component implements OnInit {
   ngOnInit(): void {
     this.form();
 
+    const savedPhoneNumber = localStorage.getItem('phoneNumber');
+    if (savedPhoneNumber) {
+      this.form1.patchValue({ phoneNumber: savedPhoneNumber });
+    }
+
     this.form1.get('businessPan')!.valueChanges.subscribe((value) => {
       if (value !== value.toUpperCase()) {
         this.form1
@@ -162,7 +167,9 @@ export class Form1Component implements OnInit {
   }
 
   getOtpbyPhone() {
+
     this.isSubmit = true;
+  
     const formValue = this.form1.value;
     const defaultparams = {
       forceGenerate: false,
@@ -219,7 +226,7 @@ export class Form1Component implements OnInit {
             // if(error.errors.BusinessPan){
             // this.showValidatePANError = true;
             // }
-            if(error.errors.BusinessName){
+            if (error.errors.BusinessName) {
               this.error = error.errors.BusinessName;
               this.showBusniessNameError = true;
 
