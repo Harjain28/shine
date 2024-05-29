@@ -14,7 +14,7 @@ export class AuthGuard  {
     "/in/register",
     "/in/otp",
     "/in/payment_status",
-    // "/in/confirm_order",
+    "/in/confirm_order",
     "/in/bank_statement",
     "/in/report"
   ];

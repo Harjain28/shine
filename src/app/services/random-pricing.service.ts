@@ -24,4 +24,9 @@ export class PricingService {
     const randomNumber = Number(localStorage.getItem("plan_count"));
     return randomNumber <= 3 ? '/in/pricing_group' : '/in/pricing_annual';
   }
+
+  getClassBasedOnRandomNumber(): string {
+    const randomNumber = Number(localStorage.getItem("plan_count"));
+    return `assign_${randomNumber}`;
+  }
 }

@@ -1,4 +1,5 @@
-  <div class="SecuredBusinessLoan">
+
+<div class="SecuredBusinessLoan">
     <div class="container-fluid p-0">
       <div class="homeSlider">
         <div class="silderSlide">
@@ -24,7 +25,7 @@
                     </p>
 
                     <div class="pricingBtn">
-                      <a class="btn enrol_now1" [routerLink]="pricing_url">{{Shinebanner?.CTA_Text}}</a>
+                      <a [class]="'btn enrol_now1 ' + 'pricing_'+randomNumber" [routerLink]="pricing_url">{{Shinebanner?.CTA_Text}}</a>
                     </div>
                   </div>
                 </div>
@@ -110,7 +111,7 @@
 
           <div class="col-lg-12 mt-4">
             <div class="featureBtn">
-              <a class="btn get_pricing1" [routerLink]="pricing_url">{{WhoisShineForSection?.CTA_Text}}</a>
+              <a  [class]="'btn get_pricing1 ' + 'pricing_'+randomNumber" [routerLink]="pricing_url">{{WhoisShineForSection?.CTA_Text}}</a>
             </div>
           </div>
         </div>
@@ -160,7 +161,7 @@
           </div>
           <div class="col-lg-12">
             <div class="featureBtn">
-              <a class="btn get_pricing2"  [routerLink]="pricing_url">{{AnalyseSection?.CTA_Text}}</a>
+              <a  [class]="'btn get_pricing2 ' + 'pricing_'+randomNumber" [routerLink]="pricing_url">{{AnalyseSection?.CTA_Text}}</a>
             </div>
           </div>
         </div>
@@ -226,7 +227,7 @@
 
             <div class="col-lg-12">
               <div class="featureBtn mt-5">
-                <a class="btn get_pricing3"   [routerLink]="pricing_url">{{shine_comparison?.CTA_Text}}</a>
+                <a  [class]="'btn get_pricing3 ' + 'pricing_'+randomNumber"   [routerLink]="pricing_url">{{shine_comparison?.CTA_Text}}</a>
               </div>
             </div>
 
@@ -261,7 +262,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="contentBtn">
               <p>{{HowShineWillHelpSection?.Body_Section[0]}} <br> {{HowShineWillHelpSection?.Body_Section[1]}}</p>
-              <a class="btn enrol-today1" [routerLink]="pricing_url">{{HowShineWillHelpSection?.CTA_Text}}</a>
+              <a [class]="'btn today1 ' + 'pricing_'+randomNumber"   [routerLink]="pricing_url">{{HowShineWillHelpSection?.CTA_Text}}</a>
             </div>
           </div>
         </div>
@@ -298,7 +299,7 @@
       </div>
       <div class="col-lg-12">
         <div class="featureBtn mt-5">
-          <a class="btn get_pricing4"  [routerLink]="pricing_url">{{ShineFeaturesSection?.CTA_Text}}</a>
+          <a [class]="'btn get_pricing4 ' + 'pricing_'+randomNumber"   [routerLink]="pricing_url">{{ShineFeaturesSection?.CTA_Text}}</a>
         </div>
       </div>
     </div>
@@ -340,7 +341,7 @@
     </div>
     <div class="col-lg-12">
       <div class="featureBtn">
-        <a class="btn check_pricing1"  [routerLink]="pricing_url">{{summarySection?.CTA_Text}}</a>
+        <a  [class]="'btn check_pricing1 ' + 'pricing_'+randomNumber"  [routerLink]="pricing_url">{{summarySection?.CTA_Text}}</a>
       </div>
     </div>
   </div>
@@ -349,3 +350,4 @@
 <app-testimonial [testimonialData]="TestimonialsJson"></app-testimonial>
 
 <app-faq [faqsData]="faqs"></app-faq>
+<button id="assign" style="display: none;"></button>

@@ -52,6 +52,7 @@ export class ClientSectionComponent {
   };
   shineBanner: any;
   pricing_url: any;
+  randomNumber: any;
 
   constructor(
     public router: Router, private pricingService: PricingService, private navigationService:NavigationService
@@ -60,6 +61,7 @@ export class ClientSectionComponent {
  
 
   ngOnInit(): void {
+    this.randomNumber = Number(localStorage.getItem("plan_count"));
     this.businessLoanJson = shineLendingPageJSON; 
     this.WhatToExpectSection = this.businessLoanJson?.What_To_Expect_Section;
     this.shineBanner = this.businessLoanJson?.Shine_Banner;

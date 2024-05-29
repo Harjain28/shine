@@ -1,241 +1,205 @@
-    .SecuredBusinessLoan {
-        position: relative;
+.SecuredBusinessLoan {
+    position: relative;
 
-        .homeSlider {
-            // position: relative;
+    .homeSlider {
+        // position: relative;
 
-            .silderSlide {
-                position: relative;
-                height: 604px;
-                overflow: hidden;
-
-                .image {
-                    display: block;
-                    width: 100%;
-                    height: 540px;
-                }
-
-                .silderText {
-                    position: absolute;
-                    top: 50%;
-                    left: 0px;
-                    transform: translate(0%, -40%);
-                    z-index: 9;
-                    display: block;
-                    width: 100%;
-
-                    .title {
-
-                        .mainHeading {
-                            letter-spacing: -1.44px;
-                            color: #3f3f3f;
-                            font-weight: 600 !important;
-                            font-size: 48px;
-                            line-height: 44px;
-                            margin-bottom: 5px;
-                            font-family: 'Be Vietnam Pro' !important;
-                        }
-
-                        .colorBox {
-                            border-radius: 7px;
-                            background-color: #C3E128;
-                            padding: 2px 12px;
-                            margin-bottom: 22px;
-                            color: #222;
-                            font-weight: 600;
-                            font-size: 16px;
-                            line-height: 26px;
-                            font-family: Poppins !important;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            width: max-content;
-                        }
-
-                        p {
-                            position: relative;
-                            color: #3f3f3f;
-                            font-size: 14px;
-                            line-height: 22px;
-                            font-weight: normal;
-                            font-family: Poppins !important;
-                            margin-bottom: 12px;
-                            padding-left: 32px;
-
-                            img {
-                                position: absolute;
-                                left: 0px;
-                                top: 2px;
-                                width: 20px;
-                                height: 20px;
-                            }
-
-                        }
-
-                        .pricingBtn {
-                            margin-top: 50px;
-
-                            .btn {
-                                background-color: var(--main2);
-                                border-radius: 23px;
-                                padding: 10px 26px;
-                                color: #fff;
-                                font-size: 16px;
-                                cursor: pointer;
-                                font-family: Poppins !important;
-                                font-weight: 500;
-                                line-height: 22px;
-                            }
-                        }
-                    }
-
-                    .imgBanner {
-                        position: absolute;
-                        top: 50%;
-                        right: -30px;
-                        transform: translate(0%, -50%);
-                        width: 50%;
-
-                        video{
-                            width: 100%;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .twoSectionMarge {
-        background-repeat: no-repeat;
-        background-position: right;
-
-        .betterLoanOpportunties {
-            padding-bottom: 60px;
-            padding-top: 60px;
-            background-color: #F3F3F370;
-            // z-index: -1;
+        .silderSlide {
             position: relative;
+            height: 604px;
+            overflow: hidden;
 
-            .boxColor {
-
-                .boxBackground {
-                    &:nth-of-type(2) {
-
-                        .boxContent {
-                            background-color: var(--main2);
-                        }
-                    }
-
-                    &:nth-of-type(4) {
-
-                        .boxContent {
-                            background-color: #C3E128;
-
-                            .content {
-
-                                h3 {
-                                    color: #222222;
-                                }
-
-                                p {
-                                    color: #222222;
-
-                                }
-                            }
-                        }
-                    }
-                }
+            .image {
+                display: block;
+                width: 100%;
+                height: 540px;
             }
 
-            .boxContent {
-                box-shadow: 6px 6px 20px #0000001A;
-                border-radius: 20px;
-                background-color: var(--main1);
-                margin-bottom: 10px;
-                padding: 20px 30px;
+            .silderText {
+                position: absolute;
+                top: 50%;
+                left: 0px;
+                transform: translate(0%, -40%);
+                z-index: 9;
+                display: block;
+                width: 100%;
 
-                .content {
+                .title {
 
-                    h3 {
-                        color: #FFFFFF;
-                        font-size: 18px;
-                        line-height: 28px;
+                    .mainHeading {
+                        letter-spacing: -1.44px;
+                        color: #3f3f3f;
+                        font-weight: 600 !important;
+                        font-size: 48px;
+                        line-height: 44px;
+                        margin-bottom: 5px;
+                        font-family: 'Be Vietnam Pro' !important;
+                    }
+
+                    .colorBox {
+                        border-radius: 7px;
+                        background-color: #C3E128;
+                        padding: 2px 12px;
+                        margin-bottom: 22px;
+                        color: #222;
                         font-weight: 600;
+                        font-size: 16px;
+                        line-height: 26px;
                         font-family: Poppins !important;
-                        margin-bottom: 9px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: max-content;
                     }
 
                     p {
-                        color: #FFFFFF;
-                        font-size: 13px;
-                        line-height: 19px;
+                        position: relative;
+                        color: #3f3f3f;
+                        font-size: 14px;
+                        line-height: 22px;
                         font-weight: normal;
                         font-family: Poppins !important;
-                        margin-bottom: 2px;
-                        width: 90%;
-                        overflow: hidden;
-                        // height: calc(100vh - 300px);
-                        max-height: 155px;
-                        min-height: 155px;
-                        overflow-x: hidden;
-                        overflow-y: auto;
+                        margin-bottom: 12px;
+                        padding-left: 32px;
 
-                        &::-webkit-scrollbar {
-                            display: none;
+                        img {
+                            position: absolute;
+                            left: 0px;
+                            top: 2px;
+                            width: 20px;
+                            height: 20px;
+                        }
+
+                    }
+
+                    .pricingBtn {
+                        margin-top: 50px;
+
+                        .btn {
+                            background-color: var(--main2);
+                            border-radius: 23px;
+                            padding: 10px 26px;
+                            color: #fff;
+                            font-size: 16px;
+                            cursor: pointer;
+                            font-family: Poppins !important;
+                            font-weight: 500;
+                            line-height: 22px;
                         }
                     }
                 }
 
-                .boxIcon {
-                    display: flex;
-                    justify-content: flex-end;
+                .imgBanner {
+                    position: absolute;
+                    top: 50%;
+                    right: -30px;
+                    transform: translate(0%, -50%);
+                    width: 50%;
 
-                    img {
-                        width: auto;
-                        height: 64px;
+                    video{
+                        width: 100%;
                     }
-                }
-            }
-
-            .Content {
-                text-align: center;
-                margin-bottom: 26px;
-
-                h3 {
-                    color: #3f3f3f;
-                    font-size: 30px;
-                    line-height: 37px;
-                    font-weight: 700;
-                    font-family: 'Be Vietnam Pro' !important;
-                    margin-bottom: 14px;
-
-                    span {
-                        color: var(--main1);
-                        display: block;
-                    }
-                }
-
-                p {
-                    color: #3f3f3f;
-                    font-size: 16px;
-                    line-height: 22px;
-                    font-weight: normal;
-                    font-family: Poppins !important;
-                    margin-bottom: 2px;
-
                 }
             }
         }
     }
+}
 
-    .transformFinance {
-        padding: 65px 0px;
-        z-index: -2;
+.twoSectionMarge {
+    background-repeat: no-repeat;
+    background-position: right;
+
+    .betterLoanOpportunties {
+        padding-bottom: 60px;
+        padding-top: 60px;
+        background-color: #F3F3F370;
+        // z-index: -1;
         position: relative;
 
-        .rightContent {
-            position: relative;
-            z-index: 9;
+        .boxColor {
+
+            .boxBackground {
+                &:nth-of-type(2) {
+
+                    .boxContent {
+                        background-color: var(--main2);
+                    }
+                }
+
+                &:nth-of-type(4) {
+
+                    .boxContent {
+                        background-color: #C3E128;
+
+                        .content {
+
+                            h3 {
+                                color: #222222;
+                            }
+
+                            p {
+                                color: #222222;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .boxContent {
+            box-shadow: 6px 6px 20px #0000001A;
+            border-radius: 20px;
+            background-color: var(--main1);
+            margin-bottom: 10px;
+            padding: 20px 30px;
+
+            .content {
+
+                h3 {
+                    color: #FFFFFF;
+                    font-size: 18px;
+                    line-height: 28px;
+                    font-weight: 600;
+                    font-family: Poppins !important;
+                    margin-bottom: 9px;
+                }
+
+                p {
+                    color: #FFFFFF;
+                    font-size: 13px;
+                    line-height: 19px;
+                    font-weight: normal;
+                    font-family: Poppins !important;
+                    margin-bottom: 2px;
+                    width: 90%;
+                    overflow: hidden;
+                    // height: calc(100vh - 300px);
+                    max-height: 155px;
+                    min-height: 155px;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+            }
+
+            .boxIcon {
+                display: flex;
+                justify-content: flex-end;
+
+                img {
+                    width: auto;
+                    height: 64px;
+                }
+            }
+        }
+
+        .Content {
+            text-align: center;
+            margin-bottom: 26px;
 
             h3 {
                 color: #3f3f3f;
@@ -260,59 +224,896 @@
                 margin-bottom: 2px;
 
             }
+        }
+    }
+}
 
-            .pricingBtn{
-                margin-top: 32px;
+.transformFinance {
+    padding: 65px 0px;
+    z-index: -2;
+    position: relative;
 
-                .btn{
-                    background-color: var(--main2);
-                    border-radius: 23px;
-                    padding: 10px 26px;
-                    color: #fff;
-                    cursor: pointer;
-                    font-size: 16px;
+    .rightContent {
+        position: relative;
+        z-index: 9;
+
+        h3 {
+            color: #3f3f3f;
+            font-size: 30px;
+            line-height: 37px;
+            font-weight: 700;
+            font-family: 'Be Vietnam Pro' !important;
+            margin-bottom: 14px;
+
+            span {
+                color: var(--main1);
+                display: block;
+            }
+        }
+
+        p {
+            color: #3f3f3f;
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: normal;
+            font-family: Poppins !important;
+            margin-bottom: 2px;
+
+        }
+
+        .pricingBtn{
+            margin-top: 32px;
+
+            .btn{
+                background-color: var(--main2);
+                border-radius: 23px;
+                padding: 10px 26px;
+                color: #fff;
+                cursor: pointer;
+                font-size: 16px;
+                font-family: Poppins !important;
+                font-weight: 500;
+                line-height: 22px;
+            }
+        }
+    }
+
+    .laptopSilder {
+        position: relative;
+        // overflow: hidden;
+        z-index: 900;
+        right: -50px;
+
+        &::before{
+            position: absolute;
+            content: "";
+            top: 0px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            width: 85%;
+            height: 100%;
+            background-image: url(../../../assets/LandingPage/laptop.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            z-index: -3;
+        }
+
+        .textSilder {
+            box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1019607843);
+            border: 1px solid #12BA9B;
+            border-radius: 10px;
+            padding: 6px 16px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: -moz-fit-content;
+            width: fit-content;
+            background: #fff;
+            position: relative;
+            top: 29px;
+            left: -30px;
+
+            img {
+                width: 26px;
+                height: 26px;
+                position: absolute;
+                z-index: 999;
+                left: -12px;
+            }
+
+            span {
+                font-size: 13px;
+                line-height: 22px;
+                color: var(--main2);
+                font-weight: 600;
+                font-family: Poppins !important;
+                margin-left: 4px;          
+            }
+        }
+
+        .laptopAnderImg {
+            img {
+                width: 100% !important;
+                height: 250px;
+                object-fit: contain;
+            }
+        }
+
+        owl-carousel-o {
+
+            ::ng-deep {
+
+                .owl-carousel {
+
+                    .owl-stage-outer {
+                        overflow: visible;
+                    }
+                }
+
+                .owl-dots {
+                    margin-top: 60px;
+                    position: relative;
+                    z-index: 999;
+
+                    .owl-dot {
+
+                        &.active {
+
+                            span {
+                                background: var(--main2);
+                            }
+                        }
+
+                        &:hover {
+
+                            span {
+                                background: var(--main2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.thisPlanSection{
+ //   background-image: url(../../../assets/LandingPage/blueLineBackground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding-top: 42px;
+    padding-bottom: 70px;
+
+    .content{
+        text-align: center;
+        margin-bottom: 28px;
+
+        h3{
+            color: #000000;
+            font-size: 30px;
+            line-height: 37px;
+            font-weight: 700;
+            font-family: "Be Vietnam Pro" !important;
+            margin-bottom: 14px;
+        }
+
+        p{
+            color: #000000;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: normal;
+            font-family: Poppins !important;
+            margin-bottom: 2px;
+        }
+    }
+
+    .planSilder{
+
+
+
+        .box{
+            padding: 18px 30px;
+            background-color: #fff;
+            border-radius: 20px;
+            height: 510px;
+            border-width: 1px;
+            border-style: solid;
+
+           
+
+            &.box1{
+                border-color: #C3E128;  
+            }
+            &.box2{
+                border-color: var(--main1);
+            }
+            &.box3{
+                border-color: var(--main2);
+
+                
+                
+            }
+
+            .userImg{
+                width: auto;
+                height: 110px;
+                margin: 0 auto 10px;
+            }
+
+            h3{
+                font-size: 22px;
+                margin-bottom: 3px;
+                line-height: 36px;
+                text-align: center;
+                font-weight: 800;
+                font-family: "Be Vietnam Pro" !important;
+            }
+
+            p{
+                font-size: 14px;
+                line-height: 19px;
+                color: #AEAEAE;
+                margin-bottom: 2px;
+                min-height: 40px;
+                font-family: Poppins !important;
+                text-align: left;
+                // height: 110px;
+            }
+
+            ul{
+                padding-left: 0px;
+                margin-bottom: 0px;
+                list-style: none;
+                overflow: hidden;
+                height: 205px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                margin-top: 12px;
+                margin-bottom: 0px;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                li{
+                    color: #3F3F3F;
                     font-family: Poppins !important;
-                    font-weight: 500;
+                    font-size: 14px;
                     line-height: 22px;
+                    font-weight: normal;
+                    margin-bottom: 5px;
+                    padding-left: 30px;
+                    position: relative;
+
+                    img{
+                        left: 0px;
+                        top: 2px;
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+
+                    }
                 }
             }
         }
 
-        .laptopSilder {
-            position: relative;
-            // overflow: hidden;
-            z-index: 900;
-            right: -50px;
+        
 
-            &::before{
+        owl-carousel-o {
+
+            ::ng-deep {
+
+                .owl-dots {
+
+                    .owl-dot {
+
+                        &.active {
+
+                            span {
+                                background: var(--main2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.advantagesShine {
+    padding: 60px 0px 60px;
+    background-color: #F3F3F370;
+
+    .content {
+        text-align: center;
+        margin-bottom: 22px;
+
+        h3 {
+            color: #3f3f3f;
+            font-size: 30px;
+            line-height: 37px;
+            font-weight: 700;
+            font-family: 'Be Vietnam Pro' !important;
+            margin-bottom: 8px;
+
+            span {
+                color: var(--main2);
+            }
+        }
+
+        p {
+            color: #3f3f3f;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: normal;
+            font-family: Poppins !important;
+            margin-bottom: 2px;
+
+        }
+    }
+
+    .rowTable {
+        border-top: 1px solid #ECECEC;
+
+        .tableHeading {
+            padding-left: 0px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0px;
+
+            li {
+                text-transform: uppercase;
+                color: #989898;
+                font-size: 14px;
+                line-height: 22px;
+                font-weight: 500;
+                font-family: Poppins !important;
+                padding: 30px 30px 15px;
+                width: -webkit-fill-available;
+
+                &:nth-of-type(2) {
+                    color: var(--main2);
+                }
+
+                &:nth-of-type(3) {
+                    color: var(--main1);
+                }
+            }
+        }
+
+        .tableBox {
+            padding-left: 0px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0px 3px 10px #0000000F;
+            border: 1px solid #E8E8E8;
+            border-radius: 10px;
+            margin-bottom: 15px;
+
+            li {
+                color: #3F3F3F;
+                font-size: 14px;
+                line-height: 22px;
+                font-family: Poppins !important;
+                padding: 18px 30px 18px;
+                height: 100%;
+                width: -webkit-fill-available;
+
+
+                &:nth-of-type(1) {
+                    font-weight: 700;
+                    font-size: 16px;
+                }
+                &:nth-of-type(2) {
+                    color: #ffffff;
+                    background-color: #12BA9B;
+                }
+                
+            }
+        }
+    }
+}
+
+.featureBtn{
+    margin-top: 29px;
+    display: flex;
+    justify-content: center;
+    
+    .btn{
+        background-color: var(--main2);
+        border-radius: 23px;
+        padding: 10px 26px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 16px;
+        font-family: Poppins !important;
+        font-weight: 500;
+        line-height: 22px;
+        min-width: 200px;
+    }
+}
+
+.leftSideDesign{
+    position: relative;
+    overflow: hidden;
+
+    &::before{
+        position: absolute;
+        content: "";
+        left: 0px;
+        top: 0px;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-image: url(../../../assets/LandingPage/leftSideImg.svg);
+        width: 100%;
+        height: 78%;
+        z-index: -2;
+    }
+}
+
+.shineHelp {
+    padding: 60px 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 100%;
+        background-image: url(../../../assets/LandingPage/leftDesign.png);
+        background-repeat: no-repeat;
+        width: 300px;
+        background-position: right;
+        rotate: 180deg;
+    }
+
+    .content {
+        text-align: center;
+        margin-bottom: 22px;
+
+        h3 {
+            color: #fff;
+            font-size: 30px;
+            line-height: 37px;
+            font-weight: 800;
+            font-family: 'Be Vietnam Pro' !important;
+            margin-bottom: 8px;
+
+            span {
+                color: var(--main2);
+            }
+        }
+
+        p {
+            color: #fff;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: normal;
+            font-family: Poppins !important;
+            margin-bottom: 2px;
+
+        }
+    }
+
+    .boxCenter {
+        padding: 60px 0px;
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-image: url(../../../assets/LandingPage/centerDesign.png);
+            height: 280px;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-36%, -50%);
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        .box {
+            border: 1px solid #E1E1E1;
+            border-radius: 20px;
+            background-color: #fff;
+            padding: 24px 22px;
+            text-align: center;
+            margin-bottom: 15px;
+            height: 175px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            img {
+                width: auto;
+                height: 60px;
+                margin: 0px auto;
+            }
+
+            p {
+                color: var(--main1);
+                font-size: 16px;
+                line-height: 18px;
+                font-weight: 600;
+                font-family: Poppins !important;
+                margin-bottom: 2px;
+                width: 100%;
+            }
+        }
+    }
+
+    .contentBtn {
+        text-align: center;
+
+        p {
+            color: #FFFFFF;
+            font-size: 14px;
+            line-height: 22px;
+            cursor: pointer;
+            font-weight: normal;
+            font-family: Poppins !important;
+            margin-bottom: 14px;
+        }
+
+        .btn {
+            background-color: var(--main2);
+            border-radius: 23px;
+            padding: 10px 26px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: Poppins !important;
+            font-weight: 500;
+            line-height: 22px;
+        }
+    }
+}
+
+.BusinessLoanOption {
+    background-color: #FAFAFA;
+    padding: 60px 0px;
+
+    .content {
+        text-align: center;
+        margin-bottom: 16px;
+
+        .btn {
+            border: 1px solid #D1D1D1;
+            border-radius: 10px;
+            background-color: #fff;
+            cursor: pointer;
+            padding: 8px 32px;
+            font-size: 16px;
+            color: var(--main2);
+            line-height: 22px;
+            font-weight: 600;
+            min-width: 155px;
+            max-width: 155px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0px auto 18px;
+            cursor: auto;
+        }
+
+        h3 {
+            color: #3F3F3F;
+            font-size: 30px;
+            line-height: 37px;
+            font-weight: 800;
+            font-family: 'Be Vietnam Pro' !important;
+            margin-bottom: 8px;
+
+            span {
+                color: var(--main2);
+            }
+        }
+
+        p {
+            color: #3F3F3F;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: normal;
+            font-family: Poppins !important;
+            margin-bottom: 2px;
+
+        }
+    }
+
+    .box {
+        border: 1px solid #E1E1E1;
+        border-radius: 20px;
+        background-color: #fff;
+        padding: 24px 22px;
+        text-align: center;
+        margin-bottom: 15px;
+        height: 175px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        transition: .5s;
+
+        &:hover {
+            background-color: #C3E128;
+        }
+
+        img {
+            width: auto;
+            height: 60px;
+            margin: 0px auto;
+        }
+
+        p {
+            color: #3F3F3F;
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 500;
+            font-family: Poppins !important;
+            margin-bottom: 2px;
+            width: 100%;
+        }
+    }
+
+    .boxImg {
+        height: 175px;
+
+        img {
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.guaranteedLoan {
+    padding: 60px 0px;
+    position: relative;
+    z-index: 1;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    overflow: hidden;
+
+    &::before{
+        position: absolute;
+        content: "";
+        background-image: url(../../../assets/LandingPage/LoanDesginImg.svg);
+        background-repeat: no-repeat;
+        width: 400px;
+        background-position: right;
+        height: 100%;
+        z-index: -1;
+        right: 0px;
+        top: 0px;
+
+    }
+
+    .content {
+        text-align: center;
+        margin-bottom: 40px;
+
+        h3 {
+            color: #3F3F3F;
+            font-size: 30px;
+            line-height: 37px;
+            font-weight: 800;
+            font-family: 'Be Vietnam Pro' !important;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: #3F3F3F;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: normal;
+            font-family: Poppins !important;
+            margin-bottom: 2px;
+
+        }
+    }
+
+    .yourRankingSilder {
+
+        .improveBox {
+            width: 100%;
+            
+            img{
+                width: 100%;
+            }
+        }
+
+        .box {
+            position: relative;
+            background-color: var(--main1);
+            padding: 22px 30px;
+            border-radius: 10px;
+            margin-left: 2px;
+
+            &::before {
                 position: absolute;
                 content: "";
-                top: 0px;
-                left: 50%;
-                transform: translate(-50%, 0%);
-                width: 85%;
-                height: 100%;
-                background-image: url(../../../assets/LandingPage/laptop.png);
-                background-repeat: no-repeat;
-                background-size: 100%;
-                z-index: -3;
+                width: 30px;
+                height: 30px;
+                background: var(--main1);
+                clip-path: polygon(99% 1%, 100% 100%, 0 100%, 0 100%);
+                top: 50%;
+                transform: translate(0%, -50%);
+                left: -25px;
+                z-index: -1;
+            }
+
+            p {
+                color: #fff;
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: normal;
+                font-family: Poppins !important;
+                margin: 2px 0px;
+            }
+        }
+
+        owl-carousel-o {
+
+            ::ng-deep {
+
+                .owl-dots {
+
+                    .owl-dot {
+
+                        &.active {
+
+                            span {
+                                background: var(--main2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 767px) {
+
+    .leftSideDesign{
+
+        &::before{
+            display: none;
+        }
+    }
+
+    .SecuredBusinessLoan {
+        padding-top: 110px;
+
+        .homeSlider {
+
+            .silderSlide {
+                height: 640px;
+
+                img{
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .silderText {
+                    transform: translate(0%, -45%);
+
+                    .title {
+
+                        .mainHeading {
+                            font-size: 32px;
+                        }
+
+                        .colorBox{
+                            width: auto;
+                        }
+
+                        .pricingBtn {
+                            margin-top: 20px;
+                        }
+                    }
+
+                    .imgBanner {
+                        position: relative;
+                        top: 20px;
+                        right: 0px;
+                        transform: translate(0%, 0%);
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .twoSectionMarge {
+        background-image: none !important;
+        padding-bottom: 0px;
+
+        .betterLoanOpportunties {
+            padding-bottom: 30px;
+            padding-top: 30px;
+
+            .boxContent {
+
+                .content {
+
+                    p {
+                        max-height: 130px;
+                        min-height: 130px;
+                    }
+                }
+            }
+
+            .Content {
+                margin-bottom: 20px;
+
+                h3 {
+                    font-size: 22px;
+                    line-height: 27px;
+                    font-weight: 600;
+
+                    span {
+                        color: var(--main1);
+                        display: block;
+                    }
+                }
+
+                p {
+                    font-size: 14px;
+                    line-height: 20px;
+
+                }
+            }
+        }
+    }
+
+    .transformFinance {
+        padding: 42px 0px 0px;
+
+        .rightContent {
+            text-align: center;
+
+            h3 {
+                font-size: 22px;
+                line-height: 27px;
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 20px;
+
+            }
+        }
+
+        .laptopSilder {
+            padding-top: 30px;
+            right: 0px;
+            margin-top: 20px;
+
+            &::before{
+                width: 100%;
             }
 
             .textSilder {
-                box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1019607843);
-                border: 1px solid #12BA9B;
-                border-radius: 10px;
-                padding: 6px 16px;
-                text-align: center;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: -moz-fit-content;
-                width: fit-content;
-                background: #fff;
-                position: relative;
-                top: 29px;
-                left: -30px;
+                top: -45px;
+                left: 50%;
+                transform: translate(-50%, 0%);
 
                 img {
                     width: 26px;
@@ -334,9 +1135,13 @@
 
             .laptopAnderImg {
                 img {
-                    width: 100% !important;
-                    height: 250px;
+                    width: auto !important;
+                    height: 160px;
                     object-fit: contain;
+                    position: relative;
+                    top: -40px;
+                    left: 50%;
+                    transform: translate(100%, 0%);
                 }
             }
 
@@ -344,178 +1149,8 @@
 
                 ::ng-deep {
 
-                    .owl-carousel {
-
-                        .owl-stage-outer {
-                            overflow: visible;
-                        }
-                    }
-
                     .owl-dots {
-                        margin-top: 60px;
-                        position: relative;
-                        z-index: 999;
-
-                        .owl-dot {
-
-                            &.active {
-
-                                span {
-                                    background: var(--main2);
-                                }
-                            }
-
-                            &:hover {
-
-                                span {
-                                    background: var(--main2);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .thisPlanSection{
-     //   background-image: url(../../../assets/LandingPage/blueLineBackground.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        padding-top: 42px;
-        padding-bottom: 70px;
-
-        .content{
-            text-align: center;
-            margin-bottom: 28px;
-
-            h3{
-                color: #000000;
-                font-size: 30px;
-                line-height: 37px;
-                font-weight: 700;
-                font-family: "Be Vietnam Pro" !important;
-                margin-bottom: 14px;
-            }
-
-            p{
-                color: #000000;
-                font-size: 14px;
-                line-height: 22px;
-                font-weight: normal;
-                font-family: Poppins !important;
-                margin-bottom: 2px;
-            }
-        }
-
-        .planSilder{
-
-
-
-            .box{
-                padding: 18px 30px;
-                background-color: #fff;
-                border-radius: 20px;
-                height: 510px;
-                border-width: 1px;
-                border-style: solid;
-
-               
-
-                &.box1{
-                    border-color: #C3E128;  
-                }
-                &.box2{
-                    border-color: var(--main1);
-                }
-                &.box3{
-                    border-color: var(--main2);
-
-                    
-                    
-                }
-
-                .userImg{
-                    width: auto;
-                    height: 110px;
-                    margin: 0 auto 10px;
-                }
-
-                h3{
-                    font-size: 22px;
-                    margin-bottom: 3px;
-                    line-height: 36px;
-                    text-align: center;
-                    font-weight: 800;
-                    font-family: "Be Vietnam Pro" !important;
-                }
-
-                p{
-                    font-size: 14px;
-                    line-height: 19px;
-                    color: #AEAEAE;
-                    margin-bottom: 2px;
-                    min-height: 40px;
-                    font-family: Poppins !important;
-                    text-align: left;
-                    // height: 110px;
-                }
-
-                ul{
-                    padding-left: 0px;
-                    margin-bottom: 0px;
-                    list-style: none;
-                    overflow: hidden;
-                    height: 205px;
-                    overflow-x: hidden;
-                    overflow-y: auto;
-                    margin-top: 12px;
-                    margin-bottom: 0px;
-
-                    &::-webkit-scrollbar {
-                        display: none;
-                    }
-
-                    li{
-                        color: #3F3F3F;
-                        font-family: Poppins !important;
-                        font-size: 14px;
-                        line-height: 22px;
-                        font-weight: normal;
-                        margin-bottom: 5px;
-                        padding-left: 30px;
-                        position: relative;
-
-                        img{
-                            left: 0px;
-                            top: 2px;
-                            width: 20px;
-                            height: 20px;
-                            position: absolute;
-
-                        }
-                    }
-                }
-            }
-
-            
-
-            owl-carousel-o {
-
-                ::ng-deep {
-
-                    .owl-dots {
-
-                        .owl-dot {
-
-                            &.active {
-
-                                span {
-                                    background: var(--main2);
-                                }
-                            }
-                        }
+                        margin-top: 0px;
                     }
                 }
             }
@@ -523,445 +1158,75 @@
     }
 
     .advantagesShine {
-        padding: 60px 0px 60px;
-        background-color: #F3F3F370;
+        padding: 40px 0px 40px;
 
         .content {
-            text-align: center;
-            margin-bottom: 22px;
 
             h3 {
-                color: #3f3f3f;
-                font-size: 30px;
-                line-height: 37px;
-                font-weight: 700;
-                font-family: 'Be Vietnam Pro' !important;
-                margin-bottom: 8px;
-
-                span {
-                    color: var(--main2);
-                }
-            }
-
-            p {
-                color: #3f3f3f;
-                font-size: 14px;
-                line-height: 22px;
-                font-weight: normal;
-                font-family: Poppins !important;
-                margin-bottom: 2px;
-
-            }
-        }
-
-        .rowTable {
-            border-top: 1px solid #ECECEC;
-
-            .tableHeading {
-                padding-left: 0px;
-                list-style: none;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-bottom: 0px;
-
-                li {
-                    text-transform: uppercase;
-                    color: #989898;
-                    font-size: 14px;
-                    line-height: 22px;
-                    font-weight: 500;
-                    font-family: Poppins !important;
-                    padding: 30px 30px 15px;
-                    width: -webkit-fill-available;
-
-                    &:nth-of-type(2) {
-                        color: var(--main2);
-                    }
-
-                    &:nth-of-type(3) {
-                        color: var(--main1);
-                    }
-                }
-            }
-
-            .tableBox {
-                padding-left: 0px;
-                list-style: none;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                box-shadow: 0px 3px 10px #0000000F;
-                border: 1px solid #E8E8E8;
-                border-radius: 10px;
-                margin-bottom: 15px;
-
-                li {
-                    color: #3F3F3F;
-                    font-size: 14px;
-                    line-height: 22px;
-                    font-family: Poppins !important;
-                    padding: 18px 30px 18px;
-                    height: 100%;
-                    width: -webkit-fill-available;
-
-
-                    &:nth-of-type(1) {
-                        font-weight: 700;
-                        font-size: 16px;
-                    }
-                    &:nth-of-type(2) {
-                        color: #ffffff;
-                        background-color: #12BA9B;
-                    }
-                    
-                }
-            }
-        }
-    }
-
-    .featureBtn{
-        margin-top: 29px;
-        display: flex;
-        justify-content: center;
-        
-        .btn{
-            background-color: var(--main2);
-            border-radius: 23px;
-            padding: 10px 26px;
-            cursor: pointer;
-            color: #fff;
-            font-size: 16px;
-            font-family: Poppins !important;
-            font-weight: 500;
-            line-height: 22px;
-            min-width: 200px;
-        }
-    }
-
-    .leftSideDesign{
-        position: relative;
-        overflow: hidden;
-
-        &::before{
-            position: absolute;
-            content: "";
-            left: 0px;
-            top: 0px;
-            background-position: left;
-            background-repeat: no-repeat;
-            background-image: url(../../../assets/LandingPage/leftSideImg.svg);
-            width: 100%;
-            height: 78%;
-            z-index: -2;
-        }
-    }
-
-    .shineHelp {
-        padding: 60px 0px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-        overflow: hidden;
-
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            height: 100%;
-            background-image: url(../../../assets/LandingPage/leftDesign.png);
-            background-repeat: no-repeat;
-            width: 300px;
-            background-position: right;
-            rotate: 180deg;
-        }
-
-        .content {
-            text-align: center;
-            margin-bottom: 22px;
-
-            h3 {
-                color: #fff;
-                font-size: 30px;
-                line-height: 37px;
-                font-weight: 800;
-                font-family: 'Be Vietnam Pro' !important;
-                margin-bottom: 8px;
-
-                span {
-                    color: var(--main2);
-                }
-            }
-
-            p {
-                color: #fff;
-                font-size: 14px;
-                line-height: 22px;
-                font-weight: normal;
-                font-family: Poppins !important;
-                margin-bottom: 2px;
-
-            }
-        }
-
-        .boxCenter {
-            padding: 60px 0px;
-            position: relative;
-            z-index: 1;
-
-            &::before {
-                content: "";
-                position: absolute;
-                background-image: url(../../../assets/LandingPage/centerDesign.png);
-                height: 280px;
-                width: 100%;
-                top: 50%;
-                left: 50%;
-                transform: translate(-36%, -50%);
-                background-repeat: no-repeat;
-                z-index: -1;
-            }
-
-            .box {
-                border: 1px solid #E1E1E1;
-                border-radius: 20px;
-                background-color: #fff;
-                padding: 24px 22px;
-                text-align: center;
-                margin-bottom: 15px;
-                height: 175px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-wrap: wrap;
-
-                img {
-                    width: auto;
-                    height: 60px;
-                    margin: 0px auto;
-                }
-
-                p {
-                    color: var(--main1);
-                    font-size: 16px;
-                    line-height: 18px;
-                    font-weight: 600;
-                    font-family: Poppins !important;
-                    margin-bottom: 2px;
-                    width: 100%;
-                }
-            }
-        }
-
-        .contentBtn {
-            text-align: center;
-
-            p {
-                color: #FFFFFF;
-                font-size: 14px;
-                line-height: 22px;
-                cursor: pointer;
-                font-weight: normal;
-                font-family: Poppins !important;
-                margin-bottom: 14px;
-            }
-
-            .btn {
-                background-color: var(--main2);
-                border-radius: 23px;
-                padding: 10px 26px;
-                color: #fff;
-                font-size: 16px;
-                cursor: pointer;
-                font-family: Poppins !important;
-                font-weight: 500;
-                line-height: 22px;
-            }
-        }
-    }
-
-    .BusinessLoanOption {
-        background-color: #FAFAFA;
-        padding: 60px 0px;
-
-        .content {
-            text-align: center;
-            margin-bottom: 16px;
-
-            .btn {
-                border: 1px solid #D1D1D1;
-                border-radius: 10px;
-                background-color: #fff;
-                cursor: pointer;
-                padding: 8px 32px;
-                font-size: 16px;
-                color: var(--main2);
-                line-height: 22px;
+                font-size: 22px;
+                line-height: 27px;
                 font-weight: 600;
-                min-width: 155px;
-                max-width: 155px;
-                height: 46px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0px auto 18px;
-                cursor: auto;
-            }
-
-            h3 {
-                color: #3F3F3F;
-                font-size: 30px;
-                line-height: 37px;
-                font-weight: 800;
-                font-family: 'Be Vietnam Pro' !important;
-                margin-bottom: 8px;
-
-                span {
-                    color: var(--main2);
-                }
-            }
-
-            p {
-                color: #3F3F3F;
-                font-size: 14px;
-                line-height: 22px;
-                font-weight: normal;
-                font-family: Poppins !important;
-                margin-bottom: 2px;
-
             }
         }
 
-        .box {
-            border: 1px solid #E1E1E1;
-            border-radius: 20px;
-            background-color: #fff;
-            padding: 24px 22px;
-            text-align: center;
-            margin-bottom: 15px;
-            height: 175px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            transition: .5s;
+        .mobileTable{
 
-            &:hover {
-                background-color: #C3E128;
-            }
+            .mobileRow{
 
-            img {
-                width: auto;
-                height: 60px;
-                margin: 0px auto;
-            }
+                ul{
+                    box-shadow: 0px 3px 10px #0000000F;
+                    border: 1px solid #E8E8E8;
+                    border-radius: 10px;
+                    padding: 0;
+                    list-style: none;
+                    margin-bottom: 30px;
 
-            p {
-                color: #3F3F3F;
-                font-size: 14px;
-                line-height: 18px;
-                font-weight: 500;
-                font-family: Poppins !important;
-                margin-bottom: 2px;
-                width: 100%;
-            }
-        }
+                    li{
+                        padding: 20px 22px;
+                        height: 145px;
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: wrap;
 
-        .boxImg {
-            height: 175px;
+                        &:nth-child(2){ 
+                            background-color: #12BA9B;
+                            
+                            span{
+                                color: #ffffff;
+                            }
+                            p{
+                                color: #ffffff;
+                            }
+                        }
 
-            img {
-                border-radius: 20px;
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
+                        &:nth-child(3){ 
+                            
+                            span{
+                                color: var(--main1);
+                            }
+                        }
 
-    .guaranteedLoan {
-        padding: 60px 0px;
-        position: relative;
-        z-index: 1;
-        margin-top: -10px;
-        margin-bottom: -10px;
-        overflow: hidden;
+                        span{
+                            color: #989898;
+                            text-transform: uppercase;
+                            font-size: 14px;
+                            font-weight: 500;
+                            margin-bottom: 6px;
+                            display: block;
+                            width: 100%;
+                            font-family: Poppins !important;
+                        }
 
-        &::before{
-            position: absolute;
-            content: "";
-            background-image: url(../../../assets/LandingPage/LoanDesginImg.svg);
-            background-repeat: no-repeat;
-            width: 400px;
-            background-position: right;
-            height: 100%;
-            z-index: -1;
-            right: 0px;
-            top: 0px;
-
-        }
-
-        .content {
-            text-align: center;
-            margin-bottom: 40px;
-
-            h3 {
-                color: #3F3F3F;
-                font-size: 30px;
-                line-height: 37px;
-                font-weight: 800;
-                font-family: 'Be Vietnam Pro' !important;
-                margin-bottom: 8px;
-            }
-
-            p {
-                color: #3F3F3F;
-                font-size: 14px;
-                line-height: 22px;
-                font-weight: normal;
-                font-family: Poppins !important;
-                margin-bottom: 2px;
-
-            }
-        }
-
-        .yourRankingSilder {
-
-            .improveBox {
-                width: 100%;
-                
-                img{
-                    width: 100%;
-                }
-            }
-
-            .box {
-                position: relative;
-                background-color: var(--main1);
-                padding: 22px 30px;
-                border-radius: 10px;
-                margin-left: 2px;
-
-                &::before {
-                    position: absolute;
-                    content: "";
-                    width: 30px;
-                    height: 30px;
-                    background: var(--main1);
-                    clip-path: polygon(99% 1%, 100% 100%, 0 100%, 0 100%);
-                    top: 50%;
-                    transform: translate(0%, -50%);
-                    left: -25px;
-                    z-index: -1;
-                }
-
-                p {
-                    color: #fff;
-                    font-size: 14px;
-                    line-height: 20px;
-                    font-weight: normal;
-                    font-family: Poppins !important;
-                    margin: 2px 0px;
+                        p{
+                            color: #3F3F3F;
+                            font-size: 14px;
+                            font-weight: 500;
+                            margin-bottom: 2px;
+                            display: block;
+                            width: 100%;
+                            font-family: Poppins !important;
+                        }
+                    }
                 }
             }
 
@@ -986,357 +1251,49 @@
         }
     }
 
+    .shineHelp {
+        padding: 40px 0px;
+        background-position: right;
 
+        &::before {
+            display: none;
+        }
 
-@media (max-width: 767px) {
+        .content {
+            margin-bottom: 12px;
 
-        .leftSideDesign{
-
-            &::before{
-                display: none;
+            h3 {
+                font-size: 22px;
+                line-height: 27px;
+                font-weight: 600;
             }
         }
 
-        .SecuredBusinessLoan {
-            padding-top: 110px;
+        .boxCenter {
+            padding: 30px 30px;
+            overflow: hidden;
 
-            .homeSlider {
-
-                .silderSlide {
-                    height: 640px;
-
-                    img{
-                        height: 100%;
-                        object-fit: cover;
-                    }
-
-                    .silderText {
-                        transform: translate(0%, -45%);
-
-                        .title {
-
-                            .mainHeading {
-                                font-size: 32px;
-                            }
-
-                            .colorBox{
-                                width: auto;
-                            }
-
-                            .pricingBtn {
-                                margin-top: 20px;
-                            }
-                        }
-
-                        .imgBanner {
-                            position: relative;
-                            top: 20px;
-                            right: 0px;
-                            transform: translate(0%, 0%);
-                            width: 100%;
-                        }
-                    }
-                }
-            }
-        }
-
-        .twoSectionMarge {
-            background-image: none !important;
-            padding-bottom: 0px;
-
-            .betterLoanOpportunties {
-                padding-bottom: 30px;
-                padding-top: 30px;
-
-                .boxContent {
-
-                    .content {
-
-                        p {
-                            max-height: 130px;
-                            min-height: 130px;
-                        }
-                    }
-                }
-
-                .Content {
-                    margin-bottom: 20px;
-
-                    h3 {
-                        font-size: 22px;
-                        line-height: 27px;
-                        font-weight: 600;
-
-                        span {
-                            color: var(--main1);
-                            display: block;
-                        }
-                    }
-
-                    p {
-                        font-size: 14px;
-                        line-height: 20px;
-
-                    }
-                }
-            }
-        }
-
-        .transformFinance {
-            padding: 42px 0px 0px;
-
-            .rightContent {
-                text-align: center;
-
-                h3 {
-                    font-size: 22px;
-                    line-height: 27px;
-                    font-weight: 600;
-                }
-
-                p {
-                    font-size: 14px;
-                    line-height: 20px;
-
-                }
-            }
-
-            .laptopSilder {
-                padding-top: 30px;
-                right: 0px;
-                margin-top: 20px;
+            &.mobileImg{
 
                 &::before{
-                    width: 100%;
-                }
-
-                .textSilder {
-                    top: -45px;
-                    left: 50%;
-                    transform: translate(-50%, 0%);
-    
-                    img {
-                        width: 26px;
-                        height: 26px;
-                        position: absolute;
-                        z-index: 999;
-                        left: -12px;
-                    }
-    
-                    span {
-                        font-size: 13px;
-                        line-height: 22px;
-                        color: var(--main2);
-                        font-weight: 600;
-                        font-family: Poppins !important;
-                        margin-left: 4px;          
-                    }
-                }
-    
-                .laptopAnderImg {
-                    img {
-                        width: auto !important;
-                        height: 160px;
-                        object-fit: contain;
-                        position: relative;
-                        top: -40px;
-                        left: 50%;
-                        transform: translate(100%, 0%);
-                    }
-                }
-
-                owl-carousel-o {
-
-                    ::ng-deep {
-    
-                        .owl-dots {
-                            margin-top: 0px;
-                        }
-                    }
+                    background-image: url(../../../assets/LandingPage/centerDesignMobile.svg);
+                    height: 160px;
+                    transform: translate(-32%, -50%);
+                    display: block !important;
                 }
             }
-        }
-
-        .advantagesShine {
-            padding: 40px 0px 40px;
-
-            .content {
-
-                h3 {
-                    font-size: 22px;
-                    line-height: 27px;
-                    font-weight: 600;
-                }
-            }
-
-            .mobileTable{
-
-                .mobileRow{
-
-                    ul{
-                        box-shadow: 0px 3px 10px #0000000F;
-                        border: 1px solid #E8E8E8;
-                        border-radius: 10px;
-                        padding: 0;
-                        list-style: none;
-                        margin-bottom: 30px;
-
-                        li{
-                            padding: 20px 22px;
-                            height: 145px;
-                            display: flex;
-                            align-items: center;
-                            flex-wrap: wrap;
-
-                            &:nth-child(2){ 
-                                background-color: #12BA9B;
-                                
-                                span{
-                                    color: #ffffff;
-                                }
-                                p{
-                                    color: #ffffff;
-                                }
-                            }
-
-                            &:nth-child(3){ 
-                                
-                                span{
-                                    color: var(--main1);
-                                }
-                            }
-
-                            span{
-                                color: #989898;
-                                text-transform: uppercase;
-                                font-size: 14px;
-                                font-weight: 500;
-                                margin-bottom: 6px;
-                                display: block;
-                                width: 100%;
-                                font-family: Poppins !important;
-                            }
-
-                            p{
-                                color: #3F3F3F;
-                                font-size: 14px;
-                                font-weight: 500;
-                                margin-bottom: 2px;
-                                display: block;
-                                width: 100%;
-                                font-family: Poppins !important;
-                            }
-                        }
-                    }
-                }
-
-                owl-carousel-o {
-
-                    ::ng-deep {
-
-                        .owl-dots {
-
-                            .owl-dot {
-
-                                &.active {
-
-                                    span {
-                                        background: var(--main2);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        .shineHelp {
-            padding: 40px 0px;
-            background-position: right;
 
             &::before {
                 display: none;
             }
 
-            .content {
-                margin-bottom: 12px;
-
-                h3 {
-                    font-size: 22px;
-                    line-height: 27px;
-                    font-weight: 600;
-                }
-            }
-
-            .boxCenter {
-                padding: 30px 30px;
-                overflow: hidden;
-
-                &.mobileImg{
-
-                    &::before{
-                        background-image: url(../../../assets/LandingPage/centerDesignMobile.svg);
-                        height: 160px;
-                        transform: translate(-32%, -50%);
-                        display: block !important;
-                    }
-                }
-
-                &::before {
-                    display: none;
-                }
-
-                .box {
-                    padding: 12px 10px;
-                    height: auto;
-
-                    img {
-                        height: 40px;
-                        margin: 0px auto 12px;
-                    }
-
-                    p {
-                        font-size: 13px;
-                    }
-                }
-
-                .pdMobile{
-                    padding: 0px 3px;
-                }
-            }
-
-            .contentBtn {
-                text-align: center;
-
-                p {
-                    padding: 0px 50px;
-                }
-            }
-        }
-
-        .BusinessLoanOption {
-            padding: 50px 0px;
-
-            .content {
-
-                h3 {
-                    font-size: 22px;
-                    line-height: 27px;
-                    font-weight: 600;
-                }
-            }
-
-            .row-cols-5>*{
-                width: 50%;
-            }
-
             .box {
-                padding: 14px 12px;
-                height: 155px;
+                padding: 12px 10px;
+                height: auto;
 
                 img {
-                    height: 50px;
+                    height: 40px;
+                    margin: 0px auto 12px;
                 }
 
                 p {
@@ -1344,49 +1301,92 @@
                 }
             }
 
-            .boxImg {
-                display: none;
+            .pdMobile{
+                padding: 0px 3px;
             }
         }
 
-        .guaranteedLoan {
-            padding: 40px 0px;
-            background-image: none !important;
+        .contentBtn {
+            text-align: center;
 
-            &::before{
-                display: none;
+            p {
+                padding: 0px 50px;
+            }
+        }
+    }
+
+    .BusinessLoanOption {
+        padding: 50px 0px;
+
+        .content {
+
+            h3 {
+                font-size: 22px;
+                line-height: 27px;
+                font-weight: 600;
+            }
+        }
+
+        .row-cols-5>*{
+            width: 50%;
+        }
+
+        .box {
+            padding: 14px 12px;
+            height: 155px;
+
+            img {
+                height: 50px;
             }
 
-            .content {
-                margin-bottom: 15px;
+            p {
+                font-size: 13px;
+            }
+        }
 
-                h3 {
-                    font-size: 22px;
-                    line-height: 27px;
-                    font-weight: 600;
-                }
+        .boxImg {
+            display: none;
+        }
+    }
+
+    .guaranteedLoan {
+        padding: 40px 0px;
+        background-image: none !important;
+
+        &::before{
+            display: none;
+        }
+
+        .content {
+            margin-bottom: 15px;
+
+            h3 {
+                font-size: 22px;
+                line-height: 27px;
+                font-weight: 600;
+            }
+        }
+
+        .yourRankingSilder {
+
+            .orderTop{
+                order: -1;
             }
 
-            .yourRankingSilder {
+            .box {
+                margin-left: 0px;
+                margin-bottom: 20px;
 
-                .orderTop{
-                    order: -1;
-                }
-
-                .box {
-                    margin-left: 0px;
-                    margin-bottom: 20px;
-
-                    &::before {
-                        top: auto;
-                        transform: translate(50%, -50%);
-                        left: 50%;
-                        bottom: -34px;
-                        clip-path: polygon(0 1%, 100% 0, 100% 100%, 100% 100%);
-                    }
+                &::before {
+                    top: auto;
+                    transform: translate(50%, -50%);
+                    left: 50%;
+                    bottom: -34px;
+                    clip-path: polygon(0 1%, 100% 0, 100% 100%, 100% 100%);
                 }
             }
         }
+    }
 }
 
 

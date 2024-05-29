@@ -197,8 +197,10 @@ export class LandingPageComponent {
     private cdr: ChangeDetectorRef,
     private state: LocalStorageService,
     private breakpointObserver: BreakpointObserver,
-    private pricingService: PricingService,
+    public pricingService: PricingService,
     private navigationService:NavigationService,
+    private elRef:ElementRef,
+    private renderer: Renderer2,
 
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {
@@ -210,6 +212,8 @@ export class LandingPageComponent {
   }
 
   ngOnInit(): void {
+    this.randomNumber = Number(localStorage.getItem("plan_count"));
+    this.handleClickProgrammatically();
     this.redirectToPricing();
     this.state.removeItem();
     //   this.localStorage.removeSomeItem();
@@ -231,6 +235,13 @@ export class LandingPageComponent {
   redirectToPricing(): void {
     this.navigationService.setLinkClicked(true);
     this.pricing_url = this.pricingService.getPricingUrl();
+  }
+
+  handleClickProgrammatically(): void {
+    const className = this.pricingService.getClassBasedOnRandomNumber();
+    const buttonElement = this.elRef.nativeElement.querySelector('#assign');
+    this.renderer.addClass(buttonElement, className);
+    buttonElement.click();
   }
 
   playVideo(): void {

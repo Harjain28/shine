@@ -22,6 +22,7 @@ import { NgOtpInputModule } from 'ng-otp-input';
 import { MatSliderModule } from '@angular/material/slider';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { OtpService } from 'src/app/services/otp.service';
+import { PricingService } from 'src/app/services/random-pricing.service';
 
 @Component({
   selector: 'app-relogin',
@@ -99,6 +100,7 @@ export class ReloginComponent {
   requestData: any = {};
   loader!: boolean;
   isSubmit: boolean = false;
+  pricing_url: any;
 
   constructor(
     public eventService: EventService,
@@ -107,6 +109,7 @@ export class ReloginComponent {
     private api: ApiService,
     private navigationService: NavigationService,
     private otpService: OtpService,
+    private pricingService: PricingService,
     public dialogRef: MatDialogRef<ReloginComponent>
   ) {
     this.route.queryParamMap.subscribe((params) => {
@@ -122,6 +125,7 @@ export class ReloginComponent {
         Validators.maxLength(10),
       ]),
     });
+    this.redirectToPricing();
   }
 
   cancel() {
@@ -130,6 +134,11 @@ export class ReloginComponent {
     this.router.navigate(['/in'])
   }
 
+  redirectToPricing(): void {
+    this.navigationService.setLinkClicked(true);
+    this.pricing_url = this.pricingService.getPricingUrl();
+  }
+  
   reLoginProcess() {
     if (this.viewForm.valid) {
       this.isSubmit = true;
@@ -159,11 +168,11 @@ export class ReloginComponent {
                 this.fetchOtp();
                 this.router.navigate(['/in/otp']);
               } else if (res?.newUser) {
-                this.router.navigate(['in/pricing']);
+                this.router.navigate([this.pricing_url]);
               } else if (res?.paid) {
                 this.router.navigate(['in/bank_statement']);
               } else {
-                this.router.navigate(['in/pricing']);
+                this.router.navigate([this.pricing_url]);
               }
             }
           },

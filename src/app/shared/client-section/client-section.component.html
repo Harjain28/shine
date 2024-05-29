@@ -7,7 +7,7 @@
             <p>{{WhatToExpectSection?.Body}}</p>
 
             <div class="pricingBtn mhidden">
-              <button class="btn" (click)="goToPlans()">{{shineBanner?.CTA_Text}}</button>
+              <button   [class]="'btn ' + 'pricing_'+randomNumber"  (click)="goToPlans()">{{shineBanner?.CTA_Text}}</button>
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@
           </div>
           <div class="rightContent dhidden">
             <div class="pricingBtn ">
-              <button class="btn" (click)="goToPlans()">Check Pricing</button>
+              <button [class]="'btn ' + 'pricing_'+randomNumber"   (click)="goToPlans()">Check Pricing</button>
             </div>
           </div>
         </div>
