@@ -158,7 +158,7 @@ export class ReloginComponent {
         .postForLogin(`api/Remediation/ReloginOTP`, requestData, defaultparams)
         .subscribe({
           next: (res: any) => {
-            if (res) {
+            if (res.success) {
               this.isSubmit = true;
               this.loader = false;
               const data = { mobile: this.viewForm.value.phoneNumber };
@@ -166,7 +166,7 @@ export class ReloginComponent {
               sessionStorage.setItem('reloginUpdates', JSON.stringify(res));
               this.navigationService.setLinkClicked(true);
               this.closeDialoge();
-              if (res?.lastReportId && res?.lastReportId !== null) {
+              if (res?.lastReportId && res?.lastReportId !== null || res?.userData) {
                 this.fetchOtp();
                 this.router.navigate(['/in/otp']);
               } else if (res?.newUser) {

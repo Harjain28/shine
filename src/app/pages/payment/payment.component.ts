@@ -91,10 +91,8 @@ export class PaymentComponent {
 
       this.requestData = localStorage.getItem("reqData");
       this.parsedData = JSON.parse(this.requestData);
-      this.title = localStorage.getItem("title");
-      this.Headertext = localStorage.getItem("text");
-      this.planPrice =  localStorage.getItem("plan");
-      this.cuttedPrice =  localStorage.getItem("filteredPlan");
+   
+      this.getPriceInfo();
       
       if(this.parsedData){
         this.fName = this.parsedData.firstName.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase());
@@ -108,6 +106,14 @@ export class PaymentComponent {
       this.getConfirmPaymentJson();  
 
       
+    }
+
+    getPriceInfo() {
+      this.title = localStorage.getItem("title");
+      this.Headertext = localStorage.getItem("text") ? localStorage.getItem("text") : this.parsedData?.PricingModel;
+      this.planPrice =  localStorage.getItem("plan") ? localStorage.getItem("plan") :  this.parsedData?.SelectedPrice;
+      this.cuttedPrice = localStorage.getItem("filteredPlan");
+
     }
 
     cancelCoupon(){

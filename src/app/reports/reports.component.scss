@@ -1911,7 +1911,6 @@
                 &.scrollMonth {
 
                     ul {
-                        height: 130px;
 
                         &::-webkit-scrollbar {
                             display: none;
@@ -1930,7 +1929,7 @@
                 }
 
                 .qtrList {
-                    margin-bottom: 20px;
+                    // margin-bottom: 20px;
 
                     ul {
                         display: flex;
@@ -1940,8 +1939,10 @@
                         overflow: scroll;
 
                         li {
-                            padding: 6px 22px;
-                            border: 1px solid #CECECE;
+                            padding: 4px 22px;
+                            border: 1px solid var(--main2);
+                            background-color: var(--main2);
+                            color: #fff;
                             min-width: 44px;
                             display: flex;
                             align-items: center;
@@ -1954,6 +1955,7 @@
 
                             &.active {
                                 background-color: #FF7B24;
+                                border: 1px solid #FF7B24;
                                 color: #fff;
                                 font-size: 12px;
 

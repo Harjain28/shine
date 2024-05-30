@@ -120,7 +120,7 @@
           <div class="paymentPlan">
             <div class="box">
               <h3>{{filteredData?.Headertext}} Plan</h3>
-              <del>{{cuttedPrice}}</del>
+              <del>{{+planPrice + 1000}}</del>
               <span>₹{{planPrice | number:'':'en-IN'}} <small>+GST</small></span>
               <p>1 report per {{per_text}}</p>
             </div>

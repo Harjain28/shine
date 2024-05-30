@@ -75,7 +75,7 @@ export class Form1Component implements OnInit {
 
   ngOnInit(): void {
     this.form();
-
+   
     const savedPhoneNumber = localStorage.getItem('phoneNumber');
     if (savedPhoneNumber) {
       this.form1.patchValue({ phoneNumber: savedPhoneNumber });
@@ -169,7 +169,9 @@ export class Form1Component implements OnInit {
   getOtpbyPhone() {
 
     this.isSubmit = true;
-  
+    const PricingModel = localStorage.getItem("text");
+    const SelectedPrice =  localStorage.getItem("plan");
+    console.log(typeof(Number(SelectedPrice)), 'SelectedPrice');
     const formValue = this.form1.value;
     const defaultparams = {
       forceGenerate: false,
@@ -188,6 +190,8 @@ export class Form1Component implements OnInit {
     requestData['propertyOwnership'] = formValue.propertyOwnership;
     requestData['turnover'] = this.unformattedX;
     requestData['businessVintage'] = formValue.businessVintage;
+    requestData['PricingModel'] =  PricingModel;
+    requestData['SelectedPrice'] = SelectedPrice;
     localStorage.setItem('reqData', JSON.stringify(requestData));
     localStorage.setItem('title', formValue.title);
     // if (this.validatePin) {
