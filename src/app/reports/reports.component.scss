@@ -4371,6 +4371,10 @@
             h3 {
                 font-size: 22px;
             }
+
+            p{
+                line-height: 16px;
+            }
         }
 
         .improveBox {
@@ -4453,10 +4457,7 @@
 
                     p {
                         font-size: 13px;
-                        font-weight: normal;
-                        margin-bottom: 0px;
-                        color: #3F3F3F;
-                        line-height: 18px;
+                        line-height: 16px;
                     }
                 }
             }
@@ -4583,6 +4584,16 @@
                     }
                 }
             }
+
+            .overallBox{
+
+                .text{
+
+                    p{
+                        line-height: 18px;
+                    }
+                }
+            }
         }
     }
 
@@ -4598,10 +4609,15 @@
             h2 {
                 font-size: 24px;
                 padding: 0px 20px;
+                line-height: 28px;
 
                 span {
                     padding: 0px;
                 }
+            }
+
+            p{
+                line-height: 18px;
             }
         }
     }
