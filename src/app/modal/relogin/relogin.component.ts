@@ -125,6 +125,10 @@ export class ReloginComponent {
         Validators.maxLength(10),
       ]),
     });
+    const savedPhoneNumber = localStorage.getItem('phoneNumber');
+    if (savedPhoneNumber) {
+      this.viewForm.patchValue({ phoneNumber: savedPhoneNumber });
+    }
     this.redirectToPricing();
   }
 

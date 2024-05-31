@@ -44,6 +44,43 @@
     }
 }
 
+.HeaderStart{
+    background-color: var(--main1);
+    padding: 5px 30px;
+
+    .HeaderSet{
+
+        .navbar-brand{
+
+            img{
+                width: auto;
+                height: 54px;
+            }
+        }
+
+        h5{
+            font-size: 14px;
+            color: #fff;
+            font-family: Poppins !important;
+            margin-bottom: 0px;
+        }
+
+        .navbar-toggler{
+            background: transparent !important;
+            border: none;
+
+            &:focus{
+                outline: none;
+                box-shadow: none;
+            }
+
+            span{
+                background-image: url(https://shine.creditenable.com/toggleMenu.e6477ebc5bbd2f85.svg) !important;
+            }
+        }
+    }
+}
+
 @media (max-width: 767px) {
     .heraderSection{
 
@@ -64,5 +101,117 @@
 
     .padding30{
         padding: 0px 30px;
+    }
+
+    .mobileResponsive{
+
+        .mobileSide{
+            background-color: #fff;
+            position: fixed;
+            width: 320px;
+            right: 0px;
+            // height: 100%;
+            top: 0px;
+            transition: .3s;
+            right: -100%;
+            overflow: hidden;
+            height: calc(100vh - 0px);
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            &.show{
+                right: 0%;
+            }
+
+            .HeaderMenu{
+                
+                .numberMenu{
+                    display: block;
+                    height: auto !important;
+                }
+
+                ::ng-deep{
+
+                    .nav-link{
+                        color: #ffffff;
+                        padding: 0px 0px !important;
+                        height: 44px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+    
+                    .dropdown-toggle:after{
+                        margin-left: 12px;
+                        vertical-align: 1px;
+                        font-size: 20px;
+                    }
+                }
+
+                a{
+                    margin: 0px 32px;
+                    padding: 12px 0px;
+
+                    &:after{
+                        position: absolute;
+                        top: 18px;
+                        right: 20px;
+                    }
+                }
+
+                .mobileTop{
+                    order: -1;
+                    display: flex;
+                    align-items: center;
+                    background: var(--main1);
+                    padding: 20px 18px !important;
+
+                    .mobileNumber{
+                        color: #fff;
+                        text-align: left;
+                        font-size: 14px;
+                        font-weight: 600;
+                        padding: 0px;
+                        margin: 0px 0px;
+                        border-bottom: none;
+                        display: flex !important;
+                        align-items: center;
+                        justify-content: flex-start;
+                    }
+                }
+                .loginBtn{
+                    margin: 0px;
+                }
+            }
+        }
+
+        .HeaderSet{
+
+            .bg-white[aria-expanded="true"]{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                border-radius: 0px;
+                opacity: 0;
+                background: #00000057 !important;
+            }
+
+            .bg-white{
+                background: transparent !important;
+                border: none;
+
+                span{
+                    background-image: url(../../../assets/images/homeImage/toggleMenu.svg) !important;
+                }
+
+                &:focus{
+                    box-shadow: none !important;
+                    outline: none;
+                }
+                
+            }
+        }
     }
 }

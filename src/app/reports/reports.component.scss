@@ -230,6 +230,10 @@
 
 .creditReportSection {
 
+    .sideByside{
+        flex-wrap: nowrap !important;
+    }
+
     .title {
         text-align: center;
         position: relative;
@@ -515,6 +519,17 @@
             margin: 0 auto 20px;
             color: #3F3F3F;
             text-align: center;
+            font-family: Poppins !important;
+        }
+
+        p{
+            font-size: 13px;
+            font-weight: normal;
+            margin-bottom: 0px;
+            font-family: Poppins !important;
+            color: #3F3F3F;
+            line-height: 16px;
+            text-align: center;
         }
 
         .calendarBox {
@@ -529,7 +544,7 @@
                 span {
                     color: #3F3F3F;
                     font-size: 14px;
-                    font-weight: 500;
+                    font-weight: normal;
                     font-family: Poppins !important;
                     padding: 6px 14px;
                     margin-bottom: 10px;
@@ -598,7 +613,7 @@
             }
 
             p {
-                font-size: 12px;
+                font-size: 12px !important;
                 font-weight: normal;
                 margin-bottom: 0px;
                 font-family: Poppins !important;
@@ -792,7 +807,7 @@
                             justify-content: center;
                             font-size: 10px;
                             font-weight: 600;
-                            min-width: 64px;
+                            min-width: 50px;
                         }
 
                         .YesColor {
@@ -805,7 +820,7 @@
                             justify-content: center;
                             font-size: 10px;
                             font-weight: 600;
-                            min-width: 64px;
+                            min-width: 50px;
                         }
                     }
                 }
@@ -941,6 +956,10 @@
                         justify-content: center;
                         border: none;
                         padding: 3px 14px;
+                        height: 22px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
 
                         &.NoColor {
                             background-color: #EC1111;
@@ -1287,7 +1306,7 @@
             margin-bottom: 0px;
             font-family: Poppins !important;
             color: #3F3F3F;
-            line-height: 25px;
+            line-height: 18px;
         }
     }
 
@@ -1851,6 +1870,7 @@
                     font-family: Poppins !important;
                     font-size: 14px;
                     padding-bottom: 0px;
+                    line-height: 18px;
 
                     span {
                         width: 8px;
@@ -3101,7 +3121,8 @@
 
                 span {
                     color: #3F3F3F;
-                    font-size: 14px;
+                    font-size: 13px;
+                    line-height: 16px;
                     font-weight: 600;
                     font-family: Poppins !important;
                     position: relative;
@@ -3595,7 +3616,6 @@
             top: 0px;
             transform: translate(0%, 0%);
             margin: -410px auto 0px;
-            width: 300px;
         }
 
         .bannerImg {
@@ -3673,6 +3693,25 @@
         }
     }
 
+    .businessTurnover2{
+
+        .scoreProgress{
+            height: auto !important;
+            padding-bottom: 10px;
+
+            ul{
+
+                li{
+                    padding: 2px 0px;
+
+                    span{
+                        max-width: 100px;
+                    }
+                }
+            }
+        }
+    }
+
     .creditReportSection {
 
         .title {
@@ -3697,6 +3736,10 @@
 
         .scoreBox {
             padding: 28px 20px 20px;
+
+            &:hover{
+                box-shadow: 0px 3px 10px rgba(39, 45, 59, 0.1411764706);
+            }
 
             h3 {
                 font-size: 18px;
@@ -3846,11 +3889,14 @@
             .calendarBox {
 
                 .year {
-                    gap: 8px !important;
+                    gap: 6px !important;
 
                     span {
-                        font-size: 12px;
-                        padding: 6px 16px;
+                        padding: 6px 12px;
+                        height: 32px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                     }
                 }
             }
@@ -3899,6 +3945,7 @@
 
         .loanHistory {
             padding: 24px 24px;
+            box-shadow: 0px 3px 10px rgba(39, 45, 59, 0.1411764706);
 
             .title {
                 font-size: 15px;
@@ -3906,11 +3953,11 @@
 
             .gstnumberBox {
                 padding: 14px 18px;
-                margin: 0px 30px;
+                margin: 0px 18px;
             }
 
             .calendarBox {
-                margin: 14px 30px 0px;
+                margin: 14px 20px 0px;
 
                 h3 {
                     font-size: 15px;
@@ -3923,7 +3970,7 @@
             }
 
             .multiBox {
-                padding: 20px 18px;
+                padding: 20px 18px 5px;
                 margin-top: 10px;
             }
         }
@@ -3992,6 +4039,7 @@
 
            p{
             line-height: 18px;
+            padding: 0px 15px !important;
            }
         }
 
@@ -4170,7 +4218,7 @@
             .scoreProgress {
 
                 ul {
-                    padding-left: 0px;
+                    padding: 12px 0px;
                     list-style: none;
                     margin-bottom: 0px;
 
@@ -4353,6 +4401,14 @@
                             height: auto;
                         }
                     }
+
+                    ul{
+
+                        li{
+                            line-height: 18px;
+                            margin-bottom: 10px;
+                        }
+                    }
                 }
             }
         }
@@ -4362,6 +4418,14 @@
             line-height: 16px !important;
         }
 
+    }
+
+    .scoreProgress{
+
+        .progressBarColor{
+            height: auto;
+            padding-bottom: 6px;
+        }
     }
 
     .actionImprove {
@@ -4501,6 +4565,14 @@
                             margin-bottom: 0px;
                             font-family: Poppins !important;
                             color: #3F3F3F;
+                        }
+
+                        ul{
+
+                            li{
+                                line-height: 18px;
+                                margin-bottom: 10px;
+                            }
                         }
                     }
 

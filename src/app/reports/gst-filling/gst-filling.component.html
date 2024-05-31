@@ -54,7 +54,7 @@
                     <h3>{{info_card.header}}</h3>
                     <p>{{info_card?.description}}
                     </p>
-                    <p>
+                    <p class="mb-0">
                     <span [style.color]="warningColor">
                       <img *ngIf ="info_card?.class === 'negative'" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/alert.png" alt="">
                       {{ info_card?.warning }}
