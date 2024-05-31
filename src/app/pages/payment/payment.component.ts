@@ -162,7 +162,7 @@ export class PaymentComponent {
           this.count += order.item.length;
         }
       }
-      if(this.Headertext === "Monthly")
+      if(this.Headertext === "One-Time")
       {
         this.per_text = "month"
       }

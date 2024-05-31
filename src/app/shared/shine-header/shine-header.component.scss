@@ -44,6 +44,12 @@
     }
 }
 
+.loginBtn{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .HeaderStart{
     background-color: var(--main1);
     padding: 5px 30px;

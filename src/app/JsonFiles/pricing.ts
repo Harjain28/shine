@@ -7,7 +7,7 @@ export const shinePricingPageJSON = {
       "Shine offers a low-cost entry for a high-return journey to your ideal loans",
     ],
     headerText:[
-      'Key Feature', 'Monthly' , 'Annual'
+      'Key Feature', 'One-Time' , 'Annual'
     ],
      headerPrice:[
       'Select Plan best suited for you', '₹999' , '₹3999'
@@ -106,7 +106,7 @@ export const shinePricingPageJSON = {
 
     OrderText: [
       {
-        Headertext: 'Monthly',
+        Headertext: 'One-Time',
         Price: '999',
         item: [
           'Comprehensive Financial Overview',

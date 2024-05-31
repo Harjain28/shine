@@ -198,7 +198,6 @@
                           matInput
                           maxlength="6"
                           (keypress)="eventService.numberOnly($event, 'mobile')"
-                       
                           formControlName="pincode"
                           placeholder=""
                         />
@@ -220,7 +219,7 @@
                       form1.controls['pincode'].hasError('pattern')
                     "
                       >
-                      Please add valid information.
+                        Please add valid information.
                       </div>
 
                       <!-- <div class="error mb-2" *ngIf=" 
@@ -289,10 +288,10 @@
                       <mat-form-field appearance="fill">
                         <mat-label>Business PAN </mat-label>
                         <input
-                        matInput
-                        formControlName="businessPan"
-                        placeholder=""
-                      />
+                          matInput
+                          formControlName="businessPan"
+                          placeholder=""
+                        />
                       </mat-form-field>
                       <div
                         class="error mb-2"
@@ -304,14 +303,14 @@
                         Please complete this mandatory field.
                       </div>
                       <div
-                      class="error mb-2"
-                      *ngIf="
+                        class="error mb-2"
+                        *ngIf="
                     form1.controls['businessPan'].dirty &&
                     form1.controls['businessPan'].hasError('pattern')
                   "
-                    >
-                    Please add valid information.
-                    </div>
+                      >
+                        Please add valid information.
+                      </div>
 
                       <!-- <div
                         class="error mb-2"

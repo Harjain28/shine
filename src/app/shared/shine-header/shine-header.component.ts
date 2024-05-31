@@ -26,8 +26,15 @@ sticky: any;
       this.name = this.parsedData.firstName.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase());  
     }
 }
+removeTogglesidebar() {
+  document.body.classList.remove('sidebar-open');
+}
+
+
+
 
 logout(){
+  this.removeTogglesidebar();
   this.router.navigate(['/in'])
 }
 }

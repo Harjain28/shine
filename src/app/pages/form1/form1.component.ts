@@ -167,11 +167,10 @@ export class Form1Component implements OnInit {
   }
 
   getOtpbyPhone() {
-
     this.isSubmit = true;
-    const PricingModel = localStorage.getItem("text");
+    const PricingModel:any = localStorage.getItem("text");
+    let text =  '';
     const SelectedPrice =  localStorage.getItem("plan");
-    console.log(typeof(Number(SelectedPrice)), 'SelectedPrice');
     const formValue = this.form1.value;
     const defaultparams = {
       forceGenerate: false,
