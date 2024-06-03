@@ -655,17 +655,6 @@ export class CreditReportComponent {
 
 
 
-  calculateTextPosition(value: number): { x: number, y: number } {
-    const angle = this.calculateRotation(value);
-    const radius = 105; // Adjust radius to position text at the opposite side of the needle tip
-    const centerX = 100;
-    const centerY = 90;
-    const radians = (angle + 273) * (Math.PI / 180); // Adjust for rotation
-    const x = centerX + radius * Math.cos(radians);
-    const y = centerY + radius * Math.sin(radians);
-    return { x, y };
-
-  }
   calculateRotation(value: number): number {
     const minAnglee = -90;
     const maxAnglee = 90;
