@@ -297,11 +297,16 @@
             display: flex;
             justify-content: center;
             position: relative;
-            padding-top: 20px;
+            padding-top: 7px;
+            margin-bottom: 14px;
 
             svg {
                 overflow: visible;
-                height: 100px;
+                height: 86px;
+                /* padding-top: 5px; */
+                padding: -1px;
+                margin-top: -20px;
+                margin-bottom: 32px;
 
                 .topText {
                     // position: absolute;
@@ -315,8 +320,8 @@
 
                 .leftText {
                     position: absolute;
-                    transform: translate(-13%, -30%);
-                    font-size: 12px;
+                    transform: translate(-7%, 21%);
+                    font-size: 13px;
                     font-weight: 400;
                     color: #3F3F3F;
                 }
@@ -328,8 +333,8 @@
 
                 .rightText {
                     position: absolute;
-                    transform: translate(17%, -30%);
-                    font-size: 12px;
+                    transform: translate(10%, 21%);
+                    font-size: 13px;
                     font-weight: 400;
                     color: #3F3F3F;
                 }
@@ -3657,6 +3662,7 @@
         .scoreBox {
             margin: 10px 18px 20px;
         }
+        
 
         .btn {
 
