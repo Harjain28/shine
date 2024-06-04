@@ -19,12 +19,12 @@
                 <div class="scoreChart text-center">
                   <svg width="200" height="100" viewBox="0 0 200 100">
                     <defs>
-                      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" style="stop-color:#C3E128;stop-opacity:1" />
                         <stop offset="100%" style="stop-color:#12BA9B;stop-opacity:1" />
                       </linearGradient>
                     </defs>
-                    <path d="M10,110 A80,80 0 0,1 190,110" fill="none" stroke="url(#gradient)" stroke-width="10"></path>
+                    <path d="M10,110 A80,80 0 0,1 190,110" fill="none" stroke="url(#gradient1)" stroke-width="10"></path>
                     <g [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 110)'">
                       <line x1="100" y1="110" x2="100" y2="8" stroke="#707070" stroke-width="3"></line>
                       <text x="100" y="8" dy="-5" style="font-weight: 700;" text-anchor="middle">{{ angle }}</text>
@@ -90,14 +90,14 @@
 
       </div>
 
-      <div class="col-lg-12 padding30 mhidden">
+      <div class="col-lg-12 padding30 mhidden" >
         <div class="title">
           <h2><span>{{CR_Data?.header}}</span></h2>
           <p>{{CR_Data?.subheader}}</p>
         </div>
       </div>
 
-      <div class="container" #scrollTargetSection>
+      <div class="container"  #scrollTargetSection>
         <ng-container *ngIf="expandSection" >
           <div class="row">
             <div class="col-lg-12 mb-4 padding30 margin15">
@@ -162,7 +162,7 @@
                             <ul class="historyList">
                               <div *ngIf="default_analysis" class="historyList">
                                 <ng-container *ngFor="let item of defaultHistoryItems; let i= index">
-                                  <li>
+                                  <li #scrollTargetSection2>
                                     {{default_analysis_labels[i]}}
                                     <span [ngClass]="item.value ? 'NoColor' : 'YesColor'">{{ item.value ? 'YES' : 'NO'
                                       }}</span>
@@ -173,21 +173,21 @@
 
                             </ul>
 
-                            <div class="box" style="border: 1px solid #6A2FC2; background-color: #FBF8FF;">
+                            <div  class="box" style="border: 1px solid #6A2FC2; background-color: #FBF8FF;">
                               <p>
                                 {{defaulthistoryText?.description}}
                               </p>
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
+                        <div  class="col-md-4 col-lg-4 col-sm-12 mb-3">
                           <div class="defaultHistory solutions">
-                            <h3>Solutions</h3>
+                            <h3  >Solutions</h3>
                             <p>
                               {{solutions?.header}}
                             </p>
 
-                            <hr>
+                            <hr >
                             <ul class="historyList">
                               <li *ngFor="let bullets of solutions?.bullets">
                                 <span></span>
@@ -200,7 +200,7 @@
                           <div class="defaultHistory active">
                             <h3>Impact</h3>
                             <ul class="numberBox">
-                              <li>
+                              <li  #scrollTargetSection2>
                                 <span>Your current stage</span>
                                 Level - {{currStage}}
                               </li>
@@ -312,7 +312,7 @@
         </ng-container>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 mb-4 margin15 padding30 mhidden">
+      <div class="col-lg-4 col-md-4 col-sm-12 mb-4 margin15 padding30 mhidden" >
         <div class="scoreBox">
           <h3>{{CR_Data?.bureau_score_card?.header}}</h3>
           <div class="scoreChart text-center">
@@ -352,7 +352,7 @@
         </div>
       </div>
 
-      <div class="col-lg-8 col-md-8 col-sm-12 mb-4 margin15 padding30" *ngIf="!expandSection">
+      <div class="col-lg-8 col-md-8 col-sm-12 mb-4 margin15 padding30"  *ngIf="!expandSection">
         <div class="loanHistory" style="cursor: pointer;" (click)="expand()">
           <div class="plus">
             <span>
@@ -422,7 +422,7 @@
 
       <!-- Current DEBT -->
 
-      <div class="col-lg-8 col-md-8 col-sm-12 mb-4 margin15 padding30" *ngIf="!expandCurrentCreditSection">
+      <div class="col-lg-8 col-md-8 col-sm-12 mb-4 margin15 padding30"   #scrollTargetSection1 *ngIf="!expandCurrentCreditSection">
         <div class="loanHistory currentCredit" style="cursor: pointer;" (click)="expandCurrentCredit()">
           <div class="plus">
             <span>
@@ -498,7 +498,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 mb-4 margin15 mhidden padding30" *ngIf="!expandBlocks">
+      <div class="col-lg-4 col-md-4 col-sm-12 mb-4 margin15 mhidden padding30"  *ngIf="!expandBlocks">
         <div class="heightBox">
           <div class="row">
             <div class="col-lg-12 mb-3">
@@ -574,12 +574,12 @@
   <!-- Credit-Report-Section End -->
 
   <!-- Two-plus-Section Start -->
-  <div class="creditReportSection">
+  <div class="creditReportSection"  >
     <div class="container padding30">
 
 
       <!-- Current DEBT Expend -->
-      <div class="col-lg-12 mb-4 margin15" *ngIf="expandCurrentCreditSection" >
+      <div class="col-lg-12 mb-4 margin15"  *ngIf="expandCurrentCreditSection" >
         <div class="loanHistory">
           <div class="plus" (click)="minimizeCurrentCredit()">
             <span>

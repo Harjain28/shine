@@ -55,6 +55,8 @@ export class HistogramComponent {
             display: false 
           },
           tooltip: {
+            mode: 'nearest',
+            intersect: false,
             callbacks: {
               label: function (context: any) {
                 let label = context.dataset.label || '';

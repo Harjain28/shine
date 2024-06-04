@@ -100,6 +100,8 @@ export class Mixed4Component {
             display: false, // Set to false to hide the legend
           },
           tooltip: {
+            mode: 'nearest',
+            intersect: false,
             callbacks: {
               label: function (context: any) {
                 let label = context.dataset.label || '';

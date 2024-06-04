@@ -71,8 +71,6 @@ import { cust38Json } from '../JsonFiles/9810394413';
 import { cust39Json } from '../JsonFiles/9850517709';
 import { cust40Json } from '../JsonFiles/9874673188';
 import { cust41Json } from '../JsonFiles/9972099888';
-import { cust13FixedJson } from '../JsonFiles/9427043914-fixed';
-import { cust11FixedJson } from '../JsonFiles/8746099464-fixed';
 
 @Component({
   selector: 'app-reports',
@@ -284,8 +282,8 @@ export class ReportsComponent {
       '9427043914.json': cust13Json,
       '9880725508.json': cust14Json,
       '9894874420.json': cust15Json,
-      '8746099464-fixed.json': cust11FixedJson,
-      '9427043914-fixed.json': cust13FixedJson,
+      '8746099464-fixed.json': cust1FixedJson,
+      '9427043914-fixed.json': cust1FixedJson,
       '6352416401.json': cust16Json,
       '7002057931.json': cust17Json,
       '7386964691.json': cust18Json,

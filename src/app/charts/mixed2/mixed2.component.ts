@@ -48,7 +48,7 @@ export class Mixed2Component {
       labels: [...this.mixedValue2],
       datasets: [
            {
-          // label: 'Horizontal Line Dataset',
+            label: 'Mean Stability Limit',          
           type: 'line',
           data: Array.from({ length: 6 }, () => ({ x: 0, y: mean })),
           borderColor: '#FF7B24',
@@ -57,7 +57,7 @@ export class Mixed2Component {
           pointStyle:"line"
         },
         {
-          // label: 'Horizontal Line Dataset',
+          label: 'Lower Stability Limit',          
           type: 'line',
           data: Array.from({ length: 6 }, () => ({ x: 0, y: adjustedLowSd })),
           borderColor: '#EC1111',
@@ -66,7 +66,7 @@ export class Mixed2Component {
           pointStyle:"line"
 
         },{
-          // label: 'Horizontal Line Dataset',
+          label: 'Upper Stability Limit',          
           type: 'line',
           data: Array.from({ length: 6 }, () => ({ x: 0, y: highSd })),
           borderColor: '#12BA9B',
@@ -84,21 +84,22 @@ export class Mixed2Component {
         },
       ],
     };
-
     this.chart = new Chart(this.chartCanvas.nativeElement, {
       type: 'bar',
       data: chartData2,
       options: {
         plugins: {
-          
           legend: {
-            display: false, // Set to false to hide the legend
+            display: false,
           },
           tooltip: {
+            mode: 'nearest',
+            intersect: false,
+            
             callbacks: {
               label: function (context: any) {
                 let label = context.dataset.label || '';
-  
+
                 if (label) {
                   label += ': ';
                 }
@@ -106,7 +107,7 @@ export class Mixed2Component {
                   label += new Intl.NumberFormat('en-IN').format(context.parsed.y);
                 }
                 return label;
-              }
+              },
             },
           },
         },

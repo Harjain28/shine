@@ -33,9 +33,11 @@ export class Mixed5Component {
       },
       plugins: {
         legend: {
-          display: false, // Set to false to hide the legend
+          display: false,
         },
         tooltip: {
+          mode: 'nearest',
+            intersect: false,
           callbacks: {
             label: function (context: any) {
               let label = context.dataset.label || '';
@@ -121,7 +123,7 @@ export class Mixed5Component {
       labels: [...this.mixedValue2],
       datasets: [
            {
-          // label: 'Horizontal Line Dataset',
+            label: 'Mean Stability Limit',          
           type: 'line',
           data: Array.from({ length: 12 }, () => ({ x: 0, y: mean })),
           borderColor: '#FF7B24',
@@ -130,7 +132,7 @@ export class Mixed5Component {
           pointStyle:"line"
         },
         {
-          // label: 'Horizontal Line Dataset',
+          label: 'Lower Stability Limit',          
           type: 'line',
           data: Array.from({ length: 12 }, () => ({ x: 0, y: adjustedLowSd })),
           borderColor: '#EC1111',
@@ -139,7 +141,7 @@ export class Mixed5Component {
           pointStyle:"line"
 
         },{
-          // label: 'Horizontal Line Dataset',
+          label: 'Upper Stability Limit',          
           type: 'line',
           data: Array.from({ length: 12 }, () => ({ x: 0, y: highSd })),
           borderColor: '#12BA9B',

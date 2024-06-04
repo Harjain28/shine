@@ -34,6 +34,10 @@ export class CreditReportComponent {
   @Input() creditReportsData: any;
   @ViewChild('owlCarousel') owlCarousel!: CarouselComponent;
   @ViewChild('scrollTargetSection') scrollTargetSection!: ElementRef;
+  @ViewChild('scrollTargetSection1') scrollTargetSection1!: ElementRef;
+  @ViewChild('scrollTargetSection2') scrollTargetSection2!: ElementRef;
+
+
 
 
   isVisible = false;
@@ -685,13 +689,17 @@ export class CreditReportComponent {
     if (this.expandSection == true) {
       this.expandSection = false;
       this.expandCurrentCreditSection = true;
+        if (this.scrollTargetSection2) {
+          this.scrollTargetSection2.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     } else {
       this.expandCurrentCreditSection = true;
       this.expandBlocks = true;
+      if (this.scrollTargetSection1) {
+        this.scrollTargetSection1.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
-    if (this.scrollTargetSection) {
-      this.scrollTargetSection.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+   
   }
 
   minimizeCurrentCredit() {
