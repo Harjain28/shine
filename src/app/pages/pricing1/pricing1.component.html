@@ -27,7 +27,8 @@
                             <h3>{{pricingHeader?.headerText[2]}} Plan</h3>
                             <del>₹{{annaulFilteredPlan}}</del>
                             <span>₹{{annualPlan}}</span>
-                            <p>per member, per year</p>
+                            <p>Annual for 4 report <br>
+                                1 every 3 months</p>
                             <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[2], annualPlan,annaulFilteredPlan, true)">{{pricingHeader?.CTA_Text}}</button>
                         </div>
                         <button class="valueBtn">VALUE FOR MONEY</button>
@@ -69,17 +70,18 @@
                 <div class="mobileVIewSilder">
                     <div class="priceBox">
                         <div class="monthView">
-                            <h3>{{pricingHeader?.headerText[1]}}</h3>
+                            <h3>{{pricingHeader?.headerText[1]}} Plan</h3>
                             <del>₹{{monthlyFilteredPlan}}</del>
                             <span>₹{{monthlyPlan}}</span>
-                            <p>per member, per month</p>
+                            <p>per member, one-time</p>
                             <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[1],monthlyPlan,monthlyFilteredPlan, true)">{{pricingHeader?.CTA_Text}}</button>
                         </div>
                         <div class="monthView active">
-                            <h3>{{pricingHeader?.headerText[2]}}</h3>
+                            <h3>{{pricingHeader?.headerText[2]}} Plan</h3>
                             <del>₹{{annaulFilteredPlan}}</del>
                             <span>₹{{annualPlan}}</span>
-                            <p>per member, per year</p>
+                            <p>Annual for 4 report <br>
+                                1 every 3 months</p>
                             <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[2],annualPlan, annaulFilteredPlan, true)">{{pricingHeader?.CTA_Text}}</button>
                         </div>
                     </div>
