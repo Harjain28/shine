@@ -140,6 +140,7 @@
                 line-height: 20px;
                 font-family: Poppins !important;
                 text-align: center;
+                height: 34px;
             }
             
             .btn{
@@ -451,7 +452,7 @@
                 .monthView{
                     border: 1px solid #E2E2E2;
                     background-color: #F5F5F5;
-                    padding: 20px 24px;
+                    padding: 20px 14px;
 
                     &.active{
                         background-color: var(--main1);
@@ -517,7 +518,7 @@
                 .btn{
                     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1019607843);
                     border-radius: 50px;
-                    padding: 9px 23px;
+                    padding: 9px 30px;
                     background-color: var(--main2);
                     font-size: 14px;
                     font-weight: 500;
