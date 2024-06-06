@@ -130,7 +130,7 @@ export const shinePricingPageJSON = {
               'Tailored Plans for Loan Success',
               'Custom Advice on 15+ Lender Matches',
              'Access to Top Borrowing Tips',
-             'Monthly Performance Tracking',
+             'Quarterly Performance Tracking',
              'Access to Credit Counsellor',
              'Debt Consolidation Advisory ',
              'Personalised Loan Negotiations'

@@ -18,7 +18,7 @@
                             <h3>{{pricingHeader?.headerText[1]}} Plan</h3>
                             <del>₹{{monthlyFilteredPlan}}</del>
                             <span>₹{{monthlyPlan}}</span>
-                            <p>per member, per month</p>
+                            <p>per member, one-time</p>
                             <button class="btn pricing_group"  (click)="goToRegister(pricingHeader?.headerText[1], monthlyPlan,monthlyFilteredPlan,true)">{{pricingHeader?.CTA_Text}}</button>
                         </div>
                     </div>
@@ -135,14 +135,14 @@
                 </div>
             </div>
             
-            <div class="col-lg-12 col-md-12 col-sm-12 m-auto">
+            <!-- <div class="col-lg-12 col-md-12 col-sm-12 m-auto">
                 <div class="button">
                     <button class="btn pricing_group" (click)="viewReportsForm()">
                         <img src="./assets/LandingPage/searchIcon.svg" alt="">
                         View Sample Report
                     </button>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

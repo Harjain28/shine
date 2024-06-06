@@ -165,11 +165,13 @@ export class OtpComponent implements OnInit{
             this.navigationService.setLinkClicked(true);
             if (this.userData && this.userData?.lastReportId) {
                 this.router.navigate(['/in/report', res?.userId]);
-            } else {
+            } else if (this.userData?.paid) {
+              this.router.navigate(['/in/bank_statement']);
+            }  else {
               this.router.navigate(['/in/confirm_order']);
-              this.isOtpSubmit = true;
               localStorage.setItem("userId",res?.userId);
             }
+            this.isOtpSubmit = true;
           } else {
             this.api.alert("Please add valid information", "error");
             this.isOtpSubmit = false;
