@@ -175,7 +175,9 @@ export class ReloginComponent {
                 this.router.navigate(['/in/otp']);
               } else if (res?.newUser) {
                 this.router.navigate([this.pricing_url]);
-              } else if (res?.paid) {
+              } else if (!res?.newUser && !res?.paid) {
+                this.router.navigate(['confirm_order']);
+              }  else if (res?.paid) {
                 this.router.navigate(['in/bank_statement']);
               } else {
                 this.router.navigate([this.pricing_url]);

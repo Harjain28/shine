@@ -110,8 +110,8 @@ export class PaymentComponent {
 
     getPriceInfo() {
       this.title = localStorage.getItem("title");
-      this.Headertext = localStorage.getItem("text") ? localStorage.getItem("text") : this.parsedData?.PricingModel;
-      this.planPrice =  localStorage.getItem("plan") ? localStorage.getItem("plan") :  this.parsedData?.SelectedPrice;
+      this.Headertext = localStorage.getItem("text") ? localStorage.getItem("text") : this.parsedData?.pricingModel;
+      this.planPrice =  localStorage.getItem("plan") ? localStorage.getItem("plan") :  this.parsedData?.selectedPrice;
       this.cuttedPrice = localStorage.getItem("filteredPlan");
 
     }
