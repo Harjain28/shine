@@ -27,7 +27,7 @@
                     <path d="M10,110 A80,80 0 0,1 190,110" fill="none" stroke="url(#gradient1)" stroke-width="10"></path>
                     <g [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 110)'">
                       <line x1="100" y1="110" x2="100" y2="8" stroke="#707070" stroke-width="3"></line>
-                      <text x="100" y="8" dy="-5" style="font-weight: 700;" text-anchor="middle">{{ angle }}</text>
+                      <text x="100" y="8" dy="-5" style="font-weight: 700; font-family: Poppins !important;" text-anchor="middle">{{ angle }}</text>
                     </g>
                     <text class="leftText"  x="10" y="90" text-anchor="middle">{{ minAngle }}</text>
                     <text class="rightText" x="190" y="90" text-anchor="middle">{{ maxAngle }}</text>
@@ -326,7 +326,7 @@
               <path d="M10,110 A80,80 0 0,1 190,110" fill="none" stroke="url(#gradient)" stroke-width="10"></path>
               <g [attr.transform]="'rotate(' + calculateRotation(angle) + ', 100, 110)'">
                 <line x1="100" y1="110" x2="100" y2="8" stroke="#707070" stroke-width="3"></line>
-                <text x="100" y="8" dy="-5" style="font-weight: 700;" text-anchor="middle">{{ angle }}</text>
+                <text x="100" y="8" dy="-5" style="font-weight: 700; font-family: Poppins !important;" text-anchor="middle">{{ angle }}</text>
               </g>
               <text class="leftText"  x="10" y="90" text-anchor="middle">{{ minAngle }}</text>
               <text class="rightText" x="190" y="90" text-anchor="middle">{{ maxAngle }}</text>
@@ -395,7 +395,7 @@
                 <div class="textContent">
                   <!-- <h3>Multiple Delayed Payments!</h3> -->
                   <h3>{{infoCardLRP?.header}}</h3>
-                  <p>
+                  <p style="text-align: left;">
                     {{infoCardLRP?.description}}
                   </p>
                   <P>

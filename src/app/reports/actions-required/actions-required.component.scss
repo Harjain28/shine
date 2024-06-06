@@ -9,7 +9,7 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        margin-top: 10px 18px !important;
+        margin-top: 3px !important;
 
         .owl-prev{
             background-color: transparent !important;
@@ -17,7 +17,7 @@
             font-weight: 600;
             color: var(--main1) !important;
             border: none;
-            margin: 0px !important;
+            margin: 0px 24px !important;
             display: flex !important;
             align-items: center;
 
@@ -28,6 +28,7 @@
             span{
                 display: flex;
                 align-items: center;
+                font-family: Poppins !important;
 
             }
 
@@ -44,7 +45,7 @@
             font-weight: 600;
             color: var(--main1) !important;
             border: none;
-            margin: 0px !important;
+            margin: 0px 24px !important;
             display: flex !important;
             align-items: center;
 
@@ -54,7 +55,8 @@
 
             span{
                 display: flex;
-                align-items: center;
+                align-items: center;    
+                font-family: Poppins !important;
 
             }
 
