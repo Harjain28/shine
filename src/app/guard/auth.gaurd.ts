@@ -9,7 +9,7 @@ import { NavigationService } from '../services/navigation.service';
 })
 export class AuthGuard  {
   private readonly allowedUrls: string[] = [
-    "/in/pricing_group",
+    // "/in/pricing_group",
     "/in/pricing_annual",
     "/in/register",
     "/in/otp",
