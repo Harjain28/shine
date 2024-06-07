@@ -149,8 +149,8 @@ export class CreditReportComponent {
     autoplayTimeout: 8000,
     autoplaySpeed: 1500,
     navText: [
-      "<span><img class='navTxtImg' src='./assets/images/homeImage/left-arrow.svg'> 1 more</span>",
-      "<span> 1 more <img class='navTxtImg' src='./assets/images/homeImage/right-arrow.svg'></span>",
+      "<span><img class='navTxtImg' src='./assets/images/homeImage/silderaArrow.svg'> 1 more</span>",
+      "<span> 1 more <img class='navTxtImg' src='./assets/images/homeImage/silderaArrow.svg'></span>",
     ],
     responsive: {
       0: {

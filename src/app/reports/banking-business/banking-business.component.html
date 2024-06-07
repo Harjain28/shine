@@ -1,5 +1,5 @@
 <div class="bankingHistory section_padding">
-  <div class="container padding30" #scrollTargetSection>
+  <div class="container" #scrollTargetSection>
     <div class="row ">
       <div class="col-lg-12">
         <div class="title">
@@ -11,7 +11,7 @@
           <p>{{affordability_section?.subheader}}</p>
         </div>
       </div>
-      <div class="col-lg-12 col-md-12 col-sm-12" style="transition: .5s;" *ngIf="expandBusinessSection" >
+      <div class="col-lg-12 col-md-12 col-sm-12 mt-4 padding30" style="transition: .5s;" *ngIf="expandBusinessSection" >
         <div class="businessTurnover mb-3">
           <div class="plus" (click)="minimizeBusinessBanking()">
             <span>
@@ -258,7 +258,7 @@
         </div>
       </div>
 
-      <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="expandBalanceSection" #scrollTargetSection>
+      <div class="col-lg-12 col-md-12 col-sm-12 mt-4 padding30" *ngIf="expandBalanceSection" #scrollTargetSection>
         <div class="businessTurnover mb-3">
           <div class="plus" (click)="minimizeBankingBalance()">
             <span>
@@ -425,7 +425,7 @@
         </div>
       </div>
 
-      <div class="col-lg-8 col-md-8 col-sm-12 mt-4" *ngIf="BusinessSectionBlock">
+      <div class="col-lg-8 col-md-8 col-sm-12 mt-4 padding30" *ngIf="BusinessSectionBlock">
         <div class="businessTurnover h-100"  style="cursor: pointer;"  (click)="expandBankingBusniess()">
           <div class="plus">
             <span>
@@ -462,7 +462,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-12 mt-4" *ngIf="balanceSectionBlock">
+      <div class="col-lg-4 col-md-4 col-sm-12 mt-4 padding30" *ngIf="balanceSectionBlock">
         <div class="businessTurnover h-100"  style="cursor: pointer;" (click)="expandBankingBalance()">
           <div class="plus">
             <span>
@@ -530,7 +530,7 @@
         </div>
       </div>
 
-      <div class="col-lg-12 col-md-12 col-sm-12 mb-5" *ngIf="expandDebtRatioSection"   >
+      <div class="col-lg-12 col-md-12 col-sm-12 mb-5 mt-4 padding30" *ngIf="expandDebtRatioSection"   >
         <div class="businessTurnover">
           <div class="plus" (click)="mnimizeDebtRatioBlock()" >
             <span>
@@ -751,19 +751,19 @@
         </div>
       </div>
 
-      <div class="mobileSilderView dhidden" >
+      <div class="mobileSilderView dhidden padding20" >
         <owl-carousel-o [options]="customOptions4">
           <ng-container>
             <ng-template carouselSlide >
-              <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="!expandDebtRatioSection" >
-                <div class="businessTurnover h-100" style="margin: 10px; cursor: pointer;" (click)="expandDebtRatioBlock()">
+              <div class="col-lg-12 col-md-12 col-sm-12 mt-4" *ngIf="!expandDebtRatioSection" >
+                <div class="businessTurnover h-100" style="margin: 0px 10px 10px; cursor: pointer;" (click)="expandDebtRatioBlock()">
                   <div class="plus" >
                     <span>
                       <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_normal.png" alt="">
                       <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_hover.png" alt="">
                     </span>
                   </div>
-                  <h3 style="padding: 30px;">{{risk_section?.debt_turnover_card?.header}}</h3>
+                  <h3 style="padding: 0px 30px;">{{risk_section?.debt_turnover_card?.header}}</h3>
           <p>{{risk_section?.debt_turnover_card?.subheader}}</p>
         
                   <div class="row">
@@ -813,8 +813,8 @@
             </ng-template>
             
             <ng-template carouselSlide>
-              <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="!expandDebtRatioSection">
-                <div class="businessTurnover h-100" style="margin: 10px;">
+              <div class="col-lg-12 col-md-12 col-sm-12 mt-4" *ngIf="!expandDebtRatioSection">
+                <div class="businessTurnover h-100" style="margin: 0px 10px 10px;">
                   <h3>{{risk_section?.cheque_bounces_card?.header}}</h3>
             <p>{{risk_section?.cheque_bounces_card?.subheader}}</p>
         
@@ -936,12 +936,12 @@
         </div>
       </div>
 
-      <div class="mobileSilderView dhidden">
+      <div class="mobileSilderView dhidden padding20">
         <owl-carousel-o [options]="customOptions4">
           <ng-container>
             <ng-template carouselSlide>
-              <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="businessTurnover h-100" style="margin: 10px;">
+              <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+                <div class="businessTurnover h-100 " style="margin: 0px 10px 10px;">
                   <h3>{{cashflow_section?.cashflow_stability_card?.header}}</h3>
                   <p>{{cashflow_section?.cashflow_stability_card?.subheader}}</p>
         
