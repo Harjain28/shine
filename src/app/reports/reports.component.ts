@@ -47,6 +47,7 @@ import { cust14Json } from '../JsonFiles/9880725508';
 import { cust15Json } from '../JsonFiles/9894874420';
 import { cust16Json } from '../JsonFiles/6352416401';
 import { cust17Json } from '../JsonFiles/7002057931';
+import { cust17FixedJson } from '../JsonFiles/7002057931-fixed';
 import { cust18Json } from '../JsonFiles/7386964691';
 import { cust19Json } from '../JsonFiles/7630960645';
 import { cust20Json } from '../JsonFiles/7755073434';
@@ -71,6 +72,9 @@ import { cust38Json } from '../JsonFiles/9810394413';
 import { cust39Json } from '../JsonFiles/9850517709';
 import { cust40Json } from '../JsonFiles/9874673188';
 import { cust41Json } from '../JsonFiles/9972099888';
+import { cust13FixedJson } from '../JsonFiles/9427043914-fixed';
+import { cust11FixedJson } from '../JsonFiles/8746099464-fixed';
+import { cust42Json } from '../JsonFiles/9422078781';
 
 @Component({
   selector: 'app-reports',
@@ -286,6 +290,7 @@ export class ReportsComponent {
       '9427043914-fixed.json': cust1FixedJson,
       '6352416401.json': cust16Json,
       '7002057931.json': cust17Json,
+      '7002057931-Fixed.json': cust17FixedJson,
       '7386964691.json': cust18Json,
       '7630960645.json': cust19Json,
       '7755073434.json': cust20Json,
@@ -310,6 +315,7 @@ export class ReportsComponent {
       '9850517709.json': cust39Json,
       '9874673188.json': cust40Json,
       '9972099888.json': cust41Json,
+      '9422078781.json': cust42Json,
       'avg_bureau.json': avgBureauJSON,
       'no_bureau.json': noBureauJSON,
       'poor_bureau.json': poorBureauJSON,

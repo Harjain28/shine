@@ -12,7 +12,7 @@ import { NavigationService } from 'src/app/services/navigation.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './payment-status.component.html',
-  styleUrls: ['./payment-status.component.scss']
+  styleUrls: ['./payment-status.component.scss'],
 })
 export class PaymentStatusComponent {
   paramsObject: any;
@@ -20,26 +20,36 @@ export class PaymentStatusComponent {
   dialogRef: MatDialogRef<StatusPopupComponent> | undefined;
   defaultparams: any;
   parsedData: any;
-  plan: any
+  plan: any;
   id: any;
+  userData: any;
 
-  constructor(private dialog: MatDialog, private router: Router, private navigationService: NavigationService, private api: ApiService, private route: ActivatedRoute, private event: EventService){
+  constructor(
+    private dialog: MatDialog,
+    private router: Router,
+    private navigationService: NavigationService,
+    private api: ApiService,
+    private route: ActivatedRoute,
+    private event: EventService
+  ) {
     this.route.queryParamMap.subscribe((params) => {
       this.paramsObject = { ...params };
       this.confirmPayment();
     });
   }
 
-  ngOnInit(): void{
-  
+  ngOnInit(): void {
+    const reloginUserData = sessionStorage.getItem('reloginUpdates');
+    if (reloginUserData) {
+      this.userData = JSON.parse(reloginUserData);
+    }
+
     if (!this.isDialogShow) {
       this.openBureauDialog();
     }
-  
   }
 
-    
-  openBureauDialog(){
+  openBureauDialog() {
     this.dialogRef = this.dialog.open(StatusPopupComponent, {
       width: 'auto',
       height: 'auto',
@@ -47,53 +57,66 @@ export class PaymentStatusComponent {
   }
   closeBureauDialog() {
     if (this.dialogRef) {
-        this.dialogRef.close(); // Close the dialog using the stored reference
+      this.dialogRef.close(); // Close the dialog using the stored reference
     }
   }
 
   confirmPayment() {
-    const localData:any = localStorage.getItem("reqData");
+    const localData: any = localStorage.getItem('reqData');
     this.parsedData = JSON.parse(localData);
     if (this.parsedData) {
-    this.defaultparams = {
-      mobile: this.parsedData.mobile,
-      payloadString:this.paramsObject.params?.respData 
-    };
-    // const params = { ...defaultparams };
-    this.api
-      .remediation(`api/Remediation/PaymentConfirmation`, this.defaultparams)
-      .subscribe({
-        next: (res: any) => {
-          if (res?.trans_status.toUpperCase() === 'OK') {
-            this.api.alert('Please upload documents', "success");
-            this.closeBureauDialog();
-            this.navigationService.setLinkClicked(true);
-            this.router.navigate(['/in/bank_statement'],{ replaceUrl: true });
-          } else {
-            this.isDialogShow = true;
-             this.api.alert(res?.resp_message, "error");
-             this.closeBureauDialog();
-             this.event.updatePaymentStatus(true);
-             this.navigationService.setLinkClicked(true);
-             this.plan = localStorage.getItem("plan");
-                if (this.plan) {
-                  this.id = this.plan === "999" ? "1" :
-                  this.plan === "1299" ? "2" :
-                  this.plan === "2499" ? "3" :
-                  this.plan === "2999" ? "4" :
-                  this.plan === "3999" ? "5" : "6";
-                }
-             this.router.navigate(['/in/confirm_order', this.id], { replaceUrl: true });
-          }
-          
-        },
-        error: (error: any) => {},
-        complete: () => {
-          //  ("Request complete");
-        },
-      });
+      this.defaultparams = {
+        mobile: this.parsedData.mobile,
+        payloadString: this.paramsObject.params?.respData,
+      };
+      // const params = { ...defaultparams };
+      this.api
+        .remediation(`api/Remediation/PaymentConfirmation`, this.defaultparams)
+        .subscribe({
+          next: (res: any) => {
+            if (res?.trans_status.toUpperCase() === 'OK') {
+              this.api.alert('Please upload documents', 'success');
+              this.closeBureauDialog();
+              this.navigationService.setLinkClicked(true);
+              this.router.navigate(['/in/bank_statement'], {
+                replaceUrl: true,
+              });
+            } else {
+              this.isDialogShow = true;
+              this.api.alert(res?.resp_message, 'error');
+              this.closeBureauDialog();
+              this.event.updatePaymentStatus(true);
+              this.navigationService.setLinkClicked(true);
+              this.plan = localStorage.getItem('plan');
+              let price;
+              if (this.plan) {
+                price = this.plan;
+              } else {
+                price = this.userData?.userData?.selectedPrice;
+              }
+              this.id =
+                price === '999'
+                  ? '1'
+                  : price === '1299'
+                  ? '2'
+                  : price === '2499'
+                  ? '3'
+                  : price === '2999'
+                  ? '4'
+                  : price === '3999'
+                  ? '5'
+                  : '6';
+
+              this.router.navigate(['/in/confirm_order', this.id], {
+                replaceUrl: true,
+              });
+            }
+          },
+          error: (error: any) => {},
+          complete: () => {
+            //  ("Request complete");
+          },
+        });
     }
   }
-
-
 }

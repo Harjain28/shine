@@ -178,15 +178,7 @@ export class ReloginComponent {
               } else if (res?.newUser) {
                 this.router.navigate([this.pricing_url]);
               } else if (!res?.newUser && !res?.paid) {
-                this.plan = localStorage.getItem("plan");
-                if (this.plan) {
-                  this.id = this.plan === "999" ? "1" :
-                  this.plan === "1299" ? "2" :
-                  this.plan === "2499" ? "3" :
-                  this.plan === "2999" ? "4" :
-                  this.plan === "3999" ? "5" : "6";
-                }
-                this.router.navigate(['in/confirm_order', this.id]);
+                  this.navigationService.redirectToPayment(String(res?.userData?.selectedPrice));
               } else if (res?.paid) {
                 this.router.navigate(['in/bank_statement']);
               } else {

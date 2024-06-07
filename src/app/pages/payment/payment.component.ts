@@ -60,6 +60,7 @@ export class PaymentComponent {
   code: any;
   isSubmit!: boolean;
   planPrice: any | null;
+  userData: any;
 
 
 
@@ -88,6 +89,7 @@ export class PaymentComponent {
       this.event.paymentStatus$.subscribe((status: boolean) => {
         this.transactionFailed = status;
       });
+      
 
       this.requestData = localStorage.getItem("reqData");
       this.parsedData = JSON.parse(this.requestData);

@@ -37,7 +37,7 @@
                         </div> -->
                         <div class="nav-item"
                             (mouseleave)="closeDropdown()">
-                            <a [class.active]="router.url ==='/in/pricing_annual' || '/in/pricing_group'"  class="nav-link dropdown-toggle"
+                            <a [class.active]="router.url ==='/in/pricing_annual' || router.url === '/in/pricing_group'"  class="nav-link dropdown-toggle"
                                 data-bs-toggle="dropdown" style="cursor: pointer;" (click)="goToPricing(true)">Pricing
                             </a>
                         </div>
@@ -101,7 +101,7 @@
                                 </div> -->
                                 <div class="nav-item"
                                     (mouseleave)="closeDropdown()">
-                                    <a [class.active]="router.url ==='/in/pricing_annual' || '/in/pricing_group'" class="nav-link dropdown-toggle"
+                                    <a [class.active]="router.url ==='/in/pricing_annual' || router.url === '/in/pricing_group'" class="nav-link dropdown-toggle"
                                         data-bs-toggle="dropdown" data-bs-toggle="collapse"
                                         data-bs-target="#navbarCollapse" (click)="goToPricing(true)">Pricing
                                     </a>
