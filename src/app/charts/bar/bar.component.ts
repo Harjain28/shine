@@ -15,59 +15,48 @@ export class BarComponent {
 
   @Input() barJSONData: any;
 
-
-  private chart3!:Chart;
+  private chart3!: Chart;
   barValues: any;
   barLabels: any;
   barvalues: any;
   fullData: any;
 
-  ngOnInit(): void{
-
-      this.barvalues = this.barJSONData?.creditCount.slice(6,12);
-    this.barLabels = this.barJSONData?.months.slice(6,12);
-
-    
+  ngOnInit(): void {
+    this.barvalues = this.barJSONData?.creditCount.slice(6, 12);
+    this.barLabels = this.barJSONData?.months.slice(6, 12);
   }
 
   ngAfterViewInit(): void {
-    
     const canvas = this.chartCanvas3.nativeElement as HTMLCanvasElement;
-    canvas.width = 270; 
-    canvas.height = 130; 
+    canvas.width = 270;
+    canvas.height = 130;
     this.mixedChart();
   }
 
-   mixedChart(): void{
-
-
-    
-
-    const dataValues = [...this.barvalues]; 
-
+  mixedChart(): void {
+    const dataValues = [...this.barvalues];
     const sortedValues = dataValues.slice().sort((a, b) => b - a);
-
-    const backgroundColors = dataValues.map(value => this.getColor(value,sortedValues));
+    const backgroundColors = dataValues.map(value => this.getColor(value, sortedValues));
     const value = 2;
 
     const chartData3: ChartData = {
       labels: [...this.barLabels],
       datasets: [
         {
-        type: 'line',
-        data: Array.from({ length: 12 }, () => ({ x: 0, y: value })),
-        borderColor: '#EC1111',
-        borderWidth: 1,
-        fill: false,
-        pointStyle:"line"
-
-      },{
-        type: 'bar',
-        data: dataValues,
-        backgroundColor: backgroundColors,
-        borderWidth: 1,
-        
-      }]
+          type: 'line',
+          data: Array.from({ length: 12 }, (_, index) => ({ x: index, y: value })),
+          borderColor: '#EC1111',
+          borderWidth: 1,
+          fill: false,
+          pointStyle: "line"
+        },
+        {
+          type: 'bar',
+          data: dataValues,
+          backgroundColor: backgroundColors,
+          borderWidth: 1,
+        }
+      ]
     };
 
     this.chart3 = new Chart(this.chartCanvas3.nativeElement, {
@@ -84,7 +73,9 @@ export class BarComponent {
             callbacks: {
               label: function (context: any) {
                 let label = context.dataset.label || '';
-  
+                if (context.dataset.type === 'line') {
+                  return ''; // Disable tooltip for line dataset
+                }
                 if (label) {
                   label += ': ';
                 }
@@ -92,6 +83,12 @@ export class BarComponent {
                   label += new Intl.NumberFormat('en-IN').format(context.parsed.y);
                 }
                 return label;
+              },
+              title: function (context: any) {
+                if (context[0].dataset.type === 'line') {
+                  return ''; 
+                }
+                return context[0].label;
               }
             },
           },
@@ -125,31 +122,25 @@ export class BarComponent {
         },
       }
     });
-
-
-   
   }
 
-  getColor(value: number, sortedValues:any) {
+  getColor(value: number, sortedValues: any) {
     const index = sortedValues.indexOf(value);
     if (value <= 2) {
       return '#ff2424'; // Red
-  } else {
-      switch(index) {
-          case 0:
-              return '#00977a'; // Green
-          case 1:
-          case 2:
-              return '#00c9a3'; // Dark green
-          case 3:
-          case 4:
-              return '#ff6202'; // Orange
-          default:
-              return '#ff6202'; // Orange
+    } else {
+      switch (index) {
+        case 0:
+          return '#00977a'; // Green
+        case 1:
+        case 2:
+          return '#00c9a3'; // Dark green
+        case 3:
+        case 4:
+          return '#ff6202'; // Orange
+        default:
+          return '#ff6202'; // Orange
       }
+    }
   }
-  
-  
-
-}
 }

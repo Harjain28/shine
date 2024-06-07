@@ -78,6 +78,8 @@ export class OtpComponent implements OnInit{
   userData: any;
   // @ViewChild('ngOtpInput') ngOtpInputRef:any;
   @ViewChild('ngmobileOtpInput', { static: false })ngOtpInput!: NgOtpInputComponent;
+  plan: any
+  id: any;
   constructor(
     public eventService: EventService,
     public router: Router,
@@ -168,7 +170,15 @@ export class OtpComponent implements OnInit{
             } else if (this.userData?.paid) {
               this.router.navigate(['/in/bank_statement']);
             }  else {
-              this.router.navigate(['/in/confirm_order']);
+              this.plan = localStorage.getItem("plan");
+              if (this.plan) {
+                this.id = this.plan === "999" ? "1" :
+                this.plan === "1299" ? "2" :
+                this.plan === "2499" ? "3" :
+                this.plan === "2999" ? "4" :
+                this.plan === "3999" ? "5" : "6";
+              }
+              this.router.navigate(['in/confirm_order', this.id]);   
               localStorage.setItem("userId",res?.userId);
             }
             this.isOtpSubmit = true;

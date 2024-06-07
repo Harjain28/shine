@@ -20,6 +20,8 @@ export class PaymentStatusComponent {
   dialogRef: MatDialogRef<StatusPopupComponent> | undefined;
   defaultparams: any;
   parsedData: any;
+  plan: any
+  id: any;
 
   constructor(private dialog: MatDialog, private router: Router, private navigationService: NavigationService, private api: ApiService, private route: ActivatedRoute, private event: EventService){
     this.route.queryParamMap.subscribe((params) => {
@@ -73,7 +75,15 @@ export class PaymentStatusComponent {
              this.closeBureauDialog();
              this.event.updatePaymentStatus(true);
              this.navigationService.setLinkClicked(true);
-             this.router.navigate(['/in/confirm_order'], { replaceUrl: true });
+             this.plan = localStorage.getItem("plan");
+                if (this.plan) {
+                  this.id = this.plan === "999" ? "1" :
+                  this.plan === "1299" ? "2" :
+                  this.plan === "2499" ? "3" :
+                  this.plan === "2999" ? "4" :
+                  this.plan === "3999" ? "5" : "6";
+                }
+             this.router.navigate(['/in/confirm_order', this.id], { replaceUrl: true });
           }
           
         },

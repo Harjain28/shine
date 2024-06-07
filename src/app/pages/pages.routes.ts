@@ -13,7 +13,7 @@ export default[
     //     path: 'form2', loadComponent:() => import('./form2/form2.component').then(c=>c.Form2Component)
     // },
     {
-        path: 'confirm_order',  canActivate: [AuthGuard],  loadComponent:() => import('./payment/payment.component').then(c=>c.PaymentComponent)
+        path: 'confirm_order/:id',  canActivate: [AuthGuard],  loadComponent:() => import('./payment/payment.component').then(c=>c.PaymentComponent)
     },
     {
         path: 'bank_statement',   canActivate: [AuthGuard], loadComponent:() => import('./upload-documents/upload-documents.component').then(c=>c.UploadDocumentsComponent)
