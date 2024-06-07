@@ -44,7 +44,7 @@ export class BarComponent {
       datasets: [
         {
           type: 'line',
-          data: Array.from({ length: 12 }, (_, index) => ({ x: index, y: value })),
+          data: Array.from({ length: 6 }, (_, index) => ({ x: index, y: value })),
           borderColor: '#EC1111',
           borderWidth: 1,
           fill: false,
