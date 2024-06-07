@@ -74,7 +74,7 @@ export class BarComponent {
               label: function (context: any) {
                 let label = context.dataset.label || '';
                 if (context.dataset.type === 'line') {
-                  return ''; // Disable tooltip for line dataset
+                  return '2';
                 }
                 if (label) {
                   label += ': ';

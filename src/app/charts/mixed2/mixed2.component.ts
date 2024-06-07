@@ -99,7 +99,9 @@ export class Mixed2Component {
             callbacks: {
               label: function (context: any) {
                 let label = context.dataset.label || '';
-
+                if (context.dataset.type === 'line') {
+                  return label += ' : '+ Math.round(context.parsed.y); 
+                }
                 if (label) {
                   label += ': ';
                 }
@@ -107,6 +109,12 @@ export class Mixed2Component {
                   label += new Intl.NumberFormat('en-IN').format(context.parsed.y);
                 }
                 return label;
+              },
+              title: function (context: any) {
+                if (context[0].dataset.type === 'line') {
+                  return ''; 
+                }
+                return context[0].label;
               },
             },
           },
