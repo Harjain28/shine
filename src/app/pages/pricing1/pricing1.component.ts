@@ -114,7 +114,7 @@ export class Pricing1Component {
     localStorage.setItem("plan",pricingPlan);
     localStorage.setItem("filteredPlan", filteredPlan);
     this.navigationService.setLinkClicked(isLinkClicked);
-    this.router.navigate(['/in/register'])
+    this.router.navigate(['/in/register'], { queryParamsHandling:"preserve"})
   }
   
   getPricingData(){

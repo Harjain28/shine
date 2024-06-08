@@ -24,7 +24,7 @@ export class AppComponent {
     }
   
   isShineHeaderVisible(): boolean {
-    return this.router.url.includes('report') || this.storage.isToken();
+    return(this.router.url.includes('report') && this.storage.isToken()) || this.router.url.includes('name');
   }
 
   isHeaderVisible(): boolean {
@@ -32,7 +32,7 @@ export class AppComponent {
   }
 
   isHeader2Visible(): boolean {
-    return  !this.storage.isToken();
+    return  !this.storage.isToken() && !this.router.url.includes('name');
   }
 
 

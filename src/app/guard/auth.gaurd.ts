@@ -16,7 +16,7 @@ export class AuthGuard  {
     "/in/payment_status",
     "/in/confirm_order",
     "/in/bank_statement",
-    "/in/report"
+    // "/in/report"
   ];
 
   constructor(private router: Router, private storage: StorageService, private navigationService: NavigationService) {}

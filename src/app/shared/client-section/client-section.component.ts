@@ -72,7 +72,7 @@ export class ClientSectionComponent {
   goToPlans(){
     this.navigationService.setLinkClicked(true);
     this.pricing_url = this.pricingService.getPricingUrl();
-    this.router.navigate([this.pricing_url]);
+    this.router.navigate([this.pricing_url], { queryParamsHandling:"preserve"});
  }
 
 }

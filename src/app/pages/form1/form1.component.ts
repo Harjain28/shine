@@ -129,9 +129,6 @@ export class Form1Component implements OnInit {
     });
   }
 
-  goToOtp() {
-    this.router.navigate(['/pages/otp']);
-  }
 
   formatNumber(x: number): string {
     const xStr = x.toString();
@@ -217,7 +214,7 @@ export class Form1Component implements OnInit {
             if (res.success) {
               this.navigationService.setLinkClicked(true);
               this.fetchOtp();
-              this.router.navigate(['/in/otp']);
+              this.router.navigate(['/in/otp'], { queryParamsHandling:"preserve"});
               this.isSubmit = false;
             } else this.isSubmit = false;
           },

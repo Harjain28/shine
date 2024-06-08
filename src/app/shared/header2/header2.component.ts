@@ -271,13 +271,14 @@ export class Header2Component {
     this.removeTogglesidebar();
     this.navigationService.setLinkClicked(true);
     const pricing_url = this.pricingService.getPricingUrl();
-    this.router.navigate([pricing_url]);
+    this.router.navigate([pricing_url], { queryParamsHandling: 'preserve' });
   }
+  
   
   
   goToContact(){
     this.removeTogglesidebar();
-    this.router.navigate(['/in/contact-us'])
+    this.router.navigate(['/in/contact-us'],  { queryParamsHandling: 'preserve' })
   }
 
   goToAbout(){
@@ -291,7 +292,7 @@ export class Header2Component {
 
   loginBtn(){
      this.removeTogglesidebar();
-      this.router.navigate(['in/login'])
+      this.router.navigate(['in/login'],  { queryParamsHandling: 'preserve' })
   }
 
 

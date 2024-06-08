@@ -137,7 +137,7 @@ export class ReloginComponent {
   cancel() {
     // this.eventService.back();
     this.closeDialoge();
-    this.router.navigate(['/in'])
+    this.router.navigate(['/in'], { queryParamsHandling:"preserve"})
   }
 
   redirectToPricing(): void {
@@ -174,7 +174,7 @@ export class ReloginComponent {
               this.closeDialoge();
               if (res?.lastReportId && res?.lastReportId !== null || res?.userData) {
                 this.fetchOtp();
-                this.router.navigate(['/in/otp']);
+                this.router.navigate(['/in/otp'], { queryParamsHandling:"preserve"});
               } else if (res?.newUser) {
                 this.router.navigate([this.pricing_url]);
               } else if (!res?.newUser && !res?.paid) {
@@ -182,7 +182,7 @@ export class ReloginComponent {
               } else if (res?.paid) {
                 this.router.navigate(['in/bank_statement']);
               } else {
-                this.router.navigate([this.pricing_url]);
+                this.router.navigate([this.pricing_url], { queryParamsHandling:"preserve"});
               }
             }
           },
