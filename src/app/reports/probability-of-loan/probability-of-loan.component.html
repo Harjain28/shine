@@ -43,7 +43,9 @@
                       </div>
 
                     </div>
-                    <button class="btn">Apply Now</button>
+                    <ng-container *ngIf="(data.currentProbability*100) > 20">
+                    <button class="btn" (click)="redirectToMSME()">Apply Now</button>
+                    </ng-container>
                   </td>
                   <td>
                     <!-- <span style="color: #12BA9B;">Loan : <b>{{data.potential_max_loan.toLocaleString('en-IN')}}</b>
@@ -82,8 +84,10 @@
                         <span class="iconSpiner" style="color: #000000;"> <b>{{data.currentProbability*100}}%</b></span>
                       </div>
 
-                    </div>
-                    <button class="btn">Apply Now</button>
+                    </div> 
+                    <ng-container *ngIf="(data.currentProbability*100) > 20">
+                    <button class="btn" (click)="redirectToMSME()">Apply Now</button>
+                  </ng-container>
                   </td>
                   <td>
                     <!-- <span style="color: #12BA9B;">Loan : <b>{{data.potential_max_loan.toLocaleString('en-IN')}}</b>

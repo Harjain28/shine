@@ -12,75 +12,90 @@ import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 @Component({
   selector: 'app-probability-of-loan',
   standalone: true,
-  imports: [CommonModule,MatProgressBarModule,MaterialModule,MatExpansionModule,MatFormFieldModule,MatCheckboxModule,MatIconModule,CarouselModule],
+  imports: [
+    CommonModule,
+    MatProgressBarModule,
+    MaterialModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatIconModule,
+    CarouselModule,
+  ],
   templateUrl: './probability-of-loan.component.html',
-  styleUrls: ['./probability-of-loan.component.scss','../reports.component.scss']
+  styleUrls: [
+    './probability-of-loan.component.scss',
+    '../reports.component.scss',
+  ],
 })
 export class ProbabilityOfLoanComponent {
-
   @Input() probOfLoanData: any;
   visibleOffers!: boolean;
 
   customOptions4: OwlOptions = {
     loop: false,
-  rewind: true,
-   dots: true,
-   autoplay: true,
-   navSpeed: 300,
-   nav: false,
-   margin:8,
-   mouseDrag: false,
-   touchDrag: true,
+    rewind: true,
+    dots: true,
+    autoplay: true,
+    navSpeed: 300,
+    nav: false,
+    margin: 8,
+    mouseDrag: false,
+    touchDrag: true,
 
-   autoplayTimeout:8000,
-   autoplaySpeed: 1500,
-   // navText: ["", ""],
-   navText: ["<img class='navTxtImg' src='./assets/images/homeImage/left-arrow.svg'>", "<img class='navTxtImg' src='./assets/images/homeImage/right-arrow.svg'>"],
-   responsive: {
-     0: {
-       items: 1.2,
-       dots: true,
-     },
-     400: {
-       items: 1.3,
-     },
-     740: {
-       items: 2,
-     },
-     940: {
-       items: 3,
-     },
-   },
- };
+    autoplayTimeout: 8000,
+    autoplaySpeed: 1500,
+    // navText: ["", ""],
+    navText: [
+      "<img class='navTxtImg' src='./assets/images/homeImage/left-arrow.svg'>",
+      "<img class='navTxtImg' src='./assets/images/homeImage/right-arrow.svg'>",
+    ],
+    responsive: {
+      0: {
+        items: 1.2,
+        dots: true,
+      },
+      400: {
+        items: 1.3,
+      },
+      740: {
+        items: 2,
+      },
+      940: {
+        items: 3,
+      },
+    },
+  };
   data: any;
   currProbData: any;
   probabilityData: any[] = [];
   staticData: any;
 
-  constructor(){
+  constructor() {}
 
-  }
-
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.data = this.probOfLoanData;
     this.staticData = reportStatciData?.lenders;
     this.currProbData = this.data?.report?.loanProbability;
 
-  this.staticData.forEach((item1: { key: string; }) => {
-    const matchingItem = this.currProbData.find((item2: { lender: string; }) => item1.key === item2.lender);
-    if (matchingItem) {
+    this.staticData.forEach((item1: { key: string }) => {
+      const matchingItem = this.currProbData.find(
+        (item2: { lender: string }) => item1.key === item2.lender
+      );
+      if (matchingItem) {
         this.probabilityData.push({
-            ...item1,
-            ...matchingItem
+          ...item1,
+          ...matchingItem,
         });
-    }
-});
-
-
+      }
+    });
   }
-  
-  moreOffers(){
+
+  redirectToMSME() {
+    window.location.href = 'https://www.creditenable.com/in/sme-business-loan/unsecured-business-loans/msme-sme-business-loans-india-v1';
+  }
+
+  moreOffers() {
     this.visibleOffers = true;
   }
-
 }
