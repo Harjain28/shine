@@ -753,7 +753,12 @@
                         overflow-y: auto;
 
                         &::-webkit-scrollbar {
-                            display: none;
+                            width: 2px;
+                        }
+                        
+                        &::-webkit-scrollbar-thumb {
+                            background: var(--main2); 
+                            border-radius: 10px;
                         }
 
                         li {
@@ -2845,7 +2850,8 @@
             thead {
                 box-shadow: 0px 3px 10px #272D3B24;
                 border-radius: 10px;
-                background-color: #3f3f3f;
+                // background-color: #3f3f3f;
+                overflow: hidden;
                 color: #fff;
                 font-size: 14px;
                 font-weight: 600;
@@ -2868,20 +2874,26 @@
                     box-shadow: 0px 3px 10px #00000024;
                     border-radius: 20px;
                     background-color: #fff;
+                    overflow: hidden;
 
                     td {
                         padding: 15px 20px;
-                        font-size: 16px;
+                        font-size: 14px;
                         font-weight: 600;
                         font-family: Poppins !important;
                         color: #3F3F3F;
                         position: relative;
+                        overflow: hidden;
+
+                        b{
+                            font-weight: 500 !important;
+                        }
 
                         .chartImg {
                             position: absolute;
                             top: 50%;
                             transform: translate(0%, -50%);
-                            right: 4px;
+                            right: 22px;
 
                             img {
                                 width: 54px;
@@ -2902,8 +2914,10 @@
                         }
 
                         .logo {
-                            width: 130px;
-                            height: auto;
+                            width: auto;
+                            height: 50px;
+                            display: flex;
+                            margin: 0 auto;
                         }
 
                         span {
@@ -3132,9 +3146,15 @@
         height: 200px;
         overflow-x: hidden;
         overflow-y: auto;
+        padding-right: 8px;
 
         &::-webkit-scrollbar {
-            display: none;
+            width: 2px;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background: var(--main2); 
+            border-radius: 10px;
         }
 
         ul {

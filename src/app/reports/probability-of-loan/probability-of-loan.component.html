@@ -14,17 +14,17 @@
             <thead>
               <ng-container>
                 <tr>
-                  <th>Lenders</th>
-                  <th>Max Offerings (INR)</th>
+                  <th style="background-color: #3f3f3f; border-radius: 10px 0px 0px 10px;">Lenders</th>
+                  <th style="background-color: #3f3f3f;">Max Offerings (INR)</th>
                   <th style="background-color: var(--main1);">Current Potential</th>
-                  <th style="background-color: var(--main2);">Future Potential</th>
+                  <th style="background-color: var(--main2); border-radius: 0px 10px 10px 0px;">Future Potential</th>
                 </tr>
               </ng-container>
             </thead>
             <tbody>
               <ng-container>
                 <tr *ngFor="let data of probabilityData.slice(0,4)">
-                  <td style="border-right: 1px solid #e9e9e9;">
+                  <td style="border-right: 1px solid #e9e9e9; border-radius: 20px 0px 0px 20px;">
                     <img class="logo" src={{data.logo}} alt="">
                   </td>
 
@@ -47,7 +47,7 @@
                     <button class="btn" (click)="redirectToMSME()">Apply Now</button>
                     </ng-container>
                   </td>
-                  <td>
+                  <td style="border-radius: 0px 20px 20px 0px;">
                     <!-- <span style="color: #12BA9B;">Loan : <b>{{data.potential_max_loan.toLocaleString('en-IN')}}</b>
                     </span> -->
                     <span style="color: #12BA9B;">ROI : <b>{{data.potential_roi*100}}%</b></span>
@@ -66,7 +66,7 @@
 
               <ng-container *ngIf="visibleOffers">
                 <tr *ngFor="let data of probabilityData.slice(4,probabilityData.length)">
-                  <td style="border-right: 1px solid #e9e9e9;">
+                  <td style="border-right: 1px solid #e9e9e9; border-radius: 20px 0px 0px 20px;">
                     <img class="logo" src={{data.logo}} alt="">
                   </td>
 
@@ -89,7 +89,7 @@
                     <button class="btn" (click)="redirectToMSME()">Apply Now</button>
                   </ng-container>
                   </td>
-                  <td>
+                  <td style="border-radius: 0px 20px 20px 0px;">
                     <!-- <span style="color: #12BA9B;">Loan : <b>{{data.potential_max_loan.toLocaleString('en-IN')}}</b>
                     </span> -->
                     <span style="color: #12BA9B;">ROI : <b>{{data.potential_roi*100}}%</b></span>
