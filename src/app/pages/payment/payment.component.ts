@@ -70,7 +70,7 @@ export class PaymentComponent {
     public router: Router,
     private http: HttpClient,
     private datePipe: DatePipe,
-    private event: EventService,
+    public event: EventService,
     private route: ActivatedRoute,
     private navigationService:NavigationService,
     private location: Location
@@ -178,9 +178,6 @@ export class PaymentComponent {
 
     }
 
-    back(){
-      this.location.back();
-    }
 
     sliced(){
       this.slicedData = true;

@@ -12,6 +12,21 @@ export class LocalStorageService {
   constructor() {
   }
 
+  removeSomeItem() {
+    localStorage.removeItem('popupData');
+     sessionStorage.removeItem('reloginUpdates');
+     localStorage.removeItem('filteredPlan');
+     localStorage.removeItem('isV3');
+     localStorage.removeItem('userMobileNumber');
+     localStorage.removeItem('state');
+     localStorage.removeItem('transID');
+     localStorage.removeItem('token');
+     localStorage.removeItem('phoneNumber');
+  }
+
+  logout() {
+     localStorage.removeItem('token');
+  }
   removeItem() {
     localStorage.removeItem('reqData');
     localStorage.removeItem('popupData');

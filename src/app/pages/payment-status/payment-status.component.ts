@@ -55,7 +55,7 @@ export class PaymentStatusComponent {
       height: 'auto',
     });
   }
-  closeBureauDialog() {
+  closeDialog() {
     if (this.dialogRef) {
       this.dialogRef.close(); // Close the dialog using the stored reference
     }
@@ -76,7 +76,7 @@ export class PaymentStatusComponent {
           next: (res: any) => {
             if (res?.trans_status.toUpperCase() === 'OK') {
               this.api.alert('Please upload documents', 'success');
-              this.closeBureauDialog();
+              this.closeDialog();
               this.navigationService.setLinkClicked(true);
               this.router.navigate(['/in/bank_statement'], {
                 replaceUrl: true,
@@ -84,7 +84,7 @@ export class PaymentStatusComponent {
             } else {
               this.isDialogShow = true;
               this.api.alert(res?.resp_message, 'error');
-              this.closeBureauDialog();
+              this.closeDialog();
               this.event.updatePaymentStatus(true);
               this.navigationService.setLinkClicked(true);
               this.plan = localStorage.getItem('plan');
@@ -112,7 +112,9 @@ export class PaymentStatusComponent {
               });
             }
           },
-          error: (error: any) => {},
+          error: (error: any) => {
+            this.closeDialog();
+          },
           complete: () => {
             //  ("Request complete");
           },

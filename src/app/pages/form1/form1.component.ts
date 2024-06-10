@@ -24,6 +24,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { Location } from '@angular/common';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { OtpService } from 'src/app/services/otp.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-form1',
@@ -55,7 +56,7 @@ export class Form1Component implements OnInit {
   unformattedX: string = '';
   formattedX!: string;
   showBusniessNameError!: boolean;
-
+  parsedData:any;
   @ViewChild('formSection', { static: true }) formSection!: ElementRef;
 
   constructor(
@@ -66,7 +67,9 @@ export class Form1Component implements OnInit {
     public eventService: EventService,
     public router: Router,
     private api: ApiService,
-    private otpService: OtpService
+    private state: LocalStorageService,
+    private otpService: OtpService,
+
   ) {
     this.route.queryParamMap.subscribe((params) => {
       this.paramsObject = { ...params };
@@ -74,7 +77,28 @@ export class Form1Component implements OnInit {
   }
 
   ngOnInit(): void {
+    this.state.removeSomeItem();
     this.form();
+   
+    const requestData:any = localStorage.getItem("reqData")
+    this.parsedData = JSON.parse(requestData);
+    if (this.parsedData) {
+      this.formattedX = this.formatNumber(this.parsedData.turnover);
+      this.form1.patchValue({
+        title: this.parsedData.prefix,
+        firstName: this.parsedData.firstName,
+        phoneNumber: this.parsedData.mobile,
+        lastName: this.parsedData.lastName,
+        pincode: this.parsedData.pincode,
+        emailId: this.parsedData.email,
+        busninessName: this.parsedData.businessName,
+        propertyOwnership: this.parsedData.propertyOwnership,
+        businessPan: this.parsedData.businessPan,
+        businessVintage: this.parsedData.businessVintage
+      });
+      this.unformattedX = this.formattedX.replace(/,/g, '');
+      
+    }
    
     const savedPhoneNumber = localStorage.getItem('phoneNumber');
     if (savedPhoneNumber) {
@@ -118,7 +142,7 @@ export class Form1Component implements OnInit {
         Validators.maxLength(6),
         Validators.pattern('^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$'),
       ]),
-      busninessName: new FormControl('', [Validators.required]),
+      busninessName: new FormControl('', [Validators.required, Validators.minLength(4)]),
       businessTurnover: new FormControl('', [Validators.required]),
       propertyOwnership: new FormControl('', [Validators.required]),
       businessPan: new FormControl('', [
@@ -189,8 +213,7 @@ export class Form1Component implements OnInit {
     requestData['businessVintage'] = formValue.businessVintage;
     requestData['PricingModel'] =  PricingModel;
     requestData['SelectedPrice'] = SelectedPrice;
-    localStorage.setItem('reqData', JSON.stringify(requestData));
-    localStorage.setItem('title', formValue.title);
+  
     // if (this.validatePin) {
     //   this.showValidatepinError = false;
     // } else {
@@ -213,13 +236,17 @@ export class Form1Component implements OnInit {
           next: (res: any) => {
             if (res.success) {
               this.navigationService.setLinkClicked(true);
+              localStorage.setItem('reqData', JSON.stringify(requestData));
+              localStorage.setItem('title', formValue.title);
               this.fetchOtp();
               this.router.navigate(['/in/otp'], { queryParamsHandling:"preserve"});
               this.isSubmit = false;
             } else this.isSubmit = false;
           },
           error: (error) => {
+            this.isSubmit = false;
             this.onNextClick();
+            
             // this.isSubmit = false;
             // if(error.errors.Pincode){
             //   this.showValidatepinError = true;
@@ -227,13 +254,12 @@ export class Form1Component implements OnInit {
             // if(error.errors.BusinessPan){
             // this.showValidatePANError = true;
             // }
-            this.isSubmit = false;
-            if (error.errors.BusinessName) {
-              this.error = error.errors.BusinessName;
-              this.showBusniessNameError = true;
+         
+            // if (error.errors.BusinessName) {
+            //   this.error = error.errors.BusinessName;
+            //   this.showBusniessNameError = true;
 
-            }
-            this.isSubmit = false;
+            // }
           },
           complete: () => {
             ('Request complete');

@@ -5,6 +5,7 @@ import {  ActivatedRoute, Router } from "@angular/router";
 import { Meta, Title } from "@angular/platform-browser";
 import { CanonicalService } from "./canonical.service";
 import { environment } from "../../environments/environment";
+import { NavigationService } from "./navigation.service";
 
 @Injectable({
   providedIn: "root",
@@ -37,7 +38,7 @@ export class EventService {
   paymentStatus$ = this.paymentStatusSubject.asObservable();
 
  
-  constructor(public location: Location , private title: Title, private meta: Meta , private canonicalService: CanonicalService , private router: Router , private route : ActivatedRoute ) {
+  constructor(public location: Location ,private navigationService: NavigationService, private title: Title, private meta: Meta , private canonicalService: CanonicalService , private router: Router , private route : ActivatedRoute ) {
 
     this.route.queryParamMap.subscribe((params) => {
       this.paramsObject = { ...params };
@@ -86,6 +87,7 @@ export class EventService {
   }
 
   back() {
+    this.navigationService.setLinkClicked(true);
     this.location.back();
   }
 

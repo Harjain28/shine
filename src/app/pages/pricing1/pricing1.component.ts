@@ -77,7 +77,7 @@ export class Pricing1Component {
 
   ngOnInit(): void{
     this.showPricingPlan();
-    this.state.removeItem();
+    this.state.removeSomeItem();
     this.getPricingData();
   }
 

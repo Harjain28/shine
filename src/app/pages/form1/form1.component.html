@@ -239,6 +239,7 @@
                         <mat-label>Business Name</mat-label>
                         <input
                           matInput
+                          minlength="4"
                           formControlName="busninessName"
                           placeholder=""
                         />
@@ -254,11 +255,14 @@
                       </div>
 
                       <div
-                        class="error mb-2"
-                        *ngIf=" !form1.controls['pincode'].hasError('required') && showBusniessNameError"
-                      >
-                        {{ error }}
-                      </div>
+                      class="error mb-2"
+                      *ngIf="
+                                          form1.controls['busninessName'].dirty &&
+                                          form1.controls['busninessName'].hasError('minlength');
+                                        "
+                    >
+                    The BusinessName field must be between 4 and 100 characters long.
+                    </div>
                     </div>
 
                     <div

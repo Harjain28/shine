@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { SampleReportsFormComponent } from 'src/app/modal/sample-reports-form/sample-reports-form.component';
 import { Router } from '@angular/router';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 
 @Component({
@@ -32,12 +33,16 @@ export class Pricing2Component {
   randomNumber: any;
   pricingPlan: any;
   filteredPrice: any;
-  constructor(private dialog: MatDialog, private router: Router, private navigationService:NavigationService ){
+
+
+  
+  constructor(private dialog: MatDialog,private state:LocalStorageService, private router: Router, private navigationService:NavigationService ){
     this.getPricingData();
 
   }
 
   ngOnInit(): void{
+    this.state.removeSomeItem();
     this.randomNumber = localStorage.getItem("plan_count");
     this.showPricingPlan();
     this.getConfirmPaymentJson();
@@ -90,7 +95,7 @@ export class Pricing2Component {
     localStorage.setItem("plan",pricingPlan);
     localStorage.setItem("filteredPlan", filteredPlan);
     this.navigationService.setLinkClicked(isLinkClicked);
-    this.router.navigate(['/in/register'])
+    this.router.navigate(['/in/register'], { queryParamsHandling:"preserve"})
   }
   
 

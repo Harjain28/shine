@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Buffer } from "buffer";
 import { NavigationService } from 'src/app/services/navigation.service';
 import { OtpService } from 'src/app/services/otp.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 
 
@@ -86,8 +87,9 @@ export class OtpComponent implements OnInit{
     private route: ActivatedRoute,
     private navigationService:NavigationService,
     private api: ApiService,
+    private state:LocalStorageService,
     private otpService:OtpService,
-    private location: Location){
+    public event:EventService){
       this.route.queryParamMap.subscribe((params) => {
         this.paramsObject = { ...params };
       });
@@ -95,6 +97,7 @@ export class OtpComponent implements OnInit{
 
     ngOnInit(): void {
       this.otpVerifyForm();
+      this.state.logout();
       this.requestData = localStorage.getItem("reqData")
       this.parsedData = JSON.parse(this.requestData);
       const reloginUserData = sessionStorage.getItem("reloginUpdates");
@@ -197,10 +200,6 @@ export class OtpComponent implements OnInit{
       // this.otpVerify.markAllAsTouched();
       this.isOtpSubmit = false;
     }
-  }
-
-  back(){
-    this.location.back();
   }
 
 
