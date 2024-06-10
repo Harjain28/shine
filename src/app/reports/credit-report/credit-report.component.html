@@ -127,6 +127,9 @@
                             {{ month }}
                           </li>
                         </ul>
+                         <div class="perYearmissingPayment">
+                             {{countActiveMonths()}} Missing Payments in {{selectedYear}}
+                          </div>
                         <div class="missingPayment">
                           Total {{ loan_repayment_history?.missedPayments.length }} Missing Payments
                         </div>

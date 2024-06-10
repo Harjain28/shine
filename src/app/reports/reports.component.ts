@@ -75,6 +75,7 @@ import { cust41Json } from '../JsonFiles/9972099888';
 import { cust13FixedJson } from '../JsonFiles/9427043914-fixed';
 import { cust11FixedJson } from '../JsonFiles/8746099464-fixed';
 import { cust42Json } from '../JsonFiles/9422078781';
+import { RequiredActionsComponent } from './required-actions/required-actions.component';
 
 @Component({
   selector: 'app-reports',
@@ -86,6 +87,7 @@ import { cust42Json } from '../JsonFiles/9422078781';
     BankingBusinessComponent,
     ActionsRequiredComponent,
     ProbabilityOfLoanComponent,
+    RequiredActionsComponent,
     FaqComponent,
     NoBureauComponent,
     NoGstComponent,

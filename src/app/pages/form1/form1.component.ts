@@ -227,6 +227,7 @@ export class Form1Component implements OnInit {
             // if(error.errors.BusinessPan){
             // this.showValidatePANError = true;
             // }
+            this.isSubmit = false;
             if (error.errors.BusinessName) {
               this.error = error.errors.BusinessName;
               this.showBusniessNameError = true;

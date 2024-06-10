@@ -352,6 +352,9 @@ export class CreditReportComponent {
   isMonth(month: string, year: number): boolean {
     return this.getLast36Months().some(m => m.monthName === month && m.year === year);
 }
+countActiveMonths(): number {
+  return this.monthNames.filter(month => this.isSelectedMonth(month)).length;
+}
 
   isSelectedMonth(month: string): boolean {
     const last36Months = this.getLast36Months();

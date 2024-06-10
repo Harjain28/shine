@@ -94,6 +94,11 @@
 
   <!-- Top-Banner-Section End -->
 
+
+  <!-- required-action -->
+
+<app-required-actions></app-required-actions>
+
   <!-- Credit-Report-Section Start -->
   <ng-container *ngIf="!isShowNoBureau">
   <app-credit-report [creditReportsData]="reportsData"></app-credit-report>
@@ -159,6 +164,12 @@
   </div>
 
 </ng-container>
+
+
+
+
+
+
 
 <div class="v2checksection progressBaar" *ngIf="showEligible && router.url.includes('/report')">
   <div class="blueBack"></div>
