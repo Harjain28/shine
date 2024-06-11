@@ -556,5 +556,7 @@ export const reportStatciData =
         "potential_roi": 0.18,
         "key": "IIFL"
         },
-    ]
+    ],
+    "zero_debt_imageURL" : 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/zero_debt.png',
+
 }

@@ -391,6 +391,10 @@ export class ReportsComponent {
 
   }
 
+  redirectToMSME() {
+    window.location.href = 'https://www.creditenable.com/in/sme-business-loan/unsecured-business-loans/msme-sme-business-loans-india-v1';
+  }
+
 
   getFaq() {
     this.businessLoanJson = reportStatciData;

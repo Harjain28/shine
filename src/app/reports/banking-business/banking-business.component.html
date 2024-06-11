@@ -57,6 +57,10 @@
               <div class="valatilityBox backgrundColor" *ngIf = "volatility">
                 <h3 class="mb-1">{{affordability_section?.business_turnover_expanded?.volatility_analysis?.observations?.header}}</h3>
                 <p class="mt-0 mb-3">{{affordability_section?.business_turnover_expanded?.volatility_analysis?.observations?.subheader}}</p>
+
+                <div class="checkBox" *ngIf="turnoverLineData?.sum < 1200000">
+                  <button [ngStyle]="{ 'background-color': voColor}">Your Turnover < 12L</button>
+                </div>
                 <div class="checkBox" *ngIf="volatility?.header">
                   <!-- <h5>Volatility:</h5> -->
                   <button [ngStyle]="{ 'background-color': volatilityColor}" >{{volatility?.header}}</button>
@@ -301,6 +305,7 @@
             <div class="col-lg-6">
               <div class="valatilityBox backgrundColor">
                 <h3>{{affordability_section?.bank_balance_expanded?.volatility_analysis?.observations?.header}}</h3>
+              
                 <div class="checkBox">
                   <button [ngStyle]="{ 'background-color': voColor}">{{bank_balance_observation?.subheader}}</button>
                 </div>
@@ -1022,7 +1027,7 @@
     </div>
 
     <div class="ApplyNow mt-5">
-      <a class="btn">Apply Now</a>
+      <a class="btn" href="https://www.creditenable.com/in/sme-business-loan/unsecured-business-loans/msme-sme-business-loans-india-v1">Apply Now</a>
     </div>
   </div>
 </div>

@@ -33,11 +33,11 @@ export class AuthGuard  {
       const isLinkClicked = this.navigationService.isLinkNavigation();
       const lastUrl = sessionStorage.getItem('lastUrl');
       if (!this.allowedUrls.includes(currentUrl) || isLinkClicked || lastUrl === currentUrl) {
-        this.navigationService.setLinkClicked(false); // Reset the flag
-        sessionStorage.setItem('lastUrl', currentUrl); // Update last accessed URL
+        this.navigationService.setLinkClicked(false);
+        sessionStorage.setItem('lastUrl', currentUrl); 
         return true;
       } else {
-        this.router.navigateByUrl('/in'); // Navigate to the default URL
+        this.router.navigateByUrl('/in'); 
         return false;
       }
   }

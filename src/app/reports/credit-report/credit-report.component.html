@@ -185,7 +185,7 @@
                         </div>
                         <div  class="col-md-4 col-lg-4 col-sm-12 mb-3">
                           <div class="defaultHistory solutions">
-                            <h3  >Solutions</h3>
+                            <h3  >{{staticData?.loanRepaymentHistory_expanded?.solutions?.header}}</h3>
                             <p>
                               {{solutions?.header}}
                             </p>
@@ -201,7 +201,7 @@
                         </div>
                         <div class="col-md-4 col-lg-4 col-sm-12 mb-3">
                           <div class="defaultHistory active">
-                            <h3>Impact</h3>
+                            <h3>{{staticData?.loanRepaymentHistory_expanded?.impact?.header}}</h3>
                             <ul class="numberBox">
                               <li  #scrollTargetSection2>
                                 <span>Your current stage</span>
