@@ -55,13 +55,13 @@
         }
 
         .boxOne {
-            border: 1px solid #C3E128;
+            border: 1px solid #E2E2E2;
             border-radius: 10px;
             padding: 7px 14px;
             display: flex;
             align-items: baseline;
             gap: 15px;
-            background: #FBFFDE;
+            background: #FFFFFF;
             margin-bottom: 17px;
 
             img {
@@ -110,24 +110,24 @@
         }
 
         .boxTwo {
-            border: 1px solid #FF7B24;
+            border: 1px solid var(--main1);
             border-radius: 10px;
             padding: 6px 14px;
             display: flex;
             align-items: center;
             gap: 15px;
             margin-bottom: 10px;
-            background: #FFF4EE;
+            background: var(--main1);
 
             h5 {
                 margin-bottom: 0px;
-                color: #3F3F3F;
+                color: #fff;
                 font-size: 36px;
                 font-weight: 500;
             }
 
             small {
-                color: #3F3F3F;
+                color: #fff;
                 font-size: 12px;
                 margin-bottom: 3px;
                 font-weight: 400;
@@ -137,24 +137,24 @@
 
 
         .boxThree {
-            border: 1px solid #6A2FC2;
+            border: 1px solid #FF7B24;
             border-radius: 10px;
             padding: 6px 14px;
             display: flex;
             align-items: center;
             gap: 15px;
             margin-bottom: 10px;
-            background: #F8F3FF;
+            background: #FF7B24;
 
             h5 {
                 margin-bottom: 0px;
-                color: #3F3F3F;
+                color: #fff;
                 font-size: 36px;
                 font-weight: 500;
             }
 
             small {
-                color: #3F3F3F;
+                color: #fff;
                 font-size: 12px;
                 margin-bottom: 3px;
                 font-weight: 400;

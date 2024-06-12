@@ -1,1 +1,184 @@
-<p>positive-factors works!</p>
+<div class="criticalBoxFrist mhidden" *ngIf="showCriticalBoxFirst">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="boxLevel">
+                <h3>How to Get to the Next Level</h3>
+
+                <img class="images" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Level-3.png" alt="">
+
+                <div class="applyBox">
+                    <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png" alt="">
+                    <div class="content">
+                        <p>Apply the measures we recommend to improve your level and increase your loan prospects in 3-6 months.</p>
+                        <a href="" class="btn">Your Loan Probability <img src="./assets/LandingPage/checkBlue.svg" alt="arrow"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="col-lg-11 m-auto">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="listScore">
+                            <ul class="borderLing">
+                                <li>
+                                    <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/credit_score.png" alt="">
+                                    <h5>Bureau</h5>
+                                </li>
+                                <li>
+                                    <h3>2</h3>
+                                    <span>Good Jobs</span>
+                                </li>
+                                <li>
+                                    <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                </li>
+                                <li>
+                                    <a class="btn" href="javascript:void(0)" (click)="toggleDetails()">View Details <img src="./assets/LandingPage/checkBlue.svg" alt="arrow"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="listScore">
+                            <ul class="borderLing">
+                                <li>
+                                    <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/banking_blue.png" alt="">
+                                    <h5>Banking</h5>
+                                </li>
+                                <li>
+                                    <h3>2</h3>
+                                    <span>Good Jobs</span>
+                                </li>
+                                <li>
+                                    <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                </li>
+                                <li>
+                                    <a class="btn" href="javascript:void(0)" (click)="toggleDetails()">View Details <img src="./assets/LandingPage/checkBlue.svg" alt="arrow"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="listScore">
+                            <ul>
+                                <li>
+                                    <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/gst.png" alt="">
+                                    <h5>GST</h5>
+                                </li>
+                                <li>
+                                    <h3>3</h3>
+                                    <span>Good Jobs</span>
+                                </li>
+                                <li>
+                                    <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                </li>
+                                <li>
+                                    <a class="btn" href="javascript:void(0)" (click)="toggleDetails()">View Details <img src="./assets/LandingPage/checkBlue.svg" alt="arrow"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="contactDetails">
+                            <div class="detailsBox">
+                                <img src="./assets/LandingPage/callIcon.png" alt="">
+                                <div class="content">
+                                    <p>Reach us for your query</p>
+                                    <a class="btn" href="tel:+91 84509 67207">+91 84509 67207</a>
+                                </div>
+                            </div>
+                            <span></span>
+                            <div class="detailsBox">
+                                <img src="./assets/LandingPage/mailIcon.png" alt="">
+                                <div class="content">
+                                    <p>Write us on</p>
+                                    <a class="btn colorTheme" href="mailto:info@creditenable.com">info@creditenable.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="criticalDetails mhidden" *ngIf="!showCriticalBoxFirst && !showKnowMoreModal">
+    <a href="javascript:void(0)" class="backCalcel" (click)="toggleDetails()">
+        <img src="./assets/LandingPage/closeIcon.png" alt="">
+    </a>
+    <div class="buttonTab">
+        <ul>
+            <li>
+                <a href="javascript:void(0)" class="btn active"><img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/credit_score.png" alt=""> Bureau <span style="background-color: var(--main2);">8</span></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="btn"><img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/banking_blue.png" alt=""> Banking <span style="background-color: var(--main2);">4</span></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="btn"><img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/gst.png" alt=""> GST <span style="background-color: var(--main2);">3</span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="silderBox">
+        <owl-carousel-o [options]="customOptions4">
+            <ng-container>
+              <ng-template carouselSlide>
+                <div class="boxSilde">
+                    <h3>1. Your Bureau Score</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.</p>
+                    <a style="color: var(--main1);" href="javascript:void(1)" (click)="openModal()"> Know more <img src="./assets/LandingPage/checkBlue.svg" alt=""></a>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="boxSilde">
+                    <h3>2. Underwritten by Banks</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus.</p>
+                    <a style="color: var(--main1);" href="javascript:void(1)" (click)="openModal()"> Know more <img src="./assets/LandingPage/checkBlue.svg" alt=""></a>
+                </div>
+            </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+</div>
+
+<div class="KnowMoreModal mhidden" *ngIf="showKnowMoreModal">
+    <div class="backgroundModal"></div>
+    <div class="col-lg-6 m-auto">
+        <div class="modalBody">
+            <a href="javascript:void(0)" class="backCalcel" (click)="closeModal()">
+                <img src="./assets/LandingPage/closeIcon.png" alt="">
+            </a>
+            <h3>2. Underwritten by Banks</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus.</p>
+            <div class="content">
+                <img src="./assets/LandingPage/checkGreen.svg" alt="">
+                <h5>How to fix this</h5>
+            </div>
+            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula porta auctor. Nulla vitae mattis est. Phasellus tempor accumsan purus, eget egestas felis, vehicula at. Aliquam arcu ligula.</p>
+            <ul>
+                <li>
+                    <span></span>
+                    Laculis sed bibendum ut, faucibus
+                </li>
+                <li>
+                    <span></span>
+                    Laculis sed bibendum ut, faucibus
+                </li>
+                <li>
+                    <span></span>
+                    Laculis sed bibendum ut, faucibus
+                </li>
+                <li>
+                    <span></span>
+                    Laculis sed bibendum ut, faucibus
+                </li>
+            </ul>
+
+            <a href="" class="btn">
+                Know more
+                <img src="./assets/LandingPage/checkBlue.svg" alt="">
+            </a>
+        </div>
+    </div>
+</div>

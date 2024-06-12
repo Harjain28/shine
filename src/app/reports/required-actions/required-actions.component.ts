@@ -14,4 +14,10 @@ import { MobilePositiveFactorsComponent } from './mobile-positive-factors/mobile
 })
 export class RequiredActionsComponent {
 
+  activeTab: number = 1;
+
+  setActiveTab(tabIndex: number): void {
+    this.activeTab = tabIndex;
+  }
+
 }

@@ -1,12 +1,49 @@
+<div class="actionImprove section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 padding30">
+                <div class="title">
+                    <h2><span>Actions Required to Improve</span></h2>
+                    <p>Your profile gets assessed against these parameters and it's important that you improve on them
+                        to get funding.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="MainBox">
+                    <div class="tabsButton">
+                        <button class="btn" [class.active]="activeTab === 1" (click)="setActiveTab(1)"
+                            style="border: 1px solid #FF7B24; border-right: none; border-radius: 10px 0px 0px 10px;">
+                            Critical Issues
+                        </button>
+                        <button class="btn" [class.active1]="activeTab === 2" (click)="setActiveTab(2)"
+                            style="border: 1px solid #6A2FC2; border-left: none; border-radius: 0px 10px 10px 0px;">
+                            Positive Factors
+                        </button>
+                    </div>
+                    <div *ngIf="activeTab === 1" class="boxTabs" style="border: 1px solid #FF7B24;">
+                        <app-critical-issues></app-critical-issues>
+                        <app-mobile-critical-issues></app-mobile-critical-issues>
+                    </div>
+                    <div *ngIf="activeTab === 2" class="boxTabs" style="border: 1px solid #6A2FC2;">
+                        <app-positive-factors></app-positive-factors>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
-
-<!-- 
-<button>
-    <app-critcal-issues></app-critcal-issues>
-</button>
-<button>
-    <app-positive-factors></app-positive-factors>
-</button>
- -->
-
+<div class="actionImprove">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title lineRemove">
+                    <h2>Your Business' Financial Health Assessment</h2>
+                    <p>Here's your 360° business check-up to help achieve your dreams! Let's get started!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
