@@ -49,7 +49,91 @@
   </div>
 
   <div class="twoSectionMarge" style="background-image: url(./assets/LandingPage/rightDesign.png);">
+    
+    <div class="betterLoanOpportunties">
+      <div class="container">
+        <div class="row align-items-center boxColor">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="Content">
+              <h3>{{AnalyseSection?.Headline1}} <span> {{AnalyseSection?.Headline2}}</span></h3>
+              <p>{{AnalyseSection?.Description}}</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 mb-3 boxBackground">
+            <div class="boxContent">
+              <div class="content">
+                <h3>{{AnalyseSection?.Bureau_Feature?.Bureau_Title}}</h3>
+                <p>{{AnalyseSection?.Bureau_Feature?.Bureau_Details}}</p>
+              </div>
+              <div class="boxIcon">
+                <img src={{AnalyseSection?.Bureau_Feature?.Vector_Background?.Character_image}} alt="">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 mb-3 boxBackground">
+            <div class="boxContent">
+              <div class="content">
+                <h3>{{AnalyseSection?.Banking_Feature?.Banking_Title}}</h3>
+                <p>{{AnalyseSection?.Banking_Feature?.Banking_Details}}</p>
+              </div>
+              <div class="boxIcon">
+                <img src={{AnalyseSection?.Banking_Feature?.Vector_Background?.Character_image}} alt="">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 mb-3 boxBackground">
+            <div class="boxContent">
+              <div class="content">
+                <h3>{{AnalyseSection?.GST_Feature?.GST_Title}}</h3>
+                <p>{{AnalyseSection?.GST_Feature?.GST_Details}}</p>
+              </div>
+              <div class="boxIcon">
+                <img src={{AnalyseSection?.GST_Feature?.Vector_Background?.Character_image}} alt="">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="featureBtn">
+              <a  [class]="'btn get_pricing2 ' + 'pricing_'+randomNumber" [routerLink]="pricing_url"  queryParamsHandling="preserve">{{AnalyseSection?.CTA_Text}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="shineHelp" style="background-image: url(./assets//LandingPage/blueBackground.png);">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="content">
+              <h3>{{HowShineWillHelpSection?.Header}}</h3>
+              <p>{{HowShineWillHelpSection?.Subhead}}</p>
+            </div>
+          </div>
+  
+          <div class="col-lg-7 col-md-10 col-sm-12 m-auto">
+            <div class="boxCenter mobileImg">
+              <div class="row justify-content-center;">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-4 pdMobile" *ngFor="let data of Parameter">
+                  <div class="box">
+                    <img src={{data.icon}} alt="">
+                    <p>{{data.parameter}}</p>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="contentBtn">
+                <p>{{HowShineWillHelpSection?.Body_Section[0]}} <br> {{HowShineWillHelpSection?.Body_Section[1]}}</p>
+                <a [class]="'btn today1 ' + 'pricing_'+randomNumber"   [routerLink]="pricing_url"  queryParamsHandling="preserve">{{HowShineWillHelpSection?.CTA_Text}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <div class="thisPlanSection">
       <div class="container">
         <div class="row">
@@ -117,61 +201,49 @@
         </div>
       </div>
     </div>
-    <div class="betterLoanOpportunties">
-      <div class="container">
-        <div class="row align-items-center boxColor">
-          <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="Content">
-              <h3>{{AnalyseSection?.Headline1}} <span> {{AnalyseSection?.Headline2}}</span></h3>
-              <p>{{AnalyseSection?.Description}}</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 mb-3 boxBackground">
-            <div class="boxContent">
-              <div class="content">
-                <h3>{{AnalyseSection?.Bureau_Feature?.Bureau_Title}}</h3>
-                <p>{{AnalyseSection?.Bureau_Feature?.Bureau_Details}}</p>
-              </div>
-              <div class="boxIcon">
-                <img src={{AnalyseSection?.Bureau_Feature?.Vector_Background?.Character_image}} alt="">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 mb-3 boxBackground">
-            <div class="boxContent">
-              <div class="content">
-                <h3>{{AnalyseSection?.Banking_Feature?.Banking_Title}}</h3>
-                <p>{{AnalyseSection?.Banking_Feature?.Banking_Details}}</p>
-              </div>
-              <div class="boxIcon">
-                <img src={{AnalyseSection?.Banking_Feature?.Vector_Background?.Character_image}} alt="">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 mb-3 boxBackground">
-            <div class="boxContent">
-              <div class="content">
-                <h3>{{AnalyseSection?.GST_Feature?.GST_Title}}</h3>
-                <p>{{AnalyseSection?.GST_Feature?.GST_Details}}</p>
-              </div>
-              <div class="boxIcon">
-                <img src={{AnalyseSection?.GST_Feature?.Vector_Background?.Character_image}} alt="">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-12">
-            <div class="featureBtn">
-              <a  [class]="'btn get_pricing2 ' + 'pricing_'+randomNumber" [routerLink]="pricing_url"  queryParamsHandling="preserve">{{AnalyseSection?.CTA_Text}}</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
+
+  
+
 
   <div class="leftSideDesign">
 
     <app-client-section></app-client-section>
+
+    <div class="BusinessLoanOption">
+      <div class="container">
+        <div class="col-xl-10 col-lg-12 col-md-12 col-sm-12 m-auto">
+          <div class="content" >
+            <!-- <button class="btn" >
+              Deep Dive
+            </button> -->
+            <h3>{{ShineFeaturesSection?.Header}}</h3>
+            <p>{{ShineFeaturesSection?.Subheader}}</p>
+          </div>
+          
+        </div>
+        <div class="row row-cols-5">
+          <div class="col" *ngFor="let data of ProductTiles">
+            <div class="box" (click)="openPopup(data.productCopy)">
+              <img src={{data.icon}} alt="">
+              <p>{{data.productCopy}}</p>
+            </div>
+          </div>
+  
+  
+          <div class="col-7 pe-0">
+            <div class="boxImg">
+              <img src="./assets/LandingPage/boxImg.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="featureBtn mt-5">
+            <a [class]="'btn get_pricing4 ' + 'pricing_'+randomNumber"   [routerLink]="pricing_url"  queryParamsHandling="preserve">{{ShineFeaturesSection?.CTA_Text}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="advantagesShine">
       <div class="container">
@@ -232,74 +304,6 @@
             </div>
 
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="shineHelp" style="background-image: url(./assets//LandingPage/blueBackground.png);">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="content">
-            <h3>{{HowShineWillHelpSection?.Header}}</h3>
-            <p>{{HowShineWillHelpSection?.Subhead}}</p>
-          </div>
-        </div>
-
-        <div class="col-lg-7 col-md-10 col-sm-12 m-auto">
-          <div class="boxCenter mobileImg">
-            <div class="row justify-content-center;">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-4 pdMobile" *ngFor="let data of Parameter">
-                <div class="box">
-                  <img src={{data.icon}} alt="">
-                  <p>{{data.parameter}}</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="contentBtn">
-              <p>{{HowShineWillHelpSection?.Body_Section[0]}} <br> {{HowShineWillHelpSection?.Body_Section[1]}}</p>
-              <a [class]="'btn today1 ' + 'pricing_'+randomNumber"   [routerLink]="pricing_url"  queryParamsHandling="preserve">{{HowShineWillHelpSection?.CTA_Text}}</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="BusinessLoanOption">
-    <div class="container">
-      <div class="col-xl-10 col-lg-12 col-md-12 col-sm-12 m-auto">
-        <div class="content" >
-          <!-- <button class="btn" >
-            Deep Dive
-          </button> -->
-          <h3>{{ShineFeaturesSection?.Header}}</h3>
-          <p>{{ShineFeaturesSection?.Subheader}}</p>
-        </div>
-        
-      </div>
-      <div class="row row-cols-5">
-        <div class="col" *ngFor="let data of ProductTiles">
-          <div class="box" (click)="openPopup(data.productCopy)">
-            <img src={{data.icon}} alt="">
-            <p>{{data.productCopy}}</p>
-          </div>
-        </div>
-
-
-        <div class="col-7 pe-0">
-          <div class="boxImg">
-            <img src="./assets/LandingPage/boxImg.png" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-12">
-        <div class="featureBtn mt-5">
-          <a [class]="'btn get_pricing4 ' + 'pricing_'+randomNumber"   [routerLink]="pricing_url"  queryParamsHandling="preserve">{{ShineFeaturesSection?.CTA_Text}}</a>
         </div>
       </div>
     </div>

@@ -111,8 +111,7 @@
 
     .betterLoanOpportunties {
         padding-bottom: 60px;
-        padding-top: 60px;
-        background-color: #F3F3F370;
+        // padding-top: 60px;
         // z-index: -1;
         position: relative;
 
@@ -383,8 +382,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    padding-top: 42px;
+    padding-top: 60px;
     padding-bottom: 70px;
+    background-color: #F3F3F370;
 
     .content{
         text-align: center;
@@ -523,7 +523,7 @@
 }
 
 .advantagesShine {
-    padding: 60px 0px 60px;
+    padding: 0px 0px 60px;
     background-color: #F3F3F370;
 
     .content {
@@ -1160,7 +1160,7 @@
     }
 
     .advantagesShine {
-        padding: 40px 0px 40px;
+        padding: 0px 0px 40px;
 
         .content {
 
