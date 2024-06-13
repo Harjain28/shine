@@ -29,6 +29,22 @@
             font-family: Poppins !important;
             margin-bottom: 2px;
 
+            &.point{
+                position: relative;
+                padding-left: 20px;
+
+                span{
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50px;
+                    background-color: #3f3f3f;
+                    display: flex;
+                    position: absolute;
+                    left: 0px;
+                    top: 7px;
+                }
+            }
+
         }
 
         .pricingBtn{
