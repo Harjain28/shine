@@ -84,10 +84,10 @@ export class PaymentStatusComponent {
             } else {
               this.isDialogShow = true;
               this.api.alert(res?.resp_message, 'error');
-              this.closeDialog();
               this.event.updatePaymentStatus(true);
               this.navigationService.setLinkClicked(true);
               this.plan = localStorage.getItem('plan');
+              this.closeDialog();
               let price;
               if (this.plan) {
                 price = this.plan;
@@ -113,6 +113,7 @@ export class PaymentStatusComponent {
             }
           },
           error: (error: any) => {
+            this.isDialogShow = true;
             this.closeDialog();
           },
           complete: () => {

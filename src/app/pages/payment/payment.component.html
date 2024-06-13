@@ -23,9 +23,17 @@
         <div class="heading text-center ">
           <h3>You have selected our <span>{{filteredData?.Headertext}} Plan</span>!</h3>
           <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> -->
+          <ng-container *ngIf="!transactionFailed">
           <button class="btn backbtn" (click)="event.back()">
             <mat-icon>keyboard_arrow_left</mat-icon>
             Back</button>
+          </ng-container>
+          <ng-container *ngIf="transactionFailed">
+            <button class="btn backbtn"  (click)="navigateOtp()">
+              <mat-icon>keyboard_arrow_left</mat-icon>
+              Back</button>
+            </ng-container>
+            
         </div>
       </div>
       <div class="col-lg-6 co-md-12 col-sm-12">

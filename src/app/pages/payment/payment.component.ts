@@ -138,7 +138,7 @@ export class PaymentComponent {
               this.code = this.couponInput;
               if (res.hasOwnProperty('percent') || res.hasOwnProperty('flatPrice')) {
                 this.isInvalidCoupon = false;
-                this.discountPrice = res?.percent ? (this.planPrice * res?.percent) / 100 : res?.flatPrice;
+                this.discountPrice = (res?.percent ? (this.planPrice * res?.percent) / 100 : res?.flatPrice).toFixed(2);
                 this.calGST = ((this.planPrice - this.discountPrice) * 18) / 100;
                 const totalPrice = parseFloat(this.planPrice) + this.calGST - this.discountPrice;
                 this.total = totalPrice.toFixed(2);
@@ -183,6 +183,10 @@ export class PaymentComponent {
       this.slicedData = true;
     }
 
+    navigateOtp() {
+      this.navigationService.setLinkClicked(true);
+      this.router.navigate(['/in/otp']);
+    }
 
   getForPaymentMethod() {
     this.isSubmit = true;

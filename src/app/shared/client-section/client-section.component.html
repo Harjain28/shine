@@ -4,7 +4,7 @@
         <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
           <div class="rightContent">
             <h3>{{WhatToExpectSection?.Headline}} <span> {{WhatToExpectSection?.Headline2}}</span></h3>
-            <p>{{WhatToExpectSection?.Body}}</p>
+            <p *ngFor="let body of WhatToExpectSection?.Body">{{body}}</p>
 
             <div class="pricingBtn mhidden">
               <button   [class]="'btn ' + 'pricing_'+randomNumber"  (click)="goToPlans()">{{shineBanner?.CTA_Text}}</button>

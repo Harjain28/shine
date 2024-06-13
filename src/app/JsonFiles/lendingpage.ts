@@ -25,9 +25,9 @@ export const shineLendingPageJSON = {
   },
 
   Who_is_Shine_For_Section: {
-    Headline1: 'Who is Shine For?',
+    Headline1: 'Who Can Benefit From SHINE?',
     Description:
-      'Whether you’re just starting out and have never had a loan before, or you are an experienced business looking for improved loan opportunities – Shine has something for every SME!',
+      'From New Startups to Established SMEs, SHINE is Your Key to Better Business Loan Opportunities.',
     Beginners_Feature: {
       Beginners_Title: 'Beginners',
       Beginners_Details:[
@@ -74,10 +74,10 @@ export const shineLendingPageJSON = {
   },
 
   Analyse_Section: {
-    Headline1: 'What Stands Between',
-    Headline2: 'You and Better Loan Opportunities?',
+    Headline1: 'See What Lenders Check',
+    Headline2: '& Improve Your Loan Chances',
     Description:
-      'The only tool revealing how lenders will assess your business for a loan based on your Bureau, GST, & banking data.',
+      'The only tool that analyses Bureau, GST, and Banking data to reveal your loan eligibility.',
     Bureau_Feature: {
       Bureau_Title: 'Bureau Analysis',
       Bureau_Details:
@@ -107,9 +107,11 @@ export const shineLendingPageJSON = {
   },
 
   What_To_Expect_Section: {
-    Headline: 'Transform Finance: ',
-    Headline2: "See What Others Don't!",
-    Body: 'Gain deep financial insights to swiftly adjust for better loan eligibility. Be empowered to accelerate your growth. Join the future-focused financial revolution!',
+    Headline: 'Overcome Rejection',
+    Headline2: "with Expert Insights",
+    Body: ['Gain powerful insights to boost your loan approval chances.',
+    'Understand and address the reasons behind loan rejections.',
+    'Turn your financial profile into a lender’s dream with expert guidance.'],
     Background: [
       {
        Desktop:
@@ -145,9 +147,9 @@ export const shineLendingPageJSON = {
   },
 
   Shine_Comparison_Section: {
-    Title: 'What Makes Shine Different?',
+    Title: 'Why Choose Shine for Your Business?',
     Subtitle:
-      'Get on the path to the right business funding with a comprehensive assessment.',
+      'Detailed Financial Breakdown. Budget-friendly Analysis. Clear and Simple Insights.',
 
     headerText:[
       'Parameter', 'Shine' , 'Others'
@@ -190,8 +192,8 @@ export const shineLendingPageJSON = {
     CTA_Link: '/in/pricing_annual',
   },
   How_Shine_Will_Help_Section: {
-    Header: 'How Shine Will Help Your Loan Prospects',
-    Subhead: 'Be Loan Ready in 3 Steps',
+    Header: 'How Shine Will Help You Become Loan Eligible',
+    Subhead: 'Step-by-Step Guide to Secure Business Funding.',
     Background_Banner: {
       Desktop:
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/help_banner_desktop.jpg',
@@ -222,9 +224,9 @@ export const shineLendingPageJSON = {
   },
 
   Shine_Features_Section: {
-    Header: 'Comprehensive Financial Assessment and Advice Tailored to Your Business',
+    Header: 'Tailored Financial Insights to Boost Loan Eligibility',
     Subheader:
-      'Experience a new level of financial understanding about your business with detailed reviews of your credit report, GST and banking, that personalised advice to help you improve your ability to access affordable finance.',
+      'Get personalized financial assessments to unlock better loan opportunities and affordable finance.',
     CTA_Text: 'Get Pricing',
     CTA_Link: '/in/pricing_annual',
     Image: {
@@ -346,7 +348,7 @@ export const shineLendingPageJSON = {
     ],
   },
   Summary_Section: {
-    Header: 'Guaranteed Loan Success Starts Here',
+    Header: 'Unlock Guaranteed Loan Approval',
     Subheader:
       'Follow our tailor-made financial recommendations for a guaranteed shot at loan approval.',
     CTA_Text: 'Check Pricing',
