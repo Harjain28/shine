@@ -46,6 +46,7 @@ export class PaymentStatusComponent {
 
     if (!this.isDialogShow) {
       this.openBureauDialog();
+      this.confirmPayment();
     }
   }
 
@@ -74,11 +75,31 @@ export class PaymentStatusComponent {
         .remediation(`api/Remediation/PaymentConfirmation`, this.defaultparams)
         .subscribe({
           next: (res: any) => {
+            this.plan = localStorage.getItem('plan');
+             let price;
+              if (this.plan) {
+                price = this.plan;
+              } else {
+                price = this.userData?.userData?.selectedPrice;
+              }
+              this.id =
+              price === '999'
+                ? '1'
+                : price === '1299'
+                ? '2'
+                : price === '2499'
+                ? '3'
+                : price === '2999'
+                ? '4'
+                : price === '3999'
+                ? '5'
+                : '6';
+
             if (res?.trans_status.toUpperCase() === 'OK') {
               this.api.alert('Please upload documents', 'success');
               this.closeDialog();
               this.navigationService.setLinkClicked(true);
-              this.router.navigate(['/in/bank_statement'], {
+              this.router.navigate(['/in/bank_statement', this.id], {
                 replaceUrl: true,
               });
             } else {
@@ -86,27 +107,8 @@ export class PaymentStatusComponent {
               this.api.alert(res?.resp_message, 'error');
               this.event.updatePaymentStatus(true);
               this.navigationService.setLinkClicked(true);
-              this.plan = localStorage.getItem('plan');
               this.closeDialog();
-              let price;
-              if (this.plan) {
-                price = this.plan;
-              } else {
-                price = this.userData?.userData?.selectedPrice;
-              }
-              this.id =
-                price === '999'
-                  ? '1'
-                  : price === '1299'
-                  ? '2'
-                  : price === '2499'
-                  ? '3'
-                  : price === '2999'
-                  ? '4'
-                  : price === '3999'
-                  ? '5'
-                  : '6';
-
+             
               this.router.navigate(['/in/confirm_order', this.id], {
                 replaceUrl: true,
               });

@@ -167,13 +167,13 @@ export class OtpComponent implements OnInit{
           if (res.success == true) {
             localStorage.setItem("token",res?.token);
             localStorage.setItem("reqData", JSON.stringify(res?.userInfo));
+              this.plan = localStorage.getItem("plan");
             this.navigationService.setLinkClicked(true);
             if (this.userData && this.userData?.lastReportId) {
                 this.router.navigate(['/in/report', res?.userId]);
             } else if (this.userData?.paid) {
               this.router.navigate(['/in/bank_statement']);
             }  else {
-              this.plan = localStorage.getItem("plan");
               if (this.plan) {
                this.navigationService.redirectToPayment(this.plan);
               } else {

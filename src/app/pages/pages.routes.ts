@@ -3,9 +3,9 @@ import { AuthGuard } from '../guard/auth.gaurd';
 
 export default[
     
-    {
-        path: 'register',   canActivate: [AuthGuard], loadComponent:() => import('./form1/form1.component').then(c=>c.Form1Component)
-    },
+    // {
+    //     path: 'register',   canActivate: [AuthGuard], loadComponent:() => import('./form1/form1.component').then(c=>c.Form1Component)
+    // },
 
     {
         path: 'register/:id',   canActivate: [AuthGuard], loadComponent:() => import('./form1/form1.component').then(c=>c.Form1Component)

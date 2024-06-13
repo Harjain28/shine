@@ -187,7 +187,7 @@ export class UploadDocumentsComponent {
               error: error => {
                 this.showEligibleReport = false;
                 this.navigationService.setLinkClicked(true);
-                this.router.navigate(['/in/bank_statement'])
+                this.router.navigate(['/in/bank_statement']);
               },
               complete: () => {
                // ('Request complete');

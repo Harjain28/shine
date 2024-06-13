@@ -60,7 +60,6 @@ export class PaymentComponent {
   code: any;
   isSubmit!: boolean;
   planPrice: any | null;
-  userData: any;
 
 
 
@@ -89,13 +88,11 @@ export class PaymentComponent {
       this.event.paymentStatus$.subscribe((status: boolean) => {
         this.transactionFailed = status;
       });
-      
-
+  
       this.requestData = localStorage.getItem("reqData");
       this.parsedData = JSON.parse(this.requestData);
    
       this.getPriceInfo();
-      
       if(this.parsedData){
         this.fName = this.parsedData.firstName.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase());
         this.lName = this.parsedData.lastName.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase());
@@ -185,7 +182,7 @@ export class PaymentComponent {
 
     navigateOtp() {
       this.navigationService.setLinkClicked(true);
-      this.router.navigate(['/in/otp']);
+       this.navigationService.redirectToOTP(this.planPrice);
     }
 
   getForPaymentMethod() {
@@ -216,7 +213,8 @@ export class PaymentComponent {
         error: (error: HttpErrorResponse) => {
           this.isSubmit = false;
           if (error.status === 401) {
-            this.router.navigate(['in/register'])
+            // this.router.navigate(['in/register'])
+            
           }
         },
         complete: () => {

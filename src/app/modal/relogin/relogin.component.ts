@@ -174,7 +174,8 @@ export class ReloginComponent {
               this.closeDialoge();
               if (res?.lastReportId && res?.lastReportId !== null || res?.userData) {
                 this.fetchOtp();
-                this.router.navigate(['/in/otp'], { queryParamsHandling:"preserve"});
+                this.navigationService.redirectToOTP(String(res?.userData?.selectedPrice));
+                // this.router.navigate(['/in/otp'], { queryParamsHandling:"preserve"});
               } else if (res?.newUser) {
                 this.router.navigate([this.pricing_url]);
               } else if (!res?.newUser && !res?.paid) {

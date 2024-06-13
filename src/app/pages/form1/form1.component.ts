@@ -239,7 +239,12 @@ export class Form1Component implements OnInit {
               localStorage.setItem('reqData', JSON.stringify(requestData));
               localStorage.setItem('title', formValue.title);
               this.fetchOtp();
-              this.router.navigate(['/in/otp'], { queryParamsHandling:"preserve"});
+              const plan:any = localStorage.getItem("plan");
+              if (plan) {
+               this.navigationService.redirectToOTP(plan);
+              } else {
+                this.navigationService.redirectToOTP(String(requestData.selectedPrice));
+              }
               this.isSubmit = false;
             } else this.isSubmit = false;
           },

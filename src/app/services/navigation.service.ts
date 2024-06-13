@@ -33,12 +33,39 @@ export class NavigationService {
            plan === "3999" ? "5" : "6";
 }
 
+redirectToRegister(plans:any) {
+  console.log(plans, 'plans');
+  let id;
+    if (plans) {
+        id = this.getPlanId(plans);
+    } 
+    this.router.navigate(['in/register', id], { queryParamsHandling:"preserve"});
+}
+
+redirectToOTP(plans:any) {
+  console.log(plans, 'plans');
+  let id;
+    if (plans) {
+        id = this.getPlanId(plans);
+    } 
+    this.router.navigate(['in/otp', id],  { queryParamsHandling:"preserve"});
+}
+
 redirectToPayment(plans:any) {
   console.log(plans, 'plans');
   let id;
     if (plans) {
         id = this.getPlanId(plans);
     } 
-    this.router.navigate(['in/confirm_order', id]);
+    this.router.navigate(['in/confirm_order', id],  { queryParamsHandling:"preserve"});
 }
+
+// redirectToBankStatement(plans:any) {
+//   console.log(plans, 'plans');
+//   let id;
+//     if (plans) {
+//         id = this.getPlanId(plans);
+//     } 
+//     this.router.navigate(['in/bank_statement', id],  { queryParamsHandling:"preserve"});
+// }
 }
