@@ -192,8 +192,8 @@
                 align-items: center;
                 gap: 10px;
                 margin-bottom: 14px;
+                max-height: 34px;
                 min-height: 34px;
-                max-height: max-content;
 
                 img {
                     width: auto;
@@ -630,6 +630,11 @@
 }
 
 @media (max-width: 767px) {
+
+    .padding30{
+        padding: 0px 30px;
+    }
+    
     .actionImprove {
 
         .title {
