@@ -63,7 +63,7 @@
         box-shadow: 5px 5px 15px #0000001A;
         border-radius: 10px;
         position: relative;
-        z-index: 1;
+        z-index: 99;
 
         .btn {
             padding: 22px 40px;
@@ -497,16 +497,28 @@
 }
 
 .KnowMoreModal{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 9;
 
-    .backgroundModal{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        background: #fff;
-        backdrop-filter: blur(15px);
-    }
+    // .backgroundModal{
+    //     width: 100%;
+    //     height: 100%;
+    //     position: absolute;
+    //     left: 0px;
+    //     top: 0px;
+    //     background: #fff;
+    //     backdrop-filter: blur(15px);
+    // }
 
     .modalBody{
         background-color: #fff;
@@ -515,6 +527,7 @@
         border-radius: 10px;
         padding: 30px 40px 26px;
         position: relative;
+        margin-top: 30px;
 
         .backCalcel {
             height: 30px;
@@ -638,7 +651,7 @@
         .tabsButton {
     
             .btn {
-                padding: 8px 35px;
+                padding: 8px 25px;
                 max-width: max-content;
                 min-width: max-content;
                 height: 37px;
