@@ -232,6 +232,17 @@
                         overflow: visible;
                     }
 
+                    .mat-expansion-indicator{
+                        transform: rotate(45deg) !important;
+
+                        &:after{
+                            background-image: url(https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_normal.png);
+                            border-style: none;
+                            width: 28px;
+                            height: 28px;
+                        }
+                    }
+
                     &.mat-expanded{
 
                         .plusBox1{
@@ -253,6 +264,30 @@
                                         clip-path: polygon(0 0, 100% 0, 100% 0, 50% 99%, 0 0);
                                     }
                                 }
+                            }
+                        }
+
+                        .mat-expansion-indicator{
+                            transform: rotate(45deg) !important;
+    
+                            &:before{
+                                background-image: url(https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_hover.png);
+                                border-style: none;
+                                width: 28px;
+                                height: 28px;
+                                border-width: 0 2px 2px 0;
+                                content: "";
+                                display: inline-block;
+                                padding: 3px;
+                                transform: rotate(45deg);
+                                vertical-align: middle;
+                            }
+                        }
+
+                        .mat-expansion-indicator{
+        
+                            &:after{
+                                display: none;
                             }
                         }
                     }
