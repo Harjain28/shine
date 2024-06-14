@@ -353,6 +353,10 @@
                 margin-bottom: 10px;
                 transition: .5s;
 
+                &.whiteBox{
+                    background-color: #fff !important;
+                }
+
                 &:nth-last-of-type(2){
                     background-color: #fff;
                 }
