@@ -32,7 +32,7 @@ export class AppComponent {
   }
 
   isHeader2Visible(): boolean {
-    return  !this.storage.isToken() && !this.router.url.includes('name');
+    return  !this.storage.isToken() && !this.router.url.includes('name') && !this.router.url.includes('report_model1');
   }
 
 

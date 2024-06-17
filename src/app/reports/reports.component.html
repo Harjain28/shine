@@ -75,16 +75,17 @@
                 </div>
               </div>
               <div class="topBorder">
-                <div class="boxThree">
-                    <h5>{{criticalTotal}}</h5>
-                    <small>{{headerSection?.Key_Insights_box?.positive_description}}</small>
-                </div>
-                <div class="boxTwo">
-                  <h5>{{mediumTotal}}</h5>
+                <div class="boxThree" (click)="scrollToSection('critical')">
+                  <h5>{{criticalTotal}}</h5>
                   <small>{{headerSection?.Key_Insights_box?.critical_description}}</small>
                 </div>
+              
+                <div class="boxTwo" (click)="scrollToSection('positive')">
+                  <h5>{{postiveTotal}}</h5>
+                  <small>{{headerSection?.Key_Insights_box?.positive_description}}</small>
+                </div>
               </div>
-      
+              
               <span>*T&C apply</span>
             </div>
           </div>
@@ -97,7 +98,7 @@
 
   <!-- required-action -->
 
-<app-required-actions></app-required-actions>
+  <app-required-actions #requiredActions [ActionReqReportsData]="reportsData"></app-required-actions>
 
   <!-- Credit-Report-Section Start -->
   <ng-container *ngIf="!isShowNoBureau">
@@ -144,7 +145,7 @@
   <!-- BankingBalance-Section End -->
 
   <!-- ActionImprove-Section Start -->
-  <app-actions-required [ActionReqReportsData] = "reportsData"></app-actions-required>
+  <app-actions-required [ActionReqReportsData]="reportsData"></app-actions-required>
   <!-- ActionImprove-Section End -->
 
   <!-- ProbabilityLoan-Section Start -->

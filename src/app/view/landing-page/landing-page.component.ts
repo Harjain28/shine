@@ -237,6 +237,10 @@ export class LandingPageComponent {
     this.pricing_url = this.pricingService.getPricingUrl();
   }
 
+  navigateToReportModel() {
+    this.router.navigate(['/in/report_model1']);
+  }
+
   handleClickProgrammatically(): void {
     const className = this.pricingService.getClassBasedOnRandomNumber();
     const buttonElement = this.elRef.nativeElement.querySelector('#assign');

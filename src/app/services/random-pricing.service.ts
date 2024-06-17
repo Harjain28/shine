@@ -9,7 +9,7 @@ export class PricingService {
   }
 
   getRandomNumber(): number {
-    return Math.floor(Math.random() * 6) + 1;
+    return Math.floor(Math.random() * 3) + 1;
   }
 
   setRandomNumber(): void {
@@ -22,7 +22,7 @@ export class PricingService {
 
   getPricingUrl(): string {
     const randomNumber = Number(localStorage.getItem("plan_count"));
-    return randomNumber <= 3 ? '/in/pricing_group' : '/in/pricing_annual';
+    return randomNumber <= 3 ? '/in/pricing_group' : '/in/pricing_group';
   }
 
   getClassBasedOnRandomNumber(): string {

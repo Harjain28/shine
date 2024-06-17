@@ -34,14 +34,14 @@
                                         <h5>Bureau</h5>
                                     </li>
                                     <li>
-                                        <h3>8</h3>
+                                        <h3>{{bureau?.critical}}</h3>
                                         <span>High Impact Issues</span>
                                     </li>
                                     <li>
                                         <p>Lorem ipsum dolor sit amet, consectetur</p>
                                     </li>
                                     <li>
-                                        <a class="btn" href="javascript:void(0)" (click)="toggleDetails()">View Details
+                                        <a class="btn" (click)="toggleDetails()">View Details
                                             <img src="./assets/LandingPage/checkBlue.svg" alt="arrow"></a>
                                     </li>
                                 </ul>
@@ -56,14 +56,14 @@
                                         <h5>Banking</h5>
                                     </li>
                                     <li>
-                                        <h3>4</h3>
+                                        <h3>{{banking?.critical}}</h3>
                                         <span>High Impact Issues</span>
                                     </li>
                                     <li>
                                         <p>Lorem ipsum dolor sit amet, consectetur</p>
                                     </li>
                                     <li>
-                                        <a class="btn" href="javascript:void(0)" (click)="toggleDetails()">View Details
+                                        <a class="btn" (click)="toggleDetails()">View Details
                                             <img src="./assets/LandingPage/checkBlue.svg" alt="arrow"></a>
                                     </li>
                                 </ul>
@@ -78,14 +78,14 @@
                                         <h5>GST</h5>
                                     </li>
                                     <li>
-                                        <h3>3</h3>
+                                        <h3>{{gst?.critical}}</h3>
                                         <span>High Impact Issues</span>
                                     </li>
                                     <li>
                                         <p>Lorem ipsum dolor sit amet, consectetur</p>
                                     </li>
                                     <li>
-                                        <a class="btn" href="javascript:void(0)" (click)="toggleDetails()">View Details
+                                        <a class="btn" (click)="toggleDetails()">View Details
                                             <img src="./assets/LandingPage/checkBlue.svg" alt="arrow"></a>
                                     </li>
                                 </ul>
@@ -118,23 +118,23 @@
     </div>
 
     <div class="criticalDetails" *ngIf="!showCriticalBoxFirst">
-        <a href="javascript:void(0)" class="backCalcel" (click)="toggleDetails()">
+        <a class="backCalcel" (click)="toggleDetails()">
             <img src="./assets/LandingPage/closeIcon.png" alt="">
         </a>
         <div class="buttonTab">
             <ul>
                 <li>
-                    <a href="javascript:void(0)" class="btn active"><img
+                    <a class="btn active"><img
                             src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/credit_score.png"
                             alt=""> Bureau <span>8</span></a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" class="btn"><img
+                    <a class="btn"><img
                             src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/banking_blue.png"
                             alt=""> Banking <span>4</span></a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" class="btn"><img
+                    <a class="btn"><img
                             src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/gst.png"
                             alt=""> GST <span>3</span></a>
                 </li>
@@ -193,7 +193,7 @@
         <div class="backgroundModal"></div>
         <div class="col-lg-6 m-auto">
             <div class="modalBody">
-                <a href="javascript:void(0)" class="backCalcel" (click)="closeModal()">
+                <a class="backCalcel" (click)="closeModal()">
                     <img src="./assets/LandingPage/closeIcon.png" alt="">
                 </a>
                 <h3>2. Underwritten by Banks</h3>
@@ -225,7 +225,7 @@
                     </li>
                 </ul>
 
-                <a href="javascript:void(0)" class="btn">
+                <a class="btn">
                     Know more
                     <img src="./assets/LandingPage/checkBlue.svg" alt="">
                 </a>

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselComponent, CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 
 @Component({
   selector: 'app-critical-issues',
@@ -9,11 +10,45 @@ import { CarouselComponent, CarouselModule, OwlOptions } from 'ngx-owl-carousel-
   templateUrl: './critical-issues.component.html',
   styleUrls: ['./critical-issues.component.scss', '../required-actions.component.scss']
 })
-export class CriticalIssuesComponent {
+export class CriticalIssuesComponent implements OnInit {
 
   showCriticalBoxFirst: boolean = true;
   showKnowMoreModal: boolean = false;
+  summary_section:any;
+  summary_section_Data: any;
+  reportsData: any;
+  imgUrlDesktop: any;
+  imgUrlMobile: any;
+  rankingSection: any;
+  banking: any;
+  bureau: any;
+  gst: any;
 
+  @Input() ActionReqReportsData: any;
+
+
+  ngOnInit(): void {
+    this.summary_section = reportStatciData;
+    this.summary_section_Data = this.summary_section?.summary_section;
+    this.reportsData = this.ActionReqReportsData?.report;
+
+    this.banking = this.reportsData?.bankingSummary;
+    this.bureau = this.reportsData?.bureauSummary;
+    this.gst = this.reportsData?.gstSummary;
+
+
+    //rankingSection
+    this.rankingSection = reportStatciData?.summary_section;
+    const compareStage = this.rankingSection?.ranking_card?.ranking_images.find(
+      (image: { stage: any }) => image.stage === this.reportsData?.currentStage
+    );
+    if (compareStage) {
+      this.imgUrlDesktop = compareStage.desktop;
+      this.imgUrlMobile = compareStage.mobile;
+    }
+  }
+  
+  
   toggleDetails() {
     this.showCriticalBoxFirst = !this.showCriticalBoxFirst;
   }

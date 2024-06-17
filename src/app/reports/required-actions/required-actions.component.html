@@ -1,4 +1,4 @@
-<div class="actionImprove section_padding">
+<div class="actionImprove section_padding" #positiveSection id="positiveSection"  #criticalSection id="criticalSection">
     <div class="container padding30">
         <div class="row">
             <div class="col-lg-12 padding30">
@@ -22,7 +22,7 @@
                         </button>
                     </div>
                     <div *ngIf="activeTab === 1" class="boxTabs" style="border: 1px solid #FF7B24;">
-                        <app-critical-issues></app-critical-issues>
+                        <app-critical-issues [ActionReqReportsData]='ActionReqReportsData'></app-critical-issues>
                         <app-mobile-critical-issues></app-mobile-critical-issues>
                     </div>
                     <div *ngIf="activeTab === 2" class="boxTabs" style="border: 1px solid #6A2FC2;">

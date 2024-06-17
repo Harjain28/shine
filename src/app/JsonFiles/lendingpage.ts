@@ -147,7 +147,7 @@ export const shineLendingPageJSON = {
   },
 
   Shine_Comparison_Section: {
-    Title: 'Why Choose Shine for Your Business?',
+    Title: 'Why Choose SHINE for Your Business?',
     Subtitle:
       'Detailed Financial Breakdown. Budget-friendly Analysis. Clear and Simple Insights.',
 

@@ -35,18 +35,16 @@ export default[
     {
         path: 'payment_status',   canActivate: [AuthGuard], loadComponent:() => import('./payment-status/payment-status.component').then(c=>c.PaymentStatusComponent)
     },
-      {
-        path: 'pricing_annual', canActivate: [AuthGuard], loadComponent:() => import('../pages/pricing2/pricing2.component').then(c=>c.Pricing2Component)
-    },
+    //   {
+    //     path: 'pricing_annual', canActivate: [AuthGuard], loadComponent:() => import('../pages/pricing2/pricing2.component').then(c=>c.Pricing2Component)
+    // },
     {
         path: 'payment_status/:data', loadComponent:() => import('./payment-status/payment-status.component').then(c=>c.PaymentStatusComponent)
     },
     {
         path: 'page-not-found', loadComponent:() => import('./page-not-found/page-not-found.component').then(c=>c.PageNotFoundComponent)
     },
-    {
-        path: 'report_model1', loadComponent:() => import('./mock-report/mock-report.component').then(c=>c.MockReportComponent)
-    },
+    
     {
         path: 'login', loadComponent:() => import('./login/login.component').then(c=>c.LoginComponent)
     },

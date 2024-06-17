@@ -76,6 +76,7 @@ import { cust13FixedJson } from '../JsonFiles/9427043914-fixed';
 import { cust11FixedJson } from '../JsonFiles/8746099464-fixed';
 import { cust42Json } from '../JsonFiles/9422078781';
 import { RequiredActionsComponent } from './required-actions/required-actions.component';
+import { report_model1 } from '../JsonFiles/report_model1';
 
 @Component({
   selector: 'app-reports',
@@ -139,7 +140,7 @@ export class ReportsComponent {
   disclaimer: any;
   reportsData: any;
   criticalTotal: any;
-  mediumTotal: any;
+  postiveTotal: any;
   imgUrlDesktop: any;
   imgUrlMobile: any;
   requestData: any;
@@ -155,6 +156,7 @@ export class ReportsComponent {
   Key_Insights_box: any;
   gstDetails: any;
   bureauScore: any;
+  @ViewChild('requiredActions') requiredActions!: RequiredActionsComponent;
 
   constructor(private api: ApiService, private cdr: ChangeDetectorRef, public router: Router,private storage: StorageService) { }
 
@@ -172,13 +174,18 @@ export class ReportsComponent {
     this.getFaq();
     // this.api.reportApi();
     const url = this.router.url;
-    if (url.includes('/report')) {
+    if (url.includes('/report') && url !== '/in/report_model1') {
       this.postForReport();    
     } else {
       this.navigateToSampleReportWithParams();
     }
   }
 
+
+  scrollToSection(section: string): void {
+    this.requiredActions.scrollToSection(section);
+  }
+  
   getReportData(reportData:any) {
     this.showEligible = false;
     this.gstDetails = reportData?.report?.gstHistory;
@@ -194,9 +201,9 @@ export class ReportsComponent {
   this.disclaimer = reportStatciData?.disclaimer?.description;
 
   const { bankingSummary, bureauSummary, gstSummary } = reportData?.report;
-  this.criticalTotal =
+  this.postiveTotal =
     bankingSummary.positive + bureauSummary.positive + gstSummary.positive;
-  this.mediumTotal =
+  this.criticalTotal =
     bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
 
   const compareStage = this.headerSection?.background.find(
@@ -322,9 +329,14 @@ export class ReportsComponent {
       'no_bureau.json': noBureauJSON,
       'poor_bureau.json': poorBureauJSON,
       'no_gst.json': noGSTJSON,
-      'vpoor_bureau.json': vpoorBureauJSON
+      'vpoor_bureau.json': vpoorBureauJSON,
     };
-    this.reportsData = reportsDataMap[fileName] || this.reportData;
+
+    if (this.router.url === '/in/report_model1') {
+      this.reportsData = report_model1;
+    } else {
+      this.reportsData = reportsDataMap[fileName] || this.reportData;
+    }
     this.getReportData(this.reportsData);
 
     this.gstDetails = this.reportsData?.report?.gstHistory;
