@@ -1,9 +1,177 @@
+<div class="backgroundHeader"></div>
 
-<div *ngIf="planCount !== null">
-    <ng-container *ngIf="planCount <= 3; else showPricing2">
-      <app-pricing1></app-pricing1>
-    </ng-container>
-    <ng-template #showPricing2>
-      <app-pricing2></app-pricing2>
-    </ng-template>
-  </div>
+<div class="pricingPlan">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mhidden">
+                <div class="planOneBox">
+                    <div class="box w-33">
+                        <div class="contentBox">
+                            <h3>{{pricingHeader?.Header1?.Text}}</h3>
+                            <p>{{pricingHeader?.Subheader}}</p>
+
+                            <h5>{{pricingHeader?.headerText[0]}}</h5>
+                        </div>
+                    </div>
+                    <div class="pricingBox w-33">
+                        <div class="contentBox">
+                            <h3>{{pricingHeader?.headerText[1]}} Plan</h3>
+                            <del>₹{{monthlyFilteredPlan}}</del>
+                            <span>₹{{monthlyPlan}}</span>
+                            <p>per member, one-time</p>
+                            <button class="btn pricing_group"  (click)="goToRegister(pricingHeader?.headerText[1], monthlyPlan,monthlyFilteredPlan,true)">{{pricingHeader?.CTA_Text}}</button>
+                        </div>
+                    </div>
+                    <div class="pricingBox w-33">
+                        <div class="contentBox">
+                            <h3>{{pricingHeader?.headerText[2]}} Plan</h3>
+                            <del>₹{{annaulFilteredPlan}}</del>
+                            <span>₹{{annualPlan}}</span>
+                            <p>Annual for 4 report <br>
+                                1 every 3 months</p>
+                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[2], annualPlan,annaulFilteredPlan, true)">{{pricingHeader?.CTA_Text}}</button>
+                        </div>
+                        <button class="valueBtn">VALUE FOR MONEY</button>
+                    </div>
+                </div>
+                <ul class="planListView">
+                    <li *ngFor = "let data of pricingColumns; let i = index">
+                        <span><small>{{i+1}}.</small> {{ data?.item[0] }}</span>
+                        <ng-container *ngFor="let item of data?.item.slice(1)">
+                            <span *ngIf="item.includes('Yes')">
+                                <img src="./assets/LandingPage/yescheck.svg" alt="">
+                            </span>
+                            <span style="display: flex; justify-content: center;" 
+                            *ngIf="item.includes('No')">X</span>
+                            
+                        </ng-container>
+                    </li>
+                   
+                    <li class="button">
+                        <span></span>
+                        <span>
+                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[1],monthlyPlan,monthlyFilteredPlan,  true)">{{pricingHeader?.CTA_Text}}</button>
+                        </span>
+                        <span>
+                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[2],annualPlan,annaulFilteredPlan, true)">{{pricingHeader?.CTA_Text}}</button>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-12 dhidden">
+                <div class="content">
+                    <h3>{{pricingHeader?.Header1?.Text}}</h3>
+                    <p>{{pricingHeader?.Subheader}}</p>
+                </div>
+            </div>
+
+            <div class="col-lg-12 dhidden">
+                <div class="mobileVIewSilder">
+                    <div class="priceBox">
+                        <div class="monthView">
+                            <h3>{{pricingHeader?.headerText[1]}} Plan</h3>
+                            <del>₹{{monthlyFilteredPlan}}</del>
+                            <span>₹{{monthlyPlan}}</span>
+                            <p>per member, one-time</p>
+                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[1],monthlyPlan,monthlyFilteredPlan, true)">{{pricingHeader?.CTA_Text}}</button>
+                        </div>
+                        <div class="monthView active">
+                            <h3>{{pricingHeader?.headerText[2]}} Plan</h3>
+                            <del>₹{{annaulFilteredPlan}}</del>
+                            <span>₹{{annualPlan}}</span>
+                            <p>Annual for 4 report <br>
+                                1 every 3 months</p>
+                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[2],annualPlan, annaulFilteredPlan, true)">{{pricingHeader?.CTA_Text}}</button>
+                        </div>
+                    </div>
+
+                    <ul>
+                        <li *ngFor = "let data of pricingColumns; let i = index">
+                            <small>{{i+1}}. {{ data?.item[0] }}</small> 
+                            <p>
+                                <ng-container *ngFor="let item of data?.item.slice(1)">
+                                
+                                        <span *ngIf="item.includes('Yes')">
+                                            <img src="./assets/LandingPage/yescheck.svg" alt="">
+                                        </span>
+                                        <span style="display: flex; justify-content: center;" 
+                                        *ngIf="item.includes('No')">X</span>                                </ng-container>
+                            </p>
+                        </li>
+
+                        <div class="button">
+                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[1],monthlyPlan, monthlyFilteredPlan, true)">{{pricingHeader?.CTA_Text}}</button>
+                            <button class="btn pricing_group" (click)="goToRegister(pricingHeader?.headerText[2],annualPlan,annaulFilteredPlan, true) ">{{pricingHeader?.CTA_Text}}</button>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="whatisShine">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 col-sm-12 m-auto">
+                <div class="shineContent text-center">
+                    <h3>{{WhatisShineSection?.Header}}</h3>
+                    <p>{{WhatisShineSection?.Subhead}}</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="shineList">
+                    <ul>
+                        <li>{{WhatisShineSection?.Body_Section[0]}}</li>
+                        <li>{{WhatisShineSection?.Body_Section[1]}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="shineList">
+                    <ul>
+                        <li>{{WhatisShineSection?.Body_Section[2]}}</li>
+                        <li>{{WhatisShineSection?.Body_Section[3]}}</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- <div class="col-lg-12 col-md-12 col-sm-12 m-auto">
+                <div class="button">
+                    <button class="btn pricing_group" (click)="viewReportsForm()">
+                        <img src="./assets/LandingPage/searchIcon.svg" alt="">
+                        View Sample Report
+                    </button>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<div class="shineHelpSection">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 m-auto">
+                <div class="Content text-center">
+                    <h3>{{HowDoesShinehelpSection?.Header}}</h3>
+                </div>
+            </div>
+            
+            <div class="col-lg-12 col-md-12 col-sm-12 m-auto">
+                <div class="boxMarge">
+                    <div class="helpBox" *ngFor="let data of featureSection; let i=index">
+                        <span>0{{ i + 1 }}</span>
+                        <div class="box">
+                            <img src={{data?.icon}} alt="">
+                            <p>{{data?.productCopy}}</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

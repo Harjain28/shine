@@ -31,7 +31,15 @@ export default[
     {
         path: 'pricing_group',canActivate: [AuthGuard], loadComponent:() => import('./pricing1/pricing1.component').then(c=>c.Pricing1Component)
     },
-    
+    {
+        path: 'pricing_group_1',canActivate: [AuthGuard], loadComponent:() => import('./pricing1/pricing1.component').then(c=>c.Pricing1Component)
+    },
+    {
+        path: 'pricing_group_2',canActivate: [AuthGuard], loadComponent:() => import('./pricing1/pricing1.component').then(c=>c.Pricing1Component)
+    },
+    {
+        path: 'pricing_group_3',canActivate: [AuthGuard], loadComponent:() => import('./pricing1/pricing1.component').then(c=>c.Pricing1Component)
+    },
     {
         path: 'payment_status',   canActivate: [AuthGuard], loadComponent:() => import('./payment-status/payment-status.component').then(c=>c.PaymentStatusComponent)
     },

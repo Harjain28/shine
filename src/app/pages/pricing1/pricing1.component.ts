@@ -87,7 +87,13 @@ export class Pricing1Component {
 
    
   showPricingPlan() {
-    this.randomNumber = localStorage.getItem("plan_count");
+    if (this.router.url === '/in/pricing_group') {
+      this.randomNumber = localStorage.getItem("plan_count");
+    } else {
+      const parts = this.router.url.split('_');
+      this.randomNumber  = parts[parts.length - 1];
+    }
+    
     const plans:any = {
       1: { monthlyFiltered: '1,999', annualFiltered: '3,999', monthly: '999', annual: '2,999' },
       2: { monthlyFiltered: '2,999', annualFiltered: '4,999', monthly: '1,299', annual: '3,999' },
