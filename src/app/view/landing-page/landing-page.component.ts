@@ -187,7 +187,6 @@ export class LandingPageComponent {
   isUserInteracted: boolean = false;
   pricing_url: any;
   randomNumber: any;
-
  
   constructor(
     public eventService: EventService,
@@ -206,10 +205,10 @@ export class LandingPageComponent {
   ) {
 
   }
-   @HostListener("window:load", ["$event"])
-  checkScroll() {
-   this.playVideo();
-  }
+  //  @HostListener("window:load", ["$event"])
+  // checkScroll() {
+  //  this.playVideo();
+  // }
 
   ngOnInit(): void {
     this.randomNumber = Number(localStorage.getItem("plan_count"));
@@ -248,19 +247,19 @@ export class LandingPageComponent {
     buttonElement.click();
   }
 
-  playVideo(): void {
-    if (this.videoPlayer && this.videoPlayer.nativeElement) {
-      const video = this.videoPlayer.nativeElement as HTMLVideoElement;
-      video.play();
-    } else {
-      console.error('Video element not found or not initialized.');
-    }
-  }
+  // playVideo(): void {
+  //   if (this.videoPlayer && this.videoPlayer.nativeElement) {
+  //     const video = this.videoPlayer.nativeElement as HTMLVideoElement;
+  //     video.play();
+  //   } else {
+  //     console.error('Video element not found or not initialized.');
+  //   }
+  // }
 
   ngAfterViewInit(): void {
     document.addEventListener('click', () => {
       this.isUserInteracted = true;
-      this.playVideo();
+      // this.playVideo();
     }, { once: true });
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.cdr.detectChanges();

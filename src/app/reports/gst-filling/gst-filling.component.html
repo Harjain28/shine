@@ -70,9 +70,16 @@
           </div>
         </div>
 
-        <div class="ApplyNow mt-4">
+        <div class="ApplyNow mt-4" *ngIf="router.url !== '/in/report_model1'">
           <a class="btn" href="https://www.creditenable.com/in/sme-business-loan/unsecured-business-loans/msme-sme-business-loans-india-v1">Apply Now</a>
         </div>
+
+
+        <div class="ApplyNow mt-4" *ngIf="router.url === '/in/report_model1'" (click)="redirectToPricing()">
+          <a class="btn">Check Pricing</a>
+        </div>
+
+    
       </div>
     </div>
     <app-no-gst *ngIf = "showGstComponent"></app-no-gst>

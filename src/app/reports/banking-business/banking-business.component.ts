@@ -15,6 +15,8 @@ import { PieComponent } from 'src/app/charts/pie/pie.component';
 import { BarComponent } from 'src/app/charts/bar/bar.component';
 import { Mixed5Component } from 'src/app/charts/mixed5/mixed5.component';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
+import { Router, RouterModule } from '@angular/router';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-banking-business',
@@ -35,6 +37,7 @@ import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
     HistogramComponent,
     PieComponent,
     BarComponent,
+    RouterModule
   ],
   templateUrl: './banking-business.component.html',
   styleUrls: ['./banking-business.component.scss', '../reports.component.scss'],
@@ -133,7 +136,7 @@ export class BankingBusinessComponent {
   voColor: any;
   summaryIcon: any;
 
-  constructor() {}
+  constructor(public router:Router, private navigationService:NavigationService) {}
   customOptions4: OwlOptions = {
     loop: false,
     rewind: false,
@@ -738,4 +741,11 @@ export class BankingBusinessComponent {
   mnimizeDebtRatioBlock() {
     this.expandDebtRatioSection = false;
   }
+
+  redirectToPricing() {
+    this.navigationService.setLinkClicked(true);
+    this.router.navigate(['/in/pricing_group']);
+  }
+  
+  
 }

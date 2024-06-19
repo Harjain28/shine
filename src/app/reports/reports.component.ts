@@ -16,7 +16,7 @@ import { ChartsJsonData } from '../JsonFiles/ChartJSONData';
 import { Subscription, take, timer } from 'rxjs';
 import { reportStatciData } from '../JsonFiles/reportpageStaticData';
 import { reportPageJson } from '../JsonFiles/report';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { goodBureauJSON } from '../JsonFiles/good_bureau';
 import { avgBureauJSON } from '../JsonFiles/avg_bureau';
 import { noBureauJSON } from '../JsonFiles/no_bureau';
@@ -77,6 +77,7 @@ import { cust11FixedJson } from '../JsonFiles/8746099464-fixed';
 import { cust42Json } from '../JsonFiles/9422078781';
 import { RequiredActionsComponent } from './required-actions/required-actions.component';
 import { report_model1 } from '../JsonFiles/report_model1';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-reports',
@@ -93,6 +94,7 @@ import { report_model1 } from '../JsonFiles/report_model1';
     NoBureauComponent,
     NoGstComponent,
     MaterialModule,
+    RouterModule
   ],
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.scss'],
@@ -158,7 +160,7 @@ export class ReportsComponent {
   bureauScore: any;
   @ViewChild('requiredActions') requiredActions!: RequiredActionsComponent;
 
-  constructor(private api: ApiService, private cdr: ChangeDetectorRef, public router: Router,private storage: StorageService) { }
+  constructor(private api: ApiService, private cdr: ChangeDetectorRef, public router: Router,private navigationService:NavigationService) { }
 
   ngOnInit(): void {
     // if(!this.storage.isToken())
@@ -407,6 +409,10 @@ export class ReportsComponent {
     window.location.href = 'https://www.creditenable.com/in/sme-business-loan/unsecured-business-loans/msme-sme-business-loans-india-v1';
   }
 
+  redirectToPricing() {
+    this.navigationService.setLinkClicked(true);
+    this.router.navigate(['/in/pricing_group']);
+  }
 
   getFaq() {
     this.businessLoanJson = reportStatciData;

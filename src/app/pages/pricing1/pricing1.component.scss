@@ -51,7 +51,9 @@
                     color: #3f3f3f;
                     margin-bottom: 2px;
                     line-height: 18px;
-                    margin-top: 110px;
+                    position: absolute;
+                    bottom: -50px;
+                    left: 0px;
                 }
             }
         }
@@ -512,6 +514,7 @@
                     margin-bottom: 20px;
                     color: #3F3F3F;
                     line-height: 16px;
+                    height: 34px;
                     font-family: Poppins !important;
                 }
 
@@ -556,6 +559,7 @@
                         padding: 15px 20px;
                         font-size: 13px;
                         line-height: 16px;
+                        text-align: center;
                         color: #3F3F3F;
                         font-weight: 500;
                         font-family: Poppins !important;

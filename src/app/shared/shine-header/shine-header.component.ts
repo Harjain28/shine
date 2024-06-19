@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MaterialModule } from 'src/app/material.module';
 
 @Component({
   selector: 'app-shine-header',
   standalone: true,
-  imports: [CommonModule,MatIconModule,MaterialModule],
+  imports: [CommonModule,MatIconModule,MaterialModule, RouterModule],
   templateUrl: './shine-header.component.html',
   styleUrls: ['./shine-header.component.scss'],
 })

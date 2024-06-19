@@ -8,11 +8,13 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 import { NoGstComponent } from '../no-gst/no-gst.component';
+import { Router, RouterModule } from '@angular/router';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-gst-filling',
   standalone: true,
-  imports: [CommonModule, MatProgressBarModule,NoGstComponent, MatExpansionModule, MatFormFieldModule, MatCheckboxModule, MatIconModule, CarouselModule],
+  imports: [CommonModule, MatProgressBarModule,NoGstComponent, MatExpansionModule, MatFormFieldModule, MatCheckboxModule, MatIconModule, CarouselModule, RouterModule],
   templateUrl: './gst-filling.component.html',
   styleUrls: ['./gst-filling.component.scss', '../reports.component.scss']
 })
@@ -59,7 +61,7 @@ export class GstFillingComponent {
   
   turnover:any;
 
-  constructor() {
+  constructor(public router:Router, private navigationService:NavigationService) {
 
   }
 
@@ -228,6 +230,12 @@ concatenateInsights(insightsArray: any) {
 
 isSelectedMonth(month: string): boolean {
   return this.res.some((payment: { month: any; }): any => payment.month === month);
+}
+
+
+redirectToPricing() {
+  this.navigationService.setLinkClicked(true);
+  this.router.navigate(['/in/pricing_group']);
 }
 
 

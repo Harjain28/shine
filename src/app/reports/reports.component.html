@@ -110,9 +110,13 @@
 </ng-container>
   <!-- <app-no-bureau></app-no-bureau> -->
 
-  <div class="ApplyNow" (click)="redirectToMSME()">
+  <div class="ApplyNow" *ngIf="router.url !== '/in/report_model1'" (click)="redirectToMSME()">
     <a class="btn">Apply Now</a>
   </div>
+  <div class="ApplyNow"  *ngIf="router.url === '/in/report_model1'" (click)="redirectToPricing()">
+    <a class="btn">Check Pricing</a>
+  </div>
+
 
   <div class="poweredBy">
     <div class="container">

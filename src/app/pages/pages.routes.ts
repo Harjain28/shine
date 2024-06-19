@@ -25,9 +25,9 @@ export default[
     {
         path: 'bank_statement/:id',   canActivate: [AuthGuard], loadComponent:() => import('./upload-documents/upload-documents.component').then(c=>c.UploadDocumentsComponent)
     },
-    // {
-    //     path: 'bank_statement',   canActivate: [AuthGuard], loadComponent:() => import('./upload-documents/upload-documents.component').then(c=>c.UploadDocumentsComponent)
-    // },
+    {
+        path: 'bank_statement',   canActivate: [AuthGuard], loadComponent:() => import('./upload-documents/upload-documents.component').then(c=>c.UploadDocumentsComponent)
+    },
     {
         path: 'pricing_group',canActivate: [AuthGuard], loadComponent:() => import('./pricing1/pricing1.component').then(c=>c.Pricing1Component)
     },

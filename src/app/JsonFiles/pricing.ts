@@ -1,10 +1,10 @@
 export const shinePricingPageJSON = {
   Pricing_Header: {
     Header1: {
-      Text: 'Select Your Pricing Plan',
+      Text: 'Get Financial Expertise at a Fraction of the Cost',
     },
     Subheader: [
-      "Shine offers a low-cost entry for a high-return journey to your ideal loans",
+      "Our reports, provide comprehensive insights at a fraction of the cost of traditional financial advisors to get access to Lakhs in Business Loan.",
     ],
     headerText:[
       'Key Feature', 'One-Time' , 'Annual'
@@ -15,21 +15,21 @@ export const shinePricingPageJSON = {
     col: [ 
        {
          item: [
-           'Comprehensive Financial Overview',
+           'Complete Financial Health Overview',
             'Yes',
             'Yes',
          ]
        },
        {
         item: [
-          'Experian Credit Report Analysis',
+          'Detailed Credit Analysis with Experian',
            'Yes',
            'Yes',
         ]
       },
       {
         item: [
-          'Early Warning Signs of Credit Risk',
+          'Early Detection of Credit Risks',
            'Yes',
            'Yes',
         ]
@@ -43,49 +43,49 @@ export const shinePricingPageJSON = {
       },
       {
         item: [
-          'Comprehensive Banking Assessment',
+          'Banking and Transaction Analysis',
            'Yes',
            'Yes',
         ]
       },
       {
         item: [
-          'Tailored Plans for Loan Success',
+          'Customized Loan Success Plans',
            'Yes',
            'Yes',
         ]
       },
       {
         item: [
-          'Custom Advice on 15+ Lender Matches',
+          'Expert 15+ Lender Matchmaking Advice',
            'Yes',
            'Yes',
         ]
       },
       {
         item: [
-          'Access to Top Borrowing Tips',
+          'Insider Tips for Optimal Borrowing',
            'No',
            'Yes',
         ]
       },
       {
         item: [
-          'Monthly Performance Tracking',
+          'Quarterly Financial Performance Reviews',
            'No',
            'Yes',
         ]
       },
       {
         item: [
-          'Access to Credit Counsellor',
+          'Accesss to Credit Counselling',
            'No',
            'Yes',
         ]
       },
       {
         item: [
-          'Debt Consolidation Advisory ',
+          'Debt Management and Consolidation Advice',
            'No',
            'Yes',
         ]
@@ -109,30 +109,30 @@ export const shinePricingPageJSON = {
         Headertext: 'One-Time',
         Price: '999',
         item: [
-          'Comprehensive Financial Overview',
-          'Experian Credit Report Analysis',
-          'Early Warning Signs of Credit Risk',
+          'Complete Financial Health Overview',
+          'Detailed Credit Analysis with Experian',
+          'Early Detection of Credit Risks',
           'GST Filing Analysis',
-          'Comprehensive Banking Assessment',
-          'Tailored Plans for Loan Success',
-          'Custom Advice on 15+ Lender Matches'
+          'Banking and Transaction Analysis',
+          'Customized Loan Success Plans',
+          'Expert 15+ Lender Matchmaking Advice'
         ]
       },
       {
         Headertext: 'Annual',
-        Price: '1',
+        Price: '3999',
         item: [
-              'Comprehensive Financial Overview',
-              'Experian Credit Report Analysis',
-              'Early Warning Signs of Credit Risk',
+              'Complete Financial Health Overview',
+              'Detailed Credit Analysis with Experian',
+              'Early Detection of Credit Risks',
               'GST Filing Analysis',
-              'Comprehensive Banking Assessment',
-              'Tailored Plans for Loan Success',
-              'Custom Advice on 15+ Lender Matches',
-             'Access to Top Borrowing Tips',
-             'Quarterly Performance Tracking',
-             'Access to Credit Counsellor',
-             'Debt Consolidation Advisory ',
+              'Banking and Transaction Analysis',
+              'Customized Loan Success Plans',
+              'Expert 15+ Lender Matchmaking Advice',
+             'Insider Tips for Optimal Borrowing',
+             'Quarterly Financial Performance Reviews',
+             'Accesss to Credit Counselling',
+             'Debt Management and Consolidation Advice',
              'Personalised Loan Negotiations'
             ]
           

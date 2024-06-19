@@ -1,15 +1,15 @@
 export const shineLendingPageJSON = {
   Shine_Banner: {
     Header1: {
-      Text: 'Welcome to SHINE',
+      Text: 'Improve Your Credit Profile with SHINE',
     },
     Header2: {
-      Text: 'Identify Issues. Improve Your Credit Profile. Secure Capital.',
+      Text: 'Identify Issues. Improve Your Credit Profile. Get Better Loans.',
     },
     Subheader: [
-      "Expert insights: Data-driven analysis for financing success.",
-      "Identify Issues: Uncovers potential lender concerns.",
-      "Take Action: Steps to boost loan eligibility affordably.",
+      "Full Financial Picture: Get an overview of your financial health, including credit scores, banking, and GST.",
+      "Actionable Tips: Receive clear steps to improve your profile and address lender concerns.",
+      "Secure Better Loans: Follow our advice to become a top candidate for the best loan offers.",
     ],
     Background: {
       Desktop_bg:
@@ -20,7 +20,7 @@ export const shineLendingPageJSON = {
         'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/Landing%20Page%20Video.webm',    
     },
 
-    CTA_Text: 'Enrol Now',
+    CTA_Text: 'Check Pricing',
     CTA_Link: '/in/pricing_annual',
   },
 
@@ -31,9 +31,9 @@ export const shineLendingPageJSON = {
     Beginners_Feature: {
       Beginners_Title: 'Beginners',
       Beginners_Details:[
-      'Have never taken a loan',
-      'Don’t know how to go about getting a loan or if you will even be eligible',
-      'Want to take the be in control of your financing options.',
+      'Discover how to become Business loan-ready from the start.',
+      'Understand and boost your financial profile.',
+      'Manage your finances to prepare for future growth.',
    
        ],
        Summary: 'Get answers to all the above along with a personalised plan for how to improve and get your first business loan.', 
@@ -45,9 +45,9 @@ export const shineLendingPageJSON = {
       Intermediate_Feature: 'Intermediate',
       Intermediate_Details:[
       'Business vintage 4-5 years', 
-      'GST registered',
-      'Successfully obtained at least one loan',
-      'Looking for better loan terms and offers',  
+      'Optimize your Business loan terms with targeted advice.',
+      'Continuously monitor your financial progress.',
+      'Receive tailored tips to boost your business growth.',  
       
        ],
        Summary: 'A personalised programme that helps you manage business finances better, track your progress, and get your next business loan at the best terms.', 
@@ -59,9 +59,9 @@ export const shineLendingPageJSON = {
       Expert_Feature: 'Expert',
       Expert_Details:[
       'Business vintage > 5 years', 
-      'GST registered',
-      'Seeking tailored financial advice on existing portfolio', 
-      'Exploring improved loan options, ROIs & multi-funding options',  
+      'Access new funding opportunities.',
+      'Get tailored financial advice on existing portfolio', 
+      'Get better terms & multi-funding options',  
        ],
        Summary: 'A personalised programme that gives you access to financial insights to improve fiscal management and unlock multi-funding loans at the best terms.', 
         Vector_Background: {
@@ -69,7 +69,7 @@ export const shineLendingPageJSON = {
     },
     },
 
-    CTA_Text: 'Get Pricing',
+    CTA_Text: 'Check Pricing',
     CTA_Link: '/in/pricing_annual',
   },
 
@@ -80,29 +80,42 @@ export const shineLendingPageJSON = {
       'The only tool that analyses Bureau, GST, and Banking data to reveal your loan eligibility.',
     Bureau_Feature: {
       Bureau_Title: 'Bureau Analysis',
-      Bureau_Details:
-        'Discover what lenders like and don’t like about your business based on the patterns in your Bureau report. Gain an edge with insights for credit optimisation, elevating your profile to unlock lending opportunities.',
+      Bureau_Subheader: 'Boost Your Credit Score',
+      Bureau_Details:[
+        'Analyze your credit report to identify strengths and weaknesses.',
+        'Get clear steps to address credit issues and boost your score.',
+        'Enhance your credit profile for better loan terms.',
+      ],
          Vector_Background: {
       Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/bureau.png',
     },
     },
-    GST_Feature: {
-      GST_Title: 'GST Analysis',
-      GST_Details:
-        "See how lenders interpret your business’s financial health based on your GST filings and how they impact your loan prospects.",
-         Vector_Background: {
-      Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/GST.png',
-    },
-    },
-    Banking_Feature: {
+     Banking_Feature: {
       Banking_Title: 'Banking Analysis',
-      Banking_Details:
-        'Uncover trends in your banking history, evaluating like lenders do. Understand how to optimise transactions and manage balances to  present a compelling case for loan eligibility and favourable terms which lenders can’t ignore.',
+      Banking_Subheader: 'Boost Your Banking Profile',
+      Banking_Details:[
+        'Understand how your banking history impacts loan eligibility.',
+        'Learn how to manage your finances better.',
+        'Enhance your loan eligibility with a strong banking history.',
+      ],
          Vector_Background: {
       Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/banking.png',
     },
     },
-    CTA_Text: 'Get Pricing',
+    GST_Feature: {
+      GST_Title: 'GST Analysis',
+      GST_Subheader: 'Optimize Your GST Profile',
+      GST_Details:[
+        'See how lenders interpret your GST filings.',
+        'Learn how to address issues in your GST filings.',
+        'Use insights to improve your loan prospects.',
+      ],
+         Vector_Background: {
+      Character_image: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/GST.png',
+    },
+    },
+   
+    CTA_Text: 'Check Pricing',
     CTA_Link: '/in/pricing_annual',
   },
 
@@ -142,7 +155,7 @@ export const shineLendingPageJSON = {
       imageText: 'Increase Loan Possibility!',
     },
   ],
-    CTA_Text: 'Enrol Today',
+    CTA_Text: 'Check Pricing',
     CTA_Link: '/in/pricing_annual',
   },
 
@@ -188,7 +201,7 @@ export const shineLendingPageJSON = {
          ]
        },
       ],
-    CTA_Text: 'Get Pricing',
+    CTA_Text: 'Check Pricing',
     CTA_Link: '/in/pricing_annual',
   },
   How_Shine_Will_Help_Section: {
@@ -219,7 +232,7 @@ export const shineLendingPageJSON = {
       'Start your customised journey to your dream loan now!',
       'Make the strategic changes we recommend and be loan ready in 3-6 months.',
     ],
-    CTA_Text: 'Enrol Today',
+    CTA_Text: 'Check Pricing',
     CTA_Link: '/in/pricing_annual',
   },
 
@@ -227,7 +240,7 @@ export const shineLendingPageJSON = {
     Header: 'Tailored Financial Insights to Boost Loan Eligibility',
     Subheader:
       'Get personalized financial assessments to unlock better loan opportunities and affordable finance.',
-    CTA_Text: 'Get Pricing',
+    CTA_Text: 'Check Pricing',
     CTA_Link: '/in/pricing_annual',
     Image: {
       Desktop:

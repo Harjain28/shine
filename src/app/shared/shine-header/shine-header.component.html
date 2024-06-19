@@ -6,12 +6,14 @@
                     <mat-icon> phone</mat-icon> +91 84509 67207
                 </a>
                 <div class="headerNav">
-                    <a href="" class="logo">
+                    <a class="logo" [routerLink]="['/in']" >
                         <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Shine_Logo.svg" alt="">
                     </a>
-                    <h5>Hi {{name}}</h5>
+                    <h5 class="mhidden" *ngIf="router.url === '/in/report_model1'">Sample Report- Only for Reference</h5>
+                    <h5 class="dhidden" *ngIf="router.url === '/in/report_model1'">Sample Report-for Reference</h5>
+                    <h5 *ngIf="router.url !== '/in/report_model1'">Hi {{name}}</h5>
 
-                    <div class="logoutButton">
+                    <div class="logoutButton" *ngIf="router.url !== '/in/report_model1'">
                         <button (click)="logout()">
                             <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/logout.png" alt="">
                             Logout</button>

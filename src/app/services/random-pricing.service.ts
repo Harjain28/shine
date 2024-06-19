@@ -9,7 +9,7 @@ export class PricingService {
   }
 
   getRandomNumber(): number {
-    return Math.floor(Math.random() * 3) + 1;
+    return Math.floor(Math.random() * 1) + 1;
   }
 
   setRandomNumber(): void {

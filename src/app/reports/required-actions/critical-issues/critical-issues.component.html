@@ -123,68 +123,27 @@
         </a>
         <div class="buttonTab">
             <ul>
-                <li>
-                    <a class="btn active"><img
-                            src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/credit_score.png"
-                            alt=""> Bureau <span>8</span></a>
-                </li>
-                <li>
-                    <a class="btn"><img
-                            src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/banking_blue.png"
-                            alt=""> Banking <span>4</span></a>
-                </li>
-                <li>
-                    <a class="btn"><img
-                            src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/gst.png"
-                            alt=""> GST <span>3</span></a>
-                </li>
+              <li *ngFor="let item of tabs" (click)="handleClick(item)">
+                <a class="btn" [ngClass]="{active: item.isActive}">
+                  <img [src]="item.imageUrl" alt=""> {{ item.title }} <span>{{ item.count }}</span>
+                </a>
+              </li>
             </ul>
-        </div>
-        <div class="silderBox">
+          </div>
+          <div class="silderBox">
             <owl-carousel-o [options]="customOptions4">
-                <ng-container>
-                    <ng-template carouselSlide>
-                        <div class="boxSilde">
-                            <h3>1. Your Bureau Score</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu
-                                rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.
-                            </p>
-                            <a href="javascript:void(1)" (click)="openModal()"><img
-                                    src="./assets/LandingPage/checkGreen.svg" alt=""> Know how to fix this</a>
-                        </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <div class="boxSilde">
-                            <h3>2. Underwritten by Banks</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu
-                                rhoncus dapibus.</p>
-                            <a href="javascript:void(1)" (click)="openModal()"><img
-                                    src="./assets/LandingPage/checkGreen.svg" alt=""> Know how to fix this</a>
-                        </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <div class="boxSilde">
-                            <h3>3. Disputes with Lenders</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu
-                                rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.
-                            </p>
-                            <a href="javascript:void(1)" (click)="openModal()"><img
-                                    src="./assets/LandingPage/checkGreen.svg" alt=""> Know how to fix this</a>
-                        </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <div class="boxSilde">
-                            <h3>1. Your Bureau Score</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu
-                                rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.
-                            </p>
-                            <a href="javascript:void(1)" (click)="openModal()"><img
-                                    src="./assets/LandingPage/checkGreen.svg" alt=""> Know how to fix this</a>
-                        </div>
-                    </ng-template>
-                </ng-container>
+              <ng-container>
+                <ng-template carouselSlide *ngFor="let slide of filteredCards">
+                  <div class="boxSilde">
+                    <h3>{{ slide.title }}</h3>
+                    <p>{{ slide.description }}</p>
+                    <a (click)="openModal()"><img
+                        src="./assets/LandingPage/checkGreen.svg" alt=""> {{ slide.buttonText }}</a>
+                  </div>
+                </ng-template>
+              </ng-container>
             </owl-carousel-o>
-        </div>
+          </div>
     </div>
 
     <!-- && !showKnowMoreModal -->
