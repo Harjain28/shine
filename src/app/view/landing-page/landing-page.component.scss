@@ -1020,8 +1020,8 @@
             .silderSlide {
                 height: 640px;
 
-                img{
-                    height: 100%;
+                .image{
+                    height: 100% !important;
                     object-fit: cover;
                 }
 
@@ -1031,8 +1031,10 @@
                     .title {
 
                         .mainHeading {
-                            font-size: 32px;
+                            font-size: 28px;
                             line-height: 32px;
+                            margin-bottom: 10px;
+                            margin-top: 20px;
                         }
 
                         .colorBox{
