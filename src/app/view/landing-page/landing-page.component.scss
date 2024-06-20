@@ -147,8 +147,19 @@
                                 color: #222222;
                             }
 
+                            h4{
+                                color: #222222;
+                            }
+
                             p {
                                 color: #222222;
+
+                                span{
+
+                                    small{
+                                        background-color: #222;
+                                    }
+                                }
 
                             }
                         }
@@ -172,14 +183,22 @@
                     line-height: 28px;
                     font-weight: 600;
                     font-family: Poppins !important;
+                    margin-bottom: 10px;
+                }
+                h4 {
+                    color: #FFFFFF;
+                    font-size: 14px;
+                    line-height: 28px;
+                    font-weight: 600;
+                    font-family: Poppins !important;
                     margin-bottom: 9px;
                 }
 
                 p {
                     color: #FFFFFF;
-                    font-size: 13px;
+                    font-size: 14px;
                     line-height: 19px;
-                    font-weight: normal;
+                    font-weight: 600;
                     font-family: Poppins !important;
                     margin-bottom: 2px;
                     width: 90%;
@@ -192,6 +211,25 @@
 
                     &::-webkit-scrollbar {
                         display: none;
+                    }
+
+                    span{
+                        display: block;
+                        padding: 4px 0px;
+                        position: relative;
+                        padding-left: 22px;
+
+
+                        small{
+                            width: 9px;
+                            height: 9px;
+                            display: block;
+                            background-color: #fff;
+                            border-radius: 50px;
+                            position: absolute;
+                            left: 0px;
+                            top: 10px;
+                        }
                     }
                 }
             }

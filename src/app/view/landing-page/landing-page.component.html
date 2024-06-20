@@ -1,48 +1,63 @@
-
 <div class="SecuredBusinessLoan">
-    <div class="container-fluid p-0">
-      <div class="homeSlider">
-        <div class="silderSlide">
-          <img *ngIf="showDesktop" class="image mhidden"
-          src={{Shinebanner?.Background?.Desktop_bg}} />
-          <img *ngIf="!showDesktop" class="image dhidden"
-            src={{Shinebanner?.Background?.Mobile_bg}} />
-          <div class="silderText mobileResponsive"> 
-            <div class="container">
-              <div class="row align-items-center position-relative">
-                <div class="col-md-6">
-                  <div class="title shineTitle">
-                    <h1 class="mainHeading">
-                      {{Shinebanner.Header1.Text}}
-                    </h1>
-                    <div class="colorBox">
-                      {{Shinebanner.Header2.Text}}
-                    </div>
-                    <p *ngFor="let data of Shinebanner?.Subheader">
-                      <img src="./assets/LandingPage/checkStar.svg" alt="">
-                      {{data}}
+  <div class="container-fluid p-0">
+    <div class="homeSlider">
+      <div class="silderSlide">
+        <img
+          *ngIf="showDesktop"
+          class="image mhidden"
+          src="{{Shinebanner?.Background?.Desktop_bg}}"
+        />
+        <img
+          *ngIf="!showDesktop"
+          class="image dhidden"
+          src="{{Shinebanner?.Background?.Mobile_bg}}"
+        />
+        <div class="silderText mobileResponsive">
+          <div class="container">
+            <div class="row align-items-center position-relative">
+              <div class="col-md-6">
+                <div class="title shineTitle">
+                  <h1 class="mainHeading">
+                    {{Shinebanner.Header1.Text}}
+                  </h1>
+                  <div class="colorBox">
+                    {{Shinebanner.Header2.Text}}
+                  </div>
+                  <p *ngFor="let data of Shinebanner?.Subheader">
+                    <img src="./assets/LandingPage/checkStar.svg" alt="" />
+                    {{data}}
+                  </p>
 
-                    </p>
-
-                    <div class="pricingBtn">
-                      <a [class]="'btn enrol_now1 ' + 'pricing_'+randomNumber" queryParamsHandling="preserve" [routerLink]="pricing_url">{{Shinebanner?.CTA_Text}}</a>
-                    </div>
+                  <div class="pricingBtn">
+                    <a
+                      [class]="'btn enrol_now1 ' + 'pricing_'+randomNumber"
+                      queryParamsHandling="preserve"
+                      [routerLink]="pricing_url"
+                      >{{Shinebanner?.CTA_Text}}</a
+                    >
                   </div>
                 </div>
-                <div class="col-lg-6 mobile0">
-                  <div class="imgBanner">
-                    <!-- <video #videoPlayer width="640" height="360"  autoplay loop>
-                      <source class="w-100"  [src]="Shinebanner?.Background?.Content" type="video/webm">
+              </div>
+              <div class="col-lg-6 mobile0">
+                <div class="imgBanner">
+                  <!-- <video class="iframeClass" #videoPlayer width="640" height="360" muted  autoplay loop>
+                      <source class="w-100" src="./assets/video/shinebannervideo.mp4" type="video/mp4">
                     </video> -->
-                    <iframe class="iframeClass" src="https://www.youtube.com/embed/WxHQqqTA00U?autoplay=1&mute=1&loop=1&playlist=WxHQqqTA00U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <!-- <iframe class="iframeClass" src="https://www.youtube.com/embed/WxHQqqTA00U?autoplay=1&mute=1&loop=1&playlist=WxHQqqTA00U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
 
+                  <iframe
+                    class="iframeClass"
+                    src="https://www.youtube.com/embed/WxHQqqTA00U?autoplay=1&mute=1&loop=1&playlist=WxHQqqTA00U"
+                    allow="autoplay muted loop"
+                    frameborder="0"
+                    allowfullscreen
+                    title="Shine Banner Video"
+                  >
+                  </iframe>
 
-
-                    <!-- <video #videoPlayer autoplay muted loop (load)="playVideo()" onloadedmetadata="this.muted = true" >
-                      <source [src]="Shinebanner?.Background?.Content" type="video/webm">
+                  <!-- <video #videoPlayer autoplay unmuted loop class="iframeClass"  width="640" height="360" >
+                      <source   class="w-100" src="./assets/video/shinebannervideo.mp4" type="video/mp4">
                     </video> -->
-                  </div>
-
                 </div>
               </div>
             </div>
@@ -51,317 +66,434 @@
       </div>
     </div>
   </div>
+</div>
 
-  <div class="offerSection" (click)="navigateToReportModel()">
-    <img class="w-100 mhidden" style="cursor: pointer;" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/Desktop_sample_report_banner.jpg" alt="">
-    <img class="w-100 dhidden" style="cursor: pointer;" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/Mobile_sample_report_banner.png" alt="">
-  </div>
+<div class="offerSection" (click)="navigateToReportModel()">
+  <img
+    class="w-100 mhidden"
+    style="cursor: pointer;"
+    src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/Desktop_sample_report_banner.jpg"
+    alt=""
+  />
+  <img
+    class="w-100 dhidden"
+    style="cursor: pointer;"
+    src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/opening_screen/Mobile_sample_report_banner.png"
+    alt=""
+  />
+</div>
 
-  <div class="twoSectionMarge" style="background-image: url(./assets/LandingPage/rightDesign.png);">
-    
-    <div class="betterLoanOpportunties">
-      <div class="container">
-        <div class="row align-items-center boxColor">
-          <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="Content">
-              <h3>{{AnalyseSection?.Headline1}} <span> {{AnalyseSection?.Headline2}}</span></h3>
-              <p>{{AnalyseSection?.Description}}</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 mb-3 boxBackground">
-            <div class="boxContent">
-              <div class="content">
-                <h3>{{AnalyseSection?.Bureau_Feature?.Bureau_Title}}</h3>
-                <p>{{AnalyseSection?.Bureau_Feature?.Bureau_Details}}</p>
-              </div>
-              <div class="boxIcon">
-                <img src={{AnalyseSection?.Bureau_Feature?.Vector_Background?.Character_image}} alt="">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 mb-3 boxBackground">
-            <div class="boxContent">
-              <div class="content">
-                <h3>{{AnalyseSection?.Banking_Feature?.Banking_Title}}</h3>
-                <p>{{AnalyseSection?.Banking_Feature?.Banking_Details}}</p>
-              </div>
-              <div class="boxIcon">
-                <img src={{AnalyseSection?.Banking_Feature?.Vector_Background?.Character_image}} alt="">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 mb-3 boxBackground">
-            <div class="boxContent">
-              <div class="content">
-                <h3>{{AnalyseSection?.GST_Feature?.GST_Title}}</h3>
-                <p>{{AnalyseSection?.GST_Feature?.GST_Details}}</p>
-              </div>
-              <div class="boxIcon">
-                <img src={{AnalyseSection?.GST_Feature?.Vector_Background?.Character_image}} alt="">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-12">
-            <div class="featureBtn">
-              <a  [class]="'btn get_pricing2 ' + 'pricing_'+randomNumber" [routerLink]="pricing_url"  queryParamsHandling="preserve">{{AnalyseSection?.CTA_Text}}</a>
-            </div>
+<div
+  class="twoSectionMarge"
+  style="background-image: url(./assets/LandingPage/rightDesign.png);"
+>
+  <div class="betterLoanOpportunties">
+    <div class="container">
+      <div class="row align-items-center boxColor">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="Content">
+            <h3>
+              {{AnalyseSection?.Headline1}}
+              <span> {{AnalyseSection?.Headline2}}</span>
+            </h3>
+            <p>{{AnalyseSection?.Description}}</p>
           </div>
         </div>
-      </div>
-    </div>
-    
-  </div>
-
-    <div class="shineHelp" style="background-image: url(./assets//LandingPage/blueBackground.png);">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
+        <div class="col-lg-4 col-md-4 col-sm-12 mb-3 boxBackground">
+          <div class="boxContent">
             <div class="content">
-              <h3>{{HowShineWillHelpSection?.Header}}</h3>
-              <p>{{HowShineWillHelpSection?.Subhead}}</p>
+              <h3>{{AnalyseSection?.Bureau_Feature?.Bureau_Title}}</h3>
+              <h4>{{AnalyseSection?.Bureau_Feature?.Bureau_Subheader}}</h4>
+
+              <p>
+                <span
+                  *ngFor="let data of AnalyseSection?.Bureau_Feature?.Bureau_Details"
+                  ><small></small> {{data}}</span
+                >
+              </p>
             </div>
-          </div>
-  
-          <div class="col-lg-7 col-md-10 col-sm-12 m-auto">
-            <div class="boxCenter mobileImg">
-              <div class="row justify-content-center;">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-4 pdMobile" *ngFor="let data of Parameter">
-                  <div class="box">
-                    <img src={{data.icon}} alt="">
-                    <p>{{data.parameter}}</p>
-                  </div>
-                </div>
-  
-              </div>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12">
-              <div class="contentBtn">
-                <p>{{HowShineWillHelpSection?.Body_Section[0]}} <br> {{HowShineWillHelpSection?.Body_Section[1]}}</p>
-                <a [class]="'btn today1 ' + 'pricing_'+randomNumber"   [routerLink]="pricing_url"  queryParamsHandling="preserve">{{HowShineWillHelpSection?.CTA_Text}}</a>
-              </div>
+            <div class="boxIcon">
+              <img
+                src="{{AnalyseSection?.Bureau_Feature?.Vector_Background?.Character_image}}"
+                alt=""
+              />
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    
-  <div class="twoSectionMarge" style="background-image: url(./assets/LandingPage/rightDesign.png);">
-    <div class="thisPlanSection">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 col-sm-12 m-auto">
+        <div class="col-lg-4 col-md-4 col-sm-12 mb-3 boxBackground">
+          <div class="boxContent">
             <div class="content">
-              <h3>{{WhoisShineForSection?.Headline1}}</h3>
-              <p>{{WhoisShineForSection?.Description}}</p>
+              <h3>{{AnalyseSection?.Banking_Feature?.Banking_Title}}</h3>
+              <h4>{{AnalyseSection?.Banking_Feature?.Banking_Subheader}}</h4>
+              <p>
+                <span
+                  *ngFor="let data of AnalyseSection?.Banking_Feature?.Banking_Details"
+                  ><small></small> {{data}}</span
+                >
+              </p>
             </div>
-          </div>
-          
-          <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="planSilder">
-              <owl-carousel-o [options]="customOptionPlan">
-                <ng-container>
-                  <ng-template carouselSlide>
-                      <div class="box box1">
-                        <img class="userImg" src={{WhoisShineForSection?.Beginners_Feature?.Vector_Background?.Character_image}} alt="">
-                        <h3>{{WhoisShineForSection?.Beginners_Feature?.Beginners_Title}}</h3>
-                        <ul>
-                          <li *ngFor="let data of WhoisShineForSection?.Beginners_Feature?.Beginners_Details">
-                            <img src="./assets/LandingPage/checkStar.svg" alt="">
-                            {{data}}
-                          </li>
-                        </ul>
-                        <p>{{WhoisShineForSection?.Beginners_Feature?.Summary}}</p>
-                      </div>
-                  </ng-template>
-                  <ng-template carouselSlide>
-                      <div class="box box2">
-                        <img class="userImg" src={{WhoisShineForSection?.Intermediate_Feature?.Vector_Background?.Character_image}} alt="">
-                        <h3>{{WhoisShineForSection?.Intermediate_Feature?.Intermediate_Feature}}</h3>  
-                        <ul>
-                          <li *ngFor="let data of WhoisShineForSection?.Intermediate_Feature?.Intermediate_Details">
-                            <img src="./assets/LandingPage/checkStar.svg" alt="">
-                            {{data}}
-                          </li>
-                        </ul>
-                        <p>{{WhoisShineForSection?.Intermediate_Feature?.Summary}}</p>
-                      </div>
-                  </ng-template>
-                  <ng-template carouselSlide>
-                      <div class="box box3">
-                        <img class="userImg" src={{WhoisShineForSection?.Expert_Feature?.Vector_Background?.Character_image}} alt="">
-                        <h3>{{WhoisShineForSection?.Expert_Feature?.Expert_Feature}}</h3>  
-                        <ul>
-                          <li *ngFor="let data of WhoisShineForSection?.Expert_Feature?.Expert_Details">
-                            <img src="./assets/LandingPage/checkStar.svg" alt="">
-                            {{data}}
-                          </li>
-                        </ul>
-                        <p>{{WhoisShineForSection?.Expert_Feature?.Summary}}</p>
-                        
-                      </div>
-                  </ng-template>
-                </ng-container>
-              </owl-carousel-o>
-            </div>
-          </div>
-
-          <div class="col-lg-12 mt-4">
-            <div class="featureBtn">
-              <a  [class]="'btn get_pricing1 ' + 'pricing_'+randomNumber"  queryParamsHandling="preserve" [routerLink]="pricing_url">{{WhoisShineForSection?.CTA_Text}}</a>
+            <div class="boxIcon">
+              <img
+                src="{{AnalyseSection?.Banking_Feature?.Vector_Background?.Character_image}}"
+                alt=""
+              />
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  
-
-
-  <div class="leftSideDesign">
-
-    <app-client-section></app-client-section>
-
-    <div class="BusinessLoanOption">
-      <div class="container">
-        <div class="col-xl-10 col-lg-12 col-md-12 col-sm-12 m-auto">
-          <div class="content" >
-            <!-- <button class="btn" >
-              Deep Dive
-            </button> -->
-            <h3>{{ShineFeaturesSection?.Header}}</h3>
-            <p>{{ShineFeaturesSection?.Subheader}}</p>
-          </div>
-          
-        </div>
-        <div class="row row-cols-5">
-          <div class="col" *ngFor="let data of ProductTiles">
-            <div class="box" (click)="openPopup(data.productCopy)">
-              <img src={{data.icon}} alt="">
-              <p>{{data.productCopy}}</p>
+        <div class="col-lg-4 col-md-4 col-sm-12 mb-3 boxBackground">
+          <div class="boxContent">
+            <div class="content">
+              <h3>{{AnalyseSection?.GST_Feature?.GST_Title}}</h3>
+              <h4>{{AnalyseSection?.GST_Feature?.GST_Subheader}}</h4>
+              <p>
+                <span
+                  *ngFor="let data of AnalyseSection?.GST_Feature?.GST_Details"
+                >
+                  <small></small> {{data}}</span
+                >
+              </p>
             </div>
-          </div>
-  
-  
-          <div class="col-7 pe-0">
-            <div class="boxImg">
-              <img src="./assets/LandingPage/boxImg.png" alt="">
+            <div class="boxIcon">
+              <img
+                src="{{AnalyseSection?.GST_Feature?.Vector_Background?.Character_image}}"
+                alt=""
+              />
             </div>
           </div>
         </div>
         <div class="col-lg-12">
-          <div class="featureBtn mt-5">
-            <a [class]="'btn get_pricing4 ' + 'pricing_'+randomNumber"   [routerLink]="pricing_url"  queryParamsHandling="preserve">{{ShineFeaturesSection?.CTA_Text}}</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="advantagesShine">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-7 col-md-12 col-sm-12 m-auto">
-            <div class="content">
-              <h3> {{shine_comparison?.Title}}<span> </span></h3>
-              <p>{{shine_comparison?.Subtitle}}</p>
-            </div>
-          </div>
-
-          <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="rowTable mhidden">
-              <ul class="tableHeading">
-                <li *ngFor="let title of shine_comparison?.headerText">{{title}}</li>
-              </ul>
-              <ul class="tableBox" *ngFor="let coloums of shine_comparison?.col">
-                <li *ngFor="let texts of coloums?.item">{{texts}}</li>
-              </ul>
-            </div>
-
-            <div class="mobileTable dhidden">
-              <owl-carousel-o [options]="customOptionTable">
-                <ng-container>
-                
-                  <ng-template carouselSlide *ngFor="let texts of shine_comparison?.col">
-                    <div class="mobileRow">
-                      <ul>
-                        <li>
-                          <div>
-                            <span style="font-size: 17px;">{{shine_comparison?.headerText[0]}}</span>
-                            <p style="font-weight: 700; font-size: 16px;" >{{texts?.item[0]}}</p>
-                          </div>
-                        </li>
-                        <li>
-                          <div>
-                            <span style="font-size: 17px;">{{shine_comparison?.headerText[1]}}</span>
-                            <p >{{texts?.item[1]}}</p>
-                          </div>
-                        </li>
-                        <li>
-                          <div>
-                            <span style="font-size: 17px;">{{shine_comparison?.headerText[2]}}</span>
-                            <p >{{texts?.item[2]}}</p>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </ng-template>
-                </ng-container>
-              </owl-carousel-o>
-            </div>
-
-            <div class="col-lg-12">
-              <div class="featureBtn mt-5">
-                <a  [class]="'btn get_pricing3 ' + 'pricing_'+randomNumber"   [routerLink]="pricing_url"  queryParamsHandling="preserve">{{shine_comparison?.CTA_Text}}</a>
-              </div>
-            </div>
-
+          <div class="featureBtn">
+            <a
+              [class]="'btn get_pricing2 ' + 'pricing_'+randomNumber"
+              [routerLink]="pricing_url"
+              queryParamsHandling="preserve"
+              >{{AnalyseSection?.CTA_Text}}</a
+            >
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="guaranteedLoan">
+<div
+  class="shineHelp"
+  style="background-image: url(./assets//LandingPage/blueBackground.png);"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="content">
+          <h3>{{HowShineWillHelpSection?.Header}}</h3>
+          <p>{{HowShineWillHelpSection?.Subhead}}</p>
+        </div>
+      </div>
+
+      <div class="col-lg-7 col-md-10 col-sm-12 m-auto">
+        <div class="boxCenter mobileImg">
+          <div class="row justify-content-center;">
+            <div
+              class="col-lg-4 col-md-4 col-sm-12 col-4 pdMobile"
+              *ngFor="let data of Parameter"
+            >
+              <div class="box">
+                <img src="{{data.icon}}" alt="" />
+                <p>{{data.parameter}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="contentBtn">
+            <p>
+              {{HowShineWillHelpSection?.Body_Section[0]}} <br />
+              {{HowShineWillHelpSection?.Body_Section[1]}}
+            </p>
+            <a
+              [class]="'btn today1 ' + 'pricing_'+randomNumber"
+              [routerLink]="pricing_url"
+              queryParamsHandling="preserve"
+              >{{HowShineWillHelpSection?.CTA_Text}}</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="twoSectionMarge"
+  style="background-image: url(./assets/LandingPage/rightDesign.png);"
+>
+  <div class="thisPlanSection">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-8 col-md-10 col-sm-12 m-auto">
           <div class="content">
-            <h3>{{summarySection?.Header}}</h3>
-            <p>{{summarySection?.Subheader}}</p>
+            <h3>{{WhoisShineForSection?.Headline1}}</h3>
+            <p>{{WhoisShineForSection?.Description}}</p>
           </div>
         </div>
-        <div class="col-lg-11 col-md-12">
-          <div class="yourRankingSilder">
-            <owl-carousel-o [options]="customOptionKeys">
-              <ng-container>
-                <ng-template carouselSlide *ngFor="let data of summarySection?.Banner">
-                  <div class="row align-items-center">
-                    <div class="col-lg-8 col-md-8 col-sm-12">
-                      <div class="improveBox">
-                        <img src={{data?.Desktop}} alt="">
-                      </div>
-                    </div>
 
-                    <div class="col-lg-4 col-md-4 col-sm-12 orderTop" >
-                      <div class="box">
-                        <p >{{data?.imageText}}</p>
-                      </div>
-                    </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="planSilder">
+            <owl-carousel-o [options]="customOptionPlan">
+              <ng-container>
+                <ng-template carouselSlide>
+                  <div class="box box1">
+                    <img
+                      class="userImg"
+                      src="{{WhoisShineForSection?.Beginners_Feature?.Vector_Background?.Character_image}}"
+                      alt=""
+                    />
+                    <h3>
+                      {{WhoisShineForSection?.Beginners_Feature?.Beginners_Title}}
+                    </h3>
+                    <ul>
+                      <li
+                        *ngFor="let data of WhoisShineForSection?.Beginners_Feature?.Beginners_Details"
+                      >
+                        <img src="./assets/LandingPage/checkStar.svg" alt="" />
+                        {{data}}
+                      </li>
+                    </ul>
+                    <p>{{WhoisShineForSection?.Beginners_Feature?.Summary}}</p>
+                  </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                  <div class="box box2">
+                    <img
+                      class="userImg"
+                      src="{{WhoisShineForSection?.Intermediate_Feature?.Vector_Background?.Character_image}}"
+                      alt=""
+                    />
+                    <h3>
+                      {{WhoisShineForSection?.Intermediate_Feature?.Intermediate_Feature}}
+                    </h3>
+                    <ul>
+                      <li
+                        *ngFor="let data of WhoisShineForSection?.Intermediate_Feature?.Intermediate_Details"
+                      >
+                        <img src="./assets/LandingPage/checkStar.svg" alt="" />
+                        {{data}}
+                      </li>
+                    </ul>
+                    <p>
+                      {{WhoisShineForSection?.Intermediate_Feature?.Summary}}
+                    </p>
+                  </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                  <div class="box box3">
+                    <img
+                      class="userImg"
+                      src="{{WhoisShineForSection?.Expert_Feature?.Vector_Background?.Character_image}}"
+                      alt=""
+                    />
+                    <h3>
+                      {{WhoisShineForSection?.Expert_Feature?.Expert_Feature}}
+                    </h3>
+                    <ul>
+                      <li
+                        *ngFor="let data of WhoisShineForSection?.Expert_Feature?.Expert_Details"
+                      >
+                        <img src="./assets/LandingPage/checkStar.svg" alt="" />
+                        {{data}}
+                      </li>
+                    </ul>
+                    <p>{{WhoisShineForSection?.Expert_Feature?.Summary}}</p>
                   </div>
                 </ng-template>
               </ng-container>
             </owl-carousel-o>
           </div>
         </div>
+
+        <div class="col-lg-12 mt-4">
+          <div class="featureBtn">
+            <a
+              [class]="'btn get_pricing1 ' + 'pricing_'+randomNumber"
+              queryParamsHandling="preserve"
+              [routerLink]="pricing_url"
+              >{{WhoisShineForSection?.CTA_Text}}</a
+            >
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-lg-12">
-      <div class="featureBtn">
-        <a  [class]="'btn check_pricing1 ' + 'pricing_'+randomNumber"  [routerLink]="pricing_url"  queryParamsHandling="preserve">{{summarySection?.CTA_Text}}</a>
+  </div>
+</div>
+
+<div class="leftSideDesign">
+  <app-client-section></app-client-section>
+
+  <div class="BusinessLoanOption">
+    <div class="container">
+      <div class="col-xl-10 col-lg-12 col-md-12 col-sm-12 m-auto">
+        <div class="content">
+          <!-- <button class="btn" >
+              Deep Dive
+            </button> -->
+          <h3>{{ShineFeaturesSection?.Header}}</h3>
+          <p>{{ShineFeaturesSection?.Subheader}}</p>
+        </div>
+      </div>
+      <div class="row row-cols-5">
+        <div class="col" *ngFor="let data of ProductTiles">
+          <div class="box" (click)="openPopup(data.productCopy)">
+            <img src="{{data.icon}}" alt="" />
+            <p>{{data.productCopy}}</p>
+          </div>
+        </div>
+
+        <div class="col-7 pe-0">
+          <div class="boxImg">
+            <img src="./assets/LandingPage/boxImg.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="featureBtn mt-5">
+          <a
+            [class]="'btn get_pricing4 ' + 'pricing_'+randomNumber"
+            [routerLink]="pricing_url"
+            queryParamsHandling="preserve"
+            >{{ShineFeaturesSection?.CTA_Text}}</a
+          >
+        </div>
       </div>
     </div>
   </div>
 
+  <div class="advantagesShine">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 col-md-12 col-sm-12 m-auto">
+          <div class="content">
+            <h3>{{shine_comparison?.Title}}<span> </span></h3>
+            <p>{{shine_comparison?.Subtitle}}</p>
+          </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="rowTable mhidden">
+            <ul class="tableHeading">
+              <li *ngFor="let title of shine_comparison?.headerText">
+                {{title}}
+              </li>
+            </ul>
+            <ul class="tableBox" *ngFor="let coloums of shine_comparison?.col">
+              <li *ngFor="let texts of coloums?.item">{{texts}}</li>
+            </ul>
+          </div>
+
+          <div class="mobileTable dhidden">
+            <owl-carousel-o [options]="customOptionTable">
+              <ng-container>
+                <ng-template
+                  carouselSlide
+                  *ngFor="let texts of shine_comparison?.col"
+                >
+                  <div class="mobileRow">
+                    <ul>
+                      <li>
+                        <div>
+                          <span style="font-size: 17px;"
+                            >{{shine_comparison?.headerText[0]}}</span
+                          >
+                          <p style="font-weight: 700; font-size: 16px;">
+                            {{texts?.item[0]}}
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <span style="font-size: 17px;"
+                            >{{shine_comparison?.headerText[1]}}</span
+                          >
+                          <p>{{texts?.item[1]}}</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <span style="font-size: 17px;"
+                            >{{shine_comparison?.headerText[2]}}</span
+                          >
+                          <p>{{texts?.item[2]}}</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </ng-template>
+              </ng-container>
+            </owl-carousel-o>
+          </div>
+
+          <div class="col-lg-12">
+            <div class="featureBtn mt-5">
+              <a
+                [class]="'btn get_pricing3 ' + 'pricing_'+randomNumber"
+                [routerLink]="pricing_url"
+                queryParamsHandling="preserve"
+                >{{shine_comparison?.CTA_Text}}</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="guaranteedLoan">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="content">
+          <h3>{{summarySection?.Header}}</h3>
+          <p>{{summarySection?.Subheader}}</p>
+        </div>
+      </div>
+      <div class="col-lg-11 col-md-12">
+        <div class="yourRankingSilder">
+          <owl-carousel-o [options]="customOptionKeys">
+            <ng-container>
+              <ng-template
+                carouselSlide
+                *ngFor="let data of summarySection?.Banner"
+              >
+                <div class="row align-items-center">
+                  <div class="col-lg-8 col-md-8 col-sm-12">
+                    <div class="improveBox">
+                      <img src="{{data?.Desktop}}" alt="" />
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-md-4 col-sm-12 orderTop">
+                    <div class="box">
+                      <p>{{data?.imageText}}</p>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="featureBtn">
+      <a
+        [class]="'btn check_pricing1 ' + 'pricing_'+randomNumber"
+        [routerLink]="pricing_url"
+        queryParamsHandling="preserve"
+        >{{summarySection?.CTA_Text}}</a
+      >
+    </div>
+  </div>
+</div>
 
 <app-testimonial [testimonialData]="TestimonialsJson"></app-testimonial>
 
