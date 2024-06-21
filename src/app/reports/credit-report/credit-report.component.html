@@ -166,7 +166,7 @@
                               <div *ngIf="default_analysis" class="historyList">
                                 <ng-container *ngFor="let item of defaultHistoryItems; let i= index">
                                   <li #scrollTargetSection2>
-                                    {{default_analysis_labels[i]}}
+                                    {{item?.label}}
                                     <span [ngClass]="item.value ? 'NoColor' : 'YesColor'">{{ item.value ? 'YES' : 'NO'
                                       }}</span>
                                   </li>

@@ -214,24 +214,19 @@ export class CreditReportComponent {
       });
     }
 
-
-    if (this.default_analysis) {
-      for (const key in this.default_analysis.defaultHistory) {
-        if (this.default_analysis.defaultHistory.hasOwnProperty(key)) {
-          this.defaultHistoryItems.push({
-            key: toCamelCase(key),
-            value: this.default_analysis.defaultHistory[key]
-          });
-        }
-      }
+    if (this.default_analysis_labels && this.default_analysis?.defaultHistory) {
+      const labelsMap = Object.fromEntries( 
+        Object.entries(this.staticData.loanRepaymentHistory_expanded.defaultAnalysis.defaultHistory.labels)
+      );
+      this.defaultHistoryItems = Object.keys(this.default_analysis.defaultHistory).map(key => ({
+        key: toCamelCase(key),
+        value: this.default_analysis.defaultHistory[key],
+        label: labelsMap[key] || key // 
+      }));
     }
 
     this.currStage = this.reportsData?.report?.currentStage
     this.potStage = this.reportsData?.report?.potentialStage
-
-
-
-
 
 
     if(this.creditReportData?.creditAnalysis){
