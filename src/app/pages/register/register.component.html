@@ -1,82 +1,67 @@
-<div class="v2checksection selectForm formMinsize">
+<div class="v2checksection selectForm formMinsize" style="padding-bottom: 70px;">
     <div class="blueBack"></div>
     <div class="container mobilePd">
-      <div class="row">
-        <div class="col-xl-8 col-lg-8 col-md-12 m-auto">
-          <p class="text-center text-white position-relative z-index">
-            Update your details so we can start our customized assessment of your
-            profile!
-          </p>
-  
-          <div class="v2checkBox">
-            <div class="from">
-              <h1 class="text-center">Fill Your Details</h1>
-              <h3 class="text-center" style="font-weight: lighter;">
-                Enter your information to get started.
-              </h3>
-  
-              <div class="formSelect" #formSection>
-                <div class="example-container">
-                  <form [formGroup]="form1">
-                    <div class="row">
-                      <div
-                        class="col-xl-6 col-lg-6 col-md-6 col-sm-12"
-                        [ngClass]=" form1.controls['phoneNumber'].touched &&
-                                          form1.controls['phoneNumber'].hasError('required') ||  (form1.controls['phoneNumber'].dirty || form1.controls['phoneNumber'].touched) &&
-                                          form1.controls['phoneNumber'].hasError('pattern') ? 'isvaliderror' :  ''"
-                      >
-                        <mat-form-field appearance="fill">
-                          <mat-label>Mobile number </mat-label>
-                          <input
-                            matInput
-                            maxlength="10"
-                            (keypress)="eventService.numberOnly($event, 'phoneNumber')"
-                            formControlName="phoneNumber"
-                            placeholder=""
-                          />
-                        </mat-form-field>
-  
-                        <div
-                          class="error mb-2"
-                          *ngIf="
-                                              form1.controls['phoneNumber'].touched &&
-                                              form1.controls['phoneNumber'].hasError('required')
-                                            "
-                        >
-                          Please complete this mandatory field.
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-12 m-auto">
+                <p class="text-center text-white position-relative z-index">
+                    Update your details so we can start our customized assessment of your
+                    profile!
+                </p>
+                
+                <div class="col-xl-6 col-lg-6 col-md-12 m-auto">
+                    <div class="v2checkBox" style="padding: 30px 25px 20px;">
+                        <div class="from">
+                            <div class="backIcon">
+                                <a href=""><mat-icon>keyboard_arrow_left</mat-icon></a>
+                            </div>
+                            <h1 class="text-center">Fill Your Details</h1>
+                            <h3 class="text-center" style="font-weight: lighter;">
+                                Enter your information to get started.
+                            </h3>
+
+                            <div class="formSelect" #formSection>
+                                <div class="example-container">
+                                    <form [formGroup]="form1">
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" [ngClass]=" form1.controls['phoneNumber'].touched &&
+                                            form1.controls['phoneNumber'].hasError('required') ||  (form1.controls['phoneNumber'].dirty || form1.controls['phoneNumber'].touched) &&
+                                            form1.controls['phoneNumber'].hasError('pattern') ? 'isvaliderror' :  ''">
+                                                <mat-form-field appearance="fill">
+                                                    <mat-label>Mobile number </mat-label>
+                                                    <input matInput maxlength="10"
+                                                        (keypress)="eventService.numberOnly($event, 'phoneNumber')"
+                                                        formControlName="phoneNumber" placeholder="" />
+                                                </mat-form-field>
+
+                                                <div class="error mb-2" *ngIf="
+                                                form1.controls['phoneNumber'].touched &&
+                                                form1.controls['phoneNumber'].hasError('required')
+                                                ">
+                                                    Please complete this mandatory field.
+                                                </div>
+
+                                                <div class="error mb-2" *ngIf="
+                                                form1.controls['phoneNumber'].dirty &&
+                                                form1.controls['phoneNumber'].hasError('pattern')
+                                            ">
+                                                    Please add valid information
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="ButtonNow">
+                                <!-- <a class="btn btn-secondary" (click)="eventService.back()">Back</a> -->
+                                <button class="register_form" style="min-width: 100%; height: 50px;" [disabled]="isSubmit" (click)="getOtpbyPhone()">
+                                    Next <mat-icon>keyboard_arrow_right</mat-icon>
+                                </button>
+                            </div>
                         </div>
-  
-                        <div
-                          class="error mb-2"
-                          *ngIf="
-                                            form1.controls['phoneNumber'].dirty &&
-                                            form1.controls['phoneNumber'].hasError('pattern')
-                                          "
-                        >
-                          Please add valid information
-                        </div>
-                      </div>
                     </div>
-                  </form>
                 </div>
-              </div>
-  
-              <div class="ButtonNow">
-                <a class="btn btn-secondary" (click)="eventService.back()"
-                  >Back</a
-                >
-                <button
-                  class="register_form"
-                  [disabled]="isSubmit"
-                  (click)="getOtpbyPhone()"
-                >
-                  Next <mat-icon>keyboard_arrow_right</mat-icon>
-                </button>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  
+</div>
