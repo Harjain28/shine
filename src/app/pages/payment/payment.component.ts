@@ -133,12 +133,21 @@ export class PaymentComponent {
             if (res?.success === true) {
               this.discountSection = true;
               this.code = this.couponInput;
-              if (res.hasOwnProperty('percent') || res.hasOwnProperty('flatPrice')) {
+              if (res.hasOwnProperty('percent')) {
                 this.isInvalidCoupon = false;
-                this.discountPrice = (res?.percent ? (this.planPrice * res?.percent) / 100 : res?.flatPrice).toFixed(2);
+                this.discountPrice = ((this.planPrice * res?.percent) / 100).toFixed(2);
                 this.calGST = ((this.planPrice - this.discountPrice) * 18) / 100;
                 const totalPrice = parseFloat(this.planPrice) + this.calGST - this.discountPrice;
                 this.total = totalPrice.toFixed(2);
+              } else if (res.hasOwnProperty('flatPrice') && res?.flatPrice < this.planPrice) {
+                this.isInvalidCoupon = false;
+                this.discountPrice = (this.planPrice - res?.flatPrice).toFixed(2);
+                this.calGST = ((this.planPrice - this.discountPrice) * 18) / 100;
+                const totalPrice = parseFloat(this.planPrice) + this.calGST - this.discountPrice;
+                this.total = totalPrice.toFixed(2);
+              } else {
+                this.discountSection = false;
+                this.isInvalidCoupon = true;
               }
             }
           },

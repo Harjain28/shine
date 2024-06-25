@@ -11,6 +11,12 @@ export default[
         path: 'register/:id',   canActivate: [AuthGuard], loadComponent:() => import('./form1/form1.component').then(c=>c.Form1Component)
     },
     {
+        path: 'form1',   canActivate: [AuthGuard], loadComponent:() => import('./register/register.component').then(c=>c.RegisterComponent)
+    },
+    {
+        path: 'form2',   canActivate: [AuthGuard], loadComponent:() => import('./form2/form2.component').then(c=>c.Form2Component)
+    },
+    {
         path: 'otp/:id',   canActivate: [AuthGuard], loadComponent:() => import('./otp/otp.component').then(c=>c.OtpComponent)
     },
     // {
@@ -21,9 +27,6 @@ export default[
     // },
     {
         path: 'confirm_order/:id',  canActivate: [AuthGuard],  loadComponent:() => import('./payment/payment.component').then(c=>c.PaymentComponent)
-    },
-    {
-        path: 'bank_statement/:id',   canActivate: [AuthGuard], loadComponent:() => import('./upload-documents/upload-documents.component').then(c=>c.UploadDocumentsComponent)
     },
     {
         path: 'bank_statement',   canActivate: [AuthGuard], loadComponent:() => import('./upload-documents/upload-documents.component').then(c=>c.UploadDocumentsComponent)

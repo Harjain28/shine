@@ -10,7 +10,7 @@ export const shinePricingPageJSON = {
       'Key Feature', 'One-Time' , 'Annual'
     ],
      headerPrice:[
-      'Select Plan best suited for you', '₹999' , '₹3999'
+      'Select Plan best suited for you', '₹699' , '₹3999'
     ],
     col: [ 
        {

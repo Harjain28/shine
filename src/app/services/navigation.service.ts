@@ -26,10 +26,10 @@ export class NavigationService {
   }
 
   getPlanId(plan:any) {
-    return plan === "999" ? "1" :
+    return plan === "699" ? "1" :
            plan === "1299" ? "2" :
            plan === "2499" ? "3" :
-           plan === "2999" ? "4" :
+           plan === "1999" ? "4" :
            plan === "3999" ? "5" : "6";
 }
 

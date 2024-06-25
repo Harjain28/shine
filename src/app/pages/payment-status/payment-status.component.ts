@@ -83,13 +83,13 @@ export class PaymentStatusComponent {
                 price = this.userData?.userData?.selectedPrice;
               }
               this.id =
-              price === '999'
+              price === '699'
                 ? '1'
                 : price === '1299'
                 ? '2'
                 : price === '2499'
                 ? '3'
-                : price === '2999'
+                : price === '1999'
                 ? '4'
                 : price === '3999'
                 ? '5'
@@ -99,7 +99,7 @@ export class PaymentStatusComponent {
               this.api.alert('Please upload documents', 'success');
               this.closeDialog();
               this.navigationService.setLinkClicked(true);
-              this.router.navigate(['/in/bank_statement', this.id], {
+              this.router.navigate(['/in/bank_statement'], {
                 replaceUrl: true,
               });
             } else {
