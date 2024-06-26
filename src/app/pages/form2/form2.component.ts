@@ -34,7 +34,7 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
   styleUrls: ['./form2.component.scss', '../form1/form1.component.scss']
 })
 export class Form2Component {
-  form1!: FormGroup;
+  businessForm!: FormGroup;
   showValidatePANError!: boolean;
   showValidatepinError!: boolean;
   isSubmit: boolean = false;
@@ -43,7 +43,6 @@ export class Form2Component {
   validatePin!: boolean;
   validatePAN!: boolean;
   error: any; // Define error property here
-
   unformattedX: string = '';
   formattedX!: string;
   showBusniessNameError!: boolean;
@@ -75,13 +74,7 @@ export class Form2Component {
     this.parsedData = JSON.parse(requestData);
     if (this.parsedData) {
       this.formattedX = this.formatNumber(this.parsedData.turnover);
-      this.form1.patchValue({
-        title: this.parsedData.prefix,
-        firstName: this.parsedData.firstName,
-        phoneNumber: this.parsedData.mobile,
-        lastName: this.parsedData.lastName,
-        pincode: this.parsedData.pincode,
-        emailId: this.parsedData.email,
+      this.businessForm.patchValue({
         busninessName: this.parsedData.businessName,
         propertyOwnership: this.parsedData.propertyOwnership,
         businessPan: this.parsedData.businessPan,
@@ -93,12 +86,12 @@ export class Form2Component {
    
     const savedPhoneNumber = localStorage.getItem('phoneNumber');
     if (savedPhoneNumber) {
-      this.form1.patchValue({ phoneNumber: savedPhoneNumber });
+      this.businessForm.patchValue({ phoneNumber: savedPhoneNumber });
     }
 
-    this.form1.get('businessPan')!.valueChanges.subscribe((value) => {
+    this.businessForm.get('businessPan')!.valueChanges.subscribe((value) => {
       if (value !== value.toUpperCase()) {
-        this.form1
+        this.businessForm
           .get('businessPan')!
           .setValue(value.toUpperCase(), { emitEvent: false });
       }
@@ -106,32 +99,11 @@ export class Form2Component {
   }
 
   form() {
-    this.form1 = new FormGroup({
-      title: new FormControl('Mr.', [Validators.required]),
-      firstName: new FormControl('', [
-        Validators.required,
-        Validators.pattern('^[a-zA-Z ]+$'),
-      ]),
-      lastName: new FormControl('', [
-        Validators.required,
-        Validators.pattern('^[a-zA-Z ]+$'),
-      ]),
+    this.businessForm = new FormGroup({
       phoneNumber: new FormControl('', [
         Validators.required,
         Validators.pattern('^[6-9]\\d{9}$'),
         Validators.maxLength(10),
-      ]),
-      emailId: new FormControl('', {
-        validators: [
-          Validators.required,
-          Validators.pattern('^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$'),
-        ],
-        updateOn: 'blur',
-      }),
-      pincode: new FormControl('', [
-        Validators.required,
-        Validators.maxLength(6),
-        Validators.pattern('^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$'),
       ]),
       busninessName: new FormControl('', [Validators.required, Validators.minLength(4)]),
       businessTurnover: new FormControl('', [Validators.required]),
@@ -183,7 +155,7 @@ export class Form2Component {
     const PricingModel:any = localStorage.getItem("text");
     let text =  '';
     const SelectedPrice =  localStorage.getItem("plan");
-    const formValue = this.form1.value;
+    const formValue = this.businessForm.value;
     const defaultparams = {
       forceGenerate: false,
       resend: false,
@@ -191,13 +163,7 @@ export class Form2Component {
     this.onNextClick();
     const params = { ...defaultparams, ...this.paramsObject.params };
     let requestData: any = {};
-    requestData['prefix'] = formValue.title;
-    requestData['mobile'] = formValue.phoneNumber;
-    requestData['email'] = formValue.emailId;
-    requestData['firstName'] = formValue.firstName.toUpperCase();
-    requestData['lastName'] = formValue.lastName.toUpperCase();
     requestData['businessName'] = formValue.busninessName;
-    requestData['pincode'] = formValue.pincode;
     requestData['businessPan'] = formValue.businessPan.toUpperCase();
     requestData['propertyOwnership'] = formValue.propertyOwnership;
     requestData['turnover'] = this.unformattedX;
@@ -218,10 +184,10 @@ export class Form2Component {
     //   this.validatePAN = false;
     //   this.showValidatePANError = true;
     // }
-    // if (this.form1.valid && this.validatePAN && this.validatePin) {
+    // if (this.businessForm.valid && this.validatePAN && this.validatePin) {
     let upperCaseString = formValue.businessPan.toUpperCase();
 
-    if (this.form1.valid) {
+    if (this.businessForm.valid) {
       if (upperCaseString[3] === 'P') {
         this.api.post(`api/Remediation/GetOTP`, requestData, params).subscribe({
           next: (res: any) => {
@@ -270,7 +236,7 @@ export class Form2Component {
         );
       }
     } else {
-      this.form1.markAllAsTouched();
+      this.businessForm.markAllAsTouched();
       this.errorVisible = true;
       this.isSubmit = false;
     }
@@ -288,7 +254,7 @@ export class Form2Component {
   }
 
   validatePanNumber() {
-    const formValue = this.form1.value;
+    const formValue = this.businessForm.value;
     this.validatePAN = true;
     this.showValidatePANError = false;
 
@@ -324,7 +290,7 @@ export class Form2Component {
   }
 
   validatePincode() {
-    const formValue = this.form1.value;
+    const formValue = this.businessForm.value;
     this.validatePin = false;
     this.showValidatepinError = false;
     const params = { ...this.paramsObject.params };

@@ -11,19 +11,22 @@ export default[
         path: 'register/:id',   canActivate: [AuthGuard], loadComponent:() => import('./form1/form1.component').then(c=>c.Form1Component)
     },
     {
-        path: 'form1',   canActivate: [AuthGuard], loadComponent:() => import('./register/register.component').then(c=>c.RegisterComponent)
+        path: 'register_start',   canActivate: [AuthGuard], loadComponent:() => import('./register/register.component').then(c=>c.RegisterComponent)
     },
     {
-        path: 'form2',   canActivate: [AuthGuard], loadComponent:() => import('./form2/form2.component').then(c=>c.Form2Component)
+        path: 'register_start/:id',   canActivate: [AuthGuard], loadComponent:() => import('./register/register.component').then(c=>c.RegisterComponent)
+    },
+    {
+        path: 'register2',   canActivate: [AuthGuard], loadComponent:() => import('./form2/form2.component').then(c=>c.Form2Component)
+    },
+    {
+        path: 'register2/:id',   canActivate: [AuthGuard], loadComponent:() => import('./form2/form2.component').then(c=>c.Form2Component)
     },
     {
         path: 'otp/:id',   canActivate: [AuthGuard], loadComponent:() => import('./otp/otp.component').then(c=>c.OtpComponent)
     },
     // {
     //     path: 'otp',   canActivate: [AuthGuard], loadComponent:() => import('./otp/otp.component').then(c=>c.OtpComponent)
-    // },
-    // {
-    //     path: 'form2', loadComponent:() => import('./form2/form2.component').then(c=>c.Form2Component)
     // },
     {
         path: 'confirm_order/:id',  canActivate: [AuthGuard],  loadComponent:() => import('./payment/payment.component').then(c=>c.PaymentComponent)

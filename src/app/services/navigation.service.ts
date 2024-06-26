@@ -42,6 +42,24 @@ redirectToRegister(plans:any) {
     this.router.navigate(['in/register', id], { queryParamsHandling:"preserve"});
 }
 
+redirectToRegister_start(plans:any) {
+  console.log(plans, 'plans');
+  let id;
+    if (plans) {
+        id = this.getPlanId(plans);
+    } 
+    this.router.navigate(['in/register_start', id], { queryParamsHandling:"preserve"});
+}
+
+redirectToRegister2(plans:any) {
+  console.log(plans, 'plans');
+  let id;
+    if (plans) {
+        id = this.getPlanId(plans);
+    } 
+    this.router.navigate(['in/register2', id], { queryParamsHandling:"preserve"});
+}
+
 redirectToOTP(plans:any) {
   console.log(plans, 'plans');
   let id;

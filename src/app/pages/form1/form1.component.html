@@ -114,7 +114,7 @@
                     </div>
 
                     <div
-                      class="col-xl-12 col-lg-12 col-md-12 col-sm-12"
+                      class="col-xl-6 col-lg-6 col-md-6 col-sm-12"
                       [ngClass]=" form1.controls['emailId'].touched &&
                                         form1.controls['emailId'].hasError('required') ||  (form1.controls['emailId'].dirty || form1.controls['emailId'].touched) &&
                                         form1.controls['emailId'].hasError('pattern') ? 'isvaliderror' :  ''"
@@ -143,44 +143,6 @@
                         *ngIf="
                                           form1.controls['emailId'].dirty &&
                                           form1.controls['emailId'].hasError('pattern')
-                                        "
-                      >
-                        Please add valid information
-                      </div>
-                    </div>
-
-                    <div
-                      class="col-xl-6 col-lg-6 col-md-6 col-sm-12"
-                      [ngClass]=" form1.controls['phoneNumber'].touched &&
-                                        form1.controls['phoneNumber'].hasError('required') ||  (form1.controls['phoneNumber'].dirty || form1.controls['phoneNumber'].touched) &&
-                                        form1.controls['phoneNumber'].hasError('pattern') ? 'isvaliderror' :  ''"
-                    >
-                      <mat-form-field appearance="fill">
-                        <mat-label>Mobile number </mat-label>
-                        <input
-                          matInput
-                          maxlength="10"
-                          (keypress)="eventService.numberOnly($event, 'phoneNumber')"
-                          formControlName="phoneNumber"
-                          placeholder=""
-                        />
-                      </mat-form-field>
-
-                      <div
-                        class="error mb-2"
-                        *ngIf="
-                                            form1.controls['phoneNumber'].touched &&
-                                            form1.controls['phoneNumber'].hasError('required')
-                                          "
-                      >
-                        Please complete this mandatory field.
-                      </div>
-
-                      <div
-                        class="error mb-2"
-                        *ngIf="
-                                          form1.controls['phoneNumber'].dirty &&
-                                          form1.controls['phoneNumber'].hasError('pattern')
                                         "
                       >
                         Please add valid information

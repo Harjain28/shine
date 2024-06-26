@@ -21,11 +21,11 @@
 
                             <div class="formSelect" #formSection>
                                 <div class="example-container">
-                                    <form [formGroup]="form1">
+                                    <form [formGroup]="register_form">
                                         <div class="row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" [ngClass]=" form1.controls['phoneNumber'].touched &&
-                                            form1.controls['phoneNumber'].hasError('required') ||  (form1.controls['phoneNumber'].dirty || form1.controls['phoneNumber'].touched) &&
-                                            form1.controls['phoneNumber'].hasError('pattern') ? 'isvaliderror' :  ''">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" [ngClass]="register_form.controls['phoneNumber'].touched &&
+                                            register_form.controls['phoneNumber'].hasError('required') ||  (register_form.controls['phoneNumber'].dirty || register_form.controls['phoneNumber'].touched) &&
+                                            register_form.controls['phoneNumber'].hasError('pattern') ? 'isvaliderror' :  ''">
                                                 <mat-form-field appearance="fill">
                                                     <mat-label>Mobile number </mat-label>
                                                     <input matInput maxlength="10"
@@ -34,15 +34,15 @@
                                                 </mat-form-field>
 
                                                 <div class="error mb-2" *ngIf="
-                                                form1.controls['phoneNumber'].touched &&
-                                                form1.controls['phoneNumber'].hasError('required')
+                                                register_form.controls['phoneNumber'].touched &&
+                                                register_form.controls['phoneNumber'].hasError('required')
                                                 ">
                                                     Please complete this mandatory field.
                                                 </div>
 
                                                 <div class="error mb-2" *ngIf="
-                                                form1.controls['phoneNumber'].dirty &&
-                                                form1.controls['phoneNumber'].hasError('pattern')
+                                                register_form.controls['phoneNumber'].dirty &&
+                                                register_form.controls['phoneNumber'].hasError('pattern')
                                             ">
                                                     Please add valid information
                                                 </div>
