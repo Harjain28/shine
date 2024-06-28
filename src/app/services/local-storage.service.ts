@@ -22,6 +22,8 @@ export class LocalStorageService {
      localStorage.removeItem('transID');
      localStorage.removeItem('token');
      localStorage.removeItem('phoneNumber');
+     localStorage.removeItem('userId');
+     
   }
 
   logout() {
@@ -32,6 +34,7 @@ export class LocalStorageService {
     localStorage.removeItem('popupData');
      sessionStorage.removeItem('reloginUpdates');
      localStorage.removeItem('text');
+     localStorage.removeItem('userId');
      localStorage.removeItem('plan');
      localStorage.removeItem('filteredPlan');
      localStorage.removeItem('isV3');

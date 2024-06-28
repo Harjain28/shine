@@ -147,49 +147,43 @@
                         Please add valid information
                       </div>
                     </div>
-
                     <div
-                      class="col-xl-6 col-lg-6 col-md-6 col-sm-12"
-                      [ngClass]="form1.controls['pincode'].touched &&
-                                      form1.controls['pincode'].hasError('required') || showValidatepinError  ? 'isvaliderror' :  ''"
+                    class="col-xl-6 col-lg-6 col-md-6 col-sm-12"
+                    [ngClass]="form1.controls['busninessName'].touched &&
+                                      form1.controls['busninessName'].hasError('required') ||  (form1.controls['busninessName'].dirty || form1.controls['busninessName'].touched) &&
+                                      form1.controls['busninessName'].hasError('pattern') || showBusniessNameError ? 'isvaliderror' :  ''"
+                  >
+                    <mat-form-field appearance="fill">
+                      <mat-label>Business Name</mat-label>
+                      <input
+                        matInput
+                        minlength="4"
+                        formControlName="busninessName"
+                        placeholder=""
+                      />
+                    </mat-form-field>
+                    <div
+                      class="error mb-2"
+                      *ngIf="
+                                          form1.controls['busninessName'].touched &&
+                                          form1.controls['busninessName'].hasError('required')
+                                        "
                     >
-                      <mat-form-field appearance="fill">
-                        <mat-label>Pin Code</mat-label>
-                        <input
-                          matInput
-                          maxlength="6"
-                          (keypress)="eventService.numberOnly($event, 'mobile')"
-                          formControlName="pincode"
-                          placeholder=""
-                        />
-                      </mat-form-field>
-                      <div
-                        class="error mb-2"
-                        *ngIf="
-                                        form1.controls['pincode'].touched &&
-                                        form1.controls['pincode'].hasError('required')
-                                      "
-                      >
-                        Please complete this mandatory field.
-                      </div>
-
-                      <div
-                        class="error mb-2"
-                        *ngIf="
-                      form1.controls['pincode'].dirty &&
-                      form1.controls['pincode'].hasError('pattern')
-                    "
-                      >
-                        Please add valid information.
-                      </div>
-
-                      <!-- <div class="error mb-2" *ngIf=" 
-                                      !form1.controls['pincode'].hasError('required') && showValidatepinError
-                                    ">
-                        Please add valid information
-                      </div> -->
+                      Please complete this mandatory field.
                     </div>
 
+                    <div
+                    class="error mb-2"
+                    *ngIf="
+                                        form1.controls['busninessName'].dirty &&
+                                        form1.controls['busninessName'].hasError('minlength');
+                                      "
+                  >
+                  The BusinessName field must be between 4 and 100 characters long.
+                  </div>
+                  </div>
+
+                   
                     <!-- <div
                       class="col-xl-12 col-lg-12 col-md-12 col-sm-12"
                       [ngClass]=" form1.controls['busninessName'].touched &&
@@ -365,7 +359,7 @@
               <button
                 class="register_form"
                 [disabled]="isSubmit"
-                (click)="getOtpbyPhone()"
+                (click)="uploadBasicDetails()"
               >
                 Next <mat-icon>keyboard_arrow_right</mat-icon>
               </button>

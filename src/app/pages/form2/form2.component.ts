@@ -67,9 +67,7 @@ export class Form2Component {
   }
 
   ngOnInit(): void {
-    this.state.removeSomeItem();
     this.form();
-   
     const requestData:any = localStorage.getItem("reqData")
     this.parsedData = JSON.parse(requestData);
     if (this.parsedData) {
@@ -78,7 +76,8 @@ export class Form2Component {
         busninessName: this.parsedData.businessName,
         propertyOwnership: this.parsedData.propertyOwnership,
         businessPan: this.parsedData.businessPan,
-        businessVintage: this.parsedData.businessVintage
+        businessVintage: this.parsedData.businessVintage,
+        pincode: this.parsedData.pincode
       });
       this.unformattedX = this.formattedX.replace(/,/g, '');
       
@@ -100,17 +99,16 @@ export class Form2Component {
 
   form() {
     this.businessForm = new FormGroup({
-      phoneNumber: new FormControl('', [
-        Validators.required,
-        Validators.pattern('^[6-9]\\d{9}$'),
-        Validators.maxLength(10),
-      ]),
-      busninessName: new FormControl('', [Validators.required, Validators.minLength(4)]),
       businessTurnover: new FormControl('', [Validators.required]),
       propertyOwnership: new FormControl('', [Validators.required]),
       businessPan: new FormControl('', [
         Validators.required,
         Validators.pattern('^([A-Z]){5}([0-9]){4}([A-Z]){1}$'),
+      ]),
+      pincode: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(6),
+        Validators.pattern('^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$'),
       ]),
       businessVintage: new FormControl('', [Validators.required]),
     });
@@ -150,7 +148,7 @@ export class Form2Component {
     });
   }
 
-  getOtpbyPhone() {
+  uploadBusinessDetails() {
     this.isSubmit = true;
     const PricingModel:any = localStorage.getItem("text");
     let text =  '';
@@ -160,16 +158,16 @@ export class Form2Component {
       forceGenerate: false,
       resend: false,
     };
-    this.onNextClick();
     const params = { ...defaultparams, ...this.paramsObject.params };
     let requestData: any = {};
-    requestData['businessName'] = formValue.busninessName;
+    requestData['pincode'] = formValue.pincode;
+    requestData['mobile'] = this.parsedData?.mobile;
     requestData['businessPan'] = formValue.businessPan.toUpperCase();
     requestData['propertyOwnership'] = formValue.propertyOwnership;
     requestData['turnover'] = this.unformattedX;
     requestData['businessVintage'] = formValue.businessVintage;
-    requestData['PricingModel'] =  PricingModel;
-    requestData['SelectedPrice'] = SelectedPrice;
+    // requestData['PricingModel'] =  PricingModel;
+    // requestData['SelectedPrice'] = SelectedPrice;
   
     // if (this.validatePin) {
     //   this.showValidatepinError = false;
@@ -189,19 +187,16 @@ export class Form2Component {
 
     if (this.businessForm.valid) {
       if (upperCaseString[3] === 'P') {
-        this.api.post(`api/Remediation/GetOTP`, requestData, params).subscribe({
+        this.api.post(`api/Remediation/UpdateFormDetailsPostPayment`, requestData, params).subscribe({
           next: (res: any) => {
             if (res.success) {
               this.navigationService.setLinkClicked(true);
               localStorage.setItem('reqData', JSON.stringify(requestData));
               localStorage.setItem('title', formValue.title);
               this.fetchOtp();
-              const plan:any = localStorage.getItem("plan");
-              if (plan) {
-               this.navigationService.redirectToOTP(plan);
-              } else {
-                this.navigationService.redirectToOTP(String(requestData.selectedPrice));
-              }
+             this.router.navigate(['/in/bank_statement'], {
+                replaceUrl: true,
+              });
               this.isSubmit = false;
             } else this.isSubmit = false;
           },
@@ -217,7 +212,7 @@ export class Form2Component {
             // this.showValidatePANError = true;
             // }
          
-            // if (error.errors.BusinessName) {
+            // if (error.errors.pincode) {
             //   this.error = error.errors.BusinessName;
             //   this.showBusniessNameError = true;
 

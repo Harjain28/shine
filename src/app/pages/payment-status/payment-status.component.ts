@@ -99,9 +99,14 @@ export class PaymentStatusComponent {
               this.api.alert('Please upload documents', 'success');
               this.closeDialog();
               this.navigationService.setLinkClicked(true);
-              this.router.navigate(['/in/bank_statement'], {
-                replaceUrl: true,
-              });
+              if (this.plan) {
+                this.navigationService.redirectToRegister2(this.plan);
+               } else {
+                 this.navigationService.redirectToRegister2(String(this.userData?.userData?.selectedPrice));
+               }
+              // this.router.navigate(['/in/bank_statement'], {
+              //   replaceUrl: true,
+              // });
             } else {
               this.isDialogShow = true;
               this.api.alert(res?.resp_message, 'error');

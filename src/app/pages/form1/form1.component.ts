@@ -77,17 +77,17 @@ export class Form1Component implements OnInit {
   }
 
   ngOnInit(): void {
-    this.state.removeSomeItem();
+    // this.state.removeSomeItem();
     this.form();
    
     const requestData:any = localStorage.getItem("reqData")
     this.parsedData = JSON.parse(requestData);
     if (this.parsedData) {
       this.form1.patchValue({
-        title: this.parsedData.prefix,
+        title: this.parsedData.prefix ? this.parsedData.prefix : "Mr.",
         firstName: this.parsedData.firstName,
         lastName: this.parsedData.lastName,
-        pincode: this.parsedData.pincode,
+        busninessName: this.parsedData.busninessName,
         emailId: this.parsedData.email,
       });
     }
@@ -118,11 +118,8 @@ export class Form1Component implements OnInit {
         ],
         updateOn: 'blur',
       }),
-      pincode: new FormControl('', [
-        Validators.required,
-        Validators.maxLength(6),
-        Validators.pattern('^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$'),
-      ]),
+      busninessName: new FormControl('', [Validators.required, Validators.minLength(4)]),
+     
     });
   }
 
@@ -133,7 +130,7 @@ export class Form1Component implements OnInit {
     });
   }
 
-  getOtpbyPhone() {
+  uploadBasicDetails() {
     this.isSubmit = true;
     const PricingModel:any = localStorage.getItem("text");
     let text =  '';
@@ -143,30 +140,26 @@ export class Form1Component implements OnInit {
       forceGenerate: false,
       resend: false,
     };
-    this.onNextClick();
     const params = { ...defaultparams, ...this.paramsObject.params };
     let requestData: any = {};
     requestData['prefix'] = formValue.title;
-    requestData['mobile'] = formValue.phoneNumber;
+    requestData['mobile'] = this.parsedData?.mobile;
     requestData['email'] = formValue.emailId;
     requestData['firstName'] = formValue.firstName.toUpperCase();
     requestData['lastName'] = formValue.lastName.toUpperCase();
-    requestData['pincode'] = formValue.pincode;
-    requestData['PricingModel'] =  PricingModel;
-    requestData['SelectedPrice'] = SelectedPrice;
-  
+    requestData['busninessName'] = formValue.busninessName;
     if (this.form1.valid) {
-        this.api.post(`api/Remediation/GetOTP`, requestData, params).subscribe({
+        this.api.post(`api/Remediation/UpdateBasicFormDetails`, requestData, params).subscribe({
           next: (res: any) => {
             if (res.success) {
               this.navigationService.setLinkClicked(true);
-              localStorage.setItem('reqData', JSON.stringify(requestData));
+              localStorage.setItem('reqData', JSON.stringify(res?.userInfo));
               localStorage.setItem('title', formValue.title);
               const plan:any = localStorage.getItem("plan");
               if (plan) {
-               this.navigationService.redirectToOTP(plan);
+               this.navigationService.redirectToPayment(plan);
               } else {
-                this.navigationService.redirectToOTP(String(requestData.selectedPrice));
+                this.navigationService.redirectToPayment(String(requestData.selectedPrice));
               }
               this.isSubmit = false;
             } else this.isSubmit = false;

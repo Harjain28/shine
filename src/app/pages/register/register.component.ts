@@ -122,7 +122,6 @@ export class RegisterComponent {
             if (res.success) {
               this.navigationService.setLinkClicked(true);
               localStorage.setItem('reqData', JSON.stringify(requestData));
-              localStorage.setItem('title', formValue.title);
               this.fetchOtp();
               const plan:any = localStorage.getItem("plan");
               if (plan) {

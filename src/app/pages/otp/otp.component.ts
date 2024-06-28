@@ -169,7 +169,8 @@ export class OtpComponent implements OnInit{
             localStorage.setItem("reqData", JSON.stringify(res?.userInfo));
               this.plan = localStorage.getItem("plan");
             this.navigationService.setLinkClicked(true);
-            if (this.userData && this.userData?.lastReportId) {
+            if (this.userData) {
+            if (this.userData?.existingReportId) {
                 this.router.navigate(['/in/report', res?.userId]);
             } else if (this.userData?.paid) {
               this.router.navigate(['/in/bank_statement']);
@@ -180,6 +181,13 @@ export class OtpComponent implements OnInit{
                 this.navigationService.redirectToPayment(String(this.userData?.userData?.selectedPrice));
               }
               localStorage.setItem("userId",res?.userId);
+            } 
+            } else {
+              if (this.plan) {
+                this.navigationService.redirectToRegister(this.plan);
+               } else {
+                 this.navigationService.redirectToRegister(String(this.userData?.userData?.selectedPrice));
+               }
             }
             this.isOtpSubmit = true;
           } else {
@@ -303,7 +311,6 @@ export class OtpComponent implements OnInit{
         mobile: this.mobileNo,
         forceGenerate: false,
          resend: true,
-     
          
        };
        const reloginParams = { ...defaultreLoginparams, ...this.paramsObject.params };
