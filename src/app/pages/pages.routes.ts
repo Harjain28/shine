@@ -11,13 +11,7 @@ export default[
         path: 'register/:id',   canActivate: [AuthGuard], loadComponent:() => import('./form1/form1.component').then(c=>c.Form1Component)
     },
     {
-        path: 'register_start',   canActivate: [AuthGuard], loadComponent:() => import('./register/register.component').then(c=>c.RegisterComponent)
-    },
-    {
         path: 'register_start/:id',   canActivate: [AuthGuard], loadComponent:() => import('./register/register.component').then(c=>c.RegisterComponent)
-    },
-    {
-        path: 'register2',   canActivate: [AuthGuard], loadComponent:() => import('./form2/form2.component').then(c=>c.Form2Component)
     },
     {
         path: 'register2/:id',   canActivate: [AuthGuard], loadComponent:() => import('./form2/form2.component').then(c=>c.Form2Component)

@@ -91,19 +91,18 @@ export class PaymentComponent {
   
       this.requestData = localStorage.getItem("reqData");
       this.parsedData = JSON.parse(this.requestData);
-   
       this.getPriceInfo();
-      if(this.parsedData){
-        this.fName = this.parsedData.firstName.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase());
-        this.lName = this.parsedData.lastName.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase());
+      if (this.parsedData) {
+        this.fName = (this.parsedData.firstName?.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase())) ?? '';
+        this.lName = (this.parsedData.lastName?.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase())) ?? '';
         this.fullName = this.title + ' ' + this.fName + ' ' + this.lName;
-        this.mobile = this.parsedData.mobile;
-        this.companyName = this.parsedData.businessName.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase());
-        this.email = this.parsedData.email;
+        this.mobile = this.parsedData.mobile ?? '';
+        this.companyName = (this.parsedData.businessName?.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase())) ?? '';
+        this.email = this.parsedData.email ?? '';
       }
-      this.state = localStorage.getItem("state");
-      this.getConfirmPaymentJson();  
-
+      this.state = localStorage.getItem("state") ?? '';
+      this.getConfirmPaymentJson();
+      
       
     }
 
@@ -193,6 +192,23 @@ export class PaymentComponent {
       this.navigationService.setLinkClicked(true);
        this.navigationService.redirectToOTP(this.planPrice);
     }
+
+    redirectToBusinessForm() {
+      const plan = localStorage.getItem("plan");
+      const reloginUserData = sessionStorage.getItem("reloginUpdates");
+      let user:any;
+      if (reloginUserData) {
+        let user = JSON.parse(reloginUserData);
+      }
+      this.navigationService.setLinkClicked(true);
+      if (plan) {
+        this.navigationService.redirectToRegister2(plan);
+       } else {
+         this.navigationService.redirectToRegister2(String(user?.userData?.selectedPrice));
+       }
+    }
+
+
 
   getForPaymentMethod() {
     this.isSubmit = true;

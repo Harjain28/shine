@@ -191,7 +191,7 @@ export class Form2Component {
           next: (res: any) => {
             if (res.success) {
               this.navigationService.setLinkClicked(true);
-              localStorage.setItem('reqData', JSON.stringify(requestData));
+              localStorage.setItem('reqData', JSON.stringify(res?.userInfo));
               localStorage.setItem('title', formValue.title);
               this.fetchOtp();
              this.router.navigate(['/in/bank_statement'], {

@@ -47,17 +47,17 @@ export class AuthGuard  {
       //   this.router.navigate(['/in']);
       //   return false;
       // }
-
-      const currentUrl = state.url;
-      const isLinkClicked = this.navigationService.isLinkNavigation();
-      const lastUrl = sessionStorage.getItem('lastUrl');
-      if (!this.allowedUrls.includes(currentUrl) || isLinkClicked || lastUrl === currentUrl) {
-        this.navigationService.setLinkClicked(false);
-        sessionStorage.setItem('lastUrl', currentUrl); 
-        return true;
-      } else {
-        this.router.navigateByUrl('/in'); 
-        return false;
-      }
+      return true;
+      // const currentUrl = state.url;
+      // const isLinkClicked = this.navigationService.isLinkNavigation();
+      // const lastUrl = sessionStorage.getItem('lastUrl');
+      // if (!this.allowedUrls.includes(currentUrl) || isLinkClicked || lastUrl === currentUrl) {
+      //   this.navigationService.setLinkClicked(false);
+      //   sessionStorage.setItem('lastUrl', currentUrl); 
+      //   return true;
+      // } else {
+      //   this.router.navigateByUrl('/in'); 
+      //   return false;
+      // }
   }
 }
