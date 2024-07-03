@@ -172,15 +172,15 @@ export class ReloginComponent {
               sessionStorage.setItem('reloginUpdates', JSON.stringify(res));
               this.navigationService.setLinkClicked(true);
               this.closeDialoge();
-              if (res?.lastReportId && res?.lastReportId !== null || res?.userData) {
+              if (res?.lastReportId && res?.lastReportId !== null || res?.userInfo) {
                 this.fetchOtp();
-                this.navigationService.redirectToOTP(String(res?.userData?.selectedPrice));
+                this.navigationService.redirectToOTP(String(res?.userInfo?.selectedPrice));
                 // this.router.navigate(['/in/otp'], { queryParamsHandling:"preserve"});
-              } else if (res?.newUser) {
+              } else if (res?.reportStage?.newUser) {
                 this.router.navigate([this.pricing_url]);
-              } else if (!res?.newUser && !res?.paid) {
-                  this.navigationService.redirectToPayment(String(res?.userData?.selectedPrice));
-              } else if (res?.paid) {
+              } else if (!res?.reportStage?.newUser && !res?.reportStage?.paid) {
+                  this.navigationService.redirectToPayment(String(res?.userInfo?.selectedPrice));
+              } else if (res?.reportStage?.paid) {
                 this.router.navigate(['in/bank_statement']);
               } else {
                 this.router.navigate([this.pricing_url], { queryParamsHandling:"preserve"});

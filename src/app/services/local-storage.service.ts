@@ -23,11 +23,14 @@ export class LocalStorageService {
      localStorage.removeItem('token');
      localStorage.removeItem('phoneNumber');
      localStorage.removeItem('userId');
+     localStorage.removeItem('stage');
+     
      
   }
 
   logout() {
      localStorage.removeItem('token');
+     
   }
   removeItem() {
     localStorage.removeItem('reqData');
@@ -35,6 +38,7 @@ export class LocalStorageService {
      sessionStorage.removeItem('reloginUpdates');
      localStorage.removeItem('text');
      localStorage.removeItem('userId');
+     localStorage.removeItem('stage');
      localStorage.removeItem('plan');
      localStorage.removeItem('filteredPlan');
      localStorage.removeItem('isV3');

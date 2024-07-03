@@ -154,6 +154,7 @@ export class Form1Component implements OnInit {
             if (res.success) {
               this.navigationService.setLinkClicked(true);
               localStorage.setItem('reqData', JSON.stringify(res?.userInfo));
+              localStorage.setItem('stage', JSON.stringify(res?.reportStage));
               localStorage.setItem('title', formValue.title);
               const plan:any = localStorage.getItem("plan");
               if (plan) {

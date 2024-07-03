@@ -167,28 +167,30 @@ export class OtpComponent implements OnInit{
           if (res.success == true) {
             localStorage.setItem("token",res?.token);
             localStorage.setItem("reqData", JSON.stringify(res?.userInfo));
-              this.plan = localStorage.getItem("plan");
+            localStorage.setItem('stage', JSON.stringify(res?.reportStage));
+            this.plan = localStorage.getItem("plan");
             this.navigationService.setLinkClicked(true);
-            if (this.userData) {
-            if (this.userData?.existingReportId) {
+            const stage = res?.reportStage;
+            const plan = this.plan || String(this.userData?.userInfo?.selectedPrice);
+            if (res?.reportStage && !stage?.userCreated) {
+              if (res?.existingReportId) {
                 this.router.navigate(['/in/report', res?.userId]);
-            } else if (this.userData?.paid) {
-              this.router.navigate(['/in/bank_statement']);
-            }  else {
-              if (this.plan) {
-               this.navigationService.redirectToPayment(this.plan);
+              } else if (stage?.paid) {
+                if (stage?.postPaymentFormDetailsSubmitted) {
+                  this.router.navigate(['/in/bank_statement']);
+                } else {
+                  this.navigationService.redirectToRegister2(plan);
+                }
+              } else if (stage?.basicFormDetailsSubmitted) {
+                this.navigationService.redirectToPayment(plan);
               } else {
-                this.navigationService.redirectToPayment(String(this.userData?.userData?.selectedPrice));
+                this.navigationService.redirectToRegister(plan);
               }
-              localStorage.setItem("userId",res?.userId);
-            } 
             } else {
-              if (this.plan) {
-                this.navigationService.redirectToRegister(this.plan);
-               } else {
-                 this.navigationService.redirectToRegister(String(this.userData?.userData?.selectedPrice));
-               }
+              this.navigationService.redirectToRegister(plan);
             }
+            
+            localStorage.setItem("userId",res?.userId)
             this.isOtpSubmit = true;
           } else {
             this.api.alert("Please add valid information", "error");
