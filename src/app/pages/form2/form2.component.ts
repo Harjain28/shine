@@ -158,6 +158,8 @@ export class Form2Component {
       forceGenerate: false,
       resend: false,
     };
+
+    if (this.businessForm.valid) {
     const params = { ...defaultparams, ...this.paramsObject.params };
     let requestData: any = {};
     requestData['pincode'] = formValue.pincode;
@@ -185,7 +187,7 @@ export class Form2Component {
     // if (this.businessForm.valid && this.validatePAN && this.validatePin) {
     let upperCaseString = formValue.businessPan.toUpperCase();
 
-    if (this.businessForm.valid) {
+   
       if (upperCaseString[3] === 'P') {
         this.api.post(`api/Remediation/UpdateFormDetailsPostPayment`, requestData, params).subscribe({
           next: (res: any) => {

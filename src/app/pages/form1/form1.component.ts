@@ -140,6 +140,7 @@ export class Form1Component implements OnInit {
       forceGenerate: false,
       resend: false,
     };
+    if (this.form1.valid) {
     const params = { ...defaultparams, ...this.paramsObject.params };
     let requestData: any = {};
     requestData['prefix'] = formValue.title;
@@ -148,7 +149,7 @@ export class Form1Component implements OnInit {
     requestData['firstName'] = formValue.firstName.toUpperCase();
     requestData['lastName'] = formValue.lastName.toUpperCase();
     requestData['businessName'] = formValue.busninessName;
-    if (this.form1.valid) {
+
         this.api.post(`api/Remediation/UpdateBasicFormDetails`, requestData, params).subscribe({
           next: (res: any) => {
             if (res.success) {
