@@ -23,7 +23,7 @@ sticky: any;
     this.requestData = localStorage.getItem("reqData");
     this.parsedData = JSON.parse(this.requestData);
     if(this.parsedData){
-      this.name = this.parsedData.firstName.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase());  
+      this.name = this.parsedData?.firstName.toLowerCase().replace(/\b\w/g, (char: string) => char.toUpperCase());  
     }
 }
 removeTogglesidebar() {
