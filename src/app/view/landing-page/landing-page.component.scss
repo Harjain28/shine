@@ -14,14 +14,14 @@
             .image {
                 display: block;
                 width: 100%;
-                height: 580px;
+                height: 650px;
             }
 
             .silderText {
                 position: absolute;
                 top: 50%;
                 left: 0px;
-                transform: translate(0%, -40%);
+                transform: translate(0%, -50%);
                 z-index: 9;
                 display: block;
                 width: 100%;
@@ -1056,7 +1056,7 @@
         .homeSlider {
 
             .silderSlide {
-                height: 730px;
+                height: 100%;
 
                 .image{
                     height: 100% !important;

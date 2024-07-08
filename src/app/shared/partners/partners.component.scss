@@ -1,0 +1,115 @@
+.Lenders_Section {
+
+    margin-top: -70px;
+    padding: 0px 0px 25px;
+    position: relative;
+    z-index: 1;
+
+    .LendingHeading {
+        background-color: #fff;
+        padding: 24px;
+        border-radius: 12px;
+        -webkit-box-shadow: 0px 4px 10px #00000029;
+        -moz-box-shadow: 0px 4px 10px #00000029;
+        box-shadow: 0px 4px 10px #00000029;
+
+        h2 {
+            color: #3F3F3F;
+            text-align: center;
+            line-height: 28px;
+            margin-bottom: 12px;
+            font-size: 24px;
+            font-weight: 600;
+            font-family: Poppins !important;
+        }
+
+        .logoBrand {
+
+            img {
+                width: auto;
+                height: 100px;
+                margin: 0 auto;
+            }
+        }
+
+        // .contentHeading {
+
+        //     ::ng-deep {
+
+        //         .owl-nav {
+        //             display: none !important;
+        //         }
+        //     }
+        // }
+
+        // ::ng-deep {
+
+        //     .owl-nav {
+        //         position: absolute;
+        //         top: 0px;
+        //         margin-top: 0px;
+        //         display: flex;
+        //         justify-content: space-between;
+        //         width: 100%;
+        //         transform: translate(0%, -50%);
+        //     }
+
+        //     .owl-prev {
+        //         position: absolute;
+        //         left: -44px;
+        //         height: 30px;
+        //         width: 30px;
+        //         border-radius: 50%;
+        //         transform: translate(0%, -100%);
+        //         background-color: #F3F3F3;
+
+        //         img {
+        //             rotate: 180deg;
+        //         }
+        //     }
+
+        //     .owl-next {
+        //         position: absolute;
+        //         right: -44px;
+        //         height: 30px;
+        //         width: 30px;
+        //         border-radius: 50%;
+        //         transform: translate(0%, -100%);
+        //         background-color: #F3F3F3;
+        //     }
+        // }
+    }
+}
+
+@media (max-width:767px) {
+    .paddingZero{
+        padding: 0px 0px !important;
+    }
+    .Lenders_Section {
+
+       padding: 0px 15px;
+       margin-top: 40px !important;
+
+        .LendingHeading {
+            padding: 14px 24px;
+
+           .silderHeading {
+               min-height: auto;
+               overflow: hidden;
+           }
+
+            h2 {
+                font-size: 18px;
+                margin-bottom: 6px;
+                line-height: 22px;
+            }
+
+            .logoBrand {
+
+                img {
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
