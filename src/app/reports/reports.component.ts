@@ -71,10 +71,15 @@ import { cust37Json } from '../JsonFiles/9727198579';
 import { cust38Json } from '../JsonFiles/9810394413';
 import { cust39Json } from '../JsonFiles/9850517709';
 import { cust40Json } from '../JsonFiles/9874673188';
+import { cust40FixedJson } from '../JsonFiles/9874673188-fixed';
 import { cust41Json } from '../JsonFiles/9972099888';
 import { cust13FixedJson } from '../JsonFiles/9427043914-fixed';
 import { cust11FixedJson } from '../JsonFiles/8746099464-fixed';
 import { cust42Json } from '../JsonFiles/9422078781';
+import { cust43Json } from '../JsonFiles/7694823608';
+import { cust44Json } from '../JsonFiles/8149535510';
+import { cust45Json } from '../JsonFiles/9879007515';
+import { cust46Json } from '../JsonFiles/9890434152';
 import { RequiredActionsComponent } from './required-actions/required-actions.component';
 import { report_model1 } from '../JsonFiles/report_model1';
 import { NavigationService } from '../services/navigation.service';
@@ -325,8 +330,13 @@ export class ReportsComponent {
       '9810394413.json': cust38Json,
       '9850517709.json': cust39Json,
       '9874673188.json': cust40Json,
+      '9874673188-fixed.json': cust40FixedJson,
       '9972099888.json': cust41Json,
       '9422078781.json': cust42Json,
+      '7694823608.json': cust43Json,
+      '8149535510.json': cust44Json,
+      '9879007515.json': cust45Json,
+      '9890434152.json': cust46Json,
       'avg_bureau.json': avgBureauJSON,
       'no_bureau.json': noBureauJSON,
       'poor_bureau.json': poorBureauJSON,

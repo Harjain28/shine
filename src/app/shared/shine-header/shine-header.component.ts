@@ -15,7 +15,7 @@ export class ShineHeaderComponent {
   name: any;
   requestData: any;
   parsedData: any;
-sticky: any;
+  sticky: any;
 
   constructor(public router: Router){}
 

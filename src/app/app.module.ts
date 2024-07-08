@@ -19,6 +19,7 @@ import { ViewComponent } from './view/view.component';
 import { GTMService } from './services/gtm.service';
 import { LoaderInterceptor } from './interceptor/interceptor';
 import { ErrorInterceptor } from './interceptor/errorInterceptor';
+import { PartnersComponent } from './shared/partners/partners.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ErrorInterceptor } from './interceptor/errorInterceptor';
     RouterModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    PartnersComponent,
     HeaderComponent,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     PagesComponent,

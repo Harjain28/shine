@@ -16,6 +16,7 @@ import { ClientSectionComponent } from 'src/app/shared/client-section/client-sec
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { PricingService } from 'src/app/services/random-pricing.service';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { PartnersComponent } from 'src/app/shared/partners/partners.component';
 
 
 
@@ -23,7 +24,7 @@ import { NavigationService } from 'src/app/services/navigation.service';
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, RouterModule, LazyLoadImageModule, CarouselModule, FaqComponent, TestimonialComponent, LazyLoadImageModule, ClientSectionComponent],
+  imports: [CommonModule, RouterModule, LazyLoadImageModule,PartnersComponent,CarouselModule, FaqComponent, TestimonialComponent, LazyLoadImageModule, ClientSectionComponent],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
