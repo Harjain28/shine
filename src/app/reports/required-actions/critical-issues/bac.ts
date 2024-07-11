@@ -1,11 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatExpansionModule } from '@angular/material/expansion';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData'; // Adjust path as per your file structure
 import { ReportService } from '../shared.service';
-import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
-
-
 
 interface Tab {
   title: string;
@@ -22,56 +19,54 @@ interface Card {
 }
 
 @Component({
-  selector: 'app-mobile-critical-issues',
+  selector: 'app-critical-issues',
   standalone: true,
-  imports: [CommonModule, MatExpansionModule, CarouselModule],
-  templateUrl: './mobile-critical-issues.component.html',
-  styleUrls: ['./mobile-critical-issues.component.scss']
+  imports: [CommonModule, CarouselModule],
+  templateUrl: './critical-issues.component.html',
+  styleUrls: ['./critical-issues.component.scss', '../required-actions.component.scss'],
 })
-
-
-export class MobileCriticalIssuesComponent implements OnInit {
-  @Input() ActionReqReportsMobileData: any;
-  expandedPanel: number = 0; // Start with the first panel expanded
+export class CriticalIssuesComponent implements OnInit {
   showCriticalBoxFirst: boolean = true;
   showKnowMoreModal: boolean = false;
+  summary_section: any;
+  summary_section_Data: any;
+  reportsData: any;
+  imgUrlDesktop: any;
+  imgUrlMobile: any;
+  rankingSection: any;
+  banking: any;
+  bureau: any;
+  gst: any;
 
-  tabs: Tab[] = [];
-  cardData: any = {};
+  @Input() ActionReqReportsData: any;
+  data = 'Bureau data';
+
+  tabs: Tab[] = []; // Initialize empty or use default values here
+
+  cardData: any = {}; // Initialize empty or use default values here
+
   actionSummaryData: any;
-  filteredCards: Card[] = []; 
+  filteredCards: Card[] = []; // Initialize empty or use default cards here
+
   filteredInsights: any;
   selectedCard: Card | null = null;
-  selectedData: Card[] =[];
 
   constructor(public reportService: ReportService) {}
 
   ngOnInit(): void {
-    this.reportService.initializeData(reportStatciData, this.ActionReqReportsMobileData);
-    const actionSummaryData = this.ActionReqReportsMobileData?.insights?.actionSummary;
+    this.reportService.initializeData(reportStatciData, this.ActionReqReportsData);
+    const actionSummaryData = this.ActionReqReportsData?.insights?.actionSummary;
     this.filteredInsights = this.reportService.concatenateInsights(actionSummaryData);
 
     if (this.filteredInsights) {
       this.updateTabCounts();
       this.filteredCards = this.filteredInsights.creditReport; 
     }
-    console.log( this.filteredCards , "filteredCardss");
-  }
-
-  updateTabCounts(): void {
-    if (this.filteredInsights) {
-      this.reportService.tabs[0].count = this.filteredInsights.creditReport.length;
-      this.reportService.tabs[1].count= this.filteredInsights.bankingHistory.length;
-      this.reportService.tabs[2].count = this.filteredInsights.gstHistory.length;
-    }
-  }
-
-  toggleDetails() {
-    this.showCriticalBoxFirst = !this.showCriticalBoxFirst;
+    console.log( this.filteredCards , "filteredCards");
   }
 
   handleClick(index: number): void {
-    this.toggleDetails()
+    // Handle tab click
     this.tabs.forEach((tab, i) => (tab.isActive = i === index));
     switch (index) {
       case 0:
@@ -88,30 +83,38 @@ export class MobileCriticalIssuesComponent implements OnInit {
         break;
     }
   }
-  openModal(data: any, index: number) {
-    this.selectedData = data;
+
+  updateTabCounts(): void {
+    if (this.filteredInsights) {
+      this.reportService.tabs[0].count = this.filteredInsights.creditReport.length;
+      this.reportService.tabs[1].count= this.filteredInsights.bankingHistory.length;
+      this.reportService.tabs[2].count = this.filteredInsights.gstHistory.length;
+    }
+  }
+
+  openModal(card: Card): void {
+    this.selectedCard = card;
     this.showKnowMoreModal = true;
   }
 
-
-  closeModal() {
+  closeModal(): void {
     this.showKnowMoreModal = false;
+    this.selectedCard = null;
   }
 
-  setExpandedPanel(panelIndex: number) {
-    this.expandedPanel = panelIndex;
+  toggleDetails(): void {
+    this.showCriticalBoxFirst = !this.showCriticalBoxFirst;
   }
 
-  customOptions1: OwlOptions = {
+  customOptions4: OwlOptions = {
     loop: false,
     rewind: false,
     dots: false,
     autoplay: false,
     navSpeed: 300,
-    nav: false,
+    nav: true,
     mouseDrag: false,
     touchDrag: true,
-
     autoplayTimeout: 8000,
     autoplaySpeed: 1500,
     navText: [
@@ -125,7 +128,6 @@ export class MobileCriticalIssuesComponent implements OnInit {
       },
       400: {
         items: 1,
-        dots: true,
       },
       740: {
         items: 3,

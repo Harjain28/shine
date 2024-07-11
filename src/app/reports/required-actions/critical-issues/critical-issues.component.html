@@ -123,8 +123,8 @@
         </a>
         <div class="buttonTab">
             <ul>
-              <li *ngFor="let item of tabs" (click)="handleClick(item)">
-                <a class="btn" [ngClass]="{active: item.isActive}">
+              <li *ngFor="let item of reportService?.tabs; let i = index" (click)="handleClick(i)">
+                <a class="btn" [ngClass]="{'active': item.isActive}">
                   <img [src]="item.imageUrl" alt=""> {{ item.title }} <span>{{ item.count }}</span>
                 </a>
               </li>
@@ -135,61 +135,47 @@
               <ng-container>
                 <ng-template carouselSlide *ngFor="let slide of filteredCards">
                   <div class="boxSilde">
-                    <h3>{{ slide.title }}</h3>
-                    <p>{{ slide.description }}</p>
-                    <a (click)="openModal()"><img
-                        src="./assets/LandingPage/checkGreen.svg" alt=""> {{ slide.buttonText }}</a>
+                    <h3>{{ slide?.header }}</h3>
+                    <p>{{ slide?.description }}</p>
+                    <a (click)="openModal(slide)" style="cursor: pointer;">
+                      <img src="./assets/LandingPage/checkGreen.svg" alt=""> 
+                      {{ slide?.subheader ? slide?.subheader : 'How to fix this?' }}
+                    </a>
                   </div>
                 </ng-template>
               </ng-container>
             </owl-carousel-o>
           </div>
+          
     </div>
 
     <!-- && !showKnowMoreModal -->
-
     <div class="KnowMoreModal" *ngIf="showKnowMoreModal">
         <div class="backgroundModal"></div>
         <div class="col-lg-6 m-auto">
-            <div class="modalBody">
-                <a class="backCalcel" (click)="closeModal()">
-                    <img src="./assets/LandingPage/closeIcon.png" alt="">
-                </a>
-                <h3>2. Underwritten by Banks</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus.
-                </p>
-                <div class="content">
-                    <img src="./assets/LandingPage/checkGreen.svg" alt="">
-                    <h5>How to fix this</h5>
-                </div>
-                <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula porta auctor.
-                    Nulla vitae mattis est. Phasellus tempor accumsan purus, eget egestas felis, vehicula at. Aliquam
-                    arcu ligula.</p>
-                <ul>
-                    <li>
-                        <span></span>
-                        Laculis sed bibendum ut, faucibus
-                    </li>
-                    <li>
-                        <span></span>
-                        Laculis sed bibendum ut, faucibus
-                    </li>
-                    <li>
-                        <span></span>
-                        Laculis sed bibendum ut, faucibus
-                    </li>
-                    <li>
-                        <span></span>
-                        Laculis sed bibendum ut, faucibus
-                    </li>
-                </ul>
-
-                <a class="btn">
-                    Know more
-                    <img src="./assets/LandingPage/checkBlue.svg" alt="">
-                </a>
+          <div class="modalBody">
+            <a class="backCalcel" (click)="closeModal()">
+              <img src="./assets/LandingPage/closeIcon.png" alt="">
+            </a>
+            <h3>{{ selectedCard?.header }}</h3>
+            <p>{{ selectedCard?.description }}</p>
+            <div class="content">
+              <img src="./assets/LandingPage/checkGreen.svg" alt="">
+              <h5>{{ selectedCard?.subheader ? selectedCard?.subheader : 'How to fix this?' }}</h5>
             </div>
+            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula porta auctor. Nulla vitae mattis est. Phasellus tempor accumsan purus, eget egestas felis, vehicula at. Aliquam arcu ligula.</p>
+            <ul>
+              <li *ngFor="let bullet of selectedCard?.bullets">
+                <span></span>
+               {{bullet}}
+              </li>
+            </ul>
+            <a class="btn">
+              Know more
+              <img src="./assets/LandingPage/checkBlue.svg" alt="">
+            </a>
+          </div>
         </div>
-    </div>
     
+</div>
 </div>

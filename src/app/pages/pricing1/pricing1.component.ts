@@ -106,10 +106,10 @@ export class Pricing1Component {
 
     const plans: any = {
       1: {
-        monthlyFiltered: "1,999",
-        annualFiltered: "3,999",
-        monthly: "699",
-        annual: "1,999",
+        monthlyFiltered: "2,999",
+        annualFiltered: "4,999",
+        monthly: "1,999",
+        annual: "3,999",
       },
       2: {
         monthlyFiltered: "2,999",
@@ -124,10 +124,11 @@ export class Pricing1Component {
         annual: "7,499",
       },
       default: {
-        monthlyFiltered: "1,999",
-        annualFiltered: "3,999",
-        monthly: "699",
-        annual: "1,999",
+        monthlyFiltered: "2,999",
+        annualFiltered: "4,999",
+        monthly: "1,999",
+        annual: "3,999",
+
       },
     };
     const selectedPlan = plans[Number(this.randomNumber)] || plans.default;

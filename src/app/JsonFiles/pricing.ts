@@ -107,7 +107,7 @@ export const shinePricingPageJSON = {
     OrderText: [
       {
         Headertext: 'One-Time',
-        Price: '999',
+        Price: '1,999',
         item: [
           'Complete Financial Health Overview',
           'Detailed Credit Analysis with Experian',
@@ -120,7 +120,7 @@ export const shinePricingPageJSON = {
       },
       {
         Headertext: 'Annual',
-        Price: '3999',
+        Price: '3,999',
         item: [
               'Complete Financial Health Overview',
               'Detailed Credit Analysis with Experian',

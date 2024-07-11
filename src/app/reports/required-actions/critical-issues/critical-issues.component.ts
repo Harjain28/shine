@@ -1,11 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  CarouselComponent,
-  CarouselModule,
-  OwlOptions,
-} from 'ngx-owl-carousel-o';
-import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
+import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData'; // Adjust path as per your file structure
+import { ReportService } from '../shared.service';
 
 interface Tab {
   title: string;
@@ -13,24 +10,20 @@ interface Tab {
   imageUrl: string;
   isActive: boolean;
 }
+
 interface Card {
-  title: string;
+  header: string;
   description: string;
-  buttonText: string;
+  subheader: string;
+  bullets: any;
 }
-
-
-
 
 @Component({
   selector: 'app-critical-issues',
   standalone: true,
   imports: [CommonModule, CarouselModule],
   templateUrl: './critical-issues.component.html',
-  styleUrls: [
-    './critical-issues.component.scss',
-    '../required-actions.component.scss',
-  ],
+  styleUrls: ['./critical-issues.component.scss', '../required-actions.component.scss'],
 })
 export class CriticalIssuesComponent implements OnInit {
   showCriticalBoxFirst: boolean = true;
@@ -47,234 +40,66 @@ export class CriticalIssuesComponent implements OnInit {
 
   @Input() ActionReqReportsData: any;
   data = 'Bureau data';
-  tabs: Tab[] = [
-    {
-      title: 'Bureau',
-      count: 0,
-      imageUrl:
-        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/credit_score.png',
-      isActive: true,
-    },
-    {
-      title: 'Banking',
-      count: 0,
-      imageUrl:
-        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/banking_blue.png',
-      isActive: false,
-    },
-    {
-      title: 'GST',
-      count: 0,
-      imageUrl:
-        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/gst.png',
-      isActive: false,
-    },
-  ];
-
-  cardData: any = {
-    Bureau: [
-    {
-      title: '1. Your Bureau Score',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
-      buttonText: 'Know how to fix this',
-    },
-    {
-      title: '2. Underwritten by Banks',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus.',
-      buttonText: 'Know how to fix this',
-    },
-    {
-      title: '3. Disputes with Lenders',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
-      buttonText: 'Know how to fix this',
-    },
-    {
-      title: '4. Your Bureau Score',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
-      buttonText: 'Know how to fix this',
-    },
-  ],
-  Banking: [
-    {
-      title: '1. Your Bureau Score',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
-      buttonText: 'Know how to fix this',
-    },
-    {
-      title: '2. Underwritten by Banks',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus.',
-      buttonText: 'Know how to fix this',
-    },
-    {
-      title: '3. Your Bureau Score',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
-      buttonText: 'Know how to fix this',
-    },
-  ],
-  GST: [
-    {
-      title: '1. Your Bureau Score',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
-      buttonText: 'Know how to fix this',
-    },
-    {
-      title: '2. Underwritten by Banks',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus.',
-      buttonText: 'Know how to fix this',
-    },
-  ],
-  }
+  tabs: Tab[] = [];
+  cardData: any = {};
   actionSummaryData: any;
-  filteredCards: Card[] = this.cardData.Bureau; 
+  filteredCards: Card[] = []; 
+  filteredInsights: any;
+  selectedCard: Card | null = null;
 
+  constructor(public reportService: ReportService) {}
 
   ngOnInit(): void {
-    this.summary_section = reportStatciData;
-    this.summary_section_Data = this.summary_section?.summary_section;
-    console.log(this.ActionReqReportsData, "reportData");
-    this.actionSummaryData = this.ActionReqReportsData?.insights?.actionSummary;
-    console.log(this.actionSummaryData, "Actionsummary");
-    this.reportsData = this.ActionReqReportsData?.report;
-    this.banking = this.reportsData?.bankingSummary;
-    this.bureau = this.reportsData?.bureauSummary;
-    this.gst = this.reportsData?.gstSummary;
+    this.reportService.initializeData(reportStatciData, this.ActionReqReportsData);
+    const actionSummaryData = this.ActionReqReportsData?.insights?.actionSummary;
+    this.filteredInsights = this.reportService.concatenateInsights(actionSummaryData);
 
-    //rankingSection
-    this.rankingSection = reportStatciData?.summary_section;
-    const compareStage = this.rankingSection?.ranking_card?.ranking_images.find(
-      (image: { stage: any }) => image.stage === this.reportsData?.currentStage
-    );
-    if (compareStage) {
-      this.imgUrlDesktop = compareStage.desktop;
-      this.imgUrlMobile = compareStage.mobile;
+    if (this.filteredInsights) {
+      this.updateTabCounts();
+      this.filteredCards = this.filteredInsights.creditReport; 
     }
-
-
-// Usage
-const actionSummaryData = this.ActionReqReportsData?.insights?.actionSummary;
-const filteredInsights = this.concatenateInsights(actionSummaryData);
-
-  console.log(filteredInsights, "filter");
-
-
+    console.log( this.filteredCards , "filteredCards");
   }
- 
 
-
-// Function to filter and concatenate insights
-concatenateInsights(actionSummary: any) {
-  let result:any = {
-    creditReport: [],
-    gstHistory: [],
-    bankingHistory: []
-  };
-
-  Object.keys(actionSummary).forEach((key) => {
-    const section = actionSummary[key];
-    if (Array.isArray(section)) {
-      section.forEach((insight: any) => {
-        if (insight.class === "negative" && insight.condition_status) {
-          result[key].push({
-            ...insight,
-            objectName: key
-          });
-        }
-      });
-    } else {
-      Object.keys(section).forEach((subKey) => {
-        const subSection = section[subKey];
-
-        if (Array.isArray(subSection)) {
-          subSection.forEach((insight: any) => {
-            if (insight.class === "negative" && insight.condition_status) {
-              result[key].push({
-                ...insight,
-                objectName: `${key}.${subKey}`
-              });
-            }
-          });
-        } else {
-          Object.keys(subSection).forEach((deepKey) => {
-            const deepSection = subSection[deepKey];
-
-            if (Array.isArray(deepSection)) {
-              deepSection.forEach((insight: any) => {
-                if (insight.class === "negative" && insight.condition_status) {
-                  result[key].push({
-                    ...insight,
-                    objectName: `${key}.${subKey}.${deepKey}`
-                  });
-                }
-              });
-            }
-          });
-        }
-      });
+  handleClick(index: number): void {
+    // Handle tab click
+    this.tabs.forEach((tab, i) => (tab.isActive = i === index));
+    switch (index) {
+      case 0:
+        this.filteredCards = this.filteredInsights.creditReport;
+        break;
+      case 1:
+        this.filteredCards = this.filteredInsights.bankingHistory;
+        break;
+      case 2:
+        this.filteredCards = this.filteredInsights.gstHistory;
+        break;
+      default:
+        this.filteredCards = [];
+        break;
     }
-  });
-
-  return result;
-}
-
-
-  getFilteredInsights(actionSummaryData: any) {
-    const filteredCreditReport = this.concatenateInsights([
-      ...actionSummaryData?.creditReport?.defaultAnalysis,
-      ...actionSummaryData?.creditReport?.otherAnalysis?.topBanks,
-      ...actionSummaryData?.creditReport?.otherAnalysis?.suitFiledEver,
-      ...actionSummaryData?.creditReport?.bureauScore,
-      ...actionSummaryData?.creditReport?.creditCardUtilization,
-      ...actionSummaryData?.creditReport?.smallLoans,
-      ...actionSummaryData?.creditReport?.creditRemark,
-      ...actionSummaryData?.creditReport?.creditEnquiry,
-    ]);
-  
-    const filteredGstHistory = this.concatenateInsights(actionSummaryData.gstHistory);
-  
-    const filteredBankingHistory = this.concatenateInsights([
-      ...actionSummaryData?.bankingHistory.volatility,
-      ...actionSummaryData?.bankingHistory.minimum_balance,
-      ...actionSummaryData?.bankingHistory.Q_on_Q_dip,
-      ...actionSummaryData?.bankingHistory.count_volatility,
-      ...actionSummaryData?.bankingHistory?.abb,
-      ...actionSummaryData?.bankingHistory?.debt_to_revenue_ratio,
-      ...actionSummaryData?.bankingHistory?.cheque_bounces,
-    ]);
-  
-    return {
-      creditReport: filteredCreditReport,
-      gstHistory: filteredGstHistory,
-      bankingHistory: filteredBankingHistory,
-    };
-  }
-  
-
-
-  handleClick(selectedTab: Tab) {
-    this.filteredCards = this.cardData[selectedTab.title]; 
-    this.tabs.forEach(tab => tab.isActive = false);
-    selectedTab.isActive = true;
   }
 
-  toggleDetails(data?:any) {
-    this.showCriticalBoxFirst = !this.showCriticalBoxFirst;
+  updateTabCounts(): void {
+    if (this.filteredInsights) {
+      this.reportService.tabs[0].count = this.filteredInsights.creditReport.length;
+      this.reportService.tabs[1].count= this.filteredInsights.bankingHistory.length;
+      this.reportService.tabs[2].count = this.filteredInsights.gstHistory.length;
+    }
   }
 
-  openModal() {
+  openModal(card: Card): void {
+    this.selectedCard = card;
     this.showKnowMoreModal = true;
   }
 
-  closeModal() {
+  closeModal(): void {
     this.showKnowMoreModal = false;
+    this.selectedCard = null;
+  }
+
+  toggleDetails(): void {
+    this.showCriticalBoxFirst = !this.showCriticalBoxFirst;
   }
 
   customOptions4: OwlOptions = {
@@ -286,7 +111,6 @@ concatenateInsights(actionSummary: any) {
     nav: true,
     mouseDrag: false,
     touchDrag: true,
-
     autoplayTimeout: 8000,
     autoplaySpeed: 1500,
     navText: [
