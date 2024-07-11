@@ -43,7 +43,6 @@ export class RequiredActionsComponent implements OnInit {
     this.summary_section = reportStatciData;
     this.summary_section_Data = this.summary_section?.summary_section;
     this.reportsData = this.ActionReqReportsData?.report;
-
     this.banking = this.reportsData?.bankingSummary;
     this.bureau = this.reportsData?.bureauSummary;
     this.gst = this.reportsData?.gstSummary;

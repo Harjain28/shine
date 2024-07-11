@@ -80,6 +80,10 @@ import { cust43Json } from '../JsonFiles/7694823608';
 import { cust44Json } from '../JsonFiles/8149535510';
 import { cust45Json } from '../JsonFiles/9879007515';
 import { cust46Json } from '../JsonFiles/9890434152';
+import { cust34FixedJson } from '../JsonFiles/9509612970-fixed';
+import { cust30FixedJson } from '../JsonFiles/9014135897-fixed';
+import { cust38FixedJson } from '../JsonFiles/9810394413-fixed';
+import { cust40Fixed2Json } from '../JsonFiles/9874673188-fixed2';
 import { RequiredActionsComponent } from './required-actions/required-actions.component';
 import { report_model1 } from '../JsonFiles/report_model1';
 import { NavigationService } from '../services/navigation.service';
@@ -337,6 +341,10 @@ export class ReportsComponent {
       '8149535510.json': cust44Json,
       '9879007515.json': cust45Json,
       '9890434152.json': cust46Json,
+      '9509612970-fixed.json': cust34FixedJson,
+      '9014135897-fixed.json': cust30FixedJson,
+      '9810394413-fixed.json': cust38FixedJson,
+      '9874673188-fixed2.json': cust40Fixed2Json,
       'avg_bureau.json': avgBureauJSON,
       'no_bureau.json': noBureauJSON,
       'poor_bureau.json': poorBureauJSON,
@@ -349,6 +357,7 @@ export class ReportsComponent {
     } else {
       this.reportsData = reportsDataMap[fileName] || this.reportData;
     }
+    console.log(this.reportsData, "reportsData");
     this.getReportData(this.reportsData);
 
     this.gstDetails = this.reportsData?.report?.gstHistory;

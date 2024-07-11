@@ -402,11 +402,6 @@ countActiveMonths(): number {
     this.lrhImgageIcon = this.setSummaryIcon(summaryFilteredData[0]);
     }
 
-
-
-
-
-
     const defaultAnalysis = loanRepaymentHistory?.defaultAnalysis;
     const otherAnalysis = loanRepaymentHistory?.otherAnalysis;
 

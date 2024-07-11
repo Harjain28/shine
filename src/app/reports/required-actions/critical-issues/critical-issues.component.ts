@@ -19,6 +19,9 @@ interface Card {
   buttonText: string;
 }
 
+
+
+
 @Component({
   selector: 'app-critical-issues',
   standalone: true,
@@ -130,12 +133,17 @@ export class CriticalIssuesComponent implements OnInit {
     },
   ],
   }
+  actionSummaryData: any;
+  filteredCards: Card[] = this.cardData.Bureau; 
+
 
   ngOnInit(): void {
     this.summary_section = reportStatciData;
     this.summary_section_Data = this.summary_section?.summary_section;
+    console.log(this.ActionReqReportsData, "reportData");
+    this.actionSummaryData = this.ActionReqReportsData?.insights?.actionSummary;
+    console.log(this.actionSummaryData, "Actionsummary");
     this.reportsData = this.ActionReqReportsData?.report;
-
     this.banking = this.reportsData?.bankingSummary;
     this.bureau = this.reportsData?.bureauSummary;
     this.gst = this.reportsData?.gstSummary;
@@ -149,8 +157,107 @@ export class CriticalIssuesComponent implements OnInit {
       this.imgUrlDesktop = compareStage.desktop;
       this.imgUrlMobile = compareStage.mobile;
     }
+
+
+// Usage
+const actionSummaryData = this.ActionReqReportsData?.insights?.actionSummary;
+const filteredInsights = this.concatenateInsights(actionSummaryData);
+
+  console.log(filteredInsights, "filter");
+
+
   }
-  filteredCards: Card[] = this.cardData.Bureau; 
+ 
+
+
+// Function to filter and concatenate insights
+concatenateInsights(actionSummary: any) {
+  let result:any = {
+    creditReport: [],
+    gstHistory: [],
+    bankingHistory: []
+  };
+
+  Object.keys(actionSummary).forEach((key) => {
+    const section = actionSummary[key];
+    if (Array.isArray(section)) {
+      section.forEach((insight: any) => {
+        if (insight.class === "negative" && insight.condition_status) {
+          result[key].push({
+            ...insight,
+            objectName: key
+          });
+        }
+      });
+    } else {
+      Object.keys(section).forEach((subKey) => {
+        const subSection = section[subKey];
+
+        if (Array.isArray(subSection)) {
+          subSection.forEach((insight: any) => {
+            if (insight.class === "negative" && insight.condition_status) {
+              result[key].push({
+                ...insight,
+                objectName: `${key}.${subKey}`
+              });
+            }
+          });
+        } else {
+          Object.keys(subSection).forEach((deepKey) => {
+            const deepSection = subSection[deepKey];
+
+            if (Array.isArray(deepSection)) {
+              deepSection.forEach((insight: any) => {
+                if (insight.class === "negative" && insight.condition_status) {
+                  result[key].push({
+                    ...insight,
+                    objectName: `${key}.${subKey}.${deepKey}`
+                  });
+                }
+              });
+            }
+          });
+        }
+      });
+    }
+  });
+
+  return result;
+}
+
+
+  getFilteredInsights(actionSummaryData: any) {
+    const filteredCreditReport = this.concatenateInsights([
+      ...actionSummaryData?.creditReport?.defaultAnalysis,
+      ...actionSummaryData?.creditReport?.otherAnalysis?.topBanks,
+      ...actionSummaryData?.creditReport?.otherAnalysis?.suitFiledEver,
+      ...actionSummaryData?.creditReport?.bureauScore,
+      ...actionSummaryData?.creditReport?.creditCardUtilization,
+      ...actionSummaryData?.creditReport?.smallLoans,
+      ...actionSummaryData?.creditReport?.creditRemark,
+      ...actionSummaryData?.creditReport?.creditEnquiry,
+    ]);
+  
+    const filteredGstHistory = this.concatenateInsights(actionSummaryData.gstHistory);
+  
+    const filteredBankingHistory = this.concatenateInsights([
+      ...actionSummaryData?.bankingHistory.volatility,
+      ...actionSummaryData?.bankingHistory.minimum_balance,
+      ...actionSummaryData?.bankingHistory.Q_on_Q_dip,
+      ...actionSummaryData?.bankingHistory.count_volatility,
+      ...actionSummaryData?.bankingHistory?.abb,
+      ...actionSummaryData?.bankingHistory?.debt_to_revenue_ratio,
+      ...actionSummaryData?.bankingHistory?.cheque_bounces,
+    ]);
+  
+    return {
+      creditReport: filteredCreditReport,
+      gstHistory: filteredGstHistory,
+      bankingHistory: filteredBankingHistory,
+    };
+  }
+  
+
 
   handleClick(selectedTab: Tab) {
     this.filteredCards = this.cardData[selectedTab.title]; 
