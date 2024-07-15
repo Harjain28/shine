@@ -199,6 +199,7 @@ export const reportStatciData =
         "analysis_lables": [
             "GST Number",
             "Company Name",
+            "Turnover",
             "Current GST Status"
         ],
         "gst_filing_card": {

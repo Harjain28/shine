@@ -163,7 +163,7 @@
               <img src="./assets/LandingPage/checkGreen.svg" alt="">
               <h5>{{ selectedCard?.subheader ? selectedCard?.subheader : 'How to fix this?' }}</h5>
             </div>
-            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula porta auctor. Nulla vitae mattis est. Phasellus tempor accumsan purus, eget egestas felis, vehicula at. Aliquam arcu ligula.</p>
+            <p class="mb-3">{{selectedCard?.description}}</p>
             <ul>
               <li *ngFor="let bullet of selectedCard?.bullets">
                 <span></span>

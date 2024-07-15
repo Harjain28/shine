@@ -58,7 +58,7 @@ export class CriticalIssuesComponent implements OnInit {
       this.updateTabCounts();
       this.filteredCards = this.filteredInsights.creditReport; 
     }
-    console.log( this.filteredCards , "filteredCards");
+    console.log( this.filteredInsights , "filteredInsights");
   }
 
   handleClick(index: number): void {
