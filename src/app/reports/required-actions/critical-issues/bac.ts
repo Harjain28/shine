@@ -56,7 +56,7 @@ export class CriticalIssuesComponent implements OnInit {
   ngOnInit(): void {
     this.reportService.initializeData(reportStatciData, this.ActionReqReportsData);
     const actionSummaryData = this.ActionReqReportsData?.insights?.actionSummary;
-    this.filteredInsights = this.reportService.concatenateInsights(actionSummaryData);
+    // this.filteredInsights = this.reportService.concatenateInsights(actionSummaryData);
 
     if (this.filteredInsights) {
       this.updateTabCounts();

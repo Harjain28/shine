@@ -34,14 +34,14 @@
                                         <h5>Bureau</h5>
                                     </li>
                                     <li>
-                                        <h3>{{bureau?.critical}}</h3>
+                                        <h3>{{reportService.bureau?.critical}}</h3>
                                         <span>High Impact Issues</span>
                                     </li>
                                     <li>
                                         <p>Lorem ipsum dolor sit amet, consectetur</p>
                                     </li>
                                     <li>
-                                        <a class="btn" (click)="toggleDetails()">View Details
+                                        <a class="btn" (click)="toggleDetails(0)">View Details
                                             <img src="./assets/LandingPage/checkBlue.svg" alt="arrow"></a>
                                     </li>
                                 </ul>
@@ -56,14 +56,14 @@
                                         <h5>Banking</h5>
                                     </li>
                                     <li>
-                                        <h3>{{banking?.critical}}</h3>
+                                        <h3>{{reportService.banking?.critical}}</h3>
                                         <span>High Impact Issues</span>
                                     </li>
                                     <li>
                                         <p>Lorem ipsum dolor sit amet, consectetur</p>
                                     </li>
                                     <li>
-                                        <a class="btn" (click)="toggleDetails()">View Details
+                                        <a class="btn" (click)="toggleDetails(1)">View Details
                                             <img src="./assets/LandingPage/checkBlue.svg" alt="arrow"></a>
                                     </li>
                                 </ul>
@@ -78,14 +78,14 @@
                                         <h5>GST</h5>
                                     </li>
                                     <li>
-                                        <h3>{{gst?.critical}}</h3>
+                                        <h3>{{reportService.gst?.critical}}</h3>
                                         <span>High Impact Issues</span>
                                     </li>
                                     <li>
                                         <p>Lorem ipsum dolor sit amet, consectetur</p>
                                     </li>
                                     <li>
-                                        <a class="btn" (click)="toggleDetails()">View Details
+                                        <a class="btn" (click)="toggleDetails(2)">View Details
                                             <img src="./assets/LandingPage/checkBlue.svg" alt="arrow"></a>
                                     </li>
                                 </ul>
@@ -118,7 +118,7 @@
     </div>
 
     <div class="criticalDetails" *ngIf="!showCriticalBoxFirst">
-        <a class="backCalcel" (click)="toggleDetails()">
+        <a class="backCalcel" (click)="toggleDetails(0)">
             <img src="./assets/LandingPage/closeIcon.png" alt="">
         </a>
         <div class="buttonTab">

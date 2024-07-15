@@ -52,7 +52,7 @@ export class CriticalIssuesComponent implements OnInit {
   ngOnInit(): void {
     this.reportService.initializeData(reportStatciData, this.ActionReqReportsData);
     const actionSummaryData = this.ActionReqReportsData?.insights?.actionSummary;
-    this.filteredInsights = this.reportService.concatenateInsights(actionSummaryData);
+    this.filteredInsights = this.reportService.concatenateInsights(actionSummaryData , 'negative');
 
     if (this.filteredInsights) {
       this.updateTabCounts();
@@ -63,7 +63,7 @@ export class CriticalIssuesComponent implements OnInit {
 
   handleClick(index: number): void {
     // Handle tab click
-    this.tabs.forEach((tab, i) => (tab.isActive = i === index));
+    this.reportService.tabs.forEach((tab, i) => (tab.isActive = i === index));
     switch (index) {
       case 0:
         this.filteredCards = this.filteredInsights.creditReport;
@@ -98,8 +98,12 @@ export class CriticalIssuesComponent implements OnInit {
     this.selectedCard = null;
   }
 
-  toggleDetails(): void {
+ 
+  toggleDetails(index: number) {
     this.showCriticalBoxFirst = !this.showCriticalBoxFirst;
+    if (index !== undefined) {
+      this.handleClick(index); 
+    }
   }
 
   customOptions4: OwlOptions = {

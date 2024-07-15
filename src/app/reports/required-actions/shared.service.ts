@@ -130,7 +130,7 @@ export class ReportService {
   }
  
 // Function to filter and concatenate insights
-concatenateInsights(actionSummary: any) {
+concatenateInsights(actionSummary: any, type:any) {
     let result:any = {
       creditReport: [],
       gstHistory: [],
@@ -141,7 +141,7 @@ concatenateInsights(actionSummary: any) {
       const section = actionSummary[key];
       if (Array.isArray(section)) {
         section.forEach((insight: any) => {
-          if (insight.class === "negative" && insight.condition_status) {
+          if (insight.class === type && insight.condition_status) {
             result[key].push({
               ...insight,
               objectName: key
@@ -154,7 +154,7 @@ concatenateInsights(actionSummary: any) {
   
           if (Array.isArray(subSection)) {
             subSection.forEach((insight: any) => {
-              if (insight.class === "negative" && insight.condition_status) {
+              if (insight.class === type && insight.condition_status) {
                 result[key].push({
                   ...insight,
                   objectName: `${key}.${subKey}`
@@ -167,7 +167,7 @@ concatenateInsights(actionSummary: any) {
   
               if (Array.isArray(deepSection)) {
                 deepSection.forEach((insight: any) => {
-                  if (insight.class === "negative" && insight.condition_status) {
+                  if (insight.class === type && insight.condition_status) {
                     result[key].push({
                       ...insight,
                       objectName: `${key}.${subKey}.${deepKey}`

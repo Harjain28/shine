@@ -26,8 +26,8 @@
                         <app-mobile-critical-issues [ActionReqReportsMobileData]='ActionReqReportsData'></app-mobile-critical-issues>
                     </div>
                     <div *ngIf="activeTab === 2" class="boxTabs" style="border: 1px solid #6A2FC2;">
-                        <app-positive-factors></app-positive-factors>
-                        <app-mobile-positive-factors></app-mobile-positive-factors>
+                        <app-positive-factors [ActionReqReportsData]='ActionReqReportsData'></app-positive-factors>
+                        <app-mobile-positive-factors [ActionReqReportsMobileData]='ActionReqReportsData'></app-mobile-positive-factors>
                     </div>
                 </div>
             </div>

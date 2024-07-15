@@ -16,7 +16,7 @@
                         <div class="content">
                             <p>Apply the measures we recommend to improve your level and increase your loan prospects in
                                 3-6 months.</p>
-                            <a href="javascript:void(0)" class="btn">Your Loan Probability <img src="./assets/LandingPage/checkBlue.svg"
+                            <a href="" class="btn">Your Loan Probability <img src="./assets/LandingPage/checkBlue.svg"
                                     alt="arrow"></a>
                         </div>
                     </div>
@@ -34,14 +34,14 @@
                                         <h5>Bureau</h5>
                                     </li>
                                     <li>
-                                        <h3>2</h3>
+                                        <h3>{{reportService.bureau?.positive}}</h3>
                                         <span>Good Jobs</span>
                                     </li>
                                     <li>
                                         <p>Lorem ipsum dolor sit amet, consectetur</p>
                                     </li>
                                     <li>
-                                        <a class="btn" href="javascript:void(0)" (click)="toggleDetails()">View Details
+                                        <a class="btn" (click)="toggleDetails(0)">View Details
                                             <img src="./assets/LandingPage/checkBlue.svg" alt="arrow"></a>
                                     </li>
                                 </ul>
@@ -56,14 +56,14 @@
                                         <h5>Banking</h5>
                                     </li>
                                     <li>
-                                        <h3>2</h3>
+                                        <h3>{{reportService.banking?.positive}}</h3>
                                         <span>Good Jobs</span>
                                     </li>
                                     <li>
                                         <p>Lorem ipsum dolor sit amet, consectetur</p>
                                     </li>
                                     <li>
-                                        <a class="btn" href="javascript:void(0)" (click)="toggleDetails()">View Details
+                                        <a class="btn" (click)="toggleDetails(1)">View Details
                                             <img src="./assets/LandingPage/checkBlue.svg" alt="arrow"></a>
                                     </li>
                                 </ul>
@@ -78,14 +78,14 @@
                                         <h5>GST</h5>
                                     </li>
                                     <li>
-                                        <h3>3</h3>
+                                        <h3>{{reportService.gst?.positive}}</h3>
                                         <span>Good Jobs</span>
                                     </li>
                                     <li>
                                         <p>Lorem ipsum dolor sit amet, consectetur</p>
                                     </li>
                                     <li>
-                                        <a class="btn" href="javascript:void(0)" (click)="toggleDetails()">View Details
+                                        <a class="btn" (click)="toggleDetails(2)">View Details
                                             <img src="./assets/LandingPage/checkBlue.svg" alt="arrow"></a>
                                     </li>
                                 </ul>
@@ -117,100 +117,69 @@
         </div>
     </div>
 
+
+
+
     <div class="criticalDetails" *ngIf="!showCriticalBoxFirst">
-        <a href="javascript:void(0)" class="backCalcel" (click)="toggleDetails()">
+        <a class="backCalcel" (click)="toggleDetails(0)">
             <img src="./assets/LandingPage/closeIcon.png" alt="">
         </a>
         <div class="buttonTab">
             <ul>
-                <li>
-                    <a href="javascript:void(0)" class="btn active"><img
-                            src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/credit_score.png"
-                            alt=""> Bureau <span style="background-color: var(--main2);">8</span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" class="btn"><img
-                            src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/banking_blue.png"
-                            alt=""> Banking <span style="background-color: var(--main2);">4</span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" class="btn"><img
-                            src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/gst.png"
-                            alt=""> GST <span style="background-color: var(--main2);">3</span></a>
-                </li>
+              <li *ngFor="let item of reportService?.tabs; let i = index" (click)="handleClick(i)">
+                <a class="btn" [ngClass]="{'active': item.isActive}">
+                  <img [src]="item.imageUrl" alt=""> {{ item.title }} <span style="background-color: var(--main2);">{{ item.count }}</span>
+                </a>
+              </li>
             </ul>
-        </div>
-        <div class="silderBox">
+          </div>
+          <div class="silderBox">
             <owl-carousel-o [options]="customOptions4">
-                <ng-container>
-                    <ng-template carouselSlide>
-                        <div class="boxSilde">
-                            <h3>1. Your Bureau Score</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu
-                                rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.
-                            </p>
-                            <a style="color: var(--main1);" href="javascript:void(1)" (click)="openModal()"> Know more
-                                <img src="./assets/LandingPage/checkBlue.svg" alt=""></a>
-                        </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <div class="boxSilde">
-                            <h3>2. Underwritten by Banks</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu
-                                rhoncus dapibus.</p>
-                            <a style="color: var(--main1);" href="javascript:void(1)" (click)="openModal()"> Know more
-                                <img src="./assets/LandingPage/checkBlue.svg" alt=""></a>
-                        </div>
-                    </ng-template>
-                </ng-container>
+              <ng-container>
+                <ng-template carouselSlide *ngFor="let slide of filteredCards">
+                  <div class="boxSilde">
+                    <h3>{{ slide?.header }}</h3>
+                    <p>{{ slide?.description }}</p>
+                    <a (click)="openModal(slide)" style="cursor: pointer;">
+                      <img src="./assets/LandingPage/checkGreen.svg" alt=""> 
+                      {{ slide?.subheader ? slide?.subheader : 'How to fix this?' }}
+                    </a>
+                  </div>
+                </ng-template>
+              </ng-container>
             </owl-carousel-o>
-        </div>
+          </div>
+          
     </div>
 
     <!-- && !showKnowMoreModal" -->
-
     <div class="KnowMoreModal" *ngIf="showKnowMoreModal">
         <div class="backgroundModal"></div>
         <div class="col-lg-6 m-auto">
-            <div class="modalBody">
-                <a href="javascript:void(0)" class="backCalcel" (click)="closeModal()">
-                    <img src="./assets/LandingPage/closeIcon.png" alt="">
-                </a>
-                <h3>2. Underwritten by Banks</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus.
-                </p>
-                <div class="content">
-                    <img src="./assets/LandingPage/checkGreen.svg" alt="">
-                    <h5>How to fix this</h5>
-                </div>
-                <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula porta auctor.
-                    Nulla vitae mattis est. Phasellus tempor accumsan purus, eget egestas felis, vehicula at. Aliquam
-                    arcu ligula.</p>
-                <ul>
-                    <li>
-                        <span></span>
-                        Laculis sed bibendum ut, faucibus
-                    </li>
-                    <li>
-                        <span></span>
-                        Laculis sed bibendum ut, faucibus
-                    </li>
-                    <li>
-                        <span></span>
-                        Laculis sed bibendum ut, faucibus
-                    </li>
-                    <li>
-                        <span></span>
-                        Laculis sed bibendum ut, faucibus
-                    </li>
-                </ul>
-
-                <a href="javascript:void(0)" class="btn">
-                    Know more
-                    <img src="./assets/LandingPage/checkBlue.svg" alt="">
-                </a>
+          <div class="modalBody">
+            <a class="backCalcel" (click)="closeModal()">
+              <img src="./assets/LandingPage/closeIcon.png" alt="">
+            </a>
+            <h3>{{ selectedCard?.header }}</h3>
+            <p>{{ selectedCard?.description }}</p>
+            <div class="content">
+              <img src="./assets/LandingPage/checkGreen.svg" alt="">
+              <h5>{{ selectedCard?.subheader ? selectedCard?.subheader : 'How to fix this?' }}</h5>
             </div>
+            <p class="mb-3">{{selectedCard?.description}}</p>
+            <ul>
+              <li *ngFor="let bullet of selectedCard?.bullets">
+                <span></span>
+               {{bullet}}
+              </li>
+            </ul>
+            <a class="btn">
+              Know more
+              <img src="./assets/LandingPage/checkBlue.svg" alt="">
+            </a>
+          </div>
         </div>
-    </div>
+    
+</div>
 
 </div>

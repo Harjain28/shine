@@ -49,7 +49,7 @@ export class MobileCriticalIssuesComponent implements OnInit {
   ngOnInit(): void {
     this.reportService.initializeData(reportStatciData, this.ActionReqReportsMobileData);
     const actionSummaryData = this.ActionReqReportsMobileData?.insights?.actionSummary;
-    this.filteredInsights = this.reportService.concatenateInsights(actionSummaryData);
+    this.filteredInsights = this.reportService.concatenateInsights(actionSummaryData, 'negative');
 
     if (this.filteredInsights) {
       this.updateTabCounts();
@@ -72,7 +72,7 @@ export class MobileCriticalIssuesComponent implements OnInit {
 
   handleClick(index: number): void {
     this.toggleDetails()
-    this.tabs.forEach((tab, i) => (tab.isActive = i === index));
+    this.reportService.tabs.forEach((tab, i) => (tab.isActive = i === index));
     switch (index) {
       case 0:
         this.filteredCards = this.filteredInsights.creditReport;
