@@ -4,19 +4,19 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="boxLevel">
-                    <h3>How to Get to the Next Level</h3>
+                    <h3>{{reportService.summary_section_Data?.ranking_card?.header}}</h3>
 
                     <img class="images"
-                        src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Level-3.png"
-                        alt="">
+                        src={{reportService.imgUrlDesktop}}>
 
                     <div class="applyBox">
                         <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png"
                             alt="">
                         <div class="content">
-                            <p>Apply the measures we recommend to improve your level and increase your loan prospects in
-                                3-6 months.</p>
-                            <a href="" class="btn">Your Loan Probability <img src="./assets/LandingPage/checkBlue.svg"
+                            <h5>{{reportService.summary_section_Data?.ranking_card?.infocard_header}}</h5>
+                            <p>{{reportService.summary_section_Data?.ranking_card?.infocard_body}}</p>
+
+                            <a class="btn">Your Loan Probability <img src="./assets/LandingPage/checkBlue.svg"
                                     alt="arrow"></a>
                         </div>
                     </div>
@@ -34,7 +34,8 @@
                                         <h5>Bureau</h5>
                                     </li>
                                     <li>
-                                        <h3>{{reportService.bureau?.positive}}</h3>
+                                        <!-- <h3>{{reportService.bureau?.positive}}</h3> -->
+                                        <h3>{{this.filteredInsights.creditReport.length}}</h3>
                                         <span>Good Jobs</span>
                                     </li>
                                     <li>
@@ -56,7 +57,8 @@
                                         <h5>Banking</h5>
                                     </li>
                                     <li>
-                                        <h3>{{reportService.banking?.positive}}</h3>
+                                        <!-- <h3>{{reportService.banking?.positive}}</h3> -->
+                                        <h3>{{this.filteredInsights.bankingHistory.length}}</h3>
                                         <span>Good Jobs</span>
                                     </li>
                                     <li>
@@ -78,7 +80,8 @@
                                         <h5>GST</h5>
                                     </li>
                                     <li>
-                                        <h3>{{reportService.gst?.positive}}</h3>
+                                        <!-- <h3>{{reportService.gst?.positive}}</h3> -->
+                                        <h3>{{this.filteredInsights.gstHistory.length}}</h3>
                                         <span>Good Jobs</span>
                                     </li>
                                     <li>
@@ -116,6 +119,7 @@
             </div>
         </div>
     </div>
+
 
 
 

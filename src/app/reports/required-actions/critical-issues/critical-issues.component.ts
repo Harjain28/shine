@@ -99,7 +99,7 @@ export class CriticalIssuesComponent implements OnInit {
   }
 
  
-  toggleDetails(index: number) {
+  toggleDetails(index?: number) {
     this.showCriticalBoxFirst = !this.showCriticalBoxFirst;
     if (index !== undefined) {
       this.handleClick(index); 
