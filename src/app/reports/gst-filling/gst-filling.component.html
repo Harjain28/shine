@@ -28,7 +28,8 @@
                     </li>
                     <li>
                       <h5>{{gstSectionHeadings?.analysis_lables[3]}}</h5>
-                      <button>{{gstDetails?.currentGstStatus}}</button>
+                      <button [ngClass]= "{'cancelClass': gstDetails?.currentGstStatus !== 'Active'}">
+                        {{gstDetails?.currentGstStatus}}</button>
                     </li>
                   </ul>
                 </div>
@@ -38,7 +39,7 @@
                 <div class="calendarBox">
                   <h3>{{gstSectionHeadings?.gst_filing_card?.header}}</h3>
                   <ul>
-                    <li *ngFor="let month of monthArray;let i = index" [ngClass]="{'active': isSelectedMonth(month), 'blur': !isSelectedMonth(month) && i >= monthArray.indexOf(monthName)}">{{ month }}</li>
+                    <li *ngFor="let month of monthArray;let i = index" [ngClass]="{'active': (isSelectedMonth(month) && gstDetails?.currentGstStatus === 'Active'), 'blur': !isSelectedMonth(month) && i >= monthArray.indexOf(monthName)}">{{ month }}</li>
                   </ul>
                   <div class="missingPayment">
                     {{missedGstFilings?.header}}

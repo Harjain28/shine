@@ -131,7 +131,7 @@ export class CriticalIssuesComponent implements OnInit {
     autoplayTimeout: 8000,
     autoplaySpeed: 1500,
     navText: [
-      "<span><img class='navTxtImg' src='./assets/images/homeImage/right-arrow.svg'></span>",
+      "<span><img class='navTxtImg' src='./assets/images/homeImage/left-arrow.svg'></span>",
       "<span> <img class='navTxtImg' src='./assets/images/homeImage/right-arrow.svg'></span>",
     ],
     responsive: {

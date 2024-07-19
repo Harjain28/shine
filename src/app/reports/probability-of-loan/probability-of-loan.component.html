@@ -214,10 +214,10 @@
     </div>
   </div>
   <div class="mt-4">
-  <div class="ApplyNow" *ngIf="router.url !== '/in/report_model1' && showApplyButton && visibleOffers" (click)="redirectToMSME()">
+  <div class="ApplyNow" *ngIf="router.url !== '/in/report_model1' && showApplyButton" (click)="redirectToMSME()">
     <a class="btn">Apply Now</a>
   </div>
-  <div class="ApplyNow"  *ngIf="router.url === '/in/report_model1' && visibleOffers" (click)="redirectToPricing()">
+  <div class="ApplyNow"  *ngIf="router.url === '/in/report_model1'" (click)="redirectToPricing()">
     <a class="btn">Check Pricing</a>
   </div>
 </div>
