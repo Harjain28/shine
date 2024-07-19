@@ -1,20 +1,20 @@
-<div class="mhidden">
+<div class="mhidden" *ngIf="filteredInsights">
 
     <div class="criticalBoxFrist" *ngIf="showCriticalBoxFirst">
         <div class="row">
             <div class="col-lg-4">
                 <div class="boxLevel">
-                    <h3>{{reportService.summary_section_Data?.ranking_card?.header}}</h3>
+                    <!-- <h3>{{reportService.summary_section_Data?.ranking_card?.header}}</h3> -->
 
-                    <img class="images"
-                        src={{reportService.imgUrlDesktop}}>
+                    <!-- <img class="images"
+                        src={{reportService.imgUrlDesktop}}> -->
 
                     <div class="applyBox">
                         <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png"
                             alt="">
                         <div class="content">
-                            <h5>{{reportService.summary_section_Data?.ranking_card?.infocard_header}}</h5>
-                            <p>{{reportService.summary_section_Data?.ranking_card?.infocard_body}}</p>
+                            <h5>{{reportService.summary_section_Data?.Next_Level?.title}}</h5>
+                            <p>{{reportService.summary_section_Data?.Next_Level?.copy}}</p>
 
                             <a class="btn">Your Loan Probability <img src="./assets/LandingPage/checkBlue.svg"
                                     alt="arrow"></a>
@@ -31,7 +31,8 @@
                                     <li>
                                         <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/credit_score.png"
                                             alt="">
-                                        <h5>Bureau</h5>
+                                        <h5>{{reportService.summary_section_Data?.bureau_card?.header}}</h5>
+                                        
                                     </li>
                                     <li>
                                         <!-- <h3>{{reportService.bureau?.positive}}</h3> -->
@@ -39,7 +40,7 @@
                                         <span>Good Jobs</span>
                                     </li>
                                     <li>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                        <p>{{reportService.summary_section_Data?.bureau_card?.description}}</p>
                                     </li>
                                     <li>
                                         <a class="btn" (click)="toggleDetails(0)">View Details
@@ -54,7 +55,7 @@
                                     <li>
                                         <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/banking_blue.png"
                                             alt="">
-                                        <h5>Banking</h5>
+                                            <h5>{{reportService.summary_section_Data?.banking_card?.header}}</h5>
                                     </li>
                                     <li>
                                         <!-- <h3>{{reportService.banking?.positive}}</h3> -->
@@ -62,7 +63,7 @@
                                         <span>Good Jobs</span>
                                     </li>
                                     <li>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                        <p>{{reportService.summary_section_Data?.banking_card?.description}}</p>
                                     </li>
                                     <li>
                                         <a class="btn" (click)="toggleDetails(1)">View Details
@@ -77,7 +78,7 @@
                                     <li>
                                         <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/gst.png"
                                             alt="">
-                                        <h5>GST</h5>
+                                            <h5>{{reportService.summary_section_Data?.gst_card?.header}}</h5>
                                     </li>
                                     <li>
                                         <!-- <h3>{{reportService.gst?.positive}}</h3> -->
@@ -85,7 +86,7 @@
                                         <span>Good Jobs</span>
                                     </li>
                                     <li>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                        <p>{{reportService.summary_section_Data?.gst_card?.description}}</p>
                                     </li>
                                     <li>
                                         <a class="btn" (click)="toggleDetails(2)">View Details
@@ -170,7 +171,7 @@
               <img src="./assets/LandingPage/checkGreen.svg" alt="">
               <h5>{{ selectedCard?.subheader ? selectedCard?.subheader : 'How to fix this?' }}</h5>
             </div>
-            <p class="mb-3">{{selectedCard?.description}}</p>
+            <!-- <p class="mb-3">{{selectedCard?.description}}</p> -->
             <ul>
               <li *ngFor="let bullet of selectedCard?.bullets">
                 <span></span>

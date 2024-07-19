@@ -8,6 +8,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { MaterialModule } from 'src/app/material.module';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
+import { Router } from '@angular/router';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-probability-of-loan',
@@ -70,8 +72,9 @@ export class ProbabilityOfLoanComponent {
   currProbData: any;
   probabilityData: any[] = [];
   staticData: any;
+  showApplyButton: boolean = false;
 
-  constructor() {}
+  constructor(public router:Router, private navigationService:NavigationService) {}
 
   ngOnInit(): void {
     this.data = this.probOfLoanData;
@@ -83,17 +86,24 @@ export class ProbabilityOfLoanComponent {
         (item2: { lender: string }) => item1.key === item2.lender
       );
       if (matchingItem) {
-        this.probabilityData.push({
-          ...item1,
-          ...matchingItem,
-        });
+        const combinedItem = { ...item1, ...matchingItem };
+        this.probabilityData.push(combinedItem);
+        if ((combinedItem.currentProbability * 100) > 20) {
+          this.showApplyButton = true;
+        }
       }
+
     });
   }
 
   redirectToMSME() {
     window.location.href = 'https://www.creditenable.com/in/sme-business-loan/unsecured-business-loans/msme-sme-business-loans-india-v1';
   }
+  redirectToPricing() {
+    this.navigationService.setLinkClicked(true);
+    this.router.navigate(['/in/pricing_group']);
+  }
+
 
   moreOffers() {
     this.visibleOffers = true;

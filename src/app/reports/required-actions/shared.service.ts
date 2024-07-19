@@ -111,22 +111,12 @@ export class ReportService {
 
   initializeData(reportStatciData: any, ActionReqReportsData: any) {
     this.summary_section = reportStatciData;
-    this.summary_section_Data = this.summary_section?.summary_section;
+    this.summary_section_Data = this.summary_section?.fold2_summary;
     this.actionSummaryData = ActionReqReportsData?.insights?.actionSummary;
     this.reportsData = ActionReqReportsData?.report;
     this.banking = this.reportsData?.bankingSummary;
     this.bureau = this.reportsData?.bureauSummary;
     this.gst = this.reportsData?.gstSummary;
-
-    this.rankingSection = reportStatciData?.summary_section;
-    const compareStage = this.rankingSection?.ranking_card?.ranking_images.find(
-      (image: { stage: any }) => image.stage === this.reportsData?.currentStage
-    );
-    if (compareStage) {
-      this.imgUrlDesktop = compareStage.desktop;
-      this.imgUrlMobile = compareStage.mobile;
-    }
-
   }
  
 // Function to filter and concatenate insights

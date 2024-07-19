@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SemiDoughnutComponent } from 'src/app/charts/semi-doughnut/semi-doughnut.component';
 import { DoughnutComponent } from 'src/app/charts/doughnut/doughnut.component';
@@ -37,8 +37,7 @@ export class CreditReportComponent {
   @ViewChild('scrollTargetSection1') scrollTargetSection1!: ElementRef;
   @ViewChild('scrollTargetSection2') scrollTargetSection2!: ElementRef;
 
-
-
+  @Output() headerMatchEvent = new EventEmitter<string>();
 
   isVisible = false;
   reportDate: any;
@@ -133,7 +132,7 @@ export class CreditReportComponent {
 
 
 
-  constructor(private dialog: MatDialog, private el: ElementRef, private router: Router) { }
+  constructor(private dialog: MatDialog, private el: ElementRef, private router: Router, private cdr:ChangeDetectorRef) { }
 
   customOptions4: OwlOptions = {
     loop: false,
@@ -181,13 +180,41 @@ export class CreditReportComponent {
     this.openDialog();
   }
 
+  setExpandSection(header: string) {
+    console.log(`Setting expandSection for header: ${header}`);
+    const loanRepayment = [
+      'Disputes with Lenders',
+      'Underwritten By Banks'
+    ];
+    const activeDebt = [
+      'Credit Card Utilisation',
+      'Micro Loans',
+      'Remarks on Report'
+    ];
+
+    if (loanRepayment.includes(header)) {
+      this.expandCurrentCreditSection = false;
+      this.expandSection = true;
+      this.expandBlocks = true;
+    } else if(activeDebt.includes(header)){
+      this.expandSection = false;
+      this.expandBlocks = true;
+      this.expandCurrentCreditSection = true;
+    } else {
+      this.expandSection = false;
+     this.expandCurrentCreditSection = false;
+     this.expandBlocks = false;
+    }
+   
+   
+     this.cdr.detectChanges();
+  }
+
   ngOnInit(): void {
     this.reportsData = this.creditReportsData;
 
     this.creditReportData = this.reportsData?.report?.creditReport;
     this.angle = this.creditReportData?.bureauScore?.score;
-
-
     this.getPastYears()
 
     if (this.creditReportData?.loanRepaymentHistory) {
@@ -265,10 +292,24 @@ export class CreditReportComponent {
       darkerShadeColor: ['#abd214', '#10b18d']
 
     };
-
+    this.headerMatchEvent.subscribe(header => {
+      this.checkHeaderAndExpand(header);
+    });
     this.getInsights();
 
   }
+
+  checkHeaderAndExpand(header: string) {
+    console.log(header, "loan");
+    const targetHeaders = ['Loan Repayment History', 'Underwritten By Banks', 'Disputes with Lenders']; 
+    const matches = targetHeaders.some(keyword => header.includes(keyword));
+    if (matches) {
+      this.expandSection = true;
+    } else {
+      this.expandSection = false;
+    }
+  }
+  
 
   roundValue(value: number): number {
     return Math.round(value);

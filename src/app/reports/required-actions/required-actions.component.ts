@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PositiveFactorsComponent } from './positive-factors/positive-factors.component';
 import { CriticalIssuesComponent } from './critical-issues/critical-issues.component';
@@ -22,7 +22,8 @@ import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 export class RequiredActionsComponent implements OnInit {
   @ViewChild('criticalSection') criticalSection!: ElementRef;
   @ViewChild('positiveSection') positiveSection!: ElementRef;
-
+  @Output() scrollToSectionEvent = new EventEmitter<string>();
+  
   activeTab: number = 1;
   summary_section:any;
   summary_section_Data: any;
@@ -39,6 +40,9 @@ export class RequiredActionsComponent implements OnInit {
 
   @Input() ActionReqReportsData: any;
 
+  constructor(private renderer:Renderer2) {
+
+  }
   ngOnInit(): void {
     this.summary_section = reportStatciData;
     this.summary_section_Data = this.summary_section?.summary_section;
@@ -57,12 +61,28 @@ export class RequiredActionsComponent implements OnInit {
       this.imgUrlDesktop = compareStage.desktop;
       this.imgUrlMobile = compareStage.mobile;
     }
+    this.scrollToSectionEvent.subscribe((header: string) => {
+      this.scrollToSections(header);
+    });
+  }
+
+  onCriticalSectionClick(header: string) {
+    this.scrollToSectionEvent.emit(header);
   }
 
   setActiveTab(tabIndex: number): void {
     this.activeTab = tabIndex;
   }
 
+scrollToSections(header: string) {
+  const section = document.getElementById(header);
+
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    console.error(`Section with ID "${header}" not found.`);
+  }
+}
   scrollToSection(section: string): void {
     let targetSection: HTMLElement | null = null;
     if (section === 'critical') {

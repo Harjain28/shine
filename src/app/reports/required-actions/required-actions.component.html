@@ -21,7 +21,7 @@
                         </button>
                     </div>
                     <div *ngIf="activeTab === 1" class="boxTabs" style="border: 1px solid #FF7B24;">
-                        <app-critical-issues  [ActionReqReportsData]='ActionReqReportsData'></app-critical-issues>
+                        <app-critical-issues  (scrollToSectionEvent)="onCriticalSectionClick($event)" [ActionReqReportsData]='ActionReqReportsData'></app-critical-issues>
                         <app-mobile-critical-issues [ActionReqReportsMobileData]='ActionReqReportsData'></app-mobile-critical-issues>
                     </div>
                     <div *ngIf="activeTab === 2" class="boxTabs" style="border: 1px solid #6A2FC2;">

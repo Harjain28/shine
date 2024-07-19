@@ -43,9 +43,9 @@
                       </div>
 
                     </div>
-                    <ng-container *ngIf="(data.currentProbability*100) > 20">
+                    <!-- <ng-container *ngIf="(data.currentProbability*100) > 20">
                     <button class="btn" (click)="redirectToMSME()">Apply Now</button>
-                    </ng-container>
+                    </ng-container> -->
                   </td>
                   <td style="border-radius: 0px 20px 20px 0px;">
                     <!-- <span style="color: #12BA9B;">Loan : <b>{{data.potential_max_loan.toLocaleString('en-IN')}}</b>
@@ -85,9 +85,9 @@
                       </div>
 
                     </div> 
-                    <ng-container *ngIf="(data.currentProbability*100) > 20">
+                    <!-- <ng-container *ngIf="(data.currentProbability*100) > 20">
                     <button class="btn" (click)="redirectToMSME()">Apply Now</button>
-                  </ng-container>
+                  </ng-container> -->
                   </td>
                   <td style="border-radius: 0px 20px 20px 0px;">
                     <!-- <span style="color: #12BA9B;">Loan : <b>{{data.potential_max_loan.toLocaleString('en-IN')}}</b>
@@ -213,4 +213,13 @@
       </div>
     </div>
   </div>
+  <div class="mt-4">
+  <div class="ApplyNow" *ngIf="router.url !== '/in/report_model1' && showApplyButton && visibleOffers" (click)="redirectToMSME()">
+    <a class="btn">Apply Now</a>
+  </div>
+  <div class="ApplyNow"  *ngIf="router.url === '/in/report_model1' && visibleOffers" (click)="redirectToPricing()">
+    <a class="btn">Check Pricing</a>
+  </div>
+</div>
+
 </div>

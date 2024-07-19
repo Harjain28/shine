@@ -53,6 +53,7 @@ export class PositiveFactorsComponent {
   ngOnInit(): void {
     this.reportService.initializeData(reportStatciData, this.ActionReqReportsData);
     const actionSummaryData = this.ActionReqReportsData?.insights?.actionSummary;
+    if (actionSummaryData) {
     this.filteredInsights = this.reportService.concatenateInsights(actionSummaryData , 'positive');
 
     if (this.filteredInsights) {
@@ -60,6 +61,7 @@ export class PositiveFactorsComponent {
       this.filteredCards = this.filteredInsights.creditReport; 
     }
     console.log( this.filteredInsights , "filteredInsights");
+  }
   }
 
   handleClick(index: number): void {

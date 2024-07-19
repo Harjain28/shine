@@ -77,6 +77,27 @@ export const reportStatciData =
         }
         
     },
+    
+    "fold2_summary": {
+        "bureau_card": {
+            "header": "Bureau",
+            "description": "Your creditworthiness gauge, reflecting past credit behavior."
+        },
+        "banking_card": {
+            "header": "Banking History",
+            "description": "Shows business cash flow patterns, critical for loan assessment."
+        },
+        "gst_card": {
+            "header": "GST Filings",
+            "description": "Reflects tax filing accuracy, showcasing financial responsibility."
+        },
+       "Next_Level": {
+        "title": "How to Get to the Next Level",
+        "copy": "Implement our strategies to improve your creditworthiness and loan prospects within 3-6 months. Demonstrate financial stability and responsibility to become a more attractive candidate for funding."
+    }
+    },
+
+
     "credit_report_section": {
         "header": "Your Credit Report",
         "subheader": "Dive into your credit and repayment history, and loan utilisation to see how lenders perceive your credit profile.",
@@ -199,7 +220,7 @@ export const reportStatciData =
         "analysis_lables": [
             "GST Number",
             "Company Name",
-            "Banking Turnover",
+            "banking Turnover",
             "Current GST Status"
         ],
         "gst_filing_card": {
@@ -231,7 +252,7 @@ export const reportStatciData =
                     }
                 },
                 "quarterly_dip": {
-                    "header": "Quarter-on-Quarter Performance",
+                    "header": "Quarter-on-Quarter Performanc",
                     "recent_dip": {
                         "header": "Recent Dips (If Any)"
                     },
@@ -557,7 +578,5 @@ export const reportStatciData =
         "potential_roi": 0.18,
         "key": "IIFL"
         },
-    ],
-    "zero_debt_imageURL" : 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/zero_debt.png',
-
+    ]
 }

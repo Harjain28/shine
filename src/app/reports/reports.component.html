@@ -98,11 +98,11 @@
 
   <!-- required-action -->
 
-  <app-required-actions #requiredActions [ActionReqReportsData]="reportsData"></app-required-actions>
+  <app-required-actions #requiredActions  (scrollToSectionEvent)="scrollToSectionEvent.emit($event)" [ActionReqReportsData]="reportsData"></app-required-actions>
 
   <!-- Credit-Report-Section Start -->
   <ng-container *ngIf="!isShowNoBureau">
-  <app-credit-report [creditReportsData]="reportsData"></app-credit-report>
+  <app-credit-report (headerMatchEvent)="scrollToSections($event)" [creditReportsData]="reportsData" (headerMatchEvent)="scrollToSections($event)"></app-credit-report>
 </ng-container>
   <!-- Two-plus-Section End -->
 <ng-container *ngIf="isShowNoBureau">
@@ -145,7 +145,7 @@
   <!-- <app-no-gst></app-no-gst> -->
 
   <!-- BankingBalance-Section Start -->
-  <app-banking-business [bankingBusinessData]="reportsData"></app-banking-business>
+  <app-banking-business  [bankingBusinessData]="reportsData"></app-banking-business>
   <!-- BankingBalance-Section End -->
 
   <!-- ActionImprove-Section Start -->
@@ -153,7 +153,7 @@
   <!-- ActionImprove-Section End -->
 
   <!-- ProbabilityLoan-Section Start -->
-  <app-probability-of-loan  [probOfLoanData]="reportsData"></app-probability-of-loan>
+  <app-probability-of-loan  id="Loan Probability" [probOfLoanData]="reportsData"></app-probability-of-loan>
   <!-- ProbabilityLoan-Section End -->
 
   <!-- faqsData-Section Start -->

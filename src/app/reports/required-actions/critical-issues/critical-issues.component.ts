@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData'; // Adjust path as per your file structure
@@ -46,12 +46,17 @@ export class CriticalIssuesComponent implements OnInit {
   filteredCards: Card[] = []; 
   filteredInsights: any;
   selectedCard: Card | null = null;
-
-  constructor(public reportService: ReportService) {}
+  @Output() scrollToSectionEvent = new EventEmitter<string>();
+  
+  constructor(public reportService: ReportService, private renderer: Renderer2) {}
 
   ngOnInit(): void {
+    if (this.ActionReqReportsData) {
     this.reportService.initializeData(reportStatciData, this.ActionReqReportsData);
+    }
+
     const actionSummaryData = this.ActionReqReportsData?.insights?.actionSummary;
+    if (actionSummaryData) {
     this.filteredInsights = this.reportService.concatenateInsights(actionSummaryData , 'negative');
 
     if (this.filteredInsights) {
@@ -60,9 +65,16 @@ export class CriticalIssuesComponent implements OnInit {
     }
     console.log( this.filteredInsights , "filteredInsights");
   }
+  }
+
+
+  onCriticalClick(header: any) {
+    this.scrollToSectionEvent.emit(header);
+  }
 
   handleClick(index: number): void {
     // Handle tab click
+    if (this.filteredInsights) {
     this.reportService.tabs.forEach((tab, i) => (tab.isActive = i === index));
     switch (index) {
       case 0:
@@ -78,6 +90,7 @@ export class CriticalIssuesComponent implements OnInit {
         this.filteredCards = [];
         break;
     }
+  }
   }
 
   updateTabCounts(): void {

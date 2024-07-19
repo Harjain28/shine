@@ -2,6 +2,8 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
+  EventEmitter,
+  Renderer2,
   ViewChild,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -87,6 +89,7 @@ import { cust40Fixed2Json } from '../JsonFiles/9874673188-fixed2';
 import { RequiredActionsComponent } from './required-actions/required-actions.component';
 import { report_model1 } from '../JsonFiles/report_model1';
 import { NavigationService } from '../services/navigation.service';
+import { ReportService } from './required-actions/shared.service';
 
 @Component({
   selector: 'app-reports',
@@ -168,8 +171,11 @@ export class ReportsComponent {
   gstDetails: any;
   bureauScore: any;
   @ViewChild('requiredActions') requiredActions!: RequiredActionsComponent;
+  scrollToSectionEvent = new EventEmitter<string>();
+  @ViewChild('sectionsContainer', { static: false }) sectionsContainer!: ElementRef;
+  @ViewChild(CreditReportComponent) creditReportComponent!: CreditReportComponent;
 
-  constructor(private api: ApiService, private cdr: ChangeDetectorRef, public router: Router,private navigationService:NavigationService) { }
+  constructor(private api: ApiService,private reportService:ReportService, private renderer: Renderer2 ,private cdr: ChangeDetectorRef, public router: Router,private navigationService:NavigationService) { }
 
   ngOnInit(): void {
     // if(!this.storage.isToken())
@@ -211,12 +217,22 @@ export class ReportsComponent {
   this.headerSection = reportStatciData?.header_section;
   this.disclaimer = reportStatciData?.disclaimer?.description;
 
-  const { bankingSummary, bureauSummary, gstSummary } = reportData?.report;
-  this.postiveTotal =
-    bankingSummary.positive + bureauSummary.positive + gstSummary.positive;
-  this.criticalTotal =
-    bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
+  // const { bankingSummary, bureauSummary, gstSummary } = reportData?.report;
+  // this.postiveTotal =
+  //   bankingSummary.positive + bureauSummary.positive + gstSummary.positive;
+  // this.criticalTotal =
+  //   bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
 
+  const actionSummaryData = this.reportData?.insights?.actionSummary;
+  console.log(this.reportData, "actionSummaryDatas");
+  console.log(actionSummaryData, "actionSummaryDatas");
+  if(actionSummaryData) {
+  const filteredCritical = this.reportService.concatenateInsights(actionSummaryData , 'negative');
+  const filteredPositive = this.reportService.concatenateInsights(actionSummaryData , 'positive');
+  console.log(filteredPositive, "filteredPositive");
+  this.criticalTotal = filteredCritical?.creditReport.length + filteredCritical?.bankingHistory.length + filteredCritical?.gstHistory.length;
+  this.postiveTotal = filteredPositive?.creditReport.length + filteredPositive?.bankingHistory.length + filteredPositive?.gstHistory.length;
+  }
   const compareStage = this.headerSection?.background.find(
     (image: { stage: any }) => image.stage === reportData?.report?.currentStage
   );
@@ -276,9 +292,39 @@ export class ReportsComponent {
       this.updateProgress();
     }, 100);
 
+    this.scrollToSectionEvent.subscribe(header =>
+       this.scrollToSections(header));
+
     this.cdr.detectChanges();
   }
 
+  scrollToSections(header: string) {
+    console.log('Header received:', header);
+    if (this.creditReportComponent) {
+      this.creditReportComponent.setExpandSection(header);
+    }
+
+    setTimeout(() => {
+      // Ensure the section is now available in the DOM
+      const section = document.getElementById(header);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        setTimeout(() => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+            console.log('Section is in view.');
+          } else {
+            console.error('Section is not in view.');
+          }
+        }, 500);
+
+      } else {
+        console.error(`Section with ID "${header}" not found.`);
+      }
+    }, 100);
+  }
+  
   getChartsData() {
     this.ChartsData = ChartsJsonData;
   }
@@ -358,6 +404,13 @@ export class ReportsComponent {
       this.reportsData = reportsDataMap[fileName] || this.reportData;
     }
     console.log(this.reportsData, "reportsData");
+    const actionSummaryData = this.reportsData?.insights?.actionSummary;
+    if(actionSummaryData) {
+    const filteredCritical = this.reportService.concatenateInsights(actionSummaryData , 'negative');
+    const filteredPositive = this.reportService.concatenateInsights(actionSummaryData , 'positive');
+    this.criticalTotal = filteredCritical?.creditReport.length + filteredCritical?.bankingHistory.length + filteredCritical?.gstHistory.length;
+    this.postiveTotal = filteredPositive?.creditReport.length + filteredPositive?.bankingHistory.length + filteredPositive?.gstHistory.length;
+    }
     this.getReportData(this.reportsData);
 
     this.gstDetails = this.reportsData?.report?.gstHistory;
