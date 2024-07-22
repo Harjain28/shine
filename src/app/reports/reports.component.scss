@@ -4782,4 +4782,66 @@
             }
         }
     }
+
+    
+
+    .silderArrow{
+
+        ::ng-deep{
+
+            .owl-nav {
+                position: absolute;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                margin-top: 3px!important;
+            }
+
+            .owl-nav .owl-next {
+                background-color: transparent!important;
+                font-weight: 600;
+                color: var(--main1)!important;
+                border: none;
+                margin: 0 24px!important;
+                display: flex!important;
+                align-items: center;
+            }
+
+            .owl-nav .owl-prev {
+                background-color: transparent!important;
+                font-weight: 600;
+                color: var(--main1)!important;
+                border: none;
+                margin: 0 24px!important;
+                display: flex!important;
+                align-items: center;
+            }
+
+            .owl-nav .disabled {
+                opacity: 0 !important;
+            }
+            .owl-nav .owl-prev img {
+                width: 7px;
+                margin-right: 8px;
+                rotate: -180deg;
+            }
+            .owl-nav .owl-prev span {
+                display: flex;
+                align-items: center;
+                font-family: Poppins!important;
+            }
+            .owl-nav .owl-next span {
+                display: flex;
+                align-items: center;
+                font-family: Poppins!important;
+            }
+            .owl-nav .owl-next img {
+                width: 7px;
+                margin-left: 8px;
+            }
+            .owl-dots {
+                margin-top: 10px;
+            }
+        }
+    }
 }
