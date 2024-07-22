@@ -189,17 +189,15 @@ export class CreditReportComponent {
     const activeDebt = [
       'Credit Card Utilisation',
       'Micro Loans',
-      'Remarks on Report'
+      'Remarks on Report',
+      'Unsecure to Secured Debt',
+      'Credit Enquiries'
     ];
 
     if (loanRepayment.includes(header)) {
-      this.expandCurrentCreditSection = false;
-      this.expandSection = true;
-      this.expandBlocks = true;
+      this.expand();
     } else if(activeDebt.includes(header)){
-      this.expandSection = false;
-      this.expandBlocks = true;
-      this.expandCurrentCreditSection = true;
+       this.expandCurrentCredit();
     } else {
       this.expandSection = false;
      this.expandCurrentCreditSection = false;

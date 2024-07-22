@@ -11,7 +11,7 @@
           <p>{{affordability_section?.subheader}}</p>
         </div>
       </div>
-      <div class="col-lg-12 col-md-12 col-sm-12 mt-4 padding30" style="transition: .5s;" *ngIf="expandBusinessSection" >
+      <div class="col-lg-12 col-md-12 col-sm-12 mt-4 padding30" style="transition: .5s;" *ngIf="expandBusinessSection">
         <div class="businessTurnover mb-3">
           <div class="plus" (click)="minimizeBusinessBanking()">
             <span>
@@ -49,10 +49,10 @@
             </ul> -->
             <p>{{affordability_section?.business_turnover_expanded?.description}}</p>
           </div>
-          <div class="defaultContent">
+          <div class="defaultContent" id="Business Stability Analysis">
             <h3>{{affordability_section?.business_turnover_expanded?.volatility_analysis?.header}}</h3>
           </div>
-          <div class="row">
+          <div class="row" id="Quarter on Quarter Dip">
             <div class="col-lg-6">
               <div class="valatilityBox backgrundColor" *ngIf = "volatility">
                 <h3 class="mb-1">{{affordability_section?.business_turnover_expanded?.volatility_analysis?.observations?.header}}</h3>
@@ -137,7 +137,7 @@
             </div>
           </div>
 
-          <div class="defaultContent">
+          <div class="defaultContent" id="Credit Count Analysis">
             <h3>{{affordability_section?.business_turnover_expanded?.credit_count?.header}}</h3>
           </div>
           <div class="row">
@@ -270,7 +270,7 @@
               <img class="hoverShow" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/minus_hover.png" alt="">
             </span>
           </div>
-          <div class="col-lg-8 col-md-8 col-sm-12 m-auto mb-3">
+          <div class="col-lg-8 col-md-8 col-sm-12 m-auto mb-3" id="Average Banking Balance">
             <h3>{{affordability_section?.bank_balance_expanded?.header}}</h3>
             <p>{{affordability_section?.bank_balance_expanded?.subheader}}</p>
             <div class="chart chart1 chartLine justify-content-center">
@@ -326,7 +326,7 @@
             </div>
           </div>
 
-          <div class="defaultContent">
+          <div class="defaultContent" id="Minimum Banking Balance">
             <h3>{{affordability_section?.bank_balance_expanded?.minimum_balance?.header}}</h3>
           </div>
           <div class="row">
@@ -536,7 +536,7 @@
       </div>
 
       <div class="col-lg-12 col-md-12 col-sm-12 mb-5 mt-4 padding30" *ngIf="expandDebtRatioSection"   >
-        <div class="businessTurnover">
+        <div class="businessTurnover" id="Debt to Turnover" >
           <div class="plus" (click)="mnimizeDebtRatioBlock()" >
             <span>
               <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Minus_normal.png" alt="">
@@ -572,7 +572,7 @@
             <h3>{{risk_section?.debt_turnover_expanded?.secured_unsecured_turnover?.header}}</h3>
           </div>
 
-          <div class="row">
+          <div class="row" id="Balanced Ratio!">
             <div class="col-lg-6">
               <div class="valatilityBox backgrundColor">
                 <h3>{{risk_section?.debt_turnover_expanded?.secured_unsecured_turnover?.debt_ratio?.header}}</h3>
@@ -630,7 +630,7 @@
 
         </div>
 
-        <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+        <div class="col-lg-12 col-md-12 col-sm-12 mt-4" id="Cheque Bounces">
           <div class="businessTurnover h-100">
             <h3>{{risk_section?.cheque_bounces_card?.header}}</h3>
             <p>{{risk_section?.cheque_bounces_card?.subheader}}</p>
@@ -761,7 +761,7 @@
           <ng-container>
             <ng-template carouselSlide >
               <div class="col-lg-12 col-md-12 col-sm-12 mt-4" *ngIf="!expandDebtRatioSection" >
-                <div class="businessTurnover h-100" style="margin: 0px 10px 10px; cursor: pointer;" (click)="expandDebtRatioBlock()">
+                <div class="businessTurnover h-100" style="margin: 0px 10px 10px; cursor: pointer;"(click)="expandDebtRatioBlock()">
                   <div class="plus" >
                     <span>
                       <img class="hoverhide" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_normal.png" alt="">

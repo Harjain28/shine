@@ -174,7 +174,8 @@ export class ReportsComponent {
   scrollToSectionEvent = new EventEmitter<string>();
   @ViewChild('sectionsContainer', { static: false }) sectionsContainer!: ElementRef;
   @ViewChild(CreditReportComponent) creditReportComponent!: CreditReportComponent;
-
+  @ViewChild(BankingBusinessComponent) bankingBusinessComponent!:BankingBusinessComponent;
+  // @ViewChild(CreditReportComponent) creditReportComponent!: CreditReportComponent;
   constructor(private api: ApiService,public reportService:ReportService, private renderer: Renderer2 ,private cdr: ChangeDetectorRef, public router: Router,private navigationService:NavigationService) { }
 
   ngOnInit(): void {
@@ -303,13 +304,40 @@ export class ReportsComponent {
     if (this.creditReportComponent) {
       this.creditReportComponent.setExpandSection(header);
     }
-
+    if(this.bankingBusinessComponent) {
+      this.bankingBusinessComponent.setBankingExpandSection(header);
+    }
+  
     setTimeout(() => {
       // Ensure the section is now available in the DOM
       const section = document.getElementById(header);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  
+        // Pehle se class remove karen agar pehle add hui ho
+        document.querySelectorAll('.section-hover').forEach(el => el.classList.remove('section-hover'));
+  
+        // Nayi class add karen
+        section.classList.add('section-hover');
 
+        const pointerDiv = document.createElement('div');
+        pointerDiv.style.position = 'absolute';
+        pointerDiv.style.top = '10px';
+        pointerDiv.style.right = '10px';
+        pointerDiv.style.width = '30px';
+        pointerDiv.style.height = '30px';
+        pointerDiv.style.backgroundColor = '#FF7B24';
+        pointerDiv.style.borderRadius = '50%';
+        pointerDiv.style.boxShadow = '0 0 10px rgba(0, 123, 255, 0.5)';
+        pointerDiv.style.pointerEvents = 'none'; 
+        pointerDiv.style.transition = 'opacity 0.5s ease-out';  // Fade out effect
+
+        section.appendChild(pointerDiv);
+        setTimeout(() => {
+          pointerDiv.style.opacity = '0';  // Fade out
+          setTimeout(() => pointerDiv.remove(), 1000); 
+        }, 1200); 
+  
         setTimeout(() => {
           const rect = section.getBoundingClientRect();
           if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
@@ -318,12 +346,13 @@ export class ReportsComponent {
             console.error('Section is not in view.');
           }
         }, 500);
-
+  
       } else {
         console.error(`Section with ID "${header}" not found.`);
       }
     }, 100);
   }
+  
   
   getChartsData() {
     this.ChartsData = ChartsJsonData;

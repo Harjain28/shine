@@ -41,13 +41,13 @@ export class ReportService {
       isActive: true,
     },
     {
-      title: 'Banking',
+      title: 'Banking History',
       count: 0,
       imageUrl: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/banking_blue.png',
       isActive: false,
     },
     {
-      title: 'GST',
+      title: 'GST Filings',
       count: 0,
       imageUrl: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/gst.png',
       isActive: false,

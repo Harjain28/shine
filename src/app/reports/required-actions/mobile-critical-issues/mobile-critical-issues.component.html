@@ -8,7 +8,9 @@
                             <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/credit_score.png" alt="">
                             <h5>{{ item.title }} <span>{{ item.count }}</span></h5>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        <p *ngIf="i === 0">{{reportService.summary_section_Data?.bureau_card?.description}}</p>
+                        <p *ngIf="i === 1">{{reportService.summary_section_Data?.banking_card?.description}}</p>
+                        <p *ngIf="i === 2">{{reportService.summary_section_Data?.gst_card?.description}}</p>
                     </div>
                     <div class="plusIcon">
                         <img class="plus_normal" src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/plus_normal.png" alt="">
@@ -19,19 +21,18 @@
             
             <div class="col-lg-12">
                 <div class="boxLevel">
-                    <h3>How to Get to the Next Level</h3>
-
-                    <img class="images"
+                    <h3>{{reportService.summary_section_Data?.Next_Level?.title}}</h3>
+                  
+                    <!-- <img class="images"
                         src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Level-3.png"
-                        alt="">
+                        alt=""> -->
 
                     <div class="applyBox">
                         <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png"
                             alt="">
                         <div class="content">
-                            <p>Apply the measures we recommend to improve your level and increase your loan prospects in 3-6
-                                months.</p>
-                            <a href="" class="btn">Your Loan Probability <img src="./assets/LandingPage/checkBlue.svg"
+                            <p>{{reportService.summary_section_Data?.Next_Level?.copy}}</p>
+                            <a class="btn" (click)="onCriticalClick('Loan Probability')">Your Loan Probability <img src="./assets/LandingPage/checkBlue.svg"
                                     alt="arrow"></a>
                         </div>
                     </div>
@@ -61,7 +62,7 @@
 
     <div class="criticalDetails" *ngIf="!showCriticalBoxFirst">
         <mat-accordion>
-            <mat-expansion-panel *ngFor="let tab of reportService?.tabs; let i = index" [expanded]="expandedPanel === i" (opened)="setExpandedPanel(i)">
+            <mat-expansion-panel *ngFor="let tab of reportService?.tabs; let i = index" (click)="handleClick(i)" [expanded]="expandedPanel === i" (opened)="setExpandedPanel(i)">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         <div class="plusBox1">

@@ -15,6 +15,30 @@ html {
   height: 100vh;
 }
 
+@keyframes highlight {
+  0% {
+    background-color: #f0f8ff;
+    box-shadow: 0 0 10px #007bff;
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.section-hover {
+  cursor: pointer; /* ya cursor: text; */
+  animation: highlight 2s ease-out forwards;
+  position: relative;
+}
+
+.section-hover::after {
+  content: '';
+  position: absolute;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+
 
 .sidebar-open {
   overflow: hidden;

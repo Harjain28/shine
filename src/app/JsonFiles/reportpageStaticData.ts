@@ -252,7 +252,7 @@ export const reportStatciData =
                     }
                 },
                 "quarterly_dip": {
-                    "header": "Quarter-on-Quarter Performanc",
+                    "header": "Quarter-on-Quarter Performance",
                     "recent_dip": {
                         "header": "Recent Dips (If Any)"
                     },

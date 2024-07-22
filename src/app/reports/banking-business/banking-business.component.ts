@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -137,7 +137,7 @@ export class BankingBusinessComponent {
   voColor: any;
   summaryIcon: any;
 
-  constructor(public router:Router, private navigationService:NavigationService, public reportService:ReportService) {}
+  constructor(public router:Router, private navigationService:NavigationService, public reportService:ReportService ,private cdr:ChangeDetectorRef) {}
   customOptions4: OwlOptions = {
     loop: false,
     rewind: false,
@@ -321,6 +321,41 @@ export class BankingBusinessComponent {
   
     return { color };
   }
+
+  setBankingExpandSection(header: string) {
+    console.log(`Setting expandSection for header: ${header}`);
+    const affordability = [
+      'Business Stability Analysis',
+      'Quarter on Quarter Dip',
+      'Credit Count Analysis',
+    ];
+    const banking = [
+      'Average Banking Balance',
+      'Minimum Banking Balance',
+    ];
+    const debt = [
+      'Debt to Turnover',
+      'Balanced Ratio!',
+      'Cheque Bounces'
+    ];
+
+  
+
+    if (affordability.includes(header)) {
+      this.expandBusinessSectionBlock();
+      this.expandBankingBusniess();
+    } else if(banking.includes(header)){
+      this.expandBankingBalance();
+      this.expandBankingBlanceBlock();
+    } else if (debt.includes(header)){
+       this.expandDebtRatioBlock();
+    }
+   
+   
+     this.cdr.detectChanges();
+  }
+
+  
   
 
   setSummaryIcon(data: any) {

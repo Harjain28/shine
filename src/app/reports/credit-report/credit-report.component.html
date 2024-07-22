@@ -10,7 +10,11 @@
         </div>
       </div>
 
+<<<<<<< Updated upstream
       <div class="mobileSilder dhidden silderArrow">
+=======
+      <div class="mobileSilder dhidden" id="Bureau Score">
+>>>>>>> Stashed changes
         <owl-carousel-o [options]="customOptions4">
           <ng-container>
             <ng-template carouselSlide>
@@ -315,7 +319,7 @@
         </ng-container>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 mb-4 margin15 padding30 mhidden" >
+      <div class="col-lg-4 col-md-4 col-sm-12 mb-4 margin15 padding30 mhidden" id="Bureau Score">
         <div class="scoreBox">
           <h3>{{CR_Data?.bureau_score_card?.header}}</h3>
           <div class="scoreChart text-center">
@@ -582,7 +586,7 @@
 
       <!-- Current DEBT Expend -->
       <div class="col-lg-12 mb-4 margin15"  *ngIf="expandCurrentCreditSection && !expandSection" >
-        <div class="loanHistory">
+        <div class="loanHistory" id="Unsecure to Secured Debt">
           <div class="plus" (click)="minimizeCurrentCredit()">
             <span>
               <img class="hoverhide"
@@ -807,9 +811,9 @@
 
       <div class="row mt-4" *ngIf="expandCurrentCreditSection && !expandSection" >
         <div class="col-lg-12 col-md-12 col-sm-12">
-          <div class="heightBox"  id="Remarks on Report">
+          <div class="heightBox">
             <div class="row">
-              <div class="col-lg-6 col-sm-12 mt-4">
+              <div class="col-lg-6 col-sm-12 mt-4"   id="Remarks on Report">
                 <div class="numberBox p-4">
                   <div class="content">
                     <h3>{{CR_Data?.business_remarks_card?.header}}</h3>
@@ -824,7 +828,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6 col-sm-12 mt-4">
+              <div class="col-lg-6 col-sm-12 mt-4" id="Credit Enquiries">
                 <div class="numberBox colorChange p-4">
                   <div class="content">
                     <h3>{{CR_Data?.enquiries_card?.header}}</h3>

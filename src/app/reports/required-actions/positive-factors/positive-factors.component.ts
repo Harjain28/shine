@@ -1,5 +1,5 @@
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData'; 
@@ -47,9 +47,9 @@ export class PositiveFactorsComponent {
   filteredCards: Card[] = []; 
   filteredInsights: any;
   selectedCard: Card | null = null;
+  @Output() scrollToSectionEvent = new EventEmitter<string>();
 
   constructor(public reportService: ReportService) {}
-
   ngOnInit(): void {
     this.reportService.initializeData(reportStatciData, this.ActionReqReportsData);
     const actionSummaryData = this.ActionReqReportsData?.insights?.actionSummary;
@@ -107,6 +107,12 @@ export class PositiveFactorsComponent {
       this.handleClick(index); 
     }
   }
+
+
+  onCriticalClick(header: any) {
+    this.scrollToSectionEvent.emit(header);
+  }
+
   customOptions4: OwlOptions = {
     loop: false,
     rewind: false,
@@ -139,3 +145,4 @@ export class PositiveFactorsComponent {
     },
   };
 }
+

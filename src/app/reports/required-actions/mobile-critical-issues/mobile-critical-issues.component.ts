@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
@@ -43,7 +43,9 @@ export class MobileCriticalIssuesComponent implements OnInit {
   filteredInsights: any;
   selectedCard: Card | null = null;
   selectedData: Card[] =[];
-
+  @Output() scrollToSectionEvent = new EventEmitter<string>();
+  
+  
   constructor(public reportService: ReportService) {}
 
   ngOnInit(): void {
@@ -56,6 +58,11 @@ export class MobileCriticalIssuesComponent implements OnInit {
       this.filteredCards = this.filteredInsights.creditReport; 
     }
     console.log( this.filteredCards , "filteredCardss");
+  }
+
+  onCriticalClick(header: any) {
+    console.log(header);
+    this.scrollToSectionEvent.emit(header);
   }
 
   updateTabCounts(): void {
