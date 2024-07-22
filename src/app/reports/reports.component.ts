@@ -175,7 +175,7 @@ export class ReportsComponent {
   @ViewChild('sectionsContainer', { static: false }) sectionsContainer!: ElementRef;
   @ViewChild(CreditReportComponent) creditReportComponent!: CreditReportComponent;
 
-  constructor(private api: ApiService,private reportService:ReportService, private renderer: Renderer2 ,private cdr: ChangeDetectorRef, public router: Router,private navigationService:NavigationService) { }
+  constructor(private api: ApiService,public reportService:ReportService, private renderer: Renderer2 ,private cdr: ChangeDetectorRef, public router: Router,private navigationService:NavigationService) { }
 
   ngOnInit(): void {
     // if(!this.storage.isToken())
@@ -477,10 +477,7 @@ export class ReportsComponent {
 
   }
 
-  redirectToMSME() {
-    window.location.href = 'https://www.creditenable.com/in/sme-business-loan/unsecured-business-loans/msme-sme-business-loans-india-v1';
-  }
-
+ 
   redirectToPricing() {
     this.navigationService.setLinkClicked(true);
     this.router.navigate(['/in/pricing_group']);

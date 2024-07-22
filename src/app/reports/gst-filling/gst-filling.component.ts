@@ -10,6 +10,7 @@ import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 import { NoGstComponent } from '../no-gst/no-gst.component';
 import { Router, RouterModule } from '@angular/router';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { ReportService } from '../required-actions/shared.service';
 
 @Component({
   selector: 'app-gst-filling',
@@ -61,7 +62,7 @@ export class GstFillingComponent {
   
   turnover:any;
 
-  constructor(public router:Router, private navigationService:NavigationService) {
+  constructor(public router:Router, private navigationService:NavigationService, public reportService:ReportService) {
 
   }
 

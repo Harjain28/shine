@@ -17,6 +17,7 @@ import { Mixed5Component } from 'src/app/charts/mixed5/mixed5.component';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 import { Router, RouterModule } from '@angular/router';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { ReportService } from '../required-actions/shared.service';
 
 @Component({
   selector: 'app-banking-business',
@@ -136,7 +137,7 @@ export class BankingBusinessComponent {
   voColor: any;
   summaryIcon: any;
 
-  constructor(public router:Router, private navigationService:NavigationService) {}
+  constructor(public router:Router, private navigationService:NavigationService, public reportService:ReportService) {}
   customOptions4: OwlOptions = {
     loop: false,
     rewind: false,

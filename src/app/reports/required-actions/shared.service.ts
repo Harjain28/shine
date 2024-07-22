@@ -2,6 +2,7 @@
 
 import { Injectable } from '@angular/core';
 
+
 interface Tab {
   title: string;
   count: number;
@@ -206,7 +207,21 @@ concatenateInsights(actionSummary: any, type:any) {
     //   };
     // }
     
-  
+    redirectToMSME(userInfo: any) {
+      let url = 'https://www.creditenable.com/in/sme-business-loan/unsecured-business-loans/msme-sme-business-loans-india-v1';
+      const params = [];
+      for (const key in userInfo) {
+        if (userInfo.hasOwnProperty(key) && key.startsWith('utm') && userInfo[key]) {
+          params.push(`${key}=${userInfo[key]}`);
+        }
+      }
+      if (params.length > 0) {
+        url += '?' + params.join('&');
+      }
+      console.log(url);
+      window.location.href = url;
+    }
+    
   
     
   

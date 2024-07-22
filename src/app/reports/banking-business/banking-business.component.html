@@ -1026,7 +1026,7 @@
       </div>
     </div>
     <div class="ApplyNow mt-5" *ngIf="router.url !== '/in/report_model1'">
-      <a class="btn" href="https://www.creditenable.com/in/sme-business-loan/unsecured-business-loans/msme-sme-business-loans-india-v1">Apply Now</a>
+      <a class="btn" (click)="reportService.redirectToMSME(bankingData?.userInfo)">Apply Now</a>
     </div>
 
     <div class="ApplyNow mt-5" *ngIf="router.url === '/in/report_model1'"  (click)="redirectToPricing()">

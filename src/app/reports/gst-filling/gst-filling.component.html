@@ -39,7 +39,7 @@
                 <div class="calendarBox">
                   <h3>{{gstSectionHeadings?.gst_filing_card?.header}}</h3>
                   <ul>
-                    <li *ngFor="let month of monthArray;let i = index" [ngClass]="{'active': (isSelectedMonth(month) && gstDetails?.currentGstStatus === 'Active'), 'blur': !isSelectedMonth(month) && i >= monthArray.indexOf(monthName)}">{{ month }}</li>
+                    <li *ngFor="let month of monthArray;let i = index" [ngClass]="{'active': (isSelectedMonth(month) && gstDetails?.currentGstStatus === 'Active'), 'blur': (!isSelectedMonth(month) && i >= monthArray.indexOf(monthName))|| gstDetails?.currentGstStatus !== 'Active'}">{{ month }}</li>
                   </ul>
                   <div class="missingPayment">
                     {{missedGstFilings?.header}}
@@ -72,7 +72,7 @@
         </div>
 
         <div class="ApplyNow mt-4" *ngIf="router.url !== '/in/report_model1'">
-          <a class="btn" href="https://www.creditenable.com/in/sme-business-loan/unsecured-business-loans/msme-sme-business-loans-india-v1">Apply Now</a>
+          <a class="btn" (click)="reportService.redirectToMSME(gstData?.userInfo)">Apply Now</a>
         </div>
 
 

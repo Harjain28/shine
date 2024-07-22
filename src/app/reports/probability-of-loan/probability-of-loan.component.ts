@@ -10,6 +10,7 @@ import { MaterialModule } from 'src/app/material.module';
 import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 import { Router } from '@angular/router';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { ReportService } from '../required-actions/shared.service';
 
 @Component({
   selector: 'app-probability-of-loan',
@@ -74,7 +75,7 @@ export class ProbabilityOfLoanComponent {
   staticData: any;
   showApplyButton: boolean = false;
 
-  constructor(public router:Router, private navigationService:NavigationService) {}
+  constructor(public router:Router, private navigationService:NavigationService, public reportService:ReportService) {}
 
   ngOnInit(): void {
     this.data = this.probOfLoanData;
@@ -96,9 +97,6 @@ export class ProbabilityOfLoanComponent {
     });
   }
 
-  redirectToMSME() {
-    window.location.href = 'https://www.creditenable.com/in/sme-business-loan/unsecured-business-loans/msme-sme-business-loans-india-v1';
-  }
   redirectToPricing() {
     this.navigationService.setLinkClicked(true);
     this.router.navigate(['/in/pricing_group']);
