@@ -4,8 +4,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="boxLevel">
-                    <!-- <h3>{{reportService.summary_section_Data?.ranking_card?.header}}</h3> -->
-
+                    <h3>{{reportService.summary_section_Data?.Next_Level?.title}}</h3>
                     <!-- <img class="images"
                         src={{reportService.imgUrlDesktop}}> -->
 
@@ -13,10 +12,10 @@
                         <img src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/info_blue.png"
                             alt="">
                         <div class="content">
-                            <h5>{{reportService.summary_section_Data?.Next_Level?.title}}</h5>
+                           
                             <p>{{reportService.summary_section_Data?.Next_Level?.copy}}</p>
 
-                            <a class="btn">Your Loan Probability <img src="./assets/LandingPage/checkBlue.svg"
+                            <a class="btn" (click)="onCriticalClick('Loan Probability')" >Your Loan Probability <img src="./assets/LandingPage/checkBlue.svg"
                                     alt="arrow"></a>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
@@ -27,11 +27,11 @@ interface Card {
   standalone: true,
   imports: [CommonModule, MatExpansionModule, CarouselModule],
   templateUrl: './mobile-positive-factors.component.html',
-  styleUrls: ['./mobile-positive-factors.component.scss']
+  styleUrls: ['./mobile-positive-factors.component.scss', '../mobile-critical-issues/mobile-critical-issues.component.scss']
 })
 export class MobilePositiveFactorsComponent {
   @Input() ActionReqReportsMobileData: any;
-  expandedPanel: number = 0; // Start with the first panel expanded
+  expandedPanel: number | null = null; // Keep track of the expanded panel
   showCriticalBoxFirst: boolean = true;
   showKnowMoreModal: boolean = false;
 
@@ -39,10 +39,12 @@ export class MobilePositiveFactorsComponent {
   cardData: any = {};
   actionSummaryData: any;
   filteredCards: Card[] = []; 
+  chunkedCards: Card[][] = []; // Add this property
   filteredInsights: any;
   selectedCard: Card | null = null;
   selectedData: Card[] =[];
-
+  @Output() scrollToSectionEvent = new EventEmitter<string>();
+  
   constructor(public reportService: ReportService) {}
 
   ngOnInit(): void {
@@ -52,55 +54,73 @@ export class MobilePositiveFactorsComponent {
 
     if (this.filteredInsights) {
       this.updateTabCounts();
-      this.filteredCards = this.filteredInsights.creditReport; 
+      this.filteredCards = this.filteredInsights.creditReport;
+      this.chunkedCards = this.chunkArray(this.filteredCards, 5); // Split the array into chunks
     }
-    console.log( this.filteredCards , "filteredCardss");
+  }
+
+  onCriticalClick(header: any) {
+    this.scrollToSectionEvent.emit(header);
   }
 
   updateTabCounts(): void {
     if (this.filteredInsights) {
       this.reportService.tabs[0].count = this.filteredInsights.creditReport.length;
-      this.reportService.tabs[1].count= this.filteredInsights.bankingHistory.length;
+      this.reportService.tabs[1].count = this.filteredInsights.bankingHistory.length;
       this.reportService.tabs[2].count = this.filteredInsights.gstHistory.length;
     }
   }
 
-  toggleDetails() {
-    this.showCriticalBoxFirst = !this.showCriticalBoxFirst;
+  handleClick(index: number): void {
+    if (this.expandedPanel === index) {
+        this.expandedPanel = null;
+    } else {
+        this.expandedPanel = index;
+        this.showCriticalBoxFirst = false; // Ensure the critical box first is set to false when any panel is opened
+    }
+    this.reportService.tabs.forEach((tab, i) => (tab.isActive = i === index));
+    let data;
+    switch (index) {
+        case 0:
+            data = this.filteredInsights.creditReport;
+            break;
+        case 1:
+            data = this.filteredInsights.bankingHistory;
+            break;
+        case 2:
+            data = this.filteredInsights.gstHistory;
+            break;
+        default:
+            data = [];
+            break;
+    }
+    this.updateFilteredCards(data); 
+    this.toggleDetails();
+}
+
+toggleDetails() {
+    if (this.expandedPanel === null) {
+        this.showCriticalBoxFirst = !this.showCriticalBoxFirst;
+    }
+}
+
+
+  updateFilteredCards(cards: Card[]): void {
+    this.filteredCards = cards;
+    this.chunkedCards = this.chunkArray(this.filteredCards, 5);
   }
 
-  handleClick(index: number): void {
-  
-    this.toggleDetails()
-    this.reportService.tabs.forEach((tab, i) => (tab.isActive = i === index));
-    switch (index) {
-      case 0:
-        this.filteredCards = this.filteredInsights.creditReport;
-        break;
-      case 1:
-        this.filteredCards = this.filteredInsights.bankingHistory;
-        break;
-      case 2:
-        this.filteredCards = this.filteredInsights.gstHistory;
-        break;
-      default:
-        this.filteredCards = [];
-        break;
-    }
-    console.log(index, this.filteredCards)
-  }
   openModal(data: any, index: number) {
-    this.selectedData = data;
+    this.selectedCard = data;
     this.showKnowMoreModal = true;
   }
-
 
   closeModal() {
     this.showKnowMoreModal = false;
   }
 
   setExpandedPanel(panelIndex: number) {
-    this.expandedPanel = panelIndex;
+ this.expandedPanel = panelIndex;
   }
 
   customOptions1: OwlOptions = {
@@ -112,12 +132,11 @@ export class MobilePositiveFactorsComponent {
     nav: false,
     mouseDrag: false,
     touchDrag: true,
-
     autoplayTimeout: 8000,
     autoplaySpeed: 1500,
     navText: [
       "<span><img class='navTxtImg' src='./assets/images/homeImage/right-arrow.svg'></span>",
-      "<span> <img class='navTxtImg' src='./assets/images/homeImage/right-arrow.svg'></span>",
+      "<span><img class='navTxtImg' src='./assets/images/homeImage/right-arrow.svg'></span>",
     ],
     responsive: {
       0: {
@@ -136,4 +155,12 @@ export class MobilePositiveFactorsComponent {
       },
     },
   };
+
+ chunkArray<T>(array: T[], chunkSize: number): T[][] {
+  const results: T[][] = [];
+  for (let i = 0; i < array.length; i += chunkSize) {
+    results.push(array.slice(i, i + chunkSize));
+  }
+  return results;
+}
 }
