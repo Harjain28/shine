@@ -3606,6 +3606,247 @@
     }
 }
 
+
+.bannerTopBackground{
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    padding: 50px 0px 120px !important;
+
+    .bannerTopBackground{
+        background-image: none !important;
+        padding: 0px 0px 0px !important;
+    }
+
+    .BannerBox{
+        padding-top: 42px;
+
+        .currentLoanBox {
+            box-shadow: 0px 3px 10px #272D3B24;
+            border-radius: 20px;
+            padding: 29px 32px 62px;
+            text-align: center;
+            min-height: 408px;
+            max-height: 600px;
+            position: relative;
+            overflow: hidden;
+
+            &::before{
+                width: 100%;
+                height: 100%;
+                background: #FFFFFF;
+                opacity: 0.6;
+                top: 0px;
+                left: 0px;
+                content: "";
+                position: absolute;
+            }
+
+            h3{
+                color: #3F3F3F;
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 7px;
+                line-height: 21px;
+                font-family: Poppins !important;
+            }
+
+            p{
+                color: #3F3F3F;
+                font-size: 13px;
+                font-weight: 400;
+                margin-bottom: 0px;
+                line-height: 16px;
+                font-family: Poppins !important;
+            }
+
+            .chartImg {
+                margin: 27px 0px 10px;
+
+                img{
+                    height: 118px;
+                    width: auto;
+                }
+            }
+
+            .needAction {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                margin-bottom: 8px;
+
+                img{
+                    width: auto;
+                    height: 20px;
+                }
+
+                span{
+                    font-size: 14px;
+                    line-height: 26px;
+                    font-weight: 600;
+                    color: #EC1111;
+                    font-family: Poppins !important;
+                }
+            }
+
+            .twoBoxNumber {
+                margin-top: 30px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .boxNumber {
+                    background: #FFFFFF;
+                    border: 1px solid #E2E2E2;
+                    border-radius: 10px;
+                    padding: 20px 15px;
+                    height: 114px;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    justify-content: center;
+
+                    &.colorChange{
+
+                        h3, h5{
+                            color: #6A2FC2;
+                        }
+                    }
+                    
+                    h3{
+                        color: #FF7B24;
+                        font-size: 36px;
+                        font-weight: 500;
+                        margin-bottom: 10px;
+                        font-family: Poppins !important;
+                    }
+
+                    h5{
+                        color: #FF7B24;
+                        font-size: 13px;
+                        font-weight: 500;
+                        margin-bottom: 0px;
+                        line-height: 14px;
+                        font-family: Poppins !important;
+                    }
+                }
+            }
+
+            .ButtonNow{
+
+                a{
+                    min-width: 100%;
+                    max-width: 100%;
+                    font-weight: 400;
+                    padding: 12px 23px 12px;
+                    justify-content: flex-start;
+
+                    mat-icon{
+                        right: 15px;
+                    }
+                }
+            }
+
+            .clickExplore{
+                margin-top: 17px;
+
+                a{
+                    font-size: 13px;
+                    color: #AFAFAF;
+                    font-family: Poppins !important;
+                    text-align: center;
+                    font-weight: 400;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .topCriticalBox{
+
+            h5{
+                color: #3F3F3F;
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 18px;
+                line-height: 21px;
+                font-family: Poppins !important;
+                text-align: center;
+            }
+
+            .LoanList{
+                background: #FFFFFF;
+                border: 1px solid #E2E2E2;
+                border-radius: 10px;
+                overflow: hidden;
+                margin-bottom: 5px;
+
+                .loanHeading{
+                    background-color: #FF7B24;
+                    padding: 5px 0px 6px;
+
+                    h3{
+                        color: #FFFFFF;
+                        font-size: 12px;
+                        font-weight: 600;
+                        margin-bottom: 0px;
+                        font-family: Poppins !important;
+                        text-align: center;
+
+                        span{
+                            font-size: 12px;
+                            font-weight: normal;
+
+                        }
+                    }
+                }
+
+                .contentBox{
+                    padding: 8px 20px 12px;
+                    
+                    h4{
+                        color: #3F3F3F;
+                        font-size: 14px;
+                        font-weight: 600;
+                        margin-bottom: 4px;
+                        font-family: Poppins !important;
+                        text-align: center;
+                    }
+
+                    p{
+                        color: #3F3F3F;
+                        font-size: 13px;
+                        font-weight: 400;
+                        margin-bottom: 0px;
+                        line-height: 16px;
+                        font-family: Poppins !important;
+                        text-align: center;
+                        overflow: hidden;
+                        -o-text-overflow: ellipsis;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 4;
+                        -webkit-box-orient: vertical;
+                    }
+                }
+            }
+        }
+    }
+
+    .termandApply{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+        margin-right: 8.29px;
+
+        span{
+            font-size: 12px;
+            color: #AFAFAF;
+            cursor: pointer;
+        }
+    }
+}
+
 @keyframes fill-progress {
     from {
         transform: rotate(0deg);
@@ -3618,6 +3859,40 @@
 
 
 @media (max-width: 767px) {
+
+    .bannerTopBackground{
+        background-image: none !important;
+        padding: 0px 0px 0px !important;
+
+        .bannerTopBackground{
+            padding: 32px 0px 50px !important;
+            background-image: url(https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/fold1/Fold_1_Mobile_bg.jpg) !important;
+        }
+
+        .bannerText{
+            border-bottom: none !important;
+            padding-bottom: 0px !important;
+        }
+
+        .BannerBox{
+            padding-top: 33px;
+
+            .topCriticalBox{
+                margin: 30px 0px;
+            }
+
+            .currentLoanBox{
+                padding: 37px 32px 42px;
+                min-height: auto;
+                max-height: max-content;
+
+                .chartImg{
+                    margin: 37px 0px 30px;
+                }
+            }
+
+        }
+    }   
 
     .defaultHistory{
 

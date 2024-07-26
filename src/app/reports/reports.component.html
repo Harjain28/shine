@@ -1,6 +1,6 @@
 <!-- Top-Banner-Section Start -->
 
-<ng-container  *ngIf="!showEligible">
+<ng-container *ngIf="!showEligible">
   <!-- <div class="topBannerHeader">
   <div class="container">
     <div class="row align-items-center">
@@ -38,7 +38,9 @@
   </div>
 </div> -->
 
-  <div class="topBannerHeader" *ngIf="router.url !== '/in/report_model1'">
+  <!-- first flod flow -->
+
+  <!-- <div class="topBannerHeader" *ngIf="router.url !== '/in/report_model1'">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-7 col-md-10 col-sm-12 m-auto">
@@ -53,9 +55,11 @@
     <div class="backgroundImg mhidden">
       <img  src={{imgUrlDesktop}} alt="">
     </div>
+
     <div class="backgroundImg backgroundMobile dhidden">
       <img  src={{imgUrlMobile}} alt="">
     </div>
+    
       <div class="container position-relative">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12">
@@ -91,6 +95,116 @@
           </div>
         </div>
       </div>
+  </div> -->
+
+  <div class="topBannerHeader bannerTopBackground" *ngIf="router.url !== '/in/report_model1'" style="background-image: url(./assets/LandingPage/dashboard_Fold-1_Bg.jpg);">
+    <div class="bannerTopBackground">
+      <div class="container">
+        <div class="row align-items-center margin15">
+          <div class="col-lg-12 col-md-12 col-sm-12 m-auto">
+            <div class="bannerText text-center" style="border-bottom: 1px solid #E2E2E2; padding-bottom: 18px;">
+              <h1 class="mb-0">Your Shine Key Insights</h1>
+              <p>Based on the customised analysis of your profile</p>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="BannerBox">
+              <div class="row align-items-end">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="currentLoanBox">
+                    <div class="position-relative">
+                      <h3>Current Loan Probability</h3>
+                      <p>Your likelihood of being approved for a business loan today</p>
+                      <div class="chartImg">
+                        <!-- <img src="./assets/LandingPage/LowChart.svg" alt=""> -->
+                        <img src="./assets/LandingPage/MediumChart.svg" alt="">
+                        <!-- <img src="./assets/LandingPage/HighChart.svg" alt=""> -->
+                      </div>
+                      <div class="needAction">
+                        <img
+                          src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/alert.png"
+                          alt="">
+                        <span>Needs Action</span>
+                      </div>
+                      <p>It may be difficult for you to get a loan approval right now. To improve, fix the Critical Issues
+                        first.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="topCriticalBox">
+                    <h5>Top Critical Issues to Act on</h5>
+                    <div class="LoanList">
+                      <div class="loanHeading">
+                        <h3>Banking > <span>Volatility and Credit Count</span></h3>
+                      </div>
+                      <div class="contentBox">
+                        <h4>Turnover < 12L</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum scelerisque
+                              ultricies. Mauris interdum ligula fermentum turpis dapibus nam.</p>
+                      </div>
+                    </div>
+                    <div class="LoanList">
+                      <div class="loanHeading">
+                        <h3>GST > <span>Repayment History</span></h3>
+                      </div>
+                      <div class="contentBox">
+                        <h4>Last 12m DPD</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum scelerisque
+                          ultricies. Mauris interdum ligula fermentum turpis dapibus nam.</p>
+                      </div>
+                    </div>
+                    <div class="LoanList">
+                      <div class="loanHeading">
+                        <h3>Bureau > <span>Credit Score</span></h3>
+                      </div>
+                      <div class="contentBox">
+                        <h4>Bureau Score Below 550</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum scelerisque
+                          ultricies. Mauris interdum ligula fermentum turpis dapibus nam.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="currentLoanBox">
+                    <div class="position-relative">
+                      <h3>Overview of Your Profile</h3>
+                      <p>A summary of your strengths and improvement areas</p>
+
+                      <div class="twoBoxNumber">
+                        <div class="boxNumber">
+                          <h3>8</h3>
+                          <h5>Critical issues to act on</h5>
+                        </div>
+                        <div class="boxNumber colorChange">
+                          <h3>3</h3>
+                          <h5>Positive factors observed</h5>
+                        </div>
+                      </div>
+
+                      <div class="ButtonNow">
+                        <a>View Detailed Analysis
+                          <mat-icon>keyboard_arrow_right</mat-icon>
+                        </a>
+                      </div>
+
+                      <div class="clickExplore">
+                        <a href="javascript:void(0);">Click to explore</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="termandApply">
+              <span>*T&C apply</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Top-Banner-Section End -->
@@ -98,22 +212,25 @@
 
   <!-- required-action -->
 
-  <app-required-actions #requiredActions  (scrollToSectionEvent)="scrollToSectionEvent.emit($event)" [ActionReqReportsData]="reportsData"></app-required-actions>
+  <app-required-actions #requiredActions (scrollToSectionEvent)="scrollToSectionEvent.emit($event)"
+    [ActionReqReportsData]="reportsData"></app-required-actions>
 
   <!-- Credit-Report-Section Start -->
   <ng-container *ngIf="!isShowNoBureau">
-  <app-credit-report (headerMatchEvent)="scrollToSections($event)" [creditReportsData]="reportsData" (headerMatchEvent)="scrollToSections($event)"></app-credit-report>
-</ng-container>
+    <app-credit-report (headerMatchEvent)="scrollToSections($event)" [creditReportsData]="reportsData"
+      (headerMatchEvent)="scrollToSections($event)"></app-credit-report>
+  </ng-container>
   <!-- Two-plus-Section End -->
-<ng-container *ngIf="isShowNoBureau">
-  <app-no-bureau></app-no-bureau>
-</ng-container>
+  <ng-container *ngIf="isShowNoBureau">
+    <app-no-bureau></app-no-bureau>
+  </ng-container>
   <!-- <app-no-bureau></app-no-bureau> -->
 
-  <div class="ApplyNow" *ngIf="router.url !== '/in/report_model1'" (click)="reportService.redirectToMSME(reportsData?.userInfo)">
+  <div class="ApplyNow" *ngIf="router.url !== '/in/report_model1'"
+    (click)="reportService.redirectToMSME(reportsData?.userInfo)">
     <a class="btn">Apply Now</a>
   </div>
-  <div class="ApplyNow"  *ngIf="router.url === '/in/report_model1'" (click)="redirectToPricing()">
+  <div class="ApplyNow" *ngIf="router.url === '/in/report_model1'" (click)="redirectToPricing()">
     <a class="btn">Check Pricing</a>
   </div>
 
@@ -135,9 +252,9 @@
   <ng-container *ngIf="!isShowNoGST">
     <app-gst-filling id="GST Filings History" [gstData]="reportsData"></app-gst-filling>
   </ng-container>
-    <!-- Two-plus-Section End -->
+  <!-- Two-plus-Section End -->
   <ng-container *ngIf="isShowNoGST">
-   <app-no-gst></app-no-gst>
+    <app-no-gst></app-no-gst>
   </ng-container>
 
   <!-- GST-Filings-Section End -->
@@ -145,7 +262,7 @@
   <!-- <app-no-gst></app-no-gst> -->
 
   <!-- BankingBalance-Section Start -->
-  <app-banking-business  [bankingBusinessData]="reportsData"></app-banking-business>
+  <app-banking-business [bankingBusinessData]="reportsData"></app-banking-business>
   <!-- BankingBalance-Section End -->
 
   <!-- ActionImprove-Section Start -->
@@ -153,7 +270,7 @@
   <!-- ActionImprove-Section End -->
 
   <!-- ProbabilityLoan-Section Start -->
-  <app-probability-of-loan  id="Loan Probability" [probOfLoanData]="reportsData"></app-probability-of-loan>
+  <app-probability-of-loan id="Loan Probability" [probOfLoanData]="reportsData"></app-probability-of-loan>
   <!-- ProbabilityLoan-Section End -->
 
   <!-- faqsData-Section Start -->
@@ -162,7 +279,7 @@
 
   <div class="disclaimer">
     <div class="container padding30">
-      <div class="row" *ngIf = "disclaimer">
+      <div class="row" *ngIf="disclaimer">
         <div class="col-lg-12">
           <div class="content">
             <span><b>Disclaimer: </b>{{disclaimer}}</span>
@@ -179,27 +296,27 @@
 <div class="v2checksection progressBaar" *ngIf="showEligible && router.url.includes('/report')">
   <div class="blueBack"></div>
   <div class="container mobilePd">
-      <div class="row">
-          <div class="col-xl-8 col-lg-8 col-md-12 m-auto">
-            <p class="topContent">You’re almost there! We’re analysing your profile and preparing your Shine report!
-              This should only take a few more seconds. </p>
-                  <div class="v2checkBox">
-                      <div class="from">
-<div class="progress-wrapper">
-<div class="progress-container" #progressContainer>
-  <div class="progress" #progressbar></div>
-  <div class="progress-text">
-    <div class="data" #progresstext>{{progress}}<sub>%</sub></div>
-  </div>
-</div>
-</div>
+    <div class="row">
+      <div class="col-xl-8 col-lg-8 col-md-12 m-auto">
+        <p class="topContent">You’re almost there! We’re analysing your profile and preparing your Shine report!
+          This should only take a few more seconds. </p>
+        <div class="v2checkBox">
+          <div class="from">
+            <div class="progress-wrapper">
+              <div class="progress-container" #progressContainer>
+                <div class="progress" #progressbar></div>
+                <div class="progress-text">
+                  <div class="data" #progresstext>{{progress}}<sub>%</sub></div>
+                </div>
+              </div>
+            </div>
 
 
-
-                      </div>
-                  </div>
 
           </div>
+        </div>
+
       </div>
+    </div>
   </div>
 </div>
