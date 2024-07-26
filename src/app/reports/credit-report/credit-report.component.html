@@ -11,7 +11,7 @@
       </div>
 
 
-      <div class="mobileSilder silderArrow dhidden" id="Bureau Score">
+      <div class="mobileSilder silderArrow dhidden" id="Your Bureau Score">
         <owl-carousel-o [options]="customOptions4">
           <ng-container>
             <ng-template carouselSlide>
@@ -316,7 +316,7 @@
         </ng-container>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 mb-4 margin15 padding30 mhidden" id="Bureau Score">
+      <div class="col-lg-4 col-md-4 col-sm-12 mb-4 margin15 padding30 mhidden" id="Your Bureau Score">
         <div class="scoreBox">
           <h3>{{CR_Data?.bureau_score_card?.header}}</h3>
           <div class="scoreChart text-center">
@@ -583,7 +583,7 @@
 
       <!-- Current DEBT Expend -->
       <div class="col-lg-12 mb-4 margin15"  *ngIf="expandCurrentCreditSection && !expandSection" >
-        <div class="loanHistory" id="Debt Ratio Analysis">
+        <div class="loanHistory" id="Unsecure to Secured Debt">
           <div class="plus" (click)="minimizeCurrentCredit()">
             <span>
               <img class="hoverhide"
@@ -764,7 +764,7 @@
 
 
                   </div>
-                  <div class="col-md-6 col-lg-6 col-sm-12" id="Frequent Micro Loans">
+                  <div class="col-md-6 col-lg-6 col-sm-12" id="Micro Loans">
                     <div class="otherAnalysis active">
                       <h3>{{credit_analysis_card_Expanded?.other_analysis?.small_loans?.header}}</h3>
                       <div class="checkBox">

@@ -86,6 +86,32 @@ import { cust34FixedJson } from '../JsonFiles/9509612970-fixed';
 import { cust30FixedJson } from '../JsonFiles/9014135897-fixed';
 import { cust38FixedJson } from '../JsonFiles/9810394413-fixed';
 import { cust40Fixed2Json } from '../JsonFiles/9874673188-fixed2';
+import { cust16Fixed3Json } from '../JsonFiles/6352416401-fixed3';
+import { cust17Fixed3Json } from '../JsonFiles/7002057931-fixed3';
+import { cust18Fixed3Json } from '../JsonFiles/7386964691-fixed3';
+import { cust19Fixed3Json } from '../JsonFiles/7630960645-fixed3';
+import { cust20Fixed3Json } from '../JsonFiles/7755073434-fixed3';
+import { cust21Fixed3Json } from '../JsonFiles/7827722922-fixed3';
+import { cust22Fixed3Json } from '../JsonFiles/7984372723-fixed3';
+import { cust23Fixed3Json } from '../JsonFiles/8002177560-fixed3';
+import { cust24Fixed3Json } from '../JsonFiles/8008508500-fixed3';
+import { cust25Fixed3Json } from '../JsonFiles/8090799120-fixed3';
+import { cust26Fixed3Json } from '../JsonFiles/8250410163-fixed3';
+import { cust27Fixed3Json } from '../JsonFiles/8791301338-fixed3';
+import { cust28Fixed3Json } from '../JsonFiles/8888265422-fixed3';
+import { cust29Fixed3Json } from '../JsonFiles/8977577888-fixed3';
+import { cust30Fixed3Json } from '../JsonFiles/9014135897-fixed3';
+import { cust31Fixed3Json } from '../JsonFiles/9045532404-fixed3';
+import { cust32Fixed3Json } from '../JsonFiles/9423142181-fixed3';
+import { cust33Fixed3Json } from '../JsonFiles/9439345525-fixed3';
+import { cust34Fixed3Json } from '../JsonFiles/9509612970-fixed3';
+import { cust35Fixed3Json } from '../JsonFiles/9609368419-fixed3';
+import { cust36Fixed3Json } from '../JsonFiles/9679617825-fixed3';
+import { cust37Fixed3Json } from '../JsonFiles/9727198579-fixed3';
+import { cust38Fixed3Json } from '../JsonFiles/9810394413-fixed3';
+import { cust39Fixed3Json } from '../JsonFiles/9850517709-fixed3';
+import { cust40Fixed3Json } from '../JsonFiles/9874673188-fixed3';
+import { cust41Fixed3Json } from '../JsonFiles/9972099888-fixed3';
 import { RequiredActionsComponent } from './required-actions/required-actions.component';
 import { report_model1 } from '../JsonFiles/report_model1';
 import { NavigationService } from '../services/navigation.service';
@@ -335,8 +361,8 @@ export class ReportsComponent {
         section.appendChild(pointerDiv);
         setTimeout(() => {
           pointerDiv.style.opacity = '0';  // Fade out
-          setTimeout(() => pointerDiv.remove(), 1000); 
-        }, 1200); 
+          setTimeout(() => pointerDiv.remove(), 2000); 
+        }, 2000); 
   
         setTimeout(() => {
           const rect = section.getBoundingClientRect();
@@ -420,6 +446,32 @@ export class ReportsComponent {
       '9014135897-fixed.json': cust30FixedJson,
       '9810394413-fixed.json': cust38FixedJson,
       '9874673188-fixed2.json': cust40Fixed2Json,
+      '6352416401-fixed3.json':cust16Fixed3Json,
+      '7002057931-fixed3.json':cust17Fixed3Json,
+      '7386964691-fixed3.json':cust18Fixed3Json,
+      '7630960645-fixed3.json':cust19Fixed3Json,
+      '7755073434-fixed3.json':cust20Fixed3Json,
+      '7827722922-fixed3.json':cust21Fixed3Json,
+      '7984372723-fixed3.json':cust22Fixed3Json,
+      '8002177560-fixed3.json':cust23Fixed3Json,
+      '8008508500-fixed3.json':cust24Fixed3Json,
+      '8090799120-fixed3.json':cust25Fixed3Json,
+      '8250410163-fixed3.json':cust26Fixed3Json,
+      '8791301338-fixed3.json':cust27Fixed3Json,
+      '8888265422-fixed3.json':cust28Fixed3Json,
+      '8977577888-fixed3.json':cust29Fixed3Json,
+      '9014135897-fixed3.json':cust30Fixed3Json,
+      '9045532404-fixed3.json':cust31Fixed3Json,
+      '9423142181-fixed3.json':cust32Fixed3Json,
+      '9439345525-fixed3.json':cust33Fixed3Json,
+      '9509612970-fixed3.json':cust34Fixed3Json,
+      '9609368419-fixed3.json':cust35Fixed3Json,
+      '9679617825-fixed3.json':cust36Fixed3Json,
+      '9727198579-fixed3.json':cust37Fixed3Json,
+      '9810394413-fixed3.json':cust38Fixed3Json,
+      '9850517709-fixed3.json':cust39Fixed3Json,
+      '9874673188-fixed3.json':cust40Fixed3Json,
+      '9972099888-fixed3.json':cust41Fixed3Json,
       'avg_bureau.json': avgBureauJSON,
       'no_bureau.json': noBureauJSON,
       'poor_bureau.json': poorBureauJSON,

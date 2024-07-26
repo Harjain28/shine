@@ -188,9 +188,9 @@ export class CreditReportComponent {
     ];
     const activeDebt = [
       'Credit Card Utilisation',
-      'Frequent Micro Loans',
+      'Micro Loans',
       'Remarks on Report',
-      'Debt Ratio Analysis',
+      'Unsecure to Secured Debt',
       'Credit Enquiries'
     ];
 
