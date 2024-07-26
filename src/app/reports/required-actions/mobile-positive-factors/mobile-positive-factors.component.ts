@@ -60,8 +60,10 @@ export class MobilePositiveFactorsComponent {
   }
 
   onCriticalClick(header: any) {
-    this.scrollToSectionEvent.emit(header);
+    const trimmedHeader = header?.trim();
+    this.scrollToSectionEvent.emit(trimmedHeader);
   }
+  
 
   updateTabCounts(): void {
     if (this.filteredInsights) {

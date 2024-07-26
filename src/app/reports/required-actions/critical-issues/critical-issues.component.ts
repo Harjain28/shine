@@ -69,8 +69,10 @@ export class CriticalIssuesComponent implements OnInit {
 
 
   onCriticalClick(header: any) {
-    this.scrollToSectionEvent.emit(header);
+    const trimmedHeader = header?.trim();
+    this.scrollToSectionEvent.emit(trimmedHeader);
   }
+  
 
   handleClick(index: number): void {
     // Handle tab click

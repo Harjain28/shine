@@ -56,10 +56,12 @@ export class MobileCriticalIssuesComponent implements OnInit {
     }
   }
 
-  onCriticalClick(header: any) {
-    this.scrollToSectionEvent.emit(header);
-  }
 
+  onCriticalClick(header: any) {
+    const trimmedHeader = header?.trim();
+    this.scrollToSectionEvent.emit(trimmedHeader);
+  }
+  
   updateTabCounts(): void {
     if (this.filteredInsights) {
       this.reportService.tabs[0].count = this.filteredInsights.creditReport.length;

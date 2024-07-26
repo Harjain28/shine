@@ -110,8 +110,10 @@ export class PositiveFactorsComponent {
 
 
   onCriticalClick(header: any) {
-    this.scrollToSectionEvent.emit(header);
+    const trimmedHeader = header?.trim();
+    this.scrollToSectionEvent.emit(trimmedHeader);
   }
+  
 
   customOptions4: OwlOptions = {
     loop: false,
