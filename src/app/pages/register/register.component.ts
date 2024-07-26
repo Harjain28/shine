@@ -77,10 +77,10 @@ export class RegisterComponent {
   ngOnInit(): void {
     this.state.removeSomeItem();
     this.form();
-   
-    const savedPhoneNumber = localStorage.getItem('phoneNumber');
+    const data:any = localStorage.getItem("reqData");
+    const savedPhoneNumber = JSON.parse(data);
     if (savedPhoneNumber) {
-      this.register_form.patchValue({ phoneNumber: savedPhoneNumber });
+      this.register_form.patchValue({ phoneNumber: savedPhoneNumber?.mobile });
     }
   }
 

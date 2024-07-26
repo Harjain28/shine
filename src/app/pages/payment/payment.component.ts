@@ -126,7 +126,7 @@ export class PaymentComponent {
 
     couponCode() {
       const params = { ...this.paramsObject.params };
-      this.api.getwithHeader(`api/Remediation/PaymentCouponCheck?couponCode=${this.couponInput}`, params)
+      this.api.getwithHeader(`api/Remediation/PaymentCouponCheck?couponCode=${this.couponInput}&pricingModel=${this.Headertext}`, params)
         .subscribe({
           next: (res: any) => {
             if (res?.success === true) {
