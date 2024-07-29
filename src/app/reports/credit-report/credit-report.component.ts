@@ -190,7 +190,7 @@ export class CreditReportComponent {
       'Credit Card Utilisation',
       'Micro Loans',
       'Remarks on Report',
-      'Unsecure to Secured Debt',
+      'Unsecured to Secured Debt',
       'Credit Enquiries'
     ];
 

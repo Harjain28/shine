@@ -2316,7 +2316,7 @@ export const cust36Fixed3Json = {
         "securedUnsecuredRatio": [
           {
             "condition": null,
-            "header": "Unsecure to Secured Debt",
+            "header": "Unsecured to Secured Debt",
             "subheader": "How to fix this?",
             "description": "A well rounded ratio means you are not over-leveraged. A well-rounded mix allows you to be eligible for more loans",
             "bullets": [
