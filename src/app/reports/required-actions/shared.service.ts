@@ -212,13 +212,13 @@ concatenateInsights(actionSummary: any, type:any) {
       const params = [];
     
       if (userInfo.utmMedium) {
-        params.push(`utmMedium=${userInfo.utmMedium}`);
+        params.push(`utm_medium=${userInfo.utmMedium}`);
       }
       if (userInfo.utmSource) {
-        params.push(`utmSource=${userInfo.utmSource}`);
+        params.push(`utm_source=${userInfo.utmSource}`);
       }
       if (userInfo.utmCampaign) {
-        params.push(`utmContent=${userInfo.utmCampaign}`);
+        params.push(`utm_content=${userInfo.utmCampaign}`);
       }
        
       if (params.length > 0) {

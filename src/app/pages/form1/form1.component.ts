@@ -133,7 +133,7 @@ export class Form1Component implements OnInit {
   uploadBasicDetails() {
     this.isSubmit = true;
     const PricingModel:any = localStorage.getItem("text");
-    let text =  '';
+    let text = '';
     const SelectedPrice =  localStorage.getItem("plan");
     const formValue = this.form1.value;
     const defaultparams = {
