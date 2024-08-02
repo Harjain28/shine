@@ -1,4 +1,4 @@
-export const report_model1 = {
+export const cust11Fixed2Json = {
   "report": {
     "creditReport": {
       "bureauScore": {
