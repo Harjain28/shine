@@ -143,9 +143,14 @@
                 <div class="col-lg-4 col-md-6 col-sm-12">
                   <div class="topCriticalBox">
                     <h5>Top Critical Issues to Act on</h5>
-                    <div class="LoanList" *ngFor="let item of top3criticalIssue">
+                    <div class="LoanList" *ngFor="let item of top3criticalIssue; let i=index">
                       <div class="loanHeading">
-                        <h3>{{item?.header}}</h3>
+                        <!-- <h3>{{item?.header}}</h3> -->
+                        <h3 >
+                          {{ item?.header.split('>')[0] }} > <span class="second-part">{{ item?.header.split('>')[1] }}</span>
+                        </h3>
+                        <span class="circle">{{i+1}}</span>
+
                       </div>
                       <div class="contentBox">
                         <h4>{{item?.subheader}}</h4>
@@ -199,7 +204,7 @@
   <!-- Top-Banner-Section End -->
 
 
-  <!-- required-action -->
+  <!-- required-action -->  
 
   <ng-container *ngIf="reportsData?.insights?.actionSummary">
     <app-required-actions #requiredActions (scrollToSectionEvent)="scrollToSectionEvent.emit($event)"

@@ -217,7 +217,7 @@ export class ReportsComponent {
   @ViewChild(BankingBusinessComponent)
   bankingBusinessComponent!: BankingBusinessComponent;
   result: any[] = [];
-  top3criticalIssue:any=[];
+  top3criticalIssue: any = [];
   // @ViewChild(CreditReportComponent) creditReportComponent!: CreditReportComponent;
   constructor(
     private api: ApiService,
@@ -273,8 +273,7 @@ export class ReportsComponent {
     // this.criticalTotal =
     //   bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
 
-    const actionSummaryData = this.reportData?.insights?.actionSummary;
-    console.log(this.reportData, 'actionSummaryDatas');
+    const actionSummaryData = this.reportsData?.insights?.actionSummary;
     console.log(actionSummaryData, 'actionSummaryDatas');
     if (actionSummaryData) {
       const filteredCritical = this.reportService.concatenateInsights(
@@ -294,6 +293,14 @@ export class ReportsComponent {
         filteredPositive?.creditReport.length +
         filteredPositive?.bankingHistory.length +
         filteredPositive?.gstHistory.length;
+    } else {
+      if (this.reportsData?.report) {
+        const { bankingSummary, bureauSummary, gstSummary } = this.reportsData.report;
+        this.postiveTotal =
+          bankingSummary?.positive + bureauSummary?.positive + gstSummary?.positive;
+        this.criticalTotal =
+          bankingSummary?.critical + bureauSummary?.critical + gstSummary?.critical;
+      }
     }
     const compareStage = this.headerSection?.background.find(
       (image: { stage: any }) =>
@@ -532,25 +539,26 @@ export class ReportsComponent {
     console.log(this.reportsData, 'reportsData');
 
     let filteredArray: any = [];
-    
+
     for (const key in this.reportsData?.insights?.fold1) {
       const array = this.reportsData?.insights?.fold1[key];
       if (Array.isArray(array)) {
-        const filtered = array.filter((item: any) => item?.condition_status === true);
+        const filtered = array.filter(
+          (item: any) => item?.condition_status === true
+        );
         filteredArray = filteredArray.concat(filtered);
       }
     }
-  
+
     filteredArray.sort((a: any, b: any) => {
       const countA = parseInt(a.class);
       const countB = parseInt(b.class);
       return countA - countB;
     });
-    
+
     this.top3criticalIssue = filteredArray.slice(0, 3);
-    
+
     console.log(this.top3criticalIssue);
-     
 
     const actionSummaryData = this.reportsData?.insights?.actionSummary;
     if (actionSummaryData) {
@@ -562,7 +570,6 @@ export class ReportsComponent {
         actionSummaryData,
         'positive'
       );
-      if(filteredCritical) {
       this.criticalTotal =
         filteredCritical?.creditReport.length +
         filteredCritical?.bankingHistory.length +
@@ -571,14 +578,17 @@ export class ReportsComponent {
         filteredPositive?.creditReport.length +
         filteredPositive?.bankingHistory.length +
         filteredPositive?.gstHistory.length;
-      } else {
-        const { bankingSummary, bureauSummary, gstSummary } = this.reportsData?.report;
+    } else {
+      if (this.reportsData?.report) {
+        const { bankingSummary, bureauSummary, gstSummary } = this.reportsData.report;
         this.postiveTotal =
-          bankingSummary.positive + bureauSummary.positive + gstSummary.positive;
+          bankingSummary?.positive + bureauSummary?.positive + gstSummary?.positive;
         this.criticalTotal =
-          bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
+          bankingSummary?.critical + bureauSummary?.critical + gstSummary?.critical;
       }
     }
+
+    console.log(this.criticalTotal, 'criticalTotal');
     this.getReportData(this.reportsData);
 
     this.gstDetails = this.reportsData?.report?.gstHistory;

@@ -279,17 +279,18 @@ export const cust25Json = {
     "score": 185,
     "currentStage": 1,
     "potentialStage": 2,
-    "bankingSummary": {
-      "critical": 2,
-      "medium": 1,
-      "positive": 3,
-      "summary": "A growing or stable turnover signals good business health. However, focus on maintaining minimum balance requirements to avoid potential cashflow issues."
-    },
+   
     "bureauSummary": {
       "critical": 2,
       "medium": 2,
       "positive": 1,
       "summary": "While your repayments have improved, your past defaults along with an imbalanced credit mix, could be of concern to lenders. Focus on settling these defaults and diversifying your credit sources."
+    },
+    "bankingSummary": {
+      "critical": 2,
+      "medium": 1,
+      "positive": 3,
+      "summary": "A growing or stable turnover signals good business health. However, focus on maintaining minimum balance requirements to avoid potential cashflow issues."
     },
     "gstSummary": {
       "critical": 1,
