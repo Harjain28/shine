@@ -118,10 +118,16 @@ import { cust49Json } from '../JsonFiles/9029015602';
 import { cust50Json } from '../JsonFiles/9935025285';
 import { cust11Fixed2Json } from '../JsonFiles/8746099464-fixed2';
 import { cust27Fixed2Json } from '../JsonFiles/8791301338-fixed2';
+import { cust16Fixed2Json } from '../JsonFiles/6352416401-fixed2';
+import { cust25Fixed2Json } from '../JsonFiles/8090799120-fixed2';
 import { RequiredActionsComponent } from './required-actions/required-actions.component';
 import { report_model1 } from '../JsonFiles/report_model1';
 import { NavigationService } from '../services/navigation.service';
 import { ReportService } from './required-actions/shared.service';
+
+interface Fold1 {
+  [key: string]: any[];
+}
 
 @Component({
   selector: 'app-reports',
@@ -138,7 +144,7 @@ import { ReportService } from './required-actions/shared.service';
     NoBureauComponent,
     NoGstComponent,
     MaterialModule,
-    RouterModule
+    RouterModule,
   ],
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.scss'],
@@ -204,18 +210,30 @@ export class ReportsComponent {
   bureauScore: any;
   @ViewChild('requiredActions') requiredActions!: RequiredActionsComponent;
   scrollToSectionEvent = new EventEmitter<string>();
-  @ViewChild('sectionsContainer', { static: false }) sectionsContainer!: ElementRef;
-  @ViewChild(CreditReportComponent) creditReportComponent!: CreditReportComponent;
-  @ViewChild(BankingBusinessComponent) bankingBusinessComponent!:BankingBusinessComponent;
+  @ViewChild('sectionsContainer', { static: false })
+  sectionsContainer!: ElementRef;
+  @ViewChild(CreditReportComponent)
+  creditReportComponent!: CreditReportComponent;
+  @ViewChild(BankingBusinessComponent)
+  bankingBusinessComponent!: BankingBusinessComponent;
+  result: any[] = [];
+  top3criticalIssue:any=[];
   // @ViewChild(CreditReportComponent) creditReportComponent!: CreditReportComponent;
-  constructor(private api: ApiService,public reportService:ReportService, private renderer: Renderer2 ,private cdr: ChangeDetectorRef, public router: Router,private navigationService:NavigationService) { }
+  constructor(
+    private api: ApiService,
+    public reportService: ReportService,
+    private renderer: Renderer2,
+    private cdr: ChangeDetectorRef,
+    public router: Router,
+    private navigationService: NavigationService
+  ) {}
 
   ngOnInit(): void {
     // if(!this.storage.isToken())
     //   {
     //     this.router.navigate(['/in'])
     //   }
-    this.requestData = localStorage.getItem("reqData")
+    this.requestData = localStorage.getItem('reqData');
     this.parsedData = JSON.parse(this.requestData);
 
     if (this.parsedData) {
@@ -225,95 +243,107 @@ export class ReportsComponent {
     // this.api.reportApi();
     const url = this.router.url;
     if (url.includes('/report') && url !== '/in/report_model1') {
-      this.postForReport();    
+      this.postForReport();
     } else {
       this.navigateToSampleReportWithParams();
     }
   }
 
-
   scrollToSection(section: string): void {
     this.requiredActions.scrollToSection(section);
   }
-  
-  getReportData(reportData:any) {
+
+  getReportData(reportData: any) {
     this.showEligible = false;
     this.gstDetails = reportData?.report?.gstHistory;
     if (!this.gstDetails) {
       this.isShowNoGST = true;
     }
     this.bureauScore = reportData?.report?.creditReport?.bureauScore?.score;
-    if(!this.bureauScore){
+    if (!this.bureauScore) {
       this.isShowNoBureau = true;
     }
- 
-  this.headerSection = reportStatciData?.header_section;
-  this.disclaimer = reportStatciData?.disclaimer?.description;
 
-  // const { bankingSummary, bureauSummary, gstSummary } = reportData?.report;
-  // this.postiveTotal =
-  //   bankingSummary.positive + bureauSummary.positive + gstSummary.positive;
-  // this.criticalTotal =
-  //   bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
+    this.headerSection = reportStatciData?.header_section;
+    this.disclaimer = reportStatciData?.disclaimer?.description;
 
-  const actionSummaryData = this.reportData?.insights?.actionSummary;
-  console.log(this.reportData, "actionSummaryDatas");
-  console.log(actionSummaryData, "actionSummaryDatas");
-  if(actionSummaryData) {
-  const filteredCritical = this.reportService.concatenateInsights(actionSummaryData , 'negative');
-  const filteredPositive = this.reportService.concatenateInsights(actionSummaryData , 'positive');
-  console.log(filteredPositive, "filteredPositive");
-  this.criticalTotal = filteredCritical?.creditReport.length + filteredCritical?.bankingHistory.length + filteredCritical?.gstHistory.length;
-  this.postiveTotal = filteredPositive?.creditReport.length + filteredPositive?.bankingHistory.length + filteredPositive?.gstHistory.length;
-  }
-  const compareStage = this.headerSection?.background.find(
-    (image: { stage: any }) => image.stage === reportData?.report?.currentStage
-  );
+    // const { bankingSummary, bureauSummary, gstSummary } = reportData?.report;
+    // this.postiveTotal =
+    //   bankingSummary.positive + bureauSummary.positive + gstSummary.positive;
+    // this.criticalTotal =
+    //   bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
 
-  if (compareStage) {
-    this.imgUrlDesktop = compareStage.desktop;
-    this.imgUrlMobile = compareStage.mobile_content;
-  }
-
-  this.Key_Insights_box = this.headerSection?.Key_Insights_box?.Key_Insights.find(
-    (image: { stage: any }) => image.stage === reportData?.report?.potentialStage.toString()
-  );
-
-
-
-  this.levelArray = [
-    {
-      "stage": "1",
-      "color": "#ff7a24"
-    },
-    {
-      "stage": "2",
-      "color": "#221460"
-    },
-    {
-      "stage": "3",
-      "color": "#6e2ec4"
-    },
-    {
-      "stage": "4",
-      "color": "#c5e522"
-    },
-    {
-      "stage": "5",
-      "color": "#15b89a"
+    const actionSummaryData = this.reportData?.insights?.actionSummary;
+    console.log(this.reportData, 'actionSummaryDatas');
+    console.log(actionSummaryData, 'actionSummaryDatas');
+    if (actionSummaryData) {
+      const filteredCritical = this.reportService.concatenateInsights(
+        actionSummaryData,
+        'negative'
+      );
+      const filteredPositive = this.reportService.concatenateInsights(
+        actionSummaryData,
+        'positive'
+      );
+      console.log(filteredPositive, 'filteredPositive');
+      this.criticalTotal =
+        filteredCritical?.creditReport.length +
+        filteredCritical?.bankingHistory.length +
+        filteredCritical?.gstHistory.length;
+      this.postiveTotal =
+        filteredPositive?.creditReport.length +
+        filteredPositive?.bankingHistory.length +
+        filteredPositive?.gstHistory.length;
     }
-  ]
+    const compareStage = this.headerSection?.background.find(
+      (image: { stage: any }) =>
+        image.stage === reportData?.report?.currentStage
+    );
 
-  const compare = this.levelArray.find(
-    (res: { stage: any }) => res.stage === this.Key_Insights_box.stage
-  );
+    if (compareStage) {
+      this.imgUrlDesktop = compareStage.desktop;
+      this.imgUrlMobile = compareStage.mobile_content;
+    }
 
-  if (compare) {
-    this.progressValue = (compare.stage / 5) * 100;
-    this.potentialColor = compare.color;
+    this.Key_Insights_box =
+      this.headerSection?.Key_Insights_box?.Key_Insights.find(
+        (image: { stage: any }) =>
+          image.stage === reportData?.report?.potentialStage.toString()
+      );
+
+    this.levelArray = [
+      {
+        stage: '1',
+        color: '#ff7a24',
+      },
+      {
+        stage: '2',
+        color: '#221460',
+      },
+      {
+        stage: '3',
+        color: '#6e2ec4',
+      },
+      {
+        stage: '4',
+        color: '#c5e522',
+      },
+      {
+        stage: '5',
+        color: '#15b89a',
+      },
+    ];
+
+    const compare = this.levelArray.find(
+      (res: { stage: any }) => res.stage === this.Key_Insights_box.stage
+    );
+
+    if (compare) {
+      this.progressValue = (compare.stage / 5) * 100;
+      this.potentialColor = compare.color;
+    }
+    this.level = reportData?.report?.potentialStage;
   }
-  this.level = reportData?.report?.potentialStage;
-}
 
   ngAfterViewInit(): void {
     // this.isBrowser = isPlatformBrowser(this.platformId);
@@ -325,8 +355,9 @@ export class ReportsComponent {
       this.updateProgress();
     }, 100);
 
-    this.scrollToSectionEvent.subscribe(header =>
-       this.scrollToSections(header));
+    this.scrollToSectionEvent.subscribe((header) =>
+      this.scrollToSections(header)
+    );
 
     this.cdr.detectChanges();
   }
@@ -336,19 +367,21 @@ export class ReportsComponent {
     if (this.creditReportComponent) {
       this.creditReportComponent.setExpandSection(header);
     }
-    if(this.bankingBusinessComponent) {
+    if (this.bankingBusinessComponent) {
       this.bankingBusinessComponent.setBankingExpandSection(header);
     }
-  
+
     setTimeout(() => {
       // Ensure the section is now available in the DOM
       const section = document.getElementById(header);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  
+
         // Pehle se class remove karen agar pehle add hui ho
-        document.querySelectorAll('.section-hover').forEach(el => el.classList.remove('section-hover'));
-  
+        document
+          .querySelectorAll('.section-hover')
+          .forEach((el) => el.classList.remove('section-hover'));
+
         // Nayi class add karen
         section.classList.add('section-hover');
 
@@ -361,15 +394,15 @@ export class ReportsComponent {
         pointerDiv.style.backgroundColor = '#FF7B24';
         pointerDiv.style.borderRadius = '50%';
         pointerDiv.style.boxShadow = '0 0 10px rgba(0, 123, 255, 0.5)';
-        pointerDiv.style.pointerEvents = 'none'; 
-        pointerDiv.style.transition = 'opacity 0.5s ease-out';  // Fade out effect
+        pointerDiv.style.pointerEvents = 'none';
+        pointerDiv.style.transition = 'opacity 0.5s ease-out'; // Fade out effect
 
         section.appendChild(pointerDiv);
         setTimeout(() => {
-          pointerDiv.style.opacity = '0';  // Fade out
-          setTimeout(() => pointerDiv.remove(), 2000); 
-        }, 2000); 
-  
+          pointerDiv.style.opacity = '0'; // Fade out
+          setTimeout(() => pointerDiv.remove(), 2000);
+        }, 2000);
+
         setTimeout(() => {
           const rect = section.getBoundingClientRect();
           if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
@@ -378,14 +411,12 @@ export class ReportsComponent {
             console.error('Section is not in view.');
           }
         }, 500);
-  
       } else {
         console.error(`Section with ID "${header}" not found.`);
       }
     }, 100);
   }
-  
-  
+
   getChartsData() {
     this.ChartsData = ChartsJsonData;
   }
@@ -393,9 +424,9 @@ export class ReportsComponent {
   navigateToSampleReportWithParams() {
     const fileName = this.router.parseUrl(this.router.url).queryParams['name'];
     const queryParams = {
-      name: fileName
+      name: fileName,
     };
-    const reportsDataMap:any = {
+    const reportsDataMap: any = {
       'good_bureau.json': goodBureauJSON,
       '7001163340.json': cust1Json,
       '7001163340-fixed.json': cust1FixedJson,
@@ -452,38 +483,40 @@ export class ReportsComponent {
       '9014135897-fixed.json': cust30FixedJson,
       '9810394413-fixed.json': cust38FixedJson,
       '9874673188-fixed2.json': cust40Fixed2Json,
-      '6352416401-fixed3.json':cust16Fixed3Json,
-      '7002057931-fixed3.json':cust17Fixed3Json,
-      '7386964691-fixed3.json':cust18Fixed3Json,
-      '7630960645-fixed3.json':cust19Fixed3Json,
-      '7755073434-fixed3.json':cust20Fixed3Json,
-      '7827722922-fixed3.json':cust21Fixed3Json,
-      '7984372723-fixed3.json':cust22Fixed3Json,
-      '8002177560-fixed3.json':cust23Fixed3Json,
-      '8008508500-fixed3.json':cust24Fixed3Json,
-      '8090799120-fixed3.json':cust25Fixed3Json,
-      '8250410163-fixed3.json':cust26Fixed3Json,
-      '8791301338-fixed3.json':cust27Fixed3Json,
-      '8888265422-fixed3.json':cust28Fixed3Json,
-      '8977577888-fixed3.json':cust29Fixed3Json,
-      '9014135897-fixed3.json':cust30Fixed3Json,
-      '9045532404-fixed3.json':cust31Fixed3Json,
-      '9423142181-fixed3.json':cust32Fixed3Json,
-      '9439345525-fixed3.json':cust33Fixed3Json,
-      '9509612970-fixed3.json':cust34Fixed3Json,
-      '9609368419-fixed3.json':cust35Fixed3Json,
-      '9679617825-fixed3.json':cust36Fixed3Json,
-      '9727198579-fixed3.json':cust37Fixed3Json,
-      '9810394413-fixed3.json':cust38Fixed3Json,
-      '9850517709-fixed3.json':cust39Fixed3Json,
-      '9874673188-fixed3.json':cust40Fixed3Json,
-      '9972099888-fixed3.json':cust41Fixed3Json,
-      '8408883086.json':cust47Json,
-      '8889956999.json':cust48Json,
-      '9029015602.json':cust49Json,
-      '9935025285.json':cust50Json,
-      '8746099464-fixed2.json':cust11Fixed2Json,
-      '8791301338-fixed2.json':cust27Fixed2Json,
+      '6352416401-fixed3.json': cust16Fixed3Json,
+      '7002057931-fixed3.json': cust17Fixed3Json,
+      '7386964691-fixed3.json': cust18Fixed3Json,
+      '7630960645-fixed3.json': cust19Fixed3Json,
+      '7755073434-fixed3.json': cust20Fixed3Json,
+      '7827722922-fixed3.json': cust21Fixed3Json,
+      '7984372723-fixed3.json': cust22Fixed3Json,
+      '8002177560-fixed3.json': cust23Fixed3Json,
+      '8008508500-fixed3.json': cust24Fixed3Json,
+      '8090799120-fixed3.json': cust25Fixed3Json,
+      '8250410163-fixed3.json': cust26Fixed3Json,
+      '8791301338-fixed3.json': cust27Fixed3Json,
+      '8888265422-fixed3.json': cust28Fixed3Json,
+      '8977577888-fixed3.json': cust29Fixed3Json,
+      '9014135897-fixed3.json': cust30Fixed3Json,
+      '9045532404-fixed3.json': cust31Fixed3Json,
+      '9423142181-fixed3.json': cust32Fixed3Json,
+      '9439345525-fixed3.json': cust33Fixed3Json,
+      '9509612970-fixed3.json': cust34Fixed3Json,
+      '9609368419-fixed3.json': cust35Fixed3Json,
+      '9679617825-fixed3.json': cust36Fixed3Json,
+      '9727198579-fixed3.json': cust37Fixed3Json,
+      '9810394413-fixed3.json': cust38Fixed3Json,
+      '9850517709-fixed3.json': cust39Fixed3Json,
+      '9874673188-fixed3.json': cust40Fixed3Json,
+      '9972099888-fixed3.json': cust41Fixed3Json,
+      '8408883086.json': cust47Json,
+      '8889956999.json': cust48Json,
+      '9029015602.json': cust49Json,
+      '9935025285.json': cust50Json,
+      '8746099464-fixed2.json': cust11Fixed2Json,
+      '8791301338-fixed2.json': cust27Fixed2Json,
+      '6352416401-fixed2.json': cust16Fixed2Json,
+      '8090799120-fixed2.json': cust25Fixed2Json,
       'avg_bureau.json': avgBureauJSON,
       'no_bureau.json': noBureauJSON,
       'poor_bureau.json': poorBureauJSON,
@@ -496,13 +529,55 @@ export class ReportsComponent {
     } else {
       this.reportsData = reportsDataMap[fileName] || this.reportData;
     }
-    console.log(this.reportsData, "reportsData");
+    console.log(this.reportsData, 'reportsData');
+
+    let filteredArray: any = [];
+    
+    for (const key in this.reportsData?.insights?.fold1) {
+      const array = this.reportsData?.insights?.fold1[key];
+      if (Array.isArray(array)) {
+        const filtered = array.filter((item: any) => item?.condition_status === true);
+        filteredArray = filteredArray.concat(filtered);
+      }
+    }
+  
+    filteredArray.sort((a: any, b: any) => {
+      const countA = parseInt(a.class);
+      const countB = parseInt(b.class);
+      return countA - countB;
+    });
+    
+    this.top3criticalIssue = filteredArray.slice(0, 3);
+    
+    console.log(this.top3criticalIssue);
+     
+
     const actionSummaryData = this.reportsData?.insights?.actionSummary;
-    if(actionSummaryData) {
-    const filteredCritical = this.reportService.concatenateInsights(actionSummaryData , 'negative');
-    const filteredPositive = this.reportService.concatenateInsights(actionSummaryData , 'positive');
-    this.criticalTotal = filteredCritical?.creditReport.length + filteredCritical?.bankingHistory.length + filteredCritical?.gstHistory.length;
-    this.postiveTotal = filteredPositive?.creditReport.length + filteredPositive?.bankingHistory.length + filteredPositive?.gstHistory.length;
+    if (actionSummaryData) {
+      const filteredCritical = this.reportService.concatenateInsights(
+        actionSummaryData,
+        'negative'
+      );
+      const filteredPositive = this.reportService.concatenateInsights(
+        actionSummaryData,
+        'positive'
+      );
+      if(filteredCritical) {
+      this.criticalTotal =
+        filteredCritical?.creditReport.length +
+        filteredCritical?.bankingHistory.length +
+        filteredCritical?.gstHistory.length;
+      this.postiveTotal =
+        filteredPositive?.creditReport.length +
+        filteredPositive?.bankingHistory.length +
+        filteredPositive?.gstHistory.length;
+      } else {
+        const { bankingSummary, bureauSummary, gstSummary } = this.reportsData?.report;
+        this.postiveTotal =
+          bankingSummary.positive + bureauSummary.positive + gstSummary.positive;
+        this.criticalTotal =
+          bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
+      }
     }
     this.getReportData(this.reportsData);
 
@@ -511,23 +586,18 @@ export class ReportsComponent {
       this.isShowNoGST = true;
     }
 
-    this.bureauScore = this.reportsData?.report?.creditReport?.bureauScore?.score;
-    if(!this.bureauScore){
+    this.bureauScore =
+      this.reportsData?.report?.creditReport?.bureauScore?.score;
+    if (!this.bureauScore) {
       this.isShowNoBureau = true;
     }
 
-
-
-
     // this.router.navigate(['/in/sample_report'], { queryParams: queryParams });
-
   }
-
 
   // getHeaderSectionData() {
   //   this.reportStaticData = reportStatciData;
   //   this.reportsData = reportPageJson?.report;
-
 
   //   this.headerSection = reportStatciData?.header_section;
   //   this.disclaimer = reportStatciData?.disclaimer?.description;
@@ -550,27 +620,25 @@ export class ReportsComponent {
   postForReport() {
     this.showEligible = true;
     let requestData: any = {};
-    requestData["mobile"] = this.mobileNo;
+    requestData['mobile'] = this.mobileNo;
     //  const params = { ...this.paramsObject.params };
     this.api.postForReport(`api/Remediation/Report`, requestData).subscribe({
       next: (res: any) => {
         if (res) {
           this.showEligible = false;
           this.reportsData = res;
-            this.getReportData(this.reportsData);
+          this.getReportData(this.reportsData);
         }
       },
-      error: error => {
+      error: (error) => {
         this.router.navigate(['/in']);
       },
       complete: () => {
         // ('Request complete');
-      }
+      },
     });
-
   }
 
- 
   redirectToPricing() {
     this.navigationService.setLinkClicked(true);
     this.router.navigate(['/in/pricing_group']);
@@ -606,8 +674,9 @@ export class ReportsComponent {
     this.progress += 1;
 
     if (this.progressBar && this.progressBar.nativeElement) {
-      this.progressBar.nativeElement.style.transform = `rotate(${this.progress * 3.6
-        }deg)`;
+      this.progressBar.nativeElement.style.transform = `rotate(${
+        this.progress * 3.6
+      }deg)`;
     }
 
     if (this.progressText && this.progressText.nativeElement) {
@@ -616,8 +685,9 @@ export class ReportsComponent {
 
     if (this.progress % 1 === 0) {
       const a = document.createElement('div');
-      a.style.cssText = `position: absolute; width: 3px; height: 100%; border-top: 65px solid #12BA9B; left: 49%; top: 0%; transform: rotate(${this.progress * 3.6
-        }deg);`;
+      a.style.cssText = `position: absolute; width: 3px; height: 100%; border-top: 65px solid #12BA9B; left: 49%; top: 0%; transform: rotate(${
+        this.progress * 3.6
+      }deg);`;
 
       if (this.progressContainer && this.progressContainer.nativeElement) {
         this.progressContainer.nativeElement.appendChild(a);

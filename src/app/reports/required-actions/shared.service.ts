@@ -2,7 +2,6 @@
 
 import { Injectable } from '@angular/core';
 
-
 interface Tab {
   title: string;
   count: number;
@@ -17,7 +16,7 @@ interface Card {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ReportService {
   summary_section: any;
@@ -37,19 +36,22 @@ export class ReportService {
     {
       title: 'Bureau',
       count: 0,
-      imageUrl: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/credit_score.png',
+      imageUrl:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/credit_score.png',
       isActive: true,
     },
     {
       title: 'Banking History',
       count: 0,
-      imageUrl: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/banking_blue.png',
+      imageUrl:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/banking_blue.png',
       isActive: false,
     },
     {
       title: 'GST Filings',
       count: 0,
-      imageUrl: 'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/gst.png',
+      imageUrl:
+        'https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/gst.png',
       isActive: false,
     },
   ];
@@ -58,51 +60,60 @@ export class ReportService {
     Bureau: [
       {
         title: '1. Your Bureau Score',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
         buttonText: 'Know how to fix this',
       },
       {
         title: '2. Underwritten by Banks',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus.',
         buttonText: 'Know how to fix this',
       },
       {
         title: '3. Disputes with Lenders',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
         buttonText: 'Know how to fix this',
       },
       {
         title: '4. Your Bureau Score',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
         buttonText: 'Know how to fix this',
       },
     ],
     Banking: [
       {
         title: '1. Your Bureau Score',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
         buttonText: 'Know how to fix this',
       },
       {
         title: '2. Underwritten by Banks',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus.',
         buttonText: 'Know how to fix this',
       },
       {
         title: '3. Your Bureau Score',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
         buttonText: 'Know how to fix this',
       },
     ],
     GST: [
       {
         title: '1. Your Bureau Score',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus. Cras non mi maximus lorem aliquam sodales. Aliquam placerat risus id.',
         buttonText: 'Know how to fix this',
       },
       {
         title: '2. Underwritten by Banks',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique massa eu rhoncus dapibus.',
         buttonText: 'Know how to fix this',
       },
     ],
@@ -119,15 +130,15 @@ export class ReportService {
     this.bureau = this.reportsData?.bureauSummary;
     this.gst = this.reportsData?.gstSummary;
   }
- 
-// Function to filter and concatenate insights
-concatenateInsights(actionSummary: any, type:any) {
-    let result:any = {
+
+  // Function to filter and concatenate insights
+  concatenateInsights(actionSummary: any, type: any) {
+    let result: any = {
       creditReport: [],
       gstHistory: [],
-      bankingHistory: []
+      bankingHistory: [],
     };
-  
+
     Object.keys(actionSummary).forEach((key) => {
       const section = actionSummary[key];
       if (Array.isArray(section)) {
@@ -135,33 +146,33 @@ concatenateInsights(actionSummary: any, type:any) {
           if (insight.class === type && insight.condition_status) {
             result[key].push({
               ...insight,
-              objectName: key
+              objectName: key,
             });
           }
         });
       } else {
         Object.keys(section).forEach((subKey) => {
           const subSection = section[subKey];
-  
+
           if (Array.isArray(subSection)) {
             subSection.forEach((insight: any) => {
               if (insight.class === type && insight.condition_status) {
                 result[key].push({
                   ...insight,
-                  objectName: `${key}.${subKey}`
+                  objectName: `${key}.${subKey}`,
                 });
               }
             });
           } else {
             Object.keys(subSection).forEach((deepKey) => {
               const deepSection = subSection[deepKey];
-  
+
               if (Array.isArray(deepSection)) {
                 deepSection.forEach((insight: any) => {
                   if (insight.class === type && insight.condition_status) {
                     result[key].push({
                       ...insight,
-                      objectName: `${key}.${subKey}.${deepKey}`
+                      objectName: `${key}.${subKey}.${deepKey}`,
                     });
                   }
                 });
@@ -171,66 +182,63 @@ concatenateInsights(actionSummary: any, type:any) {
         });
       }
     });
-  
+
     return result;
   }
-  
-  
-    // getFilteredInsights(actionSummaryData: any) {
-    //   const filteredCreditReport = this.concatenateInsights([
-    //     ...actionSummaryData?.creditReport?.defaultAnalysis,
-    //     ...actionSummaryData?.creditReport?.otherAnalysis?.topBanks,
-    //     ...actionSummaryData?.creditReport?.otherAnalysis?.suitFiledEver,
-    //     ...actionSummaryData?.creditReport?.bureauScore,
-    //     ...actionSummaryData?.creditReport?.creditCardUtilization,
-    //     ...actionSummaryData?.creditReport?.smallLoans,
-    //     ...actionSummaryData?.creditReport?.creditRemark,
-    //     ...actionSummaryData?.creditReport?.creditEnquiry,
-    //   ]);
-    
-    //   const filteredGstHistory = this.concatenateInsights(actionSummaryData.gstHistory);
-    
-    //   const filteredBankingHistory = this.concatenateInsights([
-    //     ...actionSummaryData?.bankingHistory.volatility,
-    //     ...actionSummaryData?.bankingHistory.minimum_balance,
-    //     ...actionSummaryData?.bankingHistory.Q_on_Q_dip,
-    //     ...actionSummaryData?.bankingHistory.count_volatility,
-    //     ...actionSummaryData?.bankingHistory?.abb,
-    //     ...actionSummaryData?.bankingHistory?.debt_to_revenue_ratio,
-    //     ...actionSummaryData?.bankingHistory?.cheque_bounces,
-    //   ]);
-    
-    //   return {
-    //     creditReport: filteredCreditReport,
-    //     gstHistory: filteredGstHistory,
-    //     bankingHistory: filteredBankingHistory,
-    //   };
-    // }
-    
-    redirectToMSME(userInfo: any) {
-      let url = 'https://www.creditenable.com/in/sme-business-loan/unsecured-business-loans/msme-sme-business-loans-india-v1';
-      const params = [];
-    
-      if (userInfo.utmMedium) {
-        params.push(`utm_medium=${userInfo.utmMedium}`);
-      }
-      if (userInfo.utmSource) {
-        params.push(`utm_source=${userInfo.utmSource}`);
-      }
-      if (userInfo.utmCampaign) {
-        params.push(`utm_content=${userInfo.utmCampaign}`);
-      }
-       
-      if (params.length > 0) {
-        url += '?' + params.join('&');
-      }
-    
-      console.log(url);
-      window.location.href = url;
+
+  // getFilteredInsights(actionSummaryData: any) {
+  //   const filteredCreditReport = this.concatenateInsights([
+  //     ...actionSummaryData?.creditReport?.defaultAnalysis,
+  //     ...actionSummaryData?.creditReport?.otherAnalysis?.topBanks,
+  //     ...actionSummaryData?.creditReport?.otherAnalysis?.suitFiledEver,
+  //     ...actionSummaryData?.creditReport?.bureauScore,
+  //     ...actionSummaryData?.creditReport?.creditCardUtilization,
+  //     ...actionSummaryData?.creditReport?.smallLoans,
+  //     ...actionSummaryData?.creditReport?.creditRemark,
+  //     ...actionSummaryData?.creditReport?.creditEnquiry,
+  //   ]);
+
+  //   const filteredGstHistory = this.concatenateInsights(actionSummaryData.gstHistory);
+
+  //   const filteredBankingHistory = this.concatenateInsights([
+  //     ...actionSummaryData?.bankingHistory.volatility,
+  //     ...actionSummaryData?.bankingHistory.minimum_balance,
+  //     ...actionSummaryData?.bankingHistory.Q_on_Q_dip,
+  //     ...actionSummaryData?.bankingHistory.count_volatility,
+  //     ...actionSummaryData?.bankingHistory?.abb,
+  //     ...actionSummaryData?.bankingHistory?.debt_to_revenue_ratio,
+  //     ...actionSummaryData?.bankingHistory?.cheque_bounces,
+  //   ]);
+
+  //   return {
+  //     creditReport: filteredCreditReport,
+  //     gstHistory: filteredGstHistory,
+  //     bankingHistory: filteredBankingHistory,
+  //   };
+  // }
+
+  redirectToMSME(userInfo: any) {
+    let url =
+      'https://www.creditenable.com/in/sme-business-loan/unsecured-business-loans/msme-sme-business-loans-india-v1';
+    const params = [];
+
+    if (userInfo.utmMedium) {
+      params.push(`utm_medium=${userInfo.utmMedium}`);
     }
-    
-    
-  
+    if (userInfo.utmSource) {
+      params.push(`utm_source=${userInfo.utmSource}`);
+    }
+    if (userInfo.utmCampaign) {
+      params.push(`utm_content=${userInfo.utmCampaign}`);
+    }
+
+    if (params.length > 0) {
+      url += '?' + params.join('&');
+    }
+
+    console.log(url);
+    window.location.href = url;
+  }
 
   updateTabCounts(): void {
     if (this.filteredInsights) {
