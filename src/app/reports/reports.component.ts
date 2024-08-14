@@ -272,7 +272,27 @@ export class ReportsComponent {
     //   bankingSummary.positive + bureauSummary.positive + gstSummary.positive;
     // this.criticalTotal =
     //   bankingSummary.critical + bureauSummary.critical + gstSummary.critical;
+    let filteredArray: any = [];
 
+    for (const key in this.reportsData?.insights?.fold1) {
+      const array = this.reportsData?.insights?.fold1[key];
+      if (Array.isArray(array)) {
+        const filtered = array.filter(
+          (item: any) => item?.condition_status === true
+        );
+        filteredArray = filteredArray.concat(filtered);
+      }
+    }
+
+    filteredArray.sort((a: any, b: any) => {
+      const countA = parseInt(a.class);
+      const countB = parseInt(b.class);
+      return countA - countB;
+    });
+
+    this.top3criticalIssue = filteredArray.slice(0, 3);
+
+    console.log(this.top3criticalIssue);
     const actionSummaryData = this.reportsData?.insights?.actionSummary;
     console.log(actionSummaryData, 'actionSummaryDatas');
     if (actionSummaryData) {

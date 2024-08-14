@@ -5,11 +5,13 @@ import { MatCardModule } from "@angular/material/card";
 import { MatTabsModule } from "@angular/material/tabs";
 import { CarouselModule, OwlOptions } from "ngx-owl-carousel-o";
 import { shinePricingPageJSON } from "src/app/JsonFiles/pricing";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { LocalStorageService } from "src/app/services/local-storage.service";
 import { SampleReportsFormComponent } from "src/app/modal/sample-reports-form/sample-reports-form.component";
 import { MatDialog } from "@angular/material/dialog";
 import { NavigationService } from "src/app/services/navigation.service";
+import { OtpService } from "src/app/services/otp.service";
+import { ApiService } from "src/app/services/api.service";
 
 @Component({
   selector: "app-pricing1",
@@ -41,13 +43,22 @@ export class Pricing1Component {
   annaulFilteredPlan: any;
   monthlyPlan: any;
   annualPlan: any;
+  savedPhoneNumber:any;
+  paramsObject: any;
 
   constructor(
     public router: Router,
     private navigationService: NavigationService,
     private state: LocalStorageService,
-    private dialog: MatDialog
-  ) {}
+    private dialog: MatDialog,
+    private otpService:OtpService,
+    private api: ApiService,
+    private route:ActivatedRoute
+  ) {
+    this.route.queryParamMap.subscribe((params) => {
+      this.paramsObject = { ...params };
+    });
+  }
 
   customOptionPlan: OwlOptions = {
     loop: true,
@@ -87,6 +98,8 @@ export class Pricing1Component {
     this.showPricingPlan();
     this.state.removeSomeItem();
     this.getPricingData();
+    const data:any = localStorage.getItem("reqData");
+    this.savedPhoneNumber = JSON.parse(data);
   }
 
   viewReportsForm() {
@@ -145,6 +158,55 @@ export class Pricing1Component {
       height: "auto",
     });
   }
+
+  getOtpbyPhone(PricingModel:any, SelectedPrice:any ) {
+    const defaultparams = {
+      forceGenerate: false,
+      resend: false,
+    };
+    const params = { ...defaultparams, ...this.paramsObject.params };
+    let requestData: any = {};
+    requestData['mobile'] = this.savedPhoneNumber?.mobile;
+    requestData['PricingModel'] =  PricingModel;
+    requestData['SelectedPrice'] = SelectedPrice;
+
+    if (this.savedPhoneNumber) {
+        this.api.post(`api/Remediation/GetOTP`, requestData, params).subscribe({
+          next: (res: any) => {
+            if (res.success) {
+              this.navigationService.setLinkClicked(true);
+              localStorage.setItem('reqData', JSON.stringify(requestData));
+              this.fetchOtp();
+              const plan:any = localStorage.getItem("plan");
+              if (plan) {
+               this.navigationService.redirectToOTP(plan);
+              } else {
+                this.navigationService.redirectToOTP(String(requestData.selectedPrice));
+              }
+            } 
+          },
+          error: (error) => {
+            // this.onNextClick();
+          },
+          complete: () => {
+            ('Request complete');
+          },
+        });
+      }
+  }
+
+  fetchOtp(): void {
+    this.otpService
+      .fetchOtp(15000)
+      .then((otp) => {
+        console.log('OTP:', otp);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+
   goToRegister(
     text: any,
     plan: any,
@@ -155,8 +217,14 @@ export class Pricing1Component {
     localStorage.setItem("text", text);
     localStorage.setItem("plan", pricingPlan);
     localStorage.setItem("filteredPlan", filteredPlan);
+    console.log(this.savedPhoneNumber, "savedPhoneNumber");
     this.navigationService.setLinkClicked(isLinkClicked);
-    this.navigationService.redirectToRegister_start(pricingPlan);
+    if (this.savedPhoneNumber) {
+      this.getOtpbyPhone(text , pricingPlan);
+    } else {
+      this.navigationService.redirectToRegister_start(pricingPlan);
+    }
+
     // this.router.navigate(['/in/register_start'], { queryParamsHandling:"preserve"})
   }
 
