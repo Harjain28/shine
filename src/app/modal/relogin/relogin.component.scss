@@ -1,5 +1,16 @@
 
+::ng-deep{
+    .rc-anchor-normal {
+        width: 264px !important;
+    }
 
+    .rc-anchor-logo-portrait {
+        margin: 10px 0 0 -14px !important;
+    }
+    .rc-anchor-normal .rc-anchor-pt {
+        right: 40px !important;
+    }
+}
 
 .modalOpen {
    
@@ -34,7 +45,9 @@
             background-color: var(--main1);
             padding: 36px 35px;
             border-radius: 0px;
-            width: 335px;
+            width: 400px;
+
+            
 
             &.otpBox{
                 width: 380px;

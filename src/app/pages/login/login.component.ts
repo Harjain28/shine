@@ -112,7 +112,7 @@ export class LoginComponent {
 
   ngOnInit(): void {
     const dialogRef = this.dialog.open(ReloginComponent, {
-      width: '320px',
+      width: '400px',
       height: 'auto',
     });
   }
