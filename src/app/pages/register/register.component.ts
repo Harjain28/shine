@@ -25,6 +25,7 @@ import { Location } from '@angular/common';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { OtpService } from 'src/app/services/otp.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-register',
@@ -36,6 +37,8 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
     MatIconModule,
     MatOptionModule,
     MaterialModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
     MatInputModule,],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss', '../form1/form1.component.scss']
@@ -91,6 +94,7 @@ export class RegisterComponent {
         Validators.pattern('^[6-9]\\d{9}$'),
         Validators.maxLength(10),
       ]),
+      reCaptcha: new FormControl(null, Validators.required),
     });
   }
   onNextClick() {

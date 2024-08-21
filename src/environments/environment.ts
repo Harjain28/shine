@@ -25,6 +25,10 @@ export const environment = {
   },
   enableGTM: true,
 
+
+recaptcha: {
+  siteKey: '6LfJrisqAAAAANmTRhUuP5CGmxsl-vj0wVznyBQc',
+},
 };
 
 /*

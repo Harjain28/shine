@@ -20,5 +20,7 @@ export const environment = {
     instrumentationKey: '9841128a-2c54-41a7-8dcb-67ca4d58bffb'
   },
   enableGTM: true,
-
+  recaptcha: {
+    siteKey: '6LfJrisqAAAAANmTRhUuP5CGmxsl-vj0wVznyBQc',
+  },
 };

@@ -23,6 +23,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { OtpService } from 'src/app/services/otp.service';
 import { PricingService } from 'src/app/services/random-pricing.service';
+import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-relogin',
@@ -39,6 +40,8 @@ import { PricingService } from 'src/app/services/random-pricing.service';
     MatIconModule,
     NgOtpInputModule,
     FormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
     ReactiveFormsModule,
     MatSliderModule,
   ],
@@ -126,6 +129,7 @@ export class ReloginComponent {
         Validators.pattern('^[6-9]\\d{9}$'),
         Validators.maxLength(10),
       ]),
+      reCaptcha: new FormControl(null, Validators.required),
     });
     const savedPhoneNumber = localStorage.getItem('phoneNumber');
     if (savedPhoneNumber) {

@@ -42,6 +42,16 @@
                   </div>
 
                 </div>
+                <div class="row">
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                          <re-captcha formControlName="reCaptcha"></re-captcha>
+
+                  </div>
+                  <div class="error mt-2" *ngIf="viewForm.controls['reCaptcha'].touched && viewForm.controls['reCaptcha'].hasError('required')">
+                      reCaptcha verification failed
+                    </div>
+
+              </div>
               </form>
             
             </ng-container>

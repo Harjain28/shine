@@ -20,6 +20,9 @@ import { GTMService } from './services/gtm.service';
 import { LoaderInterceptor } from './interceptor/interceptor';
 import { ErrorInterceptor } from './interceptor/errorInterceptor';
 import { PartnersComponent } from './shared/partners/partners.component';
+import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
+import { environment } from 'src/environments/environment';
+
 
 
 @NgModule({
@@ -43,13 +46,21 @@ import { PartnersComponent } from './shared/partners/partners.component';
     HttpClientModule,
     CarouselModule,
     MatDialogModule,
-    ViewComponent
+    ViewComponent,
+    RecaptchaFormsModule,
+
   ],
   providers: [DatePipe, GTMService,   { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }, {
     provide: HTTP_INTERCEPTORS,
     useClass: LoaderInterceptor,
     multi: true
-  }],
+  },
+  {
+    provide: RECAPTCHA_SETTINGS,
+    useValue: {
+      siteKey: environment.recaptcha.siteKey,
+    } as RecaptchaSettings,
+  },],
   exports: [
   ],
   bootstrap: [AppComponent]
