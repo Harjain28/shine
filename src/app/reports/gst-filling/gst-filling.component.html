@@ -71,7 +71,7 @@
           </div>
         </div>
 
-        <div class="ApplyNow mt-4" *ngIf="router.url !== '/in/report_model1'">
+        <div class="ApplyNow mt-4" *ngIf="router.url !== '/in/report_model1' && showApplyButton">
           <a class="btn" (click)="reportService.redirectToMSME(gstData?.userInfo)">Apply Now</a>
         </div>
 

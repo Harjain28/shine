@@ -1025,7 +1025,7 @@
         </owl-carousel-o>
       </div>
     </div>
-    <div class="ApplyNow mt-5" *ngIf="router.url !== '/in/report_model1'">
+    <div class="ApplyNow mt-5" *ngIf="router.url !== '/in/report_model1' && showApplyButton">
       <a class="btn" (click)="reportService.redirectToMSME(bankingData?.userInfo)">Apply Now</a>
     </div>
 

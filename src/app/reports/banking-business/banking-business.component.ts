@@ -136,6 +136,7 @@ export class BankingBusinessComponent {
   count_VolColor: any;
   voColor: any;
   summaryIcon: any;
+  showApplyButton:boolean = false;
 
   constructor(public router:Router, private navigationService:NavigationService, public reportService:ReportService ,private cdr:ChangeDetectorRef) {}
   customOptions4: OwlOptions = {
@@ -181,6 +182,8 @@ export class BankingBusinessComponent {
 
     this.getInsights();
     this.getBankingSection();
+    const result = this.reportService.processProbabilityData(this.bankingBusinessData);
+    this.showApplyButton = result.showApplyButton;
   }
 
   scrollToSection() {

@@ -218,6 +218,7 @@ export class ReportsComponent {
   bankingBusinessComponent!: BankingBusinessComponent;
   result: any[] = [];
   top3criticalIssue: any = [];
+  showApplyButton: boolean = false;
   // @ViewChild(CreditReportComponent) creditReportComponent!: CreditReportComponent;
   constructor(
     private api: ApiService,
@@ -247,6 +248,9 @@ export class ReportsComponent {
     } else {
       this.navigateToSampleReportWithParams();
     }
+
+    const result = this.reportService.processProbabilityData(this.reportsData);
+    this.showApplyButton = result.showApplyButton;
   }
 
   scrollToSection(section: string): void {
@@ -291,10 +295,7 @@ export class ReportsComponent {
     });
 
     this.top3criticalIssue = filteredArray.slice(0, 3);
-
-    console.log(this.top3criticalIssue);
     const actionSummaryData = this.reportsData?.insights?.actionSummary;
-    console.log(actionSummaryData, 'actionSummaryDatas');
     if (actionSummaryData) {
       const filteredCritical = this.reportService.concatenateInsights(
         actionSummaryData,
@@ -304,7 +305,6 @@ export class ReportsComponent {
         actionSummaryData,
         'positive'
       );
-      console.log(filteredPositive, 'filteredPositive');
       this.criticalTotal =
         filteredCritical?.creditReport.length +
         filteredCritical?.bankingHistory.length +
@@ -578,8 +578,6 @@ export class ReportsComponent {
 
     this.top3criticalIssue = filteredArray.slice(0, 3);
 
-    console.log(this.top3criticalIssue);
-
     const actionSummaryData = this.reportsData?.insights?.actionSummary;
     if (actionSummaryData) {
       const filteredCritical = this.reportService.concatenateInsights(
@@ -608,7 +606,6 @@ export class ReportsComponent {
       }
     }
 
-    console.log(this.criticalTotal, 'criticalTotal');
     this.getReportData(this.reportsData);
 
     this.gstDetails = this.reportsData?.report?.gstHistory;

@@ -123,6 +123,15 @@ export class ReloginComponent {
   }
 
   ngOnInit(): void {
+    this.form();
+    const savedPhoneNumber = localStorage.getItem('phoneNumber');
+    if (savedPhoneNumber) {
+      this.viewForm.patchValue({ phoneNumber: savedPhoneNumber });
+    }
+    this.redirectToPricing();
+  }
+
+  form() {
     this.viewForm = new FormGroup({
       phoneNumber: new FormControl('', [
         Validators.required,
@@ -131,13 +140,8 @@ export class ReloginComponent {
       ]),
       reCaptcha: new FormControl(null, Validators.required),
     });
-    const savedPhoneNumber = localStorage.getItem('phoneNumber');
-    if (savedPhoneNumber) {
-      this.viewForm.patchValue({ phoneNumber: savedPhoneNumber });
-    }
-    this.redirectToPricing();
-  }
 
+  }
   cancel() {
     // this.eventService.back();
     this.closeDialoge();

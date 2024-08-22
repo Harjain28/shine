@@ -222,7 +222,7 @@
   </ng-container>
   <!-- <app-no-bureau></app-no-bureau> -->
 
-  <div class="ApplyNow" *ngIf="router.url !== '/in/report_model1'"
+  <div class="ApplyNow" *ngIf="router.url !== '/in/report_model1' && showApplyButton"
     (click)="reportService.redirectToMSME(reportsData?.userInfo)">
     <a class="btn">Apply Now</a>
   </div>

@@ -1,6 +1,7 @@
 // src/app/services/report.service.ts
 
 import { Injectable } from '@angular/core';
+import { reportStatciData } from 'src/app/JsonFiles/reportpageStaticData';
 
 interface Tab {
   title: string;
@@ -259,5 +260,27 @@ export class ReportService {
       default:
         return [];
     }
+  }
+
+  processProbabilityData(probOfLoanData: any): { probabilityData: any[], showApplyButton: boolean } {
+    const probabilityData: any[] = [];
+    const staticData = reportStatciData?.lenders;
+    const currProbData = probOfLoanData?.report?.loanProbability;
+    let showApplyButton = false;
+
+    staticData.forEach((item1: { key: string }) => {
+      const matchingItem = currProbData.find(
+        (item2: { lender: string }) => item1.key === item2.lender
+      );
+      if (matchingItem) {
+        const combinedItem = { ...item1, ...matchingItem };
+        probabilityData.push(combinedItem);
+        if ((combinedItem.currentProbability * 100) > 20) {
+          showApplyButton = true;
+        }
+      }
+    });
+
+    return { probabilityData, showApplyButton };
   }
 }

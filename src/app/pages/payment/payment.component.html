@@ -131,7 +131,8 @@
               <h3>{{filteredData?.Headertext}} Plan</h3>
               <del>{{+planPrice + 1000}}</del>
               <span>₹{{planPrice | number:'':'en-IN'}} <small>+GST</small></span>
-              <p>1 report per {{per_text}}</p>
+              <p *ngIf="filteredData?.Headertext === 'One-Time'">per member, one-time</p>
+              <p *ngIf="filteredData?.Headertext === 'Annual'">Annual for 4 report, <br>1 every 3 months</p>
             </div>
           </div>
         </div>

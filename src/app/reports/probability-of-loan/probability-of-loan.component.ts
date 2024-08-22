@@ -78,23 +78,10 @@ export class ProbabilityOfLoanComponent {
   constructor(public router:Router, private navigationService:NavigationService, public reportService:ReportService) {}
 
   ngOnInit(): void {
-    this.data = this.probOfLoanData;
-    this.staticData = reportStatciData?.lenders;
-    this.currProbData = this.data?.report?.loanProbability;
+    const result = this.reportService.processProbabilityData(this.probOfLoanData);
+    this.probabilityData = result.probabilityData;
+    this.showApplyButton = result.showApplyButton;
 
-    this.staticData.forEach((item1: { key: string }) => {
-      const matchingItem = this.currProbData.find(
-        (item2: { lender: string }) => item1.key === item2.lender
-      );
-      if (matchingItem) {
-        const combinedItem = { ...item1, ...matchingItem };
-        this.probabilityData.push(combinedItem);
-        if ((combinedItem.currentProbability * 100) > 20) {
-          this.showApplyButton = true;
-        }
-      }
-
-    });
   }
 
   redirectToPricing() {

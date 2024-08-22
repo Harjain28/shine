@@ -59,7 +59,7 @@ export class GstFillingComponent {
   totalUniqueMonths!: number;
   showGstComponent!: boolean;
   gstNumber: any;
-  
+  showApplyButton:boolean = false;
   turnover:any;
 
   constructor(public router:Router, private navigationService:NavigationService, public reportService:ReportService) {
@@ -80,6 +80,8 @@ export class GstFillingComponent {
 
     const gstInsights = this.gstData.insights?.gstHistory;
 
+    const result = this.reportService.processProbabilityData(this.gstData);
+    this.showApplyButton = result.showApplyButton;
 
 
     if(gstInsights?.missedGstFilings){
