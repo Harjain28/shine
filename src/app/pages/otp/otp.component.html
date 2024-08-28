@@ -1,71 +1,70 @@
 <div class="v2checksection selectForm formMinsize" >
-    <div class="blueBack"></div>
-    <div class="container mobilePd">
-      <div class="row">
-        <div class="col-xl-8 col-lg-8 col-md-12 m-auto">
-          <div class="v2checkBox mobileViewTop">
-            <div class="backButton" style="cursor: pointer;" (click)="event.back()">
-              <a ><mat-icon class="text-white">arrow_back_ios</mat-icon></a>
-            </div>
-              <div class="from">
-                <h3>Enter OTP & Explore Loan Possibilities</h3>
-                <div class="formSelect">
-                  <div class="example-container">
-
-              <form [formGroup]="otpVerify">
-
-                    <div class="row" *ngIf = "isOtpBox">
-                      <div class="otpGap text-center mb-4">
-                        <ng-otp-input #ngmobileOtpInput [ngClass]="phoneOtp && phoneOtp.length < 6
-                        ? 'isvaliderror' :  ''"  (onInputChange)="onOtpChange($event);" [config]="config">
-                        </ng-otp-input>
-                      </div>
-                    </div>
-                  </form>
-
-                  </div>
-                </div>
-  
-                <div class="ButtonNow pushable">
-                  <button class="otp" [disabled]="isOtpSubmit"   (click)="submitOtp()">Next
-                    <mat-icon>keyboard_arrow_right</mat-icon></button>
-                </div>
-                <div class="resend">
-                  <span *ngIf = "istimer"> {{transform(counter)}}</span>
-  
-                  <a class="resend_otp" [ngClass]="isResend ? 'btnFocus' : 'btn'" (click)="resendOtp()">Resend <mat-icon>refresh</mat-icon></a>
-                </div>
-                <hr class="borderBottom" />
-                <div class="checkBox">
-                  <div class="example-section">
-                    <div class="Note">By continuing, you consent to CreditEnable accessing your credit information as needed, and agree to our 
-                      <a href="https://ce-static-media.s3.ap-south-1.amazonaws.com/files/CreditEnable_TnC_15112023.pdf" target="_blank" class="link-color">Term of
-                        Use</a>
-                        & to the <a href="https://ce-static-media.s3.ap-south-1.amazonaws.com/files/CreditEnable_Experian_Consent__15112023.pdf"
-                        target="_blank" class="link-color">Experian</a> T&C.</div>
-                  </div>
-              </div>
-  
-              <hr class="borderBottom" />
-  
-              <p class="Note center-italic">The routine checks help us create personalised loan options for your financial advantage, and they don’t hurt your bureau.
-  
-              </p>
-                <hr class="borderBottom" />
-  
-                <div class="addNumber">
-                  <p>We've sent your 6 digit code to <span> +91-{{mobileNo}}</span></p>
-                  <p>We hope your business is registered to this number!</p>
-                  <p>Instant eligibility and lender matches coming your way!</p>
-                </div>
-              </div>
+  <div class="blueBack"></div>
+  <div class="container mobilePd">
+    <div class="row">
+      <div class="col-xl-8 col-lg-8 col-md-12 m-auto">
+        <div class="v2checkBox mobileViewTop">
+          <div class="backButton" style="cursor: pointer;" (click)="event.back()">
+            <a ><mat-icon class="text-white">arrow_back_ios</mat-icon></a>
           </div>
+            <div class="from">
+              <h3>Enter OTP & Explore Loan Possibilities</h3>
+              <div class="formSelect">
+                <div class="example-container">
+
+            <form [formGroup]="otpVerify">
+
+                  <div class="row" *ngIf = "isOtpBox">
+                    <div class="otpGap text-center mb-4">
+                      <ng-otp-input #ngmobileOtpInput [ngClass]="phoneOtp && phoneOtp.length < 6
+                      ? 'isvaliderror' :  ''"  (onInputChange)="onOtpChange($event);" [config]="config">
+                      </ng-otp-input>
+                    </div>
+                  </div>
+                </form>
+
+                </div>
+              </div>
+
+              <div class="ButtonNow pushable">
+                <button class="otp" [disabled]="isOtpSubmit"   (click)="submitOtp()">Next
+                  <mat-icon>keyboard_arrow_right</mat-icon></button>
+              </div>
+              <div class="resend">
+                <span *ngIf = "istimer"> {{transform(counter)}}</span>
+
+                <a class="resend_otp" [ngClass]="isResend ? 'btnFocus' : 'btn'" (click)="resendOtp()">Resend <mat-icon>refresh</mat-icon></a>
+              </div>
+              <hr class="borderBottom" />
+              <div class="checkBox">
+                <div class="example-section">
+                  <div class="Note">By continuing, you consent to CreditEnable accessing your credit information as needed, and agree to our 
+                    <a href="assets/images/pdf/July_2024_CreditEnable_Consent_Unified.pdf" target="_blank" class="link-color">Term of
+                      Use</a>
+                      & to the <a href="https://ce-static-media.s3.ap-south-1.amazonaws.com/files/CreditEnable_Experian_Consent__15112023.pdf"
+                      target="_blank" class="link-color">Experian</a> T&C.</div>
+                </div>
+            </div>
+
+            <hr class="borderBottom" />
+
+            <p class="Note center-italic">The routine checks help us create personalised loan options for your financial advantage, and they don’t hurt your bureau.
+
+            </p>
+              <hr class="borderBottom" />
+
+              <div class="addNumber">
+                <p>We've sent your 6 digit code to <span> +91-{{mobileNo}}</span></p>
+                <p>We hope your business is registered to this number!</p>
+                <p>Instant eligibility and lender matches coming your way!</p>
+              </div>
+            </div>
         </div>
       </div>
     </div>
   </div>
-  
-  
-  
-  
-  
+</div>
+
+
+
+
