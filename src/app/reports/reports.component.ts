@@ -116,10 +116,15 @@ import { cust47Json } from '../JsonFiles/8408883086';
 import { cust48Json } from '../JsonFiles/8889956999';
 import { cust49Json } from '../JsonFiles/9029015602';
 import { cust50Json } from '../JsonFiles/9935025285';
+import { cust50FixedJson } from '../JsonFiles/9935025285-fixed';
 import { cust11Fixed2Json } from '../JsonFiles/8746099464-fixed2';
 import { cust27Fixed2Json } from '../JsonFiles/8791301338-fixed2';
 import { cust16Fixed2Json } from '../JsonFiles/6352416401-fixed2';
 import { cust25Fixed2Json } from '../JsonFiles/8090799120-fixed2';
+import { cust51Json } from '../JsonFiles/8600584080';
+import { cust16Fixed4Json } from '../JsonFiles/6352416401-fixed4';
+import { cust25Fixed4Json } from '../JsonFiles/8090799120-fixed4';
+import { cust50Fixed2Json } from '../JsonFiles/9935025285-fixed2';
 import { RequiredActionsComponent } from './required-actions/required-actions.component';
 import { report_model1 } from '../JsonFiles/report_model1';
 import { NavigationService } from '../services/navigation.service';
@@ -540,10 +545,15 @@ export class ReportsComponent {
       '8889956999.json': cust48Json,
       '9029015602.json': cust49Json,
       '9935025285.json': cust50Json,
+      '9935025285-fixed.json': cust50FixedJson,
       '8746099464-fixed2.json': cust11Fixed2Json,
       '8791301338-fixed2.json': cust27Fixed2Json,
       '6352416401-fixed2.json': cust16Fixed2Json,
       '8090799120-fixed2.json': cust25Fixed2Json,
+      '8600584080.json': cust51Json,
+      '6352416401-fixed4.json': cust16Fixed4Json,
+      '8090799120-fixed4.json': cust25Fixed4Json,
+      '9935025285-fixed2.json': cust50Fixed2Json,
       'avg_bureau.json': avgBureauJSON,
       'no_bureau.json': noBureauJSON,
       'poor_bureau.json': poorBureauJSON,

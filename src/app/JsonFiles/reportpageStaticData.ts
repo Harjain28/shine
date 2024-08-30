@@ -417,21 +417,7 @@ export const reportStatciData =
                 "question": "What is SHINE?",
                 "answer": "As a small business owner, SHINE is your new best friend! SHINE uses your credit profile, GST filing history, and business financials to give you the most comprehensive assessment of your business health out there. Designed to be a one-stop-solution, Shine recommends steps to take to improve your creditworthiness and become eligible for your dream loan in 3-6 months."
             },
-            {
-                "question": "What do the Levels Mean?",
-                "answer": null,
-                "bullets": ["Level 1: Starter",
-                "You’re at the beginning of your journey to becoming eligible for a business loan! There’s a need to organise financial records and improve GST compliance to build a solid foundation to get the right loans.",
-                "Level 2: Builder",
-                "You’re building a good foundation, but there’s a lot of scope to do better. Start by focusing on improving your credit score and maintaining a healthy cash flow as per Shine’s advice.",
-                "Level 3: Improver",
-                "You’re on the path to becoming a solid business loan prospect. Start by being consistent with financial practices and manage expenses effectively. Shine can tell you how.",
-                "Level 4: Advancer",
-                "Your profile and past credentials are good. Fine-tune financial strategies and ensure impeccable financial records, that appease lenders.",
-                "Level 5: Achiever",
-                "You’re in a strong financial position and this makes you a great lending prospect. Apply for loans with favourable terms and maintain excellent financial habits. CreditEnable can guide you how!"
-                ]
-            },
+            
             {
                 "question": "Who can use SHINE?",
                 "answer": "SHINE is meant for every and all business owners. No matter how advanced you are in your entrepreneurial journey- just starting out, have a low credit score, looking for your next loan, or looking for larger, multi-funded loans - SHINE can help. SHINE is a data-driven tool designed to aid decision-making, SHINE uses artificial intelligence to assess your profile and recommends steps you can take to improve your attractiveness to lenders. If you already have a strong profile, SHINE will help you identify areas of opportunity that you can use to get better deals on loans, better ROIs and save some money."
