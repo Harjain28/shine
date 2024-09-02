@@ -125,6 +125,9 @@ import { cust51Json } from '../JsonFiles/8600584080';
 import { cust16Fixed4Json } from '../JsonFiles/6352416401-fixed4';
 import { cust25Fixed4Json } from '../JsonFiles/8090799120-fixed4';
 import { cust50Fixed2Json } from '../JsonFiles/9935025285-fixed2';
+import { cust50bbghJson } from '../JsonFiles/9935025285-bbgh';
+import { cust11bbgmJson } from '../JsonFiles/8746099464-bbgm';
+import { cust27bbglJson } from '../JsonFiles/8791301338-bbgl';
 import { RequiredActionsComponent } from './required-actions/required-actions.component';
 import { report_model1 } from '../JsonFiles/report_model1';
 import { NavigationService } from '../services/navigation.service';
@@ -554,6 +557,9 @@ export class ReportsComponent {
       '6352416401-fixed4.json': cust16Fixed4Json,
       '8090799120-fixed4.json': cust25Fixed4Json,
       '9935025285-fixed2.json': cust50Fixed2Json,
+      '9935025285-bbgh.json': cust50bbghJson,
+      '8746099464-bbgm.json': cust11bbgmJson,
+      '8791301338-bbgl.json': cust27bbglJson,
       'avg_bureau.json': avgBureauJSON,
       'no_bureau.json': noBureauJSON,
       'poor_bureau.json': poorBureauJSON,

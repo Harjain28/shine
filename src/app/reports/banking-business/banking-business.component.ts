@@ -337,7 +337,8 @@ export class BankingBusinessComponent {
       'Minimum Banking Balance',
     ];
     const debt = [
-      'Debt To Turnover',
+      'Secured Debt To Turnover',
+      'Unsecured Debt to Turnover',   
       'Balanced Ratio!',
       'Cheque Bounces'
     ];
