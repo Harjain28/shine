@@ -179,6 +179,7 @@ export class ReloginComponent {
               localStorage.setItem('reqData', JSON.stringify(data));
               sessionStorage.setItem('reloginUpdates', JSON.stringify(res));
               this.navigationService.setLinkClicked(true);
+              localStorage.setItem('title', res?.userInfo?.prefix);
               this.closeDialoge();
               if (res?.lastReportId && res?.lastReportId !== null || res?.userInfo) {
                 this.fetchOtp();

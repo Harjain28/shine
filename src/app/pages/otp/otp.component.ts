@@ -169,6 +169,7 @@ export class OtpComponent implements OnInit{
             localStorage.setItem("reqData", JSON.stringify(res?.userInfo));
             localStorage.setItem('stage', JSON.stringify(res?.reportStage));
             this.plan = localStorage.getItem("plan");
+            localStorage.setItem('title', res?.userInfo?.prefix);
             this.navigationService.setLinkClicked(true);
             const stage = res?.reportStage;
             const plan = this.plan || String(this.userData?.userInfo?.selectedPrice);
