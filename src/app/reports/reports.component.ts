@@ -128,6 +128,17 @@ import { cust50Fixed2Json } from '../JsonFiles/9935025285-fixed2';
 import { cust50bbghJson } from '../JsonFiles/9935025285-bbgh';
 import { cust11bbgmJson } from '../JsonFiles/8746099464-bbgm';
 import { cust27bbglJson } from '../JsonFiles/8791301338-bbgl';
+import { cust32Fixed4Json } from '../JsonFiles/9423142181-fixed4';
+import { cust33Fixed4Json } from '../JsonFiles/9439345525-fixed4';
+import { cust36Fixed4Json } from '../JsonFiles/9679617825-fixed4';
+import { cust44Fixed2Json } from '../JsonFiles/8149535510-fixed2';
+import { cust32Fixed5Json } from '../JsonFiles/9423142181-fixed5';
+import { cust52Json } from '../JsonFiles/9699555355';
+import { cust53Json } from '../JsonFiles/9833700995';
+import { cust54Json } from '../JsonFiles/9381054403';
+import { cust5FixedJson } from '../JsonFiles/9815390378-fixed';
+import { cust8FixedJson } from '../JsonFiles/9727363295-fixed';
+import { cust51FixedJson } from '../JsonFiles/8600584080-fixed';
 import { RequiredActionsComponent } from './required-actions/required-actions.component';
 import { report_model1 } from '../JsonFiles/report_model1';
 import { NavigationService } from '../services/navigation.service';
@@ -560,11 +571,22 @@ export class ReportsComponent {
       '9935025285-bbgh.json': cust50bbghJson,
       '8746099464-bbgm.json': cust11bbgmJson,
       '8791301338-bbgl.json': cust27bbglJson,
+      '9423142181-fixed4.json': cust32Fixed4Json,
+      '9439345525-fixed4.json': cust33Fixed4Json,
+      '9679617825-fixed4.json': cust36Fixed4Json,
+      '8149535510-fixed2.json': cust44Fixed2Json,
+      '9423142181-fixed5.json': cust32Fixed5Json,
+      '9699555355.json': cust52Json,
+      '9833700995.json': cust53Json,
+      '9815390378-fixed.json': cust5FixedJson,
+      '9727363295-fixed.json': cust8FixedJson,
+      '8600584080-fixed.json': cust51FixedJson,
       'avg_bureau.json': avgBureauJSON,
       'no_bureau.json': noBureauJSON,
       'poor_bureau.json': poorBureauJSON,
       'no_gst.json': noGSTJSON,
       'vpoor_bureau.json': vpoorBureauJSON,
+      '9381054403.json': cust54Json,
     };
 
     if (this.router.url === '/in/report_model1') {

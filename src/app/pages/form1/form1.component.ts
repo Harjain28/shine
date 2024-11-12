@@ -88,6 +88,7 @@ export class Form1Component implements OnInit {
         firstName: this.parsedData.firstName,
         lastName: this.parsedData.lastName,
         busninessName: this.parsedData.businessName,
+        dsaCode: this.parsedData.dsaCode ?  this.parsedData.dsaCode : '',
         emailId: this.parsedData.email,
       });
     }
@@ -119,7 +120,8 @@ export class Form1Component implements OnInit {
         updateOn: 'blur',
       }),
       busninessName: new FormControl('', [Validators.required, Validators.minLength(4)]),
-     
+      dsaCode: new FormControl(''),
+    
     });
   }
 
@@ -149,7 +151,10 @@ export class Form1Component implements OnInit {
     requestData['firstName'] = formValue.firstName.toUpperCase();
     requestData['lastName'] = formValue.lastName.toUpperCase();
     requestData['businessName'] = formValue.busninessName;
-
+    if (formValue.dsaCode) {
+      requestData['dsaCode'] = formValue.dsaCode;
+    }
+    
         this.api.post(`api/Remediation/UpdateBasicFormDetails`, requestData, params).subscribe({
           next: (res: any) => {
             if (res.success) {

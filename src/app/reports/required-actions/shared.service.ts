@@ -223,6 +223,7 @@ export class ReportService {
       'https://www.creditenable.com/in/sme-business-loan/unsecured-business-loans/msme-sme-business-loans-india-v1';
     const params = [];
 
+  
     if (userInfo.utmMedium) {
       params.push(`utm_medium=${userInfo.utmMedium}`);
     }
@@ -230,9 +231,11 @@ export class ReportService {
       params.push(`utm_source=${userInfo.utmSource}`);
     }
     if (userInfo.utmCampaign) {
-      params.push(`utm_content=${userInfo.utmCampaign}`);
+      params.push(`utm_campaign=${userInfo.utmCampaign}`);
     }
+    params.push(`utm_content=shine`);
 
+  
     if (params.length > 0) {
       url += '?' + params.join('&');
     }
