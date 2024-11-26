@@ -250,8 +250,14 @@ export class CreditReportComponent {
       }));
     }
 
-    this.currStage = this.reportsData?.report?.currentStage
-    this.potStage = this.reportsData?.report?.potentialStage
+    if(this.reportsData?.report?.currentLoanProbability) {
+      this.currStage = this.reportsData?.report?.currentLoanProbability
+      this.potStage = this.reportsData?.report?.potentialLoanProbability
+    } else {
+      this.currStage = this.reportsData?.report?.currentStage
+      this.potStage = this.reportsData?.report?.potentialStage
+    }
+   
 
 
     if(this.creditReportData?.creditAnalysis){

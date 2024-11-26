@@ -139,6 +139,10 @@ import { cust54Json } from '../JsonFiles/9381054403';
 import { cust5FixedJson } from '../JsonFiles/9815390378-fixed';
 import { cust8FixedJson } from '../JsonFiles/9727363295-fixed';
 import { cust51FixedJson } from '../JsonFiles/8600584080-fixed';
+import { cust54FixedJson } from '../JsonFiles/9381054403-fixed';
+import { cust55Json } from '../JsonFiles/8879868231';
+import { cust56Json } from '../JsonFiles/9820635246';
+import { cust57Json } from '../JsonFiles/9841053100';
 import { RequiredActionsComponent } from './required-actions/required-actions.component';
 import { report_model1 } from '../JsonFiles/report_model1';
 import { NavigationService } from '../services/navigation.service';
@@ -587,6 +591,10 @@ export class ReportsComponent {
       'no_gst.json': noGSTJSON,
       'vpoor_bureau.json': vpoorBureauJSON,
       '9381054403.json': cust54Json,
+      '9381054403-fixed.json': cust54FixedJson,
+      '8879868231.json': cust55Json,
+      '9820635246.json': cust56Json,
+      '9841053100.json': cust57Json,
     };
 
     if (this.router.url === '/in/report_model1') {

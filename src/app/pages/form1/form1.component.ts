@@ -58,7 +58,8 @@ export class Form1Component implements OnInit {
   showBusniessNameError!: boolean;
   parsedData:any;
   @ViewChild('formSection', { static: true }) formSection!: ElementRef;
-
+  hideField: boolean = false;
+  
   constructor(
     private route: ActivatedRoute,
     public location: Location,
@@ -72,8 +73,11 @@ export class Form1Component implements OnInit {
 
   ) {
     this.route.queryParamMap.subscribe((params) => {
-      this.paramsObject = { ...params };
+      this.paramsObject = { ...params.keys, ...params }; 
+      const utmCampaign = params.get('utm_campaign'); 
+      this.hideField = !!utmCampaign;
     });
+
   }
 
   ngOnInit(): void {

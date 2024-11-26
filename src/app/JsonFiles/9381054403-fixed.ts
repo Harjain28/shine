@@ -1,35 +1,34 @@
-export const cust8FixedJson = 
-{
+export const cust54FixedJson = {
   "report": {
     "creditReport": {
       "bureauScore": {
-        "score": 691
+        "score": 719
       },
       "loanRepaymentHistory": {
         "missedPayments": [
           {
-            "year": 2024,
-            "month": 3,
-            "monthName": "Mar",
-            "date": "2024-03-01T00:00:00",
-            "dpDs": 1,
-            "maxDPD": 1
+            "year": 2022,
+            "month": 11,
+            "monthName": "Nov",
+            "date": "2022-11-01T00:00:00",
+            "dpDs": 2,
+            "maxDPD": 12
           },
           {
-            "year": 2023,
-            "month": 4,
-            "monthName": "Apr",
-            "date": "2023-04-01T00:00:00",
+            "year": 2021,
+            "month": 11,
+            "monthName": "Nov",
+            "date": "2021-11-01T00:00:00",
             "dpDs": 1,
-            "maxDPD": 30
+            "maxDPD": 12
           }
         ],
         "defaultAnalysis": {
           "defaultHistory": {
-            "recentDefault": true,
+            "recentDefault": false,
             "defaultEver": true,
             "thirtyDaysDelayed": false,
-            "last12MDPD": true,
+            "last12MDPD": false,
             "delayedSeverity": false,
             "overdueExceedsThreshold": false
           },
@@ -41,69 +40,85 @@ export const cust8FixedJson =
         "otherAnalysis": {
           "topBanks": false,
           "suitFiledEver": false,
-          "creditCardUtilization": 0,
-          "creditCardUtilizationExceeding": false,
-          "smallLoans": 5,
-          "smallLoansExceeding": true
+          "creditCardUtilization": 0.75,
+          "creditCardUtilizationExceeding": true,
+          "smallLoans": 0,
+          "smallLoansExceeding": false
         }
       },
       "creditAnalysis": {
         "byAmount": [
           {
-            "name": "Kisan credit loan",
-            "value": 1227825
+            "name": "Credit card",
+            "value": 2031442
           },
           {
-            "name": "Overdraft",
-            "value": 315689
+            "name": "Business Loan - General",
+            "value": 8060588
+          },
+          {
+            "name": "Commercial vehicle loan",
+            "value": 8567187
           },
           {
             "name": "Business Loan - Unsecured",
-            "value": 1161061
+            "value": 16193767
+          },
+          {
+            "name": "Property loan",
+            "value": 7356932
+          },
+          {
+            "name": "Auto loan",
+            "value": 1305969
           },
           {
             "name": "Gold loan",
-            "value": 9590
-          },
-          {
-            "name": "Personal loan",
-            "value": 135448
+            "value": 1306070
           }
         ],
         "byCount": [
           {
-            "name": "Kisan credit loan",
-            "value": 1
+            "name": "Credit card",
+            "value": 8
           },
           {
-            "name": "Overdraft",
-            "value": 1
+            "name": "Business Loan - General",
+            "value": 9
+          },
+          {
+            "name": "Commercial vehicle loan",
+            "value": 7
           },
           {
             "name": "Business Loan - Unsecured",
-            "value": 5
+            "value": 20
+          },
+          {
+            "name": "Property loan",
+            "value": 2
+          },
+          {
+            "name": "Auto loan",
+            "value": 2
           },
           {
             "name": "Gold loan",
             "value": 1
-          },
-          {
-            "name": "Personal loan",
-            "value": 2
           }
         ],
-        "hasCreditCard": false
+        "hasCreditCard": true
       },
       "businessRiskRemark": true,
-      "creditEnquiry": 2,
-      "bureauVintage": 88,
-      "dateOfBirth": "1991-04-22T00:00:00Z",
+      "creditEnquiry": 1,
+      "bureauVintage": 157,
+      "dateOfBirth": "1979-02-24T00:00:00Z",
       "securedUnsecuredRatio": {
-        "securedOutstanding": 9590,
-        "unsecuredOutstanding": 1296509,
-        "ratio": 0.9926575244296183,
-        "securedToTurnoverRatio": 0.0012218786336595346,
-        "unsecuredToTurnoverRatio": 0.16519047397781955
+        "securedOutstanding": 18536158,
+        "unsecuredOutstanding": 28317239,
+        "ratio": 0.6043796354829939,
+        "securedToTurnoverRatio": 0.471830867698499,
+        "unsecuredToTurnoverRatio": 0.7208045727812515
       }
     },
     "gstHistory": null,
@@ -111,170 +126,170 @@ export const cust8FixedJson =
       "graphData": {
         "monthly": [
           {
-            "month": "May-23",
-            "turnover": 146000,
-            "creditCount": 8,
-            "averageBalance": 56406.56,
-            "cashflow": 5061.76999999999
-          },
-          {
-            "month": "Jun-23",
-            "turnover": 60500,
-            "creditCount": 3,
-            "averageBalance": 33533.83,
-            "cashflow": -22890.34
-          },
-          {
-            "month": "Jul-23",
-            "turnover": 385000,
-            "creditCount": 8,
-            "averageBalance": 92867.71,
-            "cashflow": -82912.16
-          },
-          {
-            "month": "Aug-23",
-            "turnover": 1261230,
-            "creditCount": 21,
-            "averageBalance": 102602.27,
-            "cashflow": -6304.40999999992
-          },
-          {
-            "month": "Sep-23",
-            "turnover": 1222737.01,
-            "creditCount": 19,
-            "averageBalance": 177837.26,
-            "cashflow": -124462.14
-          },
-          {
-            "month": "Oct-23",
-            "turnover": 860155,
-            "creditCount": 24,
-            "averageBalance": 115417.36,
-            "cashflow": -240328.55
-          },
-          {
             "month": "Nov-23",
-            "turnover": 1123292,
-            "creditCount": 48,
-            "averageBalance": 90154.99,
-            "cashflow": -79831.6799999999
+            "turnover": 4088869,
+            "creditCount": 40,
+            "averageBalance": 144841.31,
+            "cashflow": 371478.9
           },
           {
             "month": "Dec-23",
-            "turnover": 618416,
-            "creditCount": 38,
-            "averageBalance": 53872.29,
-            "cashflow": -158642.92
+            "turnover": 2059121,
+            "creditCount": 32,
+            "averageBalance": 2171113.87,
+            "cashflow": -5610368.94
           },
           {
             "month": "Jan-24",
-            "turnover": 847162,
-            "creditCount": 27,
-            "averageBalance": 63042.63,
-            "cashflow": -282543.02
+            "turnover": 3438520,
+            "creditCount": 36,
+            "averageBalance": 265980.03,
+            "cashflow": 113147.99
           },
           {
             "month": "Feb-24",
-            "turnover": 305991,
-            "creditCount": 8,
-            "averageBalance": 42797.6,
-            "cashflow": -17393.87
+            "turnover": 2707943,
+            "creditCount": 32,
+            "averageBalance": 321324.95,
+            "cashflow": 8683.66000000015
           },
           {
             "month": "Mar-24",
-            "turnover": 286601,
-            "creditCount": 12,
-            "averageBalance": 72676.13,
-            "cashflow": 32619.4
+            "turnover": 3507664.44,
+            "creditCount": 30,
+            "averageBalance": 259090.36,
+            "cashflow": -539730.56
           },
           {
             "month": "Apr-24",
-            "turnover": 731486,
-            "creditCount": 20,
-            "averageBalance": 59479.41,
-            "cashflow": -266258.4
+            "turnover": 3188748,
+            "creditCount": 34,
+            "averageBalance": 193371.62,
+            "cashflow": -1142837
+          },
+          {
+            "month": "May-24",
+            "turnover": 4928329,
+            "creditCount": 41,
+            "averageBalance": 260961.08,
+            "cashflow": -1094651.74
+          },
+          {
+            "month": "Jun-24",
+            "turnover": 3186430,
+            "creditCount": 32,
+            "averageBalance": 337008.35,
+            "cashflow": -310613
+          },
+          {
+            "month": "Jul-24",
+            "turnover": 3068232,
+            "creditCount": 24,
+            "averageBalance": 330425.54,
+            "cashflow": -174193.58
+          },
+          {
+            "month": "Aug-24",
+            "turnover": 3927038,
+            "creditCount": 32,
+            "averageBalance": 274286.44,
+            "cashflow": 715134.5
+          },
+          {
+            "month": "Sep-24",
+            "turnover": 2052961.02,
+            "creditCount": 27,
+            "averageBalance": 1091459.1,
+            "cashflow": -2587327.23
+          },
+          {
+            "month": "Oct-24",
+            "turnover": 3131742.98,
+            "creditCount": 31,
+            "averageBalance": 497097.21,
+            "cashflow": -587016.1
           }
         ],
         "q1": {
           "month": "Q1",
-          "turnover": 591500,
-          "creditCount": 19,
-          "averageBalance": 60936.03333333333,
-          "cashflow": -100740.73000000001
+          "turnover": 9586510,
+          "creditCount": 108,
+          "averageBalance": 860645.07,
+          "cashflow": -5125742.05
         },
         "q2": {
           "month": "Q2",
-          "turnover": 3344122.01,
-          "creditCount": 64,
-          "averageBalance": 131952.29666666666,
-          "cashflow": -371095.0999999999
+          "turnover": 9404355.44,
+          "creditCount": 96,
+          "averageBalance": 257928.97666666665,
+          "cashflow": -1673883.9
         },
         "q3": {
           "month": "Q3",
-          "turnover": 2588870,
-          "creditCount": 113,
-          "averageBalance": 69023.30333333333,
-          "cashflow": -521017.6199999999
+          "turnover": 11182991,
+          "creditCount": 97,
+          "averageBalance": 309464.99,
+          "cashflow": -1579458.32
         },
         "q4": {
           "month": "Q4",
-          "turnover": 1324078,
-          "creditCount": 40,
-          "averageBalance": 58317.71333333333,
-          "cashflow": -251032.87
+          "turnover": 9111742,
+          "creditCount": 90,
+          "averageBalance": 620947.5833333334,
+          "cashflow": -2459208.83
         },
         "h1": {
           "month": "H1",
-          "turnover": 3935622.01,
-          "creditCount": 83,
-          "averageBalance": 96444.165,
-          "cashflow": -471835.82999999996
+          "turnover": 18990865.44,
+          "creditCount": 204,
+          "averageBalance": 559287.0233333333,
+          "cashflow": -6799625.95
         },
         "h2": {
           "month": "H2",
-          "turnover": 3912948,
-          "creditCount": 153,
-          "averageBalance": 63670.50833333333,
-          "cashflow": -772050.4899999999
+          "turnover": 20294733,
+          "creditCount": 187,
+          "averageBalance": 465206.2866666667,
+          "cashflow": -4038667.15
         },
         "turnover": {
-          "stdev": 401898.23509138,
-          "mean": 654047.5008333334,
-          "lowSd": 252149.26574195334,
-          "highSd": 1055945.7359247133,
-          "cv": 0.6144786648971434,
+          "stdev": 778553.231838765,
+          "mean": 3273799.87,
+          "lowSd": 2495246.638161235,
+          "highSd": 4052353.101838765,
+          "cv": 0.2378133248074095,
           "min": 100000,
-          "sum": 7848570.01,
-          "belowMinCount": 1
+          "sum": 39285598.44,
+          "belowMinCount": 0
         },
         "abb": {
-          "stdev": 37805.1595019369,
-          "mean": 80057.33666666667,
-          "lowSd": 42252.177164729765,
-          "highSd": 117862.49616860357,
-          "cv": 0.4722260454322329,
+          "stdev": 552942.757575436,
+          "mean": 512246.655,
+          "lowSd": -40696.102575436,
+          "highSd": 1065189.412575436,
+          "cv": 1.079446302241712,
           "min": 10000,
-          "sum": 960688.04,
+          "sum": 6146959.86,
           "belowMinCount": 0
         },
         "cashflow": {
-          "stdev": 106225.378093264,
-          "mean": -103657.19333333331,
-          "lowSd": -209882.5714265973,
-          "highSd": 2568.1847599306807,
+          "stdev": 1640904.31164355,
+          "mean": -903191.0916666667,
+          "lowSd": -2544095.4033102165,
+          "highSd": 737713.2199768834,
           "cv": 0,
           "min": 0,
-          "sum": -1243886.3199999998,
-          "belowMinCount": 10
+          "sum": -10838293.1,
+          "belowMinCount": 8
         },
         "creditCount": {
-          "stdev": 12.7758452644912,
-          "mean": 19.6666666666667,
-          "lowSd": 6.8908214021755,
-          "highSd": 32.4425119311579,
-          "cv": 0.6496192507368396,
+          "stdev": 4.60901893634161,
+          "mean": 32.5833333333333,
+          "lowSd": 27.97431439699169,
+          "highSd": 37.19235226967491,
+          "cv": 0.14145326658848945,
           "min": 2,
-          "sum": 236,
+          "sum": 391,
           "belowMinCount": 0
         }
       },
@@ -285,44 +300,49 @@ export const cust8FixedJson =
       },
       "monthlyExpenses": [
         {
+          "name": "Salary",
+          "value": 8250
+        },
+        {
           "name": "Utility Expenses",
-          "value": 2218.84
+          "value": 7178.73
         },
         {
           "name": "EMIs",
-          "value": 65331.23
+          "value": 705698.17
         },
         {
           "name": "Inv. Expense",
-          "value": 666.67
+          "value": 851.5
         },
         {
           "name": "Other Expenses",
-          "value": 181459.67
+          "value": 224122.12
         }
       ]
     },
     "propertyOwned": true,
-    "score": 267,
-    "currentStage": 2,
-    "potentialStage": 3,
+    "score": 332,
+    "currentStage": 3,
+    "potentialStage": 4,
     "currentLoanProbability": "Medium",
     "potentialLoanProbability": "High",
+    "loanAmount": 654759.974,
     "currentLoanProbabilitySummary": {
       "summary": "Your profile needs improvement to get a business loan. Look at addressing the issues to improve your chances further.",
       "warning": "Profile Needs Work"
     },
     "bankingSummary": {
-      "critical": 3,
-      "medium": 0,
-      "positive": 3,
-      "summary": "Your business shows resilience, maintaining banking balances degrowth in turnover. Focus on strategies to reduce financial fluctuations and enhance overall stability."
-    },
-    "bureauSummary": {
-      "critical": 1,
+      "critical": 2,
       "medium": 2,
       "positive": 2,
-      "summary": "Your credit report shows recent defaults and an imbalanced credit mix, which may worry lenders. Take immediate action to address the defaults."
+      "summary": "Your robust turnover and stability are commendable. Address the fluctuation in maintaining minimum balances to ensure financial resilience and reliability."
+    },
+    "bureauSummary": {
+      "critical": 0,
+      "medium": 3,
+      "positive": 2,
+      "summary": "While your repayments have improved, your past defaults along with an imbalanced credit mix, could be of concern to lenders. Focus on settling these defaults and diversifying your credit sources."
     },
     "gstSummary": {
       "critical": 1,
@@ -330,15 +350,25 @@ export const cust8FixedJson =
       "positive": 0,
       "summary": "If your business has not engaged in GST filing because it's new or doesn't meet the threshold, ensure you know the conditions and obligations for GST compliance as your business grows. This forward-looking approach will demonstrate financial foresight to potential lenders."
     },
-    "reportDate": "2024-04-30T00:00:00",
+    "reportDate": "2024-10-31T00:00:00",
     "loanProbability": [
       {
-        "lender": "CreditSaison",
+        "lender": "Flexiloans",
+        "currentProbability": 0.51,
+        "potentialProbability": 0.62
+      },
+      {
+        "lender": "Bajaj Finance",
         "currentProbability": 0.13,
         "potentialProbability": 0.21
       },
       {
         "lender": "Tata Capital",
+        "currentProbability": 0.13,
+        "potentialProbability": 0.21
+      },
+      {
+        "lender": "NeoGrowth",
         "currentProbability": 0.13,
         "potentialProbability": 0.23
       },
@@ -348,12 +378,22 @@ export const cust8FixedJson =
         "potentialProbability": 0.23
       },
       {
-        "lender": "Protium",
-        "currentProbability": 0.12,
+        "lender": "KreditBee",
+        "currentProbability": 0.13,
         "potentialProbability": 0.21
       },
       {
-        "lender": "Bajaj Finance",
+        "lender": "Aditya Birla Finance Ltd",
+        "currentProbability": 0.12,
+        "potentialProbability": 0.22
+      },
+      {
+        "lender": "Lendingkart",
+        "currentProbability": 0.12,
+        "potentialProbability": 0.23
+      },
+      {
+        "lender": "Fairassets Technologies India Private Limited",
         "currentProbability": 0.12,
         "potentialProbability": 0.2
       },
@@ -365,65 +405,45 @@ export const cust8FixedJson =
       {
         "lender": "Poonawalla Fincorp",
         "currentProbability": 0.12,
-        "potentialProbability": 0.23
-      },
-      {
-        "lender": "Aditya Birla Finance Ltd",
-        "currentProbability": 0.11,
-        "potentialProbability": 0.2
-      },
-      {
-        "lender": "Fairassets Technologies India Private Limited",
-        "currentProbability": 0.11,
-        "potentialProbability": 0.21
-      },
-      {
-        "lender": "Indifi",
-        "currentProbability": 0.11,
-        "potentialProbability": 0.22
-      },
-      {
-        "lender": "NeoGrowth",
-        "currentProbability": 0.11,
         "potentialProbability": 0.2
       },
       {
         "lender": "Ambit Finvest",
-        "currentProbability": 0.11,
-        "potentialProbability": 0.2
+        "currentProbability": 0.12,
+        "potentialProbability": 0.23
       },
       {
         "lender": "IIFL",
-        "currentProbability": 0.11,
+        "currentProbability": 0.12,
         "potentialProbability": 0.21
       },
       {
-        "lender": "Lendingkart",
-        "currentProbability": 0.1,
+        "lender": "Protium",
+        "currentProbability": 0.11,
+        "potentialProbability": 0.23
+      },
+      {
+        "lender": "Indifi",
+        "currentProbability": 0.11,
         "potentialProbability": 0.2
       },
       {
-        "lender": "Flexiloans",
+        "lender": "CreditSaison",
         "currentProbability": 0.1,
-        "potentialProbability": 0.2
+        "potentialProbability": 0.22
       },
       {
         "lender": "LTFS",
         "currentProbability": 0.1,
-        "potentialProbability": 0.21
-      },
-      {
-        "lender": "KreditBee",
-        "currentProbability": 0.1,
-        "potentialProbability": 0.23
+        "potentialProbability": 0.2
       }
     ],
     "reportScore": [
       {
-        "condition": "shineReport.creditReport.bureauScore.score>550 && shineReport.creditReport.bureauScore.score<=700",
+        "condition": "shineReport.creditReport.bureauScore.score>700 && shineReport.creditReport.bureauScore.score<=750",
         "section": "Bureau Score",
         "parent": "Bureau",
-        "score": 32,
+        "score": 40,
         "maxScore": 48
       },
       {
@@ -441,10 +461,24 @@ export const cust8FixedJson =
         "maxScore": 72
       },
       {
+        "condition": "shineReport.creditReport.loanRepaymentHistory != null ? !shineReport.creditReport.loanRepaymentHistory.defaultAnalysis.defaultHistory.recentDefault : false",
+        "section": "Repayment History",
+        "parent": "Bureau",
+        "score": 16,
+        "maxScore": 72
+      },
+      {
         "condition": "shineReport.creditReport.loanRepaymentHistory != null ? !shineReport.creditReport.loanRepaymentHistory.defaultAnalysis.defaultHistory.delayedSeverity : false",
         "section": "Repayment History",
         "parent": "Bureau",
         "score": 8,
+        "maxScore": 72
+      },
+      {
+        "condition": "shineReport.creditReport.loanRepaymentHistory != null ? !shineReport.creditReport.loanRepaymentHistory.defaultAnalysis.defaultHistory.last12MDPD : false",
+        "section": "Repayment History",
+        "parent": "Bureau",
+        "score": 12,
         "maxScore": 72
       },
       {
@@ -462,7 +496,7 @@ export const cust8FixedJson =
         "maxScore": 32
       },
       {
-        "condition": "shineReport.creditReport.loanRepaymentHistory != null ? shineReport.creditReport.loanRepaymentHistory.otherAnalysis.creditCardUtilization<0.6 : false",
+        "condition": "shineReport.creditReport.loanRepaymentHistory != null ? shineReport.creditReport.loanRepaymentHistory.otherAnalysis.smallLoans<5 : false",
         "section": "Credit Mix Analysis",
         "parent": "Bureau",
         "score": 8,
@@ -476,10 +510,10 @@ export const cust8FixedJson =
         "maxScore": 8
       },
       {
-        "condition": "shineReport.bankingHistory.graphData.turnover.sum > 1200000 && shineReport.bankingHistory.graphData.turnover.cV > 0.4 && (shineReport.bankingHistory.graphData.h1.turnover > 0 ? (shineReport.bankingHistory.graphData.h2.turnover / shineReport.bankingHistory.graphData.h1.turnover) <= 1.1 : false)",
+        "condition": "shineReport.bankingHistory.graphData.turnover.sum > 1200000 && shineReport.bankingHistory.graphData.turnover.cV <= 0.4",
         "section": "Turnover : Volatility Analysis",
         "parent": "Banking",
-        "score": 16,
+        "score": 40,
         "maxScore": 48
       },
       {
@@ -502,13 +536,6 @@ export const cust8FixedJson =
         "parent": "Banking",
         "score": 16,
         "maxScore": 64
-      },
-      {
-        "condition": "shineReport.creditReport.securedUnsecuredRatio != null ? shineReport.creditReport.securedUnsecuredRatio.unsecuredToTurnoverRatio<=0.25 : false",
-        "section": "Debt to Turnover Analysis",
-        "parent": "Banking",
-        "score": 24,
-        "maxScore": 48
       },
       {
         "condition": "shineReport.creditReport.securedUnsecuredRatio != null ? shineReport.creditReport.securedUnsecuredRatio.securedToTurnoverRatio<=0.60 : false",
@@ -535,14 +562,14 @@ export const cust8FixedJson =
         "condition": "BTO",
         "section": "BTO",
         "parent": "Banking",
-        "score": 30,
+        "score": 35,
         "maxScore": 0
       },
       {
         "condition": "ABB",
         "section": "ABB",
         "parent": "Banking",
-        "score": 21,
+        "score": 25,
         "maxScore": 0
       },
       {
@@ -550,6 +577,13 @@ export const cust8FixedJson =
         "section": "Tier",
         "parent": "Profile",
         "score": 10,
+        "maxScore": 0
+      },
+      {
+        "condition": "BusinessVintage",
+        "section": "BusinessVintage",
+        "parent": "Profile",
+        "score": 20,
         "maxScore": 0
       }
     ]
@@ -583,6 +617,18 @@ export const cust8FixedJson =
         },
         {
           "condition": null,
+          "header": "Promising Start!",
+          "subheader": null,
+          "description": "Your score is above average. You're on the right track, to improve your credit score and loan prospects further diversify your loans.",
+          "bullets": null,
+          "class": "positive",
+          "type": null,
+          "warning": null,
+          "condition_status": true,
+          "emoji": null
+        },
+        {
+          "condition": null,
           "header": null,
           "subheader": null,
           "description": null,
@@ -591,18 +637,6 @@ export const cust8FixedJson =
           "type": null,
           "warning": null,
           "condition_status": false,
-          "emoji": null
-        },
-        {
-          "condition": null,
-          "header": "Needs Attention!",
-          "subheader": null,
-          "description": "Your credit score is below average. Consider clearing out overdues and limiting credit inquiries to improve your score and loan prospects.",
-          "bullets": null,
-          "class": "stable",
-          "type": null,
-          "warning": null,
-          "condition_status": true,
           "emoji": null
         },
         {
@@ -622,18 +656,6 @@ export const cust8FixedJson =
         "infoCard": [
           {
             "condition": null,
-            "header": "Payment Irregularity!",
-            "subheader": null,
-            "description": "Your repayment history shows financial instability, prioritise catching up on payments and engaging with your existing lenders to discuss potential options.",
-            "bullets": null,
-            "class": "negative",
-            "type": null,
-            "warning": "Needs Attention!",
-            "condition_status": true,
-            "emoji": null
-          },
-          {
-            "condition": null,
             "header": null,
             "subheader": null,
             "description": null,
@@ -642,6 +664,18 @@ export const cust8FixedJson =
             "type": null,
             "warning": null,
             "condition_status": false,
+            "emoji": null
+          },
+          {
+            "condition": null,
+            "header": "Improving Track Record!",
+            "subheader": null,
+            "description": "You've been good with your recent repayments. However, delayed payments were detected earlier. Continue to keep up with your EMIs to strengthen your loan prospects.",
+            "bullets": null,
+            "class": "stable",
+            "type": null,
+            "warning": "Improving!",
+            "condition_status": true,
             "emoji": null
           },
           {
@@ -719,12 +753,12 @@ export const cust8FixedJson =
               "condition": null,
               "header": null,
               "subheader": null,
-              "description": "You can do better! Improve your standing with the lenders by implementing the steps recommended. You are currently at level \"2\" and may be able to reach level \"3\" in the next 3 months and get closer to your ideal loan.",
+              "description": "You can do better! Improve your standing with the lenders by implementing the steps recommended. You are currently at level \"3\" and may be able to reach level \"4\" in the next 3 months and get closer to your ideal loan.",
               "bullets": null,
               "class": "negative",
               "type": null,
               "warning": null,
-              "condition_status": false,
+              "condition_status": true,
               "emoji": null
             },
             {
@@ -1059,47 +1093,9 @@ export const cust8FixedJson =
         "creditCardUtilization": [
           {
             "condition": null,
-            "header": null,
+            "header": "Minimise Credit Card Balances",
             "subheader": null,
-            "description": null,
-            "bullets": null,
-            "class": null,
-            "type": null,
-            "warning": null,
-            "condition_status": false,
-            "emoji": null
-          },
-          {
-            "condition": null,
-            "header": null,
-            "subheader": null,
-            "description": null,
-            "bullets": null,
-            "class": null,
-            "type": null,
-            "warning": null,
-            "condition_status": false,
-            "emoji": null
-          },
-          {
-            "condition": null,
-            "header": "No Active Credit Cards",
-            "subheader": null,
-            "description": "Looks like you don't have any active credit cards!. Having a credit card builds your credit history and offers financial flexibility that helps in financial growth.",
-            "bullets": null,
-            "class": "stable",
-            "type": null,
-            "warning": null,
-            "condition_status": true,
-            "emoji": null
-          }
-        ],
-        "smallLoans": [
-          {
-            "condition": null,
-            "header": "Consider Consolidation",
-            "subheader": null,
-            "description": "Having multiple new small loans indicates financial mismanagement and a potential need for consolidation to reduce overall interest burdens.",
+            "description": "Overutilising your credit cards increases your risk profile. Keep your balances below 60% of your limit. Consider adding more credit lines and splitting usage to stay under this threshold.",
             "bullets": null,
             "class": "negative",
             "type": null,
@@ -1117,6 +1113,44 @@ export const cust8FixedJson =
             "type": null,
             "warning": null,
             "condition_status": false,
+            "emoji": null
+          },
+          {
+            "condition": null,
+            "header": null,
+            "subheader": null,
+            "description": null,
+            "bullets": null,
+            "class": null,
+            "type": null,
+            "warning": null,
+            "condition_status": false,
+            "emoji": null
+          }
+        ],
+        "smallLoans": [
+          {
+            "condition": null,
+            "header": null,
+            "subheader": null,
+            "description": null,
+            "bullets": null,
+            "class": null,
+            "type": null,
+            "warning": null,
+            "condition_status": false,
+            "emoji": null
+          },
+          {
+            "condition": null,
+            "header": "Strategic Credit Management",
+            "subheader": null,
+            "description": "Borrowing a limited number of small loans within your means demonstrates prudent financial strategy, provided you acquire five or fewer loans.",
+            "bullets": null,
+            "class": "positive",
+            "type": null,
+            "warning": null,
+            "condition_status": true,
             "emoji": null
           }
         ],
@@ -1371,6 +1405,18 @@ export const cust8FixedJson =
         },
         {
           "condition": null,
+          "header": "Turnover Stable",
+          "subheader": null,
+          "description": "Stability makes you a good lending prospect, indicating chances of better loan terms.",
+          "bullets": null,
+          "class": "stable",
+          "type": null,
+          "warning": "Good Job!",
+          "condition_status": true,
+          "emoji": null
+        },
+        {
+          "condition": null,
           "header": null,
           "subheader": null,
           "description": null,
@@ -1379,18 +1425,6 @@ export const cust8FixedJson =
           "type": null,
           "warning": null,
           "condition_status": false,
-          "emoji": null
-        },
-        {
-          "condition": null,
-          "header": "Downward Trend",
-          "subheader": null,
-          "description": "Low stability means lenders perceive you as risky, reducing your loan prospects.",
-          "bullets": null,
-          "class": "negative",
-          "type": null,
-          "warning": "Needs Attention!",
-          "condition_status": true,
           "emoji": null
         }
       ],
@@ -1409,6 +1443,18 @@ export const cust8FixedJson =
         },
         {
           "condition": null,
+          "header": "Your Turnover Is Stable",
+          "subheader": null,
+          "description": "You have a stable inflow of cash to your account every month.",
+          "bullets": null,
+          "class": "stable",
+          "type": null,
+          "warning": null,
+          "condition_status": true,
+          "emoji": null
+        },
+        {
+          "condition": null,
           "header": null,
           "subheader": null,
           "description": null,
@@ -1417,18 +1463,6 @@ export const cust8FixedJson =
           "type": null,
           "warning": null,
           "condition_status": false,
-          "emoji": null
-        },
-        {
-          "condition": null,
-          "header": "Your Turnover is Unstable",
-          "subheader": null,
-          "description": "Your turnover during the last 6 months has been unstable and has often gone below the threshold acceptable to lenders.",
-          "bullets": null,
-          "class": "negative",
-          "type": null,
-          "warning": null,
-          "condition_status": true,
           "emoji": null
         }
       ],
@@ -1486,11 +1520,14 @@ export const cust8FixedJson =
           "header": null,
           "subheader": null,
           "description": null,
-          "bullets": null,
-          "class": null,
+          "bullets": [
+            "Your turnover is stable, though lenders prioritise businesses with consistent quarter-on-quarter turnover growth.",
+            "Focus on generating consistent growth in your turnover for better loan terms."
+          ],
+          "class": "stable",
           "type": null,
           "warning": null,
-          "condition_status": false,
+          "condition_status": true,
           "emoji": null
         },
         {
@@ -1498,15 +1535,11 @@ export const cust8FixedJson =
           "header": null,
           "subheader": null,
           "description": null,
-          "bullets": [
-            "Low stability means lenders perceive you as risky, reducing your loan prospects.",
-            "Focus on getting paid on time by your customers to tackle the impact of lower income months.",
-            "Analyse your expenses to identify cost-saving strategies during slower periods."
-          ],
-          "class": "negative",
+          "bullets": null,
+          "class": null,
           "type": null,
           "warning": null,
-          "condition_status": true,
+          "condition_status": false,
           "emoji": null
         }
       ],
@@ -1568,7 +1601,7 @@ export const cust8FixedJson =
       "count_volatility": [
         {
           "condition": null,
-          "header": "Revenue Mix: Good ",
+          "header": "Revenue Mix: Good",
           "subheader": null,
           "description": "Your business has high credit count. Lenders prefer businesses with more than 2 monthly counts of credit. This means you are generating revenue from different sources and are not reliant on a few customers.",
           "bullets": null,
@@ -1612,14 +1645,11 @@ export const cust8FixedJson =
           "header": null,
           "subheader": null,
           "description": null,
-          "bullets": [
-            "Instability raises concerns with lenders, reducing your loan prospects.",
-            "Addressing fluctuation head-on can improve your attractiveness."
-          ],
-          "class": "negative",
+          "bullets": null,
+          "class": null,
           "type": null,
           "warning": null,
-          "condition_status": true,
+          "condition_status": false,
           "emoji": {
             "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png",
             "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Sad-Smiley-Mobile.png"
@@ -1630,11 +1660,14 @@ export const cust8FixedJson =
           "header": null,
           "subheader": null,
           "description": null,
-          "bullets": null,
-          "class": null,
+          "bullets": [
+            "Congratulations on maintaining a stable turnover in your business.",
+            "While stability is desirable, seize opportunities for strategic growth to enhance your profile and improve your loan options."
+          ],
+          "class": "stable",
           "type": null,
           "warning": null,
-          "condition_status": false,
+          "condition_status": true,
           "emoji": {
             "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Moderate-01.png",
             "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Stable-Smiley-Mobile.png"
@@ -1788,7 +1821,7 @@ export const cust8FixedJson =
             "condition": null,
             "header": null,
             "subheader": null,
-            "description": "Good job! You've maintained a  monthly balance  >₹10,000 in the past 12 month. ",
+            "description": "Good job! You've maintained a monthly balance >₹10,000 in the past 12 month.",
             "bullets": null,
             "class": "positive",
             "type": null,
@@ -1940,18 +1973,6 @@ export const cust8FixedJson =
         "card_view": [
           {
             "condition": null,
-            "header": "Good Debt Management",
-            "subheader": null,
-            "description": "A lower ratio means you are not over-leveraged. If unsecured debt is below 10% then you may be eligible to take more unsecured loans.",
-            "bullets": null,
-            "class": "positive",
-            "type": null,
-            "warning": "Good job!",
-            "condition_status": true,
-            "emoji": null
-          },
-          {
-            "condition": null,
             "header": null,
             "subheader": null,
             "description": null,
@@ -1960,6 +1981,18 @@ export const cust8FixedJson =
             "type": null,
             "warning": null,
             "condition_status": false,
+            "emoji": null
+          },
+          {
+            "condition": null,
+            "header": "Needs Better Management",
+            "subheader": null,
+            "description": "Your business may be too dependent on unsecured debt. You likely won’t be eligible for more unsecured debt. Try and pay off your debt quickly and ensure timeliness of payments.",
+            "bullets": null,
+            "class": "negative",
+            "type": null,
+            "warning": "Needs Improvement",
+            "condition_status": true,
             "emoji": null
           },
           {
@@ -1993,14 +2026,11 @@ export const cust8FixedJson =
             "header": null,
             "subheader": null,
             "description": null,
-            "bullets": [
-              "Your unsecured debt-to-turnover ratio is 25% or lower.",
-              "Lenders perceive you as sound and stable and you may be able to take on more unsecured loans."
-            ],
-            "class": "positive",
+            "bullets": null,
+            "class": null,
             "type": null,
             "warning": null,
-            "condition_status": true,
+            "condition_status": false,
             "emoji": null
           },
           {
@@ -2008,11 +2038,14 @@ export const cust8FixedJson =
             "header": null,
             "subheader": null,
             "description": null,
-            "bullets": null,
-            "class": null,
+            "bullets": [
+              "Your unsecured debt is more than 25%. Do a financial review to avoid stress on your cashflow.",
+              "If possible, convert some unsecured debt into secured, to reduce the risk in lending to you and lower ROIs for you."
+            ],
+            "class": "negative",
             "type": null,
             "warning": null,
-            "condition_status": false,
+            "condition_status": true,
             "emoji": null
           },
           {
@@ -2050,15 +2083,11 @@ export const cust8FixedJson =
           "header": null,
           "subheader": null,
           "description": null,
-          "bullets": [
-            "You're doing an excellent job of managing your unsecured debts in proportion to your turnover.",
-            "You may be eligible to take more unsecured loans.",
-            "Monitor these often, ensuring any changes in debt or turnover don't negatively impact your loan prospects."
-          ],
-          "class": "positive",
+          "bullets": null,
+          "class": null,
           "type": null,
           "warning": null,
-          "condition_status": true,
+          "condition_status": false,
           "emoji": {
             "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/summary_smily.png",
             "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Positive-Smiley-Mobile.png"
@@ -2069,11 +2098,15 @@ export const cust8FixedJson =
           "header": null,
           "subheader": null,
           "description": null,
-          "bullets": null,
-          "class": null,
+          "bullets": [
+            "Your unsecured debt is too high.",
+            "Focus on revenue growth. Explore higher-margin products, enhance sales strategies, or consolidate high-interest debts for more manageable loans.",
+            "This will reduce financial stress & make you a more eligible borrower."
+          ],
+          "class": "negative",
           "type": null,
           "warning": null,
-          "condition_status": false,
+          "condition_status": true,
           "emoji": {
             "desktop": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Smiley-Sad-01.png",
             "mobile": "https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Sad-Smiley-Mobile.png"
@@ -2198,14 +2231,17 @@ export const cust8FixedJson =
           },
           {
             "condition": null,
-            "header": null,
-            "subheader": null,
-            "description": null,
-            "bullets": null,
-            "class": null,
+            "header": "Your Bureau Score",
+            "subheader": "What you're doing right",
+            "description": "Your bureau score shows how healthy (or unhealthy) your business is. It's important because a poor score will affect your prospects.",
+            "bullets": [
+              "You're on the right track! To improve your credit score and loan prospects further diversify your loans.",
+              "Ensure timely repayments of ongoing loans to improve your profile further and become eligible for the best terms."
+            ],
+            "class": "positive",
             "type": null,
             "warning": null,
-            "condition_status": false,
+            "condition_status": true,
             "emoji": null
           },
           {
@@ -2298,7 +2334,7 @@ export const cust8FixedJson =
             "condition": null,
             "header": "Disputes with Lenders",
             "subheader": "What you're doing right",
-            "description": "If one or more lenders have initiated legal action against you, it shows lenders your inability to manage debts in past. ",
+            "description": "If one or more lenders have initiated legal action against you, it shows lenders your inability to manage debts in past.",
             "bullets": [
               "You have no legal suits filed against you. Legal suits reflects poorly on your profile, but no legal suits are found in your recent past records.",
               "This makes you a responsible borrower and boosts your creditworthiness with lenders."
@@ -2367,14 +2403,18 @@ export const cust8FixedJson =
         "creditCardUtilization": [
           {
             "condition": null,
-            "header": null,
-            "subheader": null,
-            "description": null,
-            "bullets": null,
-            "class": null,
+            "header": "Credit Card Utilisation",
+            "subheader": "How to fix this?",
+            "description": "Utilisation rates of credit cards affect your credit score and further lender confidence. Limiting credit card usage to an optimal threshold increases creditworthiness",
+            "bullets": [
+              "Don't use your credit card too much. Keep your balances below 60% of your limit.",
+              "Overutilising it increases your risk profile and reduces your creditworthiness.",
+              "If you have more than one credit lines, split your usage across the to stay under this threshold."
+            ],
+            "class": "negative",
             "type": null,
             "warning": null,
-            "condition_status": false,
+            "condition_status": true,
             "emoji": null
           },
           {
@@ -2393,22 +2433,6 @@ export const cust8FixedJson =
         "smallLoans": [
           {
             "condition": null,
-            "header": "Micro Loans",
-            "subheader": "How to fix this?",
-            "description": "The number of micro laons taken reflect you business' fiscal planning capabilities and the need for constant influx",
-            "bullets": [
-              "Too many active small loans on your portfolio may raise concerns for lenders.",
-              "The ideal number of small loans on a portfolio is less than 5.",
-              "Try to consolidate your small loans to reduce overall interest burdens."
-            ],
-            "class": "negative",
-            "type": null,
-            "warning": null,
-            "condition_status": true,
-            "emoji": null
-          },
-          {
-            "condition": null,
             "header": null,
             "subheader": null,
             "description": null,
@@ -2417,6 +2441,21 @@ export const cust8FixedJson =
             "type": null,
             "warning": null,
             "condition_status": false,
+            "emoji": null
+          },
+          {
+            "condition": null,
+            "header": "Micro Loans",
+            "subheader": "What you're doing right",
+            "description": "The number of micro laons taken reflect you business' fiscal planning capabilities and the need for constant influx",
+            "bullets": [
+              "Borrowing within your means demonstrates a sensible financial strategy.",
+              "Don't take more than 5 small loans to keep your creditworthiness up."
+            ],
+            "class": "positive",
+            "type": null,
+            "warning": null,
+            "condition_status": true,
             "emoji": null
           }
         ],
@@ -2579,7 +2618,7 @@ export const cust8FixedJson =
         "count_volatility": [
           {
             "condition": null,
-            "header": "Credit Count Analysis ",
+            "header": "Credit Count Analysis",
             "subheader": "What you're doing right",
             "description": "Credit count shows the number of credits made to your business account within a specified period, from varied sources.",
             "bullets": [
@@ -2666,21 +2705,6 @@ export const cust8FixedJson =
         "debt_to_revenue_ratio": [
           {
             "condition": null,
-            "header": "Unsecured Debt to Turnover",
-            "subheader": "What you're doing right",
-            "description": "By comparing your business' debt levels unsecured to its revenue, this ratio assesses how leveraged you are with respect to your income.",
-            "bullets": [
-              "You've kept your unsecured debt-to-turnover ratio 25% or lower. Well done!",
-              "Lenders perceive you as sound and stable, leading to improved unsecured loan prospects."
-            ],
-            "class": "positive",
-            "type": null,
-            "warning": null,
-            "condition_status": true,
-            "emoji": null
-          },
-          {
-            "condition": null,
             "header": null,
             "subheader": null,
             "description": null,
@@ -2689,6 +2713,22 @@ export const cust8FixedJson =
             "type": null,
             "warning": null,
             "condition_status": false,
+            "emoji": null
+          },
+          {
+            "condition": null,
+            "header": "Unsecured Debt To Turnover",
+            "subheader": "How to fix this?",
+            "description": "By comparing your business' debt levels unsecured to its revenue, this ratio assesses how leveraged you are with respect to your income.",
+            "bullets": [
+              "Your unsecured debt is more than 25%.",
+              "Do a financial review and adjust to minimise stress on your cashflow and bring down your loan exposure.",
+              "If possible, convert some unsecured debt into secured to reduce your reliance on unsecured debt and improve your loan prospects."
+            ],
+            "class": "negative",
+            "type": null,
+            "warning": null,
+            "condition_status": true,
             "emoji": null
           },
           {
@@ -2754,14 +2794,14 @@ export const cust8FixedJson =
       "volatility": [
         {
           "condition": null,
-          "header": "Banking > Business Turnover & Credit Count",
-          "subheader": "Your M-on-M Turnover is Unstable",
-          "description": "Business turnover is unstable. Work on stabilising your income to improve your financial profile.",
+          "header": null,
+          "subheader": null,
+          "description": null,
           "bullets": null,
-          "class": "20",
+          "class": null,
           "type": null,
           "warning": null,
-          "condition_status": true,
+          "condition_status": false,
           "emoji": null
         },
         {
@@ -2780,11 +2820,11 @@ export const cust8FixedJson =
           "condition": null,
           "header": "Banking > Business Turnover & Credit Count",
           "subheader": "Quarterly Turnover Dip",
-          "description": "Turnover has fallen by more than 50% in the last quarter. Explore account collection strategies prior to quarter end.",
+          "description": "Maximize your Business transactions through Business Bank Account",
           "bullets": null,
           "class": "19",
           "type": null,
-          "warning": null,
+          "warning": "Fluctuating Business turnover reduces Lender's confidence",
           "condition_status": true,
           "emoji": null
         },
@@ -2792,11 +2832,11 @@ export const cust8FixedJson =
           "condition": null,
           "header": "Banking > Business Turnover & Credit Count",
           "subheader": "Low Credit Count",
-          "description": "You are currently only dependent on up to 2 customers. This makes you a high risk business. Diversify your customer base to increase stability.",
+          "description": "Maximize your Business transactions through Business Bank Account.",
           "bullets": null,
           "class": "12",
           "type": null,
-          "warning": null,
+          "warning": "Low Business Transactions in Bank reduces Loan Amount Eligibility",
           "condition_status": true,
           "emoji": null
         }
@@ -2806,11 +2846,11 @@ export const cust8FixedJson =
           "condition": null,
           "header": "Bureau > Loan Repayment History",
           "subheader": "Repayment Defaults Detected",
-          "description": "Defaults found in your last 36 months bureau history. Ensure timely repayments & clear all dues before applying for more credit.",
+          "description": "Right Advise can get you desired Loan - Enroll for Shine Annual Subscription",
           "bullets": null,
           "class": "8",
           "type": null,
-          "warning": null,
+          "warning": "You have bright chances of getting Loans, clear overdues if any",
           "condition_status": true,
           "emoji": null
         },
@@ -2852,14 +2892,14 @@ export const cust8FixedJson =
         },
         {
           "condition": null,
-          "header": "Bureau > Loan Repayment History",
-          "subheader": "Repayment Delays in Last 12 Months",
-          "description": "Missed payments observed. This reduces your loan prospects so clear all your dues before applying for more credit.",
+          "header": null,
+          "subheader": null,
+          "description": null,
           "bullets": null,
-          "class": "7",
+          "class": null,
           "type": null,
           "warning": null,
-          "condition_status": true,
+          "condition_status": false,
           "emoji": null
         },
         {
@@ -2904,38 +2944,14 @@ export const cust8FixedJson =
       "debt_to_turnover_ratio": [
         {
           "condition": null,
-          "header": null,
-          "subheader": null,
-          "description": null,
+          "header": "Banking > Debt to Turnover Ratio",
+          "subheader": "High Unsecured Loan Ratio to Turnover",
+          "description": "Consolidate your loans, contact creditEnable for Assistance",
           "bullets": null,
-          "class": null,
+          "class": "22",
           "type": null,
-          "warning": null,
-          "condition_status": false,
-          "emoji": null
-        },
-        {
-          "condition": null,
-          "header": null,
-          "subheader": null,
-          "description": null,
-          "bullets": null,
-          "class": null,
-          "type": null,
-          "warning": null,
-          "condition_status": false,
-          "emoji": null
-        },
-        {
-          "condition": null,
-          "header": null,
-          "subheader": null,
-          "description": null,
-          "bullets": null,
-          "class": null,
-          "type": null,
-          "warning": null,
-          "condition_status": false,
+          "warning": "Too Many Unsecured Loans create Heavy Monthly EMI Burden",
+          "condition_status": true,
           "emoji": null
         },
         {
@@ -2953,13 +2969,25 @@ export const cust8FixedJson =
         {
           "condition": null,
           "header": "Banking > Debt to Turnover Ratio",
-          "subheader": "Too many smaller ticket loans",
-          "description": "High dependencies on smaller ticket size loans less than 2L indicates frequent credit requirement. Look for loan consolidation.",
+          "subheader": "High Credit Card Utilization",
+          "description": "Consolidate your loans, Stop Credit Card Usage contact creditEnable for Assistance",
           "bullets": null,
-          "class": "17",
+          "class": "24",
+          "type": null,
+          "warning": "High Credit card Spend & Rovolving Credit Mounts Interest& Principal burden",
+          "condition_status": true,
+          "emoji": null
+        },
+        {
+          "condition": null,
+          "header": null,
+          "subheader": null,
+          "description": null,
+          "bullets": null,
+          "class": null,
           "type": null,
           "warning": null,
-          "condition_status": true,
+          "condition_status": false,
           "emoji": null
         }
       ],
@@ -2980,14 +3008,14 @@ export const cust8FixedJson =
       "bureau_score": [
         {
           "condition": null,
-          "header": "Bureau > Bureau Score",
-          "subheader": "Bureau Score below 700",
-          "description": "At your current credit score you are not eligible for favourable loan terms. Follow best practices and repay on time to enhance your creditworthiness.",
+          "header": null,
+          "subheader": null,
+          "description": null,
           "bullets": null,
-          "class": "6",
+          "class": null,
           "type": null,
           "warning": null,
-          "condition_status": true,
+          "condition_status": false,
           "emoji": null
         },
         {
@@ -3063,27 +3091,28 @@ export const cust8FixedJson =
     }
   },
   "userInfo": {
-    "id": "66472194ce4f78dd74253488",
-    "createdAt": "2024-05-17T09:21:24Z",
-    "lastUpdatedAt": "2024-08-31T10:08:26.386Z",
-    "perfiosTransactionId": "PJXT1715946778141",
-    "email": "jhirenb@gmail.com",
-    "prefix": null,
-    "firstName": "HIRENKUMAR",
-    "lastName": "JAYANI",
-    "businessName": "SARVOPARI ASSOCIATES",
-    "pincode": "382350",
-    "businessPan": "AZGPJ5027K",
-    "businessVintage": null,
+    "id": "6728a8b9ef7d781d4db18545",
+    "createdAt": "2024-11-04T10:58:01.008Z",
+    "lastUpdatedAt": "2024-11-04T12:10:44.592Z",
+    "perfiosTransactionId": "99X91730722244531",
+    "email": "Jayachandranperumal79@gmail.com",
+    "prefix": "Mr.",
+    "firstName": "JAYACHANDRAN ",
+    "lastName": "PERUMAL ",
+    "businessName": "Jayachandran transport ",
+    "pincode": "600013",
+    "businessPan": "AEKPJ9436R",
+    "businessVintage": "More than 5 years",
     "propertyOwnership": "Owned",
-    "turnover": 11000000,
-    "utmSource": null,
-    "utmCampaign": null,
-    "utmMedium": null,
-    "pricingModel": "one-time",
-    "selectedPrice": 1999,
+    "turnover": 40000000,
+    "utmSource": "Whatsapp",
+    "utmCampaign": "WA_Shine_Leadgen_June_mgs1_copy",
+    "utmMedium": "cpc",
+    "utmContent": "Shine",
+    "pricingModel": "annual",
+    "selectedPrice": 3999,
     "dsaCode": null,
-    "mobile": "9727363295"
+    "mobile": "9381054403"
   },
   "dsaInfo": null
 }
