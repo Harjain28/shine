@@ -50,10 +50,10 @@ export class Pricing2Component {
 
   showPricingPlan() {
     const plans:any = {
-      4: { filteredPrice: '3,999', pricingPlan: '2,999' },
+      4: { filteredPrice: '3,999', pricingPlan: '1,999' },
       5: { filteredPrice: '4,999', pricingPlan: '3,999' },
       6: { filteredPrice: '8,999', pricingPlan: '7,499' },
-      default: { filteredPrice: '3,999', pricingPlan: '2,999' }
+      default: { filteredPrice: '3,999', pricingPlan: '1,999' }
     };
     const selectedPlan = plans[Number(this.randomNumber)] || plans.default;
     this.filteredPrice = selectedPlan.filteredPrice;
