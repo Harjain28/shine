@@ -250,13 +250,19 @@ export class CreditReportComponent {
       }));
     }
 
-    if(this.reportsData?.report?.currentLoanProbability) {
-      this.currStage = this.reportsData?.report?.currentLoanProbability
-      this.potStage = this.reportsData?.report?.potentialLoanProbability
+    if (this.reportsData?.report?.currentLoanProbability) {
+      this.currStage = this.reportsData?.report?.currentLoanProbability;
+      // Check if currentLoanProbability is 'High'
+      if (this.currStage === 'High') {
+        this.potStage = 'High'; // Automatically set potentialLoanProbability to 'High'
+      } else {
+        this.potStage = this.reportsData?.report?.potentialLoanProbability;
+      }
     } else {
-      this.currStage = this.reportsData?.report?.currentStage
-      this.potStage = this.reportsData?.report?.potentialStage
+      this.currStage = this.reportsData?.report?.currentStage;
+      this.potStage = this.reportsData?.report?.potentialStage;
     }
+    
    
 
 

@@ -4,30 +4,30 @@ import {
   OnInit,
   Renderer2,
   ViewChild,
-} from '@angular/core';
-import { CommonModule } from '@angular/common';
+} from "@angular/core";
+import { CommonModule } from "@angular/common";
 import {
   FormControl,
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
   Validators,
-} from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MaterialModule } from 'src/app/material.module';
-import { MatOptionModule } from '@angular/material/core';
-import { MatInputModule } from '@angular/material/input';
-import { EventService } from 'src/app/services/event.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from 'src/app/services/api.service';
-import { Location } from '@angular/common';
-import { NavigationService } from 'src/app/services/navigation.service';
-import { OtpService } from 'src/app/services/otp.service';
-import { LocalStorageService } from 'src/app/services/local-storage.service';
+} from "@angular/forms";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatIconModule } from "@angular/material/icon";
+import { MaterialModule } from "src/app/material.module";
+import { MatOptionModule } from "@angular/material/core";
+import { MatInputModule } from "@angular/material/input";
+import { EventService } from "src/app/services/event.service";
+import { ActivatedRoute, Router } from "@angular/router";
+import { ApiService } from "src/app/services/api.service";
+import { Location } from "@angular/common";
+import { NavigationService } from "src/app/services/navigation.service";
+import { OtpService } from "src/app/services/otp.service";
+import { LocalStorageService } from "src/app/services/local-storage.service";
 
 @Component({
-  selector: 'app-form1',
+  selector: "app-form1",
   standalone: true,
   imports: [
     CommonModule,
@@ -39,8 +39,8 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
     MaterialModule,
     MatInputModule,
   ],
-  templateUrl: './form1.component.html',
-  styleUrls: ['./form1.component.scss'],
+  templateUrl: "./form1.component.html",
+  styleUrls: ["./form1.component.scss"],
 })
 export class Form1Component implements OnInit {
   form1!: FormGroup;
@@ -53,13 +53,15 @@ export class Form1Component implements OnInit {
   validatePAN!: boolean;
   error: any; // Define error property here
 
-  unformattedX: string = '';
+  unformattedX: string = "";
   formattedX!: string;
   showBusniessNameError!: boolean;
-  parsedData:any;
-  @ViewChild('formSection', { static: true }) formSection!: ElementRef;
+  parsedData: any;
+  @ViewChild("formSection", { static: true }) formSection!: ElementRef;
   hideField: boolean = false;
-  
+  utmCampaign: any | null;
+  utmSource: any | null;
+
   constructor(
     private route: ActivatedRoute,
     public location: Location,
@@ -69,22 +71,21 @@ export class Form1Component implements OnInit {
     public router: Router,
     private api: ApiService,
     private state: LocalStorageService,
-    private otpService: OtpService,
-
+    private otpService: OtpService
   ) {
     this.route.queryParamMap.subscribe((params) => {
-      this.paramsObject = { ...params.keys, ...params }; 
-      const utmCampaign = params.get('utm_campaign'); 
-      this.hideField = !!utmCampaign;
+      this.paramsObject = { ...params.keys, ...params };
+      this.utmCampaign = params.get("utm_campaign");
+      this.hideField = !!this.utmCampaign;
+      this.utmSource = params.get("utm_source");
     });
-
   }
 
   ngOnInit(): void {
     // this.state.removeSomeItem();
     this.form();
-   
-    const requestData:any = localStorage.getItem("reqData")
+
+    const requestData: any = localStorage.getItem("reqData");
     this.parsedData = JSON.parse(requestData);
     if (this.parsedData) {
       this.form1.patchValue({
@@ -92,85 +93,97 @@ export class Form1Component implements OnInit {
         firstName: this.parsedData.firstName,
         lastName: this.parsedData.lastName,
         busninessName: this.parsedData.businessName,
-        dsaCode: this.parsedData.dsaCode ?  this.parsedData.dsaCode : '',
         emailId: this.parsedData.email,
       });
     }
-   
-    const savedPhoneNumber = localStorage.getItem('phoneNumber');
+
+    const savedPhoneNumber = localStorage.getItem("phoneNumber");
     if (savedPhoneNumber) {
       this.form1.patchValue({ phoneNumber: savedPhoneNumber });
     }
-
   }
 
   form() {
     this.form1 = new FormGroup({
-      title: new FormControl('Mr.', [Validators.required]),
-      firstName: new FormControl('', [
+      title: new FormControl("Mr.", [Validators.required]),
+      firstName: new FormControl("", [
         Validators.required,
-        Validators.pattern('^[a-zA-Z ]+$'),
+        Validators.pattern("^[a-zA-Z ]+$"),
       ]),
-      lastName: new FormControl('', [
+      lastName: new FormControl("", [
         Validators.required,
-        Validators.pattern('^[a-zA-Z ]+$'),
+        Validators.pattern("^[a-zA-Z ]+$"),
       ]),
-    
-      emailId: new FormControl('', {
+
+      emailId: new FormControl("", {
         validators: [
           Validators.required,
-          Validators.pattern('^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$'),
+          Validators.pattern("^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$"),
         ],
-        updateOn: 'blur',
+        updateOn: "blur",
       }),
-      busninessName: new FormControl('', [Validators.required, Validators.minLength(4)]),
-      dsaCode: new FormControl(''),
-    
+      busninessName: new FormControl("", [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
+      dsaCode: new FormControl(""),
     });
   }
 
   onNextClick() {
     this.formSection.nativeElement.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
+      behavior: "smooth",
+      block: "start",
     });
   }
 
   uploadBasicDetails() {
     this.isSubmit = true;
-    const PricingModel:any = localStorage.getItem("text");
-    let text = '';
-    const SelectedPrice =  localStorage.getItem("plan");
+    const PricingModel: any = localStorage.getItem("text");
+    let text = "";
+    const SelectedPrice = localStorage.getItem("plan");
     const formValue = this.form1.value;
     const defaultparams = {
       forceGenerate: false,
       resend: false,
     };
     if (this.form1.valid) {
-    const params = { ...defaultparams, ...this.paramsObject.params };
-    let requestData: any = {};
-    requestData['prefix'] = formValue.title;
-    requestData['mobile'] = this.parsedData?.mobile;
-    requestData['email'] = formValue.emailId;
-    requestData['firstName'] = formValue.firstName.toUpperCase();
-    requestData['lastName'] = formValue.lastName.toUpperCase();
-    requestData['businessName'] = formValue.busninessName;
-    if (formValue.dsaCode) {
-      requestData['dsaCode'] = formValue.dsaCode;
-    }
-    
-        this.api.post(`api/Remediation/UpdateBasicFormDetails`, requestData, params).subscribe({
+      const params = { ...defaultparams, ...this.paramsObject.params };
+      let requestData: any = {};
+      requestData["prefix"] = formValue.title;
+      requestData["mobile"] = this.parsedData?.mobile;
+      requestData["email"] = formValue.emailId;
+      requestData["firstName"] = formValue.firstName.toUpperCase();
+      requestData["lastName"] = formValue.lastName.toUpperCase();
+      requestData["businessName"] = formValue.busninessName;
+      // Check the conditions for setting dsaCode
+      if (
+        (this.utmSource === "DSA" || this.utmSource === "wep") &&
+        this.utmCampaign
+      ) {
+        // If utm_source is "DSA" or "wep" and utm_campaign exists, use it as dsaCode
+        requestData["dsaCode"] = this.utmCampaign;
+      } else if (formValue.dsaCode) {
+        // Otherwise, use the form value for dsaCode
+        requestData["dsaCode"] = formValue.dsaCode;
+      }
+
+      this.api
+        .post(`api/Remediation/UpdateBasicFormDetails`, requestData, params)
+        .subscribe({
           next: (res: any) => {
             if (res.success) {
               this.navigationService.setLinkClicked(true);
-              localStorage.setItem('reqData', JSON.stringify(res?.userInfo));
-              localStorage.setItem('stage', JSON.stringify(res?.reportStage));
-              localStorage.setItem('title', formValue.title);
-              const plan:any = localStorage.getItem("plan");
+              localStorage.setItem("reqData", JSON.stringify(res?.userInfo));
+              localStorage.setItem("stage", JSON.stringify(res?.reportStage));
+              localStorage.setItem("title", formValue.title);
+              const plan: any = localStorage.getItem("plan");
               if (plan) {
-               this.navigationService.redirectToPayment(plan);
+                this.navigationService.redirectToPayment(plan);
               } else {
-                this.navigationService.redirectToPayment(String(requestData.selectedPrice));
+                this.navigationService.redirectToPayment(
+                  String(requestData.selectedPrice)
+                );
               }
               this.isSubmit = false;
             } else this.isSubmit = false;
@@ -180,7 +193,7 @@ export class Form1Component implements OnInit {
             this.onNextClick();
           },
           complete: () => {
-            ('Request complete');
+            ("Request complete");
           },
         });
     } else {
@@ -216,10 +229,10 @@ export class Form1Component implements OnInit {
         .subscribe({
           next: (res: any) => {
             if (res.valid == true) {
-              if (typeof res === 'boolean') {
+              if (typeof res === "boolean") {
                 this.validatePAN = res;
               }
-              if (res && typeof res === 'object' && 'valid' in res) {
+              if (res && typeof res === "object" && "valid" in res) {
                 this.validatePAN = res.valid;
               }
             } else {
@@ -250,7 +263,7 @@ export class Form1Component implements OnInit {
             if (res.valid == true) {
               this.validatePin = true;
               this.showValidatepinError = false;
-              localStorage.setItem('state', res.state);
+              localStorage.setItem("state", res.state);
             } else {
               this.validatePin = false;
               this.showValidatepinError = true;

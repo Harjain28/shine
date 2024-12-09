@@ -140,7 +140,9 @@ import { cust5FixedJson } from '../JsonFiles/9815390378-fixed';
 import { cust8FixedJson } from '../JsonFiles/9727363295-fixed';
 import { cust51FixedJson } from '../JsonFiles/8600584080-fixed';
 import { cust54FixedJson } from '../JsonFiles/9381054403-fixed';
+import { cust54FixedJson2 } from '../JsonFiles/9381054403-fixed2';
 import { cust55Json } from '../JsonFiles/8879868231';
+import { cust55JsonFixed } from '../JsonFiles/8879868231-fixed';
 import { cust56Json } from '../JsonFiles/9820635246';
 import { cust57Json } from '../JsonFiles/9841053100';
 import { RequiredActionsComponent } from './required-actions/required-actions.component';
@@ -592,7 +594,9 @@ export class ReportsComponent {
       'vpoor_bureau.json': vpoorBureauJSON,
       '9381054403.json': cust54Json,
       '9381054403-fixed.json': cust54FixedJson,
+      '9381054403-fixed2.json': cust54FixedJson2,
       '8879868231.json': cust55Json,
+      '8879868231-fixed.json': cust55JsonFixed,
       '9820635246.json': cust56Json,
       '9841053100.json': cust57Json,
     };

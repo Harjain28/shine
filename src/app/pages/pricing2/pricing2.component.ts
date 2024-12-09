@@ -95,7 +95,7 @@ export class Pricing2Component {
     localStorage.setItem("plan",pricingPlan);
     localStorage.setItem("filteredPlan", filteredPlan);
     this.navigationService.setLinkClicked(isLinkClicked);
-    this.navigationService.redirectToRegister(pricingPlan);
+    this.navigationService.redirectToRegister_start(pricingPlan);
     // this.router.navigate(['/in/register'], { queryParamsHandling:"preserve"})
   }
   

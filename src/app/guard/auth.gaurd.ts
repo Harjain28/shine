@@ -11,6 +11,7 @@ export class AuthGuard  {
   private readonly allowedUrls: string[] = [
     "/in/pricing_group",
     "/in/pricing_annual",
+    "/in/wep-offer",
     "/in/register",
     "/in/otp",
     "/in/payment_status",
