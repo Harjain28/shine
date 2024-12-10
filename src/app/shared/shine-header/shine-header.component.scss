@@ -9,6 +9,7 @@
         justify-content: space-between;
 
         .logo{
+            margin-right: 20px;
 
             img{
                 height: 55px;
@@ -87,7 +88,18 @@
     }
 }
 
+.logo_line{
+    width: 1px;
+    background-color: #e8e8e8;
+    height: 60px;
+    margin: 0px 5px;
+}
+
+
 @media (max-width: 767px) {
+    .logo_line{
+        height: 40px;
+    }
     .heraderSection{
         padding: 8px 0px 12px;
 
@@ -110,6 +122,15 @@
 
        .headerNav{
         margin-top: -7px;
+
+        .logo{
+            margin-right: 4px;
+
+            img{
+                height: 32px;
+                width: auto;
+            }
+        }
 
         h5{
             font-size: 14px;
