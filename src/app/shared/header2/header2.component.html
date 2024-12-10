@@ -4,8 +4,16 @@
     [ngClass]="!sticky ?  'HeaderStart' :  'headerscroll'">
     <nav class="navbar navbar-expand-lg navbar-light HeaderSet mhidden">
         <div class="container align-items-end">
-            <a [routerLink]="['/in']"  queryParamsHandling="preserve"  class="navbar-brand"><img class="logoImg"
-                    src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Shine_Logo.svg" /></a>
+            <div class="d-flex align-items-center">
+                <a [routerLink]="['/in']" queryParamsHandling="preserve" class="navbar-brand">
+                    <img class="logoImg"
+                        src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Shine_Logo.svg" />
+                </a>
+                <div class="logo_line"></div>
+                <a [routerLink]="['/in']" queryParamsHandling="preserve" class="navbar-brand">
+                    <img class="logoImg" src="./assets/images/homeImage/Fino_Payments_Bank_New_Logo.png" />
+                </a>
+            </div>
             <button type="button" class="navbar-toggler bg-white" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -25,34 +33,20 @@
                             <div class="d-flex">
                                 <a href="tel:+91 84509 67207" class="dropdown-item container mobileNumber">
                                     <mat-icon> phone</mat-icon> +91 8450967207</a>
-                                <a class="nav-item nav-link loginBtn"  (click)="loginBtn()"
-                  >Login</a
-                >
+                                <a class="nav-item nav-link loginBtn" (click)="loginBtn()">Login</a>
                             </div>
                         </div>
-                        <!-- <div class=" hoverEffect">
-                            <a [class.active]="router.url ==='/in/sme-business-loan/secured-business-loan'" class="nav-link"
-                                data-bs-toggle="dropdown" (click)="goToSME()">SME Business Loans
-                            </a>
-                        </div> -->
-                        <div class="nav-item"
-                            (mouseleave)="closeDropdown()">
-                            <a [class.active]="router.url ==='/in/pricing_annual' || router.url === '/in/pricing_group'"   queryParamsHandling="preserve" class="nav-link dropdown-toggle"
+                        <div class="nav-item" (mouseleave)="closeDropdown()">
+                            <a [class.active]="router.url ==='/in/pricing_annual' || router.url === '/in/pricing_group'"
+                                queryParamsHandling="preserve" class="nav-link dropdown-toggle"
                                 data-bs-toggle="dropdown" style="cursor: pointer;" (click)="goToPricing(true)">Pricing
                             </a>
                         </div>
-<!-- 
-                        <div class="nav-item"
-                            (mouseleave)="closeDropdown()">
-                            <a [class.active]="router.url ==='/in/resources'" class="nav-link dropdown-toggle"
-                                data-bs-toggle="dropdown">FAQs
-                            </a>
-                        </div> -->
 
-                        <div class="nav-item"
-                            (mouseleave)="closeDropdown()" >
-                            <a [class.active]="router.url ==='/in/contact-us'"  style="cursor: pointer;"    queryParamsHandling="preserve"  class="nav-link dropdown-toggle" (click)="goToContact()"
-                                >Contact Us
+                        <div class="nav-item" (mouseleave)="closeDropdown()">
+                            <a [class.active]="router.url ==='/in/contact-us'" style="cursor: pointer;"
+                                queryParamsHandling="preserve" class="nav-link dropdown-toggle"
+                                (click)="goToContact()">Contact Us
                             </a>
                         </div>
 
@@ -69,23 +63,23 @@
 
     <nav class="navbar navbar-expand-lg navbar-light HeaderSet dhidden newMobileSideHeader">
         <div class="container align-items-end">
-            <a [routerLink]="['/in']" queryParamsHandling="preserve" class="navbar-brand"><img class="logoImg"
-                    src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Shine_Logo.svg" /></a>
-
-            <div class="menuNumber mobileNumber">
-                    <a  class="nav-item nav-link loginBtn"  (click)="loginBtn()">Login</a>
-            <button type="button" class="navbar-toggler bg-white" data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse" (click)="toggleSidebar()">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="d-flex align-items-center">
+                <a [routerLink]="['/in']" queryParamsHandling="preserve" class="navbar-brand">
+                    <img class="logoImg"
+                        src="https://ce-static-media.s3.ap-south-1.amazonaws.com/images/website/Shine/dashboard/Shine_Logo.svg" />
+                </a>
+                <div class="logo_line"></div>
+                <a [routerLink]="['/in']" queryParamsHandling="preserve" class="navbar-brand">
+                    <img class="logoImg" src="./assets/images/homeImage/Fino_Payments_Bank_New_Logo.png" />
+                </a>
             </div>
-            <!-- <div class="menuNumber mobileNumber">
-                <a href="tel:+91 84509 67207" class="dropdown-item mobileNumber">
-                    <mat-icon> phone</mat-icon> +91 84509 67207</a>
-              
-                            
-            </div> -->
-          
+            <div class="menuNumber mobileNumber">
+                <a class="nav-item nav-link loginBtn" (click)="loginBtn()">Login</a>
+                <button type="button" class="navbar-toggler bg-white" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse" (click)="toggleSidebar()">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
 
             <div class="collapse navbar-collapse mobileSide" id="navbarCollapse">
                 <div class="navbar-nav ms-auto HeaderMenu">
@@ -94,46 +88,36 @@
                             <div class="d-flex">
                                 <a href="tel:+91 84509 67207" class="dropdown-item container mobileNumber">
                                     <mat-icon> phone</mat-icon> +91 84509 67207</a>
-                                <a  class="nav-item nav-link loginBtn" data-bs-toggle="collapse"
-                                data-bs-target="#navbarCollapse" (click)="loginBtn()">Login</a>
+                                <a class="nav-item nav-link loginBtn" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarCollapse" (click)="loginBtn()">Login</a>
                             </div>
                         </div>
                         <div class="headerMenuStart">
 
                             <div class="showMobileDrop">
-                                <!-- <div class="nav-item"
-                                    (mouseleave)="closeDropdown()">
-                                    <a [class.active]="router.url ==='/in/sectors'" class="nav-link dropdown-toggle"
-                                        data-bs-toggle="dropdown">SME Business Loans
-                                    </a>
-                                </div> -->
-                                <div class="nav-item"
-                                    (mouseleave)="closeDropdown()">
-                                    <a [class.active]="router.url ==='/in/pricing_annual' || router.url === '/in/pricing_group'" class="nav-link dropdown-toggle"
-                                        data-bs-toggle="dropdown" data-bs-toggle="collapse"
-                                        data-bs-target="#navbarCollapse"   queryParamsHandling="preserve"  (click)="goToPricing(true)">Pricing
+                                <div class="nav-item" (mouseleave)="closeDropdown()">
+                                    <a [class.active]="router.url ==='/in/pricing_annual' || router.url === '/in/pricing_group'"
+                                        class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                        data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                                        queryParamsHandling="preserve" (click)="goToPricing(true)">Pricing
                                     </a>
                                 </div>
-                                <!-- <div class="nav-item"
-                                    (mouseleave)="closeDropdown()">
-                                    <a [class.active]="router.url ==='/in/sectors'" class="nav-link dropdown-toggle"
-                                        data-bs-toggle="dropdown">FAQs
-                                    </a>
-                                </div> -->
                                 <div class="nav-item dropdown hoverEffect" (mouseenter)="openDropdown()"
-                            (mouseleave)="closeDropdown()">
-                            <a class="nav-item nav-link"  data-bs-toggle="collapse"
-                            data-bs-target="#navbarCollapse"   queryParamsHandling="preserve"  [class.active]="router.url ==='/in/contact-us'"  (click)="goToContact()">Contact Us
-                               
-                            </a>
-                           
-                        </div>
+                                    (mouseleave)="closeDropdown()">
+                                    <a class="nav-item nav-link" data-bs-toggle="collapse"
+                                        data-bs-target="#navbarCollapse" queryParamsHandling="preserve"
+                                        [class.active]="router.url ==='/in/contact-us'" (click)="goToContact()">Contact
+                                        Us
+
+                                    </a>
+
+                                </div>
                             </div>
 
                         </div>
 
                         <div class="mobileTop mhidden">
-                            <a class="nav-item nav-link loginBtn"  (click)="loginBtn()">Login</a>
+                            <a class="nav-item nav-link loginBtn" (click)="loginBtn()">Login</a>
                         </div>
                     </div>
                 </div>
@@ -141,5 +125,3 @@
         </div>
     </nav>
 </div>
-
-
